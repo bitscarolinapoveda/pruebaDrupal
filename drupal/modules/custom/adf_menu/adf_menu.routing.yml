@@ -1,0 +1,7 @@
+adf_menu.content: 
+  path: '/admin/config/menu_link_attributes/config'
+  #defaults: 
+   #controller: '\Drupal\adf_menu\Controller\adf_menu::content'
+  #title: 'Hola Titulo'
+  requirements:
+    _permission: 'administer menu link attributes'

@@ -1,0 +1,81 @@
+<?php
+
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Url;
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter().
+ */
+function adf_menu_form_menu_link_content_form_alter(array &$form, FormStateInterface $form_state, $form_id) {
+  
+  //$account = \Drupal::currentUser();
+  //$attributes = \Drupal::config('adf_menu.content')->get('details') ?: [];
+kint($form_id);
+  
+  $form['details'] =[
+    '#type' => 'details',
+    '#title' => t('Agregar'),
+    '#prefix' => '<div id="inner-container-wrapper">',
+    '#suffix' => '</div>',
+    '#open' => FALSE,
+  ];
+
+  $form['details']['image']= [
+    '#type' => 'managed_file',
+    '#title' => t('imagen'),
+    '#default_value' => isset($t->configuration ['details']['image']) ?$t->configuration ['details']['image'] : '',
+    '#upload_location' => 'public://',
+    '#upload_validators' => array(
+      'file_validate_extensions' => array('png'),
+    ),
+  ];
+}
+
+
+  
+  function blockSubmit($form, FormStateInterface $form_state) {
+    $this->configuration['details'] = $form_state->getValue('details');
+
+
+    foreach ($this->configuration['details'] as $key => $default_value){
+      // Get the id of the uploaded file.  
+      $fid = $form_state->getValue('details')[$key]['image'][0]
+      ->get('fid');
+        \Drupal::logger('my_module')->error(print_r($this->setFileAsPermanent($fid), true));
+      
+      // Save file permanently.
+      if ($fid) {
+        $this->setFileAsPermanent($fid);  
+     
+      }
+    }
+     
+  }
+
+
+  function setFileAsPermanent($fid) {
+    if (is_array($fid)){
+      $fid = array_shift($fid);
+    }
+
+    $file = \Drupal\file\Entity\File::load($fid);
+
+    //If file doesn't exist return
+    if (!is_object($file)){
+      return;
+    }
+
+    //Set as permanent
+    $file->setPermanent();
+
+    // Save file
+    $file->save();
+
+    // Add usage file
+    \Drupal::service('file.usage')->add($file, 'adf_menu', 'adf_menu', 1);
+  }
+
+
+
+
