@@ -11,7 +11,7 @@ function adf_menu_form_menu_link_content_form_alter(array &$form, FormStateInter
   
   //$account = \Drupal::currentUser();
   //$attributes = \Drupal::config('adf_menu.content')->get('details') ?: [];
-
+// kint($form_id);
   
   $form['details'] =[
     '#type' => 'details',
