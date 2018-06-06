@@ -65,22 +65,6 @@ class MenuRestResource extends ResourceBase {
     return \Drupal::service('adf_menu.menu_rest_services')
       ->get();
   }
-/*
-  /**
-   * Post.
-   *
-   * @param array $data
-   *   Parameter for the service call.
-   *
-   * @return \Drupal\rest\ModifiedResourceResponse
-   *   Resourse response.
-   */
-  /*public function post(array $data = []) {
-    \Drupal::service('page_cache_kill_switch')->trigger();
 
-    return \Drupal::service('adf_menu.menu_rest_services')
-      ->post($data);
-  }
-    */
     
 }
