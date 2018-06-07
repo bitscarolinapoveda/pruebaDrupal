@@ -20,7 +20,7 @@ use Psr\Log\LoggerInterface;
  *   id = "menu_detail_rest_resource",
  *   label = @Translation("Menu detail rest resource"),
  *   uri_paths = {
- *     "canonical" = "/api/menu_detail/{main}"
+ *     "canonical" = "/api/menu_detail/{node}"
  *   }
  * )
  */
