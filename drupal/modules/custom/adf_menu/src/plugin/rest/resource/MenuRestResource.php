@@ -2,9 +2,17 @@
 
 namespace Drupal\adf_menu\Plugin\rest\resource;
 
+use Drupal\Core\Entity\EntityManagerInterface;
 use Drupal\rest\Plugin\ResourceBase;
-use Psr\Log\LoggerInterface;
+use Drupal\rest\ResourceResponse;
+use Drupal\Core\Menu\MenuTreeParameters;
+use Drupal\Core\Url;
+use Drupal\Core\Session\AccountProxyInterface;
+use Drupal\Core\Menu\MenuLinkInterface;
+use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
+use Symfony\Component\HttpKernel\Exception\HttpException;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Psr\Log\LoggerInterface;
 
 /**
  * Create URL for use rest services.
@@ -13,9 +21,9 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  *   id = "adf_menu",
  *   label = @Translation("adf_menu"),
  *   uri_paths = {
- *     "canonical" = "/adf_menu/rest/menu",
+ *     "canonical" = "/api/adf_menu/{main}",
  *     "https://www.drupal.org/link-relations/create" =
- *   "/adf_menu/rest/menu"
+ *   "/api/adf_menu/{main}"
  *   }
  * )
  */
@@ -34,13 +42,17 @@ class MenuRestResource extends ResourceBase {
    *   Serializer formats.
    * @param \Psr\Log\LoggerInterface $logger
    *   Logger service.
+   * @param \Drupal\Core\Session\AccountProxyInterface $current_user
+   *   A current user instance.
    */
   public function __construct(array $configuration,
                               $plugin_id,
                               $plugin_definition,
                               array $serializer_formats,
-                              LoggerInterface $logger) {
+                              LoggerInterface $logger,
+                              AccountProxyInterface $current_user) {
     parent::__construct($configuration, $plugin_id, $plugin_definition, $serializer_formats, $logger);
+    $this->currentUser = $current_user;                            
   }
 
   /**
@@ -52,19 +64,86 @@ class MenuRestResource extends ResourceBase {
       $plugin_id,
       $plugin_definition,
       $container->getParameter('serializer.formats'),
-      $container->get('logger.factory')->get('adf_menu')
+      $container->get('logger.factory')->get('adf_menu'),
+      $container->get('current_user')
     );
   }
+
+
+  /**
+   * Responds to GET requests.
+   *
+   * Returns a list of menu items for specified menu name.
+   *
+   * @param string|null $menu_name
+   *   The menu name.
+   *
+   * @return \Drupal\rest\ResourceResponse
+   *   The response containing a list of bundle names.
+   * 
+   * @throws \Symfony\Component\HttpKernel\Exception\HttpException
+   *   Throws exception expected.
+   * 
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   */
+
 
   /**
    * {@inheritdoc}
    */
+
   public function get() {
     \Drupal::service('page_cache_kill_switch')->trigger();
-    print_r("hola");
-    return \Drupal::service('adf_menu.menu_rest_services')
-      ->get();
+    print_r("hola: loss");
+
+    if (!$this->currentUser->hasPermission('access content')) {
+      throw new AccessDeniedHttpException();
+    }
+
+
+    $entities = \Drupal::entityTypeManager()
+      ->getStorage('node')
+      ->loadMultiple();
+    foreach ($entities as $entity) {
+      $result[$entity->id()] = $entity->title->value;
+    }
+  
+    //return \Drupal::service('adf_menu.menu_rest_services')
+     // ->get();
+       return new ResourceResponse(json_encode($result));
+
+
+
+
+/*$menu_name='main';
+
+$menu_tree = \Drupal::menuTree();
+  // Build the typical default set of menu tree parameters.
+  $parameters = $menu_tree->getCurrentRouteMenuTreeParameters($menu_name);
+  // Load the tree based on this set of parameters.
+  $tree = $menu_tree->load($menu_name, $parameters);
+
+
+      // Transform the tree using the manipulators you want.
+      $manipulators = [
+        // Only show links that are accessible for the current user.
+        ['callable' => 'menu.default_tree_manipulators:checkAccess'],
+        // Use the default sorting of menu links.
+        ['callable' => 'menu.default_tree_manipulators:generateIndexAndSort'],
+      ];
+      $tree = $menu_tree ->transform($tree, $manipulators);
+
+
+      // Finally, build a renderable array from the transformed tree.
+      $menu = $menu_tree->build($tree);
+
+
+    echo print_r($menu['#items'],true);
+    */ 
   }
+
+
+
 
     
 }
