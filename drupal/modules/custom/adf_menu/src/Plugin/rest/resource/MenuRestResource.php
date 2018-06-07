@@ -108,9 +108,9 @@ class MenuRestResource extends ResourceBase {
       $result[$entity->id()] = $entity->title->value;
     }
   
-    //return \Drupal::service('adf_menu.menu_rest_services')
-     // ->get();
-       return new ResourceResponse(json_encode($result));
+    return \Drupal::service('adf_menu.menu_rest_services')
+     ->get();
+
 
    }
 
