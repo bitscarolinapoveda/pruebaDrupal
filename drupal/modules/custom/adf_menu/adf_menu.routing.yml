@@ -1,7 +1,10 @@
-adf_menu.content: 
-  path: '/admin/config/menu_link_attributes/config'
-  #defaults: 
-   #controller: '\Drupal\adf_menu\Controller\adf_menu::content'
-  #title: 'Hola Titulo'
+
+adf_menu.adf_menu_Settings_Form:
+  path: '/admin/config/services/adf_menuSettings'
+  defaults: 
+    _form: '\Drupal\adf_menu\Form\adf_menuSettingsForm'
+    _title: 'Rest Elejir Menu'
   requirements:
-    _permission: 'administer menu link attributes'
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE

@@ -13,8 +13,6 @@ use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Psr\Log\LoggerInterface;
-use Symfony\Component\HttpFoundation\Response;
-
 
 /**
  * Create URL for use rest services.
@@ -165,7 +163,7 @@ class MenuRestResource extends ResourceBase {
       $menu = $menu_tree_detail->build($tree);
 
       // Get the setting to check which parameter should be part of response.
-     // $menuSettings = \Drupal::config('rest_menu_detail.menurestsettings')->get('select_parameters');
+      $menuSettings = \Drupal::config('adf_menu.adf_menuSettings')->get('select_parameters');
 
       $menuSettings = $menuSettings ? $menuSettings : [];
 
