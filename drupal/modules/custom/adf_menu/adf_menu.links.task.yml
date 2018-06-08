@@ -1,7 +1,0 @@
-menu.admin:
-  title: 'Adf menu'
-  #parent: system.admin_structure_menu
-  route_name: adf_menu.content
-  base_route: entity.menu.collection
-  
-  
