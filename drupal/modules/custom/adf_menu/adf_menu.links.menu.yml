@@ -4,5 +4,3 @@ adf_menu.adf_menu_Settings_Form:
   description: 'Podra elejir un menu para que se despliegue como un servicio rest'
   parent: system.admin_config_services
   weight: 100
-  
-  
