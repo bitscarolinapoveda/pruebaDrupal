@@ -8,7 +8,6 @@ use Drupal\rest\ResourceResponse;
 use Drupal\Core\Menu\MenuTreeParameters;
 use Drupal\Core\Url;
 use Drupal\Core\Session\AccountProxyInterface;
-use Drupal\Core\Menu\MenuLinkInterface;
 use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -21,7 +20,7 @@ use Psr\Log\LoggerInterface;
  *   id = "adf_menu",
  *   label = @Translation("adf_menu"),
  *   uri_paths = {
- *     "canonical" = "adf_menu/{main}"
+ *     "canonical" = "adf_menu/{productos}"
  *   }
  * )
  */
@@ -46,7 +45,7 @@ class MenuRestResource extends ResourceBase {
    *   A current user instance.
    */
 
-   /**
+  /**
    * A list of menu items.
    *
    * @var array
@@ -67,6 +66,9 @@ class MenuRestResource extends ResourceBase {
    */
   protected $currentUser;
 
+  /**
+   * Implement _construct().
+   */
   public function __construct(array $configuration,
                               $plugin_id,
                               $plugin_definition,
@@ -75,9 +77,9 @@ class MenuRestResource extends ResourceBase {
                               EntityManagerInterface $entity_manager,
                               AccountProxyInterface $current_user) {
     parent::__construct($configuration, $plugin_id, $plugin_definition, $serializer_formats, $logger);
-    
+
     $this->entityManager = $entity_manager;
-    $this->currentUser = $current_user;                            
+    $this->currentUser = $current_user;
   }
 
   /**
@@ -95,7 +97,6 @@ class MenuRestResource extends ResourceBase {
     );
   }
 
-
   /**
    * Responds to GET requests.
    *
@@ -106,30 +107,17 @@ class MenuRestResource extends ResourceBase {
    *
    * @return \Drupal\rest\ResourceResponse
    *   The response containing a list of bundle names.
-   * 
+   *
    * @throws \Symfony\Component\HttpKernel\Exception\HttpException
    *   Throws exception expected.
-   * 
+   *
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    */
-
 
   /**
    * {@inheritdoc}
    */
-
-  /*public function get() {
-   Drupal::service('page_cache_kill_switch')->trigger();
-    print_r("hola: loss");
-    
-    return \Drupal::service('adf_menu.menu_rest_services')
-      ->get();
-       return new ResourceResponse(json_encode($result));
-
- }*/
-
-      
- public function get($menuName = NULL) {
+  public function get($menuName = NULL) {
 
     if (!$this->currentUser->hasPermission('access content')) {
       throw new AccessDeniedHttpException();
@@ -137,39 +125,30 @@ class MenuRestResource extends ResourceBase {
 
     if ($menuName) {
 
-      // Create the parameters.
       $parameters = new MenuTreeParameters();
       $parameters->onlyEnabledLinks();
 
-      // Load the tree based on this set of parameters.
       $menu_tree_detail = \Drupal::menuTree();
       $tree = $menu_tree_detail->load($menuName, $parameters);
 
-      // Return if the menu does not exist or has no entries.
       if (empty($tree)) {
         return new ResourceResponse($tree);
       }
 
-      // Transform the tree using the manipulators you want.
       $manipulators = [
-        // Only show links that are accessible for the current user.
         ['callable' => 'menu.default_tree_manipulators:checkAccess'],
-        // Use the default sorting of menu links.
         ['callable' => 'menu.default_tree_manipulators:generateIndexAndSort'],
       ];
       $tree = $menu_tree_detail->transform($tree, $manipulators);
 
-      // Finally, build a renderable array from the transformed tree.
       $menu = $menu_tree_detail->build($tree);
 
-      // Get the setting to check which parameter should be part of response.
-      $menuSettings = \Drupal::config('adf_menu.adf_menuSettings')->get('select_parameters');
+      $adf_menuSettings = \Drupal::config('adf_menu.adf_adf_menuSettings')->get('select_parameters');
 
-      $menuSettings = $menuSettings ? $menuSettings : [];
+      $adf_menuSettings = $adf_menuSettings ? $adf_menuSettings : [];
 
-      $this->menuTreeDetails($menuSettings, $menu['#items'], $this->menuDetails);
+      $this->menuTreeDetails($adf_menuSettings, $menu['#items'], $this->menuDetails);
 
-      // Return response.
       $response = new ResourceResponse(array_values($this->menuDetails));
       $response->addCacheableDependency($this->menuDetails);
 
@@ -181,20 +160,18 @@ class MenuRestResource extends ResourceBase {
   /**
    * Generate the menu tree we can use in JSON.
    *
-   * @param array $menuSettings
+   * @param array $adf_menuSettings
    *   Menu COnfiguration as per required parameter in response.
    * @param array $transformed_tree
    *   The menu tree.
    * @param array $menu_tree
    *   The already created items.
    */
-
-  protected function menuTreeDetails(array $menuSettings, array $transformed_tree, array &$menu_tree = []) {
+  protected function menuTreeDetails(array $adf_menuSettings, array $transformed_tree, array &$menu_tree = []) {
     $order = 0;
     foreach ($transformed_tree as $menu_item) {
       $menu_link = $menu_item['original_link'];
-      /* @var $url \Drupal\Core\Url */
-     $url = $menu_item['url'];
+      $url = $menu_item['url'];
 
       $external = FALSE;
       $uuid = '';
@@ -224,40 +201,36 @@ class MenuRestResource extends ResourceBase {
         }
       }
 
-     // $alias = \Drupal::service('path.alias_manager')->getAliasByPath("/$uri");
-
       $menu_tree[$order]['title'] = $menu_link->getTitle();
       $menu_tree[$order]['uri'] = $uri;
-      if (isset($menuSettings['alias']) && $menuSettings['alias']) {
+      if (isset($adf_menuSettings['alias']) && $adf_menuSettings['alias']) {
         $menu_tree[$order]['alias'] = ltrim($alias, '/');
       }
-      if (isset($menuSettings['external']) && $menuSettings['external']) {
+      if (isset($adf_menuSettings['external']) && $adf_menuSettings['external']) {
         $menu_tree[$order]['external'] = $external;
       }
-      if (isset($menuSettings['absolute_url']) && $menuSettings['absolute_url']) {
+      if (isset($adf_menuSettings['absolute_url']) && $adf_menuSettings['absolute_url']) {
         $menu_tree[$order]['absolute'] = $absolute;
       }
-      if (isset($menuSettings['weight']) && $menuSettings['weight']) {
+      if (isset($adf_menuSettings['weight']) && $adf_menuSettings['weight']) {
         $menu_tree[$order]['weight'] = $menu_link->getWeight();
       }
-      if (isset($menuSettings['expanded']) && $menuSettings['expanded']) {
+      if (isset($adf_menuSettings['expanded']) && $adf_menuSettings['expanded']) {
         $menu_tree[$order]['expanded'] = $menu_link->isExpanded();
       }
-      if (isset($menuSettings['enabled']) && $menuSettings['enabled']) {
+      if (isset($adf_menuSettings['enabled']) && $adf_menuSettings['enabled']) {
         $menu_tree[$order]['enabled'] = $menu_link->isEnabled();
       }
-      if (isset($menuSettings['uuid']) && $menuSettings['uuid']) {
+      if (isset($adf_menuSettings['uuid']) && $adf_menuSettings['uuid']) {
         $menu_tree[$order]['uuid'] = $uuid;
       }
 
       if (!empty($menu_item['below'])) {
         $menu_tree[$order]['below'] = [];
-        $this->menuTreeDetails($menuSettings, $menu_item['below'], $menu_tree[$order]['below']);
+        $this->menuTreeDetails($adf_menuSettings, $menu_item['below'], $menu_tree[$order]['below']);
       }
       $order++;
     }
-  } 
-  
+  }
 
-    
 }
