@@ -6,7 +6,7 @@ use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
- * Class adf_menuSettingsForm.
+ * Class AdfMenuSettingsForm.
  */
 class AdfMenuSettingsForm extends ConfigFormBase {
 
@@ -54,7 +54,7 @@ class AdfMenuSettingsForm extends ConfigFormBase {
   public function submitForm(array &$form, FormStateInterface $form_state) {
     parent::submitForm($form, $form_state);
 
-    $this->config('adf_menu.adf_menuSettings')
+    $this->config('adf_menu.AdfMenuSettingsForm')
       ->set('select_parameters', $form_state->getValue('select_parameters'))
       ->save();
   }
