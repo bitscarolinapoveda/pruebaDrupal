@@ -2,7 +2,7 @@
 adf_menu.adf_menu_Settings_Form:
   path: '/admin/config/services/adf_menuSettings'
   defaults: 
-    _form: '\Drupal\adf_menu\Form\adf_menuSettingsForm'
+    _form: '\Drupal\adf_menu\Form\AdfMenuSettingsForm'
     _title: 'Rest para elejir Menu'
   requirements:
     _permission: 'access administration pages'
