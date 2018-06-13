@@ -1,4 +1,4 @@
-adf_menu.adf_menu_Settings_Form:
+adf_menu.Adf_Menu_Settings_Form:
   title: 'Rest para elejir Menu'
   route_name: adf_menu.Adf_Menu_Settings_Form
   description: 'Podra elejir un menu para que se despliegue como un servicio rest'
