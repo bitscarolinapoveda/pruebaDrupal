@@ -1,4 +1,4 @@
-adf_menu.Adf_Menu_Settings_Form:
+adf_menu.adf_menu_settings_form:
   path: '/admin/config/services/adf_menuSettings'
   defaults: 
     _form: '\Drupal\adf_menu\Form\AdfMenuSettingsForm'
