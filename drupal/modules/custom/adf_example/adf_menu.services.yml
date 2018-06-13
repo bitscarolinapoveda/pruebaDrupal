@@ -1,5 +1,0 @@
-services:
-  
-  adf_menu.menu_rest_services:
-    class: Drupal\adf_menu\services\MenuRestServices
-    arguments: []
