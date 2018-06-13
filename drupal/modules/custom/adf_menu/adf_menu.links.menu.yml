@@ -1,6 +1,0 @@
-adf_menu.adf_menu_settings_form:
-  title: 'Rest para elejir Menu'
-  route_name: adf_menu.adf_menu_settings_form
-  description: 'Podra elejir un menu para que se despliegue como un servicio rest'
-  parent: system.admin_config_services
-  weight: 100
