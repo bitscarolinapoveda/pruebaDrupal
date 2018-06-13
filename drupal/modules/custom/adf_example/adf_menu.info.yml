@@ -1,0 +1,7 @@
+name: adf_example
+type: module
+description: modulo con el cual saldra un menu de 3 niveles
+core: 8.x
+dependencies:
+  - restui
+                    
