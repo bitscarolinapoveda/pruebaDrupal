@@ -23,7 +23,7 @@ class AdfMenuSettingsForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function getFormId() {
-    return 'Adf_Menu_Settings_Form';
+    return 'adf_menu_settings_form';
   }
 
   /**
