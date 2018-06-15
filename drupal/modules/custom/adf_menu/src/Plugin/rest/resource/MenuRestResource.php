@@ -21,7 +21,7 @@ use Psr\Log\LoggerInterface;
  *   id = "adf_menu",
  *   label = @Translation("adf_menu"),
  *   uri_paths = {
- *     "canonical" = "adf_menu/{productos}"
+ *     "canonical" = "adf_menu/{main}"
  *   }
  * )
  */
@@ -118,7 +118,7 @@ class MenuRestResource extends ResourceBase {
   /**
    * {@inheritdoc}
    */
-  public function get($menuName = NULL) {
+  public function get($menuName) {
 
     if (!$this->currentUser->hasPermission('access content')) {
       throw new AccessDeniedHttpException();
@@ -155,7 +155,8 @@ class MenuRestResource extends ResourceBase {
 
       return $response;
     }
-    throw new HttpException(t("Menu name is required parameter"));
+    return new ResourceResponse('dfghjkl');
+    //throw new HttpException(t("Menu name is required parameter"));
   }
 
   /**
