@@ -155,8 +155,8 @@ class MenuRestResource extends ResourceBase {
 
       return $response;
     }
-    return new ResourceResponse('dfghjkl');
-    //throw new HttpException(t("Menu name is required parameter"));
+   
+    throw new HttpException(t("Menu name is required parameter"));
   }
 
   /**
