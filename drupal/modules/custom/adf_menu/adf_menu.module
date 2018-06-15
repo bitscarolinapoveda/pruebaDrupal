@@ -41,7 +41,7 @@ function block_submit($form, FormStateInterface $form_state) {
 
     $fid = $form_state->getValue('details')[$key]['image'][0]
       ->get('fid');
-   // \Drupal::logger('my_module')->error(print_r($this->setFileAsPermanent($fid), TRUE));
+    \Drupal::logger('my_module')->error(print_r($this->setFileAsPermanent($fid), TRUE));
 
     if ($fid) {
       $this->setFileAsPermanent($fid);
