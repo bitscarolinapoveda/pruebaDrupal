@@ -1,0 +1,15 @@
+footer .privacy .row .col-lg-12 {
+  background-color: #003451;
+  color: white;
+  text-align: center;
+  font-size: 75%;
+  height: 30px; }
+  footer .privacy .row .col-lg-12 .politics::after {
+    content: ".";
+    margin: 24px; }
+  footer .privacy .row .col-lg-12 .politics-site {
+    margin-top: 7px; }
+  @media screen and (min-width: 1200px) {
+    footer .privacy .row .col-lg-12 {
+      font-size: 105%;
+      height: 44px; } }
