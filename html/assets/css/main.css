@@ -147,14 +147,6 @@ header nav {
       header nav .menuToggle .list-menu .language {
         list-style: none; }
 
-.test {
-  height: 400%;
-  background: brown; }
-
-.tes {
-  background: #0c7ffb;
-  height: 200px; }
-
 .logo {
   position: absolute; }
   .logo .container-logo {
@@ -168,3 +160,19 @@ header nav {
         padding-top: 20%; } }
     .logo .container-logo .image-url {
       width: 100%; }
+
+footer .privacy .row .col-lg-12 {
+  background-color: #003451;
+  color: white;
+  text-align: center;
+  font-size: 75%;
+  height: 30px; }
+  footer .privacy .row .col-lg-12 .politics::after {
+    content: ".";
+    margin: 24px; }
+  footer .privacy .row .col-lg-12 .politics-site {
+    margin-top: 7px; }
+  @media screen and (min-width: 1200px) {
+    footer .privacy .row .col-lg-12 {
+      font-size: 105%;
+      height: 44px; } }
