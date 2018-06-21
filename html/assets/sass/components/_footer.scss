@@ -1,0 +1,254 @@
+footer{
+    font-family: open_sanslight;
+    @include breakpoint(desktop) {
+        width: 98.9%;
+    }
+    .container-elements{
+        background-color: #004660;
+        @include breakpoint(desktop) {
+            width: 101.1%;
+            display: flex;
+        }
+    }
+    .location{
+        color: #FFFFFF;
+        text-align: center;
+        hr{
+            width: 50%;
+            background-color: #dfdfdf;
+            margin-left: 28%;
+            @include breakpoint(desktop) {
+                display: none;
+            }
+        }
+        .row{
+            .site{
+                display: none;
+                @include breakpoint(desktop) {            
+                    display: block;
+                }
+            }
+            .col-lg-6{
+                h6{
+                    margin-left: 7%;
+                    margin-top: 33px;
+                }
+                ul{
+                    list-style: none;
+                    margin-right: 4%;
+                    .office{
+                        margin-top: 10px;
+                        @include breakpoint(desktop) {            
+                            width: 120%;
+                        } 
+                    }
+                    .office::before{
+                        content: "";
+                        background-image: url("../icon/placeholders.png");
+                        padding-left: 16px;
+                        padding-top: 2px;
+                        @include breakpoint(desktop) {
+                            background-image: url("../icon/placeholders-green.png");
+                        }
+                    }
+                    li{
+                        font-size: 75%;
+                        a{
+                            color: #dfdfdf;
+                            margin-left: 1%;
+                            @include breakpoint(desktop) {
+                                color: #a6cf24;
+                            }
+                        }
+                        @include breakpoint(desktop) {            
+                            margin-right: 25%;
+                        }
+                    }
+                }
+                .addres-phone{
+                    @include breakpoint(desktop) { 
+                        margin-right: 37px;
+                    }
+                    .addres{
+                        width: 108%;
+                    }
+                }
+            }
+        }
+        @include breakpoint(desktop) {
+            margin-left: 11%;
+        }
+    }
+    .location::before{
+        content: "";
+        @include breakpoint(desktop) {
+            border-left: 1px solid #dfdfdf;
+            position: absolute;
+            height: 20%;
+            margin-top: 2.9%;
+            margin-left: -169px;
+        }
+    }
+    .newsletter{
+        // display: none;
+        color: #FFFFFF;
+        text-align: center;
+        hr{
+            width: 50%;
+            background-color: #dfdfdf;
+            margin-left: 28%;
+            @include breakpoint(desktop) {
+                display: none;
+            }
+        }
+        .row{
+            .col-lg-12{
+                a{
+                    margin-left: 3%;
+                }
+                h6{
+                    margin-left: 7%;
+                    @include breakpoint(desktop) {
+                        margin-top: 32px;
+                    }
+                }
+                ul{
+                    list-style: none;
+                    margin-right: 4%;
+                    li{
+                        font-size: 75%;
+                        @include breakpoint(desktop) {
+                            width: 122%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .newsletter::before{
+        content: "";
+        @include breakpoint(desktop) {
+            border-left: 1px solid #dfdfdf;
+            position: absolute;
+            height: 20%;
+            margin-top: 2.9%;
+            margin-left: -63px;
+        }
+    }
+    .contac{
+        color: #FFFFFF;
+        text-align: center;
+        hr{
+            width: 50%;
+            background-color: #dfdfdf;
+            margin-left: 28%;
+            @include breakpoint(desktop) {
+                display: none;
+            }
+        }
+        .row{
+            .col-lg-12{
+                a{
+                    color: #FFFFFF;
+                }
+                .icon-social{
+                    margin-top: -6px;
+                    margin-left: 28px;
+                    .fa-twitter, .fa-facebook-f, .fa-google-plus-g{
+                        margin-left: 19px;
+                    }
+                }
+                .icon:hover{
+                    color: #a6cf24;
+                }
+                h6{
+                    margin-left: 7%;
+                }
+                ul{
+                    .fa-li{
+                        margin-left: 32%;
+                        @include breakpoint(desktop) {
+                            margin-left: 0;
+                        }
+                    }
+                    li{
+                        font-size: 75%;
+                    }
+                    margin-left: 12%;
+                    @include breakpoint(desktop) {
+                        margin-left: 29%;
+                    }
+                }
+            }
+        }
+        @include breakpoint(desktop) {
+            margin-top: 32px;
+            margin-left: 3%;
+        }
+    }
+    .contac::before{
+        content: "";
+        @include breakpoint(desktop) {
+            border-left: 1px solid #dfdfdf;
+            position: absolute;
+            height: 20%;
+            margin-top: 0.6%;
+            margin-left: -65px;
+        }
+    }
+    .logo{
+        hr{
+            width: 50%;
+            background-color: #dfdfdf;
+            margin-left: 28%;
+            @include breakpoint(desktop) {
+                display: none;
+            }
+        }
+        color: #FFFFFF;
+        text-align: center;
+        .row{
+            .col-lg-12{
+                a{
+                    margin-left: 3%;
+                }
+                h6{
+                    margin-left: 8%;
+                    font-size: 75%;
+                    margin-bottom: 25px;
+                    @include breakpoint(desktop) {
+                        margin-top: 6px;
+                        width: 97%;
+                        margin-left: 14%;
+                    }
+                }
+                ul{
+                    list-style: none;
+                    margin-right: 4%;
+                }
+                img{
+                    display: none;
+                    @include breakpoint(desktop) {
+                        margin-left: 15%;
+                        display: block;
+                    }
+                }
+            }
+        }
+        @include breakpoint(desktop) {
+            margin-top: 32px;
+            margin-left: 3%;
+            width: 11%;
+        }
+    }
+    .logo::before{
+        content: "";
+        @include breakpoint(desktop) {
+            border-left: 1px solid #dfdfdf;
+            position: absolute;
+            height: 20%;
+            margin-top: 0.6%;
+            margin-left: -71px;
+        }
+    }
+}
