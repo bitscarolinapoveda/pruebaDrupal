@@ -3,19 +3,23 @@ footer{
         .row{
             .col-lg-12{
                 background-color: #003451;
-                color:white;
+                color:#FFFFFF;
                 text-align: center;
                 font-size: 75%;
                 height: 30px;
                 .politics::after{
                     content: ".";
-                    margin: 24px;
+                    margin: 10px;
+                }
+                .sites::after{
+                    content: ".";
+                    margin: 10px;
                 }
                 .politics-site{
                     margin-top: 7px;
                 }
-                @media screen and (min-width: 1200px) {
-                    font-size: 105%;
+                @include breakpoint(desktop) {
+                    font-size: 17px;
                     height: 44px;
                 }
             }
