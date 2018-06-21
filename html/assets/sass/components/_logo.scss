@@ -1,0 +1,16 @@
+.logo {
+    position: absolute;
+    .container-logo{
+        width: 100%;
+        padding-left: 15%;
+        padding-top: 5%;
+        position: relative;
+        z-index: 100;
+        @include breakpoint(tablet) {
+            padding-top: 20%;
+        }
+        .image-url{
+            width: 100%;
+        }
+    }
+}

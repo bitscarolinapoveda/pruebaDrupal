@@ -1,8 +1,10 @@
 
 //base
 @import "base/globales";
-
+@import "base/_mixin";
 
 //components
 
 @import "components/_footer";
+@import "components/_menu";
+@import "components/_logo";
