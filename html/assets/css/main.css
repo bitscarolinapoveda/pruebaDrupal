@@ -29,40 +29,42 @@ footer {
       @media (min-width: 1025px) {
         footer .location .row .site {
           display: block; } }
-    footer .location .row .col-lg-6 h6 {
+    footer .location .row .random {
+      display: none; }
+    footer .location .row .col-lg-4 h6 {
       margin-left: 7%;
       margin-top: 33px; }
-    footer .location .row .col-lg-6 ul {
+    footer .location .row .col-lg-4 ul {
       list-style: none;
       margin-right: 4%; }
-      footer .location .row .col-lg-6 ul .office {
+      footer .location .row .col-lg-4 ul .office {
         margin-top: 10px; }
         @media (min-width: 1025px) {
-          footer .location .row .col-lg-6 ul .office {
+          footer .location .row .col-lg-4 ul .office {
             width: 120%; } }
-      footer .location .row .col-lg-6 ul .office::before {
+      footer .location .row .col-lg-4 ul .office::before {
         content: "";
         background-image: url("../icon/placeholders.png");
         padding-left: 16px;
         padding-top: 2px; }
         @media (min-width: 1025px) {
-          footer .location .row .col-lg-6 ul .office::before {
+          footer .location .row .col-lg-4 ul .office::before {
             background-image: url("../icon/placeholders-green.png"); } }
-      footer .location .row .col-lg-6 ul li {
+      footer .location .row .col-lg-4 ul li {
         font-size: 75%; }
-        footer .location .row .col-lg-6 ul li a {
+        footer .location .row .col-lg-4 ul li a {
           color: #dfdfdf;
           margin-left: 1%; }
           @media (min-width: 1025px) {
-            footer .location .row .col-lg-6 ul li a {
+            footer .location .row .col-lg-4 ul li a {
               color: #a6cf24; } }
         @media (min-width: 1025px) {
-          footer .location .row .col-lg-6 ul li {
+          footer .location .row .col-lg-4 ul li {
             margin-right: 25%; } }
     @media (min-width: 1025px) {
-      footer .location .row .col-lg-6 .addres-phone {
+      footer .location .row .col-lg-4 .addres-phone {
         margin-right: 37px; } }
-    footer .location .row .col-lg-6 .addres-phone .addres {
+    footer .location .row .col-lg-4 .addres-phone .addres {
       width: 108%; }
     @media (min-width: 1025px) {
       footer .location {
@@ -73,8 +75,8 @@ footer {
       footer .location::before {
         border-left: 1px solid #dfdfdf;
         position: absolute;
-        height: 20%;
-        margin-top: 2.9%;
+        height: 81px;
+        margin-top: 37px;
         margin-left: -169px; } }
   footer .newsletter {
     color: #FFFFFF;
@@ -107,8 +109,8 @@ footer {
       footer .newsletter::before {
         border-left: 1px solid #dfdfdf;
         position: absolute;
-        height: 20%;
-        margin-top: 2.9%;
+        height: 81px;
+        margin-top: 37px;
         margin-left: -63px; } }
   footer .contac {
     color: #FFFFFF;
@@ -122,6 +124,8 @@ footer {
           display: none; } }
     footer .contac .row .col-lg-12 a {
       color: #FFFFFF; }
+    footer .contac .row .col-lg-12 a:hover {
+      color: #a6cf24; }
     footer .contac .row .col-lg-12 .icon-social {
       margin-top: -6px;
       margin-left: 28px; }
@@ -153,8 +157,8 @@ footer {
       footer .contac::before {
         border-left: 1px solid #dfdfdf;
         position: absolute;
-        height: 20%;
-        margin-top: 0.6%;
+        height: 81px;
+        margin-top: 6px;
         margin-left: -65px; } }
   footer .logo {
     color: #FFFFFF;
@@ -197,8 +201,8 @@ footer {
       footer .logo::before {
         border-left: 1px solid #dfdfdf;
         position: absolute;
-        height: 20%;
-        margin-top: 0.6%;
+        height: 81px;
+        margin-top: 6px;
         margin-left: -71px; } }
 
 header .inverse-color {

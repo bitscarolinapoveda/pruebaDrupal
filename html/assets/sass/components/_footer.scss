@@ -28,7 +28,10 @@ footer{
                     display: block;
                 }
             }
-            .col-lg-6{
+            .random{
+                display: none;
+            }
+            .col-lg-4{
                 h6{
                     margin-left: 7%;
                     margin-top: 33px;
@@ -84,8 +87,8 @@ footer{
         @include breakpoint(desktop) {
             border-left: 1px solid #dfdfdf;
             position: absolute;
-            height: 20%;
-            margin-top: 2.9%;
+            height: 81px;
+            margin-top: 37px;
             margin-left: -169px;
         }
     }
@@ -130,8 +133,8 @@ footer{
         @include breakpoint(desktop) {
             border-left: 1px solid #dfdfdf;
             position: absolute;
-            height: 20%;
-            margin-top: 2.9%;
+            height: 81px;
+            margin-top: 37px;
             margin-left: -63px;
         }
     }
@@ -150,6 +153,9 @@ footer{
             .col-lg-12{
                 a{
                     color: #FFFFFF;
+                }
+                a:hover{
+                    color: #a6cf24;
                 }
                 .icon-social{
                     margin-top: -6px;
@@ -191,8 +197,8 @@ footer{
         @include breakpoint(desktop) {
             border-left: 1px solid #dfdfdf;
             position: absolute;
-            height: 20%;
-            margin-top: 0.6%;
+            height: 81px;
+            margin-top: 6px;;
             margin-left: -65px;
         }
     }
@@ -246,8 +252,8 @@ footer{
         @include breakpoint(desktop) {
             border-left: 1px solid #dfdfdf;
             position: absolute;
-            height: 20%;
-            margin-top: 0.6%;
+            height: 81px;
+            margin-top: 6px;
             margin-left: -71px;
         }
     }
