@@ -3,8 +3,8 @@ header{
         position: absolute;
         .container-logo{
             width: 100%;
-            padding-left: 15%;
-            padding-top: 5%;
+            padding-left: 24%;
+            padding-top: 6%;
             position: relative;
             z-index: 100;
             @include breakpoint(tablet) {
@@ -12,6 +12,11 @@ header{
             }
             .image-url{
                 width: 100%;
+                img{
+                    width: 95%;
+                    padding-left: 4%;
+                    padding-top: 6%;
+                }
             }
         }
     }

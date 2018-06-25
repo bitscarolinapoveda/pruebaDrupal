@@ -24,10 +24,12 @@ header{
         .menuToggle {
             display: block;
             position: relative;
-            top: 5px;
             width: 100%;
             z-index: 1;
-          
+            border-bottom: 1px solid #ffffff;
+            @include breakpoint(desktop) {
+                border-bottom: initial
+            }
 
             .Botton {
                 display: block;
@@ -45,7 +47,7 @@ header{
 
             .Botton:checked~.lines {
                 opacity: 1;
-                transform: rotate(45deg) translate(0px, 0px);
+                transform: rotate(45deg) translate(1px, 0px);
                 background: #0c7ffb;
             }
 
@@ -55,7 +57,7 @@ header{
             }
             .Botton:checked~.lines:nth-last-child(2) {
                 opacity: 1;
-                transform: rotate(-45deg) translate(-1px, 1px);
+                transform: rotate(-45deg) translate(1px, 1px);
             }
 
             .Botton:checked~.list-menu{
@@ -66,7 +68,7 @@ header{
                 display: block;
                 width: 33px;
                 height: 4px;
-                margin-bottom: 5px;
+                margin-bottom: 6px;
                 margin-left: 85%;
                 position: relative;
                 background: #ffffff;
