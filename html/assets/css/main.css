@@ -9,7 +9,7 @@ footer {
     footer {
       width: 98.9%; } }
   footer .container-elements {
-    background-color: #004660; }
+    background-color: #2e516a; }
     @media (min-width: 1025px) {
       footer .container-elements {
         width: 101.1%;
@@ -24,60 +24,66 @@ footer {
       @media (min-width: 1025px) {
         footer .location hr {
           display: none; } }
+    @media (min-width: 1025px) {
+      footer .location .row {
+        margin-left: 196px; } }
     footer .location .row .site {
       display: none; }
       @media (min-width: 1025px) {
         footer .location .row .site {
           display: block; } }
-    footer .location .row .random {
-      display: none; }
-    footer .location .row .col-lg-4 h6 {
-      margin-left: 7%;
+    footer .location .row .col-lg h6 {
+      margin-left: 25px;
       margin-top: 33px; }
-    footer .location .row .col-lg-4 ul {
+      @media (min-width: 1025px) {
+        footer .location .row .col-lg h6 {
+          font-size: 12px;
+          margin-right: 9px;
+          margin-left: 0; } }
+    footer .location .row .col-lg ul {
       list-style: none;
       margin-right: 4%; }
-      footer .location .row .col-lg-4 ul .office {
+      footer .location .row .col-lg ul .office {
         margin-top: 10px; }
         @media (min-width: 1025px) {
-          footer .location .row .col-lg-4 ul .office {
+          footer .location .row .col-lg ul .office {
             width: 120%; } }
-      footer .location .row .col-lg-4 ul .office::before {
+      footer .location .row .col-lg ul .office::before {
         content: "";
         background-image: url("../icon/placeholders.png");
         padding-left: 16px;
         padding-top: 2px; }
-        @media (min-width: 1025px) {
-          footer .location .row .col-lg-4 ul .office::before {
-            background-image: url("../icon/placeholders-green.png"); } }
-      footer .location .row .col-lg-4 ul li {
-        font-size: 75%; }
-        footer .location .row .col-lg-4 ul li a {
-          color: #dfdfdf;
+      footer .location .row .col-lg ul .office:hover::before {
+        background-image: url("../icon/placeholders-green.png"); }
+      footer .location .row .col-lg ul li {
+        color: #c1cbd3;
+        font-size: 12px; }
+        footer .location .row .col-lg ul li a {
+          color: #c1cbd3;
           margin-left: 1%; }
-          @media (min-width: 1025px) {
-            footer .location .row .col-lg-4 ul li a {
-              color: #a6cf24; } }
+        footer .location .row .col-lg ul li a:hover {
+          color: #a6cf24; }
         @media (min-width: 1025px) {
-          footer .location .row .col-lg-4 ul li {
+          footer .location .row .col-lg ul li {
             margin-right: 25%; } }
     @media (min-width: 1025px) {
-      footer .location .row .col-lg-4 .addres-phone {
+      footer .location .row .col-lg .addres-phone {
         margin-right: 37px; } }
-    footer .location .row .col-lg-4 .addres-phone .addres {
-      width: 108%; }
+    footer .location .row .col-lg .addres-phone .addres {
+      width: 122px; }
     @media (min-width: 1025px) {
       footer .location {
-        margin-left: 11%; } }
+        margin-left: 3%;
+        width: 41%; } }
   footer .location::before {
     content: ""; }
     @media (min-width: 1025px) {
       footer .location::before {
-        border-left: 1px solid #dfdfdf;
+        border-left: 1px solid #c1cbd3;
         position: absolute;
         height: 81px;
         margin-top: 37px;
-        margin-left: -169px; } }
+        margin-left: -70px; } }
   footer .newsletter {
     color: #FFFFFF;
     text-align: center; }
@@ -94,20 +100,24 @@ footer {
       margin-left: 7%; }
       @media (min-width: 1025px) {
         footer .newsletter .row .col-lg-12 h6 {
-          margin-top: 32px; } }
+          margin-top: 32px;
+          font-size: 12px;
+          margin-left: 0; } }
     footer .newsletter .row .col-lg-12 ul {
       list-style: none;
       margin-right: 4%; }
       footer .newsletter .row .col-lg-12 ul li {
+        color: #c1cbd3;
         font-size: 75%; }
         @media (min-width: 1025px) {
           footer .newsletter .row .col-lg-12 ul li {
-            width: 122%; } }
+            width: 122%;
+            font-size: 11px; } }
   footer .newsletter::before {
     content: ""; }
     @media (min-width: 1025px) {
       footer .newsletter::before {
-        border-left: 1px solid #dfdfdf;
+        border-left: 1px solid #c1cbd3;
         position: absolute;
         height: 81px;
         margin-top: 37px;
@@ -123,7 +133,7 @@ footer {
         footer .contac hr {
           display: none; } }
     footer .contac .row .col-lg-12 a {
-      color: #FFFFFF; }
+      color: #c1cbd3; }
     footer .contac .row .col-lg-12 a:hover {
       color: #a6cf24; }
     footer .contac .row .col-lg-12 .icon-social {
@@ -135,6 +145,11 @@ footer {
       color: #a6cf24; }
     footer .contac .row .col-lg-12 h6 {
       margin-left: 7%; }
+      @media (min-width: 1025px) {
+        footer .contac .row .col-lg-12 h6 {
+          font-size: 12px;
+          margin-left: 0;
+          margin-right: 12px; } }
     footer .contac .row .col-lg-12 ul {
       margin-left: 12%; }
       footer .contac .row .col-lg-12 ul .fa-li {
@@ -144,6 +159,9 @@ footer {
             margin-left: 0; } }
       footer .contac .row .col-lg-12 ul li {
         font-size: 75%; }
+        @media (min-width: 1025px) {
+          footer .contac .row .col-lg-12 ul li {
+            font-size: 11px; } }
       @media (min-width: 1025px) {
         footer .contac .row .col-lg-12 ul {
           margin-left: 29%; } }
@@ -155,13 +173,12 @@ footer {
     content: ""; }
     @media (min-width: 1025px) {
       footer .contac::before {
-        border-left: 1px solid #dfdfdf;
+        border-left: 1px solid #c1cbd3;
         position: absolute;
         height: 81px;
         margin-top: 6px;
         margin-left: -65px; } }
   footer .logo {
-    color: #FFFFFF;
     text-align: center; }
     footer .logo hr {
       width: 50%;
@@ -173,6 +190,7 @@ footer {
     footer .logo .row .col-lg-12 a {
       margin-left: 3%; }
     footer .logo .row .col-lg-12 h6 {
+      color: #c1cbd3;
       margin-left: 8%;
       font-size: 75%;
       margin-bottom: 25px; }
@@ -180,10 +198,8 @@ footer {
         footer .logo .row .col-lg-12 h6 {
           margin-top: 6px;
           width: 97%;
+          font-size: 11px;
           margin-left: 14%; } }
-    footer .logo .row .col-lg-12 ul {
-      list-style: none;
-      margin-right: 4%; }
     footer .logo .row .col-lg-12 img {
       display: none; }
       @media (min-width: 1025px) {
@@ -199,7 +215,7 @@ footer {
     content: ""; }
     @media (min-width: 1025px) {
       footer .logo::before {
-        border-left: 1px solid #dfdfdf;
+        border-left: 1px solid #c1cbd3;
         position: absolute;
         height: 81px;
         margin-top: 6px;
@@ -363,21 +379,27 @@ header .logo {
     header .logo .container-logo .image-url {
       width: 100%; }
 
-footer .privacy .row .col-lg-12 {
-  background-color: #003451;
-  color: #FFFFFF;
-  text-align: center;
-  font-size: 75%;
-  height: 30px; }
-  footer .privacy .row .col-lg-12 .politics::after {
-    content: ".";
-    margin: 10px; }
-  footer .privacy .row .col-lg-12 .sites::after {
-    content: ".";
-    margin: 10px; }
-  footer .privacy .row .col-lg-12 .politics-site {
-    margin-top: 7px; }
+footer .privacy {
+  width: 96%; }
   @media (min-width: 1025px) {
-    footer .privacy .row .col-lg-12 {
-      font-size: 17px;
-      height: 44px; } }
+    footer .privacy {
+      width: 100.1%; } }
+  footer .privacy .row .col-lg-12 {
+    background-color: #123a56;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 75%;
+    height: 30px; }
+    footer .privacy .row .col-lg-12 .politics::after {
+      content: ".";
+      margin: 10px; }
+    footer .privacy .row .col-lg-12 .sites::after {
+      content: ".";
+      margin: 10px; }
+    footer .privacy .row .col-lg-12 .politics-site {
+      margin-top: 14px;
+      font-size: 11px; }
+    @media (min-width: 1025px) {
+      footer .privacy .row .col-lg-12 {
+        font-size: 17px;
+        height: 44px; } }

@@ -1,8 +1,12 @@
 footer{
     .privacy{
+        width: 96%;
+        @include breakpoint(desktop){
+            width: 100.1%;
+        }
         .row{
             .col-lg-12{
-                background-color: #003451;
+                background-color: #123a56;
                 color:#FFFFFF;
                 text-align: center;
                 font-size: 75%;
@@ -16,7 +20,8 @@ footer{
                     margin: 10px;
                 }
                 .politics-site{
-                    margin-top: 7px;
+                    margin-top: 14px;
+                    font-size: 11px;
                 }
                 @include breakpoint(desktop) {
                     font-size: 17px;

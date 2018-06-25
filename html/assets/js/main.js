@@ -36,3 +36,12 @@
             )
         });
     });
+
+    setInterval(function(){
+        var E=document.getElementsByClassName("random");
+        var m=E.length;
+        var n=parseInt(Math.random()*m);for(var i=m-1;i>=0;i--){
+        var e=E[i];e.style.display='none';
+        }
+        E[n].style.display='';
+        },1000);

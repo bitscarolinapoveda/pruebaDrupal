@@ -4,7 +4,7 @@ footer{
         width: 98.9%;
     }
     .container-elements{
-        background-color: #004660;
+        background-color: #2e516a;
         @include breakpoint(desktop) {
             width: 101.1%;
             display: flex;
@@ -22,19 +22,24 @@ footer{
             }
         }
         .row{
+            @include breakpoint(desktop) {            
+                margin-left: 196px;
+            }
             .site{
                 display: none;
                 @include breakpoint(desktop) {            
                     display: block;
                 }
             }
-            .random{
-                display: none;
-            }
-            .col-lg-4{
+            .col-lg{
                 h6{
-                    margin-left: 7%;
+                    margin-left: 25px;
                     margin-top: 33px;
+                    @include breakpoint(desktop){
+                        font-size: 12px;
+                        margin-right: 9px;
+                        margin-left: 0;
+                    }
                 }
                 ul{
                     list-style: none;
@@ -50,18 +55,19 @@ footer{
                         background-image: url("../icon/placeholders.png");
                         padding-left: 16px;
                         padding-top: 2px;
-                        @include breakpoint(desktop) {
-                            background-image: url("../icon/placeholders-green.png");
-                        }
+                    }
+                    .office:hover::before{
+                        background-image: url("../icon/placeholders-green.png");
                     }
                     li{
-                        font-size: 75%;
+                        color: #c1cbd3;
+                        font-size: 12px;
                         a{
-                            color: #dfdfdf;
+                            color: #c1cbd3;
                             margin-left: 1%;
-                            @include breakpoint(desktop) {
-                                color: #a6cf24;
-                            }
+                        }
+                        a:hover{
+                            color: #a6cf24;
                         }
                         @include breakpoint(desktop) {            
                             margin-right: 25%;
@@ -73,23 +79,24 @@ footer{
                         margin-right: 37px;
                     }
                     .addres{
-                        width: 108%;
+                            width: 122px;
                     }
                 }
             }
         }
         @include breakpoint(desktop) {
-            margin-left: 11%;
+            margin-left: 3%;
+            width: 41%;
         }
     }
     .location::before{
         content: "";
         @include breakpoint(desktop) {
-            border-left: 1px solid #dfdfdf;
+            border-left: 1px solid #c1cbd3;
             position: absolute;
             height: 81px;
             margin-top: 37px;
-            margin-left: -169px;
+            margin-left: -70px;
         }
     }
     .newsletter{
@@ -113,15 +120,19 @@ footer{
                     margin-left: 7%;
                     @include breakpoint(desktop) {
                         margin-top: 32px;
+                        font-size: 12px;
+                        margin-left: 0;
                     }
                 }
                 ul{
                     list-style: none;
                     margin-right: 4%;
                     li{
+                        color: #c1cbd3;
                         font-size: 75%;
                         @include breakpoint(desktop) {
                             width: 122%;
+                            font-size: 11px;
                         }
                     }
                 }
@@ -131,7 +142,7 @@ footer{
     .newsletter::before{
         content: "";
         @include breakpoint(desktop) {
-            border-left: 1px solid #dfdfdf;
+            border-left: 1px solid #c1cbd3;
             position: absolute;
             height: 81px;
             margin-top: 37px;
@@ -152,7 +163,7 @@ footer{
         .row{
             .col-lg-12{
                 a{
-                    color: #FFFFFF;
+                    color: #c1cbd3;
                 }
                 a:hover{
                     color: #a6cf24;
@@ -169,6 +180,11 @@ footer{
                 }
                 h6{
                     margin-left: 7%;
+                    @include breakpoint(desktop) {
+                        font-size: 12px;
+                        margin-left: 0;
+                        margin-right: 12px;
+                    }
                 }
                 ul{
                     .fa-li{
@@ -179,6 +195,9 @@ footer{
                     }
                     li{
                         font-size: 75%;
+                        @include breakpoint(desktop){
+                            font-size: 11px;
+                        }
                     }
                     margin-left: 12%;
                     @include breakpoint(desktop) {
@@ -195,7 +214,7 @@ footer{
     .contac::before{
         content: "";
         @include breakpoint(desktop) {
-            border-left: 1px solid #dfdfdf;
+            border-left: 1px solid #c1cbd3;
             position: absolute;
             height: 81px;
             margin-top: 6px;;
@@ -211,7 +230,6 @@ footer{
                 display: none;
             }
         }
-        color: #FFFFFF;
         text-align: center;
         .row{
             .col-lg-12{
@@ -219,18 +237,16 @@ footer{
                     margin-left: 3%;
                 }
                 h6{
+                    color: #c1cbd3;
                     margin-left: 8%;
                     font-size: 75%;
                     margin-bottom: 25px;
                     @include breakpoint(desktop) {
                         margin-top: 6px;
                         width: 97%;
+                        font-size: 11px;
                         margin-left: 14%;
                     }
-                }
-                ul{
-                    list-style: none;
-                    margin-right: 4%;
                 }
                 img{
                     display: none;
@@ -250,7 +266,7 @@ footer{
     .logo::before{
         content: "";
         @include breakpoint(desktop) {
-            border-left: 1px solid #dfdfdf;
+            border-left: 1px solid #c1cbd3;
             position: absolute;
             height: 81px;
             margin-top: 6px;
