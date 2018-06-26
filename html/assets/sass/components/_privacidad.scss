@@ -1,12 +1,13 @@
 footer{
     .privacy{
-        width: 96%;
+        width: 100%;
         @include breakpoint(desktop){
-            width: 100.1%;
+            width: 98.9%;
         }
         .row{
             .col-lg-12{
-                background-color: #123a56;
+                background-color: #002b49;
+                opacity: 0.9;
                 color:#FFFFFF;
                 text-align: center;
                 font-size: 75%;
@@ -20,11 +21,24 @@ footer{
                     margin: 10px;
                 }
                 .politics-site{
-                    margin-top: 14px;
+                    margin-top: 7px;
                     font-size: 11px;
+                    margin-left: 8%;
+                    a{
+                        color: #FFFFFF;
+                    }
+                    @include breakpoint(desktop){
+                        margin-top: 14px;
+                        text-align: center;
+                        margin-left: 0%;
+                    }
+                    @include breakpoint(tablet){
+                        margin-top: 7px;
+                        text-align: center;
+                        margin-left: 0%;
+                    }
                 }
                 @include breakpoint(desktop) {
-                    font-size: 17px;
                     height: 44px;
                 }
             }

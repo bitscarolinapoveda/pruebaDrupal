@@ -1,13 +1,28 @@
 footer{
     font-family: open_sanslight;
+    background-image: url("../images/footer.png");
     @include breakpoint(desktop) {
-        width: 98.9%;
+        width: 100%;
     }
     .container-elements{
-        background-color: #2e516a;
+        background-color: #002b49;
+        opacity: 0.8;
         @include breakpoint(desktop) {
-            width: 101.1%;
+            width: 100%;
             display: flex;
+        }
+        @include breakpoint(tablet) {
+            width: 100%;
+            display: flex;
+        }
+    }
+    .row{
+        margin-right: 0px;
+        @include breakpoint(desktop) {
+            margin-right: -15px;
+        }
+        @include breakpoint(tablet) {
+            margin-right: -15px;
         }
     }
     .location{
@@ -20,15 +35,28 @@ footer{
             @include breakpoint(desktop) {
                 display: none;
             }
+            @include breakpoint(tablet) {
+                display: none;
+            }
         }
         .row{
             @include breakpoint(desktop) {            
-                margin-left: 196px;
+                margin-left: 278px;
+            }
+            @include breakpoint(tablet) {
+                margin-left: 149px;
             }
             .site{
                 display: none;
                 @include breakpoint(desktop) {            
                     display: block;
+                    margin-left: 163px;
+                    margin-top: -133px;
+                }
+                @include breakpoint(tablet) {
+                    display: block;
+                    margin-left: 163px;
+                    margin-top: -133px;
                 }
             }
             .col-lg{
@@ -37,8 +65,11 @@ footer{
                     margin-top: 33px;
                     @include breakpoint(desktop){
                         font-size: 12px;
-                        margin-right: 9px;
-                        margin-left: 0;
+                        margin-left: 41px;
+                    }
+                    @include breakpoint(tablet) {
+                        font-size: 12px;
+                        margin-left: 41px;
                     }
                 }
                 ul{
@@ -48,7 +79,10 @@ footer{
                         margin-top: 10px;
                         @include breakpoint(desktop) {            
                             width: 120%;
-                        } 
+                        }
+                        @include breakpoint(tablet) {
+                            width: 120%;
+                        }
                     }
                     .office::before{
                         content: "";
@@ -72,10 +106,16 @@ footer{
                         @include breakpoint(desktop) {            
                             margin-right: 25%;
                         }
+                        @include breakpoint(tablet) {
+                            margin-right: 25%;
+                        }
                     }
                 }
                 .addres-phone{
                     @include breakpoint(desktop) { 
+                        margin-right: 37px;
+                    }
+                    @include breakpoint(tablet) {
                         margin-right: 37px;
                     }
                     .addres{
@@ -85,8 +125,14 @@ footer{
             }
         }
         @include breakpoint(desktop) {
-            margin-left: 3%;
-            width: 41%;
+            width: 46%;
+            text-align: left;
+            margin-left: -66px;
+        }
+        @include breakpoint(tablet) {
+            width: 46%;
+            text-align: left;
+            margin-left: -105px;
         }
     }
     .location::before{
@@ -96,7 +142,14 @@ footer{
             position: absolute;
             height: 81px;
             margin-top: 37px;
-            margin-left: -70px;
+            margin-left: 313px;
+        }
+        @include breakpoint(tablet) {
+            border-left: 1px solid #c1cbd3;
+            position: absolute;
+            height: 81px;
+            margin-top: 37px;
+            margin-left: 185px;
         }
     }
     .newsletter{
@@ -109,6 +162,9 @@ footer{
             margin-left: 28%;
             @include breakpoint(desktop) {
                 display: none;
+            }
+            @include breakpoint(tablet) {
+                display: none; 
             }
         }
         .row{
@@ -123,6 +179,11 @@ footer{
                         font-size: 12px;
                         margin-left: 0;
                     }
+                    @include breakpoint(tablet) {
+                        margin-top: 32px;
+                        font-size: 12px;
+                        margin-left: 0;
+                    }
                 }
                 ul{
                     list-style: none;
@@ -131,6 +192,10 @@ footer{
                         color: #c1cbd3;
                         font-size: 75%;
                         @include breakpoint(desktop) {
+                            width: 122%;
+                            font-size: 11px;
+                        }
+                        @include breakpoint(tablet) {
                             width: 122%;
                             font-size: 11px;
                         }
@@ -148,6 +213,13 @@ footer{
             margin-top: 37px;
             margin-left: -63px;
         }
+        @include breakpoint(tablet) {
+            border-left: 1px solid #c1cbd3;
+            position: absolute;
+            height: 81px;
+            margin-top: 37px;
+            margin-left: -63px;
+        }
     }
     .contac{
         color: #FFFFFF;
@@ -157,6 +229,9 @@ footer{
             background-color: #dfdfdf;
             margin-left: 28%;
             @include breakpoint(desktop) {
+                display: none;
+            }
+            @include breakpoint(tablet) {
                 display: none;
             }
         }
@@ -170,7 +245,16 @@ footer{
                 }
                 .icon-social{
                     margin-top: -6px;
-                    margin-left: 28px;
+                    margin-left: 33px;
+                    font-size: 24px;
+                    @include breakpoint(desktop){
+                        margin-left: 28px;
+                        font-size: 15px;
+                    }
+                    @include breakpoint(tablet) {
+                        margin-left: 28px;
+                        font-size: 15px;
+                    }
                     .fa-twitter, .fa-facebook-f, .fa-google-plus-g{
                         margin-left: 19px;
                     }
@@ -185,11 +269,19 @@ footer{
                         margin-left: 0;
                         margin-right: 12px;
                     }
+                    @include breakpoint(tablet) {
+                        font-size: 12px;
+                        margin-left: 0;
+                        margin-right: 12px;
+                    }
                 }
                 ul{
                     .fa-li{
                         margin-left: 32%;
                         @include breakpoint(desktop) {
+                            margin-left: 0;
+                        }
+                        @include breakpoint(tablet) {
                             margin-left: 0;
                         }
                     }
@@ -198,15 +290,25 @@ footer{
                         @include breakpoint(desktop){
                             font-size: 11px;
                         }
+                        @include breakpoint(tablet) {
+                            font-size: 11px;
+                        }
                     }
                     margin-left: 12%;
                     @include breakpoint(desktop) {
+                        margin-left: 29%;
+                    }
+                    @include breakpoint(tablet) {
                         margin-left: 29%;
                     }
                 }
             }
         }
         @include breakpoint(desktop) {
+            margin-top: 32px;
+            margin-left: 3%;
+        }
+        @include breakpoint(tablet) {
             margin-top: 32px;
             margin-left: 3%;
         }
@@ -220,6 +322,13 @@ footer{
             margin-top: 6px;;
             margin-left: -65px;
         }
+        @include breakpoint(tablet) {
+            border-left: 1px solid #c1cbd3;
+            position: absolute;
+            height: 81px;
+            margin-top: 6px;;
+            margin-left: -65px;
+        }
     }
     .logo{
         hr{
@@ -227,6 +336,9 @@ footer{
             background-color: #dfdfdf;
             margin-left: 28%;
             @include breakpoint(desktop) {
+                display: none;
+            }
+            @include breakpoint(tablet) {
                 display: none;
             }
         }
@@ -247,11 +359,20 @@ footer{
                         font-size: 11px;
                         margin-left: 14%;
                     }
+                    @include breakpoint(tablet) {
+                        margin-top: 6px;
+                        width: 131px;
+                        font-size: 11px;
+                        margin-left: 3%;
+                    }
                 }
                 img{
                     display: none;
                     @include breakpoint(desktop) {
                         margin-left: 15%;
+                        display: block;
+                    }
+                    @include breakpoint(tablet){
                         display: block;
                     }
                 }
@@ -262,10 +383,22 @@ footer{
             margin-left: 3%;
             width: 11%;
         }
+        @include breakpoint(tablet){
+            margin-top: 32px;
+            margin-left: 3%;
+            width: 11%;
+        }
     }
     .logo::before{
         content: "";
         @include breakpoint(desktop) {
+            border-left: 1px solid #c1cbd3;
+            position: absolute;
+            height: 81px;
+            margin-top: 6px;
+            margin-left: -71px;
+        }
+        @include breakpoint(tablet){
             border-left: 1px solid #c1cbd3;
             position: absolute;
             height: 81px;
