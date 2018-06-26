@@ -1,21 +1,33 @@
 header{
     .logo {
+        width: 15%;
         position: absolute;
         .container-logo{
             width: 100%;
-            padding-left: 24%;
-            padding-top: 6%;
+            padding-left: 50%;
+            padding-top: 28%;
             position: relative;
             z-index: 100;
             @include breakpoint(tablet) {
                 padding-top: 20%;
             }
+            @include breakpoint(desktop) {
+                padding-top: 7%;
+                padding-left: 43%;
+            }
             .image-url{
                 width: 100%;
+                position: relative;
+                left: 28%;
+                @include breakpoint(desktop) {
+                }
                 img{
-                    width: 95%;
-                    padding-left: 4%;
-                    padding-top: 6%;
+                    width: 90px; 
+                    @include breakpoint(desktop) {
+                        width: 100%;
+                        padding-left: 4%;
+                        padding-top: 2%;
+                    }
                 }
             }
         }

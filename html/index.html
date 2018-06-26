@@ -5,7 +5,7 @@
         <title>BITS AMERICAS</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+
         <link rel="stylesheet" href="assets/css/main.css" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300" />
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
@@ -41,7 +41,7 @@
                             </a>
                         </li>
                         <li class="items">
-                            <a class="link" href="#">Servicios
+                            <a class="link " href="#">Servicios
                                 <i class="fas fa-sort-down arrow-service"></i>
                             </a>
                         </li>
@@ -63,34 +63,69 @@
         </header>  
          <section class="Slider">
             <div id="carouselExampleIndicators" class="carousel slide carousel-slider" data-ride="carousel">
-                <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                <ol class="carousel-indicators slider-botton">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active circle-botton"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1" class="circle-botton"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2" class="circle-botton"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="3" class="circle-botton"></li>
                 </ol>
                 <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img class="d-block w-100" src="assets/images/Banner inicio.jpg" alt="First slide">
+                    <div class="carousel-item active window-complete">
+                        <picture>
+                            <source media="(max-width:500px)" srcset="assets/images/movil.jpg">
+                            <img class="d-block w-100"  src="assets/images/Banner inicio.jpg" alt="First slide">
+                            <div class="carousel-caption  d-md-block text-slider">
+                                <h1 class="title-slider">Desarrollo de software a la medida</h1>
+                                <p  class="description-slider">Optimizamos los procesos de su negocio por medio de desarrollo de software adapatados a la necesidad especifica, con estandares de calidad mejor imposible</p>
+                            </div>
+                        </picture>    
                     </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="assets/images/baner.png" alt="Second slide">
+                    <div class="carousel-item window-complete">
+                        <picture>
+                            <source media="(max-width:500px)" srcset="assets/images/movil.jpg">
+                            <img class="d-block w-100"  src="assets/images/baner.png" alt="Second slide">
+                            <div class="carousel-caption  d-md-block text-slider">
+                                <h1  class="title-slider">Desarrollo de software a la medida</h1>
+                                <p  class="description-slider">respuesta de la pregunta uno jaajja</p>
+                            </div>
+                        </picture>    
                     </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="assets/images/Banner inicio.jpg" alt="Third slide">
+                    <div class="carousel-item window-complete">
+                        <picture>
+                            <source media="(max-width:500px)" srcset="assets/images/movil.jpg">
+                            <img class="d-block w-100"   src="assets/images/Banner inicio.jpg" alt="Third slide">
+                            <div class="carousel-caption  d-md-block text-slider">
+                                <h1  class="title-slider">Desarrollo de software a la medida</h1>
+                                <p  class="description-slider">Optimizamos los procesos de su negocio por medio de desarrollo de software adapatados a la necesidad especifica, con estandares de calidad</p>
+                            </div>
+                        </picture>
+                    </div>
+                    <div class="carousel-item window-complete">
+                        <picture>
+                            <source media="(max-width:500px)" srcset="assets/images/movil.jpg">
+                            <img class="d-block w-100"   src="assets/images/Banner inicio.jpg" alt=" fourth slide">
+                            <div class="carousel-caption  d-md-block text-slider">
+                                <h1  class="title-slider">Desarrollo de software a la medida</h1>
+                                <p class="description-slider">Optimizamos los procesos de su negocio por medio de desarrollo de software adapatados a la necesidad especifica, con estandares de calidad</p>
+                            </div>
+                        </picture>
                     </div>
                 </div>
+                <a class="down-main" href="#container-elements" role="button">
+                    <img class="arrow-down" src="assets/images/down-gray.svg">
+                </a>
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="carousel-control-prev-icon icon-mobile icon-prev" aria-hidden="true"></span>
                     <span class="sr-only">Previous</span>
                 </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <a class="carousel-control-next " href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon  icon-mobile icon-next" aria-hidden="true"></span>
                     <span class="sr-only">Next</span>
                 </a>
             </div>
         </section>
         <main>
-            <section class="WhyBits">
+            <section id="WhyBits" class="#WhyBits">
         
             </section>
 
@@ -131,15 +166,11 @@
         <p>dasdasdasd</p>
         <p>dasdasdasd</p>
         <p>dasdasdasd</p>
-        
-
-
-
         <footer>
-            <section class="container-elements">
+            <section class="container-elements" id="container-elements">
                 <section class="location">
                     <div class="row">
-                        <div class="col-lg-6">
+                        <div class="col-lg">
                             <h6>BOGOTA, CO</h6>
                             <ul>
                                 <li>Cll 106A #54-27</li>
@@ -147,11 +178,25 @@
                                 <li class="office"><a href="#">Ver todas nuestras oficinas</a></li>
                             </ul>
                         </div>
-                        <div class="col-lg-6 site">
+                        <div class="col-lg site random">
                             <h6>MIAMI, Fl.33145</h6>
                             <ul class="addres-phone">
                                 <li class="addres">2280 SW 52nd AV#614</li>
                                 <li>+57(2)789 7900</li>
+                            </ul>
+                        </div>
+                        <div class="col-lg site random">
+                            <h6>CALI, Fli.33145</h6>
+                            <ul class="addres-phone">
+                                <li class="addres">9140 SW 57nd AV#841</li>
+                                <li>+57(2)781 0840</li>
+                            </ul>
+                        </div>
+                        <div class="col-lg site random">
+                            <h6>DDDDD, Fli.33145</h6>
+                            <ul class="addres-phone">
+                                <li class="addres">9140 SW 57nd AV#841</li>
+                                <li>+57(2)781 0840</li>
                             </ul>
                         </div>
                     </div>
@@ -173,7 +218,7 @@
                         <div class="col-lg-12">
                             <h6>CONTACTENOS</h6>
                             <ul class="fa-ul">   
-                                <li><a href="#"><i class="fa-li fas fa-envelope icon"></i></a>info@bitsamericas.com</li>
+                                <li><a href="#"><i class="fa-li fas fa-envelope"></i>info@bitsamericas.com</a></li>
                             </ul>
                             <div class="icon-social">
                                 <a href="#"><i class="fab fa-linkedin-in icon"></i></a>
@@ -188,7 +233,7 @@
                 <section class="logo">
                     <div class="row">
                         <div class="col-lg-12">
-                            <img src="assets/images/Logowhite.png">
+                            <img src="assets/images/Logowhite.png" alt="BitsAmericas">
                             <h6>© 2016 BITS Americas SAS.</h6>
                         </div>
                     </div>
