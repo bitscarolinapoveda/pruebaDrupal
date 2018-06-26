@@ -369,7 +369,7 @@ footer{
                 img{
                     display: none;
                     @include breakpoint(desktop) {
-                        margin-left: 15%;
+                        margin-left: 15%; 
                         display: block;
                     }
                     @include breakpoint(tablet){

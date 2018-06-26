@@ -14,6 +14,14 @@
     });
 
     $(window).scroll(function () {
+        if ($(".link").offset().top > 20) {
+            $(".link").addClass("scroll-white");
+        } else {
+            $(".link").removeClass("scroll-white");
+        }
+    });
+
+    $(window).scroll(function () {
         if ($(".image-bits").offset().top > 50) {
             $(".image-bits").attr("src", "assets/images/Logocolor.png");
         } else {
@@ -38,6 +46,21 @@
         } else {
             $(".social-networks").show();
         }
+    });
+    });
+    $(document).ready(function () {
+        $(".Botton").on("click", function () {
+            $(".link").toggleClass("scroll-white");
+        });
+    });
+
+   $(document).ready(function () {
+        $(".Botton").on("click", function () {
+            $(".blur-logo").toggleClass(function () {
+                 $(".blur-logo").attr("src", "assets/images/Logocolor.png");
+            }
+
+            )
         });
     });
     
