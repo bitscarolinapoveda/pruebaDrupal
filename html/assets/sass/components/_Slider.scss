@@ -1,6 +1,5 @@
 .Slider{
     .carousel-slider{
-        position: absolute;
         width: 100%;
         .slider-botton{
             bottom: 18%;
@@ -10,8 +9,8 @@
                 margin-right: 6%;
             }
             @include breakpoint(desktop) {
-                margin-left: 78%;
-                margin-right: 6%;
+                margin-left: 81%;
+                margin-right: 4%;
             }
             .circle-botton{
                 background-color: #ffffff;
@@ -70,7 +69,7 @@
                         line-height: 1.2;
                         font-size: 28px;
                         width: 88%;
-                        left: 11%;
+                        left: 12%;
                     }
                 }
             }
@@ -92,7 +91,7 @@
                 content: "EXPLORAR";
                 position: relative;
                 background: transparent;
-                right: 14%;
+                right: 16%;
                 bottom: 30px;
                 color: #ffffff;
                 @include breakpoint(tablet) {
@@ -121,7 +120,7 @@
                     left:0;
                 }
                 @include breakpoint(desktop) {
-                    width: 4%;
+                    width: 3%;
                     left: 0;
                 }
             }
