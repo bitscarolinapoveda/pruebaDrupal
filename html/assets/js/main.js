@@ -47,6 +47,7 @@
             $(".social-networks").show();
         }
     });
+
     });
     $(document).ready(function () {
         $(".Botton").on("click", function () {
@@ -84,10 +85,16 @@
             $('.envolope').hide(0);
             $(window).scroll(function() {
             var scroll = $(window).scrollTop();
+            var footer = $(".w").offset();
+            footer = footer.top;
             if (scroll >= 100) {
                 $(".envolope").show();
             } else {
                 $(".envolope").hide(0);
+            }
+            if (scroll >= footer){
+                $(".envolope").hide(0);
+            }else{
             }
             });
         });

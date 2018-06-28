@@ -1,12 +1,13 @@
 footer{
     font-family: open_sanslight;
-    background-image: url("../images/footer.png");
+    background-image: url("../images/footermovil.png");
     @include breakpoint(desktop) {
         width: 100%;
+        background-image: url("../images/footer.png");
     }
     .container-elements{
         background-color: #002b49;
-        opacity: 0.8;
+        opacity: 0.83;
         @include breakpoint(desktop) {
             width: 100%;
             display: flex;
@@ -32,6 +33,7 @@ footer{
             width: 50%;
             background-color: #dfdfdf;
             margin-left: 28%;
+            opacity: 0.3;
             @include breakpoint(desktop) {
                 display: none;
             }
@@ -143,6 +145,7 @@ footer{
             height: 81px;
             margin-top: 37px;
             margin-left: 313px;
+            opacity: 0.3;
         }
         @include breakpoint(tablet) {
             border-left: 1px solid #c1cbd3;
@@ -150,6 +153,7 @@ footer{
             height: 81px;
             margin-top: 37px;
             margin-left: 185px;
+            opacity: 0.3;
         }
     }
     .newsletter{
@@ -160,6 +164,7 @@ footer{
             width: 50%;
             background-color: #dfdfdf;
             margin-left: 28%;
+            opacity: 0.3;
             @include breakpoint(desktop) {
                 display: none;
             }
@@ -212,6 +217,7 @@ footer{
             height: 81px;
             margin-top: 37px;
             margin-left: -63px;
+            opacity: 0.3;
         }
         @include breakpoint(tablet) {
             border-left: 1px solid #c1cbd3;
@@ -219,6 +225,7 @@ footer{
             height: 81px;
             margin-top: 37px;
             margin-left: -63px;
+            opacity: 0.3;
         }
     }
     .contac{
@@ -228,6 +235,7 @@ footer{
             width: 50%;
             background-color: #dfdfdf;
             margin-left: 28%;
+            opacity: 0.3;
             @include breakpoint(desktop) {
                 display: none;
             }
@@ -321,6 +329,7 @@ footer{
             height: 81px;
             margin-top: 6px;;
             margin-left: -65px;
+            opacity: 0.3;
         }
         @include breakpoint(tablet) {
             border-left: 1px solid #c1cbd3;
@@ -328,20 +337,10 @@ footer{
             height: 81px;
             margin-top: 6px;;
             margin-left: -65px;
+            opacity: 0.3;
         }
     }
     .logo{
-        hr{
-            width: 50%;
-            background-color: #dfdfdf;
-            margin-left: 28%;
-            @include breakpoint(desktop) {
-                display: none;
-            }
-            @include breakpoint(tablet) {
-                display: none;
-            }
-        }
         text-align: center;
         .row{
             .col-lg-12{
@@ -397,6 +396,7 @@ footer{
             height: 81px;
             margin-top: 6px;
             margin-left: -71px;
+            opacity: 0.3;
         }
         @include breakpoint(tablet){
             border-left: 1px solid #c1cbd3;
@@ -404,6 +404,7 @@ footer{
             height: 81px;
             margin-top: 6px;
             margin-left: -71px;
+            opacity: 0.3;
         }
     }
 }

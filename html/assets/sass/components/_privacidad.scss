@@ -7,11 +7,10 @@ footer{
         .row{
             .col-lg-12{
                 background-color: #002b49;
-                opacity: 0.9;
+                opacity: 0.93;
                 color:#FFFFFF;
                 text-align: center;
-                font-size: 75%;
-                height: 30px;
+                height: 47px;
                 .politics::after{
                     content: ".";
                     margin: 10px;
@@ -21,7 +20,7 @@ footer{
                     margin: 10px;
                 }
                 .politics-site{
-                    margin-top: 7px;
+                    margin-top: 17px;
                     font-size: 11px;
                     margin-left: 8%;
                     a{
@@ -39,7 +38,7 @@ footer{
                     }
                 }
                 @include breakpoint(desktop) {
-                    height: 44px;
+                    height: 46px;
                 }
             }
         }

@@ -1,0 +1,21 @@
+.page-header{
+    height: 275px;
+    background-image: url("../images/cabezerainternamobile.png");
+    text-align: center;
+    color: #FFFFFF;
+    h1{
+        font-size: 36px;
+        @include breakpoint(desktop) {
+            font-size: 50px;
+        }
+        @include breakpoint(tablet) {
+            font-size: 50px;
+        }
+    }
+    @include breakpoint(desktop) {
+        background-image: url("../images/cabezerainternaweb.png");
+    }
+    @include breakpoint(tablet) {
+        background-image: url("../images/cabezerainternaweb.png");
+    }
+}
