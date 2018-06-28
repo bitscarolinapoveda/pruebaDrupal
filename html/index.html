@@ -1,23 +1,27 @@
 <!DOCTYPE html>
 <html>
-    <head>
+     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>BITS AMERICAS</title>
         <meta charset="UTF-8">
+        
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-
         <link rel="stylesheet" href="assets/css/main.css" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300" />
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
-        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-        <script type="text/javascript" src="assets/js/main.js"></script>
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+        <script src="http://labs.rampinteractive.co.uk/touchSwipe/jquery.touchSwipe.min.js"></script>
+        <script src="assets/js/jquery.mobile.custom.js"></script>
+        <script src="assets/js/jquery.mobile.custom.min.js"></script>
+        <script type="text/javascript" src="assets/js/main.js"></script>
     </head>
     <body>
-        <header class="sticky-top"> 
+        <header class=""> 
             <section class="logo">
                 <div class="container-logo">
                     <a class="image-url">
@@ -25,7 +29,7 @@
                     </a>
                 </div>
             </section>   
-            <nav class="navbar-expand-lg flex-column flex-md-row  menu-scroll  ">
+            <nav class="navbar-expand-lg flex-column flex-md-row  menu-scroll">
                 <div class="menuToggle menu-scroll ">
                     <input type="checkbox" class="Botton " />
                     <span class="lines"></span>
@@ -71,7 +75,7 @@
                 </ol>
                 <div class="carousel-inner">
                     <div class="carousel-item active window-complete">
-                        <picture>
+                        <picture class="cirlce-slider">
                             <source media="(max-width:500px)" srcset="assets/images/movil.jpg">
                             <img class="d-block w-100"  src="assets/images/Banner inicio.jpg" alt="First slide">
                             <div class="carousel-caption  d-md-block text-slider">
@@ -111,7 +115,7 @@
                         </picture>
                     </div>
                 </div>
-                <a class="down-main" href="#container-elements" role="button">
+                <a href="#container-elements" class="down-main" id="down-main" data-ancla="uno">
                     <img class="arrow-down" src="assets/images/down-gray.svg">
                 </a>
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
