@@ -1,7 +1,8 @@
 header{
     .logo {
         width: 15%;
-        position: absolute;
+        position: fixed;
+        z-index: 1022;
         .container-logo{
             width: 100%;
             padding-left: 50%;
@@ -12,7 +13,7 @@ header{
                 padding-top: 20%;
             }
             @include breakpoint(desktop) {
-                padding-top: 7%;
+                padding-top: 4%;
                 padding-left: 43%;
             }
             .image-url{

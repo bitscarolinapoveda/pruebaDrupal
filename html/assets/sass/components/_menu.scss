@@ -10,23 +10,22 @@ header{
         width: 100%;
         padding-top: 6%;
         border-bottom: 1px solid   transparent;
-        position: sticky;
+        position: fixed;
         float: left;
         font-weight: bold;
         background: transparent;
         text-decoration: none;
+        z-index: 1020;
           @include breakpoint (tablet) {
-            float: right;
             padding-top: 0%;
             width: 100%;
-            position: initial;
-            text-align: right;
+            position: fixed;
           }
         @include breakpoint(desktop) {
             float: right;
             padding-top: 0%;
             width: 100%;
-            position: initial;
+            position: fixed;
             text-align: right;
         }
         
@@ -35,6 +34,9 @@ header{
             position: relative;
             width: 100%;
             z-index: 1;
+            @include breakpoint(tablet){
+                top: 22px;
+            }
             @include breakpoint(desktop) {
             }
 
@@ -48,7 +50,7 @@ header{
                 opacity: 0;
                 z-index: 2;
                  @include breakpoint(tablet) {
-                    display: none;
+                    
                 }
                 @include breakpoint(desktop) {
                     display: none;
@@ -87,7 +89,7 @@ header{
                 transform-origin: 4px 0px;
                 transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), opacity 0.55s ease;
                 @include breakpoint(tablet) {
-                    display: none;
+                    
                 }
                 @include breakpoint(desktop) {
                     display:none;
@@ -118,9 +120,9 @@ header{
                 transform: translate(0, -100%);
                 transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
                  @include breakpoint (tablet) {
-                    display:block;
-                    transform: initial;
-                    transition-delay: initial;
+                    //display:block;
+                    //transform: initial;
+                   // transition-delay: initial;
                  }
                 @include breakpoint (desktop){
                     display:block;
@@ -134,13 +136,7 @@ header{
                     padding-left: 12%;
                     border-bottom: 1px solid #f5fafc;
                     @include breakpoint(tablet) {
-                        width: 9%;
-                        padding-top: 4%;
-                        padding-bottom: 2%;
-                        padding-left: 0%;
-                        padding-right: 0%;
-                        border-bottom: initial;
-                        display: inline-block;
+                        
                     }
                     @include breakpoint(desktop) {
                         width: 8%;
@@ -182,7 +178,7 @@ header{
                         @include breakpoint(desktop) {
                             padding-left: 12%;
                             padding-right: 12%;
-                            padding-top: 32px;
+                            padding-top: 29px;
                             &:hover{
                             border-top: 4px solid #a6cf24;
                             }

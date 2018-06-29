@@ -364,30 +364,32 @@ header nav {
   width: 100%;
   padding-top: 6%;
   border-bottom: 1px solid   transparent;
-  position: sticky;
+  position: fixed;
   float: left;
   font-weight: bold;
   background: transparent;
-  text-decoration: none; }
+  text-decoration: none;
+  z-index: 1020; }
   @media (min-width: 668px) and (max-width: 1024px) {
     header nav {
-      float: right;
       padding-top: 0%;
       width: 100%;
-      position: initial;
-      text-align: right; } }
+      position: fixed; } }
   @media (min-width: 1025px) {
     header nav {
       float: right;
       padding-top: 0%;
       width: 100%;
-      position: initial;
+      position: fixed;
       text-align: right; } }
   header nav .menuToggle {
     display: block;
     position: relative;
     width: 100%;
     z-index: 1; }
+    @media (min-width: 668px) and (max-width: 1024px) {
+      header nav .menuToggle {
+        top: 22px; } }
     header nav .menuToggle .Botton {
       display: block;
       width: 22%;
@@ -397,9 +399,6 @@ header nav {
       cursor: pointer;
       opacity: 0;
       z-index: 2; }
-      @media (min-width: 668px) and (max-width: 1024px) {
-        header nav .menuToggle .Botton {
-          display: none; } }
       @media (min-width: 1025px) {
         header nav .menuToggle .Botton {
           display: none; } }
@@ -428,9 +427,6 @@ header nav {
       z-index: 1;
       transform-origin: 4px 0px;
       transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease; }
-      @media (min-width: 668px) and (max-width: 1024px) {
-        header nav .menuToggle .lines {
-          display: none; } }
       @media (min-width: 1025px) {
         header nav .menuToggle .lines {
           display: none; } }
@@ -451,11 +447,6 @@ header nav {
       -webkit-font-smoothing: antialiased;
       transform: translate(0, -100%);
       transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1); }
-      @media (min-width: 668px) and (max-width: 1024px) {
-        header nav .menuToggle .list-menu {
-          display: block;
-          transform: initial;
-          transition-delay: initial; } }
       @media (min-width: 1025px) {
         header nav .menuToggle .list-menu {
           display: block;
@@ -467,15 +458,6 @@ header nav {
         padding-top: 7%;
         padding-left: 12%;
         border-bottom: 1px solid #f5fafc; }
-        @media (min-width: 668px) and (max-width: 1024px) {
-          header nav .menuToggle .list-menu .items {
-            width: 9%;
-            padding-top: 4%;
-            padding-bottom: 2%;
-            padding-left: 0%;
-            padding-right: 0%;
-            border-bottom: initial;
-            display: inline-block; } }
         @media (min-width: 1025px) {
           header nav .menuToggle .list-menu .items {
             width: 8%;
@@ -511,7 +493,7 @@ header nav {
             header nav .menuToggle .list-menu .items .link {
               padding-left: 12%;
               padding-right: 12%;
-              padding-top: 32px; }
+              padding-top: 29px; }
               header nav .menuToggle .list-menu .items .link:hover {
                 border-top: 4px solid #a6cf24; } }
           header nav .menuToggle .list-menu .items .link .arrow {
@@ -539,7 +521,8 @@ header nav {
 
 header .logo {
   width: 15%;
-  position: absolute; }
+  position: fixed;
+  z-index: 1022; }
   header .logo .container-logo {
     width: 100%;
     padding-left: 50%;
@@ -551,7 +534,7 @@ header .logo {
         padding-top: 20%; } }
     @media (min-width: 1025px) {
       header .logo .container-logo {
-        padding-top: 7%;
+        padding-top: 4%;
         padding-left: 43%; } }
     header .logo .container-logo .image-url {
       width: 100%;
@@ -685,7 +668,6 @@ footer .privacy {
           color: #FFFFFF; } }
 
 .Slider .carousel-slider {
-  position: absolute;
   width: 100%; }
   .Slider .carousel-slider .slider-botton {
     bottom: 18%;
@@ -696,8 +678,8 @@ footer .privacy {
         margin-right: 6%; } }
     @media (min-width: 1025px) {
       .Slider .carousel-slider .slider-botton {
-        margin-left: 78%;
-        margin-right: 6%; } }
+        margin-left: 81%;
+        margin-right: 4%; } }
     .Slider .carousel-slider .slider-botton .circle-botton {
       background-color: #ffffff;
       border-radius: 100%;
@@ -747,7 +729,7 @@ footer .privacy {
           line-height: 1.2;
           font-size: 28px;
           width: 88%;
-          left: 11%; } }
+          left: 12%; } }
   .Slider .carousel-slider .icon-mobile {
     display: none; }
     @media (min-width: 1025px) {
@@ -764,7 +746,7 @@ footer .privacy {
       content: "EXPLORAR";
       position: relative;
       background: transparent;
-      right: 14%;
+      right: 16%;
       bottom: 30px;
       color: #ffffff; }
       @media (min-width: 668px) and (max-width: 1024px) {
@@ -793,7 +775,7 @@ footer .privacy {
           left: 0; } }
       @media (min-width: 1025px) {
         .Slider .carousel-slider .down-main .arrow-down {
-          width: 4%;
+          width: 3%;
           left: 0; } }
   @media (min-width: 1025px) {
     .Slider .carousel-slider .icon-prev {
