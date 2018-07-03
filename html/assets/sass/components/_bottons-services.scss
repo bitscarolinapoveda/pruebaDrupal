@@ -1,0 +1,77 @@
+#bottons-services{
+   .totalbottons {
+        position: relative;
+        top: 50%;
+        width: 100%;
+        background: rgb(247, 249, 249);
+        height: 141px;
+        @include breakpoint(desktop) {
+            top: initial;
+        }
+        .bottons {
+            padding-left: 10%;
+            padding-bottom: 12%;
+            padding-top: 10%;
+            width: 100%;
+            @include breakpoint (tablet){
+                padding-left: 29%;
+                padding-bottom: 0%;
+                padding-top: 6%;
+            }
+            @include breakpoint(desktop) {
+                padding-left: 36%;
+                padding-top: 4%;
+                padding-bottom: initial;
+            }
+            .bottonleft {
+                width: 200px;
+                border: solid 1px rgba(142, 206, 23, 0.7);
+                padding-right: 3.5%;
+                padding-bottom: 2%;
+                padding-left: 3.5%;
+                padding-top: 2%;
+                position: relative;
+                text-decoration: none;
+                color: #ffffff;
+                background: rgba(142, 206, 23, 0.7);
+                font-size: 14px;
+                font-family: open_sansregular;
+                text-transform: uppercase;
+                @include breakpoint(desktop) {
+                    font-size: 18px;
+                    padding-bottom: 0.9%;
+                    padding-top: 0.9%;
+                }
+            }
+            .bottonrigth {
+                width: 200px;
+                border: solid 1px rgba(142, 206, 23, 0.7);
+                left: 8%;
+                padding-right: 3.5%;
+                padding-bottom: 2%;
+                padding-left: 3.5%;
+                padding-top: 2%;
+                position: relative;
+                text-decoration: none;
+                color: #ffffff;
+                background: rgba(142, 206, 23, 0.7);
+                font-size: 14px;
+                font-family: open_sansregular;
+                text-transform: uppercase;
+                @include breakpoint(desktop) {
+                    font-size: 18px;
+                    padding-bottom: 0.9%;
+                    padding-top: 0.9%;
+                }
+            }
+            .bottonleft:hover {
+                border: solid 1px#8ECE17;
+                background: #8ECE17;
+            }
+            .bottonrigth:hover {
+                border: solid 1px#8ECE17;
+                background: #8ECE17;
+            }
+        }
+    }
+}    
