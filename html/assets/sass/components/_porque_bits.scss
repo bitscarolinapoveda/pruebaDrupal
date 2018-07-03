@@ -42,6 +42,12 @@ main{
                 }
                 li:last-child{
                     margin-left: 24%;
+                    @include breakpoint(desktop){
+                        margin-left: 0;
+                    }
+                    @include breakpoint(tablet) {
+                        margin-left: 0;
+                    }
                 }
             }
         }
