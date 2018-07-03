@@ -1,46 +1,49 @@
-footer{
-    .privacy{
-        width: 100%;
-        @include breakpoint(desktop){
-            width: 98.9%;
-        }
-        .row{
-            .col-lg-12{
-                background-color: #002b49;
-                opacity: 0.93;
-                color:#FFFFFF;
-                text-align: center;
-                height: 47px;
-                .politics::after{
-                    content: ".";
-                    margin: 10px;
-                }
-                .sites::after{
-                    content: ".";
-                    margin: 10px;
-                }
-                .politics-site{
-                    margin-top: 17px;
-                    font-size: 11px;
-                    margin-left: 8%;
-                    a{
-                        color: #FFFFFF;
+body{
+    footer{
+        .privacy{
+            width: 100%;
+            @include breakpoint(desktop){
+                width: 98.7%;
+            }
+            .row{
+                .col-lg-12{
+                    background-color: #002b49;
+                    opacity: 0.93;
+                    color:#FFFFFF;
+                    text-align: center;
+                    height: 47px;
+                    .politics::after{
+                        content: ".";
+                        margin: 10px;
                     }
-                    @include breakpoint(desktop){
-                        margin-top: 14px;
-                        text-align: center;
-                        margin-left: 0%;
+                    .sites::after{
+                        content: ".";
+                        margin: 10px;
                     }
-                    @include breakpoint(tablet){
-                        margin-top: 7px;
-                        text-align: center;
-                        margin-left: 0%;
+                    .politics-site{
+                        margin-top: 17px;
+                        font-size: 11px;
+                        margin-left: 8%;
+                        a{
+                            color: #FFFFFF;
+                        }
+                        @include breakpoint(desktop){
+                            margin-top: 14px;
+                            text-align: center;
+                            margin-left: 0%;
+                        }
+                        @include breakpoint(tablet){
+                            margin-top: 16px;
+                            text-align: center;
+                            margin-left: 0%;
+                        }
                     }
-                }
-                @include breakpoint(desktop) {
-                    height: 46px;
+                    @include breakpoint(desktop) {
+                        height: 46px;
+                    }
                 }
             }
         }
     }
 }
+

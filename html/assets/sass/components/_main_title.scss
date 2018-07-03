@@ -1,22 +1,29 @@
-// main{
-//     .main-title{
-//         color: #002b49;
-//         text-align: center;
-//         margin-top: 60px;
-//         @include breakpoint(desktop){
-//             margin-top: 80px;
-//         }
-//         @include breakpoint(tablet) {
-//             margin-top: 80px;
-//         }
-//         h1{
-//             font-size: 30px;
-//             @include breakpoint(desktop) {
-//                 font-size: 40px;;
-//             }
-//             @include breakpoint(tablet) {
-//                 font-size: 40px;
-//             }
-//         }
-//     }
-// }
+body{
+    main{
+        .main-title{
+            color: #002b49;
+            text-align: center;
+            margin-top: 60px;
+            @include breakpoint(desktop){
+                margin-top: 80px;
+            }
+            @include breakpoint(tablet) {
+                margin-top: 80px;
+            }
+            h1{
+                margin-left: 3%;
+                font-size: 30px;
+                @include breakpoint(desktop) {
+                    margin-left: 0;
+                    font-size: 40px;
+                    width: 100%;
+                }
+                @include breakpoint(tablet) {
+                    margin-left: 0;
+                    font-size: 40px;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
