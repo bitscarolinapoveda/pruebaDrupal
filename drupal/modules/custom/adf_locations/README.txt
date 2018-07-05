@@ -6,7 +6,7 @@
 /_/  |_/_____/_/      /_____/\____/\___/\__,_/\__/_/\____/_/ /_/____/  
                                                                        
 
-ADF Locations is a module that offers a service with REST, consulting a type content called "Locations", the endpoint is http://local.pag-bits8.com/location-resources?_format=json and you can add two parameters:
+ADF Locations is a module that offers a service with REST, consulting a content type called "Locations", the endpoint is http://local.pag-bits8.com/location-resources?_format=json and you can add two parameters:
 
 - limit: Set the number of records to show
 - offset: From which point of records start with the count
@@ -19,7 +19,7 @@ ADF Locations is a module that offers a service with REST, consulting a type con
 - title
 - address
 - locations
-4. Create the respective nodes based on the respective content type "Locations"
+4. Create the respective nodes based on the content type "Locations"
 5. From the endpoint, consult the records according to the two established parameters.
 
 -- LINKS --

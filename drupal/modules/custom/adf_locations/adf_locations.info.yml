@@ -15,5 +15,4 @@ dependencies:
   - restui
   - hal
   - entityqueue
-  - drupal:views
 hidden: false

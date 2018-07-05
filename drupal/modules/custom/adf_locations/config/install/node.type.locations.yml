@@ -10,7 +10,7 @@ third_party_settings:
     parent: 'main:'
 name: Locations
 type: locations
-description: ''
+description: 'Use the <em>locations</em> to create stores, locations, etc. related to markers to display on the Google maps.'
 help: ''
 new_revision: true
 preview_mode: 1
