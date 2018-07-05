@@ -1,7 +1,6 @@
 name: ADF Locations
 type: module
 description: 'Google maps locations'
-version: 8.x-1.0
 core: 8.x
 dependencies:
   - field
