@@ -1,0 +1,29 @@
+#title-gallery{
+    margin-top: 14%;
+    @include breakpoint (desktop) {
+        margin-top: 4%;
+    }
+    .title{
+        background: rgb(247, 249, 249);
+        height: 160px;
+        padding-top: 11%;
+        @include breakpoint(desktop){
+            height: 171px;    
+            padding-top: 5%;
+        }
+        h1 {
+            width: 97%;
+            padding-left: 8%;
+            padding-right: 4%;
+            margin-bottom: 0%;
+            text-align: center;
+            color: #002b49;
+            @include breakpoint (desktop){
+                width: 100%;
+                padding-left: 0%;
+                padding-right: 0%;
+            }
+        }
+    }  
+    
+}
