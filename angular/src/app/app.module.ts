@@ -7,6 +7,13 @@ import { HeaderComponent } from './layout/components/header/header.component';
 import { ContentComponent } from './layout/components/content/content.component';
 import { SliderOneComponent } from './cards/components/slider-one/slider-one.component';
 
+
+// Modulos
+import { AdfModule } from './@adf/adf.module';
+
+// Material
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +23,9 @@ import { SliderOneComponent } from './cards/components/slider-one/slider-one.com
     SliderOneComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    BrowserAnimationsModule,
+    AdfModule
   ],
   providers: [],
   bootstrap: [AppComponent]

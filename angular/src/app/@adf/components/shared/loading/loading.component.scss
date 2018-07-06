@@ -1,0 +1,28 @@
+#loading {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #3C4252;
+    z-index: 99999;
+    pointer-events: none;
+}
+
+#loading .center {
+    display: block;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#loading .logo {
+    width: 128px;
+    margin: 0 auto;
+}
+
+#loading .logo img {
+    filter: drop-shadow(0px 10px 6px rgba(0, 0, 0, 0.2))
+}
