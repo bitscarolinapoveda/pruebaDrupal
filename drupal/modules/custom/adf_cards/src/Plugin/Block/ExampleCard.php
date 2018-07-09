@@ -87,4 +87,14 @@ class ExampleCard extends CardBase {
     $this->configuration['others'] = $form_state->getValue('others');
   }
 
+  /**
+   * {@inheritdoc}
+   */
+  public function build() {
+    $build = parent::build();
+    $build['#theme'] = 'example_card';
+    $build['#others'] = $this->configuration['others'];
+    return $build;
+  }
+
 }

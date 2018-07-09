@@ -42,5 +42,14 @@ function adf_cards_theme($existing, $type, $theme, $path) {
       ],
       'template' => 'card-base',
     ],
+    'example_card' => [
+      'variables' => [
+        'uuid' => NULL,
+        'header' => NULL,
+        'body' => NULL,
+        'others' => NULL,
+      ],
+      'template' => 'example-card',
+    ],
   ];
 }
