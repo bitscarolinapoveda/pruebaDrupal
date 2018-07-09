@@ -242,8 +242,31 @@
                         $('.displayed').css('display', 'none').removeClass('displayed').addClass('no-displayed');
                     }
                 }
-            }, 350);
+            }, 400);
         }
     
     });
     
+    $(document).ready(function () {
+        $('#recipeCarousel').carousel({
+            interval: 4000
+        })
+
+        $('.carousel-run .carousel-item').each(function () {
+            var next = $(this).next();
+            if (!next.length) {
+                next = $(this).siblings(':first');
+            }
+            next.children(':first-child').clone().appendTo($(this));
+
+            for (var i = 0; i < 2; i++) {
+                next = next.next();
+                if (!next.length) {
+                    next = $(this).siblings(':first');
+                }
+
+                next.children(':first-child').clone().appendTo($(this));
+            }
+        });
+    });
+ 
