@@ -1,0 +1,20 @@
+{% import 'adf_cards.html.twig' as macros %}
+
+{% block header_data %}
+  <div>
+    {% for item in header %}
+      {{ macros.renderData(item.type, item.data) }}
+    {% endfor %}
+  </div>
+{% endblock %}
+
+{% block body_data %}
+  <div>
+    {% for item in body %}
+      {{ macros.renderData(item.type, item.data) }}
+    {% endfor %}
+  </div>
+{% endblock %}
+
+{% block other_content %}
+{% endblock %}

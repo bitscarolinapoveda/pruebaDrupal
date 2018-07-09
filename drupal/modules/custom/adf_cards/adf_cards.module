@@ -1,0 +1,46 @@
+<?php
+
+/**
+ * @file
+ * Contains adf_cards.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function adf_cards_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the adf_cards module.
+    case 'help.page.adf_cards':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Módulo base para la creación de cards') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function adf_cards_theme($existing, $type, $theme, $path) {
+  return [
+    'adf_cards' => [
+      'template' => 'adf-cards',
+      // layout_plugin expects the theme hook to be declared with this:
+      'render element' => 'content',
+      // 'path' => '/templates/field',.
+    ],
+    'card_base' => [
+      'variables' => [
+        'uuid' => NULL,
+        'header' => NULL,
+        'body' => NULL,
+      ],
+      'template' => 'card-base',
+    ],
+  ];
+}

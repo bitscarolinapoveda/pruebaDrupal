@@ -1,0 +1,5 @@
+name: 'adf_cards'
+type: module
+description: 'Módulo base para la creación de cards'
+core: 8.x
+package: 'Custom'
