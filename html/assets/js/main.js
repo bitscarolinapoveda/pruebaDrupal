@@ -242,7 +242,7 @@
                         $('.displayed').css('display', 'none').removeClass('displayed').addClass('no-displayed');
                     }
                 }
-            }, 400);
+            }, 500);
         }
     
     });
