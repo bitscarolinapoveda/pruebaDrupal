@@ -1,5 +1,5 @@
 main{
-    .WhyBits{
+    #list-images{
         width: 96%;
         margin-top: 39px;
         @include breakpoint(desktop){
@@ -8,7 +8,7 @@ main{
         @include breakpoint(tablet) {
             width: 98%;
         }
-        .images-whybits{
+        .item-images{
             .images{
                 margin-left: 0;
                 @include breakpoint(desktop){
@@ -32,6 +32,7 @@ main{
                         font-size: 20px;
                         width: 133px;
                         margin-top: 16px;
+                        color: #002b49;
                         @include breakpoint(desktop){
                             font-size: 24px;
                         }
