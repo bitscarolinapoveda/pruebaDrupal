@@ -1,0 +1,171 @@
+#carousel-4text{
+    margin-top: 4%;
+    .carousel-inner .carousel-item.active,
+    .carousel-inner .carousel-item-next,
+    .carousel-inner .carousel-item-prev {
+        display: flex;
+    }
+
+    .carousel-inner .carousel-item-right.active,
+    .carousel-inner .carousel-item-next {
+         //transform: translateX(70%);
+        transform: translateX(25%);
+    }
+
+    .carousel-inner .carousel-item-left.active,
+    .carousel-inner .carousel-item-prev {
+        //transform: translateX(-70%);
+        transform: translateX(-25%); 
+    }
+
+    .carousel-inner .carousel-item-right,
+    .carousel-inner .carousel-item-left {
+        transform: translateX(0);
+    }
+
+    #carousel-items1{
+        .carousel-inner{
+            @include breakpoint(desktop){
+                width: 85.5%;
+                left: 6%;
+            }
+            .carousel-item{
+                width: 405%;
+                @include breakpoint (desktop){
+                    width: 100%;
+                }
+                .url-link{
+                    width: 100%;
+                    text-decoration: none;
+                    @include breakpoint (desktop){
+                        padding-left: 8px;
+                        padding-right: 10px;
+                    }
+                    .container-img {
+                        display: flex;
+                        height: 131px;
+                        width: 100%;
+                        padding-left: 22%;
+                        padding-right: 21%;
+                        @include breakpoint (desktop){
+                            padding-left: 10%;
+                            padding-right: 10%;
+                            height: 111px;
+                        }
+                        .img-float{
+                            @include breakpoint (desktop){
+                                max-width: 100%;
+                                height: 100%;
+                                padding-top: 7%;
+                                padding-bottom: 1%;
+                                padding-left: 9%;
+                                padding-right: 9%;
+                            }
+                        }
+                    }
+                    .info{
+                        width: 100%; 
+                        color: #002b49;
+                        text-align: center;
+                        &::before{
+                            content: '';
+                            background:linear-gradient(-90deg, rgba(255, 255, 255, 0), #b8d950, rgba(255, 255, 255, 0));
+                            height: 1px; 
+                            right: 0%;
+                            left: 5%;
+                            top: 164px;
+                            width: 15%;
+                            position: absolute;
+                            @include breakpoint (desktop){
+                                display: none;
+                            }
+                        }
+                        .line{
+                            visibility: hidden;
+                            @include breakpoint (desktop){
+                                visibility: visible;
+                                background:linear-gradient(-90deg, rgba(255, 255, 255, 0), #b8d950, rgba(255, 255, 255, 0));
+                                height: 1px;
+                                width: 83%;
+                                position: relative;
+                                top: 17px;
+                            }
+
+                        }
+                        .name-organization {
+                            padding-top: 14%;
+                            font-size: 16px;
+                            font-family: 'Open Sans', sans-serif;
+                            @include breakpoint (desktop){
+                                padding-top: 14%;
+                            }
+                            
+                        }
+
+                        .main-title {
+                            margin-top: 4%;
+                            font-size: 20px;
+                            font-family: 'Open Sans Condensed', sans-serif;
+                            text-transform: uppercase;
+                        }
+                        .category{
+                            width: 100%;
+                            margin-top: 5.2%;
+                            padding-left: 27%;
+                            padding-right: 26%;
+                            font-size: 14px;
+                            font-family: 'Open Sans', sans-serif;
+                            @include breakpoint (desktop){
+                                padding-left: 12%;
+                                padding-right: 12%;
+                                width: 100%;
+                                height: 56px;
+                            }
+                        }
+                        .yeard{
+                            font-size: 14px;
+                            font-family: 'Open Sans', sans-serif;
+                            margin-top: 6%;
+                            @include breakpoint (desktop){
+                                margin-top: 2%;
+                            }
+                        }
+                    }
+                }
+                
+                   
+            }
+        }
+
+        .icon-left{
+            position: relative;
+            top: 1%;
+            background-image: url('../images/left-arrow.svg');
+            background-size:37px; 
+            height: 27px;
+            width: 24px;
+            @include breakpoint (desktop){
+                height:34px;
+                right: 21%;
+                bottom: 15px;
+                top: initial;
+            }
+        }
+        .icon-right{
+            position: relative;
+            top: 1%;
+            background-image: url('../images/right-arrow.svg');
+            background-size:37px;
+            height: 27px;
+            width: 24px;
+            @include breakpoint (desktop) {
+                height: 34px;
+                left: 14%;
+                bottom: 15px;
+                top: initial;
+            }
+            
+        }
+    }
+
+}

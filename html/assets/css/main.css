@@ -1,8 +1,8 @@
 body {
   width: 100%;
-  font-family: 'Roboto', sans-serif; }
+  font-family: 'Open Sans', sans-serif; }
   body h1 {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     text-transform: uppercase; }
 
 body footer picture img {
@@ -503,15 +503,14 @@ header nav {
           font-size: 15px;
           text-decoration: none;
           text-align: left;
-          padding-right: 73%;
-          font-family: open_sanslight; }
+          padding-right: 73%; }
           header nav .menuToggle .list-menu .items .link:hover {
             color: #a6cf24;
             text-decoration: none; }
           @media (min-width: 1025px) {
             header nav .menuToggle .list-menu .items .link {
               padding-left: 12%;
-              padding-right: 12%;
+              padding-right: 15%;
               padding-top: 29px; }
               header nav .menuToggle .list-menu .items .link:hover {
                 border-top: 4px solid #a6cf24; } }
@@ -754,7 +753,7 @@ body footer .privacy {
           font-size: 50px; } }
     .Slider .carousel-slider .window-complete .text-slider .description-slider {
       font-size: 18px;
-      font-family: open_sanslight; }
+      font-family: 'Roboto', sans-serif; }
       @media (min-width: 668px) and (max-width: 1024px) {
         .Slider .carousel-slider .window-complete .text-slider .description-slider {
           position: relative;
@@ -767,6 +766,7 @@ body footer .privacy {
           position: relative;
           line-height: 1.2;
           font-size: 28px;
+          padding-left: 22%;
           width: 88%;
           left: 12%; } }
   .Slider .carousel-slider .icon-mobile {
@@ -960,7 +960,7 @@ body footer .privacy {
     #gallery-images .tz-gallery .thumbnai .images {
       width: 100%;
       height: 100%;
-      filter: brightness(86%) grayscale(51%);
+      filter: brightness(70%) grayscale(51%);
       width: 100%;
       height: 100%; }
     #gallery-images .tz-gallery .thumbnai .box-info {
@@ -1052,7 +1052,7 @@ body footer .privacy {
         font-family: 'Open Sans', sans-serif; }
         @media (min-width: 1025px) {
           #gallery-images .tz-gallery .thumbnai .box-title .titlepr {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Open Sans', sans-serif;
             font-size: 36px; } }
       #gallery-images .tz-gallery .thumbnai .box-title .titlepr:after {
         content: '';
@@ -1084,7 +1084,7 @@ body footer .privacy {
           color: #ffffff;
           font-weight: 300;
           font-size: 15px;
-          font-family: 'Roboto', sans-serif; }
+          font-family: 'Open Sans', sans-serif; }
           @media (min-width: 1025px) {
             #gallery-images .tz-gallery .thumbnai .box-title .box-text .text {
               font-size: 18px;
@@ -1133,7 +1133,7 @@ body .page-header {
 body main .main-title {
   color: #002b49;
   text-align: center;
-  margin-top: 60px; }
+  margin-top: 64px; }
   @media (min-width: 1025px) {
     body main .main-title {
       margin-top: 80px; } }
@@ -1409,75 +1409,137 @@ main .WhyBits {
       #title-carousel h1 {
         font-size: 40px; } }
 
-#Recognise {
-  margin-top: 20px;
-  /* Bootstrap Lightbox using Modal */ }
-  @media (min-width: 768px) {
-    #Recognise {
-      /* show 3 items */
-      /* left or forward direction */
-      /* farthest right hidden item must be abso position for animations */
-      /* right or prev direction */ }
-      #Recognise .carousel-inner .active,
-      #Recognise .carousel-inner .active + .carousel-item,
-      #Recognise .carousel-inner .active + .carousel-item + .carousel-item,
-      #Recognise .carousel-inner .active + .carousel-item + .carousel-item + .carousel-item {
-        display: block; }
-      #Recognise .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left),
-      #Recognise .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item,
-      #Recognise .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item,
-      #Recognise .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item + .carousel-item {
-        transition: none; }
-      #Recognise .carousel-inner .carousel-item-next,
-      #Recognise .carousel-inner .carousel-item-prev {
-        position: relative;
-        transform: translate3d(0, 0, 0); }
-      #Recognise .carousel-inner .active.carousel-item + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
-        position: absolute;
-        top: 0;
-        right: -25%;
-        z-index: -1;
-        display: block;
-        visibility: visible; }
-      #Recognise .active.carousel-item-left + .carousel-item-next.carousel-item-left,
-      #Recognise .carousel-item-next.carousel-item-left + .carousel-item,
-      #Recognise .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item,
-      #Recognise .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item,
-      #Recognise .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
-        position: relative;
-        transform: translate3d(-100%, 0, 0);
-        visibility: visible; }
-      #Recognise .carousel-inner .carousel-item-prev.carousel-item-right {
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: -1;
-        display: block;
-        visibility: visible; }
-      #Recognise .active.carousel-item-right + .carousel-item-prev.carousel-item-right,
-      #Recognise .carousel-item-prev.carousel-item-right + .carousel-item,
-      #Recognise .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item,
-      #Recognise .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item,
-      #Recognise .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
-        position: relative;
-        transform: translate3d(100%, 0, 0);
-        visibility: visible;
-        display: block;
-        visibility: visible; } }
-  #Recognise #profile-grid {
-    overflow: auto;
-    white-space: normal; }
-  #Recognise #profile-grid .profile {
-    padding-bottom: 40px; }
-  #Recognise #profile-grid .panel {
-    padding: 0; }
-  #Recognise #profile-grid .panel-body {
-    padding: 15px; }
-  #Recognise #profile-grid .profile-name {
-    font-weight: bold; }
-  #Recognise #profile-grid .thumbnail {
-    margin-bottom: 6px; }
-  #Recognise #profile-grid .panel-thumbnail {
-    overflow: hidden; }
-  #Recognise #profile-grid .img-rounded {
-    border-radius: 4px 4px 0 0; }
+#carousel-4text {
+  margin-top: 4%; }
+  #carousel-4text .carousel-inner .carousel-item.active,
+  #carousel-4text .carousel-inner .carousel-item-next,
+  #carousel-4text .carousel-inner .carousel-item-prev {
+    display: flex; }
+  #carousel-4text .carousel-inner .carousel-item-right.active,
+  #carousel-4text .carousel-inner .carousel-item-next {
+    transform: translateX(25%); }
+  #carousel-4text .carousel-inner .carousel-item-left.active,
+  #carousel-4text .carousel-inner .carousel-item-prev {
+    transform: translateX(-25%); }
+  #carousel-4text .carousel-inner .carousel-item-right,
+  #carousel-4text .carousel-inner .carousel-item-left {
+    transform: translateX(0); }
+  @media (min-width: 1025px) {
+    #carousel-4text #carousel-items1 .carousel-inner {
+      width: 85.5%;
+      left: 6%; } }
+  #carousel-4text #carousel-items1 .carousel-inner .carousel-item {
+    width: 405%; }
+    @media (min-width: 1025px) {
+      #carousel-4text #carousel-items1 .carousel-inner .carousel-item {
+        width: 100%; } }
+    #carousel-4text #carousel-items1 .carousel-inner .carousel-item .url-link {
+      width: 100%;
+      text-decoration: none; }
+      @media (min-width: 1025px) {
+        #carousel-4text #carousel-items1 .carousel-inner .carousel-item .url-link {
+          padding-left: 8px;
+          padding-right: 10px; } }
+      #carousel-4text #carousel-items1 .carousel-inner .carousel-item .url-link .container-img {
+        display: flex;
+        height: 131px;
+        width: 100%;
+        padding-left: 22%;
+        padding-right: 21%; }
+        @media (min-width: 1025px) {
+          #carousel-4text #carousel-items1 .carousel-inner .carousel-item .url-link .container-img {
+            padding-left: 10%;
+            padding-right: 10%;
+            height: 111px; } }
+        @media (min-width: 1025px) {
+          #carousel-4text #carousel-items1 .carousel-inner .carousel-item .url-link .container-img .img-float {
+            max-width: 100%;
+            height: 100%;
+            padding-top: 7%;
+            padding-bottom: 1%;
+            padding-left: 9%;
+            padding-right: 9%; } }
+      #carousel-4text #carousel-items1 .carousel-inner .carousel-item .url-link .info {
+        width: 100%;
+        color: #002b49;
+        text-align: center; }
+        #carousel-4text #carousel-items1 .carousel-inner .carousel-item .url-link .info::before {
+          content: '';
+          background: linear-gradient(-90deg, rgba(255, 255, 255, 0), #b8d950, rgba(255, 255, 255, 0));
+          height: 1px;
+          right: 0%;
+          left: 5%;
+          top: 164px;
+          width: 15%;
+          position: absolute; }
+          @media (min-width: 1025px) {
+            #carousel-4text #carousel-items1 .carousel-inner .carousel-item .url-link .info::before {
+              display: none; } }
+        #carousel-4text #carousel-items1 .carousel-inner .carousel-item .url-link .info .line {
+          visibility: hidden; }
+          @media (min-width: 1025px) {
+            #carousel-4text #carousel-items1 .carousel-inner .carousel-item .url-link .info .line {
+              visibility: visible;
+              background: linear-gradient(-90deg, rgba(255, 255, 255, 0), #b8d950, rgba(255, 255, 255, 0));
+              height: 1px;
+              width: 83%;
+              position: relative;
+              top: 17px; } }
+        #carousel-4text #carousel-items1 .carousel-inner .carousel-item .url-link .info .name-organization {
+          padding-top: 14%;
+          font-size: 16px;
+          font-family: 'Open Sans', sans-serif; }
+          @media (min-width: 1025px) {
+            #carousel-4text #carousel-items1 .carousel-inner .carousel-item .url-link .info .name-organization {
+              padding-top: 14%; } }
+        #carousel-4text #carousel-items1 .carousel-inner .carousel-item .url-link .info .main-title {
+          margin-top: 4%;
+          font-size: 20px;
+          font-family: 'Open Sans Condensed', sans-serif;
+          text-transform: uppercase; }
+        #carousel-4text #carousel-items1 .carousel-inner .carousel-item .url-link .info .category {
+          width: 100%;
+          margin-top: 5.2%;
+          padding-left: 27%;
+          padding-right: 26%;
+          font-size: 14px;
+          font-family: 'Open Sans', sans-serif; }
+          @media (min-width: 1025px) {
+            #carousel-4text #carousel-items1 .carousel-inner .carousel-item .url-link .info .category {
+              padding-left: 12%;
+              padding-right: 12%;
+              width: 100%;
+              height: 56px; } }
+        #carousel-4text #carousel-items1 .carousel-inner .carousel-item .url-link .info .yeard {
+          font-size: 14px;
+          font-family: 'Open Sans', sans-serif;
+          margin-top: 6%; }
+          @media (min-width: 1025px) {
+            #carousel-4text #carousel-items1 .carousel-inner .carousel-item .url-link .info .yeard {
+              margin-top: 2%; } }
+  #carousel-4text #carousel-items1 .icon-left {
+    position: relative;
+    top: 1%;
+    background-image: url("../images/left-arrow.svg");
+    background-size: 37px;
+    height: 27px;
+    width: 24px; }
+    @media (min-width: 1025px) {
+      #carousel-4text #carousel-items1 .icon-left {
+        height: 34px;
+        right: 21%;
+        bottom: 15px;
+        top: initial; } }
+  #carousel-4text #carousel-items1 .icon-right {
+    position: relative;
+    top: 1%;
+    background-image: url("../images/right-arrow.svg");
+    background-size: 37px;
+    height: 27px;
+    width: 24px; }
+    @media (min-width: 1025px) {
+      #carousel-4text #carousel-items1 .icon-right {
+        height: 34px;
+        left: 14%;
+        bottom: 15px;
+        top: initial; } }

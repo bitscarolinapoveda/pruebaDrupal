@@ -3,7 +3,7 @@ body{
         .main-title{
             color: #002b49;
             text-align: center;
-            margin-top: 60px;
+            margin-top: 64px;
             @include breakpoint(desktop){
                 margin-top: 80px;
             }

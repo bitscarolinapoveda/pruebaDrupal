@@ -56,7 +56,7 @@
                 }
                 .description-slider{
                     font-size: 18px;
-                    font-family: open_sanslight;
+                    font-family: 'Roboto', sans-serif;
                     @include breakpoint(tablet) {
                         position: relative;
                         line-height: 1.2;
@@ -68,6 +68,7 @@
                         position: relative;
                         line-height: 1.2;
                         font-size: 28px;
+                        padding-left: 22%;
                         width: 88%;
                         left: 12%;
                     }
