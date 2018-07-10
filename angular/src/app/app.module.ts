@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { HttpClientModule } from '@angular/common/http';
+
 // Modulos
 import { AdfModule } from './@adf/adf.module';
 import { PagesModule } from './main/pages/pages.module';
@@ -25,6 +27,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     BrowserAnimationsModule,
     AdfModule,
     PagesModule,
+    HttpClientModule,
     APP_ROUTES
   ],
   providers: [],

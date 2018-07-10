@@ -2,20 +2,18 @@ import { NgModule } from '@angular/core';
 
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { NopagefoundComponent } from './components/nopagefound/nopagefound.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
     HeaderComponent,
     FooterComponent,
-    NopagefoundComponent
+    NavbarComponent
 
   ],
   exports: [
     HeaderComponent,
-    FooterComponent,
-    NopagefoundComponent
-
+    FooterComponent
   ],
 })
 
