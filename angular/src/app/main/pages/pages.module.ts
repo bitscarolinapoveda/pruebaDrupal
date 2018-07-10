@@ -9,15 +9,18 @@ import { CardsModule } from '../../cards/cards.module';
 
 import { PagesComponent } from './pages.component';
 import { HomeComponent } from './home/home.component';
+import { NopagefoundComponent } from './nopagefound/nopagefound.component';
 
 
 @NgModule({
   declarations: [
     PagesComponent,
     HomeComponent,
+    NopagefoundComponent
   ],
   exports: [
-    HomeComponent
+    HomeComponent,
+    NopagefoundComponent
   ],
   imports: [
     BrowserModule,
