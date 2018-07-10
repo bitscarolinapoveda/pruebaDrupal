@@ -1,31 +1,31 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppComponent } from './app.component';
-import { FooterComponent } from './layout/components/footer/footer.component';
-import { HeaderComponent } from './layout/components/header/header.component';
-import { ContentComponent } from './layout/components/content/content.component';
-import { SliderOneComponent } from './cards/components/slider-one/slider-one.component';
-
-
 // Modulos
 import { AdfModule } from './@adf/adf.module';
+import { PagesModule } from './main/pages/pages.module';
+
+// Rutas
+import { APP_ROUTES } from './app.routes';
+
+// Componentes
+import { AppComponent } from './app.component';
+
 
 // Material
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
+
 @NgModule({
   declarations: [
-    AppComponent,
-    FooterComponent,
-    HeaderComponent,
-    ContentComponent,
-    SliderOneComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    AdfModule
+    AdfModule,
+    PagesModule,
+    APP_ROUTES
   ],
   providers: [],
   bootstrap: [AppComponent]
