@@ -1,5 +1,8 @@
 #title-gallery{
     margin-top: 14%;
+    @include breakpoint (tablet) {
+        margin-top: 7%;
+    }
     @include breakpoint (desktop) {
         margin-top: 4%;
     }
@@ -7,6 +10,9 @@
         background: rgb(247, 249, 249);
         height: 160px;
         padding-top: 11%;
+        @include breakpoint (tablet) {
+            padding-top: 7%;
+        }
         @include breakpoint(desktop){
             height: 171px;    
             padding-top: 5%;

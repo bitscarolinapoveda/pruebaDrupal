@@ -7,6 +7,9 @@
     .carousel-inner .carousel-item-next,
     .carousel-inner .carousel-item-prev {
         display: contents;
+         @include breakpoint (tablet) {
+             display: flex;
+         }
         @include breakpoint (desktop){
             display: flex;
         }
@@ -32,6 +35,10 @@
     .carousel-inner{
         height: 232px;
         width: 71%;
+        @include breakpoint (tablet){
+            height: initial;
+            width: 68%;
+        }
         @include breakpoint (desktop){
         height: initial;
         width: 63%;
@@ -43,6 +50,9 @@
             }
             .url-carousel{
                 width: 132px;
+                @include breakpoint (tablet){
+                    width: 285px;
+                }
                 @include breakpoint (desktop){
                     width: 400px;
                     text-decoration: none;
@@ -125,10 +135,13 @@
     .icon-left{
         position: relative;
         top: 5%;
-        background-image: url('../images/left-arrow.svg');
+        background-image: url('../icon/left-arrow.svg');
         background-size:37px; 
         height: 27px;
         width: 24px;
+        @include breakpoint (tablet){
+            left: 37%;
+        }
         @include breakpoint (desktop){
             height:34px ;
             left: 160px;
@@ -137,10 +150,13 @@
     .icon-right{
         position: relative;
         top: 5%;
-        background-image: url('../images/right-arrow.svg');
+        background-image: url('../icon/right-arrow.svg');
         background-size:37px;
         height: 27px;
         width: 24px;
+        @include breakpoint (tablet) {
+            right:40%;
+        }
         @include breakpoint (desktop) {
             height: 34px;
             right: 160px;

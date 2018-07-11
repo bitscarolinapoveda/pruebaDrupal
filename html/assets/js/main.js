@@ -90,7 +90,7 @@
             volver = $(this).attr('href');
             $('html, body').animate({
                 scrollTop: $(volver).offset().top
-            }, 2000);
+            }, 1600);
         });
     });
 
@@ -269,4 +269,7 @@
             }
         });
     });
- 
+
+
+
+
