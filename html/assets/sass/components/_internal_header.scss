@@ -29,5 +29,13 @@ body{
             }
         }
     }
+    .page-header::before{
+        content: "";
+        background-color: #000000;
+        opacity: 0.3;
+        height: 352px;
+        width: 100%;
+        position: absolute;
+    }
 }
 

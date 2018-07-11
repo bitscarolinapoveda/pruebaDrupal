@@ -132,6 +132,7 @@
                 top: 88%;
                 @include breakpoint (desktop){
                     top: 81%;
+                    left: 4%;
                 }
             }
             .botton_products {
@@ -144,7 +145,7 @@
                 text-align: center;
                 color:#8ECE17;
                 text-decoration: none;
-                font-family: open_sansregular;
+                
                 visibility: hidden;
                 &::after {
                     content: '';
@@ -154,7 +155,7 @@
                     padding-left: 17%;
                     padding-right: 17%;
                     padding-top: 17%;
-                    background-image: url('../images/mas.svg');
+                    background-image: url('../icon/mas.svg');
                     background-position: center;
                     background-repeat: no-repeat;
                     background-size: 35px;

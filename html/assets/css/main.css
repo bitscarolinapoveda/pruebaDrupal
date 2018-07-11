@@ -19,17 +19,32 @@ body footer picture img {
   body footer {
     width: 100%; } }
 
-body footer .container-elements {
+@media (min-width: 1025px) {
+  body footer .container-elements {
+    width: 100%;
+    display: flex; } }
+
+@media (min-width: 668px) and (max-width: 1024px) {
+  body footer .container-elements {
+    width: 100%;
+    display: flex; } }
+
+body footer .container-elements::after {
+  content: "";
   background-color: #002b49;
-  opacity: 0.83; }
+  opacity: 0.83;
+  position: absolute;
+  height: 464px;
+  width: 100%;
+  margin-top: -419px; }
   @media (min-width: 1025px) {
-    body footer .container-elements {
-      width: 100%;
-      display: flex; } }
+    body footer .container-elements::after {
+      height: 182px;
+      margin-top: 0; } }
   @media (min-width: 668px) and (max-width: 1024px) {
-    body footer .container-elements {
-      width: 100%;
-      display: flex; } }
+    body footer .container-elements::after {
+      height: 182px;
+      margin-top: 0; } }
 
 body footer .row {
   margin-right: 0px; }
@@ -39,7 +54,9 @@ body footer .row {
 
 body footer .location {
   color: #FFFFFF;
-  text-align: center; }
+  text-align: center;
+  z-index: 1;
+  position: relative; }
   body footer .location hr {
     width: 50%;
     background-color: #dfdfdf;
@@ -139,7 +156,7 @@ body footer .location::before {
       position: absolute;
       height: 81px;
       margin-top: 37px;
-      margin-left: 18%;
+      margin-left: 46%;
       opacity: 0.3; } }
   @media (min-width: 668px) and (max-width: 1024px) {
     body footer .location::before {
@@ -152,7 +169,9 @@ body footer .location::before {
 
 body footer .newsletter {
   color: #FFFFFF;
-  text-align: center; }
+  text-align: center;
+  z-index: 1;
+  position: relative; }
   body footer .newsletter hr {
     width: 50%;
     background-color: #dfdfdf;
@@ -216,7 +235,9 @@ body footer .newsletter::before {
 
 body footer .contac {
   color: #FFFFFF;
-  text-align: center; }
+  text-align: center;
+  z-index: 1;
+  position: relative; }
   body footer .contac hr {
     width: 50%;
     background-color: #dfdfdf;
@@ -313,7 +334,9 @@ body footer .contac::before {
       opacity: 0.3; } }
 
 body footer .logo {
-  text-align: center; }
+  text-align: center;
+  z-index: 1;
+  position: relative; }
   body footer .logo .row .col-lg-12 a {
     margin-left: 3%; }
   body footer .logo .row .col-lg-12 h6 {
@@ -573,7 +596,7 @@ body footer .privacy {
       width: 98.7%; } }
   body footer .privacy .row .col-lg-12 {
     background-color: #002b49;
-    opacity: 0.93;
+    opacity: 0.8;
     color: #FFFFFF;
     text-align: center;
     height: 47px; }
@@ -662,10 +685,11 @@ body footer .privacy {
   position: fixed;
   border-radius: 200px;
   margin-left: 65%;
-  margin-top: 573px; }
+  margin-top: 573px;
+  z-index: 1; }
   .envolope .icon-mail {
     font-size: 22px;
-    margin-top: 5px;
+    margin-top: 4px;
     margin-left: -12px; }
     .envolope .icon-mail a {
       color: #FFFFFF; }
@@ -747,7 +771,7 @@ body footer .privacy {
       font-size: 36px; }
       @media (min-width: 668px) and (max-width: 1024px) {
         .Slider .carousel-slider .window-complete .text-slider .title-slider {
-          font-size: 50px; } }
+          font-size: 32px; } }
       @media (min-width: 1025px) {
         .Slider .carousel-slider .window-complete .text-slider .title-slider {
           font-size: 50px; } }
@@ -758,7 +782,7 @@ body footer .privacy {
         .Slider .carousel-slider .window-complete .text-slider .description-slider {
           position: relative;
           line-height: 1.2;
-          font-size: 28px;
+          font-size: 21px;
           width: 88%;
           left: 11%; } }
       @media (min-width: 1025px) {
@@ -824,7 +848,7 @@ body footer .privacy {
       margin-right: 82%;
       position: relative;
       background: rgba(0, 0, 0, 0.63);
-      background-image: url("../images/back-white.svg");
+      background-image: url("../icon/back-white.svg");
       background-size: 94%;
       background-position: center;
       background-repeat: no-repeat; } }
@@ -836,13 +860,16 @@ body footer .privacy {
       margin-left: 81%;
       position: relative;
       background: rgba(0, 0, 0, 0.63);
-      background-image: url("../images/next-white.svg");
+      background-image: url("../icon/next-white.svg");
       background-position: center;
       background-repeat: no-repeat;
       background-size: 94%; } }
 
 #title-gallery {
   margin-top: 14%; }
+  @media (min-width: 668px) and (max-width: 1024px) {
+    #title-gallery {
+      margin-top: 7%; } }
   @media (min-width: 1025px) {
     #title-gallery {
       margin-top: 4%; } }
@@ -850,6 +877,9 @@ body footer .privacy {
     background: #f7f9f9;
     height: 160px;
     padding-top: 11%; }
+    @media (min-width: 668px) and (max-width: 1024px) {
+      #title-gallery .title {
+        padding-top: 7%; } }
     @media (min-width: 1025px) {
       #title-gallery .title {
         height: 171px;
@@ -981,7 +1011,8 @@ body footer .privacy {
         top: 88%; }
         @media (min-width: 1025px) {
           #gallery-images .tz-gallery .thumbnai .box-info .box-botton {
-            top: 81%; } }
+            top: 81%;
+            left: 4%; } }
       #gallery-images .tz-gallery .thumbnai .box-info .botton_products {
         position: relative;
         border: none;
@@ -992,7 +1023,6 @@ body footer .privacy {
         text-align: center;
         color: #8ECE17;
         text-decoration: none;
-        font-family: open_sansregular;
         visibility: hidden; }
         #gallery-images .tz-gallery .thumbnai .box-info .botton_products::after {
           content: '';
@@ -1002,7 +1032,7 @@ body footer .privacy {
           padding-left: 17%;
           padding-right: 17%;
           padding-top: 17%;
-          background-image: url("../images/mas.svg");
+          background-image: url("../icon/mas.svg");
           background-position: center;
           background-repeat: no-repeat;
           background-size: 35px;
@@ -1130,76 +1160,345 @@ body .page-header {
     width: 100%;
     height: 352px; }
 
-body main .main-title {
+body .page-header::before {
+  content: "";
+  background-color: #000000;
+  opacity: 0.3;
+  height: 352px;
+  width: 100%;
+  position: absolute; }
+
+body main #main-title {
   color: #002b49;
   text-align: center;
   margin-top: 64px; }
   @media (min-width: 1025px) {
-    body main .main-title {
+    body main #main-title {
       margin-top: 80px; } }
   @media (min-width: 668px) and (max-width: 1024px) {
-    body main .main-title {
+    body main #main-title {
       margin-top: 80px; } }
-  body main .main-title h1 {
+  body main #main-title h1 {
     margin-left: 3%;
     font-size: 30px; }
     @media (min-width: 1025px) {
-      body main .main-title h1 {
+      body main #main-title h1 {
         margin-left: 0;
         font-size: 40px;
         width: 100%; } }
     @media (min-width: 668px) and (max-width: 1024px) {
-      body main .main-title h1 {
+      body main #main-title h1 {
         margin-left: 0;
         font-size: 40px;
         width: 100%; } }
 
-main .WhyBits {
+main #list-images {
   width: 96%;
   margin-top: 39px; }
   @media (min-width: 1025px) {
-    main .WhyBits {
+    main #list-images {
       width: 98%; } }
   @media (min-width: 668px) and (max-width: 1024px) {
-    main .WhyBits {
+    main #list-images {
       width: 98%; } }
-  main .WhyBits .images-whybits .images {
+  main #list-images .item-images .images {
     margin-left: 0; }
     @media (min-width: 1025px) {
-      main .WhyBits .images-whybits .images {
+      main #list-images .item-images .images {
         margin-left: 9%; } }
     @media (min-width: 668px) and (max-width: 1024px) {
-      main .WhyBits .images-whybits .images {
+      main #list-images .item-images .images {
         margin-left: 5%; } }
-    main .WhyBits .images-whybits .images li {
+    main #list-images .item-images .images li {
       list-style: none;
       margin-right: 25px;
       margin-top: 17px;
       text-align: center; }
       @media (min-width: 1025px) {
-        main .WhyBits .images-whybits .images li {
+        main #list-images .item-images .images li {
           margin-right: 8%; } }
       @media (min-width: 668px) and (max-width: 1024px) {
-        main .WhyBits .images-whybits .images li {
+        main #list-images .item-images .images li {
           margin-right: 5%; } }
-      main .WhyBits .images-whybits .images li p {
+      main #list-images .item-images .images li p {
         font-size: 20px;
         width: 133px;
-        margin-top: 16px; }
+        margin-top: 16px;
+        color: #002b49; }
         @media (min-width: 1025px) {
-          main .WhyBits .images-whybits .images li p {
+          main #list-images .item-images .images li p {
             font-size: 24px; } }
         @media (min-width: 668px) and (max-width: 1024px) {
-          main .WhyBits .images-whybits .images li p {
+          main #list-images .item-images .images li p {
             font-size: 24px; } }
-    main .WhyBits .images-whybits .images li:last-child {
+    main #list-images .item-images .images li:last-child {
       margin-left: 24%; }
       @media (min-width: 1025px) {
-        main .WhyBits .images-whybits .images li:last-child {
+        main #list-images .item-images .images li:last-child {
           margin-left: 0; } }
       @media (min-width: 668px) and (max-width: 1024px) {
-        main .WhyBits .images-whybits .images li:last-child {
+        main #list-images .item-images .images li:last-child {
           margin-left: 0; } }
+
+#bottons-services .totalbottons {
+  position: relative;
+  top: 50%;
+  width: 100%;
+  background: #f7f9f9;
+  height: 141px; }
+  @media (min-width: 1025px) {
+    #bottons-services .totalbottons {
+      top: initial; } }
+  #bottons-services .totalbottons .bottons {
+    padding-left: 10%;
+    padding-bottom: 12%;
+    padding-top: 10%;
+    width: 100%; }
+    @media (min-width: 668px) and (max-width: 1024px) {
+      #bottons-services .totalbottons .bottons {
+        padding-left: 29%;
+        padding-bottom: 0%;
+        padding-top: 6%; } }
+    @media (min-width: 1025px) {
+      #bottons-services .totalbottons .bottons {
+        padding-left: 36%;
+        padding-top: 4%;
+        padding-bottom: initial; } }
+    #bottons-services .totalbottons .bottons .bottonleft {
+      width: 200px;
+      border: solid 1px rgba(142, 206, 23, 0.7);
+      padding-right: 3.5%;
+      padding-bottom: 2%;
+      padding-left: 3.5%;
+      padding-top: 2%;
+      position: relative;
+      text-decoration: none;
+      color: #ffffff;
+      background: rgba(142, 206, 23, 0.7);
+      font-size: 14px;
+      font-family: open_sansregular;
+      text-transform: uppercase; }
+      @media (min-width: 1025px) {
+        #bottons-services .totalbottons .bottons .bottonleft {
+          font-size: 18px;
+          padding-bottom: 0.9%;
+          padding-top: 0.9%; } }
+    #bottons-services .totalbottons .bottons .bottonrigth {
+      width: 200px;
+      border: solid 1px rgba(142, 206, 23, 0.7);
+      left: 8%;
+      padding-right: 3.5%;
+      padding-bottom: 2%;
+      padding-left: 3.5%;
+      padding-top: 2%;
+      position: relative;
+      text-decoration: none;
+      color: #ffffff;
+      background: rgba(142, 206, 23, 0.7);
+      font-size: 14px;
+      font-family: open_sansregular;
+      text-transform: uppercase; }
+      @media (min-width: 1025px) {
+        #bottons-services .totalbottons .bottons .bottonrigth {
+          font-size: 18px;
+          padding-bottom: 0.9%;
+          padding-top: 0.9%; } }
+    #bottons-services .totalbottons .bottons .bottonleft:hover {
+      border: solid 1px #8ECE17;
+      background: #8ECE17; }
+    #bottons-services .totalbottons .bottons .bottonrigth:hover {
+      border: solid 1px #8ECE17;
+      background: #8ECE17; }
+
+body main #transition-image {
+  margin-top: 53px;
+  height: 358px; }
+  @media (min-width: 1025px) {
+    body main #transition-image {
+      height: 366px; } }
+  @media (min-width: 668px) and (max-width: 1024px) {
+    body main #transition-image {
+      height: 366px; } }
+  body main #transition-image picture .backgraund-image {
+    height: 358px;
+    position: absolute; }
+    @media (min-width: 1025px) {
+      body main #transition-image picture .backgraund-image {
+        height: 366px; } }
+    @media (min-width: 668px) and (max-width: 1024px) {
+      body main #transition-image picture .backgraund-image {
+        height: 366px; } }
+  body main #transition-image h1 {
+    font-size: 30px;
+    color: #FFFFFF;
+    position: absolute;
+    z-index: 1;
+    margin-top: 62px;
+    margin-left: 10%; }
+    @media (min-width: 1025px) {
+      body main #transition-image h1 {
+        margin-left: 36%;
+        margin-top: 67px;
+        font-size: 40px; } }
+    @media (min-width: 668px) and (max-width: 1024px) {
+      body main #transition-image h1 {
+        margin-left: 36%;
+        margin-top: 67px;
+        font-size: 40px; } }
+  body main #transition-image .list-image-item {
+    height: 357px; }
+    body main #transition-image .list-image-item .row {
+      position: absolute;
+      margin-top: 146px;
+      margin-right: 0;
+      margin-left: 2px; }
+      @media (min-width: 1025px) {
+        body main #transition-image .list-image-item .row {
+          margin-top: 167px;
+          margin-left: 13%; } }
+      @media (min-width: 668px) and (max-width: 1024px) {
+        body main #transition-image .list-image-item .row {
+          margin-top: 167px;
+          margin-left: 8%; } }
+      body main #transition-image .list-image-item .row li {
+        z-index: 1;
+        list-style: none;
+        margin-right: 51px;
+        margin-bottom: 68px; }
+        @media (min-width: 1025px) {
+          body main #transition-image .list-image-item .row li {
+            margin-right: 130px; } }
+        @media (min-width: 668px) and (max-width: 1024px) {
+          body main #transition-image .list-image-item .row li {
+            margin-right: 96px; } }
+      body main #transition-image .list-image-item .row li:last-child {
+        margin-left: 10%;
+        margin-top: 15px; }
+        @media (min-width: 1025px) {
+          body main #transition-image .list-image-item .row li:last-child {
+            margin-left: 0;
+            margin-top: 0; } }
+        @media (min-width: 668px) and (max-width: 1024px) {
+          body main #transition-image .list-image-item .row li:last-child {
+            margin-left: 0;
+            margin-top: 0; } }
+      @media (min-width: 1025px) {
+        body main #transition-image .list-image-item .row li:nth-child(2n+1) {
+          margin-top: 38px; } }
+      @media (min-width: 668px) and (max-width: 1024px) {
+        body main #transition-image .list-image-item .row li:nth-child(2n+1) {
+          margin-top: 38px; } }
+  body main #transition-image .list-image-item::after {
+    content: "";
+    background-color: #002b49;
+    opacity: 0.7;
+    height: 358px;
+    width: 100%;
+    position: absolute; }
+    @media (min-width: 1025px) {
+      body main #transition-image .list-image-item::after {
+        height: 366px; } }
+    @media (min-width: 668px) and (max-width: 1024px) {
+      body main #transition-image .list-image-item::after {
+        height: 366px; } }
+
+body main #transition-image2 {
+  margin-top: 53px;
+  height: 338px; }
+  @media (min-width: 1025px) {
+    body main #transition-image2 {
+      height: 317px; } }
+  @media (min-width: 668px) and (max-width: 1024px) {
+    body main #transition-image2 {
+      height: 317px; } }
+  body main #transition-image2 picture .backgraund-image {
+    height: 338px;
+    position: absolute; }
+    @media (min-width: 1025px) {
+      body main #transition-image2 picture .backgraund-image {
+        height: 317px; } }
+    @media (min-width: 668px) and (max-width: 1024px) {
+      body main #transition-image2 picture .backgraund-image {
+        height: 317px; } }
+  body main #transition-image2 h1 {
+    font-size: 30px;
+    color: #FFFFFF;
+    position: absolute;
+    z-index: 1;
+    margin-top: 57px;
+    margin-left: 10%; }
+    @media (min-width: 1025px) {
+      body main #transition-image2 h1 {
+        margin-left: 36%;
+        margin-top: 77px;
+        font-size: 40px; } }
+    @media (min-width: 668px) and (max-width: 1024px) {
+      body main #transition-image2 h1 {
+        margin-left: 36%;
+        margin-top: 77px;
+        font-size: 40px; } }
+  body main #transition-image2 .list-image-item {
+    height: 357px; }
+    body main #transition-image2 .list-image-item .row {
+      position: absolute;
+      margin-top: 126px;
+      margin-right: 0;
+      margin-left: 2px; }
+      @media (min-width: 1025px) {
+        body main #transition-image2 .list-image-item .row {
+          margin-top: 182px;
+          margin-left: 13%; } }
+      @media (min-width: 668px) and (max-width: 1024px) {
+        body main #transition-image2 .list-image-item .row {
+          margin-top: 182px;
+          margin-left: 8%; } }
+      body main #transition-image2 .list-image-item .row li {
+        z-index: 1;
+        list-style: none;
+        margin-right: 30px;
+        margin-bottom: 47px; }
+        @media (min-width: 1025px) {
+          body main #transition-image2 .list-image-item .row li {
+            margin-right: 130px; } }
+        @media (min-width: 668px) and (max-width: 1024px) {
+          body main #transition-image2 .list-image-item .row li {
+            margin-right: 68px; } }
+      body main #transition-image2 .list-image-item .row li:last-child {
+        margin-top: 20px; }
+        @media (min-width: 1025px) {
+          body main #transition-image2 .list-image-item .row li:last-child {
+            margin-top: 0; } }
+        @media (min-width: 668px) and (max-width: 1024px) {
+          body main #transition-image2 .list-image-item .row li:last-child {
+            margin-top: 0; } }
+      @media (min-width: 1025px) {
+        body main #transition-image2 .list-image-item .row li:nth-child(2n) {
+          margin-top: 38px; } }
+      @media (min-width: 668px) and (max-width: 1024px) {
+        body main #transition-image2 .list-image-item .row li:nth-child(2n) {
+          margin-top: 38px; } }
+      body main #transition-image2 .list-image-item .row li:nth-child(2) {
+        margin-left: 17%;
+        margin-top: 20px; }
+        @media (min-width: 1025px) {
+          body main #transition-image2 .list-image-item .row li:nth-child(2) {
+            margin-left: 0; } }
+        @media (min-width: 668px) and (max-width: 1024px) {
+          body main #transition-image2 .list-image-item .row li:nth-child(2) {
+            margin-left: 0; } }
+  body main #transition-image2 .list-image-item::after {
+    content: "";
+    background-color: #000000;
+    opacity: 0.3;
+    height: 338px;
+    width: 100%;
+    position: absolute; }
+    @media (min-width: 1025px) {
+      body main #transition-image2 .list-image-item::after {
+        height: 317px; } }
+    @media (min-width: 668px) and (max-width: 1024px) {
+      body main #transition-image2 .list-image-item::after {
+        height: 317px; } }
 
 #bottons-services .totalbottons {
   position: relative;
@@ -1280,6 +1579,11 @@ main .WhyBits {
   #Carousel-4items .carousel-inner .carousel-item-next,
   #Carousel-4items .carousel-inner .carousel-item-prev {
     display: contents; }
+    @media (min-width: 668px) and (max-width: 1024px) {
+      #Carousel-4items .carousel-inner .carousel-item.active,
+      #Carousel-4items .carousel-inner .carousel-item-next,
+      #Carousel-4items .carousel-inner .carousel-item-prev {
+        display: flex; } }
     @media (min-width: 1025px) {
       #Carousel-4items .carousel-inner .carousel-item.active,
       #Carousel-4items .carousel-inner .carousel-item-next,
@@ -1297,6 +1601,10 @@ main .WhyBits {
   #Carousel-4items .carousel-inner {
     height: 232px;
     width: 71%; }
+    @media (min-width: 668px) and (max-width: 1024px) {
+      #Carousel-4items .carousel-inner {
+        height: initial;
+        width: 68%; } }
     @media (min-width: 1025px) {
       #Carousel-4items .carousel-inner {
         height: initial;
@@ -1306,6 +1614,9 @@ main .WhyBits {
         left: 3%; } }
     #Carousel-4items .carousel-inner .carousel-item .url-carousel {
       width: 132px; }
+      @media (min-width: 668px) and (max-width: 1024px) {
+        #Carousel-4items .carousel-inner .carousel-item .url-carousel {
+          width: 285px; } }
       @media (min-width: 1025px) {
         #Carousel-4items .carousel-inner .carousel-item .url-carousel {
           width: 400px;
@@ -1375,10 +1686,13 @@ main .WhyBits {
   #Carousel-4items .icon-left {
     position: relative;
     top: 5%;
-    background-image: url("../images/left-arrow.svg");
+    background-image: url("../icon/left-arrow.svg");
     background-size: 37px;
     height: 27px;
     width: 24px; }
+    @media (min-width: 668px) and (max-width: 1024px) {
+      #Carousel-4items .icon-left {
+        left: 37%; } }
     @media (min-width: 1025px) {
       #Carousel-4items .icon-left {
         height: 34px;
@@ -1386,18 +1700,23 @@ main .WhyBits {
   #Carousel-4items .icon-right {
     position: relative;
     top: 5%;
-    background-image: url("../images/right-arrow.svg");
+    background-image: url("../icon/right-arrow.svg");
     background-size: 37px;
     height: 27px;
     width: 24px; }
+    @media (min-width: 668px) and (max-width: 1024px) {
+      #Carousel-4items .icon-right {
+        right: 40%; } }
     @media (min-width: 1025px) {
       #Carousel-4items .icon-right {
         height: 34px;
         right: 160px; } }
 
 #title-carousel {
-  margin-top: 15.5%;
-  margin-top: 5%; }
+  margin-top: 15.5%; }
+  @media (min-width: 668px) and (max-width: 1024px) {
+    #title-carousel {
+      margin-top: 5.5%; } }
   @media (min-width: 1025px) {
     #title-carousel {
       margin-top: 4.8%; } }
@@ -1424,12 +1743,19 @@ main .WhyBits {
   #carousel-4text .carousel-inner .carousel-item-right,
   #carousel-4text .carousel-inner .carousel-item-left {
     transform: translateX(0); }
+  @media (min-width: 668px) and (max-width: 1024px) {
+    #carousel-4text #carousel-items1 .carousel-inner {
+      width: 78%;
+      left: 11%; } }
   @media (min-width: 1025px) {
     #carousel-4text #carousel-items1 .carousel-inner {
       width: 85.5%;
       left: 6%; } }
   #carousel-4text #carousel-items1 .carousel-inner .carousel-item {
     width: 405%; }
+    @media (min-width: 668px) and (max-width: 1024px) {
+      #carousel-4text #carousel-items1 .carousel-inner .carousel-item {
+        width: 100%; } }
     @media (min-width: 1025px) {
       #carousel-4text #carousel-items1 .carousel-inner .carousel-item {
         width: 100%; } }
@@ -1446,11 +1772,21 @@ main .WhyBits {
         width: 100%;
         padding-left: 22%;
         padding-right: 21%; }
+        @media (min-width: 668px) and (max-width: 1024px) {
+          #carousel-4text #carousel-items1 .carousel-inner .carousel-item .url-link .container-img {
+            padding-left: 0%;
+            padding-right: 0%; } }
         @media (min-width: 1025px) {
           #carousel-4text #carousel-items1 .carousel-inner .carousel-item .url-link .container-img {
             padding-left: 10%;
             padding-right: 10%;
             height: 111px; } }
+        @media (min-width: 668px) and (max-width: 1024px) {
+          #carousel-4text #carousel-items1 .carousel-inner .carousel-item .url-link .container-img .img-float {
+            max-width: 90%;
+            height: 100%;
+            padding-left: 3%;
+            padding-right: 3%; } }
         @media (min-width: 1025px) {
           #carousel-4text #carousel-items1 .carousel-inner .carousel-item .url-link .container-img .img-float {
             max-width: 100%;
@@ -1472,11 +1808,25 @@ main .WhyBits {
           top: 164px;
           width: 15%;
           position: absolute; }
+          @media (min-width: 668px) and (max-width: 1024px) {
+            #carousel-4text #carousel-items1 .carousel-inner .carousel-item .url-link .info::before {
+              display: none; } }
           @media (min-width: 1025px) {
             #carousel-4text #carousel-items1 .carousel-inner .carousel-item .url-link .info::before {
               display: none; } }
+        @media (min-width: 668px) and (max-width: 1024px) {
+          #carousel-4text #carousel-items1 .carousel-inner .carousel-item .url-link .info {
+            height: 250px; } }
         #carousel-4text #carousel-items1 .carousel-inner .carousel-item .url-link .info .line {
           visibility: hidden; }
+          @media (min-width: 668px) and (max-width: 1024px) {
+            #carousel-4text #carousel-items1 .carousel-inner .carousel-item .url-link .info .line {
+              visibility: visible;
+              background: linear-gradient(-90deg, rgba(255, 255, 255, 0), #b8d950, rgba(255, 255, 255, 0));
+              height: 1px;
+              width: 83%;
+              position: relative;
+              top: 17px; } }
           @media (min-width: 1025px) {
             #carousel-4text #carousel-items1 .carousel-inner .carousel-item .url-link .info .line {
               visibility: visible;
@@ -1520,10 +1870,14 @@ main .WhyBits {
   #carousel-4text #carousel-items1 .icon-left {
     position: relative;
     top: 1%;
-    background-image: url("../images/left-arrow.svg");
+    background-image: url("../icon/left-arrow.svg");
     background-size: 37px;
     height: 27px;
     width: 24px; }
+    @media (min-width: 668px) and (max-width: 1024px) {
+      #carousel-4text #carousel-items1 .icon-left {
+        top: initial;
+        bottom: 32px; } }
     @media (min-width: 1025px) {
       #carousel-4text #carousel-items1 .icon-left {
         height: 34px;
@@ -1533,10 +1887,14 @@ main .WhyBits {
   #carousel-4text #carousel-items1 .icon-right {
     position: relative;
     top: 1%;
-    background-image: url("../images/right-arrow.svg");
+    background-image: url("../icon/right-arrow.svg");
     background-size: 37px;
     height: 27px;
     width: 24px; }
+    @media (min-width: 668px) and (max-width: 1024px) {
+      #carousel-4text #carousel-items1 .icon-right {
+        top: initial;
+        bottom: 32px; } }
     @media (min-width: 1025px) {
       #carousel-4text #carousel-items1 .icon-right {
         height: 34px;

@@ -1,9 +1,11 @@
 #title-carousel{
     margin-top: 15.5%;
+    @include breakpoint (tablet){
+        margin-top: 5.5%;
+    }
     @include breakpoint (desktop){
         margin-top: 4.8%;
     }
-    margin-top: 5%;
     h1{
         font-size: 30px;
         text-align: center;

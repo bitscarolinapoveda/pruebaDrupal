@@ -16,8 +16,6 @@ body{
             width: 100%;
         }
         .container-elements{
-            background-color: #002b49;
-            opacity: 0.83;
             @include breakpoint(desktop) {
                 width: 100%;
                 display: flex;
@@ -25,6 +23,23 @@ body{
             @include breakpoint(tablet) {
                 width: 100%;
                 display: flex;
+            }
+        }
+        .container-elements::after{
+            content: "";
+            background-color: #002b49;
+            opacity: 0.83;
+            position: absolute;
+            height: 464px;
+            width: 100%;
+            margin-top: -419px;
+            @include breakpoint(desktop) {
+                height: 182px;
+                margin-top: 0;
+            }
+            @include breakpoint(tablet) {
+                height: 182px;
+                margin-top: 0;
             }
         }
         .row{
@@ -36,6 +51,8 @@ body{
         .location{
             color: #FFFFFF;
             text-align: center;
+            z-index: 1;
+            position: relative;
             hr{
                 width: 50%;
                 background-color: #dfdfdf;
@@ -151,7 +168,7 @@ body{
                 position: absolute;
                 height: 81px;
                 margin-top: 37px;
-                margin-left: 18%;
+                margin-left: 46%;
                 opacity: 0.3;
             }
             @include breakpoint(tablet) {
@@ -167,6 +184,8 @@ body{
             // display: none;
             color: #FFFFFF;
             text-align: center;
+            z-index: 1;
+            position: relative;
             hr{
                 width: 50%;
                 background-color: #dfdfdf;
@@ -240,6 +259,8 @@ body{
         .contac{
             color: #FFFFFF;
             text-align: center;
+            z-index: 1;
+            position: relative;
             hr{
                 width: 50%;
                 background-color: #dfdfdf;
@@ -354,6 +375,8 @@ body{
         }
         .logo{
             text-align: center;
+            z-index: 1;
+            position: relative;
             .row{
                 .col-lg-12{
                     a{
