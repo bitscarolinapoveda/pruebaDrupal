@@ -44,7 +44,7 @@
     $(function() {
         $(window).scroll(function() {
             var scroll = $(window).scrollTop();
-            var footer = $(".w").offset();
+            var footer = $("#transition-image2").offset();
             footer = footer.top;
             if (scroll >= footer) {
                 $(".social-networks").hide(0);
@@ -74,7 +74,7 @@
     $(function() {
         $(window).scroll(function() {
         var scroll = $(window).scrollTop();
-        var footer = $(".w").offset();
+        var footer = $("#transition-image2").offset();
         footer = footer.top;
         if (scroll >= footer) {
             $(".envolope").hide(0);
@@ -138,7 +138,7 @@
     }
 
     jQuery (function ($) {
-        if ($('#transition-image').length) {
+        if ($('#transition-image2').length) {
             var items = 4;
             var $elements = $('.img-item');
     

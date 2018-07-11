@@ -1901,3 +1901,71 @@ body main #transition-image2 {
         left: 14%;
         bottom: 15px;
         top: initial; } }
+
+body main #work-with-us {
+  display: block;
+  margin-top: 65px;
+  text-align: center;
+  color: #002b49; }
+  body main #work-with-us h1 {
+    font-size: 40px;
+    text-transform: none;
+    transform: scaleY(1.2);
+    letter-spacing: -2px; }
+  body main #work-with-us p {
+    font-size: 20px;
+    margin-top: 11px;
+    margin-bottom: 30px; }
+    @media (min-width: 1025px) {
+      body main #work-with-us p {
+        margin-bottom: 17px; } }
+    @media (min-width: 668px) and (max-width: 1024px) {
+      body main #work-with-us p {
+        margin-bottom: 17px; } }
+  body main #work-with-us .btn-primary {
+    background-color: #a6cf24;
+    border-color: #a6cf24;
+    opacity: 0.75;
+    border-radius: 0;
+    width: 292px;
+    font-size: 20px;
+    height: 45px;
+    margin-bottom: 12px; }
+    @media (min-width: 1025px) {
+      body main #work-with-us .btn-primary {
+        margin-bottom: 0; } }
+    @media (min-width: 668px) and (max-width: 1024px) {
+      body main #work-with-us .btn-primary {
+        margin-bottom: 0; } }
+  body main #work-with-us .text1 {
+    font-size: 24px;
+    margin-top: 11px;
+    transform: scaleY(1.2);
+    background-color: #FFFFFF;
+    width: 42%;
+    margin-left: 29%; }
+    @media (min-width: 1025px) {
+      body main #work-with-us .text1 {
+        width: 12%;
+        margin-left: 44%; } }
+    @media (min-width: 668px) and (max-width: 1024px) {
+      body main #work-with-us .text1 {
+        width: 17%;
+        margin-left: 42%; } }
+  body main #work-with-us hr {
+    background: linear-gradient(-90deg, #FFFFFF, #a6cf24, #a6cf24, #FFFFFF);
+    height: 1px;
+    width: 80%;
+    position: absolute;
+    margin-top: 31px;
+    left: 10%; }
+    @media (min-width: 1025px) {
+      body main #work-with-us hr {
+        width: 22%;
+        left: 39%; } }
+    @media (min-width: 668px) and (max-width: 1024px) {
+      body main #work-with-us hr {
+        width: 22%;
+        left: 39%; } }
+  body main #work-with-us .text2 {
+    margin-bottom: 67px; }
