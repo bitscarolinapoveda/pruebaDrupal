@@ -161,16 +161,13 @@ header{
                             padding-right: 3%;        
                         }
                     }         
-                    
-                    
-                    .link{
+                     .link{
                         color: #ffffff;
                         width: 100%;
                         font-size: 15px;
                         text-decoration: none;
                         text-align: left;
                         padding-right: 73%;
-                        
                         &:hover{
                             color: #a6cf24;
                             text-decoration: none;
@@ -203,6 +200,11 @@ header{
                                 padding-left: 0%;
                             }
                         }
+                    }
+
+                    .active{
+                        border-top: 4px solid #a6cf24;
+                        
                     }
                     .scroll-white{
                         color: #002b49;
