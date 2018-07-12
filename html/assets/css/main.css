@@ -555,6 +555,8 @@ header nav {
             @media (min-width: 1025px) {
               header nav .menuToggle .list-menu .items .link .arrow-service {
                 padding-left: 0%; } }
+        header nav .menuToggle .list-menu .items .active {
+          border-top: 4px solid #a6cf24; }
         header nav .menuToggle .list-menu .items .scroll-white {
           color: #002b49; }
       header nav .menuToggle .list-menu .language {
@@ -1600,15 +1602,18 @@ body main #transition-image2 {
     transform: translateX(0); }
   #Carousel-4items .carousel-inner {
     height: 232px;
-    width: 71%; }
+    width: 75%;
+    left: 2%; }
     @media (min-width: 668px) and (max-width: 1024px) {
       #Carousel-4items .carousel-inner {
         height: initial;
-        width: 68%; } }
+        width: 68%;
+        left: initial; } }
     @media (min-width: 1025px) {
       #Carousel-4items .carousel-inner {
         height: initial;
-        width: 63%; } }
+        width: 63%;
+        left: initial; } }
     @media (min-width: 1025px) {
       #Carousel-4items .carousel-inner .carousel-item {
         left: 3%; } }
@@ -1969,3 +1974,100 @@ body main #work-with-us {
         left: 39%; } }
   body main #work-with-us .text2 {
     margin-bottom: 67px; }
+
+#blocks-tabs {
+  margin-top: 12%; }
+  @media (min-width: 668px) and (max-width: 1024px) {
+    #blocks-tabs {
+      margin-top: 6%; } }
+  #blocks-tabs .block {
+    background: #e5e9ec;
+    height: 137px; }
+    @media (min-width: 1025px) {
+      #blocks-tabs .block {
+        height: 140px; } }
+    #blocks-tabs .block .nav {
+      height: 100%; }
+      #blocks-tabs .block .nav .list {
+        width: 50%;
+        font-size: 22px;
+        text-align: center; }
+        @media (min-width: 1025px) {
+          #blocks-tabs .block .nav .list {
+            padding-left: 11.8%;
+            z-index: 2; }
+            #blocks-tabs .block .nav .list::after {
+              content: '';
+              z-index: -1;
+              position: absolute;
+              height: 75px;
+              width: 1px;
+              margin-top: -7%;
+              left: 11.8%;
+              background-color: #95a7b3; } }
+        #blocks-tabs .block .nav .list .nav-link {
+          height: 100%;
+          padding-top: 6%;
+          color: #2e516a; }
+          @media (min-width: 1025px) {
+            #blocks-tabs .block .nav .list .nav-link {
+              padding-top: 4%; } }
+        #blocks-tabs .block .nav .list .item-block {
+          text-decoration: none; }
+          #blocks-tabs .block .nav .list .item-block::before {
+            content: '';
+            display: block;
+            padding: 1em;
+            background-image: url("../icon/contact.svg");
+            background-repeat: no-repeat;
+            background-position: center; }
+        #blocks-tabs .block .nav .list .item-block-2 {
+          text-decoration: none; }
+          #blocks-tabs .block .nav .list .item-block-2::before {
+            content: '';
+            display: block;
+            padding: 1em;
+            background-image: url("../icon/joinus.svg");
+            background-repeat: no-repeat;
+            background-position: center; }
+        #blocks-tabs .block .nav .list .active {
+          background: #2e516a;
+          color: #ffffff; }
+          #blocks-tabs .block .nav .list .active::before {
+            content: '';
+            background-image: url("../icon/contact-white.svg"); }
+          #blocks-tabs .block .nav .list .active::after {
+            content: '';
+            position: absolute;
+            border-width: 22px 65px 0;
+            border-style: solid;
+            border-color: #2e516a transparent transparent;
+            margin-top: 11.38%;
+            margin-left: -112px; }
+            @media (min-width: 668px) and (max-width: 1024px) {
+              #blocks-tabs .block .nav .list .active::after {
+                margin-top: 6%;
+                margin-left: -179px; } }
+            @media (min-width: 1025px) {
+              #blocks-tabs .block .nav .list .active::after {
+                margin-top: 4.2%;
+                margin-left: -184px;
+                border-width: 27px 76px 0; } }
+      @media (min-width: 1025px) {
+        #blocks-tabs .block .nav .list-color {
+          padding-left: 0%;
+          padding-right: 11.8%; }
+          #blocks-tabs .block .nav .list-color::after {
+            content: '';
+            position: absolute;
+            height: 75px;
+            width: 1px;
+            margin-top: -7%;
+            left: 88.14%;
+            background-color: #95a7b3; } }
+      #blocks-tabs .block .nav .list-color .active {
+        background: #2e516a;
+        color: #ffffff; }
+        #blocks-tabs .block .nav .list-color .active::before {
+          content: '';
+          background-image: url("../icon/joinus-white.svg"); }

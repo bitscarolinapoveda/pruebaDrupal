@@ -34,14 +34,17 @@
     }
     .carousel-inner{
         height: 232px;
-        width: 71%;
+        width: 75%;
+        left: 2%;
         @include breakpoint (tablet){
             height: initial;
             width: 68%;
+            left: initial;
         }
         @include breakpoint (desktop){
         height: initial;
         width: 63%;
+        left: initial;
         }
 
         .carousel-item{
