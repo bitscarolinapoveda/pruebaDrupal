@@ -36,27 +36,4 @@ class GeneratorOfLinks extends CardBase {
     ];
   }
 
-  /**
-   * {@inheritdoc}
-   */
-  public function blockForm($form, FormStateInterface $form_state) {
-    $form = parent::blockForm($form, $form_state);
-    return $form;
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function blockSubmit($form, FormStateInterface $form_state) {
-    parent::blockSubmit($form, $form_state);
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function build() {
-    $build = parent::build();
-    return $build;
-  }
-
 }
