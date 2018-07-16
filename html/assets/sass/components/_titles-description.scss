@@ -1,0 +1,37 @@
+body{
+    main{
+        .title1-title2-description{
+            margin-left: 10%;
+            color: #002b49;
+            margin-top: 44px;
+            @include breakpoint(desktop){
+                margin-left: 13%;
+            }
+            h3{
+                font-size: 31px;
+                transform: scaleY(1.2);
+                letter-spacing: -1px;
+                @include breakpoint(desktop){
+                    font-size: 36px;
+                }
+                @include breakpoint(tablet){
+                    font-size: 36px;
+                }
+            }
+            h4{
+                font-size: 22px;
+                margin-top: 29px;
+            }
+            p{
+                font-size: 14px;
+                margin-top: 22px;
+                a{
+                    color: #a6cf24;
+                }
+            }
+        }
+        .title1-title2-description:last-child{
+            margin-bottom: 83px;
+        }
+    }
+}

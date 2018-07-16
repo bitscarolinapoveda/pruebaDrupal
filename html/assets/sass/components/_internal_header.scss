@@ -2,23 +2,20 @@ body{
     .page-header{
         height: 352px;
         .title{
-            position: absolute;
-            margin-top: 178px;
             color: #FFFFFF;
-            margin-left: 15%;
-            @include breakpoint(desktop) {
-                margin-left: 37%;
-            }
-            @include breakpoint(tablet) {
-                margin-left: 37%;
-            }
             h1{
+                position: absolute;
+                margin-top: 178px;
                 font-size: 36px;
+                left: 52%;
+                transform: translateX(-50%);
                 @include breakpoint(desktop) {
                     font-size: 50px;
+                    left: 50%;
                 }
                 @include breakpoint(tablet) {
                     font-size: 50px;
+                    left: 50%;
                 }
             }
         }
