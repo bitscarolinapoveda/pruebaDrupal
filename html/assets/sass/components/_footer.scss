@@ -116,6 +116,7 @@ body{
                             background-image: url("../icon/placeholders.png");
                             padding-left: 16px;
                             padding-top: 2px;
+                            background-repeat: no-repeat;
                         }
                         .office:hover::before{
                             background-image: url("../icon/placeholders-green.png");
