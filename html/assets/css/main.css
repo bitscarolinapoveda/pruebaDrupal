@@ -688,7 +688,7 @@ body footer .privacy {
   position: fixed;
   border-radius: 200px;
   margin-left: 65%;
-  margin-top: 573px;
+  margin-top: 538px;
   z-index: 1; }
   .envolope .icon-mail {
     font-size: 22px;
@@ -1389,7 +1389,7 @@ body main #transition-image {
       body main #transition-image .list-image-item .row li {
         z-index: 1;
         list-style: none;
-        margin-right: 51px;
+        margin-right: 23px;
         margin-bottom: 68px; }
         @media (min-width: 1025px) {
           body main #transition-image .list-image-item .row li {
@@ -1481,8 +1481,8 @@ body main #transition-image2 {
       body main #transition-image2 .list-image-item .row li {
         z-index: 1;
         list-style: none;
-        margin-right: 30px;
-        margin-bottom: 47px; }
+        margin-right: 17px;
+        margin-bottom: 76px; }
         @media (min-width: 1025px) {
           body main #transition-image2 .list-image-item .row li {
             margin-right: 130px; } }
@@ -1490,7 +1490,7 @@ body main #transition-image2 {
           body main #transition-image2 .list-image-item .row li {
             margin-right: 68px; } }
       body main #transition-image2 .list-image-item .row li:last-child {
-        margin-top: 20px; }
+        margin-top: -22px; }
         @media (min-width: 1025px) {
           body main #transition-image2 .list-image-item .row li:last-child {
             margin-top: 0; } }
@@ -1498,13 +1498,13 @@ body main #transition-image2 {
           body main #transition-image2 .list-image-item .row li:last-child {
             margin-top: 0; } }
       @media (min-width: 1025px) {
-        body main #transition-image2 .list-image-item .row li:nth-child(2n) {
-          margin-top: 38px; } }
+        body main #transition-image2 .list-image-item .row li:nth-child(3) {
+          margin-top: 26px; } }
       @media (min-width: 668px) and (max-width: 1024px) {
-        body main #transition-image2 .list-image-item .row li:nth-child(2n) {
-          margin-top: 38px; } }
+        body main #transition-image2 .list-image-item .row li:nth-child(3) {
+          margin-top: 26px; } }
       body main #transition-image2 .list-image-item .row li:nth-child(2) {
-        margin-left: 17%;
+        margin-left: 10%;
         margin-top: 20px; }
         @media (min-width: 1025px) {
           body main #transition-image2 .list-image-item .row li:nth-child(2) {

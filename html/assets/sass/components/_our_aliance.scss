@@ -57,8 +57,8 @@ body{
                     li{
                         z-index: 1;
                         list-style: none;
-                        margin-right: 30px;
-                        margin-bottom: 47px;
+                        margin-right: 17px;
+                        margin-bottom: 76px;
                         @include breakpoint(desktop) {
                             margin-right: 130px;
                         }
@@ -67,7 +67,7 @@ body{
                         }
                     }
                     li:last-child{
-                        margin-top: 20px;
+                        margin-top: -22px;
                         @include breakpoint(desktop) {
                             margin-top: 0;
                         }
@@ -75,16 +75,16 @@ body{
                             margin-top: 0;
                         }
                     }
-                    li:nth-child(2n){
+                    li:nth-child(3){
                         @include breakpoint(desktop) {
-                            margin-top: 38px;
+                            margin-top: 26px;
                         }
                         @include breakpoint(tablet) {
-                            margin-top: 38px;
+                            margin-top: 26px;
                         }
                     }
                     li:nth-child(2){
-                        margin-left: 17%;
+                        margin-left: 10%;
                         margin-top: 20px;
                         @include breakpoint(desktop) {
                             margin-left: 0;
