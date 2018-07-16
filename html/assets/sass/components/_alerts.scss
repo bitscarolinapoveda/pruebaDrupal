@@ -5,8 +5,8 @@
 body{
     main{
         #alert-item1{
-            margin-left: 13%;
-            width: 73.5%;
+            margin-left: 12%;
+            width: 76%;
             margin-top: 52px;
             .alert-success{
                 background-color: #FFFFFF;
@@ -31,7 +31,7 @@ body{
             background-color: #a6cf24;
             opacity: 0.15;
             z-index: 1;
-            width: 72.5%;
+            width: 76%;
             height: 119px;
             position: absolute;
             @include breakpoint (desktop){
@@ -42,8 +42,8 @@ body{
             }
         }
         #alert-item2{
-            margin-left: 13%;
-            width: 73.5%;
+            margin-left: 12%;
+            width: 77%;
             margin-top: 52px;
             .alert-danger{
                 border-radius: 0;
@@ -59,7 +59,7 @@ body{
         #alert-item2::before{
             content: "";
             z-index: 1;
-            width: 72.5%;
+            width: 77%;
             height: 119px;
             position: absolute;
             @include breakpoint (desktop){

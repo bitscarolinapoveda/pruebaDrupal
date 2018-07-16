@@ -2,10 +2,12 @@
 <html>
      <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>BITS AMERICAS</title>
+        <title>BITS AMERICAS | contactenos</title>
         <meta charset="UTF-8">  
         <link rel="icon" type="image/png" href="assets/images/favicon-32x32.png" sizes="32x32" />
         <link rel="icon" type="image/png" href="assets/images/favicon-16x16.png" sizes="16x16" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
         <link rel="stylesheet" href="assets/css/main.css" />
         <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
@@ -15,7 +17,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
         <script src="http://labs.rampinteractive.co.uk/touchSwipe/jquery.touchSwipe.min.js"></script>
-        <script src="assets/js/jquery.mobile.custom.js"></script>
         <script src="assets/js/jquery.mobile.custom.min.js"></script>
         <script type="text/javascript" src="assets/js/main.js"></script>
     </head>
@@ -23,7 +24,7 @@
         <header class=""> 
             <section class="logo">
                 <div class="container-logo">
-                    <a class="image-url">
+                    <a href="index.html" class="image-url">
                         <img class="image-bits blur-logo" src="assets/images/Logowhite.png" alt="BitsAmericas" >
                     </a>
                 </div>
@@ -36,7 +37,7 @@
                     <span class="lines"></span>
                     <ul class="list-menu">
                         <li class="items">
-                            <a class="link" href="#">Home</a>
+                            <a class="link" href="index.html">Home</a>
                         </li>
                         <li class="items">
                             <a  class= "link" href="#">Productos 
@@ -49,16 +50,10 @@
                             </a>
                         </li>
                         <li class="items">
-                            <a class="link" href="#">Proyectos</a>
+                            <a class="link" data-toggle="tab" href="#">Proyectos</a>
                         </li>
                         <li class="items">
-                            <a class="link" href="#">Nosotros</a>
-                        </li>
-                        <li class="items">
-                            <a class="link" href="#">Contactenos</a>
-                        </li>
-                        <li class="items">
-                            <a class="link" href="#">Blog</a>
+                            <a class="link active" data-toggle="tab" href="#">Contactenos</a>
                         </li>
                     </ul>
                 </div>    
@@ -104,6 +99,20 @@
             <section id="main-title">
                 <h2>¿HOW CAN WE HELP YOU TODAY?</h2>
             </section>
+
+            <section id="blocks-tabs">
+                <div class="block">
+                    <ul class="nav">
+                        <li class="list">
+                            <a href="#" class="item-block nav-link  active" data-toggle="tab">Comenzar un proyecto</a>
+                        </li>
+                        <li class="list list-color">
+                            <a href="#" class="item-block-2 nav-link" data-toggle="tab">Trabaja con nosotros</a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
             <section id="titles">
                 <h3>Cuentenos acerca de usted y su proyecto y nos pondremos en contacto</h3>
             </section>
@@ -120,6 +129,12 @@
                 </div>
             </section>
 
+            <center>
+                <br><br><br><br><br>
+                <submit type=button class="btn btn-primary" value="EXITO" onClick="alerta()">EXITO</submit>
+                <submit type=button class="btn btn-primary" value="ERROR" onClick="alerta2()">ERROR</submit>
+            </center>
+
             <section id="separators">
                 <img src="assets/icon/imagen-separador.svg">
                 <hr>
@@ -129,32 +144,11 @@
                 <h4>Nuestra ubicacion</h4>
                 <p>Aqui podra ver la ubicacion de nuestras oficinas</p>
             </section>
+            
         </main>
 
-        <center>
-            <br><br><br><br><br>
-            <submit type=button class="btn btn-primary" value="EXITO" onClick="alerta()">EXITO</submit>
-            <submit type=button class="btn btn-primary" value="ERROR" onClick="alerta2()">ERROR</submit>
-        </center>
-        <p>dasdasdasd</p>
-        <p>dasdasdasd</p>
-        <p>dasdasdasd</p>
         <section id="limit-social-networks"></section>
-        <p>dasdasdasd</p>
-        <p>dasdasdasd</p>
-        <p>dasdasdasd</p>
-        <p>dasdasdasd</p>
-        <p>dasdasdasd</p>
-        <p>dasdasdasd</p>
-        <p>dasdasdasd</p>
-        <p>dadadaddad</p>
-        <p>dasdasdasd</p>
-        <p>dasdasdasd</p>
-        <p>dasdasdasd</p>
-        <p>dasdasdasd</p>
-        <p>dasdasdasd</p>
-        <p>dasdasdasd</p>
-        <p>dasdasdasd</p>
+        
         <footer>
             <picture>
                 <source media="(max-width:500px)" srcset="assets/images/footermovil.png">
@@ -246,7 +240,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="politics-site">
-                            <a href="#" class="politics">Politica de Privacidad</a>
+                            <a href="politicas.html" class="politics">Politica de Privacidad</a>
                             <a href="#" class="sites">Mapa del Sitio</a>
                             <a href="#">PQRS</a>
                         </div>
