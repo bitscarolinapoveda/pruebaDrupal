@@ -5,6 +5,7 @@ namespace Drupal\adf_locations\Plugin\rest\resource;
 use Drupal\Core\Session\AccountProxyInterface;
 use Drupal\rest\Plugin\ResourceBase;
 use Drupal\rest\ResourceResponse;
+use Drupal\node\Entity\Node;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -76,27 +77,43 @@ class LocationRestResources extends ResourceBase {
    *
    * @param Request $request
    *   The request to create the header.
-   * @param array $params
-   *   The array with some parameters.
    *
    * @return array
    array in JSON format.
    */
-  public function get(Request $request, $params = NULL) {
+  public function get(Request $request) {
 
     $offset = $request->headers->get('offset', 0);
     $limit = $request->headers->get('limit', 10);
+    $order = $request->headers->get('order', 'desc');
     $entity = [];
-    $nids = \Drupal::entityQuery('node')
-      ->condition('status', 1)
-      ->range($offset, $limit)
-      ->condition('type', 'locations')
-      ->sort('title')
-      ->execute();
-    $nodes = \Drupal\node\Entity\Node::loadMultiple($nids);
+
+    if ($order == 'que') {
+      $connection = \Drupal::database();
+      $query = $connection->select('entity_subqueue__items', 'u')
+        ->fields('u', ['items_target_id'])
+        ->fields('n', ['nid'])
+        ->condition('u.bundle', 'locations')
+        ->condition('n.status', '1', '=')
+        ->range($offset, $limit);
+      $query->join('node_field_data', 'n', 'u.items_target_id = n.nid');
+      $result = $query->execute()->fetchAllKeyed();
+      $nodes = Node::loadMultiple($result);
+    }
+    else {
+      $nids = \Drupal::entityQuery('node')
+        ->condition('status', 1)
+        ->range($offset, $limit)
+        ->condition('type', 'locations')
+        ->sort('created', $order)
+        ->execute();
+      $nodes = Node::loadMultiple($nids);
+    }
+
     foreach ($nodes as $node) {
       $entity[] = [
-        'address'   => $node->title->value,
+        'title'     => $node->title->value,
+        'address' => $node->field_address->value,
         'telephone' => $node->field_telephone->value,
         'lat'       => $node->field_location->lat,
         'lng'       => $node->field_location->lng,
