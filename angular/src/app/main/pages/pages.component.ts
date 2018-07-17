@@ -12,7 +12,7 @@ export class PagesComponent implements OnInit {
     this.loading = true;
    }
 
-  ngOnInit(){
+  ngOnInit() {
     this.loading = false;
   }
 

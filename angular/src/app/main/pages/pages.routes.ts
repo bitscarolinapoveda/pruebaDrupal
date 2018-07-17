@@ -2,7 +2,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { PagesComponent } from './pages.component';
 import { HomeComponent } from './home/home.component';
-import { NopagefoundComponent } from './nopagefound/nopagefound.component';
+import { NoPageFoundComponent } from './no-page-found/no-page-found.component';
 
 const pagesRoutes: Routes = [
   {
@@ -11,7 +11,7 @@ const pagesRoutes: Routes = [
     children: [
       { path: 'home', component: HomeComponent },
       { path: '', redirectTo: '/home', pathMatch: 'full' },
-      { path: '**', component: NopagefoundComponent }
+      { path: '**', component: NoPageFoundComponent }
     ]
   }
 ];
