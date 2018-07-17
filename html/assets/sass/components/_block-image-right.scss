@@ -45,12 +45,12 @@ body{
                 z-index: 1;
                 margin-left: 12%;
                 @include breakpoint (desktop){
-                    margin-top: 70px;
+                    margin-top: 37px;
                     width: 49%;
                     margin-left: 2.2%;
                 }
                 @include breakpoint (tablet){
-                    margin-top: 70px;
+                    margin-top: 37px;
                     width: 37%;
                     margin-left: 2.2%;
                 }
