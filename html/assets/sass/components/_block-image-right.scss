@@ -1,0 +1,78 @@
+body{
+    main{
+        #block-image-right{
+            @include breakpoint (desktop){
+                margin-left: 10%;
+            }
+            @include breakpoint (tablet){
+                margin-left: 10%;;
+            }
+            .backgraundColor{
+                background-color: #93a4aa;
+                opacity: 0.10;
+                height: 628px;
+                margin-top: 37px;
+                @include breakpoint (desktop){
+                    height: 390px;
+                    width: 83%;
+                }
+                @include breakpoint (tablet){
+                    height: 390px;
+                    width: 83%;
+                }
+            }
+            picture{
+                img{
+                    position: absolute;
+                    @include breakpoint (desktop){
+                        margin-left: 47%;
+                    }
+                    @include breakpoint (tablet){
+                        margin-left: 38%;
+                    }
+                }
+            }
+            .description{
+                position: absolute;
+                margin-top: 310px;
+                color: #002b49;
+                z-index: 1;
+                margin-left: 12%;
+                @include breakpoint (desktop){
+                    margin-top: 70px;
+                    width: 49%;
+                    margin-left: 2.2%;
+                }
+                @include breakpoint (tablet){
+                    margin-top: 70px;
+                    width: 37%;
+                    margin-left: 2.2%;
+                }
+                h3{
+                    font-size: 20px;
+                    transform: scaleY(1.2);
+                    letter-spacing: -1px;
+                }
+                h2{
+                    font-size: 30px;
+                    letter-spacing: 1px;
+                    font-weight: bolder
+                }
+                p{
+                    font-size: 14px;
+                    width: 88%;
+                }
+                a{
+                    font-size: 17px;
+                    color: #a6cf24;
+                }
+                hr{
+                    width: 86%;
+                    margin-left: 0px;
+                    height: 1px;
+                    background: linear-gradient(90deg, #a6cf24, #FFFFFF);
+                }
+            }
+        }
+    }
+}

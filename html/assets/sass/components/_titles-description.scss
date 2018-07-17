@@ -1,9 +1,10 @@
 body{
     main{
-        .title1-title2-description{
+        .title-subtitle-description{
             margin-left: 10%;
             color: #002b49;
             margin-top: 44px;
+            width: 82%;
             @include breakpoint(desktop){
                 margin-left: 13%;
             }
@@ -30,7 +31,7 @@ body{
                 }
             }
         }
-        .title1-title2-description:last-child{
+        .title-subtitle-description:last-child{
             margin-bottom: 83px;
         }
     }

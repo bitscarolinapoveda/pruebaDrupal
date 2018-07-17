@@ -9,6 +9,7 @@ body{
                 font-size: 36px;
                 left: 52%;
                 transform: translateX(-50%);
+                text-transform: none;
                 @include breakpoint(desktop) {
                     font-size: 50px;
                     left: 50%;
