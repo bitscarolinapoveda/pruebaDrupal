@@ -1,4 +1,4 @@
-    $(document).ready(function () {
+
         $(window).scroll(function () {
             if ($(".menu-scroll").offset().top > 20) {
                 $(".menu-scroll").addClass("inverse-color");
@@ -6,7 +6,7 @@
                 $(".menu-scroll").removeClass("inverse-color");
             }
         });
-    });   
+ 
     $(document).ready(function () {
         $(window).scroll(function () {
             if ($(".lines").offset().top > 54) {
@@ -16,7 +16,7 @@
             }
         });
     });    
-    $(document).ready(function () {
+
         $(window).scroll(function () {
             if ($(".link").offset().top > 20) {
                 $(".link").addClass("scroll-white");
@@ -24,8 +24,8 @@
                 $(".link").removeClass("scroll-white");
             }
         });
-    });    
-    $(document).ready(function () {
+
+
         $(window).scroll(function () {
             if ($(".image-bits").offset().top > 50) {
                 $(".image-bits").attr("src", "assets/images/Logocolor.png");
@@ -33,7 +33,7 @@
                 $(".image-bits").attr("src", "assets/images/Logowhite.png");
             }
         });
-    });
+
     $(document).ready(function () {
         $(".Botton").on("click", function () {
             $(".menu-scroll").toggleClass("tigger-menu");
@@ -270,6 +270,19 @@
         });
     });
 
+    $(document).ready(function () {
+        $('.show-more').click(function() {
+            $('.show-more').toggleClass('show-less');
+        })
+    })
+    $(document).ready(function () {
+        $('.top-return').click(function () {
+            $('body, html').animate({
+                scrollTop: '0px'
+            }, 700);
+        });
+    });
+
     function alerta(){
         $('#alert-item1').modal('show');
     };
@@ -278,5 +291,22 @@
     };
  
 
+    $(window).scroll(function () {
+        if ($(".top-return").offset().top > 750) {
+            $(".top-return").addClass("movil-display");
+        } else {
+            $(".top-return").removeClass("movil-display");
+        }
+    });
+
+$(document).ready(function () {
+    var mediaquery = window.matchMedia("(max-width: 500px)");
+    if (mediaquery.matches) {
+        $('.show-more').on('click', function (e) {
+            $('.nav2').slideToggle('slow');
+            e.preventDefault();
+        });
+    }
+});
 
 
