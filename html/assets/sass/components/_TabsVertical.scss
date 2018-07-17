@@ -1,9 +1,11 @@
 #tabs-vertical{
     margin-top: 12%;
     @include breakpoint (tablet){
+        margin-top: 5%;
         width: 29%;
     }
     @include breakpoint (desktop){
+        margin-top: 3%;
         width: 31%;
     }
 

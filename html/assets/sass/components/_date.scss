@@ -1,0 +1,23 @@
+body{
+    main{
+        #date{
+            color: #a6cf24;
+            font-size: 18px;
+            margin-left: 10%;
+            margin-top: 51px;
+            transform: scaleY(1.2);
+            letter-spacing: -1px;
+            @include breakpoint (desktop){
+                margin-left: 13%;
+                color: #002b49;
+            }
+            @include breakpoint (tablet){
+                margin-left: 13%;
+                color: #002b49;
+            }
+            i{
+                font-style: normal;
+            }
+        }
+    }
+}
