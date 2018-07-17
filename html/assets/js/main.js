@@ -270,6 +270,36 @@
         });
     });
 
+    $(document).ready(function () {
+        $('.show-more').click(function() {
+            $('.show-more').toggleClass('show-less');
+        })
+    })
+    $(document).ready(function () {
+        $('.top-return').click(function () {
+            $('body, html').animate({
+                scrollTop: '0px'
+            }, 700);
+        });
+    });
 
+
+    $(window).scroll(function () {
+        if ($(".top-return").offset().top > 750) {
+            $(".top-return").addClass("movil-display");
+        } else {
+            $(".top-return").removeClass("movil-display");
+        }
+    });
+
+$(document).ready(function () {
+    var mediaquery = window.matchMedia("(max-width: 500px)");
+    if (mediaquery.matches) {
+        $('.show-more').on('click', function (e) {
+            $('.nav2').slideToggle('slow');
+            e.preventDefault();
+        });
+    }
+});
 
 
