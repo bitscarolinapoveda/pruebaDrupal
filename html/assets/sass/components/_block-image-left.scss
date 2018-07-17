@@ -23,7 +23,17 @@ body{
             }
             picture{
                 img{
+                    height: 271px;
+                    width: 100%;
                     position: absolute;
+                    @include breakpoint (desktop){
+                        height: 389px;
+                        width: 27.5%;
+                    }
+                    @include breakpoint (tablet){
+                        height: 389px;
+                        width: 36%;
+                    }
                 }
             }
             .description{
@@ -57,7 +67,6 @@ body{
                     width: 88%;
                 }
                 a{
-                    font-size: 17px;
                     color: #a6cf24;
                 }
                 hr{

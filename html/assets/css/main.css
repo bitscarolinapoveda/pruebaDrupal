@@ -2252,7 +2252,7 @@ body main .title-subtitle-description {
     body main .title-subtitle-description {
       margin-left: 13%; } }
   body main .title-subtitle-description h3 {
-    font-size: 31px;
+    font-size: 26px;
     transform: scaleY(1.2);
     letter-spacing: -1px; }
     @media (min-width: 1025px) {
@@ -2296,7 +2296,17 @@ body main #block-image-left .backgraundColor {
       width: 83%; } }
 
 body main #block-image-left picture img {
+  height: 271px;
+  width: 100%;
   position: absolute; }
+  @media (min-width: 1025px) {
+    body main #block-image-left picture img {
+      height: 389px;
+      width: 27.5%; } }
+  @media (min-width: 668px) and (max-width: 1024px) {
+    body main #block-image-left picture img {
+      height: 389px;
+      width: 36%; } }
 
 body main #block-image-left .description {
   position: absolute;
@@ -2326,7 +2336,6 @@ body main #block-image-left .description {
     font-size: 14px;
     width: 88%; }
   body main #block-image-left .description a {
-    font-size: 17px;
     color: #a6cf24; }
   body main #block-image-left .description hr {
     width: 86%;
@@ -2357,13 +2366,19 @@ body main #block-image-right .backgraundColor {
       width: 83%; } }
 
 body main #block-image-right picture img {
-  position: absolute; }
+  position: absolute;
+  width: 100%;
+  height: 271px; }
   @media (min-width: 1025px) {
     body main #block-image-right picture img {
-      margin-left: 47%; } }
+      margin-left: 47.2%;
+      height: 389px;
+      width: 27.5%; } }
   @media (min-width: 668px) and (max-width: 1024px) {
     body main #block-image-right picture img {
-      margin-left: 38%; } }
+      margin-left: 38%;
+      height: 389px;
+      width: 36%; } }
 
 body main #block-image-right .description {
   position: absolute;
@@ -2393,7 +2408,6 @@ body main #block-image-right .description {
     font-size: 14px;
     width: 88%; }
   body main #block-image-right .description a {
-    font-size: 17px;
     color: #a6cf24; }
   body main #block-image-right .description hr {
     width: 86%;
