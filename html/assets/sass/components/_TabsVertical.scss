@@ -1,115 +1,235 @@
-#blocks-tabs{
+#tabs-vertical{
     margin-top: 12%;
     @include breakpoint (tablet){
-        margin-top: 6%;
+        margin-top: 5%;
+        width: 29%;
     }
-    .block{
-        background: #e5e9ec;
-        height: 137px;
+    @include breakpoint (desktop){
+        margin-top: 3%;
+        width: 31%;
+    }
+
+    .block-vertical{
         @include breakpoint (desktop){
-            height: 140px;
+            height: 480px;
+            overflow: hidden;
         }
-        .nav{
-            height: 100%;
-            .list{
-                width: 50%;
-                font-size: 22px;
-                text-align: center;
+        .nav-tabs{
+            &--vertical {
+                border-bottom: none;
+                display: flex;
+                flex-flow: column nowrap;
+            }
+            .nav-item{
+                height: 121px;
+                border-bottom: 1px solid #d9e0e4;
+                background: #f2f4f6;
                 @include breakpoint (desktop){
-                    padding-left: 11.8%;
-                    z-index: 2;
-                    &::after{
-                        content: '';
-                        z-index: -1;
-                        position: absolute;
-                        height: 75px;
-                        width: 1px;
-                        margin-top: -7%;
-                        left: 11.8%;
-                        background-color: #95a7b3;
-                    }
+                    transition: all ease 0.89s;
                 }
-                .nav-link{
+                .nav-link {
                     height: 100%;
-                    padding-top: 6%;
-                    color: #2e516a;
+                    border-bottom: 1px solid #d9e0e4;
+                    padding-top: 7%;
                     @include breakpoint (desktop){
-                        padding-top: 4%;
+                        padding-left: 20.5%;
                     }
-                }
-                .item-block{
-                    text-decoration: none;
-                    &::before{
-                        content: '';
-                        display: block;
-                        padding: 1em;
-                        background-image: url('../icon/contact.svg');
-                        background-repeat:no-repeat;
-                        background-position: center; 
+                    .title{
+                        color: #002b49;
+                        font-size: 17px;
+                        @include breakpoint (desktop){
+                            font-size: 18px;
+                        }
+                        &::after {
+                            content: '';
+                            position: absolute;
+                            display: flex;
+                            background-image: url('../icon/ordenar-abajo.svg');
+                            background-position: center;
+                            background-repeat: no-repeat;
+                            background-size: 16px;
+                            padding: 10px;
+                            margin-top: -6%;
+                            margin-left: 81%;
+                            @include breakpoint (tablet) {
+                                display: none;
+                            }
+                            @include breakpoint (desktop){
+                                display: none;
+                            }
+                        }
                     }
-                 
-                }
-                .item-block-2{
-                    text-decoration: none;
-                    &::before {
-                        content: '';
-                        display: block;
-                        padding: 1em;
-                        background-image: url('../icon/joinus.svg');
-                        background-repeat: no-repeat;
-                        background-position: center;
-                    }
-                }
-                .active{
-                    background: #2e516a;
-                    color: #ffffff;
-                    &::before {
-                        content: '';
-                        background-image: url('../icon/contact-white.svg');
-                    }
-                    &::after {
-                        content: '';
-                        position: absolute;
-                        border-width: 22px 65px 0;
-                        border-style: solid;
-                        border-color: #2e516a transparent transparent;
-                        margin-top: 11.38%;
-                        margin-left: -112px;
-                        @include breakpoint (tablet){
-                            margin-top: 6%;
-                            margin-left: -179px
+                    .address{
+                        font-size: 13px;
+                        color:#838d99;
+                        text-transform: uppercase;
+                        &::before{
+                            content: '';
+                            background-image: url('../icon/ubication.svg');
+                            background-position: center;
+                            background-repeat:no-repeat;
+                            background-size: 16px; 
+                            padding: 10px;
+                            margin-right: 3%;
                         }
                         @include breakpoint (desktop){
-                            margin-top: 4.2%;   
-                            margin-left: -184px;
-                            border-width: 27px 76px 0;
+                            font-size: 14px;
+                        }
+                    }
+                    .phone{
+                        font-size: 13px;
+                        color:#838d99;
+                        text-transform: uppercase;
+                        &::before{
+                            content: '';
+                            background-image: url('../icon/phone.svg');
+                            background-position: center;
+                            background-repeat:no-repeat;
+                            background-size: 16px;
+                            padding: 10px;
+                            margin-right: 3%;
+                            margin-left: 0.5%;
+                        }
+                        @include breakpoint (desktop) {
+                            font-size: 14px;
+                        }
+                    }
+
+                }
+                .active{
+                    background-color: #d9e0e4;
+                    .title{
+                        &::after {
+                            content: '';
+                            background-image: url('../icon/ordenar-arriba.svg');
+                            @include breakpoint (tablet) {
+                                display: none;
+                            }
+                            @include breakpoint (desktop) {
+                                display: none;
+                            }
                         }
                     }
                 }
             }
-            .list-color{
-                @include breakpoint (desktop){
-                    padding-left: 0%;
-                    padding-right: 11.8%;
-                    &::after {
-                        content: '';
-                        position: absolute;
-                        height: 75px;
-                        width: 1px;
-                        margin-top: -7%;
-                        left: 88.14%;
-                        background-color: #95a7b3;
-                    }
+            .nav2{
+                display: none;
+                @include breakpoint (tablet){
+                    display: initial;
                 }
-                .active {
-                    background: #2e516a;
-                    color: #ffffff;
-                    &::before {
-                        content: '';
-                        background-image: url('../icon/joinus-white.svg');
-                    }
-                }    
+                @include breakpoint (desktop) {
+                    display: initial;
+                }
             }
+        }
+        .show-more{
+            height: 88px;
+            background: #f2f4f6;
+            color: #002b49;
+            text-align: center;
+            padding-top: 7%;
+            font-size: 18px;
+            font-family: 'Open Sans Condensed', sans-serif;
+            &::before{
+                content: "VER MAS UBICACIONES";
+                position: absolute;
+                padding: 10px;
+                margin-top: 0%;
+                margin-left: -63px;
+            }
+            &::after{
+                content: '';
+                position: absolute;
+                background-image: url('../icon/ordenar-abajo.svg');
+                background-position: center;
+                background-repeat:no-repeat;
+                background-size: 23px;
+                padding: 10px;
+                margin-top: 9%;
+                margin-left: -2px;
+            }
+            @include breakpoint (desktop){
+                display: none;
+            }
+            .button-more{ 
+                @include breakpoint (tablet){
+                    display: none;
+                }
+                @include breakpoint (desktop) {
+                    display: none;
+                }
+            } 
+        }    
+        .show-less{
+            background: #d9e0e4;
+            &::before {
+                content: "VER MENOS UBICACIONES";
+                position: absolute;
+                padding: 10px;
+                margin-top: 4%;
+                margin-left: -86px;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                background-image: url('../icon/ordenar-arriba.svg');
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: 23px;
+                padding: 10px;
+                margin-top: 1%;
+                margin-left: -9px;
+            }
+        } 
+        .container-top{
+            @include breakpoint (desktop) {
+                width: 44px;
+                height: 41px;
+                border-radius: 100%;
+                margin-left: 87%;
+                margin-top: -95%;
+            }
+            .botton-arrive{
+                @include breakpoint (desktop) {
+                    background-image:url("../icon/flecha-arriba.svg");
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size:65%;
+                    background-color: #d9e0e4;
+                    border-radius:100%; 
+                    width: 44px;
+                    height: 41px;
+                    position: absolute;
+                    padding: 1%;
+                }
+            }
+        }
+        .container-down {
+              @include breakpoint (desktop) {
+                    position: absolute;
+                    width: 44px;
+                    height: 41px;
+                    border-radius: 100%;
+                    margin-top: 23%;
+                    margin-left: 27%;
+                
+              }
+            .botton-down {
+                @include breakpoint (desktop) {
+                    background-image: url("../icon/descargar-down.svg");
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: 65%;
+                    position: absolute;
+                    background-color: #d9e0e4;
+                    border-radius:100%;
+                    width: 44px;
+                    height: 41px;
+                    padding: 1%;
+                }
+            }
+            
         }
     }
 }
