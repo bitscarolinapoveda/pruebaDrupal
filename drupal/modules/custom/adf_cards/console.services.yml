@@ -1,0 +1,11 @@
+services:
+  adf_cards.adf_cards_create_card:
+    class: Drupal\adf_cards\Command\CreateCardCommand
+    arguments: ['@adf_cards.adf_cards_create_card_generator']
+    tags:
+      - { name: drupal.command }
+  adf_cards.adf_cards_create_card_generator:
+    class: Drupal\adf_cards\Generator\CreateCardGenerator
+    arguments: []
+    tags:
+      - { name: drupal.generator }

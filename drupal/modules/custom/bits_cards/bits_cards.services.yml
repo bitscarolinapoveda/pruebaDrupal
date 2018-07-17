@@ -1,0 +1,4 @@
+services:
+  bits_cards.get_contact:
+    class: Drupal\bits_cards\Services\ExportContactConfigCardService
+    arguments: ["@adf_cards.get_config"]

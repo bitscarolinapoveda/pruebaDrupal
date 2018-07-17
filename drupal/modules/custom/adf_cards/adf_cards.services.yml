@@ -1,0 +1,4 @@
+services:
+  adf_cards.get_config:
+    class: Drupal\adf_cards\Services\ExportConfigCardService
+    arguments: []

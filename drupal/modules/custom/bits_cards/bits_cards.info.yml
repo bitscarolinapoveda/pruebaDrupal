@@ -1,0 +1,7 @@
+name: 'bits_cards'
+type: module
+description: 'Modulo que contiene cards custom'
+core: 8.x
+package: 'Custom'
+dependencies:
+  - adf_cards
