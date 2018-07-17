@@ -1147,7 +1147,8 @@ body .page-header {
       margin-top: 178px;
       font-size: 36px;
       left: 52%;
-      transform: translateX(-50%); }
+      transform: translateX(-50%);
+      text-transform: none; }
       @media (min-width: 1025px) {
         body .page-header .title h1 {
           font-size: 50px;
@@ -2242,31 +2243,160 @@ body main #date {
           content: '';
           background-image: url("../icon/joinus-white.svg"); }
 
-body main .title1-title2-description {
+body main .title-subtitle-description {
   margin-left: 10%;
   color: #002b49;
-  margin-top: 44px; }
+  margin-top: 44px;
+  width: 82%; }
   @media (min-width: 1025px) {
-    body main .title1-title2-description {
+    body main .title-subtitle-description {
       margin-left: 13%; } }
-  body main .title1-title2-description h3 {
+  body main .title-subtitle-description h3 {
     font-size: 31px;
     transform: scaleY(1.2);
     letter-spacing: -1px; }
     @media (min-width: 1025px) {
-      body main .title1-title2-description h3 {
+      body main .title-subtitle-description h3 {
         font-size: 36px; } }
     @media (min-width: 668px) and (max-width: 1024px) {
-      body main .title1-title2-description h3 {
+      body main .title-subtitle-description h3 {
         font-size: 36px; } }
-  body main .title1-title2-description h4 {
+  body main .title-subtitle-description h4 {
     font-size: 22px;
     margin-top: 29px; }
-  body main .title1-title2-description p {
+  body main .title-subtitle-description p {
     font-size: 14px;
     margin-top: 22px; }
-    body main .title1-title2-description p a {
+    body main .title-subtitle-description p a {
       color: #a6cf24; }
 
-body main .title1-title2-description:last-child {
+body main .title-subtitle-description:last-child {
   margin-bottom: 83px; }
+
+@media (min-width: 1025px) {
+  body main #block-image-left {
+    margin-left: 10%; } }
+
+@media (min-width: 668px) and (max-width: 1024px) {
+  body main #block-image-left {
+    margin-left: 10%; } }
+
+body main #block-image-left .backgraundColor {
+  background-color: #93a4aa;
+  opacity: 0.10;
+  height: 628px;
+  margin-top: 37px; }
+  @media (min-width: 1025px) {
+    body main #block-image-left .backgraundColor {
+      height: 390px;
+      width: 83%; } }
+  @media (min-width: 668px) and (max-width: 1024px) {
+    body main #block-image-left .backgraundColor {
+      height: 390px;
+      width: 83%; } }
+
+body main #block-image-left picture img {
+  position: absolute; }
+
+body main #block-image-left .description {
+  position: absolute;
+  margin-top: 310px;
+  color: #002b49;
+  z-index: 1;
+  margin-left: 12%; }
+  @media (min-width: 1025px) {
+    body main #block-image-left .description {
+      margin-top: 70px;
+      width: 49%;
+      margin-left: 30%; } }
+  @media (min-width: 668px) and (max-width: 1024px) {
+    body main #block-image-left .description {
+      margin-top: 70px;
+      width: 37%;
+      margin-left: 40%; } }
+  body main #block-image-left .description h3 {
+    font-size: 20px;
+    transform: scaleY(1.2);
+    letter-spacing: -1px; }
+  body main #block-image-left .description h2 {
+    font-size: 30px;
+    letter-spacing: 1px;
+    font-weight: bolder; }
+  body main #block-image-left .description p {
+    font-size: 14px;
+    width: 88%; }
+  body main #block-image-left .description a {
+    font-size: 17px;
+    color: #a6cf24; }
+  body main #block-image-left .description hr {
+    width: 86%;
+    margin-left: 0px;
+    height: 1px;
+    background: linear-gradient(90deg, #a6cf24, #FFFFFF); }
+
+@media (min-width: 1025px) {
+  body main #block-image-right {
+    margin-left: 10%; } }
+
+@media (min-width: 668px) and (max-width: 1024px) {
+  body main #block-image-right {
+    margin-left: 10%; } }
+
+body main #block-image-right .backgraundColor {
+  background-color: #93a4aa;
+  opacity: 0.10;
+  height: 628px;
+  margin-top: 37px; }
+  @media (min-width: 1025px) {
+    body main #block-image-right .backgraundColor {
+      height: 390px;
+      width: 83%; } }
+  @media (min-width: 668px) and (max-width: 1024px) {
+    body main #block-image-right .backgraundColor {
+      height: 390px;
+      width: 83%; } }
+
+body main #block-image-right picture img {
+  position: absolute; }
+  @media (min-width: 1025px) {
+    body main #block-image-right picture img {
+      margin-left: 47%; } }
+  @media (min-width: 668px) and (max-width: 1024px) {
+    body main #block-image-right picture img {
+      margin-left: 38%; } }
+
+body main #block-image-right .description {
+  position: absolute;
+  margin-top: 310px;
+  color: #002b49;
+  z-index: 1;
+  margin-left: 12%; }
+  @media (min-width: 1025px) {
+    body main #block-image-right .description {
+      margin-top: 70px;
+      width: 49%;
+      margin-left: 2.2%; } }
+  @media (min-width: 668px) and (max-width: 1024px) {
+    body main #block-image-right .description {
+      margin-top: 70px;
+      width: 37%;
+      margin-left: 2.2%; } }
+  body main #block-image-right .description h3 {
+    font-size: 20px;
+    transform: scaleY(1.2);
+    letter-spacing: -1px; }
+  body main #block-image-right .description h2 {
+    font-size: 30px;
+    letter-spacing: 1px;
+    font-weight: bolder; }
+  body main #block-image-right .description p {
+    font-size: 14px;
+    width: 88%; }
+  body main #block-image-right .description a {
+    font-size: 17px;
+    color: #a6cf24; }
+  body main #block-image-right .description hr {
+    width: 86%;
+    margin-left: 0px;
+    height: 1px;
+    background: linear-gradient(90deg, #a6cf24, #FFFFFF); }

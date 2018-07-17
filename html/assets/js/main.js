@@ -138,7 +138,7 @@
     }
 
     jQuery (function ($) {
-        if ($('#limit-social-networks').length) {
+        if ($('#transition-image').length) {
             var items = 4;
             var $elements = $('.img-item');
     
@@ -147,7 +147,7 @@
             startSlide(groups, items);
         }
 
-        if ($('#limit-social-networks').length) {
+        if ($('#transition-image2').length) {
             var items = 4;
             var $elements = $('.img-item2');
     
