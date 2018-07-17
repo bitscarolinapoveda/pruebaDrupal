@@ -738,7 +738,7 @@ body footer .privacy {
   height: 41px;
   width: 41px;
   margin-left: 79%;
-  margin-top: 573px; }
+  margin-top: 538px; }
   @media (min-width: 668px) and (max-width: 1024px) {
     #button-top {
       margin-left: 93%;
@@ -2084,7 +2084,7 @@ body main #work-with-us {
       position: absolute;
       padding: 10px;
       margin-top: 0%;
-      margin-left: -109px; }
+      margin-left: -63px; }
     #tabs-vertical .block-vertical .show-more::after {
       content: '';
       position: absolute;
@@ -2111,7 +2111,7 @@ body main #work-with-us {
       position: absolute;
       padding: 10px;
       margin-top: 4%;
-      margin-left: -126px; }
+      margin-left: -86px; }
     #tabs-vertical .block-vertical .show-less::after {
       content: '';
       position: absolute;

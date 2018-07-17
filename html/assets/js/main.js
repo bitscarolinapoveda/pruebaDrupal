@@ -1,4 +1,4 @@
-    $(document).ready(function () {
+
         $(window).scroll(function () {
             if ($(".menu-scroll").offset().top > 20) {
                 $(".menu-scroll").addClass("inverse-color");
@@ -6,7 +6,7 @@
                 $(".menu-scroll").removeClass("inverse-color");
             }
         });
-    });   
+ 
     $(document).ready(function () {
         $(window).scroll(function () {
             if ($(".lines").offset().top > 54) {
@@ -16,7 +16,7 @@
             }
         });
     });    
-    $(document).ready(function () {
+
         $(window).scroll(function () {
             if ($(".link").offset().top > 20) {
                 $(".link").addClass("scroll-white");
@@ -24,8 +24,8 @@
                 $(".link").removeClass("scroll-white");
             }
         });
-    });    
-    $(document).ready(function () {
+
+
         $(window).scroll(function () {
             if ($(".image-bits").offset().top > 50) {
                 $(".image-bits").attr("src", "assets/images/Logocolor.png");
@@ -33,7 +33,7 @@
                 $(".image-bits").attr("src", "assets/images/Logowhite.png");
             }
         });
-    });
+
     $(document).ready(function () {
         $(".Botton").on("click", function () {
             $(".menu-scroll").toggleClass("tigger-menu");
