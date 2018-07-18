@@ -3,11 +3,11 @@ import { Component, OnInit } from '@angular/core';
 import { NodeService, Node} from '../../../services/cards/node.service';
 
 @Component({
-  selector: 'app-carousel-indicators-1',
-  templateUrl: './carousel-indicators-1.component.html',
-  styleUrls: ['./carousel-indicators-1.component.scss']
+  selector: 'app-carousel-indicators',
+  templateUrl: './carousel-indicators.component.html',
+  styleUrls: ['./carousel-indicators.component.scss']
 })
-export class CarouselIndicators1Component implements OnInit {
+export class CarouselIndicatorsComponent implements OnInit {
 
   nodes: Node[] = [];
 
