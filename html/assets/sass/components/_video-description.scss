@@ -3,9 +3,11 @@ body{
         #block-video{
             @include breakpoint (desktop){
                 margin-left: 10%;
+                height: 371px;
             }
             @include breakpoint (tablet){
                 margin-left: 10%;;
+                height: 371px;
             }
             .backgraundColor{
                 background-color: #93a4aa;
@@ -21,8 +23,8 @@ body{
                     width: 83%;
                 }
             }
-            video{
-                height: 210px;
+            .embed-responsive{
+                height: auto;
                 width: 100%;
                 position: absolute;
                 z-index: 1;
@@ -31,9 +33,8 @@ body{
                     width: 49%;
                 }
                 @include breakpoint (tablet){
-                    height: 345px;
+                    height: 371px;
                     width: 49%;
-                    margin-top: 3px;
                 }
             }
             .description{
@@ -64,6 +65,9 @@ body{
                 a{
                     color: #a6cf24;
                     letter-spacing: -1px;
+                    i{
+                        margin-right: 8px;
+                    }
                 }
                 hr{
                     width: 86%;

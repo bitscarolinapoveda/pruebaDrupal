@@ -2123,44 +2123,37 @@ body main #work-with-us {
       margin-top: 1%;
       margin-left: -9px; }
   @media (min-width: 1025px) {
-    #tabs-vertical .block-vertical .container-top {
-      width: 44px;
-      height: 41px;
-      border-radius: 100%;
-      margin-left: 87%;
-      margin-top: -95%; } }
-  @media (min-width: 1025px) {
-    #tabs-vertical .block-vertical .container-top .botton-arrive {
+    #tabs-vertical .block-vertical .botton-arrive {
       background-image: url("../icon/flecha-arriba.svg");
       background-position: center;
       background-repeat: no-repeat;
       background-size: 65%;
       background-color: #d9e0e4;
       border-radius: 100%;
+      border: transparent;
       width: 44px;
       height: 41px;
       position: absolute;
-      padding: 1%; } }
+      padding: 1%;
+      top: 77em;
+      left: 27.1%; } }
   @media (min-width: 1025px) {
-    #tabs-vertical .block-vertical .container-down {
-      position: absolute;
-      width: 44px;
-      height: 41px;
-      border-radius: 100%;
-      margin-top: 23%;
-      margin-left: 27%; } }
-  @media (min-width: 1025px) {
-    #tabs-vertical .block-vertical .container-down .botton-down {
+    #tabs-vertical .block-vertical .botton-down {
       background-image: url("../icon/descargar-down.svg");
       background-position: center;
       background-repeat: no-repeat;
       background-size: 65%;
-      position: absolute;
       background-color: #d9e0e4;
       border-radius: 100%;
+      border: transparent;
       width: 44px;
       height: 41px;
-      padding: 1%; } }
+      position: relative;
+      padding: 2%;
+      padding-left: 5%;
+      padding-right: 4%;
+      left: 88%;
+      bottom: 11em; } }
 
 #blocks-tabs {
   margin-top: 12%; }
@@ -2582,11 +2575,13 @@ body main #block-image-right .description {
 
 @media (min-width: 1025px) {
   body main #block-video {
-    margin-left: 10%; } }
+    margin-left: 10%;
+    height: 371px; } }
 
 @media (min-width: 668px) and (max-width: 1024px) {
   body main #block-video {
-    margin-left: 10%; } }
+    margin-left: 10%;
+    height: 371px; } }
 
 body main #block-video .backgraundColor {
   background-color: #93a4aa;
@@ -2602,20 +2597,19 @@ body main #block-video .backgraundColor {
       height: 371px;
       width: 83%; } }
 
-body main #block-video video {
-  height: 210px;
+body main #block-video .embed-responsive {
+  height: auto;
   width: 100%;
   position: absolute;
   z-index: 1; }
   @media (min-width: 1025px) {
-    body main #block-video video {
+    body main #block-video .embed-responsive {
       height: 371px;
       width: 49%; } }
   @media (min-width: 668px) and (max-width: 1024px) {
-    body main #block-video video {
-      height: 345px;
-      width: 49%;
-      margin-top: 3px; } }
+    body main #block-video .embed-responsive {
+      height: 371px;
+      width: 49%; } }
 
 body main #block-video .description {
   position: absolute;
@@ -2643,6 +2637,8 @@ body main #block-video .description {
   body main #block-video .description a {
     color: #a6cf24;
     letter-spacing: -1px; }
+    body main #block-video .description a i {
+      margin-right: 8px; }
   body main #block-video .description hr {
     width: 86%;
     margin-left: 0px;
