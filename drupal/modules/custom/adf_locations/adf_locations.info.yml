@@ -1,0 +1,18 @@
+name: ADF Locations
+type: module
+description: 'Google maps locations'
+core: 8.x
+dependencies:
+  - field
+  - node
+  - path
+  - text
+  - user
+  - geolocation
+  - telephone
+  - serialization
+  - rest
+  - restui
+  - hal
+  - entityqueue
+hidden: false

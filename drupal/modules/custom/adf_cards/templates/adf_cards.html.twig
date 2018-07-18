@@ -1,0 +1,11 @@
+{% macro renderData(type, value) %}
+    {% if type == 'image' %}
+        <img src="{{ value }}">
+    {% elseif type == 'formated' %}
+        {{ value | raw }}
+    {% elseif type == 'url' %}
+        <a href="{{ value.link }}">{{ value.label }}</a>
+    {% else %}
+        {{ value }}
+    {% endif %}
+{% endmacro %}

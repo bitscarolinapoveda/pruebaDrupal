@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains bits_cards.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function bits_cards_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the bits_cards module.
+    case 'help.page.bits_cards':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Modulo que contiene cards custom') . '</p>';
+      return $output;
+
+    default:
+  }
+}
