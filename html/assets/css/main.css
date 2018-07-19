@@ -2575,11 +2575,13 @@ body main #block-image-right .description {
 
 @media (min-width: 1025px) {
   body main #block-video {
-    margin-left: 10%; } }
+    margin-left: 10%;
+    height: 371px; } }
 
 @media (min-width: 668px) and (max-width: 1024px) {
   body main #block-video {
-    margin-left: 10%; } }
+    margin-left: 10%;
+    height: 371px; } }
 
 body main #block-video .backgraundColor {
   background-color: #93a4aa;
@@ -2595,20 +2597,19 @@ body main #block-video .backgraundColor {
       height: 371px;
       width: 83%; } }
 
-body main #block-video video {
-  height: 210px;
+body main #block-video .embed-responsive {
+  height: auto;
   width: 100%;
   position: absolute;
   z-index: 1; }
   @media (min-width: 1025px) {
-    body main #block-video video {
+    body main #block-video .embed-responsive {
       height: 371px;
       width: 49%; } }
   @media (min-width: 668px) and (max-width: 1024px) {
-    body main #block-video video {
-      height: 345px;
-      width: 49%;
-      margin-top: 3px; } }
+    body main #block-video .embed-responsive {
+      height: 371px;
+      width: 49%; } }
 
 body main #block-video .description {
   position: absolute;
@@ -2636,6 +2637,8 @@ body main #block-video .description {
   body main #block-video .description a {
     color: #a6cf24;
     letter-spacing: -1px; }
+    body main #block-video .description a i {
+      margin-right: 8px; }
   body main #block-video .description hr {
     width: 86%;
     margin-left: 0px;
