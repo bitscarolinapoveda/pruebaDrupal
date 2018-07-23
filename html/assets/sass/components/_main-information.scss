@@ -15,12 +15,14 @@
     .container{
         text-align: center;
         @include breakpoint (tablet){
-            width: 54%;
+            width: 34%;
             text-align: left;
         }
         @include breakpoint (desktop){
             width: 34%;
             text-align: left;
+            margin-top: 4px;
+            display: none;
         }
         .container-title{
             text-transform: uppercase;
@@ -38,6 +40,7 @@
             padding-bottom: 11%;
             @include breakpoint (desktop) {
                padding-top: 5%;
+               margin-left: 8%;
             }
         }
     }
@@ -75,6 +78,17 @@
                 }
             }
         }
+        
+        .single-image {
+            float: left;
+            margin-right: 6%;
+            height: 187px;
+            display: none;    
+        }
+
+        .txt{
+            // margin-left: 23%;
+        }
         .container-main{
             color: #002b49;
             @include breakpoint (desktop) {
@@ -107,10 +121,11 @@
                     color: #97d135;
                     font-family: 'Open Sans Condensed', sans-serif;
                     font-size: 22px;
+                    display: none;
                     @include breakpoint (desktop){
                         position: relative;
                         width: 32%;
-                        left: 47%;
+                        left: 43%;
                         bottom: 35px;
                     }
                 }
@@ -163,7 +178,7 @@
                 }
                 @include breakpoint (desktop){
                     margin-left: 0%;
-                    width: 13%;
+                    width: 10%;
                     padding-top: 1%;
                     padding-bottom: 1%;
                 }

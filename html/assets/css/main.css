@@ -2663,12 +2663,14 @@ body main #block-video .description {
     text-align: center; }
     @media (min-width: 668px) and (max-width: 1024px) {
       #image-desccription .container {
-        width: 54%;
+        width: 34%;
         text-align: left; } }
     @media (min-width: 1025px) {
       #image-desccription .container {
         width: 34%;
-        text-align: left; } }
+        text-align: left;
+        margin-top: 4px;
+        display: none; } }
     #image-desccription .container .container-title {
       text-transform: uppercase;
       color: #a3b1b6; }
@@ -2683,7 +2685,8 @@ body main #block-video .description {
       padding-bottom: 11%; }
       @media (min-width: 1025px) {
         #image-desccription .container .container-image {
-          padding-top: 5%; } }
+          padding-top: 5%;
+          margin-left: 8%; } }
   #image-desccription .stripes {
     height: 0.5px;
     width: 86.8%;
@@ -2715,6 +2718,11 @@ body main #block-video .description {
         @media (min-width: 1025px) {
           #image-desccription .container-second .title-frist .title {
             font-size: 24px; } }
+    #image-desccription .container-second .single-image {
+      float: left;
+      margin-right: 6%;
+      height: 187px;
+      display: none; }
     #image-desccription .container-second .container-main {
       color: #002b49; }
       @media (min-width: 1025px) {
@@ -2744,12 +2752,13 @@ body main #block-video .description {
         #image-desccription .container-second .container-description a .title {
           color: #97d135;
           font-family: 'Open Sans Condensed', sans-serif;
-          font-size: 22px; }
+          font-size: 22px;
+          display: none; }
           @media (min-width: 1025px) {
             #image-desccription .container-second .container-description a .title {
               position: relative;
               width: 32%;
-              left: 47%;
+              left: 43%;
               bottom: 35px; } }
       #image-desccription .container-second .container-description .description {
         font-size: 14px;
@@ -2798,7 +2807,7 @@ body main #block-video .description {
         @media (min-width: 1025px) {
           #image-desccription .container-second .bottons .badge {
             margin-left: 0%;
-            width: 13%;
+            width: 10%;
             padding-top: 1%;
             padding-bottom: 1%; } }
     #image-desccription .container-second .url {
