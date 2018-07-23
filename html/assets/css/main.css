@@ -2749,7 +2749,7 @@ body main #block-video .description {
             #image-desccription .container-second .container-description a .title {
               position: relative;
               width: 32%;
-              left: 43%;
+              left: 47%;
               bottom: 35px; } }
       #image-desccription .container-second .container-description .description {
         font-size: 14px;
@@ -2810,3 +2810,30 @@ body main #block-video .description {
       @media (min-width: 1025px) {
         #image-desccription .container-second .url {
           top: 12px; } }
+
+body main #logo-title-description .row {
+  margin-right: 0;
+  margin-left: 0;
+  margin-top: 0%;
+  text-align: -webkit-center; }
+  @media (min-width: 1025px) {
+    body main #logo-title-description .row {
+      margin-top: 2%;
+      text-align: -webkit-center;
+      margin-left: 8%; } }
+
+body main #logo-title-description div .col-md-4 {
+  margin-top: 1%;
+  margin-right: -66px; }
+
+body main #logo-title-description h1 {
+  font-size: 22px;
+  margin-top: 20px;
+  color: #002b49;
+  font-family: 'Open Sans Condensed', sans-serif; }
+
+body main #logo-title-description p {
+  font-size: 14px;
+  color: #002b49;
+  opacity: 0.9;
+  width: 71%; }
