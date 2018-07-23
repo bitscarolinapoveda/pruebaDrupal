@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { map } from 'rxjs/operators';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -16,7 +17,7 @@ export class NavbarService {
 
   getQuery( query: string ) {
 
-    const url = `https://restcountries.eu/rest/v2/${ query }`;
+    const url = `http://bits-redesign-stg.dev01.bitsamericas.net/drupal/adf_menu/main?_format=json${query}`;
 
     return this.http.get(url);
 
@@ -25,7 +26,7 @@ export class NavbarService {
 
   getMenuItems() {
 
-    return this.getQuery('currency/cop')
+    return this.getQuery('')
               .pipe();
 
   }

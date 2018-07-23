@@ -8,7 +8,7 @@ export class NodeService{
 
   private nodes:Node[] = [
     {
-      title: "Titulos 1",
+      title: "Tit",
       description: "Descripcion 1"
     },
     {
