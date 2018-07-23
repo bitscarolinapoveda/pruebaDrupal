@@ -17,7 +17,7 @@ export class NavbarComponent implements OnInit {
       }
 
       ngOnInit(){
-        console.log("onInit");
+        console.log("NavBar component");
         this.getNavBarItems();
       }
   getNavBarItems(){

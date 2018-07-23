@@ -10,7 +10,7 @@ import { CardService, Card } from '../../../services/cards/card.service';
 })
 export class CardValuesComponent {
 
-  card: Card[] = [];
+  card: Card;
 
   constructor( private _cardService: CardService) {
     this.card = _cardService.getCard();
