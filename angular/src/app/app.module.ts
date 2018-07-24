@@ -17,6 +17,11 @@ import { AppComponent } from './app.component';
 // Material
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
+// Notificaciones
+import { ToastrModule } from 'ngx-toastr';
+import { NotificationService } from './services/shared/notification.service';
+
+
 
 @NgModule({
   declarations: [
@@ -28,9 +33,10 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     AdfModule,
     PagesModule,
     HttpClientModule,
+    ToastrModule.forRoot(),
     APP_ROUTES
   ],
-  providers: [],
+  providers: [NotificationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
