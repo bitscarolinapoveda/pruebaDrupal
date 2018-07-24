@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  apiUrl: 'http://bits-redesign-stg.dev01.bitsamericas.net/drupal/',
 };

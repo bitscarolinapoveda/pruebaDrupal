@@ -1,46 +1,39 @@
 import { Injectable } from '@angular/core';
-import { errorsCode } from './notification.messages';
+import { ToastrService } from 'ngx-toastr';
+import { statusCodes } from './notification.messages';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class NotificationService {
+  public toastOptions: any;
 
-  constructor() {}
+  constructor(public toastr: ToastrService) {
+    this.toastOptions = {
+      dismiss: 'click',
+      showCloseButton: true,
+      animate: 'flyRight',
+      progressBar: 'true'
+    };
+  }
 
-  public error(errorParam: string | Object) {
-    console.log ('hola error');
+  public error (errorParam: string | Object) {
     if (typeof errorParam === 'string') {
-     // console.log(errorParam);
+      this.toastr.error( errorParam, 'Error' , this.toastOptions);
     } else {
-
       const error = this.convertObjectError(errorParam);
-      const objError = errorsCode.find(x => x.code === error.code);
-
-      if (objError !== void 0 || objError !== null) {
-       //console.log('objError' + objError.message);
-
-      } else {
-        if (error.message !== void 0 || error.message !== null || error.message.length === 0 ) {
-          // console.log(error.message);
-        } else {
-          // console.log('error');
-        }
-      }
+      this.toastr.error( error.message, error.label , this.toastOptions);
     }
-
   }
 
-  public success(message: string) {
-    console.log(message);
+  public success(messageParam: string) {
+    this.toastr.error( messageParam, 'Success' , this.toastOptions);
   }
 
-  public warnig(message) {
-    console.log(message);
+  public warnig(messageParam: string) {
+    this.toastr.error( messageParam, 'warning' , this.toastOptions);
   }
 
   private convertObjectError(error: any) {
-      return {code: 1001, message: 'data'};
+    return statusCodes.find(x => x.code === error.code);
   }
 
 }

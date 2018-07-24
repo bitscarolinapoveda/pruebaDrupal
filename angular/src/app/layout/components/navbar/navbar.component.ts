@@ -16,11 +16,11 @@ export class NavbarComponent implements OnInit {
 
       }
 
-      ngOnInit(){
-        console.log("NavBar component");
+      ngOnInit() {
+        console.log('NavBar component');
         this.getNavBarItems();
       }
-  getNavBarItems(){
+  getNavBarItems() {
     this.navbar.getMenuItems().subscribe( items => {
       console.log(items);
     });

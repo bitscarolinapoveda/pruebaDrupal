@@ -13,6 +13,6 @@ export class NavbarService {
   }
 
   getMenuItems() {
-    return this.http.get('adf_mendu/main?_format=json');
+    return this.http.get('adf_menu/main?_format=json');
   }
 }
