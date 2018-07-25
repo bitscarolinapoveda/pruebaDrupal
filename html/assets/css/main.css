@@ -2834,6 +2834,9 @@ body main #logo-title-description .row {
 body main #logo-title-description div .col-md-4 {
   margin-top: 1%;
   margin-right: -66px; }
+  @media (min-width: 668px) and (max-width: 1024px) {
+    body main #logo-title-description div .col-md-4 {
+      margin-right: 0px; } }
 
 body main #logo-title-description h1 {
   font-size: 22px;
@@ -2844,5 +2847,29 @@ body main #logo-title-description h1 {
 body main #logo-title-description p {
   font-size: 14px;
   color: #002b49;
-  opacity: 0.9;
+  opacity: 0.6;
   width: 71%; }
+
+body main #logo-image {
+  text-align: center; }
+  body main #logo-image .description-image {
+    margin-top: 70px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%; }
+    @media (min-width: 668px) and (max-width: 1024px) {
+      body main #logo-image .description-image {
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%; } }
+  body main #logo-image div .mgen {
+    margin-bottom: 35px;
+    align-self: center; }
+    @media (min-width: 668px) and (max-width: 1024px) {
+      body main #logo-image div .mgen {
+        margin-bottom: 0px;
+        margin-right: 70px;
+        padding: 2%; } }
+    @media (min-width: 1025px) {
+      body main #logo-image div .mgen {
+        margin-bottom: 0px; } }
