@@ -1,5 +1,13 @@
 body{
     main{
+        #title-description{
+            width: 58%;
+            margin-left: auto;
+            margin-right: auto;
+            @include breakpoint(desktop){
+            width: auto;
+            }
+        }
         #logo-title-description{
             .row{
                 margin-right: 0;
