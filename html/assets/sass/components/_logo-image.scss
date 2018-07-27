@@ -1,5 +1,20 @@
 body{
     main{
+        #title-logo{
+            text-align: center;
+            margin-top: 46px;
+            width: 63%;
+            margin-left: auto;
+            margin-right: auto;
+            color: #022944;
+            margin-bottom: auto;
+            h4{
+                font-size: 35px;
+            }
+            p{
+                font-size: 18px;
+            }
+        }
         #logo-image{
             text-align: center;
             .description-image{

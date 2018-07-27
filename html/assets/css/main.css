@@ -2807,7 +2807,7 @@ body main #block-video .description {
         @media (min-width: 1025px) {
           #image-desccription .container-second .bottons .badge {
             margin-left: 0%;
-            width: 10%;
+            width: auto;
             padding-top: 1%;
             padding-bottom: 1%; } }
     #image-desccription .container-second .url {
@@ -2819,6 +2819,14 @@ body main #block-video .description {
       @media (min-width: 1025px) {
         #image-desccription .container-second .url {
           top: 12px; } }
+
+body main #title-description {
+  width: 58%;
+  margin-left: auto;
+  margin-right: auto; }
+  @media (min-width: 1025px) {
+    body main #title-description {
+      width: auto; } }
 
 body main #logo-title-description .row {
   margin-right: 0;
@@ -2850,6 +2858,19 @@ body main #logo-title-description p {
   opacity: 0.6;
   width: 71%; }
 
+body main #title-logo {
+  text-align: center;
+  margin-top: 46px;
+  width: 63%;
+  margin-left: auto;
+  margin-right: auto;
+  color: #022944;
+  margin-bottom: auto; }
+  body main #title-logo h4 {
+    font-size: 35px; }
+  body main #title-logo p {
+    font-size: 18px; }
+
 body main #logo-image {
   text-align: center; }
   body main #logo-image .description-image {
@@ -2873,3 +2894,37 @@ body main #logo-image {
     @media (min-width: 1025px) {
       body main #logo-image div .mgen {
         margin-bottom: 0px; } }
+
+body main #barra-url {
+  margin-top: 2%;
+  margin-bottom: -4%; }
+  body main #barra-url #linea {
+    background-color: #c2c6c7;
+    margin-bottom: 0%; }
+  body main #barra-url .barra {
+    width: 100%;
+    overflow: auto;
+    margin-left: auto; }
+  body main #barra-url .list-bloque {
+    flex-wrap: nowrap;
+    width: 1016px; }
+    @media (min-width: 1025px) {
+      body main #barra-url .list-bloque {
+        width: auto; } }
+    body main #barra-url .list-bloque .content-botton {
+      position: relative; }
+      body main #barra-url .list-bloque .content-botton .nav-link {
+        color: #022944; }
+        body main #barra-url .list-bloque .content-botton .nav-link:hover {
+          color: #bcdb5b; }
+        body main #barra-url .list-bloque .content-botton .nav-link:after {
+          content: '';
+          display: block;
+          background-color: #bcdb5b;
+          width: 1px;
+          height: 14px;
+          position: absolute;
+          top: 13px;
+          right: -1px; }
+      body main #barra-url .list-bloque .content-botton:last-child .nav-link:after {
+        background: transparent; }
