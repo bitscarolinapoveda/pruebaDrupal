@@ -1,0 +1,7 @@
+services:
+  adf_content_types.default:
+    class: Drupal\adf_content_types\DefaultService
+    arguments: []
+  content:
+    class: Drupal\adf_content_types\ContentTypesService
+    arguments: []
