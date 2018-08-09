@@ -1,0 +1,167 @@
+@import './src/assets/scss/_mixin.scss';
+.Slider {
+    .carousel-slider {
+        width: 100%;
+        .slider-botton {
+            bottom: 18%;
+            margin-left: 15%;
+            @include breakpoint(tablet) {
+                margin-left: 78%;
+                margin-right: 6%;
+            }
+            @include breakpoint(desktop) {
+                margin-left: 81%;
+                margin-right: 4%;
+            }
+            .circle-botton {
+                background-color: #ffffff;
+                border-radius: 100%;
+                margin-left: 5.2%;
+                width: 14px;
+                height: 14px;
+                @include breakpoint(desktop) {}
+            }
+            .active {
+                background-color: #9db232;
+            }
+        }
+        .window-complete {
+            @include breakpoint(desktop) {
+                height: 100vh;
+            }
+            .text-slider {
+                bottom: 19.5%;
+                left: 14%;
+                padding-bottom: initial;
+                @include breakpoint(tablet) {
+                    width: 76%;
+                    left: 16%;
+                    text-align: right;
+                }
+                @include breakpoint(desktop) {
+                    width: 76%;
+                    left: 16%;
+                    text-align: right;
+                }
+                .title-slider {
+                    font-size: 36px;
+                    @include breakpoint(tablet) {
+                        font-size: 32px;
+                    }
+                    @include breakpoint(desktop) {
+                        font-size: 50px;
+                    }
+                }
+                .description-slider {
+                    font-size: 18px;
+                    font-family: 'Roboto', sans-serif;
+                    @include breakpoint(tablet) {
+                        position: relative;
+                        line-height: 1.2;
+                        font-size: 21px;
+                        width: 88%;
+                        left: 11%;
+                    }
+                    @include breakpoint(desktop) {
+                        position: relative;
+                        line-height: 1.2;
+                        font-size: 28px;
+                        padding-left: 22%;
+                        width: 88%;
+                        left: 12%;
+                    }
+                }
+            }
+        }
+        .icon-mobile {
+            display: none;
+            @include breakpoint(desktop) {
+                display: initial;
+            }
+        }
+        .down-main {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 16px;
+            position: relative;
+            bottom: 46px;
+            left: 43.2%;
+            &::after {
+                content: "EXPLORAR";
+                position: relative;
+                background: transparent;
+                right: 16%;
+                bottom: 30px;
+                color: #ffffff;
+                @include breakpoint(tablet) {
+                    bottom: 18px;
+                    right: 6%;
+                }
+                @include breakpoint(desktop) {
+                    bottom: 30px;
+                    right: 3%;
+                }
+            }
+            @include breakpoint(tablet) {
+                bottom: 56px;
+                left: 48.2%;
+            }
+            @include breakpoint(desktop) {
+                bottom: 56px;
+                left: 48.2%;
+            }
+            .arrow-down {
+                width: 12%;
+                left: 2%;
+                position: relative;
+                @include breakpoint(tablet) {
+                    width: 4%;
+                    left: 0;
+                }
+                @include breakpoint(desktop) {
+                    padding: 20px;
+                    left: 0;
+                    height: 11%;
+                    width: 17%;
+                    bottom: 5%;
+                    margin-bottom: -16%;
+                    margin-left: -33%;
+                    position: absolute;
+                    background: transparent;
+                    background-image: url("../../../../assets/icon/down-gray.svg");
+                    background-size: 94%;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                }
+            }
+        }
+        .icon-prev {
+            @include breakpoint(desktop) {
+                height: 11%;
+                width: 17%;
+                bottom: 5%;
+                margin-right: 82%;
+                position: relative;
+                background: rgba(0, 0, 0, 0.63);
+                background-image: url("../../../../assets/icon/back-white.svg");
+                background-size: 94%;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+        }
+        .icon-next {
+            @include breakpoint(desktop) {
+                height: 11%;
+                width: 17%;
+                bottom: 5%;
+                margin-left: 81%;
+                position: relative;
+                background: rgba(0, 0, 0, 0.63);
+                background-image: url("../../../../assets/icon/next-white.svg");
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: 94%;
+            }
+        }
+    }
+}

@@ -1,7 +1,7 @@
 <section class="Slider">
     <div id="carouselExampleIndicators" class="carousel slide carousel-slider" data-ride="carousel">
         <ol class="carousel-indicators slider-botton">
-            <li *ngFor="let node of nodes; let i=index" data-target="#carouselExampleIndicators" data-slide-to="" class="circle-botton"></li>
+            <li *ngFor="let node of nodes; let i=index" data-target="#carouselExampleIndicators" data-slide-to="i" class="circle-botton"></li>
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active window-complete">
@@ -17,8 +17,8 @@
             <app-carousel-item *ngFor="let node of nodes; let i=index"></app-carousel-item>
 
         </div>
-        <a href="#anchor" class="down-main" id="down-main" data-ancla="uno">
-            <img class="arrow-down" src="assets/icon/down-gray.svg">
+        <a href="#" class="down-main">
+            <div class="arrow-down"></div>
         </a>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon icon-mobile icon-prev" aria-hidden="true"></span>

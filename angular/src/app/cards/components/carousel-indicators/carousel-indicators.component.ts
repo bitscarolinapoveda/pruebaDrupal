@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { NodeService, Node} from '../../../services/cards/node.service';
+import { NodeService, Node } from '../../../services/cards/node.service';
 
 @Component({
   selector: 'app-carousel-indicators',
@@ -14,7 +14,7 @@ export class CarouselIndicatorsComponent implements OnInit {
   constructor(  private _nodeService: NodeService ) {
 
   }
-  ngOnInit(){
+  ngOnInit() {
     this.nodes = this._nodeService.getNodes();
     console.log(this.nodes);
   }
