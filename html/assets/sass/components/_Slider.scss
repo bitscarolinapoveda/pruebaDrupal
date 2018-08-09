@@ -48,7 +48,7 @@
                 .title-slider{
                     font-size: 36px;
                     @include breakpoint(tablet) {
-                        font-size: 50px;
+                        font-size: 32px;
                     }
                     @include breakpoint(desktop) {
                         font-size: 50px;
@@ -56,11 +56,11 @@
                 }
                 .description-slider{
                     font-size: 18px;
-                    font-family: open_sanslight;
+                    font-family: 'Roboto', sans-serif;
                     @include breakpoint(tablet) {
                         position: relative;
                         line-height: 1.2;
-                        font-size: 28px;
+                        font-size: 21px;
                         width: 88%;
                         left: 11%;
                     }
@@ -68,6 +68,7 @@
                         position: relative;
                         line-height: 1.2;
                         font-size: 28px;
+                        padding-left: 22%;
                         width: 88%;
                         left: 12%;
                     }
@@ -100,7 +101,7 @@
                 }
                 @include breakpoint(desktop) {
                     bottom: 30px;
-                    right: 4.9%;
+                    right: 4.2%;
                 }
             }
             @include breakpoint(tablet) {
@@ -133,7 +134,7 @@
                 margin-right: 82%;
                 position: relative;
                 background: rgba(0, 0, 0, 0.63);
-                background-image: url("../images/back-white.svg");
+                background-image: url("../icon/back-white.svg");
                 background-size:94%; 
                 background-position:center; 
                 background-repeat: no-repeat;
@@ -147,7 +148,7 @@
                 margin-left: 81%;
                 position: relative;
                 background: rgba(0, 0, 0, 0.63);
-                background-image: url("../images/next-white.svg");
+                background-image: url("../icon/next-white.svg");
                 background-position: center;
                 background-repeat:no-repeat;
                 background-size:94%;  

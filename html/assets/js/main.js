@@ -1,4 +1,4 @@
-    $(document).ready(function () {
+
         $(window).scroll(function () {
             if ($(".menu-scroll").offset().top > 20) {
                 $(".menu-scroll").addClass("inverse-color");
@@ -6,7 +6,7 @@
                 $(".menu-scroll").removeClass("inverse-color");
             }
         });
-    });   
+ 
     $(document).ready(function () {
         $(window).scroll(function () {
             if ($(".lines").offset().top > 54) {
@@ -16,7 +16,7 @@
             }
         });
     });    
-    $(document).ready(function () {
+
         $(window).scroll(function () {
             if ($(".link").offset().top > 20) {
                 $(".link").addClass("scroll-white");
@@ -24,8 +24,8 @@
                 $(".link").removeClass("scroll-white");
             }
         });
-    });    
-    $(document).ready(function () {
+
+
         $(window).scroll(function () {
             if ($(".image-bits").offset().top > 50) {
                 $(".image-bits").attr("src", "assets/images/Logocolor.png");
@@ -33,7 +33,7 @@
                 $(".image-bits").attr("src", "assets/images/Logowhite.png");
             }
         });
-    });
+
     $(document).ready(function () {
         $(".Botton").on("click", function () {
             $(".menu-scroll").toggleClass("tigger-menu");
@@ -44,7 +44,7 @@
     $(function() {
         $(window).scroll(function() {
             var scroll = $(window).scrollTop();
-            var footer = $(".w").offset();
+            var footer = $("#limit-social-networks").offset();
             footer = footer.top;
             if (scroll >= footer) {
                 $(".social-networks").hide(0);
@@ -74,7 +74,7 @@
     $(function() {
         $(window).scroll(function() {
         var scroll = $(window).scrollTop();
-        var footer = $(".w").offset();
+        var footer = $("#limit-social-networks").offset();
         footer = footer.top;
         if (scroll >= footer) {
             $(".envolope").hide(0);
@@ -90,7 +90,7 @@
             volver = $(this).attr('href');
             $('html, body').animate({
                 scrollTop: $(volver).offset().top
-            }, 2000);
+            }, 1600);
         });
     });
 
@@ -111,7 +111,7 @@
             $('.envolope').hide(0);
             $(window).scroll(function() {
             var scroll = $(window).scrollTop();
-            var footer = $(".w").offset();
+            var footer = $("#limit-social-networks").offset();
             footer = footer.top;
             if (scroll >= 100) {
                 $(".envolope").show();
@@ -137,5 +137,201 @@
         E[n].style.display='';
     }
 
-      
+    jQuery (function ($) {
+        if ($('#transition-image').length) {
+            var items = 4;
+            var $elements = $('.img-item');
     
+            var groups = createGroups($elements, items);
+            var groups = completeGroup(groups, items);
+            startSlide(groups, items);
+        }
+
+        if ($('#transition-image2').length) {
+            var items = 4;
+            var $elements = $('.img-item2');
+    
+            var groups = createGroups($elements, items);
+            var groups = completeGroup(groups, items);
+            startSlide(groups, items);
+        } 
+    
+        function createGroups($elements, numberItems) {
+            var elems = {};
+            var group = 1;
+            var item = 0;
+            elems[group] = [];
+    
+            $.each($elements, function(key, value) {
+                var elemId = $(this).prop('id');
+                elems[group][item] = elemId;
+                item++;
+    
+                if (((key + 1) % numberItems) == 0) {
+                    item = 0;
+                    group++;
+                    elems[group] = [];
+                }
+            });
+    
+            return elems;
+        }
+    
+        function completeGroup(elems, numberItems) {
+            $.each(elems, function(key, currentElem) {
+                var count = 0;
+                $.each(currentElem, function(k, v) {
+                    count++;
+                });
+    
+                if ((count % numberItems) > 0) {
+                    var iter = numberItems - count;
+                    var pos = count;
+                    var c = 0;
+    
+                    $.each(elems, function(a, b) {
+                        $.each(b, function(item, v) {
+                            if (c < iter) {
+                                elems[key][pos] = v;
+                                pos++;
+                            }
+                            c++;
+                        });
+                    });
+                }
+            });
+
+            $.each(elems, function(key, array) {
+                array.sort(function(a, b){
+                    if(a== b) return 0;
+                    return a> b? 1: -1;
+                });
+            });
+    
+            return elems;
+        }
+    
+        function startSlide(elems, numberItems) {
+            var slide = 1;
+            var itemSlide = 0;
+            var oper = 'show';
+            var interval = setInterval(function() {
+                if (itemSlide < numberItems && oper == 'show') {
+                    var elemId = elems[slide][itemSlide];
+                    var $elem = $('#' + elemId);
+                    $elem.addClass('fadeInUp displayed').removeClass('fadeOutUp no-displayed').css('display', 'block');
+                    itemSlide++;
+                }
+                else {
+                    oper = 'remove';
+                    if (((itemSlide) % numberItems) == 0) {
+                        itemSlide = 0;
+                    }
+                    var elemId = elems[slide][itemSlide];
+                    var $elem = $('#' + elemId);
+                    $elem.addClass('fadeOutUp').removeClass('fadeInUp');
+                    itemSlide++;
+                    if (itemSlide == numberItems) {
+                        oper = 'show';
+                        itemSlide = 0;
+                        slide++;
+    
+                        if (elems[slide] == undefined) {
+                            slide = 1;
+                        }
+                        $('.displayed').css('display', 'none').removeClass('displayed').addClass('no-displayed');
+                    }
+                }
+            }, 500);
+        }
+    
+    });
+    
+    $(document).ready(function () {
+        $('#recipeCarousel').carousel({
+            interval: 4000
+        })
+
+        $('.carousel-run .carousel-item').each(function () {
+            var next = $(this).next();
+            if (!next.length) {
+                next = $(this).siblings(':first');
+            }
+            next.children(':first-child').clone().appendTo($(this));
+
+            for (var i = 0; i < 2; i++) {
+                next = next.next();
+                if (!next.length) {
+                    next = $(this).siblings(':first');
+                }
+
+                next.children(':first-child').clone().appendTo($(this));
+            }
+        });
+    });
+
+    $(document).ready(function () {
+        $('.show-more').click(function() {
+            $('.show-more').toggleClass('show-less');
+        })
+    })
+    $(document).ready(function () {
+        $('.top-return').click(function () {
+            $('body, html').animate({
+                scrollTop: '0px'
+            }, 700);
+        });
+    });
+
+    function alerta(){
+        $('#alert-item1').modal('show');
+    };
+    function alerta2(){
+        $('#alert-item2').modal('show');
+    };
+ 
+
+    $(window).scroll(function () {
+        if ($(".top-return").offset().top > 750) {
+            $(".top-return").addClass("movil-display");
+        } else {
+            $(".top-return").removeClass("movil-display");
+        }
+    });
+
+$(document).ready(function () {
+    var mediaquery = window.matchMedia("(max-width: 500px)");
+    if (mediaquery.matches) {
+        $('.show-more').on('click', function (e) {
+            $('.nav2').slideToggle('slow');
+            e.preventDefault();
+        });
+    }
+});
+
+jQuery (function ($) {
+  $("body main #barra-url .list-bloque .content-botton .nav-link").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+
+
