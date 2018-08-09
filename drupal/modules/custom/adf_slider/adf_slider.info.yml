@@ -1,0 +1,7 @@
+name: adf_slider
+type: module
+description: slider rest
+core: 8.x
+dependencies:
+  - restui
+             
