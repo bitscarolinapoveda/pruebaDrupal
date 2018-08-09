@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { CarouselItemComponent } from './components/carousel-item/carousel-item.component';
 import { CarouselIndicatorsComponent } from './components/carousel-indicators/carousel-indicators.component';
 import { CardValuesComponent } from './components/card-values/card-values.component';
+import { PorqueBitsComponent } from './components/porque-bits/porque-bits.component';
 
 // Servicios
 import { NodeService } from '../services/cards/node.service';
@@ -15,11 +16,13 @@ import { CardService } from '../services/cards/card.service';
   declarations: [
     CarouselItemComponent,
     CarouselIndicatorsComponent,
-    CardValuesComponent
+    CardValuesComponent,
+    PorqueBitsComponent
   ],
   exports: [
     CarouselIndicatorsComponent,
-    CardValuesComponent
+    CardValuesComponent,
+    PorqueBitsComponent
   ],
   imports: [
     BrowserModule
