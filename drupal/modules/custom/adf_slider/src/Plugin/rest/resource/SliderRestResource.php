@@ -2,16 +2,16 @@
 
 namespace Drupal\adf_slider\Plugin\rest\resource;
 
-use Drupal\rest\Plugin\ResourceBase;
-use \Drupal\rest\ResourceResponse;
-use Drupal\Core\Entity\EntityManagerInterface;
-use Drupal\Core\Url;
-use \Symfony\Component\Routing\Route;
-use Drupal\Core\Session\AccountProxyInterface;
-use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
-use Symfony\Component\HttpKernel\Exception\HttpException;
-use Symfony\Component\DependencyInjection\ContainerInterface;
 use Psr\Log\LoggerInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
+use Drupal\taxonomy\Entity\Term;
+use Drupal\node\Entity\Node;
+use Drupal\file\Entity\File;
+use Drupal\Core\Session\AccountProxyInterface;
+use Drupal\rest\Plugin\ResourceBase;
+use Drupal\rest\ResourceResponse;
 
 /**
  * Create URL for use rest services.
@@ -20,47 +20,13 @@ use Psr\Log\LoggerInterface;
  *   id = "adf_slider",
  *   label = @Translation("adf_slider"),
  *   uri_paths = {
- *     "canonical" = "adf_slider/{article}"
+ *     "canonical" = "adf_slider/article"
  *   }
  * )
  */
 
 
 class SliderRestResource extends ResourceBase {
-
-    /**
-     * MenuRestResource constructor.
-     *
-     * @param array $configuration
-     *   Configuration data.
-     * @param string $plugin_id
-     *   Plugin Id.
-     * @param mixed $plugin_definition
-     *   Plugin definition.
-     * @param array $serializer_formats
-     *   Serializer formats.
-     * @param \Psr\Log\LoggerInterface $logger
-     *   Logger service.
-     * @param \Drupal\Core\Entity\EntityManagerInterface $entity_manager
-     *   A instance of entity manager.
-     * @param \Drupal\Core\Session\AccountProxyInterface $current_user
-     *   A current user instance.
-     */
-
-    /**
-     * A list of menu items.
-     *
-     * @var array
-     */
-    protected $menuDetails = [];
-
-    /**
-     * A instance of entity manager.
-     *
-     * @var \Drupal\Core\Entity\EntityManagerInterface
-     */
-    protected $entityManager;
-
     /**
      * A current user instance.
      *
@@ -69,7 +35,20 @@ class SliderRestResource extends ResourceBase {
     protected $currentUser;
 
     /**
-     * Implement _construct().
+     * Constructs a new SliderRestResource object.
+     *
+     * @param array $configuration
+     *   A configuration array containing information about the plugin instance.
+     * @param string $plugin_id
+     *   The plugin_id for the plugin instance.
+     * @param mixed $plugin_definition
+     *   The plugin implementation definition.
+     * @param array $serializer_formats
+     *   The available serialization formats.
+     * @param \Psr\Log\LoggerInterface $logger
+     *   A logger instance.
+     * @param \Drupal\Core\Session\AccountProxyInterface $current_user
+     *   A current user instance.
      */
     public function __construct(
         array $configuration,
@@ -77,27 +56,23 @@ class SliderRestResource extends ResourceBase {
         $plugin_definition,
         array $serializer_formats,
         LoggerInterface $logger,
-        EntityManagerInterface $entity_manager,
         AccountProxyInterface $current_user
     ) {
         parent::__construct($configuration, $plugin_id, $plugin_definition, $serializer_formats, $logger);
 
-        $this->entityManager = $entity_manager;
         $this->currentUser = $current_user;
     }
 
     /**
      * {@inheritdoc}
      */
-    public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition)
-    {
+    public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
         return new static(
             $configuration,
             $plugin_id,
             $plugin_definition,
             $container->getParameter('serializer.formats'),
-            $container->get('logger.factory')->get('rest'),
-            $container->get('entity.manager'),
+            $container->get('logger.factory')->get('adf_slider'),
             $container->get('current_user')
         );
     }
@@ -105,33 +80,64 @@ class SliderRestResource extends ResourceBase {
     /**
      * Responds to GET requests.
      *
-     * Returns a list of menu items for specified menu name.
+     * @param Request $request
+     *   The request to create the header.
      *
-     * @param string|null $menu_name
-     *   The menu name.
-     *
-     * @return \Drupal\rest\ResourceResponse
-     *   The response containing a list of bundle names.
-     *
-     * @throws \Symfony\Component\HttpKernel\Exception\HttpException
-     *   Throws exception expected.
-     *
-     * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+     * @return array
+     *   array in JSON format.
      */
+    public function get(Request $request) {
 
-    /**
-     * {@inheritdoc}
-     */
+        $bundle = 'article';
+        $offset = $request->headers->get('offset', 0);
+        $limit = $request->headers->get('limit', 10);
+        $type = $request->headers->get('type', $bundle);
+        $entity_type = 'node';
+        $view_mode = 'slide';
+        $entity = [];
+        $storage = \Drupal::entityTypeManager()->getStorage('entity_view_display');
+        $view_display = $storage->load($entity_type . '.' . $bundle . '.' . $view_mode);
+        $content = array_keys($view_display->toArray()['content']);
+        unset($content[0]);
+        $nids = \Drupal::entityQuery('node')
+            ->condition('status', 1)
+            ->range($offset, $limit)
+            ->condition('type', $type)
+            ->execute();
+        $nodes = Node::loadMultiple($nids);
 
+        if ($nodes == null) {
+            throw new BadRequestHttpException('No entity content received.');
+        } else {
+            foreach ($nodes as $node) {
+                $fid = $node->get('field_image')->getValue()[0]['target_id'];
+                $file = File::load($fid);
+                $path_image = $file->getFileUri();
+                $tid = $node->get('field_tags')->getValue();
+                $term_name = '';
+                foreach ($tid as $key => $value) {
+                    $term = Term::load($value['target_id']);
+                    $term_name .= $term->getName() . ',';
+                }
+                $entity[$node->id()] = [
+                    'body' => $node->body->value,
+                    'field_url_reference' => $node->get('field_url_reference')->getValue()[0]['uri'],
+                    'field_image' => $path_image,
+                    'field_tags' => $term_name,
+                ];
 
-    /**
-     * Responds to entity GET requests.
-     * @return \Drupal\rest\ResourceResponse
-     */
+                foreach ($entity[$node->id()] as $key => $value) {
+                    if (!in_array($key, $content)) {
+                        unset($entity[$node->id()][$key]);
+                    }
+                }
+                $entity[$node->id()]['title'] = $node->title->value;
+            }
+        }
+        $response = new ResourceResponse($entity, 200);
+        $response->addCacheableDependency($entity);
 
-    public function get()
-    {
-        $response = ['message' => 'Hello, this is a rest service'];
-        return new ResourceResponse($response);
+        return $response;
+
     }
 }
