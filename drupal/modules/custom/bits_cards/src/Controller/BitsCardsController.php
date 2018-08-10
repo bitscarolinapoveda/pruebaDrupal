@@ -30,12 +30,13 @@ class BitsCardsController extends ControllerBase {
     $obj = json_decode($block);
     $field_link = $obj->field_link[0]->uri;
     $type = $obj->type[0]->target_id;
-
+    $title = $obj->info[0]->value;
     switch ($type) {
       case 'whybits':
         $obj = $obj->field_logo;
         $response['data'] = $obj;
         $response['data']['link'] = $field_link;
+        $response['data']['title'] = $title;
         break;
       default:
         $response = "For the block '" . $type . "' has not yet been created service";

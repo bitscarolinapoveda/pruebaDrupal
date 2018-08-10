@@ -23,7 +23,7 @@ D. It also has the ability to expose in JSON blocks created from UI, you can cre
 9. In the option of Number of allowed values ​​leave limited to one and save options.
 10. In the options of Allow link text, leave the check in deactivated.
 11. Now let's add a custom block based on the newly created block type from the path http://www.example.com/admin/structure/block/block-content
-12. Select the link whiybits and put the label whybits.
+12. Select the link whiybits and put the label ¿Porqué Bits Américas?.
 13. Fill in the image fields with title and save.
 14. Consume the service, the number four is the id block, you have to investigate the id number of you block, this is the end point: http //: www.exaxmple.com/block-resources/4?_format=json
 
