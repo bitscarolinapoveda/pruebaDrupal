@@ -1,30 +1,12 @@
 
         $(window).scroll(function () {
-            if ($(".menu-scroll").offset().top > 20) {
-                $(".menu-scroll").addClass("inverse-color");
+            if ($(".menu-scroll, .lines, .link").offset().top > 30) {
+                $(".menu-scroll, .lines, .link").addClass("inverse-color color-scroll scroll-white");
             } else {
-                $(".menu-scroll").removeClass("inverse-color");
+                $(".menu-scroll, .lines, .link").removeClass("inverse-color color-scroll scroll-white");
             }
         });
  
-    $(document).ready(function () {
-        $(window).scroll(function () {
-            if ($(".lines").offset().top > 54) {
-                $(".lines").addClass("color-scroll");
-            } else {
-                $(".lines").removeClass("color-scroll");
-            }
-        });
-    });    
-
-        $(window).scroll(function () {
-            if ($(".link").offset().top > 20) {
-                $(".link").addClass("scroll-white");
-            } else {
-                $(".link").removeClass("scroll-white");
-            }
-        });
-
 
         $(window).scroll(function () {
             if ($(".image-bits").offset().top > 50) {
@@ -35,8 +17,8 @@
         });
 
     $(document).ready(function () {
-        $(".Botton").on("click", function () {
-            $(".menu-scroll").toggleClass("tigger-menu");
+        $(".Botton, .show-more").on("click", function () {
+            $(".menu-scroll, .link, .show-more").toggleClass("tigger-menu scroll-white show-less");
         });
     });
 
@@ -47,20 +29,14 @@
             var footer = $("#limit-social-networks").offset();
             footer = footer.top;
             if (scroll >= footer) {
-                $(".social-networks").hide(0);
+                $(".social-networks, .envolope").hide(0);
             } else {
-                $(".social-networks").show();
+                $(".social-networks, .envolope").show();
             }
         });
     });
-
+    
     $(document).ready(function () {
-        $(".Botton").on("click", function () {
-            $(".link").toggleClass("scroll-white");
-        });
-    });
-
-   $(document).ready(function () {
         $(".Botton").on("click", function () {
             $(".blur-logo").toggleClass(function () {
                  $(".blur-logo").attr("src", "assets/images/Logocolor.png");
@@ -71,18 +47,7 @@
     });
     
    
-    $(function() {
-        $(window).scroll(function() {
-        var scroll = $(window).scrollTop();
-        var footer = $("#limit-social-networks").offset();
-        footer = footer.top;
-        if (scroll >= footer) {
-            $(".envolope").hide(0);
-        } else {
-            $(".envolope").show();
-        }
-        });
-    });
+    
 
     $(document).ready(function () {
         $('#down-main').click(function (e) {
@@ -138,23 +103,15 @@
     }
 
     jQuery (function ($) {
-        if ($('#transition-image').length) {
+        if ($('#transition-image, #transition-image2').length) {
             var items = 4;
-            var $elements = $('.img-item');
+            var $elements = $('.img-item, .img-item2');
     
             var groups = createGroups($elements, items);
             var groups = completeGroup(groups, items);
             startSlide(groups, items);
         }
 
-        if ($('#transition-image2').length) {
-            var items = 4;
-            var $elements = $('.img-item2');
-    
-            var groups = createGroups($elements, items);
-            var groups = completeGroup(groups, items);
-            startSlide(groups, items);
-        } 
     
         function createGroups($elements, numberItems) {
             var elems = {};
@@ -270,11 +227,7 @@
         });
     });
 
-    $(document).ready(function () {
-        $('.show-more').click(function() {
-            $('.show-more').toggleClass('show-less');
-        })
-    })
+   
     $(document).ready(function () {
         $('.top-return').click(function () {
             $('body, html').animate({
@@ -312,25 +265,18 @@ $(document).ready(function () {
 jQuery (function ($) {
   $("body main #barra-url .list-bloque .content-botton .nav-link").on('click', function(event) {
 
-    // Make sure this.hash has a value before overriding default behavior
-    if (this.hash !== "") {
+        if (this.hash !== "") {
 
-      // Prevent default anchor click behavior
-      event.preventDefault();
-
-      // Store hash
-      var hash = this.hash;
-
-      // Using jQuery's animate() method to add smooth page scroll
-      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
-      $('html, body').animate({
-        scrollTop: $(hash).offset().top
-      }, 900, function(){
-   
-        // Add hash (#) to URL when done scrolling (default click behavior)
-        window.location.hash = hash;
-      });
-    } // End if
+            event.preventDefault();
+            
+            var hash = this.hash;
+        
+            $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 900, function(){
+                window.location.hash = hash;
+            });
+        } 
   });
 });
 

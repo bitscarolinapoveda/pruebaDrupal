@@ -559,7 +559,8 @@ header nav {
         header nav .menuToggle .list-menu .items .active {
           border-top: 4px solid #a6cf24; }
         header nav .menuToggle .list-menu .items .scroll-white {
-          color: #002b49; }
+          color: #002b49;
+          background: white; }
       header nav .menuToggle .list-menu .language {
         list-style: none; }
 
@@ -2928,3 +2929,54 @@ body main #barra-url {
           right: -1px; }
       body main #barra-url .list-bloque .content-botton:last-child .nav-link:after {
         background: transparent; }
+
+body main .oo {
+  margin-top: -539px;
+  margin-bottom: 260px; }
+
+body main #data-froms .principal-data {
+  list-style: none; }
+  body main #data-froms .principal-data .description {
+    display: grid;
+    margin-left: -29px;
+    margin-right: 28px;
+    margin-top: 19px;
+    color: #bcdb5b; }
+    body main #data-froms .principal-data .description #style1 {
+      padding: 10px 20px;
+      border: 1px solid #002b49; }
+
+body main #data-froms .position {
+  margin-left: -29px;
+  margin-right: 28px; }
+  body main #data-froms .position .contenido {
+    display: grid; }
+    body main #data-froms .position .contenido label {
+      color: #c0dc74;
+      margin-top: 20px;
+      margin-bottom: -1px; }
+    body main #data-froms .position .contenido #style {
+      width: 100%;
+      padding: 4px 2px;
+      outline: none;
+      border: none;
+      border-bottom: 1px solid #b2c6cd;
+      color: #002b49; }
+
+body main #data-froms .button {
+  padding: 13px 37px;
+  background-color: #bcdb5b;
+  border: none;
+  color: white;
+  margin: 33px 108px;
+  cursor: pointer;
+  display: block;
+  margin: auto;
+  margin-top: 48px; }
+
+body main #data-froms .dato-button {
+  text-align: center;
+  color: #002b49;
+  margin-top: 20px; }
+  body main #data-froms .dato-button strong {
+    color: #bcdb5b; }
