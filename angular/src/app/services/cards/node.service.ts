@@ -4,16 +4,15 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 
 @Injectable()
-export class NodeService{
-
-  private nodes:Node[] = [
+export class NodeService {
+  private nodes: Node[] = [
     {
-      title: "Tit",
-      description: "Descripcion 1"
+      title: 'Titulos 1',
+      description: 'Descripcion 1'
     },
     {
-      title: "Titulos 2",
-      description: "Descripcion 2"
+      title: 'Titulos 2',
+      description: 'Descripcion 2'
     }
   ];
 
