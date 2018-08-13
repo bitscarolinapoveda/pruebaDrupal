@@ -1,0 +1,46 @@
+body{
+    main{
+        #title-logo{
+            text-align: center;
+            margin-top: 46px;
+            width: 63%;
+            margin-left: auto;
+            margin-right: auto;
+            color: #022944;
+            margin-bottom: auto;
+            h4{
+                font-size: 35px;
+            }
+            p{
+                font-size: 18px;
+            }
+        }
+        #logo-image{
+            text-align: center;
+            .description-image{
+                margin-top: 70px;
+                margin-left: auto;
+                margin-right: auto;
+                width: 80%;
+                @include breakpoint(tablet){
+                    margin-left: 0;
+                    margin-right: 0;
+                    width: 100%;
+                }
+            }
+            div .mgen{
+                margin-bottom: 35px;
+                align-self: center;
+                @include breakpoint(tablet){
+                    margin-bottom: 0px;
+                    margin-right: 70px;
+                    padding: 2%;
+                }
+                @include breakpoint(desktop){
+                    margin-bottom: 0px;
+                }    
+            }
+        }
+
+    }
+}

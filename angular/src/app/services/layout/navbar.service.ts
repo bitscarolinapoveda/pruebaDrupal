@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
+import { HttpService } from '../http/http.service';
 
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-
-import { map } from 'rxjs/operators';
 
 
 @Injectable({
@@ -11,23 +9,12 @@ import { map } from 'rxjs/operators';
 
 export class NavbarService {
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpService) {
     console.log('NavBar Listo');
-  }
-
-  getQuery( query: string ) {
-
-    const url = `http://bits-redesign-stg.dev01.bitsamericas.net/drupal/adf_menu/main?_format=json${query}`;
-
-    return this.http.get(url);
-
   }
 
 
   getMenuItems() {
-
-    return this.getQuery('')
-              .pipe();
-
+    return this.http.get('adf_menu/menu?_format=json');
   }
 }
