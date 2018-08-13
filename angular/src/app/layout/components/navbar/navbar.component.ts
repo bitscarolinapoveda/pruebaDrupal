@@ -14,8 +14,6 @@ export class NavbarComponent implements OnInit {
   }
   NavbarArray: any = [];
   ngOnInit() {
-
-
      $('.Botton, .show-more').on('click', function () {
         $('.menu-scroll, .link').toggleClass('tigger-menu scroll-white color-white');
       });
