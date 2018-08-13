@@ -12,7 +12,6 @@ export class HeaderComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    $(document).ready(function () {
    $(window).scroll(function () {
       if ($('.image-bits').offset().top > 50) {
         $('.image-bits').attr('src', 'assets/images/Logocolor.png');
@@ -24,8 +23,6 @@ export class HeaderComponent implements OnInit {
 
           $('.blur-logo').attr('src', 'assets/images/Logocolor.png');
         });
-
-    });
   }
 
 
