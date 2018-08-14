@@ -19,7 +19,7 @@ D. It also has the ability to expose in JSON blocks created from UI, you can cre
 5. In the option of Number of allowed values ​​leave unlimited and save options.
 6. Deactivate the check "Alt" and "Alt" and activate "Title"
 7. Remove the Body field, we do not need it for the desired functionality.
-8. Add another field type Link with the label that you feel comfortable.
+8. Add another field type Link with the label "Link".
 9. In the option of Number of allowed values ​​leave limited to one and save options.
 10. In the options of Allow link text, leave the check in deactivated.
 11. Now let's add a custom block based on the newly created block type from the path http://www.example.com/admin/structure/block/block-content
