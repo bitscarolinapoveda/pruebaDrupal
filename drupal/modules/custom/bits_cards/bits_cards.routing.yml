@@ -1,0 +1,8 @@
+bits_cards.invoice:
+  path: '/block-resources/{blockid}'
+  defaults:
+    _controller: '\Drupal\bits_cards\Controller\BitsCardsController::reports'
+    total: ''
+    _title: 'Report section'
+  requirements:
+    _permission: 'access content'

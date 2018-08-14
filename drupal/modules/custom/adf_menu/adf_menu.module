@@ -36,9 +36,8 @@ function adf_menu_form_menu_link_content_form_alter(array &$form, FormStateInter
  */
 function block_submit($form, FormStateInterface $form_state) {
   $this->configuration['details'] = $form_state->getValue('details');
-
+  
   foreach ($this->configuration['details'] as $key => $default_value) {
-
     $fid = $form_state->getValue('details')[$key]['image'][0]
       ->get('fid');
     \Drupal::logger('my_module')->error(print_r($this->setFileAsPermanent($fid), TRUE));

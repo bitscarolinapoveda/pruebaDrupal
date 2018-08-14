@@ -1,0 +1,18 @@
+<?php
+
+/**
+ * @file
+ * Contains bits_cards.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function bits_cards_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.bits_cards':
+      return check_markup(file_get_contents(dirname(__FILE__) . "/README.txt"));
+  }
+}
