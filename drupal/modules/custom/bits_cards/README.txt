@@ -12,10 +12,10 @@ B. Turn on the module
 C. Activate the "Export card config rest resource" service and add permissions.
 D. It also has the ability to expose in JSON blocks created from UI, you can create any type of field in the block and it will automatically show you the entered values. The endpoint to consume this service is: http //: www.exaxmple.com/block-resources/4?_format=json. Like the previous service, the id of the created block is added as a parameter. Next I describe the steps for the creation of a block called "whybits".
 
-1. Activate the Block service.
+1. Activate the Bloque personalizado service.
 2. Add a block type from the path: http //: www.exaxmple.com/admin/structure/block/block-content/types
 3. Put the label "whybits" and save.
-4. Add an image type field with the label that you feel comfortable
+4. Add an image type field with the label "Logo"
 5. In the option of Number of allowed values ​​leave unlimited and save options.
 6. Deactivate the check "Alt" and "Alt" and activate "Title"
 7. Remove the Body field, we do not need it for the desired functionality.

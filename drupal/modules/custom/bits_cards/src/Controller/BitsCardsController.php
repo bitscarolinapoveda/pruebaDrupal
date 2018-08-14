@@ -22,8 +22,12 @@ class BitsCardsController extends ControllerBase {
    *   array in JSON format.
    */
   public function reports($blockid, Request $request) {
-    $host = \Drupal::request()->getSchemeAndHttpHost();
-    $block = file_get_contents($host . '/block/' . $blockid . '?_format=json');
+    $host = substr($_SERVER['HTTP_HOST'], 0, strpos($_SERVER['HTTP_HOST'], ":"));
+    if ($host) {
+      $block = file_get_contents('http://' . $host . '/block/' . $blockid . '?_format=json');
+    } else {
+      $block = file_get_contents('http://' . $_SERVER['HTTP_HOST'] . '/block/' . $blockid . '?_format=json');
+    }
     if ($block == NULL) {
       throw new BadRequestHttpException('No entity content received.');
     }
