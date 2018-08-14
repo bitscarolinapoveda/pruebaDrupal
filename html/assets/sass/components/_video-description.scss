@@ -1,0 +1,81 @@
+body{
+    main{
+        #block-video{
+            @include breakpoint (desktop){
+                margin-left: 10%;
+                height: 371px;
+            }
+            @include breakpoint (tablet){
+                margin-left: 10%;;
+                height: 371px;
+            }
+            .backgraundColor{
+                background-color: #93a4aa;
+                opacity: 0.10;
+                height: 546px;
+                margin-top: 37px;
+                @include breakpoint (desktop){
+                    height: 371px;
+                    width: 83%;
+                }
+                @include breakpoint (tablet){
+                    height: 371px;
+                    width: 83%;
+                }
+            }
+            .embed-responsive{
+                height: auto;
+                width: 100%;
+                position: absolute;
+                z-index: 1;
+                @include breakpoint (desktop){
+                    height: 371px;
+                    width: 49%;
+                }
+                @include breakpoint (tablet){
+                    height: 371px;
+                    width: 49%;
+                }
+            }
+            .description{
+                position: absolute;
+                margin-top: 249px;
+                color: #002b49;
+                z-index: 1;
+                margin-left: 12%;
+                @include breakpoint (desktop){
+                    margin-top: 40px;
+                    width: 22%;
+                     margin-left: 51%;
+                }
+                @include breakpoint (tablet){
+                    margin-top: 40px;
+                    width: 23%;
+                    margin-left: 51%;
+                }
+                h2{
+                    font-size: 30px;
+                    letter-spacing: 1px;
+                    font-weight: bolder
+                }
+                p{
+                    font-size: 14px;
+                    width: 88%;
+                }
+                a{
+                    color: #a6cf24;
+                    letter-spacing: -1px;
+                    i{
+                        margin-right: 8px;
+                    }
+                }
+                hr{
+                    width: 86%;
+                    margin-left: 0px;
+                    height: 1px;
+                    background: linear-gradient(90deg, #a6cf24, #FFFFFF);
+                }
+            }
+        }
+    }
+}

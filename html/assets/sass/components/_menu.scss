@@ -161,23 +161,20 @@ header{
                             padding-right: 3%;        
                         }
                     }         
-                    
-                    
-                    .link{
+                     .link{
                         color: #ffffff;
                         width: 100%;
                         font-size: 15px;
                         text-decoration: none;
                         text-align: left;
                         padding-right: 73%;
-                        font-family: open_sanslight;
                         &:hover{
                             color: #a6cf24;
                             text-decoration: none;
                         }
                         @include breakpoint(desktop) {
                             padding-left: 12%;
-                            padding-right: 12%;
+                            padding-right: 15%;
                             padding-top: 29px;
                             &:hover{
                             border-top: 4px solid #a6cf24;
@@ -203,6 +200,11 @@ header{
                                 padding-left: 0%;
                             }
                         }
+                    }
+
+                    .active{
+                        border-top: 4px solid #a6cf24;
+                        
                     }
                     .scroll-white{
                         color: #002b49;
