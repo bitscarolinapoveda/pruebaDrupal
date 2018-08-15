@@ -9,6 +9,7 @@ import { PorqueBitsComponent } from './components/porque-bits/porque-bits.compon
 // Servicios
 import { NodeService } from '../services/cards/node.service';
 import { CardService } from '../services/cards/card.service';
+import { CommonModule } from '../../../node_modules/@angular/common';
 
 
 
@@ -25,7 +26,8 @@ import { CardService } from '../services/cards/card.service';
     PorqueBitsComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    CommonModule
   ],
   providers: [
     NodeService,
