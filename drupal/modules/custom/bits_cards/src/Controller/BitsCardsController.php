@@ -6,6 +6,7 @@ use Drupal\Core\Controller\ControllerBase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
+use Drupal\Component\Serialization\Json;
 
 class BitsCardsController extends ControllerBase {
 
@@ -22,16 +23,13 @@ class BitsCardsController extends ControllerBase {
    *   array in JSON format.
    */
   public function reports($blockid, Request $request) {
-    $host = substr($_SERVER['HTTP_HOST'], 0, strpos($_SERVER['HTTP_HOST'], ":"));
-    if ($host) {
-      $block = file_get_contents('http://' . $host . '/block/' . $blockid . '?_format=json');
-    } else {
-      $block = file_get_contents('http://' . $_SERVER['HTTP_HOST'] . '/block/' . $blockid . '?_format=json');
-    }
+
+    $block = file_get_contents('http://' . $_SERVER['SERVER_NAME'] . '/block/' . $blockid . '?_format=json');
+
     if ($block == NULL) {
       throw new BadRequestHttpException('No entity content received.');
     }
-    $obj = json_decode($block, true);
+    $obj = Json::decode($block);
     $field_link = $obj['field_link'][0]['uri'];
     $type = $obj['type'][0]['target_id'];
     $title = $obj['info'][0]['value'];
@@ -46,9 +44,7 @@ class BitsCardsController extends ControllerBase {
         $response = "For the block '" . $type . "' has not yet been created service";
     }
 
-    $response['method'] = 'GET';
-
-    return new JsonResponse($response, 200);
+    return new JsonResponse(array_values($response), 200);
   }
 
 }
