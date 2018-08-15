@@ -23,11 +23,12 @@ class BitsCardsController extends ControllerBase {
    */
   public function reports($blockid, Request $request) {
     $host = substr($_SERVER['HTTP_HOST'], 0, strpos($_SERVER['HTTP_HOST'], ":"));
-    if ($host) {
-      $block = file_get_contents('http://' . $host . '/block/' . $blockid . '?_format=json');
-    } else {
-      $block = file_get_contents('http://' . $_SERVER['HTTP_HOST'] . '/block/' . $blockid . '?_format=json');
-    }
+   // if ($host) {
+      //$block = file_get_contents('http://' . $host . '/block/' . $blockid . '?_format=json');
+    //} else {
+      $block = file_get_contents('http://bits-redesign-stg.dev01.bitsamericas.net/drupal/block-resources/1?_format=json');
+    //}
+    //var_dump($block);die();
     if ($block == NULL) {
       throw new BadRequestHttpException('No entity content received.');
     }
