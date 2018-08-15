@@ -31,13 +31,13 @@ class BitsCardsController extends ControllerBase {
     if ($block == NULL) {
       throw new BadRequestHttpException('No entity content received.');
     }
-    $obj = json_decode($block);
-    $field_link = $obj->field_link[0]->uri;
-    $type = $obj->type[0]->target_id;
-    $title = $obj->info[0]->value;
+    $obj = json_decode($block, true);
+    $field_link = $obj['field_link'][0]['uri'];
+    $type = $obj['type'][0]['target_id'];
+    $title = $obj['info'][0]['value'];
     switch ($type) {
       case 'whybits':
-        $obj = $obj->field_logo;
+        $obj = reset($obj['field_logo']);
         $response['data'] = $obj;
         $response['data']['link'] = $field_link;
         $response['data']['title'] = $title;
