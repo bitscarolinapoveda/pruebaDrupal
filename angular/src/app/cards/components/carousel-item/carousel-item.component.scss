@@ -1,0 +1,51 @@
+@import './src/assets/scss/_mixin.scss';
+.window-complete {
+    @include breakpoint(desktop) {
+        height: 100vh;
+    }
+    .text-slider {
+        bottom: 19.5%;
+        left: 14%;
+        padding-bottom: initial;
+        @include breakpoint(tablet) {
+            bottom: 25.5%;
+            width: 76%;
+            left: 16%;
+            text-align: right;
+        }
+        @include breakpoint(desktop) {
+            bottom: 21.5%;
+            width: 76%;
+            left: 16%;
+            text-align: right;
+        }
+        .title-slider {
+            font-size: 36px;
+            @include breakpoint(tablet) {
+                font-size: 30px;
+            }
+            @include breakpoint(desktop) {
+                font-size: 50px;
+            }
+        }
+        .description-slider {
+            font-size: 18px;
+            font-family: 'Roboto', sans-serif;
+            @include breakpoint(tablet) {
+                position: relative;
+                line-height: 1.2;
+                font-size: 19px;
+                width: 88%;
+                left: 11%;
+            }
+            @include breakpoint(desktop) {
+                position: relative;
+                line-height: 1.2;
+                font-size: 28px;
+                width: 88%;
+                left: 12%;
+                padding-left: 22%;
+            }
+        }
+    }
+}
