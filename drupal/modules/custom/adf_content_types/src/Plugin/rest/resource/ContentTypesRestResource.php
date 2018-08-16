@@ -111,7 +111,9 @@ class ContentTypesRestResource extends ResourceBase {
       foreach ($nodes as $node) {
         $fid = $node->get('field_image')->getValue()[0]['target_id'];
         $file = File::load($fid);
+
         $path_image = $file->getFileUri();
+        var_dump(file_create_url($path_image));die();
         $tid = $node->get('field_tags')->getValue();
         $term_name = '';
         foreach ($tid as $key => $value) {
