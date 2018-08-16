@@ -133,7 +133,7 @@ class ContentTypesRestResource extends ResourceBase {
         $entity[$node->id()]['title'] = $node->title->value;
       }
     }
-    $response = new ResourceResponse(array_values($entity), 200);
+    $response = new ResourceResponse($entity, 200);
     $response->addCacheableDependency($entity);
 
     return $response;
