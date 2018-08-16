@@ -44,7 +44,7 @@ class BitsCardsController extends ControllerBase {
         $response = "For the block '" . $type . "' has not yet been created service";
     }
 
-    return new JsonResponse(array_values($response), 200);
+    return new JsonResponse($response, 200);
   }
 
 }
