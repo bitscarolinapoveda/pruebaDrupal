@@ -7,8 +7,8 @@ import { HttpClient } from '@angular/common/http';
 export class CardService {
 
   private card: Card = {
-      title: "Card Titulo 1",
-      description: "Card Descripcion 1"
+      title: 'Card Titulo 1',
+      description: 'Card Descripcion 1'
     };
 
   constructor(private http: HttpClient) {
