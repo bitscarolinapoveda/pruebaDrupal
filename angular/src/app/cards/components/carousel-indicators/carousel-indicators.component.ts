@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-import { NodeService, Node } from '../../../services/cards/node.service';
+import { CarouselService } from '../../../services/cards/carousel.service';
 declare  var $: any;
 @Component({
   selector: 'app-carousel-indicators',
@@ -9,21 +8,26 @@ declare  var $: any;
 })
 export class CarouselIndicatorsComponent implements OnInit {
 
-  nodes: Node[] = [];
-
-  constructor(  private _nodeService: NodeService ) {
+  carouselArray: any = [] ;
+  constructor(  private _carousel: CarouselService ) {
 
   }
   ngOnInit() {
-    this.nodes = this._nodeService.getNodes();
-    console.log(this.nodes);
-    $(document).ready(function () {
-      $('.down-main').click(function () {
-        $('body, html').animate({
-          scrollTop: '100px'
-        }, 700);
-      });
+    this.getCarouselItems();
+  }
+  getCarouselItems()  {
+    return this._carousel.getsliderItems().subscribe(items => {
+      this.carouselArray = Object.keys(items).map(function (key) {
+          return items[key];
+        });
+      console.log(this.carouselArray);
     });
   }
 
+  down() {
+   let x = document.querySelector('#container-elements');
+    if (x) {
+        x.scrollIntoView({behavior: 'smooth'});
+    }
+  }
 }

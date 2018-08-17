@@ -21,7 +21,7 @@ export class HttpService extends BaseService {
 
    public get(url: string) {
      return this._http.get(this.baseUrl + url).map((resp: any) => {
-      return true;
+      return resp;
     }).catch(err => {
       return this.errorHandler(err);
     });

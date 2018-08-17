@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '../../../node_modules/@angular/common';
 
 import { CarouselItemComponent } from './components/carousel-item/carousel-item.component';
 import { CarouselIndicatorsComponent } from './components/carousel-indicators/carousel-indicators.component';
@@ -11,6 +12,7 @@ import { CardService } from '../services/cards/card.service';
 
 
 
+
 @NgModule({
   declarations: [
     CarouselItemComponent,
@@ -19,10 +21,11 @@ import { CardService } from '../services/cards/card.service';
   ],
   exports: [
     CarouselIndicatorsComponent,
-    CardValuesComponent
+    CardValuesComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    CommonModule
   ],
   providers: [
     NodeService,
