@@ -1,7 +1,7 @@
 <section class="Slider">
     <div id="carouselExampleIndicators" class="carousel slide carousel-slider" data-ride="carousel">
         <ol class="carousel-indicators slider-botton">
-            <li *ngFor="let car of carouselArray; let i= index" data-target="#carouselExampleIndicators" data-slide-to="i" class="circle-botton"></li>
+            <li *ngFor="let car of carouselArray; let i= index" data-target="#carouselExampleIndicators" [attr.data-slide-to]="i" class="circle-botton"></li>
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active window-complete">
