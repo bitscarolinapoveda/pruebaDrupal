@@ -12,6 +12,7 @@ use Drupal\file\Entity\File;
 use Drupal\Core\Session\AccountProxyInterface;
 use Drupal\rest\Plugin\ResourceBase;
 use Drupal\rest\ResourceResponse;
+use Drupal\image\Entity\ImageStyle;
 
 /**
  * Provides a resource to get view modes by entity and bundle.
@@ -111,9 +112,7 @@ class ContentTypesRestResource extends ResourceBase {
       foreach ($nodes as $node) {
         $fid = $node->get('field_image')->getValue()[0]['target_id'];
         $file = File::load($fid);
-
-        $path_image = $file->getFileUri();
-        var_dump(file_create_url($path_image));die();
+        $path_image = ImageStyle::load('large')->buildUrl($file->getFileUri());
         $tid = $node->get('field_tags')->getValue();
         $term_name = '';
         foreach ($tid as $key => $value) {
