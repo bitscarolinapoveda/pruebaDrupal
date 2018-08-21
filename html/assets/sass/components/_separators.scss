@@ -1,0 +1,44 @@
+body{
+    main{
+        #separators{
+            margin-top: 63px;
+            @include breakpoint (desktop){
+                margin-top: 86px;
+            }
+            @include breakpoint (tablet){
+                margin-top: 86px;
+            }
+            hr{
+                width: 78%;
+                background: linear-gradient(-90deg, #FFFFFF, #002b49, #002b49, #FFFFFF);
+                height: 1px;
+                @include breakpoint (desktop){
+                    width: 66%;
+                }
+                @include breakpoint (tablet){
+                    width: 66%;
+                }
+            }
+            img{
+                height: 37px;
+                position: absolute;
+                margin-left: 44%;
+                margin-top: -15px;
+                background-color: #FFFFFF;
+                width: 14%;
+                @include breakpoint(desktop){
+                    height: 55px;
+                    margin-left: 46%;
+                    margin-top: -28px;
+                    width: 7%;
+                }
+                @include breakpoint(tablet){
+                    height: 55px;
+                    margin-left: 46%;
+                    margin-top: -28px;
+                    width: 7%;
+                }
+            }
+        }
+    }
+}

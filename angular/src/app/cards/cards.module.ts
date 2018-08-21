@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '../../../node_modules/@angular/common';
 
 import { CarouselItemComponent } from './components/carousel-item/carousel-item.component';
 import { CarouselIndicatorsComponent } from './components/carousel-indicators/carousel-indicators.component';
@@ -9,7 +10,6 @@ import { PorqueBitsComponent } from './components/porque-bits/porque-bits.compon
 // Servicios
 import { NodeService } from '../services/cards/node.service';
 import { CardService } from '../services/cards/card.service';
-import { CommonModule } from '../../../node_modules/@angular/common';
 
 
 

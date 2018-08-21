@@ -1,35 +1,22 @@
-<nav class="navbar-expand-lg flex-column flex-md-row  menu-scroll">
-    <div class="menuToggle menu-scroll ">
-        <input type="checkbox" class="Botton " />
-        <span class="lines"></span>
-        <span class="lines"></span>
-        <span class="lines"></span>
-        <ul class="list-menu">
-            <li class="items">
-                <a class="link">Home</a>
-            </li>
-            <li class="items">
-                <a class="link" href="#">Productos
-                <i class="fas fa-sort-down arrow"></i>
-            </a>
-            </li>
-            <li class="items">
-                <a class="link " href="#">Servicios
-                <i class="fas fa-sort-down arrow-service"></i>
-            </a>
-            </li>
-            <li class="items">
-                <a class="link" href="#">Proyectos</a>
-            </li>
-            <li class="items">
-                <a class="link" href="#">Nosotros</a>
-            </li>
-            <li class="items">
-                <a class="link" href="#">Contactenos</a>
-            </li>
-            <li class="items">
-                <a class="link" href="#">Blog</a>
-            </li>
-        </ul>
-    </div>
-</nav>
+<header>
+    <nav class="navbar-expand-lg flex-column flex-md-row  menu-scroll">
+        <div class="menuToggle menu-scroll ">
+            <input type="checkbox" class="Botton " />
+            <span class="lines"></span>
+            <span class="lines"></span>
+            <span class="lines"></span>
+            <ul class="list-menu">
+                <ng-container *ngFor="let nav of NavbarArray; let i= index ">
+                    <li class="items" *ngIf=" i===0 ">
+                        <a href="{{ nav.uri }} " routerLinkActive="active" class=" link active "> {{ nav.title }} </a>
+                    </li>
+                </ng-container>
+                <ng-container *ngFor="let nav of NavbarArray; let i=index ">
+                    <li class="items " *ngIf="i !=0 ">
+                        <a routerLinkActive="active" href="{{ nav.uri }} " class=" link "> {{ nav.title }} </a>
+                    </li>
+                </ng-container>
+            </ul>
+        </div>
+    </nav>
+</header>
