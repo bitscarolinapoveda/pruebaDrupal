@@ -2,7 +2,7 @@
     <picture>
         <ng-container>
             <source media="(max-width:500px)" srcset="assets/images/movil.jpg">
-            <img class="d-block w-100" ng-src="assets/images/Banner inicio.jpg" alt="software">
+            <img class="d-block w-100" [src]=" car.field_image" alt="desarrollo de software">
             <div class="carousel-caption  d-md-block text-slider">
                 <h1 class="title-slider"> {{car.title}} </h1>
                 <p class="description-slider">{{car.field_tags}}</p>
