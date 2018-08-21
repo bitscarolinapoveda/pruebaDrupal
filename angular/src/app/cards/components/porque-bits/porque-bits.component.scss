@@ -15,7 +15,7 @@
                 margin-left: 9%;
             }
             @include breakpoint(tablet) {
-                margin-left: 3%;
+                margin-left: -5%;
             }
             li {
                 list-style: none;
@@ -26,7 +26,7 @@
                     margin-right: 8%;
                 }
                 @include breakpoint(tablet) {
-                    margin-right: 5%;
+                    margin-right: 0%;
                 }
                 p {
                     font-size: 20px;
@@ -36,11 +36,12 @@
                         font-size: 24px;
                     }
                     @include breakpoint(tablet) {
-                        font-size: 24px;
+                        font-size: 21px;
+                        width: 126px;
                     }
                 }
             }
-            li:last-child {
+            li:nth-child(5) {
                 margin-left: 24%;
                 @include breakpoint(desktop) {
                     margin-left: 0;
@@ -48,6 +49,12 @@
                 @include breakpoint(tablet) {
                     margin-left: 0;
                 }
+            }
+            li:nth-child(6) {
+                display: none;
+            }
+            li:nth-child(7) {
+                display: none;
             }
         }
     }
