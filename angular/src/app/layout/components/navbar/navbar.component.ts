@@ -1,8 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+
 import { NavbarService } from '../../../services/layout/navbar.service';
 
 declare var $: any;
+
+
+import { NavbarService } from '../../../services/layout/navbar.service';
+
+
 
 @Component({
   selector: 'app-navbar',
@@ -10,6 +16,7 @@ declare var $: any;
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
+
   constructor(private router: ActivatedRoute, private navbar: NavbarService) {
   }
   NavbarArray: any = [];
@@ -33,4 +40,22 @@ export class NavbarComponent implements OnInit {
       this.NavbarArray = items;
     });
   }
+
+
+  constructor(private router: ActivatedRoute,
+      private navbar: NavbarService ) {
+
+      }
+
+      ngOnInit() {
+        console.log('NavBar component');
+        this.getNavBarItems();
+      }
+  getNavBarItems() {
+    this.navbar.getMenuItems().subscribe( items => {
+      console.log(items);
+    });
+
+  }
+
 }

@@ -1,4 +1,8 @@
+
 @import './src/assets/scss/mixin.scss';
+
+@import './src/assets/scss/_mixin.scss';
+
 .window-complete {
     @include breakpoint(desktop) {
         height: 100vh;

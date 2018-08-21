@@ -24,9 +24,15 @@ class BitsCardsController extends ControllerBase {
    */
   public function reports($blockid, Request $request) {
 
+
     $block = file_get_contents('http://' . $_SERVER['HTTP_HOST'] . '/drupal/block/' . $blockid . '?_format=json');
 
 if ($block == NULL) {
+
+    $block = file_get_contents('http://' . $_SERVER['SERVER_NAME'] . '/block/' . $blockid . '?_format=json');
+
+    if ($block == NULL) {
+
       throw new BadRequestHttpException('No entity content received.');
     }
     $obj = Json::decode($block);
@@ -35,7 +41,11 @@ if ($block == NULL) {
     $title = $obj['info'][0]['value'];
     switch ($type) {
       case 'whybits':
+
         $obj = $obj['field_logo'];
+
+        $obj = reset($obj['field_logo']);
+
         $response['data'] = $obj;
         $response['data']['link'] = $field_link;
         $response['data']['title'] = $title;

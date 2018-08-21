@@ -1,11 +1,16 @@
+
 import { Component, OnInit } from '@angular/core';
 declare var $: any;
+
+import { Component } from '@angular/core';
+
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styles: []
 })
+
 export class HeaderComponent implements OnInit {
 
 
@@ -24,6 +29,12 @@ export class HeaderComponent implements OnInit {
           $('.blur-logo').attr('src', 'assets/images/Logocolor.png');
         });
   }
+
+export class HeaderComponent {
+
+  constructor() { }
+
+
 
 
 }
