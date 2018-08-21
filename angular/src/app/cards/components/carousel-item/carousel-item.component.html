@@ -1,10 +1,12 @@
-<div class="carousel-item window-complete">
+<div class="carousel-item window-complete" *ngFor="let car of carouselsArray">
     <picture>
-        <source media="(max-width:500px)" srcset="assets/images/movil.jpg">
-        <img class="d-block w-100" src="assets/images/baner.png" alt="software">
-        <div class="carousel-caption  d-md-block text-slider">
-            <h1 class="title-slider">Desarrollo de software a la medida</h1>
-            <p class="description-slider">Optimizamos los procesos de su negocio por medio de desarrollo de software adaptados a su necesidad específica, con estándares de calidad</p>
-        </div>
+        <ng-container>
+            <source media="(max-width:500px)" srcset="assets/images/movil.jpg">
+            <img class="d-block w-100" [src]=" car.field_image" alt="desarrollo de software">
+            <div class="carousel-caption  d-md-block text-slider">
+                <h1 class="title-slider"> {{car.title}} </h1>
+                <p class="description-slider">{{car.field_tags}}</p>
+            </div>
+        </ng-container>
     </picture>
 </div>

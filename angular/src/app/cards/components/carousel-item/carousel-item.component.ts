@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CarouselService } from '../../../services/cards/carousel.service';
 
 @Component({
   selector: 'app-carousel-item',
@@ -6,10 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./carousel-item.component.scss']
 })
 export class CarouselItemComponent implements OnInit {
-
-  constructor() { }
+  carouselsArray: any = [];
+  constructor(private _carousels: CarouselService ) { }
 
   ngOnInit() {
+    this.getCarouselsItems();
+  }
+
+  getCarouselsItems() {
+    return this._carousels.getsliderItems().subscribe(items => {
+      this.carouselsArray = Object.keys(items).map(function (key) {
+        return items[key];
+      });
+      console.log(this.carouselsArray);
+    });
   }
 
 }
