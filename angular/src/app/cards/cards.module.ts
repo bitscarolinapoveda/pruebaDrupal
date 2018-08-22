@@ -9,6 +9,7 @@ import { CardValuesComponent } from './components/card-values/card-values.compon
 // Servicios
 import { NodeService } from '../services/cards/node.service';
 import { CardService } from '../services/cards/card.service';
+import { CardCarouselControlsComponent } from './components/card-carousel-controls/card-carousel-controls.component';
 
 
 
@@ -17,11 +18,13 @@ import { CardService } from '../services/cards/card.service';
   declarations: [
     CarouselItemComponent,
     CarouselIndicatorsComponent,
-    CardValuesComponent
+    CardValuesComponent,
+    CardCarouselControlsComponent
   ],
   exports: [
     CarouselIndicatorsComponent,
     CardValuesComponent,
+    CardCarouselControlsComponent
   ],
   imports: [
     BrowserModule,
