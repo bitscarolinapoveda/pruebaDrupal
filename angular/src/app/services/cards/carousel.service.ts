@@ -16,7 +16,7 @@ export class CarouselService  {
     }
     carouselArray: CarouselService[] = [];
     getsliderItems() {
-        return this.http.get('content-types-resources?_format=json');
+        return this.http.get('/v1/content-types/articles?_format=json');
     }
 }
 
