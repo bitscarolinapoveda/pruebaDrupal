@@ -5,6 +5,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable()
 export class NodeService {
+
   private nodes: Node[] = [
     {
       title: 'Titulos 1',
