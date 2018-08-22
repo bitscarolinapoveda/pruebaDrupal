@@ -1,10 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpService } from '../http/http.service';
-import { Observable } from 'rxjs/Observable';
-import { catchError } from 'rxjs/operators';
-import { Subject, throwError } from 'rxjs';
-import { map } from 'rxjs/operators';
-import { error } from 'util';
 
 @Injectable({
     providedIn: 'root'
