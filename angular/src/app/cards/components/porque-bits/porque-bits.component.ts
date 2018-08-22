@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { PorqueBitsService } from '../../../services/layout/porquebits.service';
+import { PorqueBitsService } from '../../../services/cards/porquebits.service';
 
 declare var $: any;
 
