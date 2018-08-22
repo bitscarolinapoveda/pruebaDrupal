@@ -1,17 +1,12 @@
 <section class="Slider">
     <div id="carouselExampleIndicators" class="carousel slide carousel-slider" data-ride="carousel">
         <ol class="carousel-indicators slider-botton">
-
             <li *ngFor="let car of carouselArray; let i= index" data-target="#carouselExampleIndicators" [attr.data-slide-to]="i" class="circle-botton"></li>
-
-            <li *ngFor="let node of nodes; let i=index" data-target="#carouselExampleIndicators" data-slide-to="i" class="circle-botton"></li>
-
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active window-complete">
                 <picture>
                     <source media="(max-width:500px)" srcset="assets/images/movil.jpg">
-
                     <img class="d-block w-100" src="{{carouselArray[1]?.field_image}}" alt="bits">
                     <div class="carousel-caption  d-md-block text-slider">
                         <h1 class="title-slider"> {{carouselArray[1]?.title}} </h1>
@@ -23,19 +18,6 @@
 
         </div>
         <a class="down-main" (click)="down()">
-
-                    <img class="d-block w-100" src="assets/images/Banner inicio.jpg" alt="bits">
-                    <div class="carousel-caption  d-md-block text-slider">
-                        <h1 class="title-slider">Desarrollo de software a la medida</h1>
-                        <p class="description-slider">Optimizamos los procesos de su negocio por medio de desarrollo de software adapatados a la necesidad especifica, con estandares de calidad mejor imposible</p>
-                    </div>
-                </picture>
-            </div>
-            <app-carousel-item *ngFor="let node of nodes; let i=index"></app-carousel-item>
-
-        </div>
-        <a class="down-main">
-
             <div class="arrow-down"></div>
         </a>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

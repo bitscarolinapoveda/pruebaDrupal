@@ -13,10 +13,6 @@ export class PorqueBitsService {
   }
 
   getMoralValuesItems() {
-
     return this.http.get('block-resources/1?_format=json');
-
-    return this.http.get('block/1?_format=json');
-
   }
 }

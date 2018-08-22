@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-ts
 import { CarouselService } from '../../../services/cards/carousel.service';
-
 
 @Component({
   selector: 'app-carousel-item',
@@ -9,7 +7,6 @@ import { CarouselService } from '../../../services/cards/carousel.service';
   styleUrls: ['./carousel-item.component.scss']
 })
 export class CarouselItemComponent implements OnInit {
-
   carouselsArray: any = [];
   constructor(private _carousels: CarouselService ) { }
 
@@ -24,12 +21,6 @@ export class CarouselItemComponent implements OnInit {
       });
       console.log(this.carouselsArray);
     });
-
-
-  constructor() { }
-
-  ngOnInit() {
-
   }
 
 }

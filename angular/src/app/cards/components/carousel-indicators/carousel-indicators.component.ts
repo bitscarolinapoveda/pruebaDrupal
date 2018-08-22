@@ -1,10 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
 import { CarouselService } from '../../../services/cards/carousel.service';
-
-
-import { NodeService, Node } from '../../../services/cards/node.service';
-
 declare  var $: any;
 @Component({
   selector: 'app-carousel-indicators',
@@ -12,7 +7,6 @@ declare  var $: any;
   styleUrls: ['./carousel-indicators.component.scss']
 })
 export class CarouselIndicatorsComponent implements OnInit {
-
 
   carouselArray: any = [] ;
   constructor(  private _carousel: CarouselService ) {
@@ -36,23 +30,4 @@ export class CarouselIndicatorsComponent implements OnInit {
         x.scrollIntoView({behavior: 'smooth'});
     }
   }
-
-  nodes: Node[] = [];
-
-  constructor(  private _nodeService: NodeService ) {
-
-  }
-  ngOnInit() {
-    this.nodes = this._nodeService.getNodes();
-    console.log(this.nodes);
-    $(document).ready(function () {
-      $('.down-main').click(function () {
-        $('body, html').animate({
-          scrollTop: '100px'
-        }, 700);
-      });
-    });
-  }
-
-
 }
