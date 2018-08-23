@@ -1,0 +1,32 @@
+<section id="carousel-4text">
+    <div class="container text-center my-3">
+        <div class="row mx-auto my-auto">
+            <div id="carousel-items1" class="carousel carousel-run slide w-100" data-ride="carousel">
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active" *ngFor="let main of CarouselControlArray">
+                        <a href="" class="url-link">
+                            <div class="container-img">
+                                <img class="d-block img-fluid col-md-3 img-float  mx-auto" src="{{ main.field_image }}">
+                            </div>
+                            <div class="info">
+                                <hr class="line">
+                                <h4 class="name-organization">{{main.title}}</h4>
+                                <h3 class="main-title">{{main.field_category}}</h3>
+                                <h5 class="category">{{main.field_recognition}}</h5>
+                                <h5 class="yeard">{{main.field_year}}</h5>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carousel-items1" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon  icon-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carousel-items1" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon icon-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
