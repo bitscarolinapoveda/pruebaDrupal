@@ -6,10 +6,11 @@ import { HttpService } from '../http/http.service';
 })
 
 export class TecnologiesService {
-    constructor(private http: HttpService) {}
+    constructor(private http: HttpService) {
+    }
 
     getTecnologies() {
-        return this.http.get('/drupal/block-resources/1?_format=json');
+        return this.http.get('/block-resources/2?_format=json');
     }
 }
 

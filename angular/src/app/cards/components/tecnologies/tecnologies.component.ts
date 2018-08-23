@@ -9,12 +9,17 @@ import { TecnologiesService } from '../../../services/cards/tecnologies.service'
 export class TecnologiesComponent implements OnInit {
     tecnologiesArray: any = [];
 
-    constructor(private _tecnologies: TecnologiesService ) {}
-    ngOnInit() {}
+    constructor( private _tecnologies: TecnologiesService ) {}
+    ngOnInit() {
+        console.log('hi from experts');
+        this.getItemsTecnologies();
+    }
 
     getItemsTecnologies() {
-        return this._tecnologies.getTecnologies().subscribe(items =>{
-            this.tecnologiesArray = items;
+        return this._tecnologies.getTecnologies().subscribe(items => {
+            this.tecnologiesArray = Object.keys(items.data).map(function (key) {
+                return items.data[key];
+            });
             console.log(this.tecnologiesArray);
         });
     }
