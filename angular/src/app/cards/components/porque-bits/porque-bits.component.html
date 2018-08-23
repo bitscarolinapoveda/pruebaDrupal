@@ -1,0 +1,10 @@
+<section class="WhyBits">
+    <div class="images-whybits">
+        <ul class="row first images">
+            <li *ngFor="let mv of moralValues">
+                <img src="{{ mv?.url }}">
+                <p>{{ mv?.title }}</p>
+            </li>
+        </ul>
+    </div>
+</section>

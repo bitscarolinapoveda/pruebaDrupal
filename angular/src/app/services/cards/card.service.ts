@@ -8,7 +8,7 @@ export class CardService {
 
   private card: Card = {
       title: 'Card Titulo 1',
-      description: 'Card Descripcion 1',
+      description: 'Card Descripcion 1'
     };
 
   constructor(private http: HttpClient) {

@@ -6,11 +6,12 @@ import { CarouselItemComponent } from './components/carousel-item/carousel-item.
 import { CarouselIndicatorsComponent } from './components/carousel-indicators/carousel-indicators.component';
 import { CardValuesComponent } from './components/card-values/card-values.component';
 import { TecnologiesComponent } from './components/tecnologies/tecnologies.component';
+import { PorqueBitsComponent } from './components/porque-bits/porque-bits.component';
 
 // Servicios
 import { NodeService } from '../services/cards/node.service';
 import { CardService } from '../services/cards/card.service';
-
+import { CardCarouselControlsComponent } from './components/card-carousel-controls/card-carousel-controls.component';
 
 
 
@@ -20,12 +21,16 @@ import { CardService } from '../services/cards/card.service';
     CarouselItemComponent,
     CarouselIndicatorsComponent,
     CardValuesComponent,
-    TecnologiesComponent
+    TecnologiesComponent,
+    CardCarouselControlsComponent,
+    PorqueBitsComponent
   ],
   exports: [
     CarouselIndicatorsComponent,
     CardValuesComponent,
-    TecnologiesComponent
+    TecnologiesComponent,
+    CardCarouselControlsComponent,
+    PorqueBitsComponent
   ],
   imports: [
     BrowserModule,

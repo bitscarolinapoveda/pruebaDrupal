@@ -1,0 +1,29 @@
+<section id="title-gallery">
+    <div class="title">
+        <h1>Productos y servicios</h1>
+    </div>
+</section>
+<section id="gallery-images">
+  <div class="tz-gallery">
+    <div class="row">
+      <div class="col-sm-6 col-md-4" *ngFor="let ps of servicesProduct">
+        <div class="thumbnai">
+<img class="images lightbox" src="http://sitebitsd8.dev.co/{{ ps.field_imagen_producto_o_servicio }}" alt="products software">
+          <div class="box-title">
+            <span class="titlepr">{{ ps.title }}</span>
+            <div class="box-text">
+              <span class="text">
+                {{ ps.body }}
+              </span>
+            </div>
+          </div>
+          <div class="box-info">
+            <div class="box-botton">
+              <a class="botton_products" href="#">Ver Mas</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
