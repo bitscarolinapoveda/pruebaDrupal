@@ -5,7 +5,7 @@ import { HttpService } from '../http/http.service';
   providedIn: 'root'
 })
 
-export class CardCarouselControls {
+export class CarouselItem2 {
 
   constructor(private http: HttpService) {
     console.log('');
