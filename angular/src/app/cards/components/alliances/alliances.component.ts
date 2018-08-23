@@ -1,21 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-import { TecnologiesService } from '../../../services/cards/tecnologies.service';
-declare var $: any;
-@Component({
-  selector: 'app-tecnologies',
-  templateUrl: './tecnologies.component.html',
-  styleUrls: ['./tecnologies.component.scss']
-})
-export class TecnologiesComponent implements OnInit {
-    tecnologiesArray: any = [];
 
-    constructor( private _tecnologies: TecnologiesService ) {}
-    ngOnInit() {
-        this.getItemsTecnologies();
-         jQuery (function ($) {
-      if ($('#transition-image').length) {
+declare var $: any;
+
+@Component({
+  selector: 'app-alliances',
+  templateUrl: './alliances.component.html',
+  styleUrls: ['./alliances.component.scss']
+})
+export class AlliancesComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit() {
+    jQuery (function ($) {
+      if ($('#transition-image2').length) {
           var items = 4;
-          var $elements = $('.img-item');
+          var $elements = $('.img-item2');
 
           var groups = createGroups($elements, items);
           var groups = completeGroup(groups, items);
@@ -111,14 +111,5 @@ export class TecnologiesComponent implements OnInit {
           }, 500);
       }
     });
-    }
-
-    getItemsTecnologies() {
-        return this._tecnologies.getTecnologies().subscribe(items => {
-            this.tecnologiesArray = Object.keys(items.data).map(function (key) {
-                return items.data[key];
-            });
-            console.log(this.tecnologiesArray);
-        });
-    }
+  }
 }
