@@ -14,6 +14,7 @@ import { CardService } from '../services/cards/card.service';
 import { CarouselItem2Component } from './components/carousel-item-2/carousel-item-2.component';
 import { AlliancesComponent } from './components/alliances/alliances.component';
 
+import { CarouselControlsComponent } from './components/carousel-controls/carousel-controls.component';
 
 
 
@@ -22,6 +23,7 @@ import { AlliancesComponent } from './components/alliances/alliances.component';
     CarouselItemComponent,
     CarouselIndicatorsComponent,
     CardValuesComponent,
+    CarouselControlsComponent,
     CarouselItem2Component,
     TecnologiesComponent,
     PorqueBitsComponent,
@@ -30,6 +32,7 @@ import { AlliancesComponent } from './components/alliances/alliances.component';
   exports: [
     CarouselIndicatorsComponent,
     CardValuesComponent,
+    CarouselControlsComponent,
     CarouselItem2Component,
     TecnologiesComponent,
     PorqueBitsComponent,
