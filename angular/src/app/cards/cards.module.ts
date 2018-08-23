@@ -11,6 +11,7 @@ import { NodeService } from '../services/cards/node.service';
 import { CardService } from '../services/cards/card.service';
 import { CardCarouselControlsComponent } from './components/card-carousel-controls/card-carousel-controls.component';
 
+import { CarouselControlsComponent } from './components/carousel-controls/carousel-controls.component';
 
 
 
@@ -19,12 +20,14 @@ import { CardCarouselControlsComponent } from './components/card-carousel-contro
     CarouselItemComponent,
     CarouselIndicatorsComponent,
     CardValuesComponent,
-    CardCarouselControlsComponent
+    CardCarouselControlsComponent,
+    CarouselControlsComponent
   ],
   exports: [
     CarouselIndicatorsComponent,
     CardValuesComponent,
-    CardCarouselControlsComponent
+    CardCarouselControlsComponent,
+    CarouselControlsComponent
   ],
   imports: [
     BrowserModule,
