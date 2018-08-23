@@ -25,7 +25,8 @@ class BitsCardsController extends ControllerBase {
   public function reports($blockid, Request $request) {
 
     $block = file_get_contents('http://' . $_SERVER['HTTP_HOST'] . '/drupal/block/' . $blockid . '?_format=json');
-    if ($block == NULL) {
+
+if ($block == NULL) {
       throw new BadRequestHttpException('No entity content received.');
     }
     $obj = Json::decode($block);

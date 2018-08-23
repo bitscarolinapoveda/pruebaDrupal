@@ -1,0 +1,222 @@
+#tabs-vertical{
+    margin-top: 12%;
+    @include breakpoint (tablet){
+        margin-top: 5%;
+        width: 29%;
+    }
+    @include breakpoint (desktop){
+        margin-top: 3%;
+        width: 31%;
+    }
+
+    .block-vertical{
+        @include breakpoint (desktop){
+            height: 480px;
+            overflow: hidden;
+        }
+        .nav-tabs{
+            &--vertical {
+                border-bottom: none;
+                display: flex;
+                flex-flow: column nowrap;
+            }
+            .nav-item{
+                height: 121px;
+                border-bottom: 1px solid #d9e0e4;
+                background: #f2f4f6;
+                @include breakpoint (desktop){
+                    transition: all ease 0.89s;
+                }
+                .nav-link {
+                    height: 100%;
+                    border-bottom: 1px solid #d9e0e4;
+                    padding-top: 7%;
+                    @include breakpoint (desktop){
+                        padding-left: 20.5%;
+                    }
+                    .title{
+                        color: #002b49;
+                        font-size: 17px;
+                        @include breakpoint (desktop){
+                            font-size: 18px;
+                        }
+                        &::after {
+                            content: '';
+                            position: absolute;
+                            display: flex;
+                            background-image: url('../icon/ordenar-abajo.svg');
+                            background-position: center;
+                            background-repeat: no-repeat;
+                            background-size: 16px;
+                            padding: 10px;
+                            margin-top: -6%;
+                            margin-left: 81%;
+                            @include breakpoint (tablet) {
+                                display: none;
+                            }
+                            @include breakpoint (desktop){
+                                display: none;
+                            }
+                        }
+                    }
+                    .address{
+                        font-size: 13px;
+                        color:#838d99;
+                        text-transform: uppercase;
+                        &::before{
+                            content: '';
+                            background-image: url('../icon/ubication.svg');
+                            background-position: center;
+                            background-repeat:no-repeat;
+                            background-size: 16px; 
+                            padding: 10px;
+                            margin-right: 3%;
+                        }
+                        @include breakpoint (desktop){
+                            font-size: 14px;
+                        }
+                    }
+                    .phone{
+                        font-size: 13px;
+                        color:#838d99;
+                        text-transform: uppercase;
+                        &::before{
+                            content: '';
+                            background-image: url('../icon/phone.svg');
+                            background-position: center;
+                            background-repeat:no-repeat;
+                            background-size: 16px;
+                            padding: 10px;
+                            margin-right: 3%;
+                            margin-left: 0.5%;
+                        }
+                        @include breakpoint (desktop) {
+                            font-size: 14px;
+                        }
+                    }
+
+                }
+                .active{
+                    background-color: #d9e0e4;
+                    .title{
+                        &::after {
+                            content: '';
+                            background-image: url('../icon/ordenar-arriba.svg');
+                            @include breakpoint (tablet) {
+                                display: none;
+                            }
+                            @include breakpoint (desktop) {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+            .nav2{
+                display: none;
+                @include breakpoint (tablet){
+                    display: initial;
+                }
+                @include breakpoint (desktop) {
+                    display: initial;
+                }
+            }
+        }
+        .show-more{
+            height: 88px;
+            background: #f2f4f6;
+            color: #002b49;
+            text-align: center;
+            padding-top: 7%;
+            font-size: 18px;
+            font-family: 'Open Sans Condensed', sans-serif;
+            &::before{
+                content: "VER MAS UBICACIONES";
+                position: absolute;
+                padding: 10px;
+                margin-top: 0%;
+                margin-left: -63px;
+            }
+            &::after{
+                content: '';
+                position: absolute;
+                background-image: url('../icon/ordenar-abajo.svg');
+                background-position: center;
+                background-repeat:no-repeat;
+                background-size: 23px;
+                padding: 10px;
+                margin-top: 9%;
+                margin-left: -2px;
+            }
+            @include breakpoint (desktop){
+                display: none;
+            }
+            .button-more{ 
+                @include breakpoint (tablet){
+                    display: none;
+                }
+                @include breakpoint (desktop) {
+                    display: none;
+                }
+            } 
+        }    
+        .show-less{
+            background: #d9e0e4;
+            &::before {
+                content: "VER MENOS UBICACIONES";
+                position: absolute;
+                padding: 10px;
+                margin-top: 4%;
+                margin-left: -86px;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                background-image: url('../icon/ordenar-arriba.svg');
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: 23px;
+                padding: 10px;
+                margin-top: 1%;
+                margin-left: -9px;
+            }
+        } 
+        .botton-arrive{
+            @include breakpoint (desktop) {
+                background-image:url("../icon/flecha-arriba.svg");
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size:65%;
+                background-color: #d9e0e4;
+                border-radius:100%; 
+                border: transparent;
+                width: 44px;
+                height: 41px;
+                position: absolute;
+                padding: 1%;
+                top: 77em;
+                left: 27.1%;
+            }
+        }
+        .botton-down {
+            @include breakpoint (desktop) {
+                background-image: url("../icon/descargar-down.svg");
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: 65%;
+                background-color: #d9e0e4;
+                border-radius:100%;
+                border: transparent;
+                width: 44px;
+                height: 41px;
+                position: relative;
+                padding: 2%;
+                padding-left: 5%;
+                padding-right: 4%;
+                left: 88%;
+                bottom: 11em;
+            }
+        }
+    }
+}
