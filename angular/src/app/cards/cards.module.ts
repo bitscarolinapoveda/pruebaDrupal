@@ -12,6 +12,7 @@ import { PorqueBitsComponent } from './components/porque-bits/porque-bits.compon
 import { NodeService } from '../services/cards/node.service';
 import { CardService } from '../services/cards/card.service';
 import { CarouselItem2Component } from './components/carousel-item-2/carousel-item-2.component';
+import { AlliancesComponent } from './components/alliances/alliances.component';
 
 
 
@@ -23,14 +24,16 @@ import { CarouselItem2Component } from './components/carousel-item-2/carousel-it
     CardValuesComponent,
     CarouselItem2Component,
     TecnologiesComponent,
-    PorqueBitsComponent
+    PorqueBitsComponent,
+    AlliancesComponent
   ],
   exports: [
     CarouselIndicatorsComponent,
     CardValuesComponent,
     CarouselItem2Component,
     TecnologiesComponent,
-    PorqueBitsComponent
+    PorqueBitsComponent,
+    AlliancesComponent
   ],
   imports: [
     BrowserModule,
