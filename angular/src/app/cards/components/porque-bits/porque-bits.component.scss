@@ -1,0 +1,61 @@
+@import './src/assets/scss/mixin.scss';
+.WhyBits {
+    width: 100%;
+    margin-top: 39px;
+    @include breakpoint(desktop) {
+        width: 98%;
+    }
+    @include breakpoint(tablet) {
+        width: 98%;
+    }
+    .images-whybits {
+        .images {
+            margin-left: -5%;
+            @include breakpoint(desktop) {
+                margin-left: 9%;
+            }
+            @include breakpoint(tablet) {
+                margin-left: -5%;
+            }
+            li {
+                list-style: none;
+                margin-right: 25px;
+                margin-top: 17px;
+                text-align: center;
+                @include breakpoint(desktop) {
+                    margin-right: 8%;
+                }
+                @include breakpoint(tablet) {
+                    margin-right: 0%;
+                }
+                p {
+                    font-size: 20px;
+                    width: 133px;
+                    margin-top: 16px;
+                    @include breakpoint(desktop) {
+                        font-size: 24px;
+                    }
+                    @include breakpoint(tablet) {
+                        font-size: 21px;
+                        width: 126px;
+                    }
+                }
+            }
+            li:nth-child(5) {
+                margin-left: 24%;
+                @include breakpoint(desktop) {
+                    margin-left: 0;
+                }
+                @include breakpoint(tablet) {
+                    margin-left: 0;
+                }
+            }
+            li:nth-child(6) {
+                display: none;
+            }
+            li:nth-child(7) {
+                display: none;
+            }
+        }
+    }
+}

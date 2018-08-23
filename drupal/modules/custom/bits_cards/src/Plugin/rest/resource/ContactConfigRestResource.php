@@ -17,7 +17,7 @@ use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
  *   id = "contact_config_rest_resource",
  *   label = @Translation("Contact config rest resource"),
  *   uri_paths = {
- *     "canonical" = "/api/config/contact/export/custom"
+ *     "canonical" = "/v1/card/contact/export/custom"
  *   }
  * )
  */

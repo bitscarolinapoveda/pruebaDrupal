@@ -31,7 +31,7 @@ class ContactCard extends CardBase {
             'max_length' => 50,
           ],
           'address' => [
-            'type' => 'textfield',
+            'type' => 'url',
             'title' => $this->t('Dirección'),
             'service_field' => 'address',
             'show' => 1,
@@ -135,7 +135,6 @@ class ContactCard extends CardBase {
       ],
     ];
     if ($num_fields > 1) {
-      dpm("entro $num");
       $form['others']['steps']['remove'] = [
         '#type' => 'submit',
         '#value' => t('Remove last one'),
