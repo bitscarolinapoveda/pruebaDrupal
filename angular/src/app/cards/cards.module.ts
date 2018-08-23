@@ -11,8 +11,9 @@ import { PorqueBitsComponent } from './components/porque-bits/porque-bits.compon
 // Servicios
 import { NodeService } from '../services/cards/node.service';
 import { CardService } from '../services/cards/card.service';
-import { CardCarouselControlsComponent } from './components/card-carousel-controls/card-carousel-controls.component';
+import { CarouselItem2Component } from './components/carousel-item-2/carousel-item-2.component';
 
+import { CarouselControlsComponent } from './components/carousel-controls/carousel-controls.component';
 
 
 
@@ -21,15 +22,17 @@ import { CardCarouselControlsComponent } from './components/card-carousel-contro
     CarouselItemComponent,
     CarouselIndicatorsComponent,
     CardValuesComponent,
+    CarouselControlsComponent,
+    CarouselItem2Component,
     TecnologiesComponent,
-    CardCarouselControlsComponent,
     PorqueBitsComponent
   ],
   exports: [
     CarouselIndicatorsComponent,
     CardValuesComponent,
+    CarouselControlsComponent,
+    CarouselItem2Component,
     TecnologiesComponent,
-    CardCarouselControlsComponent,
     PorqueBitsComponent
   ],
   imports: [
