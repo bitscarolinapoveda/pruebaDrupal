@@ -40,6 +40,12 @@ if ($block == NULL) {
         $response['data']['link'] = $field_link;
         $response['data']['title'] = $title;
         break;
+      case 'tecnologies':
+        $obj = $obj['field_logo'];
+        $response['data'] = $obj;
+        $response['data']['link'] = $field_link;
+        $response['data']['title'] = $title;
+        break;  
       default:
         $response = "For the block '" . $type . "' has not yet been created service";
     }

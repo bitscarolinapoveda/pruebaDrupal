@@ -5,6 +5,7 @@ import { CommonModule } from '../../../node_modules/@angular/common';
 import { CarouselItemComponent } from './components/carousel-item/carousel-item.component';
 import { CarouselIndicatorsComponent } from './components/carousel-indicators/carousel-indicators.component';
 import { CardValuesComponent } from './components/card-values/card-values.component';
+import { TecnologiesComponent } from './components/tecnologies/tecnologies.component';
 import { PorqueBitsComponent } from './components/porque-bits/porque-bits.component';
 
 // Servicios
@@ -14,18 +15,21 @@ import { CarouselItem2Component } from './components/carousel-item-2/carousel-it
 
 
 
+
 @NgModule({
   declarations: [
     CarouselItemComponent,
     CarouselIndicatorsComponent,
     CardValuesComponent,
     CarouselItem2Component,
+    TecnologiesComponent,
     PorqueBitsComponent
   ],
   exports: [
     CarouselIndicatorsComponent,
     CardValuesComponent,
     CarouselItem2Component,
+    TecnologiesComponent,
     PorqueBitsComponent
   ],
   imports: [
