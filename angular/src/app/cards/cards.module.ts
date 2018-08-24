@@ -5,12 +5,16 @@ import { CommonModule } from '../../../node_modules/@angular/common';
 import { CarouselItemComponent } from './components/carousel-item/carousel-item.component';
 import { CarouselIndicatorsComponent } from './components/carousel-indicators/carousel-indicators.component';
 import { CardValuesComponent } from './components/card-values/card-values.component';
+import { TecnologiesComponent } from './components/tecnologies/tecnologies.component';
 import { PorqueBitsComponent } from './components/porque-bits/porque-bits.component';
 
 // Servicios
 import { NodeService } from '../services/cards/node.service';
 import { CardService } from '../services/cards/card.service';
-import { CardCarouselControlsComponent } from './components/card-carousel-controls/card-carousel-controls.component';
+import { CarouselItem2Component } from './components/carousel-item-2/carousel-item-2.component';
+import { AlliancesComponent } from './components/alliances/alliances.component';
+
+import { CarouselControlsComponent } from './components/carousel-controls/carousel-controls.component';
 
 
 
@@ -19,14 +23,20 @@ import { CardCarouselControlsComponent } from './components/card-carousel-contro
     CarouselItemComponent,
     CarouselIndicatorsComponent,
     CardValuesComponent,
-    CardCarouselControlsComponent,
-    PorqueBitsComponent
+    CarouselControlsComponent,
+    CarouselItem2Component,
+    TecnologiesComponent,
+    PorqueBitsComponent,
+    AlliancesComponent
   ],
   exports: [
     CarouselIndicatorsComponent,
     CardValuesComponent,
-    CardCarouselControlsComponent,
-    PorqueBitsComponent
+    CarouselControlsComponent,
+    CarouselItem2Component,
+    TecnologiesComponent,
+    PorqueBitsComponent,
+    AlliancesComponent
   ],
   imports: [
     BrowserModule,

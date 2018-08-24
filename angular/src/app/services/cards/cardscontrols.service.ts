@@ -5,13 +5,12 @@ import { HttpService } from '../http/http.service';
   providedIn: 'root'
 })
 
-export class CardCarouselControls {
+export class CarouselControlService {
 
   constructor(private http: HttpService) {
-    console.log('');
-  }
+ }
 
-  getOurClients() {
-    return this.http.get('v1/content-types/clients?_format=json');
+  getCarouselControlItems() {
+    return this.http.get('v1/content-types/achievements?_format=json');
   }
 }

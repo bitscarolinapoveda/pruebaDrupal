@@ -5,13 +5,12 @@ import { HttpService } from '../http/http.service';
     providedIn: 'root'
 })
 
-export class CarouselService  {
+export class TecnologiesService {
     constructor(private http: HttpService) {
-
     }
 
-    getsliderItems() {
-        return this.http.get('/v1/content-types/articles?_format=json');
+    getTecnologies() {
+        return this.http.get('/block-resources/2?_format=json');
     }
 }
 

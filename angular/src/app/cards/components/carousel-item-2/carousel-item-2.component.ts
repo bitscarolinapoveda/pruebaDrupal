@@ -1,20 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { CardCarouselControls } from '../../../services/cards/card-carousel-controls.service';
+import { CarouselItem2 } from '../../../services/cards/carousel-item-2.service';
 
 declare var $: any;
 
 @Component({
-  selector: 'app-card-carousel-controls',
-  templateUrl: './card-carousel-controls.component.html',
-  styleUrls: ['./card-carousel-controls.component.scss']
+  selector: 'app-carousel-item-2',
+  templateUrl: './carousel-item-2.component.html',
+  styleUrls: ['./carousel-item-2.component.scss']
 })
-export class CardCarouselControlsComponent implements OnInit {
+export class CarouselItem2Component implements OnInit {
 
   clients: any[];
 
   constructor(private router: ActivatedRoute,
-        private cardcarouselcontrols: CardCarouselControls) {
+        private cardcarouselcontrols: CarouselItem2) {
   }
 
     ngOnInit() {
@@ -39,7 +39,6 @@ export class CardCarouselControlsComponent implements OnInit {
                     next.children(':first-child').clone().appendTo($(this));
                 }
             });
-            console.log('adasdasdasda');
           },  3000);
         });
 
