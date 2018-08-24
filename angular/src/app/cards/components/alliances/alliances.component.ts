@@ -12,13 +12,13 @@ export class AlliancesComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    jQuery (function ($) {
+    $ (function ($) {
       if ($('#transition-image2').length) {
           var items = 4;
           var $elements = $('.img-item2');
 
           var groups = createGroups($elements, items);
-          var groups = completeGroup(groups, items);
+          var groups:{} = completeGroup(groups, items);
           startSlide(groups, items);
       }
 
