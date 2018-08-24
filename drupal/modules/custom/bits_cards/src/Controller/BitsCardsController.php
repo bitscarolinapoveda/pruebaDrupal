@@ -43,6 +43,7 @@ class BitsCardsController extends ControllerBase {
         $response['data']['title'] = $title;
         break;
       case 'tecnologies':
+      case 'alliances':
         $response['data']['back_movil'] = $obj['field_backgroundmovil'];
         $response['data']['background'] = $obj['field_background'];
         $response['data']['logo'] = $obj['field_logo'];
