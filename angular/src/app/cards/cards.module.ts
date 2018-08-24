@@ -7,7 +7,7 @@ import { CarouselIndicatorsComponent } from './components/carousel-indicators/ca
 import { CardValuesComponent } from './components/card-values/card-values.component';
 import { TecnologiesComponent } from './components/tecnologies/tecnologies.component';
 import { PorqueBitsComponent } from './components/porque-bits/porque-bits.component';
-//import { FooterBlock } from './components/footer/footer-block/footer-block';
+// import { FooterBlock } from './components/footer/footer-block/footer-block';
 // Servicios
 import { NodeService } from '../services/cards/node.service';
 import { CardService } from '../services/cards/card.service';
@@ -23,31 +23,20 @@ import { CarouselControlsComponent } from './components/carousel-controls/carous
     CarouselItemComponent,
     CarouselIndicatorsComponent,
     CardValuesComponent,
-<<<<<<< HEAD
-    CardCarouselControlsComponent,
-    PorqueBitsComponent,
-=======
     CarouselControlsComponent,
     CarouselItem2Component,
     TecnologiesComponent,
     PorqueBitsComponent,
     AlliancesComponent
->>>>>>> bc84c28fa0b6ba21f315a7aee517720b41fec000
   ],
   exports: [
     CarouselIndicatorsComponent,
     CardValuesComponent,
-<<<<<<< HEAD
-    CardCarouselControlsComponent,
-    PorqueBitsComponent,
-
-=======
     CarouselControlsComponent,
     CarouselItem2Component,
     TecnologiesComponent,
     PorqueBitsComponent,
     AlliancesComponent
->>>>>>> bc84c28fa0b6ba21f315a7aee517720b41fec000
   ],
   imports: [
     BrowserModule,

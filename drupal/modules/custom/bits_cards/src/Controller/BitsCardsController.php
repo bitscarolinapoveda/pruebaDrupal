@@ -24,7 +24,7 @@ class BitsCardsController extends ControllerBase {
    */
   public function reports($blockid, Request $request) {
 
-    $block = file_get_contents('http://' . $_SERVER['HTTP_HOST'] . '/drupal/block/' . $blockid . '?_format=json');
+    $block = file_get_contents('http://' . $_SERVER['HTTP_HOST'] . '/block/' . $blockid . '?_format=json');
 
 
     if ($block == NULL) {
