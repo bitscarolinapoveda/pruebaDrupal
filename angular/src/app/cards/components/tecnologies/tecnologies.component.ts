@@ -12,13 +12,13 @@ export class TecnologiesComponent implements OnInit {
     constructor( private _tecnologies: TecnologiesService ) {}
     ngOnInit() {
         this.getItemsTecnologies();
-         jQuery (function ($) {
+        $(function ($) {
       if ($('#transition-image').length) {
           var items = 4;
           var $elements = $('.img-item');
 
           var groups = createGroups($elements, items);
-          var groups = completeGroup(groups, items);
+          var groups:{} = completeGroup(groups, items);
           startSlide(groups, items);
       }
 
