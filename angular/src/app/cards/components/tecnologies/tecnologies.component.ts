@@ -12,7 +12,7 @@ export class TecnologiesComponent implements OnInit {
     constructor( private _tecnologies: TecnologiesService ) {}
     ngOnInit() {
         this.getItemsTecnologies();
-        $(function ($) {
+         $ (function ($) {
       if ($('#transition-image').length) {
           var items = 4;
           var $elements = $('.img-item');
@@ -115,9 +115,7 @@ export class TecnologiesComponent implements OnInit {
 
     getItemsTecnologies() {
         return this._tecnologies.getTecnologies().subscribe(items => {
-            this.tecnologiesArray = Object.keys(items.data).map(function (key) {
-                return items.data[key];
-            });
+            this.tecnologiesArray = items.data.logo;
             console.log(this.tecnologiesArray);
         });
     }

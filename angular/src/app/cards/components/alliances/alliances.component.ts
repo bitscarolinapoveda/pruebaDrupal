@@ -12,7 +12,7 @@ export class AlliancesComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    $(function ($) {
+    $ (function ($) {
       if ($('#transition-image2').length) {
           var items = 4;
           var $elements = $('.img-item2');
