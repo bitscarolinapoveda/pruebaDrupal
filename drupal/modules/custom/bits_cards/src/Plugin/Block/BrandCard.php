@@ -45,6 +45,8 @@ class BrandCard extends CardBase {
       ],
       'others' => [],
     ];
+    ksm('tst');
+
   }
 
 }

@@ -17,7 +17,7 @@ use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
  *   id = "export_card_config_rest_resource",
  *   label = @Translation("Export card config rest resource"),
  *   uri_paths = {
- *     "canonical" = "/api/config/{plugin}/export"
+ *     "canonical" = "/v1/card/config/{plugin}/export"
  *   }
  * )
  */

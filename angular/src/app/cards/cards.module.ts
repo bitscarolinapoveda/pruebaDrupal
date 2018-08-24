@@ -6,7 +6,7 @@ import { CarouselItemComponent } from './components/carousel-item/carousel-item.
 import { CarouselIndicatorsComponent } from './components/carousel-indicators/carousel-indicators.component';
 import { CardValuesComponent } from './components/card-values/card-values.component';
 import { PorqueBitsComponent } from './components/porque-bits/porque-bits.component';
-
+//import { FooterBlock } from './components/footer/footer-block/footer-block';
 // Servicios
 import { NodeService } from '../services/cards/node.service';
 import { CardService } from '../services/cards/card.service';
@@ -20,13 +20,14 @@ import { CardCarouselControlsComponent } from './components/card-carousel-contro
     CarouselIndicatorsComponent,
     CardValuesComponent,
     CardCarouselControlsComponent,
-    PorqueBitsComponent
+    PorqueBitsComponent,
   ],
   exports: [
     CarouselIndicatorsComponent,
     CardValuesComponent,
     CardCarouselControlsComponent,
-    PorqueBitsComponent
+    PorqueBitsComponent,
+
   ],
   imports: [
     BrowserModule,
