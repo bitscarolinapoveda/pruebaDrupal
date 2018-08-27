@@ -42,7 +42,7 @@ export class CarouselItem2Component implements OnInit {
           },  3000);
         });
 
-        console.log('nuestros clientes');
+        //console.log('nuestros clientes');
         this.getOurClients();
     }
     getOurClients() {
@@ -51,7 +51,7 @@ export class CarouselItem2Component implements OnInit {
         //       return items.data[key];
         //   });
         this.clients = items;
-        console.log(this.clients);
+       // console.log(this.clients);
         });
     }
 }

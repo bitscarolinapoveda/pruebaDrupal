@@ -19,7 +19,7 @@ export class PorqueBitsComponent implements OnInit {
       }
 
   ngOnInit() {
-    console.log('porquebits component');
+    //console.log('porquebits component');
     this.getMoralValuesItems();
   }
 
@@ -28,7 +28,7 @@ export class PorqueBitsComponent implements OnInit {
       this.moralValues = Object.keys(items.data).map(function (key) {
           return items.data[key];
       });
-      console.log(this.moralValues);
+      //console.log(this.moralValues);
     });
 
   }

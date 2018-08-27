@@ -19,7 +19,7 @@ export class CarouselItemComponent implements OnInit {
       this.carouselsArray = Object.keys(items).map(function (key) {
         return items[key];
       });
-      console.log(this.carouselsArray);
+      //console.log(this.carouselsArray);
     });
   }
 

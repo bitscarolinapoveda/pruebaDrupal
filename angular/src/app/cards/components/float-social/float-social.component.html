@@ -1,23 +1,11 @@
-<section class="row">
-    <div class="col-lg-12">
-        <h6>{{ contactLabel }}</h6>
-        <ul class="fa-ul mail">
-            <li>
-                <a href="{{ contactMailLink }}">
-                    <i class="fa-li fas fa-envelope"></i>
-                    {{ contactMailLabel }}
-                </a>
-            </li>
-        </ul>
-        <div class="icon-social">
-            <ul class="row first fa-ul">
-              <li *ngFor="let net of socialmedia;">
-                    <a href="{{ net.url }}">
-                        <i class="{{ net.class }}"></i>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
+<section class="social-networks">
+  <div class="icon-social">
+    <ul class="row fa-ul">
+      <li *ngFor="let net of socialmedia;">
+        <a href="{{ net.url }}">
+          <i class="{{ net.class }}"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
 </section>
-<hr>

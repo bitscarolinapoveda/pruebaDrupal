@@ -24,7 +24,7 @@ export class GeneratorOfLinksComponent implements OnInit {
 
   getGeneratorOfLinks() {
     this.generatoroflinks.getGeneratorOfLinks().subscribe((items: {header, body} ) => {
-      console.log('general', items);
+      //console.log('general', items);
       this.title = items.body[0].data.label;
       this.url = items.body[0].data.link;
     });
