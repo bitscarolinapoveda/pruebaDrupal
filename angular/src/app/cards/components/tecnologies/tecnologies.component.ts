@@ -20,7 +20,7 @@ export class TecnologiesComponent implements OnInit {
           var $elements = $('.img-item');
 
           var groups = createGroups($elements, items);
-          var groups:{} = completeGroup(groups, items);
+          var groups: {} = completeGroup(groups, items);
           startSlide(groups, items);
       }
 
