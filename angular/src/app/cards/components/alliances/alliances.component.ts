@@ -13,11 +13,13 @@ export class AlliancesComponent implements OnInit {
 
   Alliance;
   logosAlliance: any[];
-  backgroundImage;
-  backgroundImageMovil;
+  backgroundImage: any[];
+  backgroundImageMovil: any[];
 
   constructor(private router: ActivatedRoute,
       private alliance: AllianceService) {
+        this.backgroundImage = [];
+        this.backgroundImageMovil = [];
    }
 
   ngOnInit() {
