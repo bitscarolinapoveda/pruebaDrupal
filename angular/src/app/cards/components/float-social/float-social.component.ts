@@ -35,8 +35,7 @@ export class FloatSocialComponent implements OnInit {
       this.contactMailLabel = items.header[1].data.label;
       this.contactMailLink = items.header[1].data.link;
       this.socialmedia = items.others;
-
-      console.log(this.socialmedia)
+      //console.log(this.socialmedia)
     });
   }
 

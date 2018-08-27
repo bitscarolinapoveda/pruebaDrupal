@@ -38,7 +38,7 @@ class BitsCardsController extends ControllerBase {
     switch ($type) {
       case 'whybits':
         $obj = $obj['field_logo'];
-        $response['data'] = $obj;
+        $response ['data'] = $obj;
         $response['data']['link'] = $field_link;
         $response['data']['title'] = $title;
         break;
@@ -49,7 +49,7 @@ class BitsCardsController extends ControllerBase {
         $response['data']['logo'] = $obj['field_logo'];
         $response['data']['link'] = $field_link;
         $response['data']['title'] = $title;
-        break;  
+        break;
       default:
         $response = "For the block '" . $type . "' has not yet been created service";
     }

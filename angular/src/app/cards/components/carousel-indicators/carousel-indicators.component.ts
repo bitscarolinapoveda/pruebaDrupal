@@ -20,7 +20,7 @@ export class CarouselIndicatorsComponent implements OnInit {
       this.carouselArray = Object.keys(items).map(function (key) {
           return items[key];
         });
-      console.log(this.carouselArray);
+      //console.log(this.carouselArray);
     });
   }
 

@@ -2,6 +2,7 @@
  #transition-image {
      margin-top: 53px;
      height: 358px;
+     display: block;
      @include breakpoint(desktop) {
          height: 366px;
      }
@@ -9,6 +10,7 @@
          height: 366px;
      }
      picture {
+         display: flex;
          .backgraund-image {
              height: 358px;
              position: absolute;
@@ -26,14 +28,19 @@
          position: absolute;
          z-index: 1;
          margin-top: 62px;
-         margin-left: 10%;
+         width: 100%;
+         text-align: center;
          @include breakpoint(desktop) {
-             margin-left: 36%;
+             margin-left: 0%;
+             width: 100%;
              margin-top: 67px;
              font-size: 40px;
+             text-align: center;
          }
          @include breakpoint(tablet) {
-             margin-left: 36%;
+             width: 100%;
+             margin-left: 0%;
+             text-align: center;
              margin-top: 67px;
              font-size: 40px;
          }
@@ -41,48 +48,34 @@
      .list-image-item {
          height: 357px;
          .row {
+             width: 100%;
+             padding: 0%;
              position: absolute;
-             margin-top: 146px;
-             margin-right: 0;
-             margin-left: 2px;
+             margin-top: 116px;
+             margin-right: auto;
+             margin-left: auto;
+             justify-content: center;
              @include breakpoint(desktop) {
-                 margin-top: 167px;
-                 margin-left: 13%;
+                 margin-top: 186px;
              }
              @include breakpoint(tablet) {
-                 margin-top: 167px;
-                 margin-left: 8%;
+                 margin-top: 140px;
              }
              li {
                  z-index: 1;
+                 height: 126px;
                  list-style: none;
-                 margin-right: 23px;
-                 margin-bottom: 68px;
+                 padding: 0% 5.2%;
+                 display: flex;
+                 align-items: center;
+                 justify-items: center;
                  @include breakpoint(desktop) {
-                     margin-right: 130px;
+                     height: auto;
+                     padding: 0 5.2%
                  }
                  @include breakpoint(tablet) {
-                     margin-right: 96px;
-                 }
-             }
-             li:last-child {
-                 margin-left: 10%;
-                 margin-top: 15px;
-                 @include breakpoint(desktop) {
-                     margin-left: 0;
-                     margin-top: 0;
-                 }
-                 @include breakpoint(tablet) {
-                     margin-left: 0;
-                     margin-top: 0;
-                 }
-             }
-             li:nth-child(2n+1) {
-                 @include breakpoint(desktop) {
-                     margin-top: 38px;
-                 }
-                 @include breakpoint(tablet) {
-                     margin-top: 38px;
+                     height: auto;
+                     padding: 0 4.2%
                  }
              }
          }

@@ -36,7 +36,7 @@ export class FooterContactComponent implements OnInit {
       this.contactMailLabel = items.header[1].data.label;
       this.contactMailLink = items.header[1].data.link;
       this.contactNets = items.others;
-      console.log(this.contactNets)
+      //console.log(this.contactNets)
     });
   }
 
