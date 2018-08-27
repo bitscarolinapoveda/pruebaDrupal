@@ -128,16 +128,9 @@ export class AlliancesComponent implements OnInit {
   getAlliance() {
         this.alliance.getAlliance().subscribe( items => {
         this.Alliance = items.data;
-        console.log(this.Alliance);
-
         this.logosAlliance = Object.keys(items.data.logo).map(function (key) { return items.data.logo[key]; });
-        console.log(this.logosAlliance);
-
         this.backgroundImage = items.data.background;
-        console.log(this.backgroundImage);
-
         this.backgroundImageMovil = items.data.back_movil;
-        console.log(this.backgroundImageMovil);
         });
     }
 }
