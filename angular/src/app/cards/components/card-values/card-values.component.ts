@@ -14,7 +14,7 @@ export class CardValuesComponent {
 
   constructor( private _cardService: CardService) {
     this.card = _cardService.getCard();
-    console.log(this.card);
+    //console.log(this.card);
   }
 
 }

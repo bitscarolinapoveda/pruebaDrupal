@@ -121,7 +121,7 @@ export class TecnologiesComponent implements OnInit {
             this.tecnologiesTitle = items.data;
             this.tecnologiesback = items.data.background;
             this.tecnologiesArray = items.data.logo;
-            console.log(this.tecnologiesback);
+            //console.log(this.tecnologiesback);
         });
     }
 }
