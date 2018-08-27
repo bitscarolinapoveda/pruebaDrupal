@@ -26,14 +26,14 @@
         position: absolute;
         z-index: 1;
         margin-top: 57px;
-        margin-left: 10%;
+        margin-left: 18%;
         @include breakpoint(desktop) {
             margin-left: 36%;
             margin-top: 77px;
             font-size: 40px;
         }
         @include breakpoint(tablet) {
-            margin-left: 36%;
+            margin-left: 27%;
             margin-top: 77px;
             font-size: 40px;
         }
@@ -50,45 +50,45 @@
             }
             @include breakpoint(tablet) {
                 margin-top: 182px;
-                margin-left: 8%;
+                // margin-left: 8%;
             }
             li {
                 z-index: 1;
                 list-style: none;
                 margin-right: 17px;
                 margin-bottom: 76px;
+                height: 44px;
                 @include breakpoint(desktop) {
                     margin-right: 130px;
+                    height: 0px;
                 }
                 @include breakpoint(tablet) {
                     margin-right: 68px;
+                    height: 0px;
+                    margin-right: 11px
                 }
             }
             li:last-child {
                 margin-top: -22px;
-                @include breakpoint(desktop) {
-                    margin-top: 0;
-                }
-                @include breakpoint(tablet) {
-                    margin-top: 0;
-                }
             }
             li:nth-child(3) {
                 @include breakpoint(desktop) {
-                    margin-top: 26px;
+                    margin-top: 10px;
                 }
                 @include breakpoint(tablet) {
-                    margin-top: 26px;
+                    margin-top: 10px;
                 }
             }
             li:nth-child(2) {
                 margin-left: 10%;
-                margin-top: 20px;
+                margin-top: -11px;
                 @include breakpoint(desktop) {
                     margin-left: 0;
+                    margin-top: -10px;
                 }
                 @include breakpoint(tablet) {
                     margin-left: 0;
+                    margin-top: -10px;
                 }
             }
         }

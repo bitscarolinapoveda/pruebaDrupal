@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AllianceService } from '../../../services/cards/alliances.service';
+import { ActivatedRoute } from '@angular/router';
 
 declare var $: any;
 
@@ -9,9 +11,17 @@ declare var $: any;
 })
 export class AlliancesComponent implements OnInit {
 
-  constructor() { }
+  Alliance;
+  logosAlliance: any[];
+  backgroundImage;
+  backgroundImageMovil;
+
+  constructor(private router: ActivatedRoute,
+      private alliance: AllianceService) {
+   }
 
   ngOnInit() {
+
     $ (function ($) {
       if ($('#transition-image2').length) {
           var items = 4;
@@ -111,5 +121,23 @@ export class AlliancesComponent implements OnInit {
           }, 500);
       }
     });
+
+    console.log('nuestras alianzas');
+    this.getAlliance();
   }
+  getAlliance() {
+        this.alliance.getAlliance().subscribe( items => {
+        this.Alliance = items.data;
+        console.log(this.Alliance);
+
+        this.logosAlliance = Object.keys(items.data.logo).map(function (key) { return items.data.logo[key]; });
+        console.log(this.logosAlliance);
+
+        this.backgroundImage = items.data.background;
+        console.log(this.backgroundImage);
+
+        this.backgroundImageMovil = items.data.back_movil;
+        console.log(this.backgroundImageMovil);
+        });
+    }
 }
