@@ -9,6 +9,7 @@
          height: 366px;
      }
      picture {
+         display: flex;
          .backgraund-image {
              height: 358px;
              position: absolute;
@@ -26,14 +27,19 @@
          position: absolute;
          z-index: 1;
          margin-top: 62px;
-         margin-left: 10%;
+         width: 100%;
+         text-align: center;
          @include breakpoint(desktop) {
-             margin-left: 36%;
+             margin-left: 0%;
+             width: 100%;
              margin-top: 67px;
              font-size: 40px;
+             text-align: center;
          }
          @include breakpoint(tablet) {
-             margin-left: 36%;
+             width: 100%;
+             margin-left: 0%;
+             text-align: center;
              margin-top: 67px;
              font-size: 40px;
          }
@@ -46,43 +52,28 @@
              margin-right: 0;
              margin-left: 2px;
              @include breakpoint(desktop) {
-                 margin-top: 167px;
-                 margin-left: 13%;
+                 width: 100%;
+                 margin-top: 186px;
+                 margin-left: 0%;
+                 padding-left: 18%;
              }
              @include breakpoint(tablet) {
-                 margin-top: 167px;
-                 margin-left: 8%;
+                 margin-top: 185px;
+                 margin-left: 9%;
              }
              li {
                  z-index: 1;
+                 height: 62px;
                  list-style: none;
-                 margin-right: 23px;
-                 margin-bottom: 68px;
+                 margin-right: 38px;
+                 margin-bottom: 52px;
+                 display: flex;
                  @include breakpoint(desktop) {
-                     margin-right: 130px;
+                     height: 71px;
+                     margin-right: 12%;
                  }
                  @include breakpoint(tablet) {
-                     margin-right: 96px;
-                 }
-             }
-             li:last-child {
-                 margin-left: 10%;
-                 margin-top: 15px;
-                 @include breakpoint(desktop) {
-                     margin-left: 0;
-                     margin-top: 0;
-                 }
-                 @include breakpoint(tablet) {
-                     margin-left: 0;
-                     margin-top: 0;
-                 }
-             }
-             li:nth-child(2n+1) {
-                 @include breakpoint(desktop) {
-                     margin-top: 38px;
-                 }
-                 @include breakpoint(tablet) {
-                     margin-top: 38px;
+                     margin-right: 34px;
                  }
              }
          }

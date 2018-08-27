@@ -1,14 +1,18 @@
 <section id="transition-image">
     <picture>
-        <source media="(max-width:500px)" srcset="assets/images/somoexpertosmovil.png">
-        <img class="w-100 backgraund-image" src="assets/images/user.jpg" alt="SomosExpertos">
+        <ng-container *ngFor="let movil of tecnologiesmovil">
+            <source media="(max-width:500px)" [srcset]="movil.url ">
+        </ng-container>
+        <ng-container *ngFor=" let back of tecnologiesback">
+            <img class="w-100 backgraund-image" [src]="back.url" alt="back.alt">
+        </ng-container>
     </picture>
-    <h1> {{tecnologiesArray[2]?.alt}} </h1>
+    <h1> {{tecnologiesTitle.title}} </h1>
     <div class="list-image-item">
         <ul class="row">
             <li *ngFor="let tec of tecnologiesArray">
                 <picture>
-                    <img id="slide-img-0" class="img-item animated" src=" {{tec.url}} " alt="">
+                    <img id="slide-img-0" class="img-item animated" [src]="tec.url" alt="{{tec.alt}}">
                 </picture>
             </li>
         </ul>

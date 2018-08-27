@@ -8,7 +8,9 @@ declare var $: any;
 })
 export class TecnologiesComponent implements OnInit {
     tecnologiesArray: any = [];
-
+    tecnologiesTitle: any = [];
+    tecnologiesback: any = [];
+    tecnologiesmovil: any = [];
     constructor( private _tecnologies: TecnologiesService ) {}
     ngOnInit() {
         this.getItemsTecnologies();
@@ -115,8 +117,11 @@ export class TecnologiesComponent implements OnInit {
 
     getItemsTecnologies() {
         return this._tecnologies.getTecnologies().subscribe(items => {
+            this.tecnologiesmovil = items.data.back_movil;
+            this.tecnologiesTitle = items.data;
+            this.tecnologiesback = items.data.background;
             this.tecnologiesArray = items.data.logo;
-            console.log(this.tecnologiesArray);
+            console.log(this.tecnologiesback);
         });
     }
 }
