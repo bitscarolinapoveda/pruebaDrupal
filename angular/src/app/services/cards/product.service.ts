@@ -11,6 +11,6 @@ export class ProductServices {
   }
 
   getProductoServiceItems() {
-    return this.http.get('v1/content-types/producto-servicios?_format=json');
+    return this.http.get('v1/content-types/products');
   }
 }

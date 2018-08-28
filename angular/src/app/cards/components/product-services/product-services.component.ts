@@ -31,7 +31,7 @@ export class ProductServicesComponent implements OnInit {
       this.servicesProduct = Object.keys(items).map(function (key) {
         return items[key];
       });
-      //console.log(this.servicesProduct);
+      console.log(this.servicesProduct);
     });
   }
 
