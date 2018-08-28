@@ -1,29 +1,14 @@
 <section id="transition-image2">
     <picture>
-        <source media="(max-width:500px)" srcset="assets/images/nuestrasalianzasmovil.png">
-        <img class="w-100 backgraund-image" src="../../../../assets/images/nuestrasalianzasweb.png" alt="NuetrasAlianzas">
+        <source media="(max-width:500px)" [srcset]="backgroundImageMovil[0]?.url">
+        <img class="w-100 backgraund-image" [src]="backgroundImage[0]?.url" alt="{{ backgroundImage[0]?.alt }}">
     </picture>
-    <h1>NUESTRAS ALIANZAS</h1>
+    <h1>{{ Alliance?.title }}</h1>
     <div class="list-image-item">
         <ul class="row">
-            <li>
+            <li *ngFor="let Our of logosAlliance; let id = index">
                 <picture>
-                    <img id="slide-img2-0" class="img-item2" src="../../../../assets/images/partner-innanaweb.png" alt="INNANA">
-                </picture>
-            </li>
-            <li>
-                <picture>
-                    <img id="slide-img2-1" class="img-item2" src="../../../../assets/images/client-microsoftweb.png" alt="MICROSOFT">
-                </picture>
-            </li>
-            <li>
-                <picture>
-                    <img id="slide-img2-2" class="img-item2" src="../../../../assets/images/partner-acquiaweb.png" alt="IBIS CREATIVA">
-                </picture>
-            </li>
-            <li>
-                <picture>
-                    <img id="slide-img2-3" class="img-item2" src="../../../../assets/images/partner-ibisweb.png" alt="ACQUIA">
+                    <img id="slide-img2-{{ id }}" class="img-item2" src="{{ Our.url }}" alt="{{ Our.alt }}">
                 </picture>
             </li>
         </ul>

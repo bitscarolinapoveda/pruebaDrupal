@@ -1,0 +1,47 @@
+<footer>
+    <picture>
+        <source media="(max-width:500px)" srcset="../../../../assets/images/footermovil.png">
+        <img class="w-100" src="../../../../assets/images/footer.png" alt="Footer">
+    </picture>
+    <section class="container-elements" id="container-elements">
+        <section class="location">
+            <div class="row">
+                <div class="col-lg">
+                    <app-footer-block [idBlock]="'footerblock'"></app-footer-block>
+                </div>
+                <div class="col-lg site random">
+                    <app-footer-block [idBlock]="'footerblock_2'"></app-footer-block>
+                </div>
+            </div>
+            <hr>
+        </section>
+        <section class="newsletter">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h6>NEWSLETTER</h6>
+                    <ul>
+                        <li>Reciba nuestras ultimas noticias</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+        </section>
+        <section class="contac">
+            <!-- <app-footer-contact></app-footer-contact> -->
+        </section>
+        <section class="logo">
+            <!-- <app-footer-brand></app-footer-brand> -->
+        </section>
+    </section>
+    <section class="privacy">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="politics-site">
+                    <a href="#" class="politics">Politica de Privacidad</a>
+                    <a href="#" class="sites">Mapa del Sitio</a>
+                    <a href="#">PQRS</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</footer>
