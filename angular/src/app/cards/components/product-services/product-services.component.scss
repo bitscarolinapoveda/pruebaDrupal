@@ -142,8 +142,11 @@
             width: 100%;
         }
         .background {
-            background: rgba(0, 88, 146, 0.3);
+            height: 100%;
             display: flex;
+            @include breakpoint (desktop) {
+                background: rgba(0, 88, 146, 0.3);
+            }
             .images {
                 width: 100%;
                 height: 100%;
@@ -196,7 +199,7 @@
                 &::after {
                     content: '';
                     position: relative;
-                    right: 0%;
+                    right: 9%;
                     width: 100%;
                     top: 0px;
                     padding-left: 35%;
@@ -238,7 +241,7 @@
         }
         .box-title {
             position: relative;
-            bottom: 93%;
+            bottom: 92%;
             padding-left: 9%;
             padding-right: 9%;
             text-align: center;
@@ -246,7 +249,7 @@
             @include breakpoint(desktop) {
                 float: right;
                 clear: both;
-                bottom: 61%;
+                bottom: 62.5%;
                 padding-left: 15%;
                 padding-right: 15%;
                 transition: all ease 0.8s;
@@ -315,8 +318,11 @@
                 visibility: initial;
             }
             .box-title {
-                bottom: 90%;
+                bottom: 86%;
                 z-index: 100;
+                @include breakpoint (desktop) {
+                    bottom: 93%;
+                }
                 .box-text {
                     top: 14px;
                     transform: translateY(-6%);
