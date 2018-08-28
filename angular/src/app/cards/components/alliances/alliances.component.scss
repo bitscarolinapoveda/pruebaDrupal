@@ -55,7 +55,7 @@
             li {
                 z-index: 1;
                 list-style: none;
-                margin-right: 17px;
+                margin-right: -10px;
                 margin-bottom: 76px;
                 height: 44px;
                 @include breakpoint(desktop) {
@@ -105,6 +105,34 @@
         }
         @include breakpoint(tablet) {
             height: 317px;
+        }
+    }
+}
+
+#main-title {
+    color: #002b49;
+    text-align: center;
+    margin-top: 64px;
+    @include breakpoint(desktop) {
+        margin-top: 80px;
+    }
+    @include breakpoint(tablet) {
+        margin-top: 80px;
+    }
+    h2 {
+        margin-left: 3%;
+        font-size: 30px;
+        transform: scaleY(1.2);
+        letter-spacing: -2px;
+        @include breakpoint(desktop) {
+            margin-left: 0;
+            font-size: 40px;
+            width: 100%;
+        }
+        @include breakpoint(tablet) {
+            margin-left: 0;
+            font-size: 40px;
+            width: 100%;
         }
     }
 }
