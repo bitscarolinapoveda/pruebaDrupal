@@ -1,0 +1,135 @@
+body {
+    main {
+        .oo {
+            margin-top: -539px;
+            margin-bottom: 260px;
+        }
+        #forms {
+            .principal-data {
+                list-style: none;
+                .description {
+                    display: grid;
+                    margin-left: auto;
+                    margin-right: 17px;
+                    width: 92%;
+                    margin-top: 19px;
+                    color: #bcdb5b;
+                    @include breakpoint(desktop) {
+                        margin-left: 151px;
+                        width: 100%;
+                    }
+                    #style1 {
+                        padding: 10px 20px;
+                        border: 1px solid #b2c6cd;
+                        color: #002b49;
+                        @include breakpoint(desktop) {
+                            width: 1008px;
+                        }
+                    }
+                }
+                .position {
+                    margin-left: auto;
+                    margin-right: 17px;
+                    width: 92%;
+                    @include breakpoint(desktop) {
+                        margin-left: auto;
+                        margin-right: auto;
+                        width: 80%;
+                        margin-top: 25px;
+                    }
+                }
+                .contenido {
+                    display: grid;
+                    @include breakpoint(desktop) {
+                        margin-right: 25px;
+                        margin-left: 15px;
+                    }
+                    label {
+                        color: #c0dc74;
+                        margin-top: 20px;
+                        margin-bottom: -1px;
+                    }
+                    #style {
+                        width: 100%;
+                        padding: 4px 2px;
+                        outline: none;
+                        border: none;
+                        border-bottom: 1px solid #b2c6cd;
+                        color: #002b49;
+                    }
+                }
+            }
+            p {
+                margin-top: 57px;
+                color: #002b49;
+                text-align: center;
+                a {
+                    color: #bcdb5b;
+                    text-decoration: underline;
+                    margin-left: 3px;
+                }
+            }
+            .container {
+                display: block;
+                position: relative;
+                padding-left: 35px;
+                margin-bottom: 12px;
+                cursor: pointer;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+            }
+            .container input {
+                position: absolute;
+                opacity: 0;
+                cursor: pointer;
+            }
+            .checkmark {
+                position: absolute;
+                top: -2px;
+                height: 24px;
+                width: 24px;
+                background-color: #fff;
+                background-image: url("../images/check.png");
+                @include breakpoint(desktop) {
+                    left: 386px;
+                }
+            }
+            .container input:checked~.checkmark {
+                background-image: url("../images/check2.png");
+            }
+            .container .checkmark:after {
+                left: 9px;
+                top: 5px;
+                width: 5px;
+                height: 10px;
+                border: solid blanck;
+                border-width: 0 3px 3px 0;
+                -webkit-transform: rotate(45deg);
+                -ms-transform: rotate(45deg);
+                transform: rotate(45deg);
+            }
+            .button {
+                padding: 13px 37px;
+                background-color: #bcdb5b !important;
+                border: none;
+                color: white !important;
+                margin: 33px 108px;
+                cursor: pointer;
+                display: block;
+                margin: auto;
+                margin-top: 48px;
+                width: 10%;
+            }
+            .dato-button {
+                text-align: center;
+                color: #002b49;
+                margin-top: 20px;
+                strong {
+                    color: #bcdb5b;
+                }
+            }
+        }
+    }
+}

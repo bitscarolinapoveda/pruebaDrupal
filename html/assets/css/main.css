@@ -559,8 +559,7 @@ header nav {
         header nav .menuToggle .list-menu .items .active {
           border-top: 4px solid #a6cf24; }
         header nav .menuToggle .list-menu .items .scroll-white {
-          color: #002b49;
-          background: white; }
+          color: #002b49; }
       header nav .menuToggle .list-menu .language {
         list-style: none; }
 
@@ -2808,7 +2807,7 @@ body main #block-video .description {
         @media (min-width: 1025px) {
           #image-desccription .container-second .bottons .badge {
             margin-left: 0%;
-            width: auto;
+            width: 10%;
             padding-top: 1%;
             padding-bottom: 1%; } }
     #image-desccription .container-second .url {
@@ -2934,28 +2933,47 @@ body main .oo {
   margin-top: -539px;
   margin-bottom: 260px; }
 
-body main #data-froms .principal-data {
+body main #forms .principal-data {
   list-style: none; }
-  body main #data-froms .principal-data .description {
+  body main #forms .principal-data .description {
     display: grid;
-    margin-left: -29px;
-    margin-right: 28px;
+    margin-left: auto;
+    margin-right: 17px;
+    width: 92%;
     margin-top: 19px;
     color: #bcdb5b; }
-    body main #data-froms .principal-data .description #style1 {
+    @media (min-width: 1025px) {
+      body main #forms .principal-data .description {
+        margin-left: 151px;
+        width: 100%; } }
+    body main #forms .principal-data .description #style1 {
       padding: 10px 20px;
-      border: 1px solid #002b49; }
-
-body main #data-froms .position {
-  margin-left: -29px;
-  margin-right: 28px; }
-  body main #data-froms .position .contenido {
+      border: 1px solid #b2c6cd;
+      color: #002b49; }
+      @media (min-width: 1025px) {
+        body main #forms .principal-data .description #style1 {
+          width: 1008px; } }
+  body main #forms .principal-data .position {
+    margin-left: auto;
+    margin-right: 17px;
+    width: 92%; }
+    @media (min-width: 1025px) {
+      body main #forms .principal-data .position {
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+        margin-top: 25px; } }
+  body main #forms .principal-data .contenido {
     display: grid; }
-    body main #data-froms .position .contenido label {
+    @media (min-width: 1025px) {
+      body main #forms .principal-data .contenido {
+        margin-right: 25px;
+        margin-left: 15px; } }
+    body main #forms .principal-data .contenido label {
       color: #c0dc74;
       margin-top: 20px;
       margin-bottom: -1px; }
-    body main #data-froms .position .contenido #style {
+    body main #forms .principal-data .contenido #style {
       width: 100%;
       padding: 4px 2px;
       outline: none;
@@ -2963,20 +2981,71 @@ body main #data-froms .position {
       border-bottom: 1px solid #b2c6cd;
       color: #002b49; }
 
-body main #data-froms .button {
+body main #forms p {
+  margin-top: 57px;
+  color: #002b49;
+  text-align: center; }
+  body main #forms p a {
+    color: #bcdb5b;
+    text-decoration: underline;
+    margin-left: 3px; }
+
+body main #forms .container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+body main #forms .container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer; }
+
+body main #forms .checkmark {
+  position: absolute;
+  top: -2px;
+  height: 24px;
+  width: 24px;
+  background-color: #fff;
+  background-image: url("../images/check.png"); }
+  @media (min-width: 1025px) {
+    body main #forms .checkmark {
+      left: 386px; } }
+
+body main #forms .container input:checked ~ .checkmark {
+  background-image: url("../images/check2.png"); }
+
+body main #forms .container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid blanck;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg); }
+
+body main #forms .button {
   padding: 13px 37px;
-  background-color: #bcdb5b;
+  background-color: #bcdb5b !important;
   border: none;
-  color: white;
+  color: white !important;
   margin: 33px 108px;
   cursor: pointer;
   display: block;
   margin: auto;
-  margin-top: 48px; }
+  margin-top: 48px;
+  width: 10%; }
 
-body main #data-froms .dato-button {
+body main #forms .dato-button {
   text-align: center;
   color: #002b49;
   margin-top: 20px; }
-  body main #data-froms .dato-button strong {
+  body main #forms .dato-button strong {
     color: #bcdb5b; }
