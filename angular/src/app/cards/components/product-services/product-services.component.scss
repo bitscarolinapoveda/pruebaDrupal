@@ -24,7 +24,10 @@
             padding-right: 4%;
             margin-bottom: 0%;
             text-align: center;
+            text-transform: uppercase;
             color: #002b49;
+            font-family: 'Open Sans';
+            font-weight: 300;
             @include breakpoint (desktop) {
                 width: 100%;
                 padding-left: 0%;
@@ -188,6 +191,8 @@
                 color: #8ECE17;
                 text-decoration: none;
                 visibility: hidden;
+                font-family: 'Open Sans';
+                font-weight: 400;
                 @include breakpoint (tablet) {
                     left: 0%;
                     width: 100%;
@@ -250,8 +255,8 @@
                 float: right;
                 clear: both;
                 bottom: 62.5%;
-                padding-left: 15%;
-                padding-right: 15%;
+                padding-left: 25%;
+                padding-right: 25%;
                 transition: all ease 0.8s;
             }
             .titlepr {
@@ -262,9 +267,8 @@
                 font-weight: 300;
                 height: auto;
                 font-size: 31px;
-                font-family: 'Open Sans', sans-serif;
+                font-family: 'Open Sans Condensed';
                 @include breakpoint(desktop) {
-                    font-family: 'Open Sans', sans-serif;
                     font-size: 36px;
                 }
             }
@@ -290,7 +294,10 @@
                 padding-right: 5%;
                 @include breakpoint(desktop) {
                     top: 365px;
-                    transition: all ease 1s
+                    transition: all ease 1s;
+                    width: 140%;
+                    right: 20%;
+                    padding: 10% 0%;
                 }
                 .text {
                     display: block;
@@ -299,7 +306,7 @@
                     color: #ffffff;
                     font-weight: 300;
                     font-size: 15px;
-                    font-family: 'Open Sans', sans-serif;
+                    font-family: 'Open Sans';
                     @include breakpoint(desktop) {
                         font-size: 18px;
                         top: 26%;
@@ -371,7 +378,8 @@
                 color: #ffffff;
                 background: rgba(142, 206, 23, 0.7);
                 font-size: 14px;
-                font-family: open_sansregular;
+                font-family: 'Open Sans';
+                font-weight: 400;
                 text-transform: uppercase;
                 @include breakpoint (tablet) {
                     width: 14%;

@@ -20,12 +20,11 @@ export class CarouselIndicatorsComponent implements OnInit {
       this.carouselArray = Object.keys(items).map(function (key) {
           return items[key];
         });
-      //console.log(this.carouselArray);
     });
   }
 
   down() {
-   let x = document.querySelector('#container-elements');
+    let x = document.querySelector('.anchor');
     if (x) {
         x.scrollIntoView({behavior: 'smooth'});
     }
