@@ -8,9 +8,10 @@
     @include breakpoint(tablet) {}
     .images-whybits {
         .images {
-            margin-left: 0;
             -webkit-padding-start: 0;
             justify-content: center;
+            margin-left: 0;
+            margin-right: 0;
             @include breakpoint(desktop) {
                 margin-left: 9%;
             }
@@ -64,7 +65,6 @@
         margin-left: 3%;
         font-size: 30px;
         transform: scaleY(1.2);
-        letter-spacing: -2px;
         @include breakpoint(desktop) {
             margin-left: 0;
             font-size: 40px;
