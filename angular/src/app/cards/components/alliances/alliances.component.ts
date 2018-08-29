@@ -24,13 +24,16 @@ export class AlliancesComponent implements OnInit {
 
   ngOnInit() {
 
-    $ (function ($) {
+    /* $ (function ($) {
       if ($('#transition-image2').length) {
+          console.log('if')
           var items = 4;
           var $elements = $('.img-item2');
 
           var groups = createGroups($elements, items);
           var groups:{} = completeGroup(groups, items);
+
+          //console.log($elements)
           startSlide(groups, items);
       }
 
@@ -122,9 +125,9 @@ export class AlliancesComponent implements OnInit {
               }
           }, 500);
       }
-    });
+    }); */
 
-    console.log('nuestras alianzas');
+    //console.log('nuestras alianzas');
     this.getAlliance();
   }
   getAlliance() {
