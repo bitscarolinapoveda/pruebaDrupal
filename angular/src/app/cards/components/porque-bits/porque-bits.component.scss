@@ -10,7 +10,10 @@
     }
     .images-whybits {
         .images {
-            margin-left: -5%;
+            margin-left: 0;
+            -webkit-padding-start: 0;
+            justify-content: center;
+            margin-right: 0;
             @include breakpoint(desktop) {
                 margin-left: 9%;
             }
@@ -19,7 +22,6 @@
             }
             li {
                 list-style: none;
-                margin-right: 25px;
                 margin-top: 17px;
                 text-align: center;
                 @include breakpoint(desktop) {
@@ -39,15 +41,6 @@
                         font-size: 21px;
                         width: 126px;
                     }
-                }
-            }
-            li:nth-child(5) {
-                margin-left: 24%;
-                @include breakpoint(desktop) {
-                    margin-left: 0;
-                }
-                @include breakpoint(tablet) {
-                    margin-left: 0;
                 }
             }
             li:nth-child(6) {
