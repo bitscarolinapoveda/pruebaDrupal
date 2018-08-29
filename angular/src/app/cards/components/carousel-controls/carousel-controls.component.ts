@@ -16,27 +16,14 @@ export class CarouselControlsComponent implements OnInit {
   CarouselControlArray: any = [];
     ngOnInit() {
         // this.getCarouselControlItem();
-      $('.carousel-run .carousel-item').each(function () {
-            // tslint:disable-next-line:no-var-keyword
-            var next = $(this).next();
-          if (!next.length) {
-              next = $(this).siblings(':first');
-          }
-          next.children(':first-child').clone().appendTo($(this));
-
-          // tslint:disable-next-line:no-var-keyword
-          for (var i = 0; i < 2; i++) {
-              next = next.next();
-              if (!next.length) {
-                  next = $(this).siblings(':first');
-              }
-              next.children(':first-child').clone().appendTo($(this));
-            }
-        });
         this.getCarouselControlItem();
     }
          getCarouselControlItem() {
           return this.CarouselControl.getCarouselControlItems().subscribe(items => {
+<<<<<<< HEAD
+            // console.log(items);
+=======
+>>>>>>> a177ecaf883e8f089ea5e59c274a5da5dc404c4b
             this.CarouselControlArray = items;
           });
         }
