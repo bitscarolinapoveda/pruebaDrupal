@@ -14,17 +14,14 @@
         @include breakpoint (desktop) {
             display: flex;
         }
-        //display: block;
     }
     .carousel-inner .carousel-item-right.active,
     .carousel-inner .carousel-item-next {
         transform: translateX(25%);
-        //transform: translateX(5%);
     }
     .carousel-inner .carousel-item-left.active,
     .carousel-inner .carousel-item-prev {
         transform: translateX(-25%);
-        //transform: translateX(-5%);
     }
     .carousel-inner .carousel-item-right,
     .carousel-inner .carousel-item-left {
@@ -32,8 +29,7 @@
     }
     .carousel-inner {
         height: 232px;
-        width: 77%;
-        left: 0%;
+        justify-content: center;
         @include breakpoint (tablet) {
             height: initial;
             width: 68%;
@@ -182,7 +178,6 @@
         margin-left: 3%;
         font-size: 30px;
         transform: scaleY(1.2);
-        letter-spacing: -2px;
         @include breakpoint(desktop) {
             margin-left: 0;
             font-size: 40px;
