@@ -8,7 +8,7 @@ import { HttpService } from '../http/http.service';
 export class NavbarService {
 
   constructor(private http: HttpService) {
-    console.log('NavBar Listo');
+   // console.log('NavBar Listo');
   }
 
   getMenuItems() {

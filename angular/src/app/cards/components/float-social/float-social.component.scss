@@ -1,16 +1,62 @@
+@import "./src/assets/scss/mixin.scss";
 .social-networks{
-  margin-top: 0;
-  width: 41px;
-  height: initial;
-  top: 35%;
 
-  .icon-social {
+  width: 41px;
+  height: auto;
+  background-color: #517bbd;
+  opacity: 0.7;
+  position: fixed;
+  margin-top: 355px;
+  z-index: 1;
+  .icon-social{
+    display: none;
+    @include breakpoint(tablet){
+      display: block;
+    }
     .row{
       margin-left: 13px;
+      width: 0;
       li{
-        padding: 10px 0;
-        margin-bottom: 0;
+        margin-right: 1px;
+        margin-bottom: 9px;
+        a{
+          display: block;
+          color: #FFFFFF;
+          margin-top: 11px;
+        }
       }
+      a:hover{
+        color: #a6cf24;
+      }
+    }
+  }
+}
+
+.envolope {
+  width: 41px;
+  height: 41px;
+  background-color: #a6cf24;
+  opacity: 0.7;
+  position: fixed;
+  border-radius: 50%;
+  bottom: 10%;
+  display: block;
+  right: 19%;
+  z-index: 9999;
+
+  .icon-mail {
+    font-size: 22px;
+    margin-top: 5px;
+    margin-left: 0px;
+    .row {
+      margin-right: 0;
+      margin-left: 0;
+      .fa-li {
+        left: 10px;
+      }
+    }
+    a {
+      color: #FFFFFF;
     }
   }
 }
