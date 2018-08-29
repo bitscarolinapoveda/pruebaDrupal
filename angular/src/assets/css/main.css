@@ -1064,48 +1064,7 @@ body footer .privacy .row .col-lg-12 .politics-site a {
     }
 }
 
-.envolope {
-    width: 41px;
-    height: 41px;
-    background-color: #a6cf24;
-    opacity: 0.7;
-    position: fixed;
-    border-radius: 200px;
-    margin-left: 65%;
-    margin-top: 573px;
-}
 
-.envolope .icon-mail {
-    font-size: 22px;
-    margin-top: 5px;
-    margin-left: -12px;
-}
-
-.envolope .icon-mail a {
-    color: #FFFFFF;
-}
-
-@media (min-width: 1025px) {
-    .envolope {
-        width: 41px;
-        height: 41px;
-        background-color: #a6cf24;
-        opacity: 0.7;
-        position: fixed;
-        border-radius: 0;
-        margin-top: 592px;
-        margin-left: 0;
-        z-index: 1;
-    }
-    .envolope .icon-mail {
-        margin-left: -13px;
-        font-size: 22px;
-        margin-top: 5px;
-    }
-    .envolope .icon-mail a {
-        color: #FFFFFF;
-    }
-}
 
 @media (min-width: 668px) and (max-width: 1024px) {
     .envolope {
