@@ -1,8 +1,6 @@
 @import './src/assets/scss/mixin.scss';
 .window-complete {
-    @include breakpoint(desktop) {
-        height: 100vh;
-    }
+    height: auto;
     .text-slider {
         bottom: 19.5%;
         left: 14%;
@@ -30,7 +28,8 @@
         }
         .description-slider {
             font-size: 18px;
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Open Sans';
+            font-weight: 300;
             @include breakpoint(tablet) {
                 position: relative;
                 line-height: 1.2;
@@ -42,9 +41,9 @@
                 position: relative;
                 line-height: 1.2;
                 font-size: 28px;
+                padding-left: 22%;
                 width: 88%;
                 left: 12%;
-                padding-left: 22%;
             }
         }
     }

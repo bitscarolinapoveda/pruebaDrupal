@@ -8,7 +8,6 @@ import { HttpService } from '../http/http.service';
 export class CarouselItem2 {
 
   constructor(private http: HttpService) {
-    console.log('');
   }
 
   getOurClients() {

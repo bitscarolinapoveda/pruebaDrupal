@@ -9,7 +9,7 @@ import { HttpService } from '../http/http.service';
 export class PorqueBitsService {
 
   constructor(private http: HttpService) {
-    console.log('porque bits Listo');
+   // console.log('porque bits Listo');
   }
 
   getMoralValuesItems() {

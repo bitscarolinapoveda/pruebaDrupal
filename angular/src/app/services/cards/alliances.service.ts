@@ -8,7 +8,6 @@ import { HttpService } from '../http/http.service';
 export class AllianceService {
 
   constructor(private http: HttpService) {
-    console.log('');
   }
 
   getAlliance() {

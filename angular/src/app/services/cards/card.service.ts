@@ -12,7 +12,6 @@ export class CardService {
     };
 
   constructor(private http: HttpClient) {
-    console.log('Card conten Listo');
   }
 
   getCard() {
