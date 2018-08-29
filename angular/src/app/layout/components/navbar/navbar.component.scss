@@ -150,10 +150,12 @@ header {
                     .link {
                         color: #002b49;
                         width: 100%;
-                        font-size: 15px;
                         text-decoration: none;
                         text-align: left;
                         padding-right: 73%;
+                        font-size: 15px;
+                        font-family: 'Open Sans';
+                        font-weight: 300;
                         &:hover {
                             color: #a6cf24;
                             text-decoration: none;
