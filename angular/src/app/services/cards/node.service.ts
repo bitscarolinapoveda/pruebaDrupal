@@ -18,7 +18,7 @@ export class NodeService {
   ];
 
   constructor(private http: HttpClient) {
-    console.log('Content Type Listo');
+    //console.log('Content Type Listo');
   }
 
   getNodes() {
