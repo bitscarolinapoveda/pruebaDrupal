@@ -2,7 +2,7 @@
 .window-complete {
     height: auto;
     .text-slider {
-        bottom: 19.5%;
+        bottom: 23.5%;
         left: 14%;
         padding-bottom: initial;
         @include breakpoint(tablet) {
@@ -12,7 +12,7 @@
             text-align: right;
         }
         @include breakpoint(desktop) {
-            bottom: 21.5%;
+            bottom: 26.5%;
             width: 76%;
             left: 16%;
             text-align: right;
