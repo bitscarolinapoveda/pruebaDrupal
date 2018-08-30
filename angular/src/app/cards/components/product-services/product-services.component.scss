@@ -26,8 +26,6 @@
             text-align: center;
             text-transform: uppercase;
             color: #002b49;
-            font-family: 'Open Sans';
-            font-weight: 300;
             @include breakpoint (desktop) {
                 width: 100%;
                 padding-left: 0%;
@@ -134,7 +132,6 @@
         width: 100%;
         height: 100%;
         padding: 0;
-        margin-bottom: 30px;
         border: none;
         overflow: hidden;
         position: relative;
@@ -175,71 +172,72 @@
             .box-botton {
                 position: relative;
                 display: flex;
-                top: 82%;
+                justify-content: center;
+                top: 77%;
                 @include breakpoint (desktop) {
                     top: 81%;
                 }
-            }
-            .botton_products {
-                position: relative;
-                border: none;
-                left: 39%;
-                padding-top: 2.5%;
-                padding-bottom: 2.5%;
-                text-transform: uppercase;
-                text-align: center;
-                color: #8ECE17;
-                text-decoration: none;
-                visibility: hidden;
-                font-family: 'Open Sans';
-                font-weight: 400;
-                @include breakpoint (tablet) {
-                    left: 0%;
-                    width: 100%;
-                    padding-left: 19%;
-                    margin-left: auto;
-                    margin-right: auto;
-                    justify-content: center;
-                }
-                &::after {
-                    content: '';
-                    position: relative;
-                    right: 9%;
-                    width: 100%;
-                    top: 0px;
-                    padding-left: 35%;
-                    padding-right: 35%;
-                    padding-top: 77%;
-                    background-image: url('../../../../assets/icon/mas.svg');
-                    background-position: center;
-                    background-repeat: no-repeat;
-                    background-size: 35px;
-                    visibility: visible;
-                    @include breakpoint (tablet) {
-                        padding-left: 20%;
-                        padding-right: 20%;
-                        padding-top: 8%;
-                        right: 31%;
-                    }
-                }
-                @include breakpoint(desktop) {
-                    left: 28%;
-                    margin-right: initial;
-                    margin-left: initial;
-                    padding-left: 8.5%;
-                    padding-right: 8.5%;
-                    padding-top: 3.5%;
-                    padding-bottom: 3.5%;
-                    border: solid 1px#8ECE17;
-                    border-radius: 3%;
+                .botton_products {
+                    display: flex;
+                    border: none;
+                    padding-top: 2.5%;
+                    padding-bottom: 2.5%;
+                    text-transform: uppercase;
+                    text-align: center;
                     color: #8ECE17;
-                    font-size: 20px;
-                    visibility: visible;
+                    text-decoration: none;
+                    visibility: hidden;
+                    font-family: 'Open Sans';
+                    justify-content: center;
+                    @include breakpoint (tablet) {
+                        left: 0%;
+                        width: 100%;
+                        padding-left: 19%;
+                        margin-left: auto;
+                        margin-right: auto;
+                        justify-content: center;
+                    }
                     &::after {
                         content: '';
-                        visibility: hidden;
-                        padding-right: initial;
-                        padding-left: initial;
+                        position: relative;
+                        right: 9%;
+                        width: 100%;
+                        top: 0px;
+                        margin-right: auto;
+                        margin-left: auto;
+                        padding-left: 27%;
+                        padding-right: 27%;
+                        padding-top: 29%;
+                        background-image: url('../../../../assets/icon/mas.svg');
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        background-size: 35px;
+                        visibility: visible;
+                        @include breakpoint (tablet) {
+                            padding-left: 20%;
+                            padding-right: 20%;
+                            padding-top: 8%;
+                            right: 31%;
+                        }
+                    }
+                    @include breakpoint(desktop) {
+                        display: block;
+                        width: 55%;
+                        padding-left: 0%;
+                        padding-right: 0%;
+                        padding-top: 3.5%;
+                        padding-bottom: 3.5%;
+                        border: solid 1px#8ECE17;
+                        border-radius: 3%;
+                        color: #8ECE17;
+                        font-size: 20px;
+                        visibility: visible;
+                        &::after {
+                            content: '';
+                            visibility: hidden;
+                            padding-right: initial;
+                            padding-left: initial;
+                        }
                     }
                 }
             }
@@ -267,7 +265,7 @@
                 font-weight: 300;
                 height: auto;
                 font-size: 31px;
-                font-family: 'Open Sans Condensed';
+                font-family: 'Open Sans Codensed';
                 @include breakpoint(desktop) {
                     font-size: 36px;
                 }
@@ -304,9 +302,8 @@
                     text-align: center;
                     height: auto;
                     color: #ffffff;
-                    font-weight: 300;
                     font-size: 15px;
-                    font-family: 'Open Sans';
+                    font-family: 'Open Sans light';
                     @include breakpoint(desktop) {
                         font-size: 18px;
                         top: 26%;
@@ -366,55 +363,35 @@
                 padding-top: 4%;
                 padding-bottom: initial;
             }
-            .bottonleft {
+            .bottonleft,
+            .bottonrigth {
+                display: flex;
                 width: 27%;
                 text-align: center;
                 border: solid 1px rgba(142, 206, 23, 0.7);
-                padding: 0%;
-                padding-top: 2%;
-                height: 57px;
+                padding: 2% 1.5%;
                 position: relative;
                 text-decoration: none;
                 color: #ffffff;
                 background: rgba(142, 206, 23, 0.7);
                 font-size: 14px;
                 font-family: 'Open Sans';
-                font-weight: 400;
                 text-transform: uppercase;
+                justify-content: center;
+                align-items: center;
                 @include breakpoint (tablet) {
                     width: 14%;
+                    padding-top: 1%;
+                    padding-bottom: 1%;
                 }
                 @include breakpoint(desktop) {
                     font-size: 18px;
-                    width: 12%;
-                    padding-bottom: 0%;
-                    padding-top: 0.9%;
+                    width: 16%;
+                    padding: 1%;
                 }
             }
             .bottonrigth {
-                width: 27%;
-                text-align: center;
-                border: solid 1px rgba(142, 206, 23, 0.7);
                 left: 8%;
-                height: 57px;
-                padding: 0%;
-                padding-top: 2%;
-                position: relative;
-                text-decoration: none;
-                color: #ffffff;
-                background: rgba(142, 206, 23, 0.7);
-                font-size: 14px;
-                font-family: open_sansregular;
-                text-transform: uppercase;
-                @include breakpoint (tablet) {
-                    width: 14%;
-                }
-                @include breakpoint(desktop) {
-                    font-size: 18px;
-                    padding-bottom: 0.9%;
-                    padding-top: 0.9%;
-                    width: 12%;
-                }
             }
             .bottonleft:hover {
                 border: solid 1px#8ECE17;
