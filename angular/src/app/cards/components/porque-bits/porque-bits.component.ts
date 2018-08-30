@@ -12,7 +12,7 @@ declare var $: any;
 export class PorqueBitsComponent implements OnInit {
 
   moralValues: any[];
-  mainTitle;
+  mainTitleLink;
 
   constructor(private router: ActivatedRoute,
       private porquebits: PorqueBitsService) {
@@ -20,7 +20,6 @@ export class PorqueBitsComponent implements OnInit {
       }
 
   ngOnInit() {
-    //console.log('porquebits component');
     this.getMoralValuesItems();
   }
 
@@ -29,8 +28,7 @@ export class PorqueBitsComponent implements OnInit {
       this.moralValues = Object.keys(items.data).map(function (key) {
           return items.data[key];
       });
-      this.mainTitle = items.data;
-      //console.log(this.moralValues);
+      this.mainTitleLink = items.data;
     });
 
   }

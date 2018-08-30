@@ -21,7 +21,7 @@
                 margin-top: 17px;
                 text-align: center;
                 @include breakpoint(desktop) {
-                    margin-right: 8%;
+                    margin-right: 5%;
                 }
                 @include breakpoint(tablet) {
                     margin-right: 1%;
@@ -39,6 +39,13 @@
                         font-size: 21px;
                         width: 126px;
                     }
+                }
+                a {
+                    text-decoration: none;
+                    color: #002b49;
+                }
+                a:hover {
+                    color: #a6cf24;
                 }
             }
             li:nth-child(6) {

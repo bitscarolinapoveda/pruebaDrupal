@@ -1,13 +1,15 @@
 <section id="main-title">
-    <h2>{{ mainTitle?.title }}</h2>
+    <h2>{{ mainTitleLink?.title }}</h2>
 </section>
 
 <section class="WhyBits">
     <div class="images-whybits">
         <ul class="row first images">
             <li *ngFor="let mv of moralValues">
-                <img src="{{ mv?.url }}">
-                <p>{{ mv?.title }}</p>
+                <a href="{{ mainTitleLink?.link }}">
+                    <img src="{{ mv?.url }}">
+                    <p>{{ mv?.title }}</p>
+                </a>
             </li>
         </ul>
     </div>
