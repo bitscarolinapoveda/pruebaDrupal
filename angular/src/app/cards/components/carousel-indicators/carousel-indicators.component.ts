@@ -7,7 +7,7 @@ declare  var $: any;
   styleUrls: ['./carousel-indicators.component.scss']
 })
 export class CarouselIndicatorsComponent implements OnInit {
-
+  medius = '550px';
   carouselArray: any = [] ;
   constructor(  private _carousel: CarouselService ) {
 

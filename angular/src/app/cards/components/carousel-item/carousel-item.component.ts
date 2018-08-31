@@ -8,6 +8,7 @@ import { CarouselService } from '../../../services/cards/carousel.service';
 })
 export class CarouselItemComponent implements OnInit {
   carouselsArray: any = [];
+     medius = '550px';
   constructor(private _carousels: CarouselService ) { }
 
   ngOnInit() {
@@ -19,7 +20,7 @@ export class CarouselItemComponent implements OnInit {
       this.carouselsArray = Object.keys(items).map(function (key) {
         return items[key];
       });
-      //console.log(this.carouselsArray);
+
     });
   }
 
