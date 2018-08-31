@@ -1,22 +1,24 @@
 @import './src/assets/scss/mixin.scss';
 #transition-image2 {
     margin-top: 53px;
-    height: 338px;
+    height: 358px;
+    display: block;
     @include breakpoint(desktop) {
-        height: 317px;
+        height: 300px;
     }
     @include breakpoint(tablet) {
-        height: 317px;
+        height: 300px;
     }
     picture {
+        display: flex;
         .backgraund-image {
-            height: 338px;
+            height: 358px;
             position: absolute;
             @include breakpoint(desktop) {
-                height: 317px;
+                height: 300px;
             }
             @include breakpoint(tablet) {
-                height: 317px;
+                height: 300px;
             }
         }
     }
@@ -25,70 +27,54 @@
         color: #FFFFFF;
         position: absolute;
         z-index: 1;
-        margin-top: 57px;
-        margin-left: 18%;
+        margin-top: 62px;
+        width: 100%;
+        text-align: center;
         @include breakpoint(desktop) {
-            margin-left: 36%;
-            margin-top: 77px;
+            margin-left: 0%;
+            width: 100%;
+            margin-top: 67px;
             font-size: 40px;
+            text-align: center;
         }
         @include breakpoint(tablet) {
-            margin-left: 27%;
-            margin-top: 77px;
+            width: 100%;
+            margin-left: 0%;
+            text-align: center;
+            margin-top: 67px;
             font-size: 40px;
         }
     }
     .list-image-item {
         height: 357px;
         .row {
+            width: 100%;
+            padding: 0%;
             position: absolute;
-            margin-top: 126px;
-            margin-right: 0;
+            margin-top: 116px;
+            margin-right: auto;
+            margin-left: auto;
+            justify-content: center;
             @include breakpoint(desktop) {
-                margin-top: 182px;
-                margin-left: 13%;
+                margin-top: 186px;
             }
             @include breakpoint(tablet) {
-                margin-top: 182px;
-                // margin-left: 8%;
+                margin-top: 140px;
             }
             li {
                 z-index: 1;
+                height: 126px;
                 list-style: none;
-                margin-right: -10px;
-                margin-bottom: 76px;
-                height: 44px;
+                display: flex;
+                align-items: center;
+                justify-items: center;
                 @include breakpoint(desktop) {
-                    margin-right: 130px;
-                    height: 0px;
+                    height: auto;
+                    padding: 0 5.2%
                 }
                 @include breakpoint(tablet) {
-                    margin-right: 68px;
-                    height: 0px;
-                    margin-right: 11px
-                }
-            }
-            li:last-child {
-                margin-top: -22px;
-            }
-            li:nth-child(3) {
-                @include breakpoint(desktop) {
-                    margin-top: 10px;
-                }
-                @include breakpoint(tablet) {
-                    margin-top: 10px;
-                }
-            }
-            li:nth-child(2) {
-                margin-left: 10%;
-                margin-top: -11px;
-                @include breakpoint(desktop) {
-                    margin-left: 0;
-                    margin-top: -10px;
-                }
-                @include breakpoint(tablet) {
-                    margin-left: 0;
-                    margin-top: -10px;
+                    height: auto;
+                    padding: 0 2.2%;
                 }
             }
         }
@@ -97,42 +83,14 @@
         content: "";
         background-color: #000000;
         opacity: 0.3;
-        height: 338px;
+        height: 358px;
         width: 100%;
         position: absolute;
         @include breakpoint(desktop) {
-            height: 317px;
+            height: 300px;
         }
         @include breakpoint(tablet) {
-            height: 317px;
-        }
-    }
-}
-
-#main-title {
-    color: #002b49;
-    text-align: center;
-    margin-top: 64px;
-    @include breakpoint(desktop) {
-        margin-top: 80px;
-    }
-    @include breakpoint(tablet) {
-        margin-top: 80px;
-    }
-    h2 {
-        margin-left: 3%;
-        font-size: 30px;
-        transform: scaleY(1.2);
-        letter-spacing: -2px;
-        @include breakpoint(desktop) {
-            margin-left: 0;
-            font-size: 40px;
-            width: 100%;
-        }
-        @include breakpoint(tablet) {
-            margin-left: 0;
-            font-size: 40px;
-            width: 100%;
+            height: 300px;
         }
     }
 }
