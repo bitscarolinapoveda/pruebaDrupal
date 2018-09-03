@@ -7,23 +7,27 @@ body {
         #forms {
             .principal-data {
                 list-style: none;
-                .description {
-                    display: grid;
-                    margin-left: auto;
-                    margin-right: 17px;
-                    width: 92%;
-                    margin-top: 19px;
-                    color: #bcdb5b;
-                    @include breakpoint(desktop) {
-                        margin-left: 151px;
-                        width: 100%;
-                    }
-                    #style1 {
-                        padding: 10px 20px;
-                        border: 1px solid #b2c6cd;
-                        color: #002b49;
+                .item-comid {
+                    max-width: 100%;
+                    .description {
+                        display: grid;
+                        margin-left: auto;
+                        margin-right: auto;
+                        width: 92%;
+                        margin-top: 19px;
+                        color: #bcdb5b;
+                        @include breakpoint (tablet) {
+                            margin-left: 44px;
+                        }
                         @include breakpoint(desktop) {
-                            width: 1008px;
+                            width: 77%;
+                        }
+                        #style1 {
+                            padding: 10px 20px;
+                            border: 1px solid #b2c6cd;
+                            color: #002b49;
+                            // @include breakpoint(desktop) {
+                            // }
                         }
                     }
                 }
@@ -58,11 +62,62 @@ body {
                         color: #002b49;
                     }
                 }
+                .name {
+                    color: #c0dc74;
+                    margin-top: 20px;
+                    margin-bottom: -1px;
+                    @include breakpoint(desktop) {
+                        margin-left: 15px;
+                    }
+                }
+                .document {
+                    display: block;
+                    @include breakpoint(desktop) {
+                        margin-right: 25px;
+                        margin-left: 15px;
+                    }
+                    #adjunto {
+                        position: absolute;
+                        z-index: -1;
+                        opacity: 0;
+                    }
+                }
+                .adjun-image {
+                    background-image: url("../images/adjunto.png");
+                    width: 45px;
+                    height: 45px;
+                    display: block;
+                    background-size: contain;
+                    margin-left: 87%;
+                    margin-top: -20px;
+                    cursor: pointer;
+                    @include breakpoint (tablet) {
+                        margin-left: 86%;
+                    }
+                    @include breakpoint (desktop) {
+                        margin-left: 90%;
+                    }
+                }
+                .contenido-adjunto {
+                    margin-top: -26px;
+                    display: block;
+                    width: 100%;
+                    padding: 4px 2px;
+                    outline: none;
+                    border: none;
+                    border-bottom: 1px solid #b2c6cd;
+                    color: #002b49;
+                    cursor: pointer;
+                }
             }
             p {
                 margin-top: 57px;
                 color: #002b49;
                 text-align: center;
+                margin-left: 11px;
+                @include breakpoint (desktop) {
+                    margin-left: auto;
+                }
                 a {
                     color: #bcdb5b;
                     text-decoration: underline;
@@ -71,14 +126,25 @@ body {
             }
             .container {
                 display: block;
-                position: relative;
-                padding-left: 35px;
-                margin-bottom: 12px;
+                // position: relative;
+                // padding-left: 15px;
+                // margin-bottom: 12px;
                 cursor: pointer;
-                -webkit-user-select: none;
-                -moz-user-select: none;
-                -ms-user-select: none;
-                user-select: none;
+                max-width: 42%;
+                padding-left: 0px;
+                margin-left: 0px;
+                margin-left: 11px;
+                // -webkit-user-select: none;
+                // -moz-user-select: none;
+                // -ms-user-select: none;
+                // user-select: none;
+                // max-width: 411px;
+                @include breakpoint (tablet) {
+                    margin-left: 177px;
+                }
+                @include breakpoint (desktop) {
+                    margin-left: 471px;
+                }
             }
             .container input {
                 position: absolute;
@@ -92,9 +158,6 @@ body {
                 width: 24px;
                 background-color: #fff;
                 background-image: url("../images/check.png");
-                @include breakpoint(desktop) {
-                    left: 386px;
-                }
             }
             .container input:checked~.checkmark {
                 background-image: url("../images/check2.png");
@@ -109,6 +172,80 @@ body {
                 -webkit-transform: rotate(45deg);
                 -ms-transform: rotate(45deg);
                 transform: rotate(45deg);
+            }
+            /* Popup container - can be anything you want */
+            .popup {
+                position: relative;
+                cursor: pointer;
+                background-image: url("../images/question.png");
+                background-size: contain;
+                display: block;
+                width: 10px;
+                height: 10px;
+                margin-left: 93%;
+                margin-top: -31px;
+                @include breakpoint (tablet) {
+                    margin-left: 73%;
+                }
+                @include breakpoint (desktop) {
+                    margin-left: 821px;
+                }
+            }
+            /* The actual popup */
+            .popup .popuptext {
+                visibility: hidden;
+                width: 160px;
+                background-color: #555;
+                color: #fff;
+                text-align: center;
+                border-radius: 6px;
+                padding: 8px 0;
+                position: absolute;
+                z-index: 1;
+                bottom: 125%;
+                left: 83%;
+                margin-left: -155px;
+                @include breakpoint (desktop) {
+                    width: 12314%;
+                    margin-left: -766px;
+                }
+            }
+            /* Popup arrow */
+            .popup .popuptext::after {
+                content: "";
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                margin-left: -5px;
+                border-width: 5px;
+                border-style: solid;
+                border-color: #555 transparent transparent transparent;
+                @include breakpoint (desktop) {
+                    left: 62%;
+                }
+            }
+            /* Toggle this class - hide and show the popup */
+            .popup .show {
+                visibility: visible;
+                -webkit-animation: fadeIn 1s;
+                animation: fadeIn 1s;
+            }
+            /* Add animation (fade in the popup) */
+            @-webkit-keyframes fadeIn {
+                from {
+                    opacity: 0;
+                }
+                to {
+                    opacity: 1;
+                }
+            }
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                }
+                to {
+                    opacity: 1;
+                }
             }
             .button {
                 padding: 13px 37px;

@@ -218,11 +218,11 @@
                             </li>
                         </div>
                     </div>
-                    <div class="col-12 col-sm-6">
-                        <li class="description">
+                    <div class="col-12 col-sm-6 item-comid">
+                        <div class="description">
                             <label>Comentario</label>
                             <textarea id="style1" type="text" placeholder="Cuéntenos acerca de usted"></textarea>
-                        </li>
+                        </div>
                     </div>
                 </div>
                 <div class="tab-pane fade" id="profile" role="tabpanel">
@@ -248,10 +248,12 @@
                             </li>
                         </div>
                         <div class="col-12 col-sm-6">
-                            <li class="contenido">
-                                <label for="adjunto">Hoja de vida</label>
-                                <input id="adjunto" type="file" placeholder="Adjunte su hoja de vida">
-                            </li>
+                            <label class="name">Hoja de vida</label>
+                            <label class="document">
+                                <input type="file" id="adjunto" placeholder="Adjunte su hoja de vida">
+                                <span class="adjun-image"></span>
+                                <span class="contenido-adjunto" id="doc">Adjunte su hoja de vida</span>
+                            </label>
                         </div>
                     </div>
                     <div class="row third position">
@@ -294,19 +296,31 @@
                             </li>
                         </div>
                     </div>
-                    <div class="col-12 col-sm-6">
-                        <li class="description">
+                    <div class="col-12 col-sm-6 item-comid">
+                        <div class="description">
                             <label>Comentario</label>
                             <textarea id="style1" type="text" placeholder="Cuéntenos acerca de usted"></textarea>
-                        </li>
+                        </div>
                     </div>
                 </div>
             </div>
-            <label class="container">
+            <div class="col-12 col-sm-12">
+                <label class="container">
+                    <input type="checkbox" checked="checked">
+                    <span class="checkmark"></span>
+                </label>
                 <p id="text">He leido y acepto los<a id="half">términos y condiciones</a></p>
-                <input type="checkbox" checked="checked">
-                <span class="checkmark"></span>
-            </label>
+                <div class="popup" onclick="myFunction()">
+                    <span class="popuptext" id="myPopup">“Autorizo de manera voluntaria, 
+                        previa, expresa e informada a BITS AMERICAS S.A.S identificada con NIT. 900.207.800-0 y dirección electrónica www.bitsamericas.com en calidad de RESPONSABLE, 
+                        para tratar mis datos personales de acuerdo con su Política de Datos Personales y Aviso de Privacidad comunicados a través de su página web. BITS AMERICAS S.A.S queda autorizado para 
+                        recolectar, compilar, almacenar, usar, circular, compartir, comunicar, procesar, actualizar, cruzar, transferir, transmitir, depurar, suprimir y disponer mis datos personales aquí suministrados, 
+                        de acuerdo con las finalidades relacionadas con el objeto social de la compañía y en especial para responder a mis inquietudes allegadas a través de este canal, 
+                        y utilizar mis datos personales con la finalidad de mantener contacto y remitir información de interés. 
+                        Finalmente declaro que la información y datos personales que he dispuesto para el tratamiento por parte de BITS AMERICAS S.A.S la he suministrado de forma voluntaria y es verídica.” 
+                    </span>
+                </div>
+            </div>
 
 
             <submit type=button class="btn-primary button" onClick="alerta2()">ENVIAR</submit>

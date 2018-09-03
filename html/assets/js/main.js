@@ -291,3 +291,18 @@ function valida(e) {
     tecla_final = String.fromCharCode(tecla);
     return patron.test(tecla_final);
 }
+
+jQuery(function($) {
+    document.querySelector(".document #adjunto").onchange = function() {
+        let ar = this.value.split('\\');
+        if (ar.length > 0) {
+            document.querySelector(".document #doc").innerHTML = ar[ar.length - 1];
+        }
+    };
+});
+
+// When the user clicks on div, open the popup
+function myFunction() {
+    var popup = document.getElementById("myPopup");
+    popup.classList.toggle("show");
+}
