@@ -26,8 +26,6 @@ body {
                             padding: 10px 20px;
                             border: 1px solid #b2c6cd;
                             color: #002b49;
-                            // @include breakpoint(desktop) {
-                            // }
                         }
                     }
                 }
@@ -126,19 +124,11 @@ body {
             }
             .container {
                 display: block;
-                // position: relative;
-                // padding-left: 15px;
-                // margin-bottom: 12px;
                 cursor: pointer;
                 max-width: 42%;
                 padding-left: 0px;
                 margin-left: 0px;
                 margin-left: 11px;
-                // -webkit-user-select: none;
-                // -moz-user-select: none;
-                // -ms-user-select: none;
-                // user-select: none;
-                // max-width: 411px;
                 @include breakpoint (tablet) {
                     margin-left: 177px;
                 }
@@ -194,20 +184,20 @@ body {
             /* The actual popup */
             .popup .popuptext {
                 visibility: hidden;
-                width: 160px;
-                background-color: #555;
-                color: #fff;
+                width: 365px;
+                background-color: #e5e9ec;
+                color: #002b49;
                 text-align: center;
                 border-radius: 6px;
                 padding: 8px 0;
                 position: absolute;
                 z-index: 1;
-                bottom: 125%;
-                left: 83%;
-                margin-left: -155px;
+                bottom: 227%;
+                margin-left: -351px;
                 @include breakpoint (desktop) {
-                    width: 12314%;
+                    width: 1231px;
                     margin-left: -766px;
+                    margin-bottom: 5px;
                 }
             }
             /* Popup arrow */
@@ -215,13 +205,14 @@ body {
                 content: "";
                 position: absolute;
                 top: 100%;
-                left: 50%;
+                left: 97.4%;
+                ;
                 margin-left: -5px;
                 border-width: 5px;
                 border-style: solid;
-                border-color: #555 transparent transparent transparent;
+                border-color: #e5e9ec transparent transparent transparent;
                 @include breakpoint (desktop) {
-                    left: 62%;
+                    left: 62.6%;
                 }
             }
             /* Toggle this class - hide and show the popup */
@@ -249,7 +240,7 @@ body {
             }
             .button {
                 padding: 13px 37px;
-                background-color: #bcdb5b !important;
+                background-color: #a6cf24 !important;
                 border: none;
                 color: white !important;
                 margin: 33px 108px;
@@ -257,7 +248,11 @@ body {
                 display: block;
                 margin: auto;
                 margin-top: 48px;
-                width: 10%;
+                width: 137px;
+                text-align: center;
+                -webkit-appearance: none;
+                text-align: center;
+                opacity: 0.8;
             }
             .dato-button {
                 text-align: center;
