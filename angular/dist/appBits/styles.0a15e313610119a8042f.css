@@ -1,4 +1,4 @@
-body h1,body h2{font-family:'Open Sans';font-weight:300}/*!
+@font-face{font-family:'Open Sans light';font-style:light;font-weight:300;src:url(OpenSans-Light.9ff12f694e5951a6f51a.ttf)}@font-face{font-family:'Open Sans bold';font-style:bold;font-weight:700;src:url(OpenSans-Bold.f5331cb6372b6c0d8baf.ttf)}@font-face{font-family:'Open Sans';font-style:regular;font-weight:400;src:url(OpenSans-Regular.d7d5d4588a9f50c99264.ttf)}@font-face{font-family:'Open Sans Codensed';font-style:regular;font-weight:400;src:url(OpenSansCondensed-Light.998fd50b24f86d4f7307.ttf)}body h1,body h2{font-family:'Open Sans light'}/*!
  * Bootstrap v4.1.2 (https://getbootstrap.com/)
  * Copyright 2011-2018 The Bootstrap Authors
  * Copyright 2011-2018 Twitter, Inc.
