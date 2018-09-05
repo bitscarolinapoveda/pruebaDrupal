@@ -194,6 +194,10 @@ body {
                 z-index: 1;
                 bottom: 227%;
                 margin-left: -351px;
+                @include breakpoint (tablet) {
+                    width: 781px;
+                    margin-left: -535px;
+                }
                 @include breakpoint (desktop) {
                     width: 1231px;
                     margin-left: -766px;
@@ -206,11 +210,13 @@ body {
                 position: absolute;
                 top: 100%;
                 left: 97.4%;
-                ;
                 margin-left: -5px;
                 border-width: 5px;
                 border-style: solid;
                 border-color: #e5e9ec transparent transparent transparent;
+                @include breakpoint (tablet) {
+                    left: 69.4%;
+                }
                 @include breakpoint (desktop) {
                     left: 62.6%;
                 }
