@@ -725,12 +725,6 @@
                     opacity: 1;
                     transform: rotate(-45deg) translate(1px, 2px);
                 }
-
-                header nav .menuToggle .Botton:checked~.list-menu {
-                    display: block;
-                    transform: none;
-                }
-
                 header nav .menuToggle .lines {
                     display: block;
                     width: 26px;
@@ -767,132 +761,6 @@
                 header nav .menuToggle ul {
                     margin-bottom: 0;
                 }
-
-                header nav .menuToggle .list-menu {
-                    padding-left: 0%;
-                    width: 100%;
-                    position: relative;
-                    display: none;
-                    -webkit-font-smoothing: antialiased;
-                    transform: translate(0, -100%);
-                    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
-                }
-
-                @media (min-width: 1025px) {
-                    header nav .menuToggle .list-menu {
-                        display: block;
-                        transform: initial;
-                        transition-delay: initial;
-                    }
-                }
-
-                header nav .menuToggle .list-menu .items {
-                    list-style: none;
-                    padding-bottom: 7%;
-                    padding-top: 7%;
-                    padding-left: 12%;
-                    border-bottom: 1px solid #f5fafc;
-                }
-
-                @media (min-width: 1025px) {
-                    header nav .menuToggle .list-menu .items {
-                        width: 8%;
-                        padding-top: 2%;
-                        padding-bottom: 2%;
-                        padding-left: 0%;
-                        padding-right: 0%;
-                        border-bottom: initial;
-                        display: inline-block;
-                    }
-                }
-
-                header nav .menuToggle .list-menu .items:nth-child(1) {
-                    border-top: 1px solid #cfe3ee;
-                }
-
-                @media (min-width: 668px) and (max-width: 1024px) {
-                    header nav .menuToggle .list-menu .items:nth-child(1) {
-                        border-top: initial;
-                    }
-                }
-
-                @media (min-width: 1025px) {
-                    header nav .menuToggle .list-menu .items:nth-child(1) {
-                        border-top: initial;
-                    }
-                }
-
-                @media (min-width: 1025px) {
-                    header nav .menuToggle .list-menu .items:nth-child(7) {
-                        padding-right: 3%;
-                    }
-                }
-
-                header nav .menuToggle .list-menu .items .link {
-                    color: #ffffff;
-                    width: 100%;
-                    font-size: 15px;
-                    text-decoration: none;
-                    text-align: left;
-                    padding-right: 73%;
-                    font-family: open_sanslight;
-                }
-
-                header nav .menuToggle .list-menu .items .link:hover {
-                    color: #a6cf24;
-                    text-decoration: none;
-                }
-
-                @media (min-width: 1025px) {
-                    header nav .menuToggle .list-menu .items .link {
-                        padding-left: 12%;
-                        padding-right: 12%;
-                        padding-top: 29px;
-                    }
-                }
-
-                header nav .menuToggle .list-menu .items .link .arrow {
-                    padding-left: 59%;
-                }
-
-                @media (min-width: 668px) and (max-width: 1024px) {
-                    header nav .menuToggle .list-menu .items .link .arrow {
-                        padding-left: 6%;
-                    }
-                }
-
-                @media (min-width: 1025px) {
-                    header nav .menuToggle .list-menu .items .link .arrow {
-                        padding-left: 0%;
-                        padding-right: 0%;
-                        padding-top: 0%;
-                    }
-                }
-
-                header nav .menuToggle .list-menu .items .link .arrow-service {
-                    padding-left: 61.2%;
-                }
-
-                @media (min-width: 668px) and (max-width: 1024px) {
-                    header nav .menuToggle .list-menu .items .link .arrow-service {
-                        padding-left: 7.2%;
-                    }
-                }
-
-                @media (min-width: 1025px) {
-                    header nav .menuToggle .list-menu .items .link .arrow-service {
-                        padding-left: 0%;
-                    }
-                }
-
-                header nav .menuToggle .list-menu .items .scroll-white {
-                    color: #002b49;
-                }
-
-                header nav .menuToggle .list-menu .language {
-                    list-style: none;
-                }
-
                 header .logo {
                     width: 15%;
                     position: fixed;
@@ -1158,24 +1026,12 @@
                 }
 
                 @media (min-width: 1025px) {
-                    <<<<<<< HEAD body .page-header .title h1 {
-                        font-size: 50px;
-                    }
-                }
-
-                @media (min-width: 668px) and (max-width: 1024px) {
-                    =======>>>>>>>1e8ef93d969c211cc63f258c0baabc0beb8410cc body .page-header .title h1 {
-                        font-size: 50px;
-                    }
-                }
-
-                <<<<<<< HEAD=======@media (min-width: 668px) and (max-width: 1024px) {
                     body .page-header .title h1 {
                         font-size: 50px;
                     }
                 }
 
-                >>>>>>>1e8ef93d969c211cc63f258c0baabc0beb8410cc body .page-header picture img {
+                body .page-header picture img {
                     width: 100%;
                     height: 352px;
                 }
@@ -1294,24 +1150,12 @@
                 }
 
                 @media (min-width: 1025px) {
-                    <<<<<<< HEAD=======main .WhyBits .images-whybits .images li:last-child {
-                        margin-left: 0;
-                    }
-                }
-
-                @media (min-width: 668px) and (max-width: 1024px) {
-                    >>>>>>>1e8ef93d969c211cc63f258c0baabc0beb8410cc main .WhyBits .images-whybits .images li:last-child {
-                        margin-left: 0;
-                    }
-                }
-
-                <<<<<<< HEAD @media (min-width: 668px) and (max-width: 1024px) {
                     main .WhyBits .images-whybits .images li:last-child {
                         margin-left: 0;
                     }
                 }
 
-                =======>>>>>>>1e8ef93d969c211cc63f258c0baabc0beb8410cc #Services {
+                #Services {
                     height: 1122px;
                     margin-top: 2%;
                     overflow: hidden;
@@ -2473,63 +2317,6 @@
                     }
                 }
 
-                header nav .menuToggle .list-menu .items .link {
-                    color: #ffffff;
-                    width: 100%;
-                    font-size: 15px;
-                    text-decoration: none;
-                    text-align: left;
-                    padding-right: 73%;
-                    font-family: open_sanslight;
-                }
-
-                header nav .menuToggle .list-menu .items .link:hover {
-                    color: #a6cf24;
-                    text-decoration: none;
-                }
-
-                @media (min-width: 1025px) {
-                    header nav .menuToggle .list-menu .items .link {
-                        padding-left: 12%;
-                        padding-right: 12%;
-                        padding-top: 29px;
-                    }
-                }
-
-                header nav .menuToggle .list-menu .items .link .arrow {
-                    padding-left: 59%;
-                }
-
-                @media (min-width: 668px) and (max-width: 1024px) {
-                    header nav .menuToggle .list-menu .items .link .arrow {
-                        padding-left: 6%;
-                    }
-                }
-
-                @media (min-width: 1025px) {
-                    header nav .menuToggle .list-menu .items .link .arrow {
-                        padding-left: 0%;
-                        padding-right: 0%;
-                        padding-top: 0%;
-                    }
-                }
-
-                header nav .menuToggle .list-menu .items .link .arrow-service {
-                    padding-left: 61.2%;
-                }
-
-                @media (min-width: 668px) and (max-width: 1024px) {
-                    header nav .menuToggle .list-menu .items .link .arrow-service {
-                        padding-left: 7.2%;
-                    }
-                }
-
-                @media (min-width: 1025px) {
-                    header nav .menuToggle .list-menu .items .link .arrow-service {
-                        padding-left: 0%;
-                    }
-                }
-
                 header nav .menuToggle .list-menu .items .scroll-white {
                     color: #002b49;
                 }
@@ -2803,24 +2590,18 @@
                 }
 
                 @media (min-width: 1025px) {
-                    <<<<<<< HEAD body .page-header .title h1 {
-                        font-size: 50px;
-                    }
-                }
-
-                @media (min-width: 668px) and (max-width: 1024px) {
-                    =======>>>>>>>1e8ef93d969c211cc63f258c0baabc0beb8410cc body .page-header .title h1 {
-                        font-size: 50px;
-                    }
-                }
-
-                <<<<<<< HEAD=======@media (min-width: 668px) and (max-width: 1024px) {
                     body .page-header .title h1 {
                         font-size: 50px;
                     }
                 }
 
-                >>>>>>>1e8ef93d969c211cc63f258c0baabc0beb8410cc body .page-header picture img {
+                @media (min-width: 668px) and (max-width: 1024px) {
+                    body .page-header .title h1 {
+                        font-size: 50px;
+                    }
+                }
+
+                body .page-header picture img {
                     width: 100%;
                     height: 352px;
                 }
@@ -2939,24 +2720,12 @@
                 }
 
                 @media (min-width: 1025px) {
-                    <<<<<<< HEAD=======main .WhyBits .images-whybits .images li:last-child {
+                     main .WhyBits .images-whybits .images li:last-child {
                         margin-left: 0;
                     }
                 }
 
-                @media (min-width: 668px) and (max-width: 1024px) {
-                    >>>>>>>1e8ef93d969c211cc63f258c0baabc0beb8410cc main .WhyBits .images-whybits .images li:last-child {
-                        margin-left: 0;
-                    }
-                }
-
-                <<<<<<< HEAD @media (min-width: 668px) and (max-width: 1024px) {
-                    main .WhyBits .images-whybits .images li:last-child {
-                        margin-left: 0;
-                    }
-                }
-
-                =======>>>>>>>1e8ef93d969c211cc63f258c0baabc0beb8410cc #Services {
+                #Services {
                     height: 1122px;
                     margin-top: 2%;
                     overflow: hidden;

@@ -51,9 +51,9 @@ class ExportConfigCardService {
                 $file_url = file_create_url($file_uri);
                 $valueRes = $valueField;
                 $valueRes['path'] = $file_url;
-                $response['fields'][] = $valueRes;
+                $response['fields'][][$field] = $valueRes;
               } else {
-                $response['fields'][] = $valueField;
+                $response['fields'][][$field] = $valueField;
               }
             }
           }
