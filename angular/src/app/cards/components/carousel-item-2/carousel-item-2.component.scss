@@ -1,6 +1,6 @@
 @import './src/assets/scss/mixin.scss';
 #Carousel-4items {
-    margin-top: 5%;
+    margin-top: 4%;
     @include breakpoint(desktop) {
         margin-top: 2%;
     }
@@ -35,7 +35,7 @@
         }
     }
     .carousel-inner {
-        height: 236px;
+        height: 180px;
         align-items: center;
         @include breakpoint (tablet) {
             height: initial;
@@ -69,13 +69,16 @@
                     }
                 }
                 .container-img {
-                    width: 38%;
+                    width: 33%;
+                    height: 66px;
                     position: relative;
                     display: -webkit-inline-box;
-                    margin-left: 13%;
-                    margin-right: -13%;
+                    margin-left: 11%;
+                    margin-right: auto;
+                    margin-top: 5%;
                     display: inline-table;
                     max-width: 100%;
+                    align-items: center;
                     @include breakpoint(desktop) {
                         height: 223px;
                         width: 100%;
@@ -91,6 +94,10 @@
                         width: 100%;
                         height: 100px;
                         margin-left: 0;
+                    }
+                    .img-fluid {
+                        height: 100%;
+                        width: 100%;
                     }
                 }
                 .info-carousel {
