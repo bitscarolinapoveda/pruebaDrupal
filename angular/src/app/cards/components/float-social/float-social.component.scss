@@ -1,18 +1,18 @@
 @import "./src/assets/scss/mixin.scss";
 .social-networks{
-
   width: 41px;
   height: auto;
   background-color: #517bbd;
   opacity: 0.7;
   position: fixed;
-  margin-top: 355px;
-  z-index: 1;
+  z-index: 9;
+  bottom: 200px;
+  display: none;
+  @include breakpoint(desktop){
+    display: block;
+  }
   .icon-social{
-    display: none;
-    @include breakpoint(tablet){
-      display: block;
-    }
+    display: block;
     .row{
       margin-left: 13px;
       width: 0;
@@ -39,11 +39,15 @@
   opacity: 0.7;
   position: fixed;
   border-radius: 50%;
-  bottom: 10%;
   display: block;
-  right: 19%;
-  z-index: 9999;
-
+  z-index: 9;
+  right: 40px;
+  bottom: 0;
+  @include breakpoint(desktop){
+    border-radius: 0;
+    bottom: 150px;
+    right: initial;
+  }
   .icon-mail {
     font-size: 22px;
     margin-top: 5px;
@@ -52,7 +56,10 @@
       margin-right: 0;
       margin-left: 0;
       .fa-li {
-        left: 10px;
+        left: 0;
+        @include breakpoint(desktop){
+          left: 0;
+        }
       }
     }
     a {

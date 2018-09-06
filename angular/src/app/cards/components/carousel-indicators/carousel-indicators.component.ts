@@ -26,7 +26,8 @@ export class CarouselIndicatorsComponent implements OnInit {
   down() {
     let x = document.querySelector('.anchor');
     if (x) {
-        x.scrollIntoView({behavior: 'smooth'});
+       //  x.scrollIntoView({ behavior: 'smooth'});
+      x.scrollIntoView({ behavior: 'smooth', block: 'start'});
     }
   }
 }

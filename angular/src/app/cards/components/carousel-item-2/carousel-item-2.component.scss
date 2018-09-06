@@ -21,16 +21,25 @@
         @include breakpoint (desktop) {
             transform: translateX(25%);
         }
+        @include breakpoint (tablet) {
+            transform: translateX(25%);
+        }
     }
     .carousel-inner .carousel-item-left.active,
     .carousel-inner .carousel-item-prev {
         @include breakpoint (desktop) {
             transform: translateX(-25%);
         }
+        @include breakpoint (tablet) {
+            transform: translateX(-25%);
+        }
     }
     .carousel-inner .carousel-item-right,
     .carousel-inner .carousel-item-left {
         @include breakpoint (desktop) {
+            transform: translateX(0);
+        }
+        @include breakpoint (tablet) {
             transform: translateX(0);
         }
     }
@@ -48,6 +57,7 @@
             left: initial;
         }
         .carousel-item {
+            margin-top: 6px;
             @include breakpoint (desktop) {
                 left: 0%;
             }
@@ -81,7 +91,6 @@
                         width: 100%;
                         margin-bottom: 14%;
                         padding-top: 39%;
-                        padding-bottom: 16%;
                         padding-left: 20px;
                         padding-right: 20px;
                         width: 69.5%;

@@ -1,7 +1,7 @@
  @import './src/assets/scss/mixin.scss';
  #transition-image {
      margin-top: 53px;
-     height: 358px;
+     height: 400px;
      display: block;
      @include breakpoint(desktop) {
          height: 366px;
@@ -12,7 +12,7 @@
      picture {
          display: flex;
          .backgraund-image {
-             height: 358px;
+             height: 400px;
              position: absolute;
              @include breakpoint(desktop) {
                  height: 366px;
@@ -47,12 +47,12 @@
          }
      }
      .list-image-item {
-         height: 357px;
+         height: 400px;
          .row {
              width: 100%;
              padding: 0%;
              position: absolute;
-             margin-top: 116px;
+             margin-top: 78px;
              margin-right: auto;
              margin-left: auto;
              justify-content: center;
@@ -64,19 +64,42 @@
              }
              li {
                  z-index: 1;
-                 height: 126px;
+                 height: 46px;
+                 width: 122px;
                  list-style: none;
-                 padding: 0% 5.2%;
+                 padding: 0% 4.2%;
                  display: flex;
-                 align-items: center;
-                 justify-items: center;
+                 margin-left: 4%;
+                 margin-top: 19%;
                  @include breakpoint(desktop) {
+                     align-items: center;
+                     width: initial;
+                     justify-items: center;
                      height: auto;
-                     padding: 0 5.2%
+                     padding: 0 5.2%;
+                     margin-left: initial;
+                     margin-top: initial;
                  }
                  @include breakpoint(tablet) {
+                     width: initial;
+                     align-items: center;
+                     justify-items: center;
                      height: auto;
-                     padding: 0 4.2%
+                     padding: 0 4.2%;
+                     margin-left: initial;
+                     margin-top: initial;
+                 }
+                 img {
+                     width: 100%;
+                     height: 100%;
+                     @include breakpoint (tablet) {
+                         width: initial;
+                         height: initial;
+                     }
+                     @include breakpoint (desktop) {
+                         width: initial;
+                         height: initial;
+                     }
                  }
              }
          }
@@ -85,7 +108,7 @@
          content: "";
          background-color: #002b49;
          opacity: 0.7;
-         height: 358px;
+         height: 400px;
          width: 100%;
          position: absolute;
          @include breakpoint(desktop) {
