@@ -7,6 +7,10 @@
   position: fixed;
   z-index: 9;
   bottom: 200px;
+  display: none;
+  @include breakpoint(desktop){
+    display: block;
+  }
   .icon-social{
     display: block;
     .row{
@@ -35,12 +39,14 @@
   opacity: 0.7;
   position: fixed;
   border-radius: 50%;
-  bottom: 150px;
   display: block;
-  margin-left: 0px;
   z-index: 9;
+  right: 40px;
+  bottom: 0;
   @include breakpoint(desktop){
     border-radius: 0;
+    bottom: 150px;
+    right: initial;
   }
   .icon-mail {
     font-size: 22px;
