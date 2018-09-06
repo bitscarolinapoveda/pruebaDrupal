@@ -4,34 +4,36 @@
         <img class="w-100" src="../../../../assets/images/footer.png" alt="Footer">
     </picture>
     <section class="container-elements" id="container-elements">
-        <section class="location">
-            <div class="row">
-                <div class="col-lg">
-                    <app-footer-block [idBlock]="'footerblock'"></app-footer-block>
+        <div class="row">
+            <section class="location">
+                <div class="row">
+                    <div class="col-lg">
+                        <app-footer-block [idBlock]="'footerblock'"></app-footer-block>
+                    </div>
+                    <div class="col-lg site random">
+                        <app-footer-block [idBlock]="'footerblock_2'"></app-footer-block>
+                    </div>
                 </div>
-                <div class="col-lg site random">
-                    <app-footer-block [idBlock]="'footerblock_2'"></app-footer-block>
+                <hr>
+            </section>
+            <section class="newsletter">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h6>NEWSLETTER</h6>
+                        <ul>
+                            <li>Reciba nuestras ultimas noticias</li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-            <hr>
-        </section>
-        <section class="newsletter">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h6>NEWSLETTER</h6>
-                    <ul>
-                        <li>Reciba nuestras ultimas noticias</li>
-                    </ul>
-                </div>
-            </div>
-            <hr>
-        </section>
-        <section class="contac">
-            <app-footer-contact></app-footer-contact>
-        </section>
-        <section class="logo">
-            <app-footer-brand></app-footer-brand>
-        </section>
+                <hr>
+            </section>
+            <section class="contac">
+                <app-footer-contact></app-footer-contact>
+            </section>
+            <section class="logo">
+                <app-footer-brand></app-footer-brand>
+            </section>
+        </div>
     </section>
     <section class="privacy">
         <div class="row">
