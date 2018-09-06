@@ -36,7 +36,7 @@ class WorkWithUs extends CardBase {
             'service_field' => 'subtitle',
             'show' => 1,
             'weight' => 1,
-            'max_length' => 10,
+            'max_length' => 500,
           ],
         ],
       ],
@@ -59,7 +59,7 @@ class WorkWithUs extends CardBase {
             'weight' => 1,
           ],
           'subTitle' => [
-            'type' => 'text_format',
+            'type' => 'textfield',
             'title' => $this->t('Texto final'),
             'service_field' => 'content',
             'show' => 1,
