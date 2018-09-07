@@ -15,8 +15,7 @@ import { CarouselItem2Component } from './components/carousel-item-2/carousel-it
 import { AlliancesComponent } from './components/alliances/alliances.component';
 
 import { CarouselControlsComponent } from './components/carousel-controls/carousel-controls.component';
-
-
+import { workwithusComponent } from './components/workwithus/workwithus.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +26,8 @@ import { CarouselControlsComponent } from './components/carousel-controls/carous
     CarouselItem2Component,
     TecnologiesComponent,
     PorqueBitsComponent,
-    AlliancesComponent
+    AlliancesComponent,
+    workwithusComponent,
   ],
   exports: [
     CarouselIndicatorsComponent,
@@ -36,7 +36,8 @@ import { CarouselControlsComponent } from './components/carousel-controls/carous
     CarouselItem2Component,
     TecnologiesComponent,
     PorqueBitsComponent,
-    AlliancesComponent
+    AlliancesComponent,
+    workwithusComponent,
   ],
   imports: [
     BrowserModule,
