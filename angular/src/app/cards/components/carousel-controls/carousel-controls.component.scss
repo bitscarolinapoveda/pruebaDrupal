@@ -9,12 +9,10 @@
     }
     .carousel-inner .carousel-item-right.active,
     .carousel-inner .carousel-item-next {
-        //transform: translateX(70%);
         transform: translateX(25%);
     }
     .carousel-inner .carousel-item-left.active,
     .carousel-inner .carousel-item-prev {
-        //transform: translateX(-70%);
         transform: translateX(-25%);
     }
     .carousel-inner .carousel-item-right,
@@ -28,8 +26,8 @@
                 left: 11%;
             }
             @include breakpoint(desktop) {
-                width: 85.5%;
-                left: 6%;
+                width: 92.5%;
+                left: 4%;
             }
             .carousel-item {
                 width: 405%;
@@ -41,10 +39,13 @@
                 }
                 .url-link {
                     width: 100%;
+                    padding-left: 4%;
+                    padding-right: 4%;
+                    margin-top: 1%;
                     text-decoration: none;
                     @include breakpoint (desktop) {
-                        padding-left: 8px;
-                        padding-right: 10px;
+                        padding-left: 5%;
+                        padding-right: 5%;
                     }
                     .container-img {
                         height: 123px;
