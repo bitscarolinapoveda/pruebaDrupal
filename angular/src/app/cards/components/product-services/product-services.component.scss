@@ -16,7 +16,7 @@
         }
         @include breakpoint(desktop) {
             height: 171px;
-            padding-top: 5%;
+            padding-top: 3.5%;
         }
         h1 {
             width: 97%;
@@ -360,7 +360,7 @@
                 padding-top: 6%;
             }
             @include breakpoint(desktop) {
-                padding-top: 4%;
+                padding-top: 40px;
                 padding-bottom: initial;
             }
             .bottonleft,

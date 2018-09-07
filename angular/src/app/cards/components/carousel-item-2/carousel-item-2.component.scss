@@ -7,19 +7,19 @@
     .carousel-inner .carousel-item.active,
     .carousel-inner .carousel-item-next,
     .carousel-inner .carousel-item-prev {
-        transition: transform .9s ease, -webkit-transform .9s ease;
+        //  transition: transform .9s ease, -webkit-transform .9s ease;
         @include breakpoint (tablet) {
             display: flex;
         }
         @include breakpoint (desktop) {
             display: flex;
-            transition: transform .8s ease, -webkit-transform .8s ease;
+            //     transition: transform .8s ease, -webkit-transform .8s ease;
         }
     }
     .carousel-inner .carousel-item-right.active,
     .carousel-inner .carousel-item-next {
         @include breakpoint (desktop) {
-            transform: translateX(25%);
+            transform: translateX(24.2%);
         }
         @include breakpoint (tablet) {
             transform: translateX(25%);
@@ -28,7 +28,7 @@
     .carousel-inner .carousel-item-left.active,
     .carousel-inner .carousel-item-prev {
         @include breakpoint (desktop) {
-            transform: translateX(-24.21%);
+            transform: translateX(-24.2%);
         }
         @include breakpoint (tablet) {
             transform: translateX(-21.5%);
@@ -54,7 +54,7 @@
         }
         @include breakpoint (desktop) {
             height: initial;
-            width: 60%;
+            width: 92.5%;
             left: initial;
         }
         .carousel-item {
@@ -70,7 +70,9 @@
                     width: 285px;
                 }
                 @include breakpoint (desktop) {
-                    width: 221px;
+                    width: 255px;
+                    padding-left: 2%;
+                    padding-right: 2%;
                     text-decoration: none;
                     &:hover {
                         .container-img {
@@ -188,7 +190,6 @@
         }
         @include breakpoint (desktop) {
             height: 34px;
-            left: 160px;
         }
     }
     .icon-right {
@@ -203,7 +204,6 @@
         }
         @include breakpoint (desktop) {
             height: 34px;
-            right: 160px;
         }
     }
 }
