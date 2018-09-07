@@ -57,15 +57,15 @@
              margin-left: auto;
              justify-content: center;
              @include breakpoint(desktop) {
-                 margin-top: 186px;
+                 margin-top: 12.5%;
              }
              @include breakpoint(tablet) {
                  margin-top: 140px;
              }
              li {
                  z-index: 1;
-                 height: 46px;
-                 width: 122px;
+                 height: 49px;
+                 width: 28%;
                  list-style: none;
                  padding: 0% 4.2%;
                  display: flex;

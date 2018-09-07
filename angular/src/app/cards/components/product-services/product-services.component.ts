@@ -10,13 +10,12 @@ import { isArray } from 'util';
 })
 export class ProductServicesComponent implements OnInit {
 
-
   servicesProduct: any[];
-
+  titleProducts ;
 
   constructor(private router: ActivatedRoute,
     private ProductServices: ProductServices) {
-
+    this.titleProducts = [];
     this.servicesProduct = [];
 
   }
@@ -28,10 +27,11 @@ export class ProductServicesComponent implements OnInit {
 
   getProductoServiceItems() {
     this.ProductServices.getProductoServiceItems().subscribe(items => {
-      this.servicesProduct = Object.keys(items).map(function (key) {
-        return items[key];
+      this.servicesProduct = items.datos;
+      this.titleProducts = items;
+      this.servicesProduct = Object.keys(items.datos).map(function(key) {
+        return items.datos[key];
       });
-      //console.log(this.servicesProduct);
     });
   }
 
