@@ -14,15 +14,17 @@ export class CarouselControlsComponent implements OnInit {
   constructor(private router: ActivatedRoute, private CarouselControl: CarouselControlService) { }
 
   CarouselControlArray: any = [];
+  caroseltitle: any = [];
     ngOnInit() {
-        // this.getCarouselControlItem();
         this.getCarouselControlItem();
     }
-         getCarouselControlItem() {
-          return this.CarouselControl.getCarouselControlItems().subscribe(items => {
-            this.CarouselControlArray = items.datos;
-          });
-        }
+    getCarouselControlItem() {
+    return this.CarouselControl.getCarouselControlItems().subscribe(items => {
+      this.CarouselControlArray = items.datos;
+      this.caroseltitle = items;
+      this.CarouselControlArray = Object.keys(items.datos).map(function (key) { return items.datos[key]; });
+    });
+  }
 }
 
 

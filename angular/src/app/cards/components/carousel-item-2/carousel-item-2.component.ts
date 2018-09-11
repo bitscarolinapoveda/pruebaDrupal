@@ -12,12 +12,12 @@ declare var $: any;
 export class CarouselItem2Component implements OnInit {
 
   clients: any[];
-  clientsTitle: string;
+  titleClients ;
 
   constructor(private router: ActivatedRoute,
         private cardcarouselcontrols: CarouselItem2) {
             this.clients = [];
-            this.clientsTitle = '';
+            this.titleClients = [];
   }
 
     ngOnInit() {
@@ -49,9 +49,9 @@ export class CarouselItem2Component implements OnInit {
     }
     getOurClients() {
         this.cardcarouselcontrols.getOurClients().subscribe( items => {
-            console.log(items);
-            this.clients = items.datos;
-            this.clientsTitle = items.titulo;
+        this.clients = items.datos;
+        this.titleClients = items;
+            this.clients = Object.keys(items.datos).map(function (key) { return items.datos[key]; });
         });
     }
 }

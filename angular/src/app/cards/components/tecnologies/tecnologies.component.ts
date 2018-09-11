@@ -18,7 +18,7 @@ export class TecnologiesComponent implements OnInit {
 
   ngOnInit() {
     this.getItemsTecnologies();
-    this.testFunction();
+    // this.testFunction();
 
 
   }
@@ -31,7 +31,7 @@ export class TecnologiesComponent implements OnInit {
       this.tecnologiesArray = items.data.logo;
     });
   }
-
+/*
   testFunction(){
   setTimeout(function () {
 
@@ -139,5 +139,5 @@ export class TecnologiesComponent implements OnInit {
     }, 2000);
 
   }
-
+*/
 }

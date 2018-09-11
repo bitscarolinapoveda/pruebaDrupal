@@ -1,25 +1,25 @@
 @import './src/assets/scss/mixin.scss';
 #Carousel-4items {
-    margin-top: 5%;
+    margin-top: 4%;
     @include breakpoint(desktop) {
-        margin-top: 2%;
+        margin-top: 1%;
     }
     .carousel-inner .carousel-item.active,
     .carousel-inner .carousel-item-next,
     .carousel-inner .carousel-item-prev {
-        transition: transform .9s ease, -webkit-transform .9s ease;
+        //  transition: transform .9s ease, -webkit-transform .9s ease;
         @include breakpoint (tablet) {
             display: flex;
         }
         @include breakpoint (desktop) {
             display: flex;
-            transition: transform .6s ease, -webkit-transform .6s ease;
+            //     transition: transform .8s ease, -webkit-transform .8s ease;
         }
     }
     .carousel-inner .carousel-item-right.active,
     .carousel-inner .carousel-item-next {
         @include breakpoint (desktop) {
-            transform: translateX(25%);
+            transform: translateX(24.2%);
         }
         @include breakpoint (tablet) {
             transform: translateX(25%);
@@ -28,10 +28,10 @@
     .carousel-inner .carousel-item-left.active,
     .carousel-inner .carousel-item-prev {
         @include breakpoint (desktop) {
-            transform: translateX(-25%);
+            transform: translateX(-24.2%);
         }
         @include breakpoint (tablet) {
-            transform: translateX(-25%);
+            transform: translateX(-21.5%);
         }
     }
     .carousel-inner .carousel-item-right,
@@ -44,8 +44,9 @@
         }
     }
     .carousel-inner {
-        height: 236px;
+        height: 196px;
         align-items: center;
+        justify-content: center;
         @include breakpoint (tablet) {
             height: initial;
             width: 68%;
@@ -53,13 +54,15 @@
         }
         @include breakpoint (desktop) {
             height: initial;
-            width: 63%;
+            width: 92.5%;
             left: initial;
         }
         .carousel-item {
             margin-top: 6px;
             @include breakpoint (desktop) {
                 left: 0%;
+                padding-left: 4%;
+                justify-content: center;
             }
             .url-carousel {
                 width: 132px;
@@ -67,7 +70,9 @@
                     width: 285px;
                 }
                 @include breakpoint (desktop) {
-                    width: 208px;
+                    width: 255px;
+                    padding-left: 2%;
+                    padding-right: 2%;
                     text-decoration: none;
                     &:hover {
                         .container-img {
@@ -79,17 +84,22 @@
                     }
                 }
                 .container-img {
-                    width: 38%;
+                    width: 33%;
+                    height: 66px;
                     position: relative;
                     display: -webkit-inline-box;
-                    margin-left: 13%;
-                    margin-right: -13%;
+                    margin-left: 11%;
+                    margin-right: auto;
+                    margin-top: 5%;
                     display: inline-table;
                     max-width: 100%;
+                    align-items: center;
                     @include breakpoint(desktop) {
-                        height: 223px;
+                        display: flex;
+                        height: 235px;
                         width: 100%;
                         margin-bottom: 14%;
+                        margin-top: 0%;
                         padding-top: 39%;
                         padding-left: 20px;
                         padding-right: 20px;
@@ -97,9 +107,24 @@
                         transition: all ease 0.8s;
                     }
                     @include breakpoint(tablet) {
+                        display: flex;
                         width: 100%;
+                        padding: 22%;
+                        align-items: center;
                         height: 100px;
                         margin-left: 0;
+                    }
+                    .img-fluid {
+                        height: 100%;
+                        width: 100%;
+                        @include breakpoint (tablet) {
+                            height: auto;
+                            width: auto;
+                        }
+                        @include breakpoint (desktop) {
+                            height: auto;
+                            width: auto;
+                        }
                     }
                 }
                 .info-carousel {
@@ -165,7 +190,6 @@
         }
         @include breakpoint (desktop) {
             height: 34px;
-            left: 160px;
         }
     }
     .icon-right {
@@ -180,7 +204,6 @@
         }
         @include breakpoint (desktop) {
             height: 34px;
-            right: 160px;
         }
     }
 }

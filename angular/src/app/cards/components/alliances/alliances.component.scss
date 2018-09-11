@@ -56,25 +56,41 @@
             margin-left: auto;
             justify-content: center;
             @include breakpoint(desktop) {
-                margin-top: 186px;
+                margin-top: 170px;
             }
             @include breakpoint(tablet) {
-                margin-top: 140px;
+                margin-top: 125px;
             }
             li {
                 z-index: 1;
-                height: 126px;
+                height: 49px;
+                width: 28%;
                 list-style: none;
                 display: flex;
+                margin-top: 9%;
+                margin-left: 5%;
+                margin-right: 5%;
                 align-items: center;
-                justify-items: center;
                 @include breakpoint(desktop) {
                     height: auto;
-                    padding: 0 5.2%
+                    width: initial;
+                    justify-items: center;
+                    padding: 0 3.2%;
+                    margin-top: auto;
+                    margin-left: initial;
+                    margin-right: initial;
                 }
                 @include breakpoint(tablet) {
                     height: auto;
+                    width: initial;
+                    margin-left: initial;
+                    margin-right: initial;
+                    margin-top: 3%;
                     padding: 0 2.2%;
+                }
+                img {
+                    height: 100%;
+                    width: 100%;
                 }
             }
         }
