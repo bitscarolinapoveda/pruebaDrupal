@@ -10,8 +10,9 @@ const pagesRoutes: Routes = [
     component: PagesComponent,
     children: [
       { path: 'home', component: HomeComponent },
-      { path: '', redirectTo: '/home', pathMatch: 'full' },
-      { path: '**', component: NoPageFoundComponent }
+      { path: '', component: HomeComponent },
+      { path: 'NoPageFoundComponent', component: NoPageFoundComponent },
+      { path: '**', pathMatch: 'full', redirectTo: 'NoPageFoundComponent' }
     ]
   }
 ];

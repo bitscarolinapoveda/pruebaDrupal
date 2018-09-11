@@ -20,8 +20,7 @@ export class CarouselControlsComponent implements OnInit {
     }
          getCarouselControlItem() {
           return this.CarouselControl.getCarouselControlItems().subscribe(items => {
-            // console.log(items);
-            this.CarouselControlArray = items;
+            this.CarouselControlArray = items.datos;
           });
         }
 }

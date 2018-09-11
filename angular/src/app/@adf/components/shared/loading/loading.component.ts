@@ -3,18 +3,18 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-loading',
   templateUrl: './loading.component.html',
-  styleUrls: ['./loading.component.scss']
+  styleUrls: ['./loading.component.css']
 })
 export class LoadingComponent implements OnInit {
-  loading: boolean;
+/*   loading: boolean; */
 
   constructor() {
-    this.loading = true;
+/*     this.loading = true; */
   }
   ngOnInit() {
-    setTimeout(() => {
+/*     setTimeout(() => {
       this.loading = false;
-  }, 30000);
+  }, 30000); */
   }
 
 }

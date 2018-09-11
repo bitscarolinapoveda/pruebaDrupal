@@ -1,12 +1,11 @@
 <!-- ============================================================== -->
 <!-- Main wrapper - style you can find in pages.scss -->
 <!-- ============================================================== -->
+<!-- <app-loading *ngIf="loading"></app-loading> -->
 <app-loading *ngIf="loading"></app-loading>
-<div id="main-wrapper">
+<div id="main-wrapper" *ngIf="!loading">
 
     <app-header></app-header>
-
-
 
     <!-- ============================================================== -->
     <!-- Page wrapper  -->

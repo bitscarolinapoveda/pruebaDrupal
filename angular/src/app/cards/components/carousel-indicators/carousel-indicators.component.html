@@ -7,7 +7,7 @@
             <div class="carousel-item active window-complete">
                 <picture>
                     <source srcset="assets/images/movil.jpg" media="(max-width:{{medius}})">
-                    <img class="d-block w-100" src="{{carouselArray[1]?.field_image}}" alt="bits">
+                    <img class="d-block w-100" [src]="carouselArray[1]?.field_image" alt="bits">
                     <div class="carousel-caption  d-md-block text-slider">
                         <h1 class="title-slider"> {{carouselArray[1]?.title}} </h1>
                         <p class="description-slider">{{carouselArray[1]?.field_tags}}</p>

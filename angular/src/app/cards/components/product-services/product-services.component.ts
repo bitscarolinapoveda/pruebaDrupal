@@ -12,12 +12,15 @@ export class ProductServicesComponent implements OnInit {
 
 
   servicesProduct: any[];
+  servicesProductTitle: string;
 
 
   constructor(private router: ActivatedRoute,
-    private ProductServices: ProductServices) {
+    private _productServices: ProductServices) {
 
     this.servicesProduct = [];
+    this.servicesProductTitle = '';
+
 
   }
 
@@ -27,10 +30,13 @@ export class ProductServicesComponent implements OnInit {
   }
 
   getProductoServiceItems() {
-    this.ProductServices.getProductoServiceItems().subscribe(items => {
+    this._productServices.getProductoServiceItems().subscribe(items => {
       this.servicesProduct = Object.keys(items).map(function (key) {
+        //console.log(items[key]);
         return items[key];
       });
+      this.servicesProductTitle = this.servicesProduct[0];
+      this.servicesProduct = this.servicesProduct[1];
       //console.log(this.servicesProduct);
     });
   }
