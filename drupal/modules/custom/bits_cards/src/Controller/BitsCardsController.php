@@ -50,6 +50,9 @@ class BitsCardsController extends ControllerBase {
         $response['data']['link'] = $field_link;
         $response['data']['title'] = $title;
         break;
+        case 'Banner':
+        $response['data']['background'] = $obj['field_background'];
+        break;
       default:
         $response = "For the block '" . $type . "' has not yet been created service";
     }

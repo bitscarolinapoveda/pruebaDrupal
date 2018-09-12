@@ -7,15 +7,16 @@ import { CarouselIndicatorsComponent } from './components/carousel-indicators/ca
 import { CardValuesComponent } from './components/card-values/card-values.component';
 import { TecnologiesComponent } from './components/tecnologies/tecnologies.component';
 import { PorqueBitsComponent } from './components/porque-bits/porque-bits.component';
-//import { FooterBlock } from './components/footer/footer-block/footer-block';
+import { CarouselItem2Component } from './components/carousel-item-2/carousel-item-2.component';
+import { AlliancesComponent } from './components/alliances/alliances.component';
+import { CarouselControlsComponent } from './components/carousel-controls/carousel-controls.component';
+import { workwithusComponent } from './components/workwithus/workwithus.component';
+import { BannerComponent } from './components/banner/banner.component';
+
 // Servicios
 import { NodeService } from '../services/cards/node.service';
 import { CardService } from '../services/cards/card.service';
-import { CarouselItem2Component } from './components/carousel-item-2/carousel-item-2.component';
-import { AlliancesComponent } from './components/alliances/alliances.component';
 
-import { CarouselControlsComponent } from './components/carousel-controls/carousel-controls.component';
-import { workwithusComponent } from './components/workwithus/workwithus.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { workwithusComponent } from './components/workwithus/workwithus.componen
     PorqueBitsComponent,
     AlliancesComponent,
     workwithusComponent,
+    BannerComponent
   ],
   exports: [
     CarouselIndicatorsComponent,
@@ -38,6 +40,7 @@ import { workwithusComponent } from './components/workwithus/workwithus.componen
     PorqueBitsComponent,
     AlliancesComponent,
     workwithusComponent,
+    BannerComponent
   ],
   imports: [
     BrowserModule,

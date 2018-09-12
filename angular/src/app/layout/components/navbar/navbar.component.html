@@ -7,13 +7,8 @@
             <span class="lines"></span>
             <ul class="list-menu">
                 <ng-container *ngFor="let nav of NavbarArray; let i= index ">
-                    <li class="items" *ngIf=" i===0 ">
-                        <a href="{{ nav.uri }} " routerLinkActive="active" class=" link active "> {{ nav.title }} </a>
-                    </li>
-                </ng-container>
-                <ng-container *ngFor="let nav of NavbarArray; let i=index ">
-                    <li class="items " *ngIf="i !=0 ">
-                        <a routerLinkActive="active" href="{{ nav.uri }} " class=" link "> {{ nav.title }} </a>
+                    <li class="items">
+                        <a #sub href="{{ nav.uri }} " (click)="activeClass(sub)" [ngClass]="{active: i== 0}" class="link"> {{ nav.title }} </a>
                     </li>
                 </ng-container>
             </ul>

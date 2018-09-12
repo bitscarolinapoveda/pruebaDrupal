@@ -32,4 +32,7 @@ export class NavbarComponent implements OnInit {
       this.NavbarArray = items;
     });
   }
+  activeClass(sub) {
+    sub.active = !sub.active;
+  }
 }
