@@ -8,12 +8,12 @@
         margin-top: 178px;
         text-align: center;
         h1 {
+            text-transform: uppercase;
             position: absolute;
             width: 100%;
             margin-left: 50%;
             font-size: 36px;
             transform: translateX(-50%);
-            text-transform: none;
             @include breakpoint(desktop) {
                 font-size: 50px;
             }

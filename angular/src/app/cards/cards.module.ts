@@ -12,10 +12,12 @@ import { AlliancesComponent } from './components/alliances/alliances.component';
 import { CarouselControlsComponent } from './components/carousel-controls/carousel-controls.component';
 import { workwithusComponent } from './components/workwithus/workwithus.component';
 import { BannerComponent } from './components/banner/banner.component';
+import { TitleComponent } from './components/titles/titles.component';
 
 // Servicios
 import { NodeService } from '../services/cards/node.service';
 import { CardService } from '../services/cards/card.service';
+
 
 
 @NgModule({
@@ -29,7 +31,8 @@ import { CardService } from '../services/cards/card.service';
     PorqueBitsComponent,
     AlliancesComponent,
     workwithusComponent,
-    BannerComponent
+    BannerComponent,
+    TitleComponent
   ],
   exports: [
     CarouselIndicatorsComponent,
@@ -40,7 +43,8 @@ import { CardService } from '../services/cards/card.service';
     PorqueBitsComponent,
     AlliancesComponent,
     workwithusComponent,
-    BannerComponent
+    BannerComponent,
+    TitleComponent
   ],
   imports: [
     BrowserModule,
