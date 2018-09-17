@@ -2,10 +2,10 @@
     <div class="title">
         <h1> {{ bannerArray.title }} </h1>
     </div>
-    <ng-container>
+    <ng-container *ngFor="let img of bannerimage">
         <picture>
             <source media="(max-width:500px)" srcset="assets/images/cabezerainternamobile.png">
-            <img src="assets/images/cabezerainternaweb.png" alt="">
+            <img [src]="img.url" alt="{{img.alt}}">
         </picture>
     </ng-container>
 </section>

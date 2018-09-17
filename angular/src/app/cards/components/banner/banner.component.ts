@@ -19,6 +19,7 @@ export class BannerComponent implements OnInit {
         this.banner.getBanner().subscribe(items => {
             this.bannerArray = items.data;
             this.bannerimage = items.data.background;
+            console.log(this.bannerimage);
         });
     }
 }
