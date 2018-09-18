@@ -13,10 +13,12 @@ import { CarouselControlsComponent } from './components/carousel-controls/carous
 import { workwithusComponent } from './components/workwithus/workwithus.component';
 import { BannerComponent } from './components/banner/banner.component';
 import { TitleComponent } from './components/titles/titles.component';
+import { TabsComponent } from './components/tabs/tabs.component';
 
 // Servicios
 import { NodeService } from '../services/cards/node.service';
 import { CardService } from '../services/cards/card.service';
+
 
 
 
@@ -32,7 +34,8 @@ import { CardService } from '../services/cards/card.service';
     AlliancesComponent,
     workwithusComponent,
     BannerComponent,
-    TitleComponent
+    TitleComponent,
+    TabsComponent
   ],
   exports: [
     CarouselIndicatorsComponent,
@@ -44,18 +47,12 @@ import { CardService } from '../services/cards/card.service';
     AlliancesComponent,
     workwithusComponent,
     BannerComponent,
-    TitleComponent
+    TitleComponent,
+    TabsComponent
   ],
-  imports: [
-    BrowserModule,
-    CommonModule
-  ],
-  providers: [
-    NodeService,
-    CardService
-  ]
+  imports: [BrowserModule, CommonModule],
+  providers: [NodeService, CardService]
 })
-
-export class CardsModule { }
+export class CardsModule {}
 
 

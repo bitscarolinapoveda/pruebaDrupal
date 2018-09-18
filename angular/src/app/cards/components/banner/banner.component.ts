@@ -10,6 +10,8 @@ import { ActivatedRoute } from '@angular/router';
 export class BannerComponent implements OnInit {
     bannerArray: any = [];
     bannerimage: any = [];
+    bannermovil: any = [];
+    medius = '550px';
     constructor(router: ActivatedRoute, private banner: BannerService) {}
 
     ngOnInit() {
@@ -18,8 +20,8 @@ export class BannerComponent implements OnInit {
     getBannerService() {
         this.banner.getBanner().subscribe(items => {
             this.bannerArray = items.data;
+            this.bannermovil = items.data.back_movil;
             this.bannerimage = items.data.background;
-            console.log(this.bannerimage);
         });
     }
 }

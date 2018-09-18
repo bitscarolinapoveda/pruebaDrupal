@@ -1,0 +1,118 @@
+@import './src/assets/scss/mixin.scss';
+#blocks-tabs {
+    margin-top: 12%;
+    @include breakpoint (tablet) {
+        margin-top: 6%;
+    }
+    @include breakpoint (desktop) {
+        margin-top: 3.5%;
+    }
+    .block {
+        background: #e5e9ec;
+        height: 137px;
+        @include breakpoint (desktop) {
+            height: 140px;
+        }
+        .nav {
+            height: 100%;
+            .list {
+                width: 50%;
+                font-size: 22px;
+                text-align: center;
+                @include breakpoint (desktop) {
+                    padding-left: 11.8%;
+                    z-index: 2;
+                    &::after {
+                        content: '';
+                        z-index: -1;
+                        position: absolute;
+                        height: 75px;
+                        width: 1px;
+                        margin-top: -102px;
+                        left: 11.8%;
+                        background-color: #95a7b3;
+                    }
+                }
+                .nav-link {
+                    height: 100%;
+                    padding-top: 6%;
+                    color: #2e516a;
+                    @include breakpoint (desktop) {
+                        padding-top: 3.5%;
+                    }
+                }
+                .item-block {
+                    text-decoration: none;
+                    &::before {
+                        content: '';
+                        display: block;
+                        padding: 1em;
+                        background-image: url('../../../../assets/icon/contact.svg');
+                        background-repeat: no-repeat;
+                        background-position: center;
+                    }
+                }
+                .item-block-2 {
+                    text-decoration: none;
+                    &::before {
+                        content: '';
+                        display: block;
+                        padding: 1em;
+                        background-image: url('../../../../assets/icon/joinus.svg');
+                        background-repeat: no-repeat;
+                        background-position: center;
+                    }
+                }
+                .active {
+                    background: #2e516a;
+                    color: #ffffff;
+                    &::before {
+                        content: '';
+                        background-image: url('../../../../assets/icon/contact-white.svg');
+                    }
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        border-width: 22px 65px 0;
+                        border-style: solid;
+                        border-color: #2e516a transparent transparent;
+                        margin-top: 11.38%;
+                        margin-left: -112px;
+                        @include breakpoint (tablet) {
+                            margin-top: 6%;
+                            margin-left: -179px
+                        }
+                        @include breakpoint (desktop) {
+                            margin-top: 4.2%;
+                            margin-left: -206px;
+                            border-width: 35px 95px 0;
+                        }
+                    }
+                }
+            }
+            .list-color {
+                @include breakpoint (desktop) {
+                    padding-left: 0%;
+                    padding-right: 11.8%;
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        height: 75px;
+                        width: 1px;
+                        margin-top: -102px;
+                        left: 88.14%;
+                        background-color: #95a7b3;
+                    }
+                }
+                .active {
+                    background: #2e516a;
+                    color: #ffffff;
+                    &::before {
+                        content: '';
+                        background-image: url('../../../../assets/icon/joinus-white.svg');
+                    }
+                }
+            }
+        }
+    }
+}

@@ -205,6 +205,7 @@ class MenuRestResource extends ResourceBase {
 
       $menu_tree[$order]['title'] = $menu_link->getTitle();
       $menu_tree[$order]['uri'] = $uri;
+      $menu_tree[$order]['image'] = $obj['image'];
       if (isset($adf_menuSettings['alias']) && $adf_menuSettings['alias']) {
         $menu_tree[$order]['alias'] = ltrim($alias, '/');
       }
