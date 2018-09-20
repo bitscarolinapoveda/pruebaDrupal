@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 
 export class TabsComponent {
-
+    tabsArray: any = [];
     constructor() {
 
     }
