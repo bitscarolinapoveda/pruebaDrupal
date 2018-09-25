@@ -174,7 +174,7 @@ class MenuRestResource extends ResourceBase {
     foreach ($transformed_tree as $menu_item) {
       $menu_link = $menu_item['original_link'];
       $url = $menu_item['url'];
-      $url = $menu_item['image'];
+      
       $external = FALSE;
       $uuid = '';
       if ($url->isExternal()) {
@@ -205,7 +205,7 @@ class MenuRestResource extends ResourceBase {
 
       $menu_tree[$order]['title'] = $menu_link->getTitle();
       $menu_tree[$order]['uri'] = $uri;
-      $menu_tree[$order]['image'] = $icon_field;
+      $menu_tree[$order]['image'] = $http;
       if (isset($adf_menuSettings['alias']) && $adf_menuSettings['alias']) {
         $menu_tree[$order]['alias'] = ltrim($alias, '/');
       }
