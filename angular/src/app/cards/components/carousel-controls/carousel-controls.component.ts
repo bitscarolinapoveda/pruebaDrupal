@@ -1,6 +1,6 @@
+import { ContentType } from '../../../services/cards/content-type.services';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { CarouselControlService } from '../../../services/cards/cardscontrols.service';
 
 declare var $: any;
 
@@ -11,15 +11,18 @@ declare var $: any;
 })
 
 export class CarouselControlsComponent implements OnInit {
-  constructor(private router: ActivatedRoute, private CarouselControl: CarouselControlService) { }
+  constructor(
+    private router: ActivatedRoute,
+    private AchievementCarouselItems: ContentType
+    ) { }
 
   CarouselControlArray: any = [];
   caroseltitle: any = [];
     ngOnInit() {
-        this.getCarouselControlItem();
+        this.getAchievementsCarouselItems();
     }
-    getCarouselControlItem() {
-    return this.CarouselControl.getCarouselControlItems().subscribe(items => {
+    getAchievementsCarouselItems() {
+    return this.AchievementCarouselItems.getContentTypeItems('achievements').subscribe(items => {
       this.CarouselControlArray = items.datos;
       this.caroseltitle = items;
       this.CarouselControlArray = Object.keys(items.datos).map(function (key) { return items.datos[key]; });

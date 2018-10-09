@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { FooterContactService } from '../../../../services/cards/footerContact.service';
 import { isArray } from 'util';
+import { CustomCardService } from '../../../../services/cards/v1-card.services';
 
 @Component({
   selector: 'app-footer-contact',
@@ -16,8 +16,10 @@ export class FooterContactComponent implements OnInit {
   contactNets: any[];
 
 
-  constructor(private router: ActivatedRoute,
-    private footerBrand: FooterContactService) {
+  constructor(
+    private router: ActivatedRoute,
+    private footerBrand: CustomCardService
+    ) {
     this.contactLabel = '';
     this.contactMailLabel = '';
     this.contactMailLink = '';

@@ -30,6 +30,7 @@ export class NavbarComponent implements OnInit {
   getNavBarItems() {
     return this.navbar.getMenuItems().subscribe(items => {
       this.NavbarArray = items;
+      console.log(this.NavbarArray);
     });
   }
   activeClass(sub) {

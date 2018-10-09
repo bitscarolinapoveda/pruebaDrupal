@@ -6,12 +6,12 @@ import { HttpService } from '../http/http.service';
   providedIn: 'root'
 })
 
-export class FooterContactService {
-
+export class ContentType {
   constructor(private http: HttpService) {
   }
 
-  getFooterContactItems() {
-    return this.http.get('v1/card/contact/export/custom?_format=json&bid=contactcard');
+  getContentTypeItems(typeOfContent) {
+    const url = `v1/content-types/${typeOfContent}`;
+    return this.http.get(url);
   }
 }

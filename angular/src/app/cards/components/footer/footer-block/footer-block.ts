@@ -1,6 +1,6 @@
+import { CustomCardService } from './../../../../services/cards/v1-card.services';
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { FooterService } from '../../../../services/cards/footer.service';
 import { isArray } from 'util';
 
 @Component({
@@ -13,8 +13,10 @@ export class FooterBlock implements OnInit {
   subtitle: string;
   body: string;
 
-  constructor(private router: ActivatedRoute,
-    private footerService: FooterService) {
+  constructor(
+    private router: ActivatedRoute,
+    private footerBlockService: CustomCardService
+    ) {
       this.subtitle ='';
       this.body = '';
   }
@@ -24,7 +26,7 @@ export class FooterBlock implements OnInit {
   }
 
   getFooterBlockItems(idBlock): void  {
-    this.footerService.getFooterBlockItems(idBlock).subscribe((items: {header, body, others} ) => {
+    this.footerBlockService.getCustomCardInformation(idBlock).subscribe((items: {header, body, others} ) => {
       //console.log('contact', items);
       this.subtitle = items.header[0].data;
       this.body = items.body[0].data;

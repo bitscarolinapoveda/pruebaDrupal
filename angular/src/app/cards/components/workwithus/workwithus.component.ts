@@ -1,14 +1,14 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { FooterService } from '../../../services/cards/footer.service';
 import { isArray } from 'util';
+import { CustomCardService } from '../../../services/cards/v1-card.services';
 
 @Component({
   selector: 'app-workwithus',
   templateUrl: './workwithus.html',
   styleUrls: ['./workwithus.scss']
 })
-export class workwithusComponent implements OnInit {
+export class WorkWithUsComponent implements OnInit {
   title: string;
   subtitle: string;
   url: string;
@@ -16,8 +16,10 @@ export class workwithusComponent implements OnInit {
   body: string;
 
 
-  constructor(private router: ActivatedRoute,
-    private footerService: FooterService) {
+  constructor(
+    private router: ActivatedRoute,
+    private footerService: CustomCardService,
+    ) {
       this.title ='';
       this.subtitle = '';
       this.url = '';
@@ -25,11 +27,11 @@ export class workwithusComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getFooterBlockItems('workwithus');
+    this.getWorkwithUsItems();
   }
 
-  getFooterBlockItems(idBlock): void  {
-    this.footerService.getFooterBlockItems(idBlock).subscribe((items: {header, body, others} ) => {
+  getWorkwithUsItems() {
+    this.footerService.getCustomCardInformation('workwithus').subscribe((items: {header, body, others} ) => {
       //console.log('workwithus', items);
       this.title = items.header[0].data;
       this.subtitle = items.header[1].data;

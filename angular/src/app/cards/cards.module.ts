@@ -10,7 +10,7 @@ import { PorqueBitsComponent } from './components/porque-bits/porque-bits.compon
 import { CarouselItem2Component } from './components/carousel-item-2/carousel-item-2.component';
 import { AlliancesComponent } from './components/alliances/alliances.component';
 import { CarouselControlsComponent } from './components/carousel-controls/carousel-controls.component';
-import { workwithusComponent } from './components/workwithus/workwithus.component';
+import { WorkWithUsComponent } from './components/workwithus/workwithus.component';
 import { BannerComponent } from './components/banner/banner.component';
 import { TitleComponent } from './components/titles/titles.component';
 import { TabsComponent } from './components/tabs/tabs.component';
@@ -32,7 +32,7 @@ import { CardService } from '../services/cards/card.service';
     TecnologiesComponent,
     PorqueBitsComponent,
     AlliancesComponent,
-    workwithusComponent,
+    WorkWithUsComponent,
     BannerComponent,
     TitleComponent,
     TabsComponent
@@ -45,7 +45,7 @@ import { CardService } from '../services/cards/card.service';
     TecnologiesComponent,
     PorqueBitsComponent,
     AlliancesComponent,
-    workwithusComponent,
+    WorkWithUsComponent,
     BannerComponent,
     TitleComponent,
     TabsComponent

@@ -7,8 +7,9 @@ import { HttpService } from '../http/http.service';
 
 export class AllianceService {
 
-  constructor(private http: HttpService) {
-  }
+  constructor(
+    private http: HttpService
+    ) { }
 
   getAlliance() {
     return this.http.get('block-resources/3?_format=json');

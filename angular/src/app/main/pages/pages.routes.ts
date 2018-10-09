@@ -15,7 +15,7 @@ const pagesRoutes: Routes = [
       { path: 'contact-us', component: ContactUsComponent },
       { path: 'contact-us', redirectTo: '/contact-us' },
       { path: '**', component: NoPageFoundComponent }
-    ] 
+    ]
   }
 ];
 

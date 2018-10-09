@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { GeneratorOfLinksService } from '../../../services/cards/generatoroflinks.service';
 import { isArray } from 'util';
+import { CustomCardService } from '../../../services/cards/v1-card.services';
 
 @Component({
   selector: 'app-generator-link',
@@ -13,8 +14,10 @@ export class GeneratorOfLinksComponent implements OnInit {
   url: string;
 
 
-  constructor(private router: ActivatedRoute,
-  private generatoroflinks: GeneratorOfLinksService) {
+  constructor(
+    private router: ActivatedRoute,
+    private generatoroflinks: CustomCardService
+    ) {
     this.title = '';
     this.url = '';
   }
@@ -23,7 +26,7 @@ export class GeneratorOfLinksComponent implements OnInit {
   }
 
   getGeneratorOfLinks() {
-    this.generatoroflinks.getGeneratorOfLinks().subscribe((items: {header, body} ) => {
+    this.generatoroflinks.getCustomCardInformation('generatoroflinks').subscribe((items: {header, body} ) => {
       //console.log('general', items);
       this.title = items.body[0].data.label;
       this.url = items.body[0].data.link;

@@ -1,5 +1,6 @@
+import { ContentType } from '../../../services/cards/content-type.services';
 import { Component, OnInit } from '@angular/core';
-import { CarouselService } from '../../../services/cards/carousel.service';
+
 declare  var $: any;
 @Component({
   selector: 'app-carousel-indicators',
@@ -9,14 +10,14 @@ declare  var $: any;
 export class CarouselIndicatorsComponent implements OnInit {
   medius = '550px';
   carouselArray: any = [] ;
-  constructor(  private _carousel: CarouselService ) {
+  constructor(  private indicatorsSliderCarouselItems: ContentType ) {
 
   }
   ngOnInit() {
-    this.getCarouselItems();
+    this.getIndicatorsSliderItems();
   }
-  getCarouselItems()  {
-    return this._carousel.getsliderItems().subscribe(items => {
+  getIndicatorsSliderItems()  {
+    return this.indicatorsSliderCarouselItems.getContentTypeItems('articles').subscribe(items => {
       this.carouselArray = Object.keys(items).map(function (key) {
           return items[key];
         });
