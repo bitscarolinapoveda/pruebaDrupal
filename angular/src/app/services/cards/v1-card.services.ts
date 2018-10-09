@@ -7,13 +7,18 @@ import { copyStyles } from '@angular/animations/browser/src/util';
   providedIn: 'root'
 })
 
-export class FooterService {
+export class CustomCardService {
 
-  constructor(private http: HttpService) {
-  }
+  constructor(
+    private http: HttpService
+    ) {}
 
-  getFooterBlockItems(idblock) {
+  getCustomCardInformation(idblock) {
     let url = `v1/card/config/${idblock}/export?_format=json`;
     return this.http.get(url);
+  }
+
+  getFooterContactItems() {
+    return this.http.get('v1/card/contact/export/custom?_format=json&bid=contactcard');
   }
 }

@@ -1,6 +1,6 @@
+import { ContentType } from '../../../services/cards/content-type.services';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { CarouselItem2 } from '../../../services/cards/carousel-item-2.service';
 
 declare var $: any;
 
@@ -14,8 +14,10 @@ export class CarouselItem2Component implements OnInit {
   clients: any[];
   titleClients ;
 
-  constructor(private router: ActivatedRoute,
-        private cardcarouselcontrols: CarouselItem2) {
+  constructor(
+    private router: ActivatedRoute,
+    private ourClientCarouselItems: ContentType,
+    ) {
             this.clients = [];
             this.titleClients = [];
   }
@@ -45,10 +47,10 @@ export class CarouselItem2Component implements OnInit {
           },  3000);
         });
 
-        this.getOurClients();
+        this.getOurClientsItems();
     }
-    getOurClients() {
-        this.cardcarouselcontrols.getOurClients().subscribe( items => {
+    getOurClientsItems() {
+        this.ourClientCarouselItems.getContentTypeItems('clients').subscribe( items => {
         this.clients = items.datos;
         this.titleClients = items;
             this.clients = Object.keys(items.datos).map(function (key) { return items.datos[key]; });

@@ -1,5 +1,5 @@
+import { ContentType } from './../../../services/cards/content-type.services';
 import { Component, OnInit } from '@angular/core';
-import { CarouselService } from '../../../services/cards/carousel.service';
 
 @Component({
   selector: 'app-carousel-item',
@@ -9,14 +9,16 @@ import { CarouselService } from '../../../services/cards/carousel.service';
 export class CarouselItemComponent implements OnInit {
   carouselsArray: any = [];
      medius = '550px';
-  constructor(private _carousels: CarouselService ) { }
+  constructor(
+    private sliderCarouselItems: ContentType,
+    ) { }
 
   ngOnInit() {
     this.getCarouselsItems();
   }
 
   getCarouselsItems() {
-    return this._carousels.getsliderItems().subscribe(items => {
+    return this.sliderCarouselItems.getContentTypeItems('articles').subscribe(items => {
       this.carouselsArray = Object.keys(items).map(function (key) {
         return items[key];
       });

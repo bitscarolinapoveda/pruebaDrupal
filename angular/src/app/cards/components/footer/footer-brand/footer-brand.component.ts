@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { FooterBrandService } from '../../../../services/cards/footerBrand.service';
+import { CustomCardService } from '../../../../services/cards/v1-card.services';
 
 @Component({
   selector: 'app-footer-brand',
@@ -12,7 +12,7 @@ export class FooterBrandComponent implements OnInit {
   nameBrand: string;
 
   constructor(private router: ActivatedRoute,
-    private footerBrand: FooterBrandService) {
+    private footerBrand: CustomCardService) {
     this.url = '';
     this.nameBrand = '';
   }
@@ -22,7 +22,7 @@ export class FooterBrandComponent implements OnInit {
   }
 
   getFooterBrandItems() {
-    this.footerBrand.getFooterBrandItems().subscribe((items: {header, body}) => {
+    this.footerBrand.getCustomCardInformation('brandcard').subscribe((items: {header, body}) => {
       this.url = items.header[0].data;
       this.nameBrand = items.body[0].data;
     });

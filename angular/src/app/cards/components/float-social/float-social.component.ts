@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { FooterContactService } from '../../../services/cards/footerContact.service';
 import { isArray } from 'util';
+import { CustomCardService } from '../../../services/cards/v1-card.services';
 
 @Component({
   selector: 'app-float-social',
@@ -16,7 +16,7 @@ export class FloatSocialComponent implements OnInit {
   socialmedia: any[];
 
   constructor(private router: ActivatedRoute,
-    private footerBrand2: FooterContactService) {
+    private footerBrand2: CustomCardService) {
     this.contactLabel = '';
     this.contactMailLabel = '';
     this.contactMailLink = '';
@@ -24,11 +24,11 @@ export class FloatSocialComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getFooterContactItems();
+    this.getFloatSocialItems();
 
   }
 
-  getFooterContactItems() {
+  getFloatSocialItems() {
 
     this.footerBrand2.getFooterContactItems().subscribe((items: {header, others} ) => {
       this.contactLabel = items.header[0].data;
