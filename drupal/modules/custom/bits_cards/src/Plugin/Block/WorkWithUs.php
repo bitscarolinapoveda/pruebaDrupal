@@ -3,7 +3,6 @@
 namespace Drupal\bits_cards\Plugin\Block;
 
 use Drupal\adf_cards\Plugin\Block\CardBase;
-use Drupal\Core\Form\FormStateInterface;
 
 /**
  * Provides a 'WorkWithUs' block.
@@ -68,6 +67,8 @@ class WorkWithUs extends CardBase {
           ],
         ],
       ],
+      'archivos' => [],
+      'others' => [],
     ];
   }
 

@@ -5,21 +5,22 @@ namespace Drupal\bits_cards\Plugin\Block;
 use Drupal\adf_cards\Plugin\Block\CardBase;
 
 /**
- * Provides a 'BrandCard' block.
+ * Provides a 'Technologies' block.
  *
  * @Block(
- *  id = "brand_card",
- *  admin_label = @Translation("Brand card"),
+ *  id = "technologies",
+ *  admin_label = @Translation("Technologies"),
  * )
  */
-class BrandCard extends CardBase {
+class Technologies extends CardBase {
 
   /**
    * {@inheritdoc}
    */
   public function defaultConfiguration() {
     return [
-      'header' => [
+      'header' => [],
+      'body' => [
         'table_fields' => [
           'image' => [
             'type' => 'managed_file',
@@ -27,25 +28,26 @@ class BrandCard extends CardBase {
             'service_field' => 'image',
             'show' => 1,
             'weight' => 1,
-            'max_length' => 1,
+            'max_length' => 5,
+            'multiple' => TRUE,
           ],
         ],
       ],
-      'body' => [
+      "archivos" => [
         'table_fields' => [
-          'subTitle' => [
-            'type' => 'textfield',
-            'title' => $this->t('Subtítulo'),
-            'service_field' => 'subtitle',
+          'image' => [
+            'type' => 'managed_file',
+            'title' => $this->t('Imagen'),
+            'service_field' => 'image',
             'show' => 1,
             'weight' => 1,
-            'max_length' => 50,
+            'max_length' => 5,
+            'multiple' => TRUE,
           ],
         ],
       ],
       'others' => [],
     ];
-
   }
 
 }

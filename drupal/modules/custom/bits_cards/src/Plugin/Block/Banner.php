@@ -5,14 +5,14 @@ namespace Drupal\bits_cards\Plugin\Block;
 use Drupal\adf_cards\Plugin\Block\CardBase;
 
 /**
- * Provides a 'BrandCard' block.
+ * Provides a 'Banner' block.
  *
  * @Block(
- *  id = "brand_card",
- *  admin_label = @Translation("Brand card"),
+ *  id = "banner",
+ *  admin_label = @Translation("Banner"),
  * )
  */
-class BrandCard extends CardBase {
+class Banner extends CardBase {
 
   /**
    * {@inheritdoc}
@@ -27,25 +27,14 @@ class BrandCard extends CardBase {
             'service_field' => 'image',
             'show' => 1,
             'weight' => 1,
-            'max_length' => 1,
+            'max_length' => 5,
           ],
         ],
       ],
-      'body' => [
-        'table_fields' => [
-          'subTitle' => [
-            'type' => 'textfield',
-            'title' => $this->t('Subtítulo'),
-            'service_field' => 'subtitle',
-            'show' => 1,
-            'weight' => 1,
-            'max_length' => 50,
-          ],
-        ],
-      ],
+      'body' => [],
+      "archivos" => [],
       'others' => [],
     ];
-
   }
 
 }

@@ -79,7 +79,7 @@ class ContentTypesRestResource extends ResourceBase {
   /**
    * Responds to GET requests.
    *
-   * @param Request $request
+   * @param Symfony\Component\HttpFoundation\Request $request
    *   The request to create the header.
    *
    * @return array

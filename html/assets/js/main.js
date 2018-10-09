@@ -6,7 +6,7 @@
                 $(".menu-scroll").removeClass("inverse-color");
             }
         });
- 
+
     $(document).ready(function () {
         $(window).scroll(function () {
             if ($(".lines").offset().top > 54) {
@@ -15,7 +15,7 @@
                 $(".lines").removeClass("color-scroll");
             }
         });
-    });    
+    });
 
         $(window).scroll(function () {
             if ($(".link").offset().top > 20) {
@@ -38,9 +38,27 @@
         $(".Botton").on("click", function () {
             $(".menu-scroll").toggleClass("tigger-menu");
         });
+
+        $.getJSON('http://bitsamericas.test/v1/content-types/achievements', function (data) {
+
+            $.each(data, function(index) {
+
+                var tipo = data[index].tipo;
+                if(tipo == 'achievements'){
+                    var category = data[index].category;
+                    console.log(category);
+                }
+                if(tipo == 'article'){
+                    var tags = data[index].tags
+                    console.log(tags);
+                }
+            });
+
+
+          });
     });
 
-    
+
     $(function() {
         $(window).scroll(function() {
             var scroll = $(window).scrollTop();
@@ -69,8 +87,8 @@
             )
         });
     });
-    
-   
+
+
     $(function() {
         $(window).scroll(function() {
         var scroll = $(window).scrollTop();
@@ -141,7 +159,7 @@
         if ($('#transition-image').length) {
             var items = 4;
             var $elements = $('.img-item');
-    
+
             var groups = createGroups($elements, items);
             var groups = completeGroup(groups, items);
             startSlide(groups, items);
@@ -150,45 +168,45 @@
         if ($('#transition-image2').length) {
             var items = 4;
             var $elements = $('.img-item2');
-    
+
             var groups = createGroups($elements, items);
             var groups = completeGroup(groups, items);
             startSlide(groups, items);
-        } 
-    
+        }
+
         function createGroups($elements, numberItems) {
             var elems = {};
             var group = 1;
             var item = 0;
             elems[group] = [];
-    
+
             $.each($elements, function(key, value) {
                 var elemId = $(this).prop('id');
                 elems[group][item] = elemId;
                 item++;
-    
+
                 if (((key + 1) % numberItems) == 0) {
                     item = 0;
                     group++;
                     elems[group] = [];
                 }
             });
-    
+
             return elems;
         }
-    
+
         function completeGroup(elems, numberItems) {
             $.each(elems, function(key, currentElem) {
                 var count = 0;
                 $.each(currentElem, function(k, v) {
                     count++;
                 });
-    
+
                 if ((count % numberItems) > 0) {
                     var iter = numberItems - count;
                     var pos = count;
                     var c = 0;
-    
+
                     $.each(elems, function(a, b) {
                         $.each(b, function(item, v) {
                             if (c < iter) {
@@ -207,10 +225,10 @@
                     return a> b? 1: -1;
                 });
             });
-    
+
             return elems;
         }
-    
+
         function startSlide(elems, numberItems) {
             var slide = 1;
             var itemSlide = 0;
@@ -235,7 +253,7 @@
                         oper = 'show';
                         itemSlide = 0;
                         slide++;
-    
+
                         if (elems[slide] == undefined) {
                             slide = 1;
                         }
@@ -244,9 +262,9 @@
                 }
             }, 500);
         }
-    
+
     });
-    
+
     $(document).ready(function () {
         $('#recipeCarousel').carousel({
             interval: 4000
@@ -289,7 +307,7 @@
     function alerta2(){
         $('#alert-item2').modal('show');
     };
- 
+
 
     $(window).scroll(function () {
         if ($(".top-return").offset().top > 750) {
@@ -326,7 +344,7 @@ jQuery (function ($) {
       $('html, body').animate({
         scrollTop: $(hash).offset().top
       }, 900, function(){
-   
+
         // Add hash (#) to URL when done scrolling (default click behavior)
         window.location.hash = hash;
       });

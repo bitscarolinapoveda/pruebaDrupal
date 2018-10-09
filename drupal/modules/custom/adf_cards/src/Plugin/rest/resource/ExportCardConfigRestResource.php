@@ -3,7 +3,6 @@
 namespace Drupal\adf_cards\Plugin\rest\resource;
 
 use Drupal\Core\Session\AccountProxyInterface;
-use Drupal\rest\ModifiedResourceResponse;
 use Drupal\rest\Plugin\ResourceBase;
 use Drupal\rest\ResourceResponse;
 use Psr\Log\LoggerInterface;
@@ -75,8 +74,8 @@ class ExportCardConfigRestResource extends ResourceBase {
   /**
    * Responds to GET requests.
    *
-   * @param \Drupal\Core\Entity\EntityInterface $entity
-   *   The entity object.
+   * @param int $block_id
+   *   The id.
    *
    * @return \Drupal\rest\ResourceResponse
    *   The HTTP response object.

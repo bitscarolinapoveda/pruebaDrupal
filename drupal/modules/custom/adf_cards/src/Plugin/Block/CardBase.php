@@ -4,6 +4,9 @@ namespace Drupal\adf_cards\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Form\FormStateInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\file\FileUsage\FileUsageInterface;
 use Drupal\file\Entity\File;
 
 /**
@@ -18,10 +21,41 @@ class CardBase extends BlockBase {
 
   protected $uuid;
 
+
+
+  /**
+   * Class constructor.
+   */
+  /*
+
+  protected $entityTypeManager;
+
+  protected $fileUsage;
+  public function __construct(EntityTypeManagerInterface $entity_type_manager, FileUsageInterface $file_usage) {
+
+    $this->entityTypeManager = $entity_type_manager;
+    $this->fileUsage = $file_usage;
+
+  }
+  */
+
+  /**
+   * {@inheritdoc}
+   */
+  /*
+  public static function create(ContainerInterface $container) {
+    return new static(
+      $container->get('entity_type.manager'),
+      $container->get('file.usage')
+    );
+  }
+  */
+
   /**
    * {@inheritdoc}
    */
   public function defaultConfiguration() {
+    // Return parent::defaultConfiguration()
     return parent::defaultConfiguration();
   }
 
@@ -40,13 +74,13 @@ class CardBase extends BlockBase {
     $form['header']['table_fields'] = [
       '#type' => 'table',
       '#header' => [
-        t('Field'),
-        t('Input'),
-        t('Show'),
-        t('Weight'),
+        $this->t('Field'),
+        $this->t('Input'),
+        $this->t('Show'),
+        $this->t('Weight'),
         '',
       ],
-      '#empty' => t('There are no items yet. Add an item.'),
+      '#empty' => $this->t('There are no items yet. Add an item.'),
       '#tabledrag' => [
         [
           'action' => 'order',
@@ -76,13 +110,13 @@ class CardBase extends BlockBase {
     $form['body']['table_fields'] = [
       '#type' => 'table',
       '#header' => [
-        t('Field'),
-        t('Input'),
-        t('Show'),
-        t('Weight'),
+        $this->t('Field'),
+        $this->t('Input'),
+        $this->t('Show'),
+        $this->t('Weight'),
         '',
       ],
-      '#empty' => t('There are no items yet. Add an item.'),
+      '#empty' => $this->t('There are no items yet. Add an item.'),
       '#tabledrag' => [
         [
           'action' => 'order',
@@ -99,6 +133,43 @@ class CardBase extends BlockBase {
     ]);
 
     $form = $this->generateTable('body', $table_fields, $form);
+
+    unset($table_fields);
+
+    $form['archivos'] = [
+      '#type' => 'details',
+      '#title' => $this->t('Archivos'),
+      '#description' => $this->t('Parámetros para subir archivos'),
+      '#open' => TRUE,
+    ];
+
+    $form['archivos']['table_fields'] = [
+      '#type' => 'table',
+      '#header' => [
+        $this->t('Field'),
+        $this->t('Input'),
+        $this->t('Show'),
+        $this->t('Weight'),
+        '',
+      ],
+      '#empty' => $this->t('There are no items yet. Add an item.'),
+      '#tabledrag' => [
+        [
+          'action' => 'order',
+          'relationship' => 'sibling',
+          'group' => 'fields-order-weight',
+        ],
+      ],
+    ];
+
+
+    $table_fields = $this->configuration['archivos']['table_fields'];
+    uasort($table_fields, [
+      'Drupal\Component\Utility\SortArray',
+      'sortByWeightElement',
+    ]);
+    $form = $this->generateTable('archivos', $table_fields, $form);
+
     return $form;
   }
 
@@ -109,7 +180,8 @@ class CardBase extends BlockBase {
     foreach ($table_fields as $id => $entity) {
       // TableDrag: Mark the invoice row as draggable.
       $form[$key]['table_fields'][$id]['#attributes']['class'][] = 'draggable';
-      // TableDrag: Sort the table row according to its existing/configured weight.
+      // TableDrag: Sort the table row according to its existing/configured
+      // weight.
       $form[$key]['table_fields']['#weight'] = $entity['weight'];
       // Some invoice columns containing raw markup.
       $form[$key]['table_fields'][$id]['label'] = [
@@ -149,7 +221,8 @@ class CardBase extends BlockBase {
       }
 
       if ($entity['type'] == 'managed_file') {
-        $form[$key]['table_fields'][$id]['input']['#upload_location'] = 'public://';
+        $form[$key]['table_fields'][$id]['input']['#upload_location'] = 'public://cards';
+        $form[$key]['table_fields'][$id]['input']['#multiple'] = TRUE;
       }
 
       if ($entity['type'] == 'text_format') {
@@ -164,7 +237,7 @@ class CardBase extends BlockBase {
       // TableDrag: Weight column element.
       $form[$key]['table_fields'][$id]['weight'] = [
         '#type' => 'weight',
-        '#title' => t('Weight for @title', ['@title' => $entity['title']]),
+        '#title' => $this->t('Weight for @title', ['@title' => $entity['title']]),
         '#title_display' => 'invisible',
         '#default_value' => $entity['weight'],
         // Classify the weight element for #tabledrag.
@@ -188,12 +261,24 @@ class CardBase extends BlockBase {
    * {@inheritdoc}
    */
   public function blockSubmit($form, FormStateInterface $form_state) {
+
+/*
+   $imageA = $form_state->getValue('archivos');
+   $fileA = File::load($imageA[0]);
+   $fileA->setPermanent();
+   $fileA->save();
+   */
+
+
+
     $this->configuration['header'] = $form_state->getValue('header');
     $this->configuration['body'] = $form_state->getValue('body');
+    $this->configuration['archivos'] = $form_state->getValue('archivos');
 
     $filesArray = [
       'header' => $this->configuration['header'],
       'body' => $this->configuration['body'],
+      'archivos' => $this->configuration['archivos'],
     ];
 
     foreach ($filesArray as $item) {
@@ -240,14 +325,25 @@ class CardBase extends BlockBase {
       'sortByWeightElement',
     ]);
     $this->configuration['body']['table_fields'] = $table_fieldsB;
-
     $body = $this->getRenderData($this->configuration['body']);
+
+
+    // Ordenamiento de items (Archivos).
+    $table_fieldsC = $this->configuration['archivos']['table_fields'];
+    uasort($table_fieldsC, [
+      'Drupal\Component\Utility\SortArray',
+      'sortByWeightElement',
+    ]);
+    $this->configuration['archivos']['table_fields'] = $table_fieldsC;
+    $archivos = $this->getRenderData($this->configuration['archivos']);
+
     $build = [];
     $build = [
       '#theme' => 'card_base',
       '#uuid' => $this->configuration['uuid'],
       '#header' => $header,
       '#body' => $body,
+      '#archivos' => $archivos,
     ];
 
     return $build;
@@ -264,6 +360,12 @@ class CardBase extends BlockBase {
       switch ($item['type']) {
         case 'managed_file':
           if ($item['service_field'] == 'image') {
+            // $this->entityTypeManager->getStorage('file')->load($id);
+            // Opcion para evitar el siguiente error
+            // File::load calls should be avoided in classes
+            // use dependency injection instead.
+            // $file = File::load(reset($item['input']))
+            // $file = $this->entityTypeManager->getStorage('file')->load(reset($item['input']))
             $file = File::load(reset($item['input']));
             if ($file) {
               $element['data'] = file_create_url($file->getFileUri());
@@ -306,6 +408,8 @@ class CardBase extends BlockBase {
       $fid = array_shift($fid);
     }
 
+    // $file = File::load($fid)
+    // $file = $this->entityTypeManager->getStorage('file')->load($fid)
     $file = File::load($fid);
 
     // If file doesn't exist return.
@@ -320,6 +424,9 @@ class CardBase extends BlockBase {
     $file->save();
 
     // Add usage file.
+    // $this->fileUsage->add($file, 'my_module', 'file', $file_id);
+    // \Drupal::service('file.usage')->add($file, 'adf_cards', 'adf_cards', 1);.
+    // $this->fileUsage->add($file, 'adf_cards', 'adf_cards', 1);.
     \Drupal::service('file.usage')->add($file, 'adf_cards', 'adf_cards', 1);
   }
 

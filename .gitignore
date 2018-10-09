@@ -1,0 +1,8 @@
+angular/node_modules/
+angular/package-lock.json
+.DS_Store
+drupal/sites/default/files/
+drupal/sites/default/settings.php
+estandares_drupal.txt
+estandares_drupalPractice.txt
+drupal/sites/default/services.yml

@@ -8,12 +8,20 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 use Drupal\Component\Serialization\Json;
 
+/**
+ * Provides a 'BitsCardsController' block.
+ *
+ * @Block(
+ *  id = "bits_cards",
+ *  admin_label = @Translation("Card bits),
+ * )
+ */
 class BitsCardsController extends ControllerBase {
 
   /**
    * Responds to GET requests.
    *
-   * @param Request $request
+   * @param Symfony\Component\HttpFoundation\Request $request
    *   The request to create the header.
    *
    * @param $blockid
@@ -26,7 +34,6 @@ class BitsCardsController extends ControllerBase {
 
     $block = file_get_contents('http://' . $_SERVER['HTTP_HOST'] . '/block/' . $blockid . '?_format=json');
 
-
     if ($block == NULL) {
       throw new BadRequestHttpException('No entity content received.');
     }
@@ -38,14 +45,16 @@ class BitsCardsController extends ControllerBase {
     switch ($type) {
       case 'whybits':
         $obj = $obj['field_logo'];
-        $response ['data'] = $obj;
+        $response['data'] = $obj;
         $response['data']['link'] = $field_link;
         $response['data']['title'] = $title;
         break;
+
       case 'tabs_vertical':
         $response['data']['left_title'] = $obj['field_left_title'];
         $response['data']['right_title'] = $obj['field_right_title'];
         break;
+
       case 'tecnologies':
       case 'titles':
       case 'banner':
@@ -56,6 +65,7 @@ class BitsCardsController extends ControllerBase {
         $response['data']['link'] = $field_link;
         $response['data']['title'] = $title;
         break;
+
       default:
         $response = "For the block '" . $type . "' has not yet been created service";
     }
