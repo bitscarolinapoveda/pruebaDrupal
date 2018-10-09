@@ -14,7 +14,7 @@ const pagesRoutes: Routes = [
       { path: '', redirectTo: '/home', pathMatch: 'full' },
       { path: 'contact-us', component: ContactUsComponent },
       { path: 'contact-us', redirectTo: '/contact-us' },
-      { path: '**', component: NoPageFoundComponent }
+      { path: '**', component: NoPageFoundComponent },
     ]
   }
 ];

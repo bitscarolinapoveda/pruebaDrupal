@@ -19,6 +19,7 @@ export class ProductServicesComponent implements OnInit {
     this.titleProducts = [];
     this.servicesProduct = [];
 
+
   }
 
   ngOnInit() {
