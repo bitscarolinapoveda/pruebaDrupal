@@ -12,11 +12,13 @@ import { HomeComponent } from './home/home.component';
 import { NoPageFoundComponent } from './no-page-found/no-page-found.component';
 import { ProductServicesComponent } from '../../cards/components/product-services/product-services.component';
 import { FloatSocialComponent } from '../../cards/components/float-social/float-social.component';
+import { ContactUsComponent } from './Contact-Us/Contact-Us.component';
 
 @NgModule({
   declarations: [
     PagesComponent,
     HomeComponent,
+    ContactUsComponent,
     NoPageFoundComponent,
     ProductServicesComponent,
     FloatSocialComponent,

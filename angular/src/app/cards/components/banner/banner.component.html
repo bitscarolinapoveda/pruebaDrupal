@@ -1,0 +1,11 @@
+<section class="page-header">
+    <div class="title">
+        <h1> {{ bannerArray.title }} </h1>
+    </div>
+    <ng-container *ngFor="let img of bannerimage">
+        <picture>
+            <source media="(max-width:{{medius}})" [srcset]="bannermovil[0]?.url">
+            <img [src]="img.url" alt="{{img.alt}}">
+        </picture>
+    </ng-container>
+</section>

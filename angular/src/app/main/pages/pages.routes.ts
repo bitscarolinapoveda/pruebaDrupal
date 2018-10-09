@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { PagesComponent } from './pages.component';
 import { HomeComponent } from './home/home.component';
 import { NoPageFoundComponent } from './no-page-found/no-page-found.component';
+import { ContactUsComponent } from './Contact-Us/Contact-Us.component';
 
 const pagesRoutes: Routes = [
   {
