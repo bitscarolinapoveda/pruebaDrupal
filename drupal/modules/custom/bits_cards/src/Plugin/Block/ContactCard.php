@@ -96,7 +96,7 @@ class ContactCard extends CardBase {
       $form['others']['steps'][$element]['description'] = [
         '#type' => 'textfield',
         '#title' => $this->t('Nombre'),
-        '#description' => $this->t(''),
+        '#description' => $this->t('Nombre'),
         '#default_value' => isset($this->configuration['others']['steps'][$element]['description']) ? $this->configuration['others']['steps'][$element]['description'] : '',
         '#weight' => '0',
       ];

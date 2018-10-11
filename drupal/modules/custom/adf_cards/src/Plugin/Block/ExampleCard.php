@@ -3,7 +3,6 @@
 namespace Drupal\adf_cards\Plugin\Block;
 
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\adf_cards\Plugin\Block\CardBase;
 
 /**
  * Provides a 'ExampleCard' block.

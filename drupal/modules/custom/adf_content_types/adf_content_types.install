@@ -14,10 +14,10 @@ function adf_content_types_install() {
   $field['field_name'] = 'field_url_reference';
 
   entity_get_form_display($entity_type, $bundle, 'default')
-    ->setComponent($field['field_name'], array())
+    ->setComponent($field['field_name'], [])
     ->save();
 
   entity_get_display($entity_type, $bundle, 'default')
-    ->setComponent($field['field_name'], array())
+    ->setComponent($field['field_name'], [])
     ->save();
 }

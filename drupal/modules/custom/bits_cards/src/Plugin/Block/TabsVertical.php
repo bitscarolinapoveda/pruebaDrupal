@@ -5,14 +5,14 @@ namespace Drupal\bits_cards\Plugin\Block;
 use Drupal\adf_cards\Plugin\Block\CardBase;
 
 /**
- * Provides a 'FooterBlockSimple' block.
+ * Provides a 'TabsVertical' block.
  *
  * @Block(
- *  id = "footer_block_simple",
- *  admin_label = @Translation("Footer Block"),
+ *  id = "tabs_vertical",
+ *  admin_label = @Translation("Tabs Vertical"),
  * )
  */
-class FooterBlockSimple extends CardBase {
+class TabsVertical extends CardBase {
 
   /**
    * {@inheritdoc}
@@ -21,27 +21,26 @@ class FooterBlockSimple extends CardBase {
     return [
       'header' => [
         'table_fields' => [
-          'subTitle' => [
+          'leftTitle' => [
             'type' => 'textfield',
-            'title' => $this->t('Subtítulo'),
-            'service_field' => 'subtitle',
-            'show' => 1,
-            'weight' => 1,
-            'max_length' => 10,
-          ],
-        ],
-      ],
-      'body' => [
-        'table_fields' => [
-          'content' => [
-            'type' => 'text_format',
-            'title' => $this->t('Título'),
+            'title' => $this->t('Texto izquierdo'),
             'service_field' => 'title',
             'show' => 1,
             'weight' => 1,
+            'max_length' => 500,
+          ],
+          'rightTitle' => [
+            'type' => 'textfield',
+            'title' => $this->t('Texto derecho'),
+            'service_field' => 'title',
+            'show' => 1,
+            'weight' => 1,
+            'max_length' => 500,
           ],
         ],
       ],
+      'body' => [],
+      'archivos' => [],
       'others' => [],
     ];
   }

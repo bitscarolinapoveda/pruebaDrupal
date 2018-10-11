@@ -6,8 +6,6 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use Drupal\Console\Core\Command\Command;
-use Drupal\Console\Annotations\DrupalCommand;
-use Drupal\Console\Utils\Validator;
 use Drupal\Console\Core\Utils\StringConverter;
 use Drupal\Console\Core\Generator\GeneratorInterface;
 

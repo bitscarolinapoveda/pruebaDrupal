@@ -4,6 +4,7 @@ namespace Drupal\adf_cards\Services;
 
 use Drupal\block\Entity\Block;
 use Drupal\file\Entity\File;
+use Drupal\Component\Serialization\Json;
 
 /**
  * Provides a resource to get view modes by entity and bundle.
@@ -21,6 +22,7 @@ class ExportConfigCardService {
     }
     $response['header'] = $this->getRenderData($settings['header']);
     $response['body'] = $this->getRenderData($settings['body']);
+    $response["archivos"] = $this->getRenderData($settings['archivos']);
     $response['others'] = $settings['others'] ?? [];
     $fieldBock = [
       'alliances' => [
@@ -30,29 +32,31 @@ class ExportConfigCardService {
       ],
       'whybits' => [
         'field_link',
-        'field_logo'
+        'field_logo',
       ],
       'tecnologies' => [
         'field_logo',
         'field_background',
         'field_backgroundmovil',
-      ]
+      ],
     ];
     if (isset($block->getDependencies()['content'])) {
       foreach ($block->getDependencies()['content'] as $value) {
         $condicion = explode(':', $value);
         $block_storage = \Drupal::entityTypeManager()->getStorage($condicion[0])->loadByProperties(['uuid' => $condicion[2], 'type' => $condicion[1]]);
         foreach ($block_storage as $blockData) {
-          foreach($fieldBock[$condicion[1]] as $field) {
-            foreach ($blockData->get($field)->getValue() as  $valueField) {
-              if(isset($valueField['target_id'])) {
+          foreach ($fieldBock[$condicion[1]] as $field) {
+            foreach ($blockData->get($field)->getValue() as $valueField) {
+              if (isset($valueField['target_id'])) {
                 $file = File::load($valueField['target_id']);
+
                 $file_uri = $file->getFileUri();
                 $file_url = file_create_url($file_uri);
                 $valueRes = $valueField;
                 $valueRes['path'] = $file_url;
                 $response['fields'][][$field] = $valueRes;
-              } else {
+              }
+              else {
                 $response['fields'][][$field] = $valueField;
               }
             }
@@ -70,16 +74,28 @@ class ExportConfigCardService {
     $data = [];
 
     foreach ($input['table_fields'] as $item) {
+      //dump($item);
       $element = [];
       switch ($item['type']) {
         case 'managed_file':
+
           if ($item['service_field'] == 'image') {
-            $file = File::load(reset($item['input']));
-            if ($file) {
-              $element['data'] = file_create_url($file->getFileUri());
-              $element['type'] = 'image';
+            foreach($item['input'] as $key => $itemimage){
+
+              $file = File::load($itemimage);
+              if ($file) {
+                $filename = $file->getFilename();
+                $extensionfile = ['.png', '.jpg', '.jpeg', '.pdf'];
+                $filename = str_replace($extensionfile,"",$filename);
+                $separatorfile = ['-', '_'];
+                $filename = str_replace($separatorfile," ",$filename);
+                $element["title"][$key] = $filename;
+                $element["data"][$key] = file_create_url($file->getFileUri());
+                $element['type'] = 'image';
+              }
             }
           }
+
           break;
 
         case 'text_format':
@@ -105,6 +121,8 @@ class ExportConfigCardService {
         $data[] = $element;
       }
     }
+
+
     return $data;
   }
 

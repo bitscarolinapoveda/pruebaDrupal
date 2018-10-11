@@ -7,7 +7,6 @@ use Drupal\rest\Plugin\ResourceBase;
 use Drupal\rest\ResourceResponse;
 use Drupal\Core\Menu\MenuTreeParameters;
 use Drupal\Core\Url;
-use \Symfony\Component\Routing\Route; 
 use Drupal\Core\Session\AccountProxyInterface;
 use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 use Symfony\Component\HttpKernel\Exception\HttpException;
@@ -155,7 +154,7 @@ class MenuRestResource extends ResourceBase {
 
       return $response;
     }
-   
+
     throw new HttpException(t("Menu name is required parameter"));
   }
 
@@ -174,7 +173,6 @@ class MenuRestResource extends ResourceBase {
     foreach ($transformed_tree as $menu_item) {
       $menu_link = $menu_item['original_link'];
       $url = $menu_item['url'];
-      
       $external = FALSE;
       $uuid = '';
       if ($url->isExternal()) {

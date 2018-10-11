@@ -3,7 +3,6 @@
 namespace Drupal\bits_cards\Plugin\rest\resource;
 
 use Drupal\Core\Session\AccountProxyInterface;
-use Drupal\rest\ModifiedResourceResponse;
 use Drupal\rest\Plugin\ResourceBase;
 use Drupal\rest\ResourceResponse;
 use Psr\Log\LoggerInterface;
