@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 import { HttpClientModule } from '@angular/common/http';
 
@@ -36,7 +37,10 @@ import { NotificationService } from './services/shared/notification.service';
     ToastrModule.forRoot(),
     APP_ROUTES
   ],
-  providers: [NotificationService],
+  providers: [
+    NotificationService,
+    {provide: LocationStrategy, useClass: HashLocationStrategy},
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

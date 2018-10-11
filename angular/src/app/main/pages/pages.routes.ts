@@ -10,13 +10,22 @@ const pagesRoutes: Routes = [
     path: '',
     component: PagesComponent,
     children: [
-      { path: 'home', component: HomeComponent },
       { path: '', redirectTo: '/home', pathMatch: 'full' },
+      { path: 'home', component: HomeComponent },
       { path: 'contact-us', component: ContactUsComponent },
-      { path: 'contact-us', redirectTo: '/contact-us' },
       { path: '**', component: NoPageFoundComponent },
+
+      // { path: 'home', component: HomeComponent },
+      // { path: '', component: HomeComponent },
+      // { path: 'NoPageFoundComponent', component: NoPageFoundComponent },
+      // { path: '**', pathMatch: 'full', redirectTo: 'N√oPageFoundComponent' }
+      // { path: 'home', component: HomeComponent },
+      // { path: '', redirectTo: '/home', pathMatch: 'full' },
+      // { path: 'contact-us', component: ContactUsComponent },
+      // { path: 'contact-us', redirectTo: '/contact-us' },
+      // { path: '**', component: NoPageFoundComponent },
     ]
   }
 ];
 
-export const PAGES_ROUTES = RouterModule.forChild( pagesRoutes );
+export const PagesRoutes = RouterModule.forChild(pagesRoutes);

@@ -15,7 +15,7 @@ export class PagesComponent implements OnInit {
   ngOnInit() {
     setTimeout(() => {
         this.loading = false;
-    }, 5000);
+    }, 3000);
   }
 
 
