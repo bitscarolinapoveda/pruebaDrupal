@@ -19,7 +19,26 @@ class WhyBits extends CardBase {
    */
   public function defaultConfiguration() {
     return [
-      'header' => [],
+      'header' => [
+        'table_fields' => [
+          'title' => [
+            'type' => 'textfield',
+            'title' => $this->t('Título'),
+            'service_field' => 'title',
+            'show' => 1,
+            'weight' => 1,
+            'max_length' => 50,
+          ],
+          'link' => [
+            'type' => 'url',
+            'title' => $this->t('Link'),
+            'service_field' => 'link',
+            'show' => 1,
+            'weight' => 1,
+            'max_length' => 100,
+          ],
+        ],
+      ],
       'body' => [],
       "archivos" => [
         'table_fields' => [
