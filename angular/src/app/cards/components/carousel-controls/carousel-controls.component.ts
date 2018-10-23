@@ -23,6 +23,7 @@ export class CarouselControlsComponent implements OnInit {
     }
     getAchievementsCarouselItems() {
     return this.AchievementCarouselItems.getContentTypeItems('achievements').subscribe(items => {
+      console.log(items);
       this.CarouselControlArray = items.datos;
       this.caroseltitle = items;
       this.CarouselControlArray = Object.keys(items.datos).map(function (key) { return items.datos[key]; });

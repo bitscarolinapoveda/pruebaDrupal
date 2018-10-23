@@ -29,6 +29,7 @@ export class ProductServicesComponent implements OnInit {
 
   getProductsAndServicesItems() {
     this.contentTypeService.getContentTypeItems('products').subscribe(items => {
+      console.log(items);
       this.servicesProduct = items.datos;
       this.titleProducts = items;
       this.servicesProduct = Object.keys(items.datos).map(function(key) {
