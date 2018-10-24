@@ -1,3 +1,4 @@
+import { CustomCardService } from './../../../services/cards/v1-card.services';
 import { Component, OnInit } from '@angular/core';
 import { TecnologiesService } from '../../../services/cards/tecnologies.service';
 declare var $: any;
@@ -14,7 +15,9 @@ export class TecnologiesComponent implements OnInit {
   tecnologiesTitle: any = [];
   tecnologiesback: any = [];
   tecnologiesmovil: any = [];
-  constructor( private _tecnologies: TecnologiesService ) {}
+  constructor(
+    private _tecnologies: CustomCardService,
+  ) {}
 
   ngOnInit() {
     this.getItemsTecnologies();
@@ -24,7 +27,7 @@ export class TecnologiesComponent implements OnInit {
   }
 
   getItemsTecnologies() {
-    return this._tecnologies.getTecnologies().subscribe(items => {
+    return this._tecnologies.getCustomCardInformation('technologies').subscribe(items => {
       this.tecnologiesmovil = items.data.back_movil;
       this.tecnologiesTitle = items.data;
       this.tecnologiesback = items.data.background;

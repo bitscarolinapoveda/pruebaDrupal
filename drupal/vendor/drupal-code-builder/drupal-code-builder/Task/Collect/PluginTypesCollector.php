@@ -46,6 +46,19 @@ class PluginTypesCollector extends CollectorBase  {
   ];
 
   /**
+   * List of plugins known to be broken.
+   */
+  protected $brokenPlugins = [
+    'migrate.destination' => [
+      'draggableviews' => TRUE,
+      'entity:block' => TRUE,
+    ],
+    'validation.constraint' => [
+      'RedirectSourceLinkType' => TRUE,
+    ],
+  ];
+
+  /**
    * Constructs a new helper.
    *
    * @param \DrupalCodeBuilder\Environment\EnvironmentInterface $environment
@@ -595,35 +608,62 @@ class PluginTypesCollector extends CollectorBase  {
     $service = \Drupal::service($data['service_id']);
     $definitions = $service->getDefinitions();
     foreach ($definitions as $plugin_id => $definition) {
-      // We can't work with plugins that don't define a class: skip the whole
-      // plugin type.
-      if (empty($definition['class'])) {
+      if (is_array($definition)) {
+        // We can't work with plugins that don't define a class: skip the whole
+        // plugin type.
+        if (empty($definition['class'])) {
+          return;
+        }
+
+        $plugin_class = $definition['class'];
+      }
+      elseif ($definition instanceof Drupal\Component\Plugin\Definition\PluginDefinition) {
+        $plugin_class = $definition->getClass();
+      }
+      else {
+        // Skip the whole plugin type: no idea how to handle it.
         return;
+      }
+
+      // Babysit plugins which crash. This happens a lot more often than you'd
+      // think, as some just never get instantiated in normal operation and have
+      // clearly not been properly tested! Typically, this is caused by the
+      // plugin class not not correctly implementing the interface, often due to
+      // method typehints.
+      if (isset($this->brokenPlugins[$data['type_id']][$plugin_id])) {
+        continue;
       }
 
       // Skip any class that we can't attempt to load without a fatal. This will
       // typically happen if the plugin is meant for use with another module,
       // and inherits from a base class that doesn't exist in the current
       // codebase.
-      if (!$this->codeAnalyser->classIsUsable($definition['class'])) {
+      if (!$this->codeAnalyser->classIsUsable($plugin_class)) {
         continue;
       }
 
-      // Babysit modules that have a broken plugin class. This can be caused
-      // if the namespace is incorrect for the file location, and so prevents
-      // the class from being autoloaded.
-      if (!class_exists($definition['class'])) {
-        // Skip just this plugin.
+      // Babysit modules that have a broken plugin class. A number of things can
+      // go wrong, including the namespace being incorrect for the file
+      // location, preventing the class from being autoloaded.
+      try {
+        if (!class_exists($plugin_class)) {
+          // Skip just this plugin.
+          continue;
+        }
+      }
+      catch (\Throwable $ex) {
         continue;
       }
 
-      $plugin_component_namespace = $this->getClassComponentNamespace($definition['class']);
+      $plugin_component_namespace = $this->getClassComponentNamespace($plugin_class);
 
       // Get the full ancestry of the plugin's class.
       // Build a lineage array, from youngest to oldest, i.e. closest parents
       // first.
       $lineage = [];
-      $plugin_class_reflection = new \ReflectionClass($definition['class']);
+
+      $plugin_class_reflection = new \ReflectionClass($plugin_class);
+
       $class_reflection = $plugin_class_reflection;
       while ($class_reflection = $class_reflection->getParentClass()) {
         $lineage[] = $class_reflection->getName();

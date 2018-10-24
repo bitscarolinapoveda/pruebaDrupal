@@ -1,3 +1,4 @@
+import { CustomCardService } from './../../../services/cards/v1-card.services';
 import { Component, OnInit } from '@angular/core';
 import { AllianceService } from '../../../services/cards/alliances.service';
 import { ActivatedRoute } from '@angular/router';
@@ -16,8 +17,10 @@ export class AlliancesComponent implements OnInit {
   backgroundImage: any[];
   backgroundImageMovil: any[];
 
-  constructor(private router: ActivatedRoute,
-      private alliance: AllianceService) {
+  constructor(
+      private router: ActivatedRoute,
+      private alliance: CustomCardService,
+    ) {
         this.backgroundImage = [];
         this.backgroundImageMovil = [];
    }
@@ -131,9 +134,11 @@ export class AlliancesComponent implements OnInit {
     this.getAlliance();
   }
   getAlliance() {
-        this.alliance.getAlliance().subscribe( items => {
+        this.alliance.getCustomCardInformation('ouralliance').subscribe( items => {
+        console.log(items);
         this.Alliance = items.data;
-        this.logosAlliance = Object.keys(items.data.logo).map(function (key) { return items.data.logo[key]; });
+        // this.logosAlliance = Object.keys(items.data.logo).map(function (key) { return items.data.logo[key]; });
+        this.logosAlliance = items.archivos[0].data.logo;
         this.backgroundImage = items.data.background;
         this.backgroundImageMovil = items.data.back_movil;
         });
