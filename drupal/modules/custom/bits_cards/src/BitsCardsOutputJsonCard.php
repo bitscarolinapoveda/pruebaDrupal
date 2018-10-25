@@ -64,8 +64,15 @@ class BitsCardsOutputJsonCard extends ExportConfigCardService {
                   $filename = replaceFilename($filename);
 
                   if($inputType == 'header'){
+
+                    if($idCard == 'brand_card'){
+                      $element['data'][$key]['title'] = $filename;
+                      $element['data'][$key]['url'] = file_create_url($file->getFileUri());
+                    } else {
                       $element['data'][$key]['title'][] = $filename;
                       $element['data'][$key]['url'][] = file_create_url($file->getFileUri());
+                    }
+
                   }
                   if($inputType == 'body'){
 
