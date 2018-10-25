@@ -32,7 +32,7 @@ class Titles extends CardBase {
         ],
       ],
       'body' => [],
-      'archivos' => [],
+      'files' => [],
       'others' => [],
     ];
   }

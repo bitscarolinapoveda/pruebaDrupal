@@ -40,7 +40,7 @@ class TabsVertical extends CardBase {
         ],
       ],
       'body' => [],
-      'archivos' => [],
+      'files' => [],
       'others' => [],
     ];
   }

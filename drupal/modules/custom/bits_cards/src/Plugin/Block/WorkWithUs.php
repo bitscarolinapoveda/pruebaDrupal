@@ -67,7 +67,7 @@ class WorkWithUs extends CardBase {
           ],
         ],
       ],
-      'archivos' => [],
+      'files' => [],
       'others' => [],
     ];
   }

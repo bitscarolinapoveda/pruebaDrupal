@@ -32,7 +32,7 @@ class Banner extends CardBase {
         ],
       ],
       'body' => [],
-      "archivos" => [],
+      "files" => [],
       'others' => [],
     ];
   }

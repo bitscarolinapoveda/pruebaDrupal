@@ -28,7 +28,7 @@ class BitsCardsOutputJsonCard extends ExportConfigCardService {
 
     $response['header'] = $this->getRenderData($settings, 'header', $settings['id']);
     $response['body'] = $this->getRenderData($settings, 'body', $settings['id']);
-    $response['archivos'] = $this->getRenderData($settings, 'archivos', $settings['id']);
+    $response['files'] = $this->getRenderData($settings, 'files', $settings['id']);
     $response['others'] = $settings['others'] ?? [];
 
     return $response;
@@ -86,7 +86,7 @@ class BitsCardsOutputJsonCard extends ExportConfigCardService {
                     }
 
                   }
-                  if($inputType == 'archivos'){
+                  if($inputType == 'files'){
 
                     if($idCard == 'technologies' OR $idCard == 'our_alliance'){
                       $element['data']['logo'][$key]['title'] = $filename;

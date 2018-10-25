@@ -51,7 +51,7 @@ class Technologies extends CardBase {
           ],
         ],
       ],
-      "archivos" => [
+      "files" => [
         'table_fields' => [
           'image' => [
             'type' => 'managed_file',
