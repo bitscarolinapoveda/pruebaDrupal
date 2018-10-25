@@ -70,13 +70,14 @@ class BitsCardsOutputJsonCard extends ExportConfigCardService {
                   if($inputType == 'body'){
 
                     if($idCard == 'technologies' OR $idCard == 'our_alliance' OR $idCard == 'banner'  ){
+                      //var_dump($key);
                       if($key == '0'){
-                        $element['data']['back_movil'][$key]['title'] = $filename;
-                        $element['data']['back_movil'][$key]['url'] = file_create_url($file->getFileUri());
+                        $element['data']['back_movil']['0']['title'] = $filename;
+                        $element['data']['back_movil']['0']['url'] = file_create_url($file->getFileUri());
                       } else {
                         if($key == '1'){
-                          $element['data']['back_desktop'][$key]['title'] = $filename;
-                          $element['data']['back_desktop'][$key]['url'] = file_create_url($file->getFileUri());
+                          $element['data']['back_desktop']['0']['title'] = $filename;
+                          $element['data']['back_desktop']['0']['url'] = file_create_url($file->getFileUri());
                         }
                       }
 
