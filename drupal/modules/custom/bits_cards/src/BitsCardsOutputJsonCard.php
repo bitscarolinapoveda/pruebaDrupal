@@ -29,7 +29,8 @@ class BitsCardsOutputJsonCard extends ExportConfigCardService {
     $response['header'] = $this->getRenderData($settings, 'header', $settings['id']);
     $response['body'] = $this->getRenderData($settings, 'body', $settings['id']);
     $response['files'] = $this->getRenderData($settings, 'files', $settings['id']);
-    $response['others'] = $settings['others'] ?? [];
+    $response['others'] = $this->getRenderData($settings, 'others', $settings['id']);
+    //$response['others'] = $settings['others'] ?? [];
 
     return $response;
 
@@ -48,7 +49,7 @@ class BitsCardsOutputJsonCard extends ExportConfigCardService {
 
     if($input[$inputType]['table_fields'] != ""){
       foreach ($input[$inputType]['table_fields'] as $item) {
-        //dump($item);
+        //echo $item;
         $element = [];
         switch ($item['type']) {
           case 'managed_file':
@@ -139,6 +140,22 @@ class BitsCardsOutputJsonCard extends ExportConfigCardService {
         if ($item['show'] == 1) {
           $data[] = $element;
         }
+
+      }
+    }
+
+    if($input[$inputType]['steps'] != ""){
+      foreach ($input[$inputType]['steps'] as $key => $itemOther) {
+        //echo $itemOther;
+        $elements = [];
+
+        $elements['description'] = $itemOther['description'];
+        $elements['data'] = [
+          'url' => $itemOther['link']['url'],
+          'text' => $itemOther['link']['text'],
+        ];
+
+        $data[] = $elements;
 
       }
     }
