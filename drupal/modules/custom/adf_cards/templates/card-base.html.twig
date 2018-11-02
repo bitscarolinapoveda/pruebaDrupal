@@ -16,9 +16,9 @@
   </div>
 {% endblock %}
 
-{% block archivos_data %}
+{% block files_data %}
   <div>
-    {% for item in archivos %}
+    {% for item in files %}
       {{ macros.renderData(item.type, item.data) }}
     {% endfor %}
   </div>

@@ -136,14 +136,14 @@ class CardBase extends BlockBase {
 
     unset($table_fields);
 
-    $form['archivos'] = [
+    $form['files'] = [
       '#type' => 'details',
-      '#title' => $this->t('Archivos'),
+      '#title' => $this->t('Files'),
       '#description' => $this->t('Parámetros para subir archivos'),
       '#open' => TRUE,
     ];
 
-    $form['archivos']['table_fields'] = [
+    $form['files']['table_fields'] = [
       '#type' => 'table',
       '#header' => [
         $this->t('Field'),
@@ -163,12 +163,12 @@ class CardBase extends BlockBase {
     ];
 
 
-    $table_fields = $this->configuration['archivos']['table_fields'];
+    $table_fields = $this->configuration['files']['table_fields'];
     uasort($table_fields, [
       'Drupal\Component\Utility\SortArray',
       'sortByWeightElement',
     ]);
-    $form = $this->generateTable('archivos', $table_fields, $form);
+    $form = $this->generateTable('files', $table_fields, $form);
 
     return $form;
   }
@@ -273,12 +273,12 @@ class CardBase extends BlockBase {
 
     $this->configuration['header'] = $form_state->getValue('header');
     $this->configuration['body'] = $form_state->getValue('body');
-    $this->configuration['archivos'] = $form_state->getValue('archivos');
+    $this->configuration['files'] = $form_state->getValue('files');
 
     $filesArray = [
       'header' => $this->configuration['header'],
       'body' => $this->configuration['body'],
-      'archivos' => $this->configuration['archivos'],
+      'files' => $this->configuration['files'],
     ];
 
     foreach ($filesArray as $item) {
@@ -329,13 +329,13 @@ class CardBase extends BlockBase {
 
 
     // Ordenamiento de items (Archivos).
-    $table_fieldsC = $this->configuration['archivos']['table_fields'];
+    $table_fieldsC = $this->configuration['files']['table_fields'];
     uasort($table_fieldsC, [
       'Drupal\Component\Utility\SortArray',
       'sortByWeightElement',
     ]);
-    $this->configuration['archivos']['table_fields'] = $table_fieldsC;
-    $archivos = $this->getRenderData($this->configuration['archivos']);
+    $this->configuration['files']['table_fields'] = $table_fieldsC;
+    $files = $this->getRenderData($this->configuration['files']);
 
     $build = [];
     $build = [
@@ -343,7 +343,7 @@ class CardBase extends BlockBase {
       '#uuid' => $this->configuration['uuid'],
       '#header' => $header,
       '#body' => $body,
-      '#archivos' => $archivos,
+      '#files' => $files,
     ];
 
     return $build;

@@ -40,7 +40,7 @@ class WhyBits extends CardBase {
         ],
       ],
       'body' => [],
-      "archivos" => [
+      "files" => [
         'table_fields' => [
           'image' => [
             'type' => 'managed_file',

@@ -28,8 +28,9 @@ class BitsCardsOutputJsonCard extends ExportConfigCardService {
 
     $response['header'] = $this->getRenderData($settings, 'header', $settings['id']);
     $response['body'] = $this->getRenderData($settings, 'body', $settings['id']);
-    $response['archivos'] = $this->getRenderData($settings, 'archivos', $settings['id']);
-    $response['others'] = $settings['others'] ?? [];
+    $response['files'] = $this->getRenderData($settings, 'files', $settings['id']);
+    $response['others'] = $this->getRenderData($settings, 'others', $settings['id']);
+    //$response['others'] = $settings['others'] ?? [];
 
     return $response;
 
@@ -48,7 +49,7 @@ class BitsCardsOutputJsonCard extends ExportConfigCardService {
 
     if($input[$inputType]['table_fields'] != ""){
       foreach ($input[$inputType]['table_fields'] as $item) {
-        //dump($item);
+        //echo $item;
         $element = [];
         switch ($item['type']) {
           case 'managed_file':
@@ -64,19 +65,27 @@ class BitsCardsOutputJsonCard extends ExportConfigCardService {
                   $filename = replaceFilename($filename);
 
                   if($inputType == 'header'){
+
+                    if($idCard == 'brand_card'){
+                      $element['data'][$key]['title'] = $filename;
+                      $element['data'][$key]['url'] = file_create_url($file->getFileUri());
+                    } else {
                       $element['data'][$key]['title'][] = $filename;
                       $element['data'][$key]['url'][] = file_create_url($file->getFileUri());
+                    }
+
                   }
                   if($inputType == 'body'){
 
                     if($idCard == 'technologies' OR $idCard == 'our_alliance' OR $idCard == 'banner'  ){
+                      //var_dump($key);
                       if($key == '0'){
-                        $element['data']['back_movil'][$key]['title'] = $filename;
-                        $element['data']['back_movil'][$key]['url'] = file_create_url($file->getFileUri());
+                        $element['data']['back_movil']['0']['title'] = $filename;
+                        $element['data']['back_movil']['0']['url'] = file_create_url($file->getFileUri());
                       } else {
                         if($key == '1'){
-                          $element['data']['back_desktop'][$key]['title'] = $filename;
-                          $element['data']['back_desktop'][$key]['url'] = file_create_url($file->getFileUri());
+                          $element['data']['back_desktop']['0']['title'] = $filename;
+                          $element['data']['back_desktop']['0']['url'] = file_create_url($file->getFileUri());
                         }
                       }
 
@@ -86,7 +95,7 @@ class BitsCardsOutputJsonCard extends ExportConfigCardService {
                     }
 
                   }
-                  if($inputType == 'archivos'){
+                  if($inputType == 'files'){
 
                     if($idCard == 'technologies' OR $idCard == 'our_alliance'){
                       $element['data']['logo'][$key]['title'] = $filename;
@@ -131,6 +140,22 @@ class BitsCardsOutputJsonCard extends ExportConfigCardService {
         if ($item['show'] == 1) {
           $data[] = $element;
         }
+
+      }
+    }
+
+    if($input[$inputType]['steps'] != ""){
+      foreach ($input[$inputType]['steps'] as $key => $itemOther) {
+        //echo $itemOther;
+        $elements = [];
+
+        $elements['description'] = $itemOther['description'];
+        $elements['data'] = [
+          'url' => $itemOther['link']['url'],
+          'text' => $itemOther['link']['text'],
+        ];
+
+        $data[] = $elements;
 
       }
     }
