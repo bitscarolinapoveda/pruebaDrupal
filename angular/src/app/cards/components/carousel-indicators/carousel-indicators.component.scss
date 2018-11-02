@@ -1,191 +1,198 @@
 @import './src/assets/scss/mixin.scss';
-.Slider {
-    .carousel-slider {
-        width: 100%;
-        overflow: hidden;
-        .slider-botton {
-            bottom: 16%;
-            margin-right: 3%;
-            margin-left: 0%;
-            @include breakpoint(tablet) {
-                justify-content: flex-end;
-                margin-right: 9%;
-            }
-            @include breakpoint(desktop) {
-                margin-left: 81%;
-                margin-right: 4%;
-                bottom: 20%;
-            }
-            .circle-botton {
-                background-color: #ffffff;
-                border-radius: 100%;
-                margin-left: 5.2%;
-                width: 14px;
-                height: 14px;
-                @include breakpoint (tablet) {
-                    margin-left: 2%;
-                }
-                @include breakpoint(desktop) {
-                    margin-left: 7.2%;
-                }
-            }
-            .active {
-                background-color: #9db232;
-            }
-        }
-        .window-complete {
-            height: auto;
-            .text-slider {
-                bottom: 23.5%;
-                left: 14%;
-                padding-bottom: initial;
-                @include breakpoint(tablet) {
-                    bottom: 25.5%;
-                    width: 76%;
-                    left: 16%;
-                    text-align: right;
-                }
-                @include breakpoint(desktop) {
-                    bottom: 26.5%;
-                    width: 76%;
-                    left: 16%;
-                    text-align: right;
-                }
-                .title-slider {
-                    font-size: 36px;
-                    @include breakpoint(tablet) {
-                        font-size: 30px;
-                    }
-                    @include breakpoint(desktop) {
-                        font-size: 50px;
-                    }
-                }
-                .description-slider {
-                    font-size: 18px;
-                    font-family: 'Open Sans light';
-                    font-weight: 300;
-                    @include breakpoint(tablet) {
-                        position: relative;
-                        line-height: 1.2;
-                        font-size: 19px;
-                        width: 88%;
-                        left: 11%;
-                    }
-                    @include breakpoint(desktop) {
-                        position: relative;
-                        line-height: 1.2;
-                        font-size: 28px;
-                        padding-left: 22%;
-                        width: 88%;
-                        left: 12%;
-                    }
-                }
-            }
-        }
-        .icon-mobile {
-            display: none;
-            @include breakpoint(desktop) {
-                display: initial;
-            }
-        }
-        .down-main {
-            text-decoration: none;
-            text-align: center;
-            color: #ffffff;
-            font-size: 16px;
-            width: 100%;
-            height: auto;
-            position: absolute;
-            top: 86%;
-            bottom: 0px;
-            left: 0%;
-            &::after {
-                content: "EXPLORAR";
-                position: relative;
-                display: flex;
-                justify-content: center;
-                background: transparent;
-                bottom: 58px;
-                color: #ffffff;
-                @include breakpoint(tablet) {
-                    bottom: 0px;
-                }
-                @include breakpoint(desktop) {
-                    bottom: 30px;
-                }
-            }
-            @include breakpoint(tablet) {
-                top: 80%;
-                left: 0%;
-            }
-            @include breakpoint(desktop) {
-                bottom: 56px;
-                top: 92%;
-            }
-            .arrow-down {
-                display: flex;
-                width: 100%;
-                left: 0%;
-                padding: 19px;
-                position: relative;
-                background-image: url("../../../../assets/icon/down-gray.svg");
-                background-size: 10%;
-                background-position: center;
-                background-repeat: no-repeat;
-                @include breakpoint(tablet) {
-                    padding: 1%;
-                    top: 45px;
-                    background-size: 4%;
-                }
-                @include breakpoint(desktop) {
-                    padding: 1%;
-                    width: 100%;
-                    margin-bottom: 0%;
-                    position: absolute;
-                    background-size: 3%;
-                }
-            }
-        }
-        .icon-prev {
-            @include breakpoint(desktop) {
-                height: 11%;
-                width: 17%;
-                bottom: 5%;
-                margin-right: 82%;
-                position: relative;
-                background: rgba(0, 0, 0, 0.63);
-                background-image: url("../../../../assets/icon/back-white.svg");
-                background-size: 94%;
-                background-position: center;
-                background-repeat: no-repeat;
-            }
-        }
-        .icon-next {
-            @include breakpoint(desktop) {
-                height: 11%;
-                width: 17%;
-                bottom: 5%;
-                margin-left: 81%;
-                position: relative;
-                background: rgba(0, 0, 0, 0.63);
-                background-image: url("../../../../assets/icon/next-white.svg");
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: 94%;
-            }
-        }
-    }
-}
-
-.anchor {
-    position: absolute;
-    height: 51px;
-    margin-top: -10%;
-    width: 100%;
-    @include breakpoint (tablet) {
-        margin-top: -3%;
-    }
+.carousel-main-image {
     @include breakpoint (desktop) {
-        margin-top: -2%;
+        width: 100%;
     }
+    max-height: 1080px;  
+    filter: brightness(0.5);
 }
+// .Slider {
+//     .carousel-slider {
+//         width: 100%;
+//         overflow: hidden;
+//         .slider-botton {
+//             bottom: 16%;
+//             margin-right: 3%;
+//             margin-left: 0%;
+//             @include breakpoint(tablet) {
+//                 justify-content: flex-end;
+//                 margin-right: 9%;
+//             }
+//             @include breakpoint(desktop) {
+//                 margin-left: 81%;
+//                 margin-right: 4%;
+//                 bottom: 20%;
+//             }
+//             .circle-botton {
+//                 background-color: #ffffff;
+//                 border-radius: 100%;
+//                 margin-left: 5.2%;
+//                 width: 14px;
+//                 height: 14px;
+//                 @include breakpoint (tablet) {
+//                     margin-left: 2%;
+//                 }
+//                 @include breakpoint(desktop) {
+//                     margin-left: 7.2%;
+//                 }
+//             }
+//             .active {
+//                 background-color: #9db232;
+//             }
+//         }
+//         .window-complete {
+//             height: auto;
+//             .text-slider {
+//                 bottom: 23.5%;
+//                 left: 14%;
+//                 padding-bottom: initial;
+//                 @include breakpoint(tablet) {
+//                     bottom: 25.5%;
+//                     width: 76%;
+//                     left: 16%;
+//                     text-align: right;
+//                 }
+//                 @include breakpoint(desktop) {
+//                     bottom: 26.5%;
+//                     width: 76%;
+//                     left: 16%;
+//                     text-align: right;
+//                 }
+//                 .title-slider {
+//                     font-size: 36px;
+//                     @include breakpoint(tablet) {
+//                         font-size: 30px;
+//                     }
+//                     @include breakpoint(desktop) {
+//                         font-size: 50px;
+//                     }
+//                 }
+//                 .description-slider {
+//                     font-size: 18px;
+//                     font-family: 'Open Sans light';
+//                     font-weight: 300;
+//                     @include breakpoint(tablet) {
+//                         position: relative;
+//                         line-height: 1.2;
+//                         font-size: 19px;
+//                         width: 88%;
+//                         left: 11%;
+//                     }
+//                     @include breakpoint(desktop) {
+//                         position: relative;
+//                         line-height: 1.2;
+//                         font-size: 28px;
+//                         padding-left: 22%;
+//                         width: 88%;
+//                         left: 12%;
+//                     }
+//                 }
+//             }
+//         }
+//         .icon-mobile {
+//             display: none;
+//             @include breakpoint(desktop) {
+//                 display: initial;
+//             }
+//         }
+//         .down-main {
+//             text-decoration: none;
+//             text-align: center;
+//             color: #ffffff;
+//             font-size: 16px;
+//             width: 100%;
+//             height: auto;
+//             position: absolute;
+//             top: 86%;
+//             bottom: 0px;
+//             left: 0%;
+//             &::after {
+//                 content: "EXPLORAR";
+//                 position: relative;
+//                 display: flex;
+//                 justify-content: center;
+//                 background: transparent;
+//                 bottom: 58px;
+//                 color: #ffffff;
+//                 @include breakpoint(tablet) {
+//                     bottom: 0px;
+//                 }
+//                 @include breakpoint(desktop) {
+//                     bottom: 30px;
+//                 }
+//             }
+//             @include breakpoint(tablet) {
+//                 top: 80%;
+//                 left: 0%;
+//             }
+//             @include breakpoint(desktop) {
+//                 bottom: 56px;
+//                 top: 92%;
+//             }
+//             .arrow-down {
+//                 display: flex;
+//                 width: 100%;
+//                 left: 0%;
+//                 padding: 19px;
+//                 position: relative;
+//                 background-image: url("../../../../assets/icon/down-gray.svg");
+//                 background-size: 10%;
+//                 background-position: center;
+//                 background-repeat: no-repeat;
+//                 @include breakpoint(tablet) {
+//                     padding: 1%;
+//                     top: 45px;
+//                     background-size: 4%;
+//                 }
+//                 @include breakpoint(desktop) {
+//                     padding: 1%;
+//                     width: 100%;
+//                     margin-bottom: 0%;
+//                     position: absolute;
+//                     background-size: 3%;
+//                 }
+//             }
+//         }
+//         .icon-prev {
+//             @include breakpoint(desktop) {
+//                 height: 11%;
+//                 width: 17%;
+//                 bottom: 5%;
+//                 margin-right: 82%;
+//                 position: relative;
+//                 background: rgba(0, 0, 0, 0.63);
+//                 background-image: url("../../../../assets/icon/back-white.svg");
+//                 background-size: 94%;
+//                 background-position: center;
+//                 background-repeat: no-repeat;
+//             }
+//         }
+//         .icon-next {
+//             @include breakpoint(desktop) {
+//                 height: 11%;
+//                 width: 17%;
+//                 bottom: 5%;
+//                 margin-left: 81%;
+//                 position: relative;
+//                 background: rgba(0, 0, 0, 0.63);
+//                 background-image: url("../../../../assets/icon/next-white.svg");
+//                 background-position: center;
+//                 background-repeat: no-repeat;
+//                 background-size: 94%;
+//             }
+//         }
+//     }
+// }
+
+// .anchor {
+//     position: absolute;
+//     height: 51px;
+//     margin-top: -10%;
+//     width: 100%;
+//     @include breakpoint (tablet) {
+//         margin-top: -3%;
+//     }
+//     @include breakpoint (desktop) {
+//         margin-top: -2%;
+//     }
+// }

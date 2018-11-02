@@ -2,8 +2,8 @@
   <div class="icon-social">
     <ul class="row fa-ul">
       <li *ngFor="let net of socialmedia;">
-        <a href="{{ net.url }}">
-          <i class="{{ net.class }}"></i>
+        <a href="{{ net.data.url }}">
+          <i class="{{ net.data.text }}"></i>
         </a>
       </li>
     </ul>

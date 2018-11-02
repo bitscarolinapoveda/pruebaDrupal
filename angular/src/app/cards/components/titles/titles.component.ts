@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TitileService } from '../../../services/cards/titiles.service';
+import { CustomCardService } from 'src/app/services/cards/v1-card.services';
 
 @Component({
     selector: 'app-title',
@@ -9,15 +9,16 @@ import { TitileService } from '../../../services/cards/titiles.service';
 
 export class TitleComponent implements OnInit {
     titleArray: any = [];
-    constructor(private title: TitileService) {
+    constructor(
+        private title: CustomCardService,
+    ) {}
 
-    }
     ngOnInit() {
         this.getTitiles();
     }
     getTitiles() {
-        this.title.getTitle().subscribe(items => {
-            this.titleArray = items.data;
+        this.title.getCustomCardInformation('contact_title').subscribe(items => {
+            this.titleArray = items.header[0].data.title;
         });
     }
 

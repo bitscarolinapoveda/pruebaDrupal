@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { $ } from 'protractor';
 
 
 @Component({
@@ -7,14 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PagesComponent implements OnInit {
   loading: boolean;
-
   constructor() {
-    this.loading = true;
+    this.loading = false;
    }
 
   ngOnInit() {
     setTimeout(() => {
-        this.loading = false;
+      this.loading = true;
     }, 3000);
   }
 

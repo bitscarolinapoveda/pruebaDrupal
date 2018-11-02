@@ -8,27 +8,46 @@ declare  var $: any;
   styleUrls: ['./carousel-indicators.component.scss']
 })
 export class CarouselIndicatorsComponent implements OnInit {
+
   medius = '550px';
   carouselArray: any = [] ;
-  constructor(  private indicatorsSliderCarouselItems: ContentType ) {
 
+  height: any;
+  carousel: {};
+
+  constructor(
+    private indicatorsSliderCarouselItems: ContentType
+  ) {
+    this.height = (window.innerHeight) + 'px';
   }
+
   ngOnInit() {
     this.getIndicatorsSliderItems();
   }
   getIndicatorsSliderItems()  {
     return this.indicatorsSliderCarouselItems.getContentTypeItems('articles').subscribe(items => {
-      this.carouselArray = Object.keys(items).map(function (key) {
-          return items[key];
-        });
+      this.carousel = items;
     });
   }
 
-  down() {
-    let x = document.querySelector('.anchor');
-    if (x) {
-       //  x.scrollIntoView({ behavior: 'smooth'});
-      x.scrollIntoView({ behavior: 'smooth', block: 'start'});
-    }
+  // down() {
+  //   let x = document.querySelector('.anchor');
+  //   if (x) {
+  //      //  x.scrollIntoView({ behavior: 'smooth'});
+  //     x.scrollIntoView({ behavior: 'smooth', block: 'start'});
+  //   }
+  // }
+
+  // ngOnInit() {
+  //   this.getImages ();
+  // }
+  // getImages () {
+  //   return this.info.getInfo().subscribe(items => {
+  //     this.carousel = items;
+  //     console.log(this.carousel);
+  //   });
+  // }
+  onResize() {
+    this.height = (window.innerHeight) + 'px';
   }
 }

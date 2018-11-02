@@ -15,11 +15,10 @@ export class FloatSocialComponent implements OnInit {
   contactMailLink: string;
   socialmedia: any[];
 
-  constructor(private router: ActivatedRoute,
-    private footerBrand2: CustomCardService) {
-    this.contactLabel = '';
-    this.contactMailLabel = '';
-    this.contactMailLink = '';
+  constructor(
+    private router: ActivatedRoute,
+    private footerBrand2: CustomCardService
+    ) {
     this.socialmedia = [];
   }
 
@@ -30,12 +29,8 @@ export class FloatSocialComponent implements OnInit {
 
   getFloatSocialItems() {
 
-    this.footerBrand2.getFooterContactItems().subscribe((items: {header, others} ) => {
-      this.contactLabel = items.header[0].data;
-      this.contactMailLabel = items.header[1].data.label;
-      this.contactMailLink = items.header[1].data.link;
+    this.footerBrand2.getCustomCardInformation('contactcard').subscribe((items: {header, others} ) => {
       this.socialmedia = items.others;
-      //console.log(this.socialmedia)
     });
   }
 

@@ -9,10 +9,11 @@ import { CustomCardService } from '../../../services/cards/v1-card.services';
   styleUrls: ['./workwithus.scss']
 })
 export class WorkWithUsComponent implements OnInit {
-  title: string;
-  subtitle: string;
+  workWithUsTitle: string;
+  workWithUsSubtitle: string;
   url: string;
-  textBottom: string;
+  workWithUsButton: string;
+  workWithUsThirdText: string;
   body: string;
 
 
@@ -20,10 +21,10 @@ export class WorkWithUsComponent implements OnInit {
     private router: ActivatedRoute,
     private footerService: CustomCardService,
     ) {
-      this.title ='';
-      this.subtitle = '';
+      this.workWithUsTitle = '';
+      this.workWithUsSubtitle = '';
       this.url = '';
-      this.textBottom = '';
+      this.workWithUsButton = '';
   }
 
   ngOnInit(): void {
@@ -32,11 +33,11 @@ export class WorkWithUsComponent implements OnInit {
 
   getWorkwithUsItems() {
     this.footerService.getCustomCardInformation('workwithus').subscribe((items: {header, body, others} ) => {
-      //console.log('workwithus', items);
-      this.title = items.header[0].data;
-      this.subtitle = items.header[1].data;
+      this.workWithUsTitle = items.header[0].data;
+      this.workWithUsSubtitle = items.header[1].data;
       this.url = items.body[0].data.link;
-      this.textBottom = items.body[1].data;
+      this.workWithUsButton = items.body[1].data;
+      this.workWithUsThirdText = items.body[2].data;
     });
   }
 }

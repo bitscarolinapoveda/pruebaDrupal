@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TabsService } from '../../../services/cards/tabs.service';
+import { CustomCardService } from 'src/app/services/cards/v1-card.services';
 
 @Component({
     selector: 'app-tabs',
@@ -8,20 +8,20 @@ import { TabsService } from '../../../services/cards/tabs.service';
 })
 
 export class TabsComponent implements OnInit {
-    tabsArray: any = [];
+    tabLeft: any = [];
     tabRight: any = [];
-    constructor(private https: TabsService) {
-
-    }
+    constructor(
+        private https: CustomCardService,
+    ) {}
 
     ngOnInit() {
         this.getTabs();
     }
 
     getTabs() {
-      return  this.https.getTabs().subscribe(items =>{
-          this.tabsArray = items.data.left_title;
-          this.tabRight = items.data.right_title;
+      return  this.https.getCustomCardInformation('tabsvertical').subscribe(items =>{
+          this.tabLeft = items.header[0].data;
+          this.tabRight = items.header[1].data;
       });
     }
 }

@@ -1,8 +1,8 @@
 import { CustomCardService } from './../../../services/cards/v1-card.services';
 import { Component, OnInit } from '@angular/core';
-import { TecnologiesService } from '../../../services/cards/tecnologies.service';
-declare var $: any;
 
+
+declare var $: any;
 declare var jQuery: any;
 declare var $: any;
 @Component({
@@ -11,10 +11,11 @@ declare var $: any;
   styleUrls: ['./tecnologies.component.scss']
 })
 export class TecnologiesComponent implements OnInit {
-  tecnologiesArray: any = [];
+  tecnologiesArrayLogos: any = [];
   tecnologiesTitle: any = [];
   tecnologiesback: any = [];
-  tecnologiesmovil: any = [];
+  tecnologiesMovil: any = [];
+  tecnologiesDesktop: any = [];
   constructor(
     private _tecnologies: CustomCardService,
   ) {}
@@ -28,10 +29,11 @@ export class TecnologiesComponent implements OnInit {
 
   getItemsTecnologies() {
     return this._tecnologies.getCustomCardInformation('technologies').subscribe(items => {
-      this.tecnologiesmovil = items.data.back_movil;
-      this.tecnologiesTitle = items.data;
-      this.tecnologiesback = items.data.background;
-      this.tecnologiesArray = items.data.logo;
+      console.log(items);
+      this.tecnologiesTitle = items.header[0].data;
+      this.tecnologiesMovil = items.body[0].data.back_movil[0];
+      this.tecnologiesDesktop = items.body[0].data.back_desktop[0];
+      this.tecnologiesArrayLogos = items.files[0].data.logo;
     });
   }
 /*

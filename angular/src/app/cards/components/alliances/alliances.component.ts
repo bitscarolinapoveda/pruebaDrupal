@@ -1,6 +1,5 @@
 import { CustomCardService } from './../../../services/cards/v1-card.services';
 import { Component, OnInit } from '@angular/core';
-import { AllianceService } from '../../../services/cards/alliances.service';
 import { ActivatedRoute } from '@angular/router';
 
 declare var $: any;
@@ -12,17 +11,15 @@ declare var $: any;
 })
 export class AlliancesComponent implements OnInit {
 
-  Alliance;
-  logosAlliance: any[];
-  backgroundImage: any[];
-  backgroundImageMovil: any[];
+  allianceTitle: any[];
+  allianceArrayLogos: any[];
+  allianceBackground: any[];
 
   constructor(
       private router: ActivatedRoute,
       private alliance: CustomCardService,
     ) {
-        this.backgroundImage = [];
-        this.backgroundImageMovil = [];
+        this.allianceBackground = [];
    }
 
   ngOnInit() {
@@ -129,18 +126,14 @@ export class AlliancesComponent implements OnInit {
           }, 500);
       }
     }); */
-
-    //console.log('nuestras alianzas');
     this.getAlliance();
   }
   getAlliance() {
         this.alliance.getCustomCardInformation('ouralliance').subscribe( items => {
-        console.log(items);
-        this.Alliance = items.data;
-        // this.logosAlliance = Object.keys(items.data.logo).map(function (key) { return items.data.logo[key]; });
-        this.logosAlliance = items.archivos[0].data.logo;
-        this.backgroundImage = items.data.background;
-        this.backgroundImageMovil = items.data.back_movil;
+        this.allianceTitle = items.header[0].data;
+        console.log(this.allianceTitle);
+        this.allianceBackground = items.body[0].data.back_movil[0];
+        this.allianceArrayLogos = items.files[0].data.logo;
         });
     }
 }

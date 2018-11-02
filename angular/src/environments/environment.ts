@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://bits-redesign-stg.dev01.bitsamericas.net/'
+   apiUrl: 'http://bits-redesign-stg.dev01.bitsamericas.net/',
 };
 
 /*

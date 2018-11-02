@@ -1,10 +1,10 @@
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '../../../node_modules/@angular/common';
 
 import { CarouselItemComponent } from './components/carousel-item/carousel-item.component';
 import { CarouselIndicatorsComponent } from './components/carousel-indicators/carousel-indicators.component';
-import { CardValuesComponent } from './components/card-values/card-values.component';
 import { TecnologiesComponent } from './components/tecnologies/tecnologies.component';
 import { PorqueBitsComponent } from './components/porque-bits/porque-bits.component';
 import { CarouselItem2Component } from './components/carousel-item-2/carousel-item-2.component';
@@ -17,7 +17,6 @@ import { TabsComponent } from './components/tabs/tabs.component';
 
 // Servicios
 import { NodeService } from '../services/cards/node.service';
-import { CardService } from '../services/cards/card.service';
 
 
 
@@ -26,7 +25,6 @@ import { CardService } from '../services/cards/card.service';
   declarations: [
     CarouselItemComponent,
     CarouselIndicatorsComponent,
-    CardValuesComponent,
     CarouselControlsComponent,
     CarouselItem2Component,
     TecnologiesComponent,
@@ -39,7 +37,6 @@ import { CardService } from '../services/cards/card.service';
   ],
   exports: [
     CarouselIndicatorsComponent,
-    CardValuesComponent,
     CarouselControlsComponent,
     CarouselItem2Component,
     TecnologiesComponent,
@@ -50,8 +47,8 @@ import { CardService } from '../services/cards/card.service';
     TitleComponent,
     TabsComponent
   ],
-  imports: [BrowserModule, CommonModule],
-  providers: [NodeService, CardService]
+  imports: [BrowserModule, CommonModule, NgbModule],
+  providers: [NodeService]
 })
 export class CardsModule {}
 

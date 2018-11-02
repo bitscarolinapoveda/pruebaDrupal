@@ -1,4 +1,4 @@
-<section class="Slider">
+<!-- <section class="Slider">
     <div id="carouselExampleIndicators" class="carousel slide carousel-slider" data-ride="carousel">
         <ol class="carousel-indicators slider-botton">
             <li *ngFor="let car of carouselArray; let i= index" data-target="#carouselExampleIndicators" [attr.data-slide-to]="i" class="circle-botton"></li>
@@ -15,7 +15,6 @@
                 </picture>
             </div>
             <app-carousel-item></app-carousel-item>
-
         </div>
         <a class="down-main" (click)="down()">
             <div class="arrow-down"></div>
@@ -30,4 +29,15 @@
         </a>
     </div>
     <a class="anchor"></a>
-</section>
+</section> -->
+<ngb-carousel *ngIf="carousel" (window:resize)="onResize()">
+    <ng-template class="prueba" ngbSlide *ngFor="let item of carousel">
+      <img class="carousel-main-image" [src]="item.field_image" alt="Random first slide" [ngStyle]="{'height': height}">
+      <div class="carousel-caption">
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.field_tags }}</p>
+      </div>
+    </ng-template>
+</ngb-carousel>
+<a>Anchor</a>
+  

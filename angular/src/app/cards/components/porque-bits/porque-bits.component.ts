@@ -1,7 +1,6 @@
 import { CustomCardService } from './../../../services/cards/v1-card.services';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { PorqueBitsService } from '../../../services/cards/porquebits.service';
 
 declare var $: any;
 
@@ -14,6 +13,7 @@ export class PorqueBitsComponent implements OnInit {
 
   moralValues: any[];
   mainTitleLink;
+  mainUrlLink;
 
   constructor(private router: ActivatedRoute,
       private porquebits: CustomCardService) {
@@ -35,8 +35,9 @@ export class PorqueBitsComponent implements OnInit {
   getMoralValuesItems() {
     this.porquebits.getCustomCardInformation('whybits').subscribe( items => {
       console.log(items);
-      this.moralValues = items.archivos[0].data;
-      this.mainTitleLink = items.data;
+      this.moralValues = items.files[0].data;
+      this.mainTitleLink = items.header[0].data;
+      this.mainUrlLink = items.header[1].data;
     });
   }
 }

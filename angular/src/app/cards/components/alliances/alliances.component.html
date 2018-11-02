@@ -1,14 +1,14 @@
 <section id="transition-image2">
     <picture>
-        <source media="(max-width:500px)" [srcset]="backgroundImageMovil[0]?.url">
-        <img class="w-100 backgraund-image" [src]="backgroundImage[0]?.url" alt="{{ backgroundImage[0]?.alt }}">
+        <source media="(max-width:500px)" [srcset]="allianceBackground?.url">
+        <img class="w-100 backgraund-image" [src]="allianceBackground.url" alt="{{ allianceBackground.title }}">
     </picture>
-    <h1>{{ Alliance?.title }}</h1>
+    <h1>{{ allianceTitle?.title }}</h1>
     <div class="list-image-item">
         <ul class="row">
-            <li *ngFor="let Our of logosAlliance; let id = index">
+            <li *ngFor="let Our of allianceArrayLogos; let id = index">
                 <picture>
-                    <img id="slide-img2-{{ id }}" class="img-item2" src="{{ Our.image }}" alt="{{ Our.alt }}">
+                    <img id="slide-img2-{{ id }}" class="img-item2" src="{{ Our.image }}" alt="{{ Our.title }}" >
                 </picture>
             </li>
         </ul>

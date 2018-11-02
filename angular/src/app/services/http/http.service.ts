@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BaseService } from '../base/base.service';
 import { NotificationService } from '../shared/notification.service';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
@@ -15,12 +15,17 @@ import 'rxjs/add/observable/throw';
 })
 export class HttpService extends BaseService {
 
+  header: HttpHeaders = new HttpHeaders();
+
   constructor( protected _http: HttpClient, protected _notificationService: NotificationService) {
     super();
+
+    this.header.set('Access-Control-Allow-Origin', '*');
+    this.header.set('Access-Control-Allow-Methods', 'GET,HEAD,OPTIONS,POST,PUT');
   }
 
-   public get(url: string) {
-     return this._http.get(this.baseUrl + url).map((resp: any) => {
+   public get(url: string, header?: any) {
+     return this._http.get(this.baseUrl + url, { headers: this.header}).map((resp: any) => {
       return resp;
     }).catch(err => {
       return this.errorHandler(err);

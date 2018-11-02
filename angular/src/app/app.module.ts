@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { HttpClientModule } from '@angular/common/http';
 
@@ -31,6 +32,7 @@ import { NotificationService } from './services/shared/notification.service';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    NgbModule,
     AdfModule,
     PagesModule,
     HttpClientModule,

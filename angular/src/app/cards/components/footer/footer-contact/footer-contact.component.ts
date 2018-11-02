@@ -10,20 +10,28 @@ import { CustomCardService } from '../../../../services/cards/v1-card.services';
 })
 export class FooterContactComponent implements OnInit {
 
-  contactLabel: string;
+  contactTitle: string;
   contactMailLabel: string;
   contactMailLink: string;
-  contactNets: any[];
+  contactIcon1: string;
+  contactIcon2: string;
+  contactIcon3: string;
+  contactIcon4: string;
+  contactSocialArray: any[];
 
 
   constructor(
     private router: ActivatedRoute,
     private footerBrand: CustomCardService
     ) {
-    this.contactLabel = '';
+    this.contactTitle = '';
     this.contactMailLabel = '';
     this.contactMailLink = '';
-    this.contactNets = [];
+    this.contactIcon1 = '';
+    this.contactIcon2 = '';
+    this.contactIcon3 = '';
+    this.contactIcon4 = '';
+    this.contactSocialArray = [];
   }
 
   ngOnInit() {
@@ -33,12 +41,10 @@ export class FooterContactComponent implements OnInit {
 
   getFooterContactItems() {
 
-    this.footerBrand.getFooterContactItems().subscribe((items: {header, others} ) => {
-      this.contactLabel = items.header[0].data;
-      this.contactMailLabel = items.header[1].data.label;
-      this.contactMailLink = items.header[1].data.link;
-      this.contactNets = items.others;
-      //console.log(this.contactNets)
+    this.footerBrand.getCustomCardInformation('contactcard').subscribe((items: {header, others} ) => {
+      this.contactTitle = items.header[0].data;
+      this.contactMailLink = items.header[1].data;
+      this.contactSocialArray = items.others;
     });
   }
 
