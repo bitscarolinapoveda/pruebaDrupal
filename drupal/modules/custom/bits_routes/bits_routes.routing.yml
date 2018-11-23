@@ -1,0 +1,7 @@
+bits_routes.home_controller_hello:
+  path: /home
+  defaults:
+    _controller: '\Drupal\bits_routes\Controller\HomeController::hello'
+    _title: 'Home'
+  requirements:
+    _permission: 'access content'

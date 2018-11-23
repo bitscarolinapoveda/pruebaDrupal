@@ -1,0 +1,273 @@
+body {
+    main {
+        .oo {
+            margin-top: -539px;
+            margin-bottom: 260px;
+        }
+        #forms {
+            .principal-data {
+                list-style: none;
+                .item-comid {
+                    max-width: 100%;
+                    .description {
+                        display: grid;
+                        margin-left: auto;
+                        margin-right: auto;
+                        width: 92%;
+                        margin-top: 19px;
+                        color: #bcdb5b;
+                        @include breakpoint (tablet) {
+                            margin-left: 44px;
+                        }
+                        @include breakpoint(desktop) {
+                            width: 77%;
+                        }
+                        #style1 {
+                            padding: 10px 20px;
+                            border: 1px solid #b2c6cd;
+                            color: #002b49;
+                        }
+                    }
+                }
+                .position {
+                    margin-left: auto;
+                    margin-right: 17px;
+                    width: 92%;
+                    @include breakpoint(desktop) {
+                        margin-left: auto;
+                        margin-right: auto;
+                        width: 80%;
+                        margin-top: 25px;
+                    }
+                }
+                .contenido {
+                    display: grid;
+                    @include breakpoint(desktop) {
+                        margin-right: 25px;
+                        margin-left: 15px;
+                    }
+                    label {
+                        color: #c0dc74;
+                        margin-top: 20px;
+                        margin-bottom: -1px;
+                    }
+                    #style {
+                        width: 100%;
+                        padding: 4px 2px;
+                        outline: none;
+                        border: none;
+                        border-bottom: 1px solid #b2c6cd;
+                        color: #002b49;
+                    }
+                }
+                .name {
+                    color: #c0dc74;
+                    margin-top: 20px;
+                    margin-bottom: -1px;
+                    @include breakpoint(desktop) {
+                        margin-left: 15px;
+                    }
+                }
+                .document {
+                    display: block;
+                    @include breakpoint(desktop) {
+                        margin-right: 25px;
+                        margin-left: 15px;
+                    }
+                    #adjunto {
+                        position: absolute;
+                        z-index: -1;
+                        opacity: 0;
+                    }
+                }
+                .adjun-image {
+                    background-image: url("../images/adjunto.png");
+                    width: 45px;
+                    height: 45px;
+                    display: block;
+                    background-size: contain;
+                    margin-left: 87%;
+                    margin-top: -20px;
+                    cursor: pointer;
+                    @include breakpoint (tablet) {
+                        margin-left: 86%;
+                    }
+                    @include breakpoint (desktop) {
+                        margin-left: 90%;
+                    }
+                }
+                .contenido-adjunto {
+                    margin-top: -26px;
+                    display: block;
+                    width: 100%;
+                    padding: 4px 2px;
+                    outline: none;
+                    border: none;
+                    border-bottom: 1px solid #b2c6cd;
+                    color: #002b49;
+                    cursor: pointer;
+                }
+            }
+            p {
+                margin-top: 57px;
+                color: #002b49;
+                text-align: center;
+                margin-left: 11px;
+                @include breakpoint (desktop) {
+                    margin-left: auto;
+                }
+                a {
+                    color: #bcdb5b;
+                    text-decoration: underline;
+                    margin-left: 3px;
+                }
+            }
+            .container {
+                display: block;
+                cursor: pointer;
+                max-width: 42%;
+                padding-left: 0px;
+                margin-left: 0px;
+                margin-left: 11px;
+                @include breakpoint (tablet) {
+                    margin-left: 177px;
+                }
+                @include breakpoint (desktop) {
+                    margin-left: 471px;
+                }
+            }
+            .container input {
+                position: absolute;
+                opacity: 0;
+                cursor: pointer;
+            }
+            .checkmark {
+                position: absolute;
+                top: -2px;
+                height: 24px;
+                width: 24px;
+                background-color: #fff;
+                background-image: url("../images/check.png");
+            }
+            .container input:checked~.checkmark {
+                background-image: url("../images/check2.png");
+            }
+            .container .checkmark:after {
+                left: 9px;
+                top: 5px;
+                width: 5px;
+                height: 10px;
+                border: solid blanck;
+                border-width: 0 3px 3px 0;
+                -webkit-transform: rotate(45deg);
+                -ms-transform: rotate(45deg);
+                transform: rotate(45deg);
+            }
+            /* Popup container - can be anything you want */
+            .popup {
+                position: relative;
+                cursor: pointer;
+                background-image: url("../images/question.png");
+                background-size: contain;
+                display: block;
+                width: 10px;
+                height: 10px;
+                margin-left: 93%;
+                margin-top: -31px;
+                @include breakpoint (tablet) {
+                    margin-left: 73%;
+                }
+                @include breakpoint (desktop) {
+                    margin-left: 821px;
+                }
+            }
+            /* The actual popup */
+            .popup .popuptext {
+                visibility: hidden;
+                width: 365px;
+                background-color: #e5e9ec;
+                color: #002b49;
+                text-align: center;
+                border-radius: 6px;
+                padding: 8px 0;
+                position: absolute;
+                z-index: 1;
+                bottom: 227%;
+                margin-left: -351px;
+                @include breakpoint (tablet) {
+                    width: 781px;
+                    margin-left: -535px;
+                }
+                @include breakpoint (desktop) {
+                    width: 1231px;
+                    margin-left: -766px;
+                    margin-bottom: 5px;
+                }
+            }
+            /* Popup arrow */
+            .popup .popuptext::after {
+                content: "";
+                position: absolute;
+                top: 100%;
+                left: 97.4%;
+                margin-left: -5px;
+                border-width: 5px;
+                border-style: solid;
+                border-color: #e5e9ec transparent transparent transparent;
+                @include breakpoint (tablet) {
+                    left: 69.4%;
+                }
+                @include breakpoint (desktop) {
+                    left: 62.6%;
+                }
+            }
+            /* Toggle this class - hide and show the popup */
+            .popup .show {
+                visibility: visible;
+                -webkit-animation: fadeIn 1s;
+                animation: fadeIn 1s;
+            }
+            /* Add animation (fade in the popup) */
+            @-webkit-keyframes fadeIn {
+                from {
+                    opacity: 0;
+                }
+                to {
+                    opacity: 1;
+                }
+            }
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                }
+                to {
+                    opacity: 1;
+                }
+            }
+            .button {
+                padding: 13px 37px;
+                background-color: #a6cf24 !important;
+                border: none;
+                color: white !important;
+                margin: 33px 108px;
+                cursor: pointer;
+                display: block;
+                margin: auto;
+                margin-top: 48px;
+                width: 137px;
+                text-align: center;
+                -webkit-appearance: none;
+                text-align: center;
+                opacity: 0.8;
+            }
+            .dato-button {
+                text-align: center;
+                color: #002b49;
+                margin-top: 20px;
+                strong {
+                    color: #bcdb5b;
+                }
+            }
+        }
+    }
+}

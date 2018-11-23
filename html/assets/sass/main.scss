@@ -1,11 +1,7 @@
-
 //base
 @import "base/_globales";
 @import "base/_mixin";
-
-
 //components
-
 @import "components/_footer";
 @import "components/_menu";
 @import "components/_logo";
@@ -40,7 +36,4 @@
 @import "components/_logo-title-description";
 @import "components/_logo-image";
 @import "components/_barra-url";
-
-
-
-
+@import "components/forms";

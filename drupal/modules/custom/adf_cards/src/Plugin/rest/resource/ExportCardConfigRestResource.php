@@ -94,7 +94,6 @@ class ExportCardConfigRestResource extends ResourceBase {
     }
 
     $service = \Drupal::service('adf_cards.get_config');
-
     $config = $service->get($block_id);
 
     return new ResourceResponse($config);

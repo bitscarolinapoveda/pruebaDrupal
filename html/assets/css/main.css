@@ -2807,7 +2807,7 @@ body main #block-video .description {
         @media (min-width: 1025px) {
           #image-desccription .container-second .bottons .badge {
             margin-left: 0%;
-            width: auto;
+            width: 10%;
             padding-top: 1%;
             padding-bottom: 1%; } }
     #image-desccription .container-second .url {
@@ -2928,3 +2928,241 @@ body main #barra-url {
           right: -1px; }
       body main #barra-url .list-bloque .content-botton:last-child .nav-link:after {
         background: transparent; }
+
+body main .oo {
+  margin-top: -539px;
+  margin-bottom: 260px; }
+
+body main #forms {
+  /* Popup container - can be anything you want */
+  /* The actual popup */
+  /* Popup arrow */
+  /* Toggle this class - hide and show the popup */
+  /* Add animation (fade in the popup) */ }
+  body main #forms .principal-data {
+    list-style: none; }
+    body main #forms .principal-data .item-comid {
+      max-width: 100%; }
+      body main #forms .principal-data .item-comid .description {
+        display: grid;
+        margin-left: auto;
+        margin-right: auto;
+        width: 92%;
+        margin-top: 19px;
+        color: #bcdb5b; }
+        @media (min-width: 668px) and (max-width: 1024px) {
+          body main #forms .principal-data .item-comid .description {
+            margin-left: 44px; } }
+        @media (min-width: 1025px) {
+          body main #forms .principal-data .item-comid .description {
+            width: 77%; } }
+        body main #forms .principal-data .item-comid .description #style1 {
+          padding: 10px 20px;
+          border: 1px solid #b2c6cd;
+          color: #002b49; }
+    body main #forms .principal-data .position {
+      margin-left: auto;
+      margin-right: 17px;
+      width: 92%; }
+      @media (min-width: 1025px) {
+        body main #forms .principal-data .position {
+          margin-left: auto;
+          margin-right: auto;
+          width: 80%;
+          margin-top: 25px; } }
+    body main #forms .principal-data .contenido {
+      display: grid; }
+      @media (min-width: 1025px) {
+        body main #forms .principal-data .contenido {
+          margin-right: 25px;
+          margin-left: 15px; } }
+      body main #forms .principal-data .contenido label {
+        color: #c0dc74;
+        margin-top: 20px;
+        margin-bottom: -1px; }
+      body main #forms .principal-data .contenido #style {
+        width: 100%;
+        padding: 4px 2px;
+        outline: none;
+        border: none;
+        border-bottom: 1px solid #b2c6cd;
+        color: #002b49; }
+    body main #forms .principal-data .name {
+      color: #c0dc74;
+      margin-top: 20px;
+      margin-bottom: -1px; }
+      @media (min-width: 1025px) {
+        body main #forms .principal-data .name {
+          margin-left: 15px; } }
+    body main #forms .principal-data .document {
+      display: block; }
+      @media (min-width: 1025px) {
+        body main #forms .principal-data .document {
+          margin-right: 25px;
+          margin-left: 15px; } }
+      body main #forms .principal-data .document #adjunto {
+        position: absolute;
+        z-index: -1;
+        opacity: 0; }
+    body main #forms .principal-data .adjun-image {
+      background-image: url("../images/adjunto.png");
+      width: 45px;
+      height: 45px;
+      display: block;
+      background-size: contain;
+      margin-left: 87%;
+      margin-top: -20px;
+      cursor: pointer; }
+      @media (min-width: 668px) and (max-width: 1024px) {
+        body main #forms .principal-data .adjun-image {
+          margin-left: 86%; } }
+      @media (min-width: 1025px) {
+        body main #forms .principal-data .adjun-image {
+          margin-left: 90%; } }
+    body main #forms .principal-data .contenido-adjunto {
+      margin-top: -26px;
+      display: block;
+      width: 100%;
+      padding: 4px 2px;
+      outline: none;
+      border: none;
+      border-bottom: 1px solid #b2c6cd;
+      color: #002b49;
+      cursor: pointer; }
+  body main #forms p {
+    margin-top: 57px;
+    color: #002b49;
+    text-align: center;
+    margin-left: 11px; }
+    @media (min-width: 1025px) {
+      body main #forms p {
+        margin-left: auto; } }
+    body main #forms p a {
+      color: #bcdb5b;
+      text-decoration: underline;
+      margin-left: 3px; }
+  body main #forms .container {
+    display: block;
+    cursor: pointer;
+    max-width: 42%;
+    padding-left: 0px;
+    margin-left: 0px;
+    margin-left: 11px; }
+    @media (min-width: 668px) and (max-width: 1024px) {
+      body main #forms .container {
+        margin-left: 177px; } }
+    @media (min-width: 1025px) {
+      body main #forms .container {
+        margin-left: 471px; } }
+  body main #forms .container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer; }
+  body main #forms .checkmark {
+    position: absolute;
+    top: -2px;
+    height: 24px;
+    width: 24px;
+    background-color: #fff;
+    background-image: url("../images/check.png"); }
+  body main #forms .container input:checked ~ .checkmark {
+    background-image: url("../images/check2.png"); }
+  body main #forms .container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid blanck;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg); }
+  body main #forms .popup {
+    position: relative;
+    cursor: pointer;
+    background-image: url("../images/question.png");
+    background-size: contain;
+    display: block;
+    width: 10px;
+    height: 10px;
+    margin-left: 93%;
+    margin-top: -31px; }
+    @media (min-width: 668px) and (max-width: 1024px) {
+      body main #forms .popup {
+        margin-left: 73%; } }
+    @media (min-width: 1025px) {
+      body main #forms .popup {
+        margin-left: 821px; } }
+  body main #forms .popup .popuptext {
+    visibility: hidden;
+    width: 365px;
+    background-color: #e5e9ec;
+    color: #002b49;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 227%;
+    margin-left: -351px; }
+    @media (min-width: 668px) and (max-width: 1024px) {
+      body main #forms .popup .popuptext {
+        width: 781px;
+        margin-left: -535px; } }
+    @media (min-width: 1025px) {
+      body main #forms .popup .popuptext {
+        width: 1231px;
+        margin-left: -766px;
+        margin-bottom: 5px; } }
+  body main #forms .popup .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 97.4%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #e5e9ec transparent transparent transparent; }
+    @media (min-width: 668px) and (max-width: 1024px) {
+      body main #forms .popup .popuptext::after {
+        left: 69.4%; } }
+    @media (min-width: 1025px) {
+      body main #forms .popup .popuptext::after {
+        left: 62.6%; } }
+  body main #forms .popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s; }
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+  body main #forms .button {
+    padding: 13px 37px;
+    background-color: #a6cf24 !important;
+    border: none;
+    color: white !important;
+    margin: 33px 108px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    margin-top: 48px;
+    width: 137px;
+    text-align: center;
+    -webkit-appearance: none;
+    text-align: center;
+    opacity: 0.8; }
+  body main #forms .dato-button {
+    text-align: center;
+    color: #002b49;
+    margin-top: 20px; }
+    body main #forms .dato-button strong {
+      color: #bcdb5b; }
