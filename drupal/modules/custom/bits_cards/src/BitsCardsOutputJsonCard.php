@@ -3,15 +3,14 @@
  * @file
  * Contains Drupal\bits_cards\BitsCardsOutputJsonCard
  */
+
 namespace Drupal\bits_cards;
 
 
 use Drupal\adf_cards\Services\ExportConfigCardService;
 use Drupal\block\Entity\Block;
 use Drupal\file\Entity\File;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\JsonResponse;
-use Drupal\Component\Serialization\Json;
+use Drupal\node\Entity\Node;
 
 class BitsCardsOutputJsonCard extends ExportConfigCardService {
 
@@ -30,7 +29,65 @@ class BitsCardsOutputJsonCard extends ExportConfigCardService {
     $response['body'] = $this->getRenderData($settings, 'body', $settings['id']);
     $response['files'] = $this->getRenderData($settings, 'files', $settings['id']);
     $response['others'] = $this->getRenderData($settings, 'others', $settings['id']);
-    //$response['others'] = $settings['others'] ?? [];
+    $response['data'] = [];
+
+    if ($settings['entity'] && $type = $settings['entity']['type']) {
+      $name = $settings['entity']['name'] ?? 'node';
+      $limit = $settings['entity']['limit'] ?? 6;
+      $offset = $settings['entity']['offset'] ?? 0;
+      $viewMode = $settings['entity']['default_view_mode'] ?? 'default';
+      $otherData = [];
+
+      $ids = \Drupal::entityQuery($name)
+        ->condition('status', 1)
+        ->condition('type', $type)
+        ->range($offset, $limit)
+        ->execute();
+
+      /**@var Node[] $nodes */
+      $nodes = Node::loadMultiple($ids);
+
+      $fields = \Drupal::entityManager()
+        ->getStorage('entity_view_display')
+        ->load($name . '.' . $type . '.' . $viewMode)
+        ->getComponents();
+
+      foreach ($fields as $name => $field) {
+        if (in_array($name, ['title', 'created', 'uid', 'links'])) {
+          continue;
+        }
+        if ($field['label'] !== 'hidden') {
+          $otherData[] = $name;
+        }
+      }
+
+      foreach ($nodes as $node) {
+        $data = [
+          'nid' => $node->id(),
+          'title' => $node->title->value,
+        ];
+
+        foreach ($otherData as $field) {
+          //if ($node->hasField($field)) { //Afecta el performance
+          $type = $node->get($field)->getFieldDefinition()->getType();
+
+          if ($type === 'image') {
+            $imageData = $node->get($field)->getValue();
+            $file = \Drupal\file\Entity\File::load($imageData[0]['target_id']);
+            $data[$field] = [
+              'url' => file_create_url($file->getFileUri()),
+              'alt' => $imageData[0]['alt'],
+            ];
+          }
+          else {
+            $data[$field] = $node->get($field)->getString();
+          }
+          //}
+        }
+
+        $response['data'][] = $data;
+      }
+    }
 
     return $response;
 
@@ -41,13 +98,8 @@ class BitsCardsOutputJsonCard extends ExportConfigCardService {
    */
   public function getRenderData($input, $inputType, $idCard) {
     $data = [];
-    /*
-    dump($idCard);
-    dump($input);
-    dump($inputType);
-    */
 
-    if($input[$inputType]['table_fields'] != ""){
+    if ($input[$inputType]['table_fields'] != '') {
       foreach ($input[$inputType]['table_fields'] as $item) {
         //echo $item;
         $element = [];
@@ -56,7 +108,7 @@ class BitsCardsOutputJsonCard extends ExportConfigCardService {
 
             if ($item['service_field'] == 'image') {
 
-              foreach($item['input'] as $key => $itemimage){
+              foreach ($item['input'] as $key => $itemimage) {
 
                 $file = File::load($itemimage);
                 if ($file) {
@@ -64,43 +116,46 @@ class BitsCardsOutputJsonCard extends ExportConfigCardService {
                   $filename = $file->getFilename();
                   $filename = replaceFilename($filename);
 
-                  if($inputType == 'header'){
+                  if ($inputType == 'header') {
 
-                    if($idCard == 'brand_card'){
+                    if ($idCard == 'brand_card') {
                       $element['data'][$key]['title'] = $filename;
                       $element['data'][$key]['url'] = file_create_url($file->getFileUri());
-                    } else {
+                    }
+                    else {
                       $element['data'][$key]['title'][] = $filename;
                       $element['data'][$key]['url'][] = file_create_url($file->getFileUri());
                     }
 
                   }
-                  if($inputType == 'body'){
+                  if ($inputType == 'body') {
 
-                    if($idCard == 'technologies' OR $idCard == 'our_alliance' OR $idCard == 'banner'  ){
-                      //var_dump($key);
-                      if($key == '0'){
+                    if ($idCard == 'technologies' OR $idCard == 'our_alliance' OR $idCard == 'banner') {
+                      if ($key == '0') {
                         $element['data']['back_movil']['0']['title'] = $filename;
                         $element['data']['back_movil']['0']['url'] = file_create_url($file->getFileUri());
-                      } else {
-                        if($key == '1'){
+                      }
+                      else {
+                        if ($key == '1') {
                           $element['data']['back_desktop']['0']['title'] = $filename;
                           $element['data']['back_desktop']['0']['url'] = file_create_url($file->getFileUri());
                         }
                       }
 
-                    } else {
+                    }
+                    else {
                       $element['data'][$key]['title'] = $filename;
                       $element['data'][$key]['url'] = file_create_url($file->getFileUri());
                     }
 
                   }
-                  if($inputType == 'files'){
+                  if ($inputType == 'files') {
 
-                    if($idCard == 'technologies' OR $idCard == 'our_alliance'){
+                    if ($idCard == 'technologies' OR $idCard == 'our_alliance') {
                       $element['data']['logo'][$key]['title'] = $filename;
                       $element['data']['logo'][$key]['image'] = file_create_url($file->getFileUri());
-                    } else {
+                    }
+                    else {
                       $element['data'][$key]['title'] = $filename;
                       $element['data'][$key]['url'] = file_create_url($file->getFileUri());
                     }
@@ -126,7 +181,7 @@ class BitsCardsOutputJsonCard extends ExportConfigCardService {
             $element['type'] = 'url';
             break;
 
-            case 'textfield':
+          case 'textfield':
             $element['data']['title'] = $item['input'];
 
             break;
@@ -144,9 +199,8 @@ class BitsCardsOutputJsonCard extends ExportConfigCardService {
       }
     }
 
-    if($input[$inputType]['steps'] != ""){
+    if ($input[$inputType]['steps'] != "") {
       foreach ($input[$inputType]['steps'] as $key => $itemOther) {
-        //echo $itemOther;
         $elements = [];
 
         $elements['description'] = $itemOther['description'];
@@ -160,22 +214,20 @@ class BitsCardsOutputJsonCard extends ExportConfigCardService {
       }
     }
 
-
     return $data;
   }
-
 }
 
-  /**
-   * {@inheritdoc}
-   */
-  function replaceFilename($inputfilename) {
+/**
+ * {@inheritdoc}
+ */
+function replaceFilename($inputfilename) {
 
-    $extensionfile = ['.png', '.jpg', '.jpeg', '.pdf'];
-    $inputfilename = str_replace($extensionfile,"", $inputfilename);
-    $separatorfile = ['-', '_'];
-    $inputfilename = str_replace($separatorfile," ", $inputfilename);
+  $extensionfile = ['.png', '.jpg', '.jpeg', '.pdf'];
+  $inputfilename = str_replace($extensionfile, '', $inputfilename);
+  $separatorfile = ['-', '_'];
+  $inputfilename = str_replace($separatorfile, ' ', $inputfilename);
 
-    return $inputfilename;
+  return $inputfilename;
 
-  }
+}
