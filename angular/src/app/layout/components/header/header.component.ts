@@ -26,8 +26,10 @@ export class HeaderComponent implements OnInit {
   onWindowScroll() {
     if ($('.image-bits').offset().top > 50) {
       $('.image-bits').attr('src', 'assets/images/Logocolor.png');
+      $('.menu-caret').css({color:'#002b49'});
     } else {
       $('.image-bits').attr('src', 'assets/images/Logowhite.png');
+        $('.menu-caret').css({color:'#fff'});
     }
   }
 
