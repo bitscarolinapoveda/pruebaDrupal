@@ -51,7 +51,7 @@ class Technologies extends CardBase {
           ],
         ],
       ],
-      "files" => [
+      'files' => [
         'table_fields' => [
           'image' => [
             'type' => 'managed_file',
@@ -62,6 +62,13 @@ class Technologies extends CardBase {
             'max_length' => 5,
           ],
         ],
+      ],
+      'entity' => [
+        'name' => 'node',
+        'type' => 'technologies',
+        'limit' => 6,
+        'offset' => 0,
+        'default_view_mode' => 'slide',
       ],
       'others' => [],
     ];
