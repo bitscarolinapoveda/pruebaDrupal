@@ -2,7 +2,7 @@
   <div class="icon-social">
     <ul class="row fa-ul">
       <li *ngFor="let net of socialmedia;">
-        <a href="{{ net.data.url }}">
+        <a href="{{ net.data.url }}" target="_blank">
           <i class="{{ net.data.text }}"></i>
         </a>
       </li>
@@ -13,7 +13,7 @@
   <div class="icon-mail">
     <ul class="row fa-ul">
       <li>
-        <a href="contac-us.html">
+        <a routerLink="/contact-us">
           <i class="fa-li fas fa-envelope"></i>
         </a>
       </li>
