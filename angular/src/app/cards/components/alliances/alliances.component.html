@@ -6,9 +6,9 @@
     <h1>{{ allianceTitle?.title }}</h1>
     <div class="list-image-item">
         <ul class="row">
-            <li *ngFor="let Our of allianceArrayLogos; let id = index">
+            <li *ngFor="let our of allianceArrayLogos; let id = index">
                 <picture>
-                    <img id="slide-img2-{{ id }}" class="img-item2" src="{{ Our.image }}" alt="{{ Our.title }}" >
+                    <img id="slide-img2-{{ id }}" class="img-item2" [src]="our.field_alliance_image.url" [alt]="our.field_alliance_image.alt" >
                 </picture>
             </li>
         </ul>

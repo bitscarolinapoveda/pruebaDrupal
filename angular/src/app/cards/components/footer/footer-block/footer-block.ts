@@ -10,15 +10,19 @@ import { isArray } from 'util';
 })
 export class FooterBlock implements OnInit {
   @Input() idBlock: string ;
-  subtitle: string;
-  body: string;
+  /*subtitle: string;
+  body: string;*/
+
+  public dataUbicaciones: any[];
 
   constructor(
     private router: ActivatedRoute,
     private footerBlockService: CustomCardService
     ) {
-      this.subtitle ='';
-      this.body = '';
+      /*this.subtitle ='';
+      this.body = '';*/
+
+      this.dataUbicaciones = [];
   }
 
   ngOnInit(): void {
@@ -26,10 +30,11 @@ export class FooterBlock implements OnInit {
   }
 
   getFooterBlockItems(): void  {
-    this.footerBlockService.getCustomCardInformation('footerblock').subscribe((items: {header, body, others} ) => {
-      console.log(items);
+    this.footerBlockService.getCustomCardInformation('footerblock').subscribe((items) => {
+      this.dataUbicaciones = items.data;
+      /*console.log(items);
       this.subtitle = items.header[0].data;
-      this.body = items.body[0].data;
+      this.body = items.body[0].data;*/
     });
   }
 }

@@ -1,6 +1,11 @@
-
-<h6>{{ subtitle.title }}</h6>
-<div [innerHTML]=body ></div>
-
-
-
+<ng-container *ngFor="let ubicacion of dataUbicaciones; let i = index">
+    <div class="col-lg" [class.site]="i > 0" [class.random]="i > 0">
+        <h6>{{ ubicacion.title }}</h6>
+        <div [innerHTML]="ubicacion.body"></div>
+        <ul *ngIf="i == 0">
+            <li class="office">
+                <a href="#">Ver todas nuestras oficinas</a>
+            </li>
+        </ul>
+    </div>
+</ng-container>

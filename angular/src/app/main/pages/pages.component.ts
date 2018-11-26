@@ -34,9 +34,11 @@ export class PagesComponent {
   iniciarCarga () {
     this.loading = true;
     this._http.resetLoader();
+    document.body.style.overflow = 'hidden';
   }
 
   endLoad () {
     this.loading = false;
+    document.body.style.overflow = 'auto';
   }
 }
