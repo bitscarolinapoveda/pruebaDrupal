@@ -5,10 +5,10 @@
 <section class="WhyBits">
     <div class="images-whybits">
         <ul class="row first images">
-            <li *ngFor="let mv of moralValues">
-                <a href="{{ mainUrlLink?.link }}">
-                    <img src="{{ mv?.url }}">
-                    <p>{{ mv?.title }}</p>
+            <li *ngFor="let mv of moralValues; let i = index">
+                <a [routerLink]="'home'">
+                    <img [src]="mv.field_imagen.url" [alt]="mv.field_imagen.alt" />
+                    <p>{{ mv.title }}</p>
                 </a>
             </li>
         </ul>
