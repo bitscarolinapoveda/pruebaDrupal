@@ -36,13 +36,24 @@ class BitsCardsOutputJsonCard extends ExportConfigCardService {
       $limit = $settings['entity']['limit'] ?? 6;
       $offset = $settings['entity']['offset'] ?? 0;
       $viewMode = $settings['entity']['default_view_mode'] ?? 'default';
+      $conditions = $settings['entity']['conditions'] ?? [];
+      $sorts = $settings['entity']['sorts'] ?? [];
       $otherData = [];
 
       $ids = \Drupal::entityQuery($name)
         ->condition('status', 1)
         ->condition('type', $type)
-        ->range($offset, $limit)
-        ->execute();
+        ->range($offset, $limit);
+
+      foreach ($conditions as $f => $v) {
+        $ids->condition($f, $v);
+      }
+
+      foreach ($sorts as $f => $v) {
+        $ids->sort($f, $v);
+      }
+
+      $ids = $ids->execute();
 
       /**@var Node[] $nodes */
       $nodes = Node::loadMultiple($ids);
@@ -78,6 +89,10 @@ class BitsCardsOutputJsonCard extends ExportConfigCardService {
               'url' => file_create_url($file->getFileUri()),
               'alt' => $imageData[0]['alt'],
             ];
+          }
+          elseif ($type === 'text_with_summary') {
+            $value = $node->get($field)->getValue();
+            $data[$field] = $value[0]['value'];
           }
           else {
             $data[$field] = $node->get($field)->getString();
