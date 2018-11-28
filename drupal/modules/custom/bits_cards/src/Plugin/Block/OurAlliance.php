@@ -51,7 +51,7 @@ class OurAlliance extends CardBase {
           ],
         ],
       ],
-      "files" => [
+      'files' => [
         'table_fields' => [
           'image' => [
             'type' => 'managed_file',
@@ -62,6 +62,13 @@ class OurAlliance extends CardBase {
             'max_length' => 5,
           ],
         ],
+      ],
+      'entity' => [
+        'name' => 'node',
+        'type' => 'alliances',
+        'limit' => 6,
+        'offset' => 0,
+        'default_view_mode' => 'slide',
       ],
       'others' => [],
     ];

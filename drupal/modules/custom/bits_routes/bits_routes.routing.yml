@@ -1,7 +1,39 @@
-bits_routes.home_controller_hello:
-  path: /home
+bits_routes.home:
+  path: '/home'
   defaults:
-    _controller: '\Drupal\bits_routes\Controller\HomeController::hello'
-    _title: 'Home'
+    _controller: '\Drupal\bits_routes\Controller\HomeController::home'
+    _title: 'Link home'
+  requirements:
+    _permission: 'access content'
+
+bits_routes.services:
+  path: '/services'
+  defaults:
+    _controller: '\Drupal\bits_routes\Controller\HomeController::services'
+    _title: 'Link services'
+  requirements:
+    _permission: 'access content'
+
+bits_routes.products:
+  path: '/products'
+  defaults:
+    _controller: '\Drupal\bits_routes\Controller\HomeController::products'
+    _title: 'Link products'
+  requirements:
+    _permission: 'access content'
+
+bits_routes.projects:
+  path: '/projects'
+  defaults:
+    _controller: '\Drupal\bits_routes\Controller\HomeController::projects'
+    _title: 'Link projects'
+  requirements:
+    _permission: 'access content'
+
+bits_routes.contactus:
+  path: '/contact-us'
+  defaults:
+    _controller: '\Drupal\bits_routes\Controller\HomeController::contactUs'
+    _title: 'Link contact us'
   requirements:
     _permission: 'access content'

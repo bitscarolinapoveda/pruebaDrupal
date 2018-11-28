@@ -16,24 +16,23 @@ export class TecnologiesComponent implements OnInit {
   tecnologiesback: any = [];
   tecnologiesMovil: any = [];
   tecnologiesDesktop: any = [];
+
   constructor(
     private _tecnologies: CustomCardService,
   ) {}
 
   ngOnInit() {
     this.getItemsTecnologies();
-    // this.testFunction();
-
-
   }
 
   getItemsTecnologies() {
     return this._tecnologies.getCustomCardInformation('technologies').subscribe(items => {
-      console.log(items);
+      console.log('TECH: ',items);
       this.tecnologiesTitle = items.header[0].data;
       this.tecnologiesMovil = items.body[0].data.back_movil[0];
       this.tecnologiesDesktop = items.body[0].data.back_desktop[0];
-      this.tecnologiesArrayLogos = items.files[0].data.logo;
+      this.tecnologiesArrayLogos = items.data;
+      //this.tecnologiesArrayLogos = items.files[0].data.logo;
     });
   }
 /*

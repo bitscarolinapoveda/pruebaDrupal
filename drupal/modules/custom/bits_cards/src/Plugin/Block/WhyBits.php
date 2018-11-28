@@ -40,9 +40,9 @@ class WhyBits extends CardBase {
         ],
       ],
       'body' => [],
-      "files" => [
+      'files' => [
         'table_fields' => [
-          'image' => [
+          'image' => [ //Soporta varios pero no permite administrar el contenido para cada ítem, se recurre a entidades...
             'type' => 'managed_file',
             'title' => $this->t('Imagen'),
             'service_field' => 'image',
@@ -52,6 +52,13 @@ class WhyBits extends CardBase {
             'multiple' => TRUE,
           ],
         ],
+      ],
+      'entity' => [
+        'name' => 'node',
+        'type' => 'por_que_bits',
+        'limit' => 6,
+        'offset' => 0,
+        'default_view_mode' => 'slide',
       ],
       'others' => [],
     ];

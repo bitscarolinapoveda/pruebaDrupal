@@ -1,5 +1,5 @@
-name: 'Rutas'
-type: module
-description: 'Carga las rutas en drupal para su administración'
-core: 8.x
+name: 'Bits Routes'
+type: 'module'
+description: 'Modulo manejador de URLS'
+core: '8.x'
 package: 'Custom'

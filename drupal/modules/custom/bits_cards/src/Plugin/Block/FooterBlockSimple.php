@@ -42,6 +42,20 @@ class FooterBlockSimple extends CardBase {
           ],
         ],
       ],
+      'entity' => [
+        'name' => 'node',
+        'type' => 'locations',
+        'limit' => 2,
+        'offset' => 0,
+        'conditions' => [
+          'promote' => TRUE,
+          'sticky' => TRUE,
+        ],
+        'sorts' => [
+          'title' => 'asc'
+        ],
+        'default_view_mode' => 'slide',
+      ],
       'others' => [],
     ];
   }

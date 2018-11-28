@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 
+import {ItemMenuComponent} from "./components/item_menu/item_menu.component";
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -8,13 +9,15 @@ import { FooterBrandComponent } from '../cards/components/footer/footer-brand/fo
 import { FooterContactComponent } from '../cards/components/footer/footer-contact/footer-contact.component';
 import { GeneratorOfLinksComponent } from '../cards/components/generator-of-links/generator-of-links.component';
 import { FooterBlock } from '../cards/components/footer/footer-block/footer-block';
-
+import {RouterModule} from "@angular/router";
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   declarations: [
+    ItemMenuComponent,
     HeaderComponent,
     FooterComponent,
     NavbarComponent,

@@ -8,7 +8,7 @@
         <ul class="row">
             <li *ngFor="let tec of tecnologiesArrayLogos; let i = index">
                 <picture>
-                    <img id="slide-img-{{i}} " class="img-item animated" [src]="tec.image" alt="{{tec.title}}">
+                    <img id="slide-img-{{i}} " class="img-item animated" [src]="tec.field_tech_image.url" [alt]="tec.field_tech_image.alt"/>
                 </picture>
             </li>
         </ul>

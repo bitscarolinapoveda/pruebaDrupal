@@ -201,9 +201,18 @@ class MenuRestResource extends ResourceBase {
         }
       }
 
+      //Carga de la URL de imagen del menú, por defecto null
+      $opts = $menu_link->getOptions();
+      $image = null;
+      if (isset($opts['menu_icon']) && $opts['menu_icon']['fid']){
+        $fid = $opts['menu_icon']['fid'];
+        $file = \Drupal\file\Entity\File::load($fid);
+        $image = file_create_url($file->getFileUri());
+      }
+
       $menu_tree[$order]['title'] = $menu_link->getTitle();
       $menu_tree[$order]['uri'] = $uri;
-      $menu_tree[$order]['image'] = $http;
+      $menu_tree[$order]['image'] = $image;
       if (isset($adf_menuSettings['alias']) && $adf_menuSettings['alias']) {
         $menu_tree[$order]['alias'] = ltrim($alias, '/');
       }

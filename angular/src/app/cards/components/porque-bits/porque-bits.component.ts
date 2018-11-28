@@ -1,6 +1,6 @@
-import { CustomCardService } from './../../../services/cards/v1-card.services';
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import {CustomCardService} from './../../../services/cards/v1-card.services';
+import {Component, OnInit} from '@angular/core';
+import {RouterModule} from '@angular/router';
 
 declare var $: any;
 
@@ -15,12 +15,12 @@ export class PorqueBitsComponent implements OnInit {
   mainTitleLink;
   mainUrlLink;
 
-  constructor(private router: ActivatedRoute,
-      private porquebits: CustomCardService) {
-        this.moralValues = [];
-      }
+  constructor (private router: RouterModule,
+               private porquebits: CustomCardService) {
+    this.moralValues = [];
+  }
 
-  ngOnInit() {
+  ngOnInit () {
     this.getMoralValuesItems();
   }
 
@@ -32,10 +32,10 @@ export class PorqueBitsComponent implements OnInit {
   //     this.mainTitleLink = items.data;
   //   });
   // }
-  getMoralValuesItems() {
-    this.porquebits.getCustomCardInformation('whybits').subscribe( items => {
-      console.log(items);
-      this.moralValues = items.files[0].data;
+  getMoralValuesItems () {
+    this.porquebits.getCustomCardInformation('whybits').subscribe(items => {
+      console.log('DATAAAA:', items);
+      this.moralValues = items.data;
       this.mainTitleLink = items.header[0].data;
       this.mainUrlLink = items.header[1].data;
     });
