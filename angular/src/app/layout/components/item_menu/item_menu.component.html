@@ -1,0 +1,15 @@
+<ul class="menu-tree-level">
+    <ng-container *ngFor="let child of menus; let idx= index">
+        <li class="menu-item-child" [class.menu-has-children]="child.below">
+            <a [routerLink]="['/'+child.uri]"
+               class="link"> {{ child.title }} </a>
+            <ng-container *ngIf="child.below">
+                <i class="fas fa-caret-right menu-caret"></i>
+                <app-menu-item [menus]="child.below"></app-menu-item>
+            </ng-container>
+            <ng-container *ngIf="padre?.image">
+                <img [src]="padre.image" class="submenu-image" />
+            </ng-container>
+        </li>
+    </ng-container>
+</ul>
