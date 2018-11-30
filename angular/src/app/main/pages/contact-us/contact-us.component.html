@@ -6,7 +6,8 @@
 <!--TODO: SE DEBEN IMPLEMENTAR LOS ESTILOS, VALIDACIONES-->
 <form *ngIf="loaded" [formGroup]="formGroup">
     <dynamic-basic-form [group]="formGroup" [model]="formModel">
-        <ng-template modelId="contact_us--terms_of_service">
+        <ng-template modelId="contact_us--terms_of_service" let-terms="terms">
+            {{terms}}
             <!-- TODO: PONER FUNCIONALIDAD PARA MOSTRAR TERMINOS Y CONDICIONES -->
         </ng-template>
     </dynamic-basic-form>
