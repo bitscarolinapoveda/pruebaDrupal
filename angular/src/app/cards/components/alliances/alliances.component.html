@@ -1,6 +1,6 @@
 <section id="transition-image2">
-    <picture>
-        <source media="(max-width:500px)" [srcset]="allianceBackground?.url">
+    <picture *ngIf="allianceBackground">
+        <source media="(max-width:500px)" [srcset]="allianceBackground.url">
         <img class="w-100 backgraund-image" [src]="allianceBackground.url" alt="{{ allianceBackground.title }}">
     </picture>
     <h1>{{ allianceTitle?.title }}</h1>

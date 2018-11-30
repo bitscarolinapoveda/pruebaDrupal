@@ -1,11 +1,14 @@
 <ng-container *ngFor="let ubicacion of dataUbicaciones; let i = index">
     <div class="col-lg" [class.site]="i > 0" [class.random]="i > 0">
         <h6>{{ ubicacion.title }}</h6>
-        <div [innerHTML]="ubicacion.body"></div>
-        <ul *ngIf="i == 0">
-            <li class="office">
-                <a href="#">Ver todas nuestras oficinas</a>
-            </li>
-        </ul>
+        <div>
+            <ul>
+                <li>{{ubicacion.address}}</li>
+                <li>{{ubicacion.telephone}}</li>
+                <li *ngIf="i == 0" class="office">
+                    <a routerLink="/contact-us/" fragment="title-description" (click)="cargarMapaUbicaciones()">Ver todas nuestras oficinas</a>
+                </li>
+            </ul>
+        </div>
     </div>
 </ng-container>

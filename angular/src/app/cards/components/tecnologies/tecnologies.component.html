@@ -1,7 +1,7 @@
 <section id="transition-image">
     <picture>
-        <source media="(max-width:500px)" [srcset]="tecnologiesMovil?.url ">
-        <img class="w-100 backgraund-image" [src]="tecnologiesDesktop?.url" alt="{{tecnologiesDesktop?.title}}">
+        <source *ngIf="tecnologiesMovil" media="(max-width:500px)" [srcset]="tecnologiesMovil?.url ">
+        <img *ngIf="tecnologiesDesktop" class="w-100 backgraund-image" [src]="tecnologiesDesktop?.url" alt="{{tecnologiesDesktop?.title}}">
     </picture>
     <h1> {{tecnologiesTitle.title}} </h1>
     <div class="list-image-item">

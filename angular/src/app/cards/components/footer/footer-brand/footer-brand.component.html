@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-lg-12">
-    <img src="{{ imageLogo.url }}" alt="BitsAmericas">
+    <img *ngIf="imageLogo" [src]="imageLogo.url" alt="BitsAmericas">
     <h6>{{ nameBrand.title }}</h6>
   </div>
 </div>
