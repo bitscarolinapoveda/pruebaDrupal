@@ -4,18 +4,15 @@ import {NotificationService} from '../shared/notification.service';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 import {Observable} from 'rxjs/Observable';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/catch';
-import 'rxjs/add/observable/throw';
 import {Subject} from "rxjs";
-
+import {catchError, map, share} from "rxjs/operators";
 
 @Injectable({
   providedIn: 'root'
 })
 export class HttpService extends BaseService {
 
-  public header: HttpHeaders = new HttpHeaders();
+  public header: HttpHeaders;
 
   private _in: number; //acumula la cantidad de peticiones solicitadas....
   private _out: number; //acumula la cantidad de peticiones terminadas (done, error)....
@@ -36,20 +33,64 @@ export class HttpService extends BaseService {
     this.targetPorcentaje = 100;
     this.subscriber = new Subject<any>();
 
-    this.header.set('Access-Control-Allow-Origin', '*');
-    this.header.set('Access-Control-Allow-Methods', 'GET,HEAD,OPTIONS,POST,PUT');
+    this.header = new HttpHeaders({
+      /*'Access-Control-Allow-Origin': '*', //Esto va del lado del servidor...
+      'Access-Control-Allow-Methods': 'GET,HEAD,OPTIONS,POST,PUT',
+      'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept, Authorization'*/
+    });
   }
 
-  public get (url: string, header?: any) {
-    let _get = this._http.get(this.baseUrl + url, {headers: this.header});
+  /***
+   * @param url
+   * @param header
+   * @param options
+   */
+  public get (url: string, header?: any, options? :any) {
+    let objH = {};
+    for (let key in header) {
+      objH[key] = header[key].toString();
+    }
+    let headers = new HttpHeaders(objH);
+    let _options = {
+      headers:headers
+    };
+    for (let key in options) {
+      _options[key] = options[key].toString();
+    }
+    let _get = this._http.get(this.baseUrl + url, _options)
+      .pipe(
+        map((response: any) => {
+          return response;
+        }),
+        catchError((err) => {
+          return this.errorHandler(err);
+        }),
+        share()
+      );
 
     this.addIn(_get);
 
-    return _get.map((resp: any) => {
-      return resp;
-    }).catch(err => {
-      return this.errorHandler(err);
-    });
+    return _get;
+  }
+
+  public post (url: string, body: any, headers?: any) {
+    let objH = {};
+    for (let key in headers) {
+      objH[key] = headers[key].toString();
+    }
+    let _headers = new HttpHeaders(objH);
+    let _post = this._http.post(this.baseUrl + url, body, {headers: _headers})
+      .pipe(
+        map((response: any) => {
+          return response;
+        }),
+        catchError((err) => {
+          return this.errorHandler(err);
+        }),
+        share()
+      );
+
+    return _post;
   }
 
   // Para el manejo de errores se debe manejar la estructura {code,message}
@@ -57,7 +98,7 @@ export class HttpService extends BaseService {
     const error = JSON.parse(JSON.stringify(err));
     const errorParam = {
       code: error.status,
-      mesagge: error.message
+      message: error.message
     };
     this._notificationService.error(errorParam);
     return Observable.throw(err);
