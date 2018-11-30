@@ -1,0 +1,17 @@
+<app-banner></app-banner>
+<app-title></app-title>
+<app-tabs></app-tabs>
+<br/>
+<br/>
+<!--TODO: SE DEBEN IMPLEMENTAR LOS ESTILOS, VALIDACIONES-->
+<form *ngIf="loaded" [formGroup]="formGroup">
+    <dynamic-material-form [group]="formGroup" [model]="formModel">
+        <ng-template modelId="contact_us--terms_of_service">
+            <!-- TODO: PONER FUNCIONALIDAD PARA MOSTRAR TERMINOS Y CONDICIONES -->
+        </ng-template>
+    </dynamic-material-form>
+    <button (click)="submitForm()">ENVIAR</button>
+</form>
+<br/>
+<br/>
+<app-locations></app-locations>
