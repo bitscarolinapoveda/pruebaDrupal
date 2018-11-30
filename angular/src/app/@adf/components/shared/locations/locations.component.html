@@ -1,0 +1,39 @@
+<section id="title-description">
+    <h4>Nuestra ubicacion</h4>
+    <p>Aqui podra ver la ubicacion de nuestras oficinas</p>
+</section>
+<section id="tabs-vertical">
+    <div class="block-vertical" id="run">
+        <ul class="nav nav-tabs nav-tabs--vertical nav-tabs--left">
+            <li class="nav-item ubicacion" *ngFor="let ubicacion of locations_data"
+                (click)="setCenter(ubicacion.lat, ubicacion.lng)">
+                <a href="#" class="nav-link active" data-toggle="tab" role="tab">
+                    <h5 class="title">{{ubicacion.title}}</h5>
+                    <h6 class="address">{{ubicacion.address}}</h6>
+                    <h6 class="phone">{{ubicacion.telephone}}</h6>
+                </a>
+            </li>
+        </ul>
+        <div class="show-more">
+            <a class="button-more"></a>
+        </div>
+        <a class="botton-arrive" role="button">
+
+        </a>
+        <a class="botton-down" role="button">
+
+        </a>
+    </div>
+</section>
+<section id="mapa">
+    <agm-map [latitude]="lat" [longitude]="lng" (mapReady)="mapReady($event)">
+        <agm-marker *ngFor="let ubicacion of locations_data" [latitude]="ubicacion.lat"
+                    [longitude]="ubicacion.lng" [iconUrl]="'/assets/icon/ubication.png'">
+            <agm-info-window>
+                <h5 class="title">{{ubicacion.title}}</h5>
+                <h6 class="addres">{{ubicacion.address}}</h6>
+                <h6 class="phone">{{ubicacion.telephone}}</h6>
+            </agm-info-window>
+        </agm-marker>
+    </agm-map>
+</section>

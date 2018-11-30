@@ -55,7 +55,6 @@ class CardBase extends BlockBase {
    * {@inheritdoc}
    */
   public function defaultConfiguration() {
-    // Return parent::defaultConfiguration()
     return parent::defaultConfiguration();
   }
 
@@ -91,10 +90,7 @@ class CardBase extends BlockBase {
     ];
 
     $table_fields = $this->configuration['header']['table_fields'];
-    uasort($table_fields, [
-      'Drupal\Component\Utility\SortArray',
-      'sortByWeightElement',
-    ]);
+    $this->_uaSort($table_fields);
 
     $form = $this->generateTable('header', $table_fields, $form);
 
@@ -127,10 +123,7 @@ class CardBase extends BlockBase {
     ];
 
     $table_fields = $this->configuration['body']['table_fields'];
-    uasort($table_fields, [
-      'Drupal\Component\Utility\SortArray',
-      'sortByWeightElement',
-    ]);
+    $this->_uaSort($table_fields);
 
     $form = $this->generateTable('body', $table_fields, $form);
 
@@ -163,11 +156,8 @@ class CardBase extends BlockBase {
     ];
 
 
-    $table_fields = $this->configuration['files']['table_fields'];
-    uasort($table_fields, [
-      'Drupal\Component\Utility\SortArray',
-      'sortByWeightElement',
-    ]);
+    $table_fields = $this->configuration['files']['table_fields'] ?? [];
+    $this->_uaSort($table_fields);
     $form = $this->generateTable('files', $table_fields, $form);
 
     return $form;
@@ -262,13 +252,12 @@ class CardBase extends BlockBase {
    */
   public function blockSubmit($form, FormStateInterface $form_state) {
 
-/*
-   $imageA = $form_state->getValue('archivos');
-   $fileA = File::load($imageA[0]);
-   $fileA->setPermanent();
-   $fileA->save();
-   */
-
+    /*
+       $imageA = $form_state->getValue('archivos');
+       $fileA = File::load($imageA[0]);
+       $fileA->setPermanent();
+       $fileA->save();
+       */
 
 
     $this->configuration['header'] = $form_state->getValue('header');
@@ -311,29 +300,20 @@ class CardBase extends BlockBase {
 
     // Ordenamiento de items (Header).
     $table_fields = $this->configuration['header']['table_fields'];
-    uasort($table_fields, [
-      'Drupal\Component\Utility\SortArray',
-      'sortByWeightElement',
-    ]);
+    $this->_uaSort($table_fields);
     $this->configuration['header']['table_fields'] = $table_fields;
     $header = $this->getRenderData($this->configuration['header']);
 
     // Ordenamiento de items (Body).
     $table_fieldsB = $this->configuration['body']['table_fields'];
-    uasort($table_fieldsB, [
-      'Drupal\Component\Utility\SortArray',
-      'sortByWeightElement',
-    ]);
+    $this->_uaSort($table_fieldsB);
     $this->configuration['body']['table_fields'] = $table_fieldsB;
     $body = $this->getRenderData($this->configuration['body']);
 
 
     // Ordenamiento de items (Archivos).
     $table_fieldsC = $this->configuration['files']['table_fields'];
-    uasort($table_fieldsC, [
-      'Drupal\Component\Utility\SortArray',
-      'sortByWeightElement',
-    ]);
+    $this->_uaSort($table_fieldsC);
     $this->configuration['files']['table_fields'] = $table_fieldsC;
     $files = $this->getRenderData($this->configuration['files']);
 
@@ -428,6 +408,18 @@ class CardBase extends BlockBase {
     // \Drupal::service('file.usage')->add($file, 'adf_cards', 'adf_cards', 1);.
     // $this->fileUsage->add($file, 'adf_cards', 'adf_cards', 1);.
     \Drupal::service('file.usage')->add($file, 'adf_cards', 'adf_cards', 1);
+  }
+
+  private function _uaSort(&$array) {
+    if (is_array($array)) {
+      uasort($array, [
+        'Drupal\Component\Utility\SortArray',
+        'sortByWeightElement',
+      ]);
+    }
+    elseif ($array === '') {
+      $array = [];
+    }
   }
 
 }

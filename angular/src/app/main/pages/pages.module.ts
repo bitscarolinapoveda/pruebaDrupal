@@ -19,6 +19,9 @@ import {ProjectsComponent} from "./projects/projects.component";
 import {ProductsComponent} from "./products/products.component";
 import {ServicesComponent} from "./services/services.component";
 import {HttpService} from "../../services/http/http.service";
+import {DynamicFormsCoreModule} from "@ng-dynamic-forms/core";
+import {DynamicFormsMaterialUIModule} from "@ng-dynamic-forms/ui-material";
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -42,6 +45,9 @@ import {HttpService} from "../../services/http/http.service";
     AdfModule,
     CardsModule,
     PagesRoutes,
+    ReactiveFormsModule,
+    DynamicFormsCoreModule,
+    DynamicFormsMaterialUIModule
   ],
   providers: [
     HttpService,

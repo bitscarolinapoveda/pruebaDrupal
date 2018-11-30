@@ -19,7 +19,7 @@ export class AlliancesComponent implements OnInit {
     private router: ActivatedRoute,
     private alliance: CustomCardService,
   ) {
-    this.allianceBackground = [];
+    this.allianceBackground = null;
   }
 
   ngOnInit () {
@@ -132,7 +132,6 @@ export class AlliancesComponent implements OnInit {
   getAlliance () {
     this.alliance.getCustomCardInformation('ouralliance').subscribe(items => {
       this.allianceTitle = items.header[0].data;
-      console.log('ALIANZAS: ', items);
       this.allianceBackground = items.body[0].data.back_movil[0];
       this.allianceArrayLogos = items.data;
       //this.allianceArrayLogos = items.files[0].data.logo;

@@ -18,6 +18,7 @@ import { TabsComponent } from './components/tabs/tabs.component';
 // Servicios
 import { NodeService } from '../services/cards/node.service';
 import {RouterModule} from "@angular/router";
+import {AdfModule} from "../@adf/adf.module";
 
 
 
@@ -48,7 +49,7 @@ import {RouterModule} from "@angular/router";
     TitleComponent,
     TabsComponent
   ],
-  imports: [BrowserModule, CommonModule, NgbModule, RouterModule],
+  imports: [BrowserModule, CommonModule, NgbModule, RouterModule, AdfModule],
   providers: [NodeService]
 })
 export class CardsModule {}

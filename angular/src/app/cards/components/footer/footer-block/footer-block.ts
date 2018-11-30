@@ -1,7 +1,6 @@
-import { CustomCardService } from './../../../../services/cards/v1-card.services';
-import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { isArray } from 'util';
+import {Component, OnInit, Input} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
+import {HttpService} from "../../../../services/http/http.service";
 
 @Component({
   selector: 'app-footer-block',
@@ -9,32 +8,40 @@ import { isArray } from 'util';
   styleUrls: ['./footer-block.scss']
 })
 export class FooterBlock implements OnInit {
-  @Input() idBlock: string ;
+  @Input() idBlock: string;
   /*subtitle: string;
   body: string;*/
 
-  public dataUbicaciones: any[];
+  public dataUbicaciones: any;
 
-  constructor(
+  constructor (
     private router: ActivatedRoute,
-    private footerBlockService: CustomCardService
-    ) {
-      /*this.subtitle ='';
-      this.body = '';*/
+    private _http: HttpService
+  ) {
 
-      this.dataUbicaciones = [];
+    this.dataUbicaciones = [];
   }
 
-  ngOnInit(): void {
+  ngOnInit (): void {
     this.getFooterBlockItems();
   }
 
-  getFooterBlockItems(): void  {
-    this.footerBlockService.getCustomCardInformation('footerblock').subscribe((items) => {
+  getFooterBlockItems (): void {
+    this._http.get('/location-resources?_format=json', {'limit': 2}).subscribe((items) => {
+      this.dataUbicaciones = items;
+    });
+    /*this.footerBlockService.getCustomCardInformation('footerblock').subscribe((items) => {
       this.dataUbicaciones = items.data;
       /*console.log(items);
       this.subtitle = items.header[0].data;
-      this.body = items.body[0].data;*/
-    });
+      this.body = items.body[0].data;-/
+    });*/
+  }
+
+  cargarMapaUbicaciones () {
+    let x = document.querySelector("#title-description");
+    if (x) {
+      x.scrollIntoView();
+    }
   }
 }

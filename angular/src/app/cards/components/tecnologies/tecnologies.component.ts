@@ -15,7 +15,7 @@ export class TecnologiesComponent implements OnInit {
   tecnologiesTitle: any = [];
   tecnologiesback: any = [];
   tecnologiesMovil: any = [];
-  tecnologiesDesktop: any = [];
+  tecnologiesDesktop: any;
 
   constructor(
     private _tecnologies: CustomCardService,
@@ -27,7 +27,6 @@ export class TecnologiesComponent implements OnInit {
 
   getItemsTecnologies() {
     return this._tecnologies.getCustomCardInformation('technologies').subscribe(items => {
-      console.log('TECH: ',items);
       this.tecnologiesTitle = items.header[0].data;
       this.tecnologiesMovil = items.body[0].data.back_movil[0];
       this.tecnologiesDesktop = items.body[0].data.back_desktop[0];
