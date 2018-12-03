@@ -137,7 +137,7 @@ export class ContactUsComponent {
     };
 
     if (data['#type'] === 'webform_terms_of_service') {
-      obj['terms'] = data['#']
+      obj['terms'] = data['#terms_content'];
     }
     if (['SELECT'].indexOf(obj['type']) > -1) {
       obj['options'] = [];

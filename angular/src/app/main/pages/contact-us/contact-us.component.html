@@ -5,11 +5,12 @@
 <br/>
 <!--TODO: SE DEBEN IMPLEMENTAR LOS ESTILOS, VALIDACIONES-->
 <form *ngIf="loaded" [formGroup]="formGroup">
-    <dynamic-material-form [group]="formGroup" [model]="formModel">
-        <ng-template modelId="contact_us--terms_of_service">
+    <dynamic-basic-form [group]="formGroup" [model]="formModel">
+        <ng-template modelId="contact_us--terms_of_service" let-terms="terms">
+            {{terms}}
             <!-- TODO: PONER FUNCIONALIDAD PARA MOSTRAR TERMINOS Y CONDICIONES -->
         </ng-template>
-    </dynamic-material-form>
+    </dynamic-basic-form>
     <button (click)="submitForm()">ENVIAR</button>
 </form>
 <br/>
