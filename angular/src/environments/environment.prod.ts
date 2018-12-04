@@ -1,4 +1,5 @@
 export const environment = {
   production: true,
-  apiUrl: 'http://bits.local/',
+  name: 'prod',
+  apiUrl: 'http://bits-redesign-uat.dev01.bitsamericas.net/',
 };

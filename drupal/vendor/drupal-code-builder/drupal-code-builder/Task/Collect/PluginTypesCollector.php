@@ -46,19 +46,6 @@ class PluginTypesCollector extends CollectorBase  {
   ];
 
   /**
-   * List of plugins known to be broken.
-   */
-  protected $brokenPlugins = [
-    'migrate.destination' => [
-      'draggableviews' => TRUE,
-      'entity:block' => TRUE,
-    ],
-    'validation.constraint' => [
-      'RedirectSourceLinkType' => TRUE,
-    ],
-  ];
-
-  /**
    * Constructs a new helper.
    *
    * @param \DrupalCodeBuilder\Environment\EnvironmentInterface $environment
@@ -261,6 +248,8 @@ class PluginTypesCollector extends CollectorBase  {
    *    - 'yaml_properties': The default properties for plugins declared in YAML
    *      files. An array whose keys are property names and values are the
    *      default values.
+   *    - 'broken_plugins': (internal) An array of any plugins which could not
+   *      be correctly loaded. Keys are plugin IDs; values are a brief reason.
    *
    *  Due to the difficult nature of analysing the code for plugin types, some
    *  of these properties may be empty if they could not be deduced.
@@ -600,13 +589,18 @@ class PluginTypesCollector extends CollectorBase  {
    * @return string
    *   The base class to use when generating plugins of this type.
    */
-  protected function analysePluginTypeBaseClass($data) {
+  protected function analysePluginTypeBaseClass(&$data) {
     // Work over each plugin of this type, finding a suitable candidate for
     // base class with each one.
     $potential_base_classes = [];
 
     $service = \Drupal::service($data['service_id']);
     $definitions = $service->getDefinitions();
+
+    // Keep track of the classes we've seen, so we can skip derivative plugins
+    // that have the same class.
+    $plugin_classes = [];
+
     foreach ($definitions as $plugin_id => $definition) {
       if (is_array($definition)) {
         // We can't work with plugins that don't define a class: skip the whole
@@ -625,20 +619,19 @@ class PluginTypesCollector extends CollectorBase  {
         return;
       }
 
-      // Babysit plugins which crash. This happens a lot more often than you'd
-      // think, as some just never get instantiated in normal operation and have
-      // clearly not been properly tested! Typically, this is caused by the
-      // plugin class not not correctly implementing the interface, often due to
-      // method typehints.
-      if (isset($this->brokenPlugins[$data['type_id']][$plugin_id])) {
+      // Skip classes we've seen already.
+      if (isset($plugin_classes[$plugin_class])) {
         continue;
       }
+      $plugin_classes[$plugin_class] = TRUE;
 
       // Skip any class that we can't attempt to load without a fatal. This will
       // typically happen if the plugin is meant for use with another module,
       // and inherits from a base class that doesn't exist in the current
       // codebase.
       if (!$this->codeAnalyser->classIsUsable($plugin_class)) {
+        $data['broken_plugins'][$plugin_id] = 'crashes';
+
         continue;
       }
 
@@ -647,11 +640,15 @@ class PluginTypesCollector extends CollectorBase  {
       // location, preventing the class from being autoloaded.
       try {
         if (!class_exists($plugin_class)) {
+          $data['broken_plugins'][$plugin_id] = 'no class';
+
           // Skip just this plugin.
           continue;
         }
       }
       catch (\Throwable $ex) {
+        $data['broken_plugins'][$plugin_id] = 'exception';
+
         continue;
       }
 
@@ -712,6 +709,9 @@ class PluginTypesCollector extends CollectorBase  {
 
       // End of the loop for the current plugin.
       next_plugin:
+        // This is a noop line to stop the PHP linting in my IDE from
+        // complaining that this label has no statements, grrr...
+        assert(true);
     } // foreach $definitions
 
     // If we found nothing, we're done.

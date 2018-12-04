@@ -25,6 +25,7 @@ class ServicesCollector extends CollectorBase  {
   protected $testingServiceNames = [
     'current_user' => TRUE,
     'entity_type.manager' => TRUE,
+    'module_handler' => TRUE,
   ];
 
   /**
@@ -136,8 +137,6 @@ class ServicesCollector extends CollectorBase  {
       }
     }
 
-    $ids = $container_builder->getServiceIds();
-
     $data = [];
 
     foreach ($definitions as $service_id => $definition) {
@@ -185,7 +184,9 @@ class ServicesCollector extends CollectorBase  {
       if (!$this->codeAnalyser->classIsUsable($service_class)) {
         continue;
       }
-
+      if (!class_exists($service_class)) {
+        continue;
+      }
 
       // Get the short class name to use as a label.
       $service_class_pieces = explode('\\', $service_class);

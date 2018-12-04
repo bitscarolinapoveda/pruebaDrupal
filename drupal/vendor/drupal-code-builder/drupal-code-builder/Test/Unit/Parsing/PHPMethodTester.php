@@ -82,7 +82,7 @@ class PHPMethodTester {
    *   The form builder tester object.
    */
   public function getFormBuilderTester() {
-    return new FormBuilderTester($this->methodNode);
+    return new FormBuilderTester($this->methodNode, $this->fileTester);
   }
 
   /**
@@ -137,6 +137,18 @@ class PHPMethodTester {
     $message = $message ?? "The method {$this->methodName} has the parameters {$parameter_names_string}.";
 
     $this->assertHelperHasParametersSlice($parameters, $message);
+  }
+
+  /**
+   * Asserts a method of the parsed class has no parameters.
+   *
+   * @param string $message
+   *   (optional) The assertion message.
+   */
+  public function assertHasNoParameters($message = NULL) {
+    $message = $message ?? "The method {$this->methodName} has no parameters.";
+
+    $this->assertHelperHasParametersSlice([], $message);
   }
 
   /**

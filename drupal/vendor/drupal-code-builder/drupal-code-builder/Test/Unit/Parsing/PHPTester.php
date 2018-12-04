@@ -4,6 +4,7 @@ namespace DrupalCodeBuilder\Test\Unit\Parsing;
 
 use PHPUnit\Framework\Assert;
 use PHP_CodeSniffer;
+use PhpParser\Comment\Doc;
 use PhpParser\Error;
 use PhpParser\NodeDumper;
 use PhpParser\ParserFactory;
@@ -17,6 +18,13 @@ use PhpParser\NodeVisitorAbstract;
  * Helper class for parsing and testing PHP.
  */
 class PHPTester {
+
+  /**
+   * The full syntax tree parsed by PhpParser.
+   *
+   * @var array
+   */
+  protected $ast;
 
   /**
    * Construct a new PHPTester.
@@ -195,13 +203,13 @@ class PHPTester {
   protected function parseCode() {
     $parser = (new ParserFactory)->create(ParserFactory::PREFER_PHP7);
     try {
-      $ast = $parser->parse($this->phpCode);
+      $this->ast = $parser->parse($this->phpCode);
     }
     catch (Error $error) {
       Assert::fail("Parse error: {$error->getMessage()}");
     }
 
-    //dump($ast);
+    //dump($this->ast);
 
     // Reset our array of parser nodes.
     // This then passed into the anonymous visitor class, and populated with the
@@ -258,7 +266,7 @@ class PHPTester {
     $traverser = new NodeTraverser();
     $traverser->addVisitor($recursive_visitor);
 
-    $ast = $traverser->traverse($ast);
+    $this->ast = $traverser->traverse($this->ast);
   }
 
   /**
@@ -274,6 +282,26 @@ class PHPTester {
     Assert::assertArrayNotHasKey('interfaces', $this->parser_nodes, $message);
     // Technically we should cover traits too, but we don't generate any of
     // those.
+  }
+
+  /**
+   * Asserts the file docblock contains the given line.
+   *
+   * @param string $line
+   *   The text to check for in the docblock.
+   * @param string $message
+   *   (optional) The assertion message.
+   */
+  public function assertFileDocblockHasLine($line, $message = NULL) {
+    $message = $message ?? "The file has a @file docblock containing the line: '{$line}'.";
+
+    // The @file docblock, even though standalone, is treated by PHPParser as
+    // belonging to the first actual PHP statement, whatever it is.
+    $first_statement = $this->ast[0];
+    $docblock = $first_statement->getAttribute('comments')[0];
+
+    $this->assertDocblockHasLine('@file', $docblock, "The @file docblock has the @file doxygen tag.");
+    $this->assertDocblockHasLine($line, $docblock, $message);
   }
 
   /**
@@ -342,6 +370,32 @@ class PHPTester {
   }
 
   /**
+   * Asserts that the file's class is abstract.
+   *
+   * @param string $message
+   *   (optional) The assertion message.
+   */
+  public function assertClassIsAbstract($message = NULL) {
+    $message = $message ?? "The file's class is abstract.";
+
+    $class_node = reset($this->parser_nodes['classes']);
+    Assert::assertTrue($class_node->isAbstract(), $message);
+  }
+
+  /**
+   * Asserts that the file's class is not abstract.
+   *
+   * @param string $message
+   *   (optional) The assertion message.
+   */
+  public function assertClassNotAbstract($message = NULL) {
+    $message = $message ?? "The file's class is not abstract.";
+
+    $class_node = reset($this->parser_nodes['classes']);
+    Assert::assertFalse($class_node->isAbstract(), $message);
+  }
+
+  /**
    * Asserts that the class's docblock contains the given line.
    *
    * @param string $line
@@ -352,20 +406,15 @@ class PHPTester {
    *   (optional) The assertion message.
    */
   public function assertClassDocBlockHasLine($line, $message = NULL) {
+    $message = $message ?? "The class docblock has the line '{$line}'";
+
     // All the class files we generate contain only one class.
     Assert::assertCount(1, $this->parser_nodes['classes']);
     $class_node = reset($this->parser_nodes['classes']);
-    $docblock_text = $class_node->getAttribute('comments')[0]->getText();
-    $docblock_lines = explode("\n", $docblock_text);
 
-    // Trim off the docblock formatting.
-    array_walk($docblock_lines, function(&$line) {
-      $line = str_replace(" * ", '', $line);
-    });
+    $docblock = $class_node->getAttribute('comments')[0];
 
-    $message = $message ?? "The docblock has the line '{$line}': " . print_r($docblock_lines, TRUE);
-
-    Assert::assertContains($line, $docblock_lines, $message);
+    $this->assertDocblockHasLine($line, $docblock, $message);
   }
 
   /**
@@ -1057,13 +1106,12 @@ class PHPTester {
     // docblock.
     // @see https://github.com/nikic/PHP-Parser/issues/445
     $function_docblock = end($comments);
-    $docblock_text = $function_docblock->getReformattedText();
 
     // TODO: this will need to switch on major version when we use this to test
     // D7 hooks.
     $expected_line = "Implements {$hook_name}().";
 
-    $this->assertDocblockHasLine($expected_line, $docblock_text, "The module file contains the docblock for hook_menu().");
+    $this->assertDocblockHasLine($expected_line, $function_docblock, "The module file contains the docblock for hook_menu().");
   }
 
   /**
@@ -1090,25 +1138,29 @@ class PHPTester {
    *
    * @param string $line
    *   The expected line.
-   * @param $docblock
-   *   The docblock text.
+   * @param \PhpParser\Comment\Doc $docblock
+   *   The docblock parser node.
    * @param string $message
    *   (optional) The assertion message.
    */
-  protected function assertDocblockHasLine($line, $docblock, $message = NULL) {
-    $message = $message ?? "The method docblock contains the line {$line}.";
+  protected function assertDocblockHasLine($line, Doc $docblock, $message = NULL) {
+    $message = $message ?? "The docblock contains the line '{$line}'.";
 
-    $docblock_lines = explode("\n", $docblock);
+    $docblock_text = $docblock->getReformattedText();
+    $docblock_lines = explode("\n", $docblock_text);
 
     // Slice off first and last lines, which are the '/**' and '*/'.
     $docblock_lines = array_slice($docblock_lines, 1, -1);
-    $docblock_lines = array_map(function($line) {
-      return preg_replace('/^ \* /', '', $line);
-    }, $docblock_lines);
+    // Trim off the docblock formatting.
+    array_walk($docblock_lines, function(&$line) {
+      $line = preg_replace('/^ \* /', '', $line);
+    });
 
     // Work around assertContains() not outputting the array on failure by
     // putting it in the message.
-    Assert::assertContains($line, $docblock_lines, "The line '{$line}' was found in the docblock lines: " . print_r($docblock_lines, TRUE));
+    $message .= " Given docblock was: " . print_r($docblock_lines, TRUE);
+
+    Assert::assertContains($line, $docblock_lines, $message);
   }
 
   /**

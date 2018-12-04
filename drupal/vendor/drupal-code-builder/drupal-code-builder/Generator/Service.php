@@ -38,6 +38,15 @@ class Service extends PHPClassFileWithInjection {
                 '\\' . $type_data['interface'],
               ],
             ],
+            'tags' => [
+              'value' => [
+                0 => [
+                  // The preset option is the tag.
+                  'name' => $type_tag,
+                  'priority' => 0,
+                ],
+              ],
+            ],
             // TODO: methods.
           ],
           // Values that are suggested for other properties.
@@ -63,6 +72,10 @@ class Service extends PHPClassFileWithInjection {
 
     // TODO: implement this once we have a processing system.
     //$presets['event_subscriber']['data']['force']['relative_class_name'] ...
+
+    uasort($presets, function($a, $b) {
+      return strnatcasecmp($a['label'], $b['label']);
+    });
 
     $data_definition = array(
       'service_tag_type' => [
@@ -109,6 +122,27 @@ class Service extends PHPClassFileWithInjection {
 
           return $plain_class_name;
         },
+      ],
+      'tags' => [
+        'internal' => TRUE,
+        'format' => 'compound',
+        'properties' => [
+          'name' => [
+            'format' => 'string',
+            'required' => TRUE,
+          ],
+          // TODO: rather than have to declare all of these, which is unscalable
+          // as AFAIK tags can have any properties, this should be a new
+          // associative array format type.
+          'priority' => [
+          ],
+          'applies_to' => [
+          ],
+          'tag' => [
+          ],
+          'call' => [
+          ],
+        ],
       ],
     );
 
@@ -158,13 +192,10 @@ class Service extends PHPClassFileWithInjection {
     }
 
     // Service tags.
-    // TODO: document and declare this property!
-    if (!empty($this->component_data['service_tag_type'])) {
-      $yaml_service_definition['tags'][] = [
-        // The preset option is the tag.
-        'name' => $this->component_data['service_tag_type'],
-        'priority' => 0,
-      ];
+    if (isset($this->component_data['tags'])) {
+      foreach ($this->component_data['tags'] as $tag_value) {
+        $yaml_service_definition['tags'][] = $tag_value;
+      }
     }
 
     // TODO: document and declare this property!

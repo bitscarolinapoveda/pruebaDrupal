@@ -49,7 +49,7 @@ export class ContactUsComponent {
     });
 
     //Obtiene la información de los fields del Webform
-    this._http.get('/webform_rest/contact_us/fields?_format=json').subscribe((response) => {
+    this._http.get('webform_rest/contact_us/fields?_format=json').subscribe((response) => {
       this.createJson(response);
 
       this.formModel = this.formService.fromJSON(this._json);
