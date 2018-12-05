@@ -1,7 +1,7 @@
 parameters:
   cors.config:
-    enabled: false
+    enabled: true
     # Specify allowed headers, like 'x-allowed-header'.
-    allowedHeaders: ['x-csrf-token','Content-Type','x-auth','limit','offset','order']
+    allowedHeaders: ['Access-Control-Allow-Origin', 'x-csrf-token','Content-Type','x-auth','limit','offset','order']
     # Configure requests allowed from specific origins.
-    allowedOrigins: ['http://bits-angular-stg.dev01.bitsamericas.net','http://localhost:4200','*']
+    allowedOrigins: ['*']
