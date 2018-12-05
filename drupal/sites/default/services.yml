@@ -4,4 +4,4 @@ parameters:
     # Specify allowed headers, like 'x-allowed-header'.
     allowedHeaders: ['x-csrf-token','Content-Type','x-auth','limit','offset','order']
     # Configure requests allowed from specific origins.
-    allowedOrigins: ['http://bitsangular.local','localhost:4200']
+    allowedOrigins: ['*']
