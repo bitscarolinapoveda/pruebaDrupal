@@ -187,6 +187,3 @@ AddEncoding gzip svgz
   # Disable Proxy header, since it's an attack vector.
   RequestHeader unset Proxy
 </IfModule>
-
-Header set Access-Control-Allow-Origin "*"
-Header set Access-Control-Allow-Headers "limit, offset, order, X-CSRF-Token, Content-Type, x-auth"
