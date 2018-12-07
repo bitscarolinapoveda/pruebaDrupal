@@ -211,6 +211,7 @@ class MenuRestResource extends ResourceBase {
       }
 
       $menu_tree[$order]['title'] = $menu_link->getTitle();
+      $menu_tree[$order]['description'] = $menu_link->getDescription();
       $menu_tree[$order]['uri'] = $uri;
       $menu_tree[$order]['image'] = $image;
       if (isset($adf_menuSettings['alias']) && $adf_menuSettings['alias']) {
