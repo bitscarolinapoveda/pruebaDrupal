@@ -22,7 +22,7 @@ var LocationsComponent = /** @class */ (function () {
     LocationsComponent.prototype.ngOnInit = function () {
         var _this = this;
         //Se conecta direcamente con el módulo adf_location en Drupal
-        this._http.get('/location-resources').subscribe(function (items) {
+        this._http.get('location-resources').subscribe(function (items) {
             _this.locations_data = items;
         });
     };
