@@ -28,8 +28,12 @@ export class TecnologiesComponent implements OnInit {
   getItemsTecnologies() {
     return this._tecnologies.getCustomCardInformation('technologies').subscribe(items => {
       this.tecnologiesTitle = items.header[0].data;
-      this.tecnologiesMovil = items.body[0].data.back_movil[0];
-      this.tecnologiesDesktop = items.body[0].data.back_desktop[0];
+      if (this.tecnologiesMovil = items.body[0].data.back_movil) {
+        this.tecnologiesMovil = items.body[0].data.back_movil[0];
+      }
+      if (items.body[0].data.back_desktop) {
+        this.tecnologiesDesktop = items.body[0].data.back_desktop[0];
+      }
       this.tecnologiesArrayLogos = items.data;
       //this.tecnologiesArrayLogos = items.files[0].data.logo;
     });
