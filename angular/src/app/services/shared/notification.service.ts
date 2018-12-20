@@ -19,8 +19,8 @@ export class NotificationService {
     if (typeof errorParam === 'string') {
       this.toastr.error( errorParam, 'Error' , this.toastOptions);
     } else {
-      const error = this.convertObjectError(errorParam);
-      this.toastr.error( error.message, error.label , this.toastOptions);
+      const error_c = this.convertObjectError(errorParam);
+      this.toastr.error( error_c.message, error_c.label , this.toastOptions);
     }
   }
 
