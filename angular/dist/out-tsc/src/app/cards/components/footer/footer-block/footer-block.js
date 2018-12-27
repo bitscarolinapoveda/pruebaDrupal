@@ -23,7 +23,7 @@ var FooterBlock = /** @class */ (function () {
     };
     FooterBlock.prototype.getFooterBlockItems = function () {
         var _this = this;
-        this._http.get('/location-resources?_format=json', { 'limit': 2 }).subscribe(function (items) {
+        this._http.get('location-resources?_format=json', { 'limit': 2 }).subscribe(function (items) {
             _this.dataUbicaciones = items;
         });
         /*this.footerBlockService.getCustomCardInformation('footerblock').subscribe((items) => {

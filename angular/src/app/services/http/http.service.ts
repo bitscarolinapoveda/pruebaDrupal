@@ -3,7 +3,8 @@ import {BaseService} from '../base/base.service';
 import {NotificationService} from '../shared/notification.service';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs/observable';
+import 'rxjs/add/observable/throw';
 import {Subject} from "rxjs";
 import {catchError, map, share} from "rxjs/operators";
 
