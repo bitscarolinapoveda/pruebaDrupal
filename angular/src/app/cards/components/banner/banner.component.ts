@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CustomCardService } from 'src/app/services/cards/v1-card.services';
 
@@ -8,16 +8,25 @@ import { CustomCardService } from 'src/app/services/cards/v1-card.services';
     styleUrls: ['./banner.component.scss'],
 })
 export class BannerComponent implements OnInit {
+    @Input() titulo: string;
+    @Input() imgFondo: string;
     bannerTitle: any = [];
     bannerBackground: any = [];
     medius = '550px';
     constructor(
         router: ActivatedRoute,
         private banner: CustomCardService,
-    ) {}
+    ) {    }
 
     ngOnInit() {
-        this.getBannerService();
+        console.log(`Mi titulo ${ this.titulo } y Mi Fondo ${ this.imgFondo }`);
+        if (this.titulo && this.imgFondo) {
+            this.bannerTitle = this.titulo;
+            this.bannerBackground = this.imgFondo;
+        }else{
+            this.getBannerService();
+        }
+        
     }
     getBannerService() {
         this.banner.getCustomCardInformation('contact_banner').subscribe(items => {
