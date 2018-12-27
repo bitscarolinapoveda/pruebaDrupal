@@ -15,6 +15,8 @@ import { BannerComponent } from './components/banner/banner.component';
 import { TitleComponent } from './components/titles/titles.component';
 import { TabsComponent } from './components/tabs/tabs.component';
 import { VideoInformationComponent } from './components/video-information/video-information.component';
+import { SeparatorComponent } from './components/separator/separator.component';
+
 
 // Servicios
 import { NodeService } from '../services/cards/node.service';
@@ -37,7 +39,8 @@ import {AdfModule} from "../@adf/adf.module";
     BannerComponent,
     TitleComponent,
     TabsComponent,
-    VideoInformationComponent
+    VideoInformationComponent,
+    SeparatorComponent
   ],
   exports: [
     CarouselIndicatorsComponent,
@@ -50,7 +53,8 @@ import {AdfModule} from "../@adf/adf.module";
     BannerComponent,
     TitleComponent,
     TabsComponent,
-    VideoInformationComponent
+    VideoInformationComponent,
+    SeparatorComponent
   ],
   imports: [BrowserModule, CommonModule, NgbModule, RouterModule, AdfModule],
   providers: [NodeService]
