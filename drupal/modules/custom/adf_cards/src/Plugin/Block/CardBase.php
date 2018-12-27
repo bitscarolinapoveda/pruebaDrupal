@@ -8,6 +8,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\file\FileUsage\FileUsageInterface;
 use Drupal\file\Entity\File;
+use Drupal\Core\Entity\ContentEntityType;
 
 /**
  * Provides a 'CardBase' block.
@@ -156,11 +157,263 @@ class CardBase extends BlockBase {
     ];
 
 
+    $entityName = 'node';
+    $entityType = '';
+    $entityLimit = 4;
+    $entityOffset = 0;
+
+    //  Si viene desde ajax el carga los valores para el formilario
+    if (get_class($form_state) == 'Drupal\Core\Form\SubformState') {
+      $ourFormState = $form_state->getCompleteFormState();
+    }
+    $bnCargoDesdeAjax = FALSE;
+    if (!empty((string) $ourFormState->getTriggeringElement()['#value'])) {
+      \Drupal::logger('casa')->notice('cargado desde ajax');
+      $bnCargoDesdeAjax = TRUE;
+    }
+    if ($bnCargoDesdeAjax) {
+      $entityName = $ourFormState->getValue(['settings','entity','name']);
+      $entityType = $ourFormState->getValue(['settings','entity','type']);
+      $entityLimit = $ourFormState->getValue(['settings','entity','limit']);
+      $entityOffset = $ourFormState->getValue(['settings','entity','offset']);
+    }
+
+    if (isset($this->configuration['entity'])) {
+      $contentEntityTypes = [];
+      $entityTypeDefinations = \Drupal::entityTypeManager()->getDefinitions();
+      /* @var $definition EntityTypeInterface */
+      foreach ($entityTypeDefinations as $definition) {
+        $contentEntityTypes[$definition->id()] = $definition->id();
+      }
+
+
+      // Gather the number of names in the form already.
+      $fromAjax = $form_state->get('from_ajax');
+      // We have to ensure that there is at least one name field.
+      if ($fromAjax === NULL) {
+        $fromAjax = $form_state->set('from_ajax', FALSE);
+      }
+
+      // Details containers replace D7's collapsible field sets.
+      $form['entity'] = [
+        '#type' => 'details',
+        '#title' => 'Elementos a mostrar',
+        '#open' => TRUE,
+        '#prefix' => '<div id="entity-content">',
+        '#suffix' => '</div>'
+      ];
+
+      //  Si existe el entity name, crea el campo y carga el valor guardado.
+      if (isset($this->configuration['entity']['name'])) {
+        //  Si no carga desde ajax carga la configuración
+        if (!$bnCargoDesdeAjax) {
+          $entityName = $this->configuration['entity']['name'];
+        }
+      }
+
+      $form['entity']['name'] = [
+        '#type' => 'select',
+        '#options' => $contentEntityTypes,
+        '#empty_option' => $this->t('-select-'),
+        '#description' => $this->t('Select, #type = select'),
+        '#title' => $this->t('Nombre de la entidad'),
+        '#default_value' => $entityName,
+        '#ajax' => [
+          'callback' => [$this, 'changeEntityType'],
+          'wrapper' => 'entity-content',
+        ],
+      ];
+
+      // Si existe el entity type, crea el campo y carga el valor guardado.
+      if (isset($this->configuration['entity']['type'])) {
+        //  Si no carga desde ajax carga la configuración
+        if (!$bnCargoDesdeAjax) {
+          $entityType = $this->configuration['entity']['type'];
+        }
+
+        // Carga los tipos de contenido de la entidad, si esta existe
+        $typesOfEntity = \Drupal::service('entity_type.bundle.info')->getBundleInfo($entityName);
+        $bundleEntityTypes = [];
+        foreach ($typesOfEntity as $key => $value) {
+          $bundleEntityTypes[$key] = $value['label'];
+        }
+      }
+      if (count($bundleEntityTypes) > 0) {
+        $form['entity']['type'] = [
+          '#type' => 'select',
+          '#options' => $bundleEntityTypes,
+          '#empty_option' => $this->t('all'),
+          '#description' => $this->t('Select, #type = select'),
+          '#title' => $this->t('Tipo de entidad'),
+          '#default_value' => $entityType,
+          '#ajax' => [
+            'callback' => [$this, 'changeEntityType'],
+            'wrapper' => 'entity-content',
+          ],
+        ];
+      }
+
+      // Crea el campo limite y asigna el valor
+      if (isset($this->configuration['entity']['limit'])) {
+        //  Si no carga desde ajax carga la configuración
+        if (!$bnCargoDesdeAjax) {
+          $entityLimit = (int) $this->configuration['entity']['limit'];
+        }
+      }
+      $form['entity']['limit'] = [
+        '#type' => 'number',
+        '#title' => $this->t('Limite'),
+        '#description' => $this->t('Textarea, #type = textarea'),
+        '#default_value' => $entityLimit,
+        '#ajax' => [
+          'callback' => [$this, 'changeEntityType'],
+          'wrapper' => 'entity-content',
+          'event' => 'keyup',
+        ],
+      ];
+
+      //
+      if (isset($this->configuration['entity']['offset'])) {
+        //  Si no carga desde ajax carga la configuración
+        if (!$bnCargoDesdeAjax) {
+          $entityOffset = (int) $this->configuration['entity']['offset'];
+        }
+      }
+      $form['entity']['offset'] = [
+        '#type' => 'number',
+        '#title' => $this->t('Offset'),
+        '#description' => $this->t('Textarea, #type = textarea'),
+        '#default_value' => $entityOffset,
+        '#ajax' => [
+          'callback' => [$this, 'changeEntityType'],
+          'wrapper' => 'entity-content',
+          'event' => 'keyup',
+        ],
+      ];
+/*
+
+    $connection_info = $connection->getConnectionOptions();
+    // Order by primary keys.
+    $order = '';
+    $query = "SELECT `COLUMN_NAME` FROM `information_schema`.`COLUMNS`
+    WHERE (`TABLE_SCHEMA` = '" . $connection_info['database'] . "')
+    AND (`TABLE_NAME` = '{" . $table . "}') AND (`COLUMN_KEY` = 'PRI')
+    ORDER BY COLUMN_NAME";
+    $results = $connection->query($query);
+    while (($row = $results->fetchAssoc()) !== FALSE) {
+      $order .= $row['COLUMN_NAME'] . ', ';
+    }
+
+      $records = db_query('SELECT name FROM {config} WHERE name LIKE "core.entity_view_display.' . $entityName . '.%"')->fetchField();
+      foreach ($records as $record) {
+
+      }
+
+      $form['entity']['default_view_mode'] = [
+        '#type' => 'radios',
+        '#title' => t('Preview comment'),
+        '#default_value' => variable_get('comment_preview', 1),
+        '#options' => array(t('Optional'), t('Required')),
+      ];
+*/
+
+
+      $query = \Drupal::entityQuery($entityName);
+        $query->condition('status', 1);
+        if ($entityType) {
+          $query->condition('type', $entityType);
+        }
+        if (isset($entityLimit) && isset($entityOffset)) {
+          $query->range($entityOffset, $entityLimit + $entityOffset);
+        }
+        $entityIds = $query->execute();
+
+      $form['entity']['table-row'] = [
+        '#type' => 'table',
+        '#header' => [
+          $this->t('Name'),
+          $this->t('Description'),
+          $this->t('Weight'),
+        ],
+        '#empty' => $this->t('Sorry, There are no items!'),
+        // TableDrag: Each array value is a list of callback arguments for
+        // drupal_add_tabledrag(). The #id of the table is automatically
+        // prepended; if there is none, an HTML ID is auto-generated.
+        '#tabledrag' => [
+          [
+            'action' => 'order',
+            'relationship' => 'sibling',
+            'group' => 'table-sort-weight',
+          ],
+        ],
+      ];
+
+      $arRowForWeight = [];
+      foreach ($entityIds as $entityId) {
+        $entityStorage = \Drupal::entityManager()->getStorage($entityName);
+        $entity = $entityStorage->load($entityId);
+        $label = $entity->label();
+        $id = $entity->id();
+
+        $weight = 1;
+        if (isset($this->configuration['entity']['weight'][$id])) {
+          $weight = (int) $this->configuration['entity']['weight'][$id];
+        }
+
+        $arRows[$id] = [
+          // TableDrag: Mark the table row as draggable.
+          '#attributes' => ['class' => [0 => 'draggable']],
+          // TableDrag: Sort the table row according to its existing/configured.
+          // weight.
+          '#weight' => $weight,
+          'name' => [
+            '#markup' => $label,
+          ],
+          'casa' => [
+            '#markup' => '<name>bb',
+          ],
+          // TableDrag: Weight column element.
+          'weight' => [
+            '#type' => 'weight',
+            '#title' => $this->t('Weight for @title', ['@title' => $label]),
+            '#title_display' => 'invisible',
+            '#default_value' => $weight,
+            // Classify the weight element for #tabledrag.
+            '#attributes' => ['class' => ['table-sort-weight']],
+          ],
+        ];
+
+        //  Si esta repetido intenta con un valor menos
+        while (isset($arRowForWeight[$weight])) {
+          $weight -= 1;
+        }
+        $arRowForWeight[$weight] = $id;
+      }
+    }
+    ksort($arRowForWeight);
+
+    foreach ($arRowForWeight as $rowForWeight) {
+      $form['entity']['table-row'][$rowForWeight] = $arRows[$rowForWeight];
+    }
+
     $table_fields = $this->configuration['files']['table_fields'] ?? [];
     $this->_uaSort($table_fields);
     $form = $this->generateTable('files', $table_fields, $form);
 
     return $form;
+  }
+
+  /**
+   * Load Entity info.
+   *
+   * @param array $form
+   * @param FormStateInterface $form_state
+   * @return AjaxResponse
+   */
+  public function changeEntityType(array &$form, FormStateInterface $form_state) {
+
+    \Drupal::logger('casa')->notice('form ajax');
+    return $form['settings']['entity'];
   }
 
   /**
@@ -263,6 +516,12 @@ class CardBase extends BlockBase {
     $this->configuration['header'] = $form_state->getValue('header');
     $this->configuration['body'] = $form_state->getValue('body');
     $this->configuration['files'] = $form_state->getValue('files');
+    $this->configuration['entity'] = $form_state->getValue('entity');
+
+    $arEntityIds = $form_state->getValues()['entity']['table-row'];
+    foreach ($arEntityIds as $id => $weight) {
+      $this->configuration['entity']['weight'][$id] = $weight['weight'];
+    }
 
     $filesArray = [
       'header' => $this->configuration['header'],
