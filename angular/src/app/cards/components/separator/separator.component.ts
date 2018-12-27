@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
     styleUrls: ['./separator.component.scss']
 })
 export class SeparatorComponent {
-
+    constructor(){
+        
+    }
 }
