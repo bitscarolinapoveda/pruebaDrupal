@@ -13,5 +13,10 @@ export const statusCodes = [
     code: 500,
     message: 'Internal Server Error',
     label: 'Error'
+  },
+  {
+    code: 0,
+    message:  'Http failure response for (unknown url): 0 Unknown Error',
+    label:  'Unknown Error'
   }
 ];
