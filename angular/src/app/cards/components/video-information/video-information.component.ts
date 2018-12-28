@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { CustomCardService } from 'src/app/services/cards/v1-card.services';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 
@@ -13,6 +13,7 @@ export class VideoInformationComponent implements OnInit {
     videoURLSanitizer: SafeUrl;
     titleSection: string;
     descriptionSection: string;
+    @Input() link:string;
 
     constructor( 
         private https: CustomCardService,
@@ -32,6 +33,7 @@ export class VideoInformationComponent implements OnInit {
             }else{
                 this.videoURLSanitizer = this.sanitizer.bypassSecurityTrustResourceUrl(this.videoURL);
             }
+            //this.link = items.data[0].link;
         }
         );
         
