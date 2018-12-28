@@ -30,3 +30,13 @@ body h1,
 body h2 {
     font-family: 'Open Sans light';
 }
+
+body h1.condensed,
+body h2.condensed,
+body h3.condensed {
+    font-family: 'Open Sans Codensed';
+}
+
+hr.green {
+    border-top: 2px solid #a6cf2482;
+}

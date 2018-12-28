@@ -1,8 +1,15 @@
 <app-banner titulo="iMedical" imgFondo="../../assets/images/imedicalweb.png"></app-banner>
 <div class="my-5">
-    <app-separator [iconCustom]="'fa-handshake'"></app-separator>
-    <!--<app-tecnologies></app-tecnologies>-->
-    <app-separator [iconCustom]="'fa-cogs'"></app-separator>
-    <app-video-information [link]="'www.eliseupnorcum.cedu.co'"></app-video-information>
-    <app-separator [iconCustom]="'fa-cogs'"></app-separator>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <app-client-card></app-client-card>
+            </div>
+            <div class="col-md-8"></div>
+        </div>
+        <app-separator [iconCustom]="'fa-handshake'"></app-separator>
+        <app-separator [iconCustom]="'fa-cogs'"></app-separator>
+        <app-video-information [link]="'www.eliseupnorcum.cedu.co'"></app-video-information>
+        <app-separator [iconCustom]="'fa-cogs'"></app-separator>
+    </div>
 </div>
