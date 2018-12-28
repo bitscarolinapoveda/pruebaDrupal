@@ -27,7 +27,7 @@ export class FooterBlock implements OnInit {
   }
 
   getFooterBlockItems (): void {
-    this._http.get('/location-resources?_format=json', {'limit': 2}).subscribe((items) => {
+    this._http.get('location-resources?_format=json', {'limit': 2}).subscribe((items) => {
       this.dataUbicaciones = items;
     });
     /*this.footerBlockService.getCustomCardInformation('footerblock').subscribe((items) => {
