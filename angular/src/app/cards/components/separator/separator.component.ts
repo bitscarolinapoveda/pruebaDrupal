@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
     selector: 'app-separator',
@@ -6,6 +6,9 @@ import { Component } from '@angular/core';
     styleUrls: ['./separator.component.scss']
 })
 export class SeparatorComponent {
+
+    @Input() iconCustom:string;
+
     constructor(){
         
     }
