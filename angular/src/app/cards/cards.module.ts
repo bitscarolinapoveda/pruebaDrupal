@@ -21,6 +21,7 @@ import { ProjectSummaryComponent } from './components/project-summary/project-su
 import { MenuTemplateComponent } from './components/menu-template/menu-template.component';
 import { SlideComponent } from './components/slide/slide.component';
 import { SliderComponent } from './components/slider/slider.component';
+import { BlurbComponent } from './components/blurb/blurb.component';
 
 
 
@@ -52,7 +53,8 @@ import {AdfModule} from "../@adf/adf.module";
     ProjectSummaryComponent,
     MenuTemplateComponent,
     SlideComponent,
-    SliderComponent
+    SliderComponent,
+    BlurbComponent
   ],
   exports: [
     CarouselItemComponent,
@@ -72,7 +74,8 @@ import {AdfModule} from "../@adf/adf.module";
     ProjectSummaryComponent,
     MenuTemplateComponent,
     SlideComponent,
-    SliderComponent
+    SliderComponent,
+    BlurbComponent
   ],
   imports: [BrowserModule, CommonModule, NgbModule, RouterModule, AdfModule],
   providers: [NodeService]
