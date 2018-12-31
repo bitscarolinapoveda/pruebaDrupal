@@ -1,0 +1,26 @@
+$spacer: 1rem;
+.imgFondoSlide {
+    position: absolute;
+}
+
+.fondoSlide {
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.p-6 {
+    padding: $spacer * 4.5;
+}
+
+.pt-6 {
+    padding-top: $spacer * 4.5;
+}
+
+.p-7 {
+    padding: $spacer * 6;
+}
+
+.pt-7 {
+    padding-top: $spacer * 4.5;
+}

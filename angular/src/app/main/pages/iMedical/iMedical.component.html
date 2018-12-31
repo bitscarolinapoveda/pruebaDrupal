@@ -2,12 +2,19 @@
 <div class="my-5">
     <div class="container">
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-4 mb-3">
                 <app-client-card></app-client-card>
             </div>
-            <div class="col-md-8"></div>
+            <div class="col-md-8 mb-3">
+                <app-project-summary></app-project-summary>
+            </div>
         </div>
-        <app-separator [iconCustom]="'fa-handshake'"></app-separator>
+    </div>
+    <hr>
+    <app-menu-template></app-menu-template>
+    <app-slider></app-slider>
+    <div class="container">
+        <app-separator [iconCustom]="'fa-cogs'"></app-separator>
         <app-separator [iconCustom]="'fa-cogs'"></app-separator>
         <app-video-information [link]="'www.eliseupnorcum.cedu.co'"></app-video-information>
         <app-separator [iconCustom]="'fa-cogs'"></app-separator>
