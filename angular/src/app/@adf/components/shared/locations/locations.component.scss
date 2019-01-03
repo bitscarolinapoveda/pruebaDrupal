@@ -29,8 +29,18 @@
   background: #d9dfe4;
   text-decoration: none;
   border-radius: 0;
+
   &.collapsed {
     background: #f2f4f6;
+    .container.location-block {
+      .row.location-button {
+        .info-icon {
+          .fas.fa-sort-down {
+            transform: rotate(180deg);
+          }
+        }
+      }
+    }  
   }
 }
 #accordion-section-mobile {
