@@ -16,10 +16,10 @@ export class LocationsComponent implements OnInit {
   public titleCity;
   public addressCity;
   public colorWhileLoad = 'rgb(202, 202, 202)';
-  public selected;
   public map: any;
   public mobileScreen = false;
   public desktopScreen = false;
+  public needButtons = false;
   public widthOftheMap;
   public defaultZoomMap = 15;
   public bitsTypeMap: any = [
@@ -63,15 +63,18 @@ export class LocationsComponent implements OnInit {
         items[index].lat = parseFloat(items[index].lat);
         items[index].lng = parseFloat(items[index].lng);
       }
+      if (items.length > 4) {
+        this.needButtons = true;
+      }
       this.lat = items[0].lat;
       this.lng = items[0].lng;
       this.titleCity = items[0].title;
       this.addressCity = items[0].address;
       this.locations_data = items;
     });
-    this.onResize();
+    this.onResize(screen);
   }
-  onResize() {
+  onResize(screen) {
     const widthScreen = (window.innerWidth);
     if (widthScreen < 1164) {
       this.mobileScreen = true;
@@ -80,7 +83,9 @@ export class LocationsComponent implements OnInit {
       this.mobileScreen = false;
       this.desktopScreen = true;
     }
-    this.sizeOfMap();
+    if (screen === 'desktop') {
+      this.sizeOfMap();
+    }
   }
   sizeOfMap() {
     if (document.readyState === 'complete') {
@@ -95,11 +100,28 @@ export class LocationsComponent implements OnInit {
     this.lng = parseFloat(ubicacion.lng);
     this.titleCity = ubicacion.title;
     this.addressCity = ubicacion.address;
-    this.selected = 'selected';
-    console.log(index);
+    for (let i = 0; i < this.locations_data.length ; i++) {
+      document.getElementById( i + '').style.backgroundColor = '#f2f4f6';
+    }
+    document.getElementById( index + '').style.backgroundColor = '#d9dfe4';
   }
-  scrollMaps() {
-    document.querySelector('.row.location-button').scrollIntoView();
+  scrollMaps(direction) {
+    const elem = document.getElementById('box-of-buttons');
+    const scrollTop = elem.scrollTop;
+    if (direction === 'down') {
+      if (scrollTop === 0) {
+        elem.scrollTo(0, 130);
+      } else {
+        document.getElementById('up-arrow').style.visibility = 'visible';
+        elem.scrollTo(0, 130 + scrollTop);
+      }
+    } else if (direction === 'up') {
+      if (scrollTop === 130) {
+        elem.scrollTo(0, -130);
+      } else {
+        elem.scrollTo(0, -130 + scrollTop);
+      }
+    }
   }
 }
 
