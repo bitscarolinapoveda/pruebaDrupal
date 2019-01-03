@@ -1,8 +1,10 @@
 <section id="title-description">
     <h4 class="title-block-location">Nuestra ubicacion</h4>
     <p class="description-block-location">Aqui podra ver la ubicacion de nuestras oficinas</p>
+    <!-- CONFIGURACION DE DRUPAL -->
 </section>
-<section id="accordion-section">
+<!-- MOBILE -->
+<section id="accordion-section-mobile" (window:resize)="onResize()" *ngIf="mobileScreen">
     <ngb-accordion #acc="ngbAccordion" activeIds="static-0" [closeOthers]="closeOthers">
         <ngb-panel *ngFor="let ubicacion of locations_data ; let i = index" id="static-{{i}}">
             <ng-template ngbPanelTitle>
@@ -26,13 +28,12 @@
                 </div>
             </ng-template>
             <ng-template ngbPanelContent>
-                <div id="mapa"></div>
-                <section id="mapas">
-                    <agm-map [latitude]="ubicacion.lat" [longitude]="ubicacion.lng" [styles]="bitsTypeMap" [zoom]="defaultZoomMap" style="height: 300px;">
-                        <agm-marker (mouseOver)="window.open()" (mouseOut)="window.close()" [latitude]="ubicacion.lat" [longitude]="ubicacion.lng" [iconUrl]="imageIcon"> 
-                            <agm-info-window #window>
-                                <h6>{{ubicacion.title}}</h6>
-                                <h6>{{ubicacion.address}}</h6>
+                <section id="mapa">
+                    <agm-map [latitude]="ubicacion.lat" [longitude]="ubicacion.lng" [styles]="bitsTypeMap" [zoom]="defaultZoomMap" [backgroundColor]="colorWhileLoad" style="height: 300px;">
+                        <agm-marker [latitude]="ubicacion.lat" [longitude]="ubicacion.lng" [iconUrl]="imageIcon"> 
+                            <agm-info-window #window [isOpen]="true">
+                                <h6 class="info-window-location">{{ubicacion.title}}</h6>
+                                <h6 class="info-window-location address">{{ubicacion.address}}</h6>
                             </agm-info-window>
                         </agm-marker>
                     </agm-map>
@@ -41,7 +42,47 @@
         </ngb-panel>
     </ngb-accordion>
 </section>
-<!--<section id="tabs-vertical">
+<!-- DESKTOP -->
+<section id="accordion-section-desktop" (window:resize)="onResize()" *ngIf="desktopScreen">
+    <div class="row general-box-location">
+        <div class="col-4 buttons-location-desktop">
+            <div class="control-button">
+                <div class="col-12">
+                    <div class="row arrow-up" (click)="scrollMaps()">
+                        <i class="fas fa-chevron-circle-up fa-3x"></i>
+                    </div>
+                    <div class="row arrow-down" (click)="scrollMaps()">
+                        <i class="fas fa-chevron-circle-down fa-3x"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="row location-button">
+                <div class="col-12 info-location" *ngFor="let ubicacion of locations_data ; let i = index" (click)="ubicateCity(ubicacion, i)">
+                    <h2 class="location-li title" >{{ubicacion.title}}</h2>
+                    <div id="address-block" class="address-block">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <li class="location-li address">{{ubicacion.address}}</li>
+                    </div>
+                    <div class="telephone-block">
+                        <i class="fas fa-phone"></i>
+                        <li class="location-li telephone">{{ubicacion.telephone}}</li>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-8 map-location-desktop">
+            <agm-map [latitude]="lat" [longitude]="lng" [styles]="bitsTypeMap" [zoom]="defaultZoomMap" [ngStyle]="{'width': widthOftheMap}" [backgroundColor]="colorWhileLoad" style="height: 519px;">
+                <agm-marker [latitude]="lat" [longitude]="lng" [iconUrl]="imageIcon"> 
+                    <agm-info-window #window [isOpen]="infoWindowOpen">
+                        <h6 class="info-window-location">{{ titleCity }}</h6>
+                        <h6 class="info-window-location address">{{ addressCity }}</h6>
+                    </agm-info-window>
+                </agm-marker>
+            </agm-map>
+        </div>
+    </div>
+</section>
+<!-- <section id="accordion-section-desktop" (window:resize)="onResize()" *ngIf="desktopScreen">
     <div class="block-vertical" id="run">
         <ul class="nav nav-tabs nav-tabs--vertical nav-tabs--left">
             <li class="nav-item ubicacion" *ngFor="let ubicacion of locations_data"
