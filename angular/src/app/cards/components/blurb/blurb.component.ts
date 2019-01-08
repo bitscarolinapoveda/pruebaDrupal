@@ -1,5 +1,5 @@
 import { OnInit, Component, Input } from "@angular/core";
-import { Blurb } from '../../../services/cards/v1-card.services';
+import { Blurb, CustomCardService } from '../../../services/cards/v1-card.services';
 
 
 @Component({
@@ -11,7 +11,9 @@ export class BlurbComponent implements OnInit{
 
     @Input() blurb:Blurb;
 
-    constructor() {
+    constructor(
+        private _http:CustomCardService
+    ) {
         this.blurb = {
             imageSrc : 'assets/images/historiaclinicadesktop.png',
             title: 'titulo 1',

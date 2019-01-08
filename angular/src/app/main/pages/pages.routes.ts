@@ -9,6 +9,7 @@ import {ProductsComponent} from "./products/products.component";
 import {ServicesComponent} from "./services/services.component";
 
 import { iMedicalComponent } from "./iMedical/iMedical.component";
+import { PoliticsComponent } from "./politics/politics.component";
 import { from } from 'rxjs';
 
 const pagesRoutes: Routes = [
@@ -23,6 +24,7 @@ const pagesRoutes: Routes = [
       {path: 'projects', component: ProjectsComponent},
       {path: 'services', component: ServicesComponent},
       {path: 'iMedical', component: iMedicalComponent},
+      {path: 'politics', component: PoliticsComponent},
       {path: '**', component: NoPageFoundComponent},
 
       // { path: 'home', component: HomeComponent },

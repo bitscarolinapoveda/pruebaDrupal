@@ -23,6 +23,7 @@ import { SlideComponent } from './components/slide/slide.component';
 import { SliderComponent } from './components/slider/slider.component';
 import { BlurbComponent } from './components/blurb/blurb.component';
 import { CardImgTextComponent } from './components/card-img-text/card-img-text.component';
+import { BlogComponent } from './components/blog/blog.component';
 
 
 
@@ -56,7 +57,8 @@ import {AdfModule} from "../@adf/adf.module";
     SlideComponent,
     SliderComponent,
     BlurbComponent,
-    CardImgTextComponent
+    CardImgTextComponent,
+    BlogComponent
   ],
   exports: [
     CarouselItemComponent,
@@ -78,7 +80,8 @@ import {AdfModule} from "../@adf/adf.module";
     SlideComponent,
     SliderComponent,
     BlurbComponent,
-    CardImgTextComponent
+    CardImgTextComponent,
+    BlogComponent
   ],
   imports: [BrowserModule, CommonModule, NgbModule, RouterModule, AdfModule],
   providers: [NodeService]

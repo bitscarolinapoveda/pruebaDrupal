@@ -8,25 +8,28 @@ import { CustomCardService } from 'src/app/services/cards/v1-card.services';
     styleUrls: ['./banner.component.scss'],
 })
 export class BannerComponent implements OnInit {
-    @Input() titulo: string;
-    @Input() imgFondo: string;
+    @Input() titulo: string = "";
+    @Input() imgFondo: string = "";
     bannerTitle: any = [];
     bannerBackground: any = [];
     medius = '550px';
     constructor(
         router: ActivatedRoute,
         private banner: CustomCardService,
-    ) {    }
+    ) { 
+      }
 
-    ngOnInit() {
+    ngOnInit() {  
         console.log(`Mi titulo ${ this.titulo } y Mi Fondo ${ this.imgFondo }`);
-        if (this.titulo && this.imgFondo) {
-            this.bannerTitle = this.titulo;
-            this.bannerBackground = this.imgFondo;
-        }else{
-            this.getBannerService();
+        if (this.titulo != "") {
+            this.bannerTitle = this.titulo.toUpperCase();
+            if(this.imgFondo != ""){
+                this.bannerBackground = this.imgFondo;
+            }
         }
-        
+        else{
+            this.getBannerService();
+        }      
     }
     getBannerService() {
         this.banner.getCustomCardInformation('contact_banner').subscribe(items => {

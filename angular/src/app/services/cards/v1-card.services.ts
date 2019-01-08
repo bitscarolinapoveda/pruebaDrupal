@@ -28,39 +28,6 @@ export class CustomCardService {
     }
   ];
 
-  private blurbData: Blurb[] = [
-    {
-      imageSrc: "../../../../assets/images/historiaclinicadesktop.png",
-      title: "Titulo se servicio 1",
-      description: "Magna occaecat culpa magna nisi labore aute Lorem Lorem quis eu officia dolor tempor fugiat. Lorem cillum Lorem eu veniam. Eiusmod elit incididunt irure velit velit sint."
-    },
-    {
-      imageSrc: "../../../../assets/images/historiaclinicadesktop.png",
-      title: "Titulo se servicio 2",
-      description: "Magna occaecat culpa magna nisi labore aute Lorem Lorem quis eu officia dolor tempor fugiat. Lorem cillum Lorem eu veniam. Eiusmod elit incididunt irure velit velit sint."
-    },
-    {
-      imageSrc: "../../../../assets/images/historiaclinicadesktop.png",
-      title: "Titulo se servicio 3",
-      description: "Magna occaecat culpa magna nisi labore aute Lorem Lorem quis eu officia dolor tempor fugiat. Lorem cillum Lorem eu veniam. Eiusmod elit incididunt irure velit velit sint."
-    },
-    {
-      imageSrc: "../../../../assets/images/historiaclinicadesktop.png",
-      title: "Titulo se servicio 4",
-      description: "Magna occaecat culpa magna nisi labore aute Lorem Lorem quis eu officia dolor tempor fugiat. Lorem cillum Lorem eu veniam. Eiusmod elit incididunt irure velit velit sint."
-    },
-    {
-      imageSrc: "../../../../assets/images/historiaclinicadesktop.png",
-      title: "Titulo se servicio 5",
-      description: "Magna occaecat culpa magna nisi labore aute Lorem Lorem quis eu officia dolor tempor fugiat. Lorem cillum Lorem eu veniam. Eiusmod elit incididunt irure velit velit sint."
-    },
-    {
-      imageSrc: "../../../../assets/images/historiaclinicadesktop.png",
-      title: "Titulo se servicio 6",
-      description: "Magna occaecat culpa magna nisi labore aute Lorem Lorem quis eu officia dolor tempor fugiat. Lorem cillum Lorem eu veniam. Eiusmod elit incididunt irure velit velit sint."
-    }
-  ];
-
   constructor(
     private http: HttpService
   ) { }
@@ -77,11 +44,6 @@ export class CustomCardService {
   getSliderData():Slide[]{
     //return this.http.get('v1/card/contact/export/custom?_format=json&bid=slider');
     return this.sliderData;
-  }
-
-  getBlurbData():Blurb[]{
-    //return this.http.get('v1/card/contact/export/custom?_format=json&bid=blurb');
-    return this.blurbData;
   }
 }
 
