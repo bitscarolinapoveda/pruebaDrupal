@@ -1,8 +1,6 @@
 import { CustomCardService } from './../../../services/cards/v1-card.services';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 
-
-declare var $: any;
 declare var jQuery: any;
 declare var $: any;
 @Component({
@@ -10,141 +8,74 @@ declare var $: any;
   templateUrl: './tecnologies.component.html',
   styleUrls: ['./tecnologies.component.scss']
 })
-export class TecnologiesComponent implements OnInit {
-  tecnologiesArrayLogos: any = [];
-  tecnologiesTitle: any = [];
-  tecnologiesback: any = [];
-  tecnologiesMovil: any = [];
-  tecnologiesDesktop: any;
+export class TecnologiesComponent implements OnInit{
+  arrayLogos:any = [];
+  arrayLogosCustom:any[][];
+  title:string = "";
+  background:string = "";
 
   constructor(
     private _tecnologies: CustomCardService,
-  ) {}
+  ) {
+    this.arrayLogosCustom = [];
+  }
 
   ngOnInit() {
     this.getItemsTecnologies();
   }
 
-  getItemsTecnologies() {
-    return this._tecnologies.getCustomCardInformation('technologies').subscribe(items => {
-      this.tecnologiesTitle = items.header[0].data;
-      if (this.tecnologiesMovil = items.body[0].data.back_movil) {
-        this.tecnologiesMovil = items.body[0].data.back_movil[0];
-      }
-      if (items.body[0].data.back_desktop) {
-        this.tecnologiesDesktop = items.body[0].data.back_desktop[0];
-      }
-      this.tecnologiesArrayLogos = items.data;
-      //this.tecnologiesArrayLogos = items.files[0].data.logo;
+  customArrayImages( arrayLogosOriginal:any[] ){
+    for (let i:number = 0; i <= arrayLogosOriginal.length; i++) {
+      this.arrayLogosCustom[i] = [];
+      let j2:number = 0;
+      for (let j:number = 0; j < 4; j++) {
+        if (arrayLogosOriginal.length > 0) {
+          this.arrayLogosCustom[i][j] = arrayLogosOriginal[0];
+          arrayLogosOriginal.shift();
+        }else{
+          this.arrayLogosCustom[i][j] = this.arrayLogosCustom[i - 1][j2];
+          j2++;
+        }
+      }    
+    }
+  }
+
+  createSlick(){
+    $(document).ready(function(){
+      $('.tec-slider').slick({
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        dots: false,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        speed: 3500,
+        fade: true,
+        responsive:[
+          {
+            breakpoint: 600,
+            settings: {
+              infinite: false,
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              dots: true,
+              fade: false,
+              autoplay: false
+            }
+          }
+        ]
+      });
     });
   }
-/*
-  testFunction(){
-  setTimeout(function () {
 
-    console.log('function')
-    if ($('#transition-image').length > 0 ){
-        var items = 4;
-        var $elements = $('.img-item');
-        console.log($('.img-item'));
-        var groups = createGroups($elements, items);
-        var groups: {} = completeGroup(groups, items);
-      console.log(groups)
-        startSlide(groups, items);
-    }
-
-    function createGroups($elements, numberItems) {
-      var elems = {};
-      var group = 1;
-      var item = 0;
-      elems[group] = [];
-
-      $.each($elements, function (key, value) {
-        var elemId = $(this).prop('id');
-        elems[group][item] = elemId;
-        item++;
-
-        if (((key + 1) % numberItems) == 0) {
-          item = 0;
-          group++;
-          elems[group] = [];
-        }
-      });
-
-      return elems;
-    }
-    function completeGroup(elems, numberItems) {
-      $.each(elems, function (key, currentElem) {
-        var count = 0;
-        $.each(currentElem, function (k, v) {
-            count++;
-        });
-
-        if ((count % numberItems) > 0) {
-          var iter = numberItems - count;
-          var pos = count;
-          var c = 0;
-
-          $.each(elems, function (a, b) {
-            $.each(b, function (item, v) {
-              if (c < iter) {
-                elems[key][pos] = v;
-                pos++;
-              }
-              c++;
-            });
-          });
-        }
-      });
-
-      $.each(elems, function (key, array) {
-        array.sort(function (a, b) {
-          if (a == b) return 0;
-          return a > b ? 1 : -1;
-        });
-      });
-
-      return elems;
-    }
-    function startSlide(elems, numberItems) {
-      console.log(elems)
-      console.log(numberItems)
-
-        var slide = 1;
-        var itemSlide = 0;
-        var oper = 'show';
-        var interval = setInterval(function () {
-            if (itemSlide < numberItems && oper == 'show') {
-              console.log('if')
-                var elemId = elems[slide][itemSlide];
-                var $elem = $('#' + elemId);
-                $elem.addClass('fadeInUp displayed').removeClass('fadeOutUp no-displayed').css('display', 'block');
-                itemSlide++;
-            }
-            else {
-                oper = 'remove';
-                if (((itemSlide) % numberItems) == 0) {
-                    itemSlide = 0;
-                }
-                var elemId = elems[slide][itemSlide];
-                var $elem = $('#' + elemId);
-                $elem.addClass('fadeOutUp').removeClass('fadeInUp');
-                itemSlide++;
-                if (itemSlide == numberItems) {
-                    oper = 'show';
-                    itemSlide = 0;
-                    slide++;
-
-                    if (elems[slide] == undefined) {
-                        slide = 1;
-                    }
-                    $('.displayed').css('display', 'none').removeClass('displayed').addClass('no-displayed');
-                }
-            }
-        }, 500);
-    }
-    }, 2000);
-
+  getItemsTecnologies() {
+    return this._tecnologies.getCustomCardInformation('technologies').subscribe(items => {
+      this.title = items.header[0].data.title;
+      this.background = items.body[0].data.back_movil[0].url;
+      this.arrayLogos = items.data;
+      this.customArrayImages( this.arrayLogos );
+      this.createSlick();
+    });
   }
-*/
+
 }
