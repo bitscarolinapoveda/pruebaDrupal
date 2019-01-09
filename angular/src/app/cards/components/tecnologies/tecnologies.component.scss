@@ -11,34 +11,24 @@
      }
      .tec-slider {
          .div-slide {
-             @include breakpoint(desktop) {
-                 display: table !important;
-                 width: 70% !important;
-             }
-             @include breakpoint(tablet) {
-                 display: table !important;
-                 width: 75% !important;
-             }
-             @include breakpoint(phone) {
-                 display: table !important;
-                 width: 85% !important;
+             display: table !important;
+             width: auto !important;
+             @include mediaquery(max_960) {
+                 display: grid !important;
+                 grid-template-columns: 50% 50%;
+                 grid-row-gap: 10px;
+                 grid-column-gap: 10px;
+                 padding: 10px;
+                 margin-left: 5px !important;
              }
              .img-slide {
                  float: left;
-                 @include breakpoint(desktop) {
-                     width: 200px;
-                     height: 200px;
-                     margin-right: 20px;
-                 }
-                 @include breakpoint(tablet) {
-                     width: 150px;
-                     height: 150px;
-                     margin-right: 20px;
-                 }
-                 @include breakpoint(phone) {
-                     width: 150px;
-                     height: 150px;
-                     margin: 20px;
+                 width: 203px;
+                 height: 121px;
+                 margin: 10px 20px;
+                 @include mediaquery(max_960) {
+                     display: block;
+                     margin: 0px auto;
                  }
              }
          }

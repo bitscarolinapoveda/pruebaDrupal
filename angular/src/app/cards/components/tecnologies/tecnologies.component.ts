@@ -55,12 +55,13 @@ export class TecnologiesComponent implements OnInit{
           {
             breakpoint: 600,
             settings: {
-              infinite: false,
+              infinite: true,
               slidesToShow: 1,
               slidesToScroll: 1,
-              dots: true,
-              fade: false,
-              autoplay: false
+              dots: false,
+              fade: true,
+              autoplay: true,
+              speed: 3500,
             }
           }
         ]
