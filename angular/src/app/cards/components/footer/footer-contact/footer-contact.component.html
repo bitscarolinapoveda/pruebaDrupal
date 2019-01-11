@@ -1,21 +1,24 @@
-<div class="row">
-  <div class="col-lg-12">
-    <h6>{{ contactTitle.title }}</h6>
-    <ul class="fa-ul mail">
-      <li>
-        <a href="{{ contactMailLink.link }}">
-          <i class="fa-li fas fa-envelope"></i> {{ contactMailLink.label }} </a>
-      </li>
-    </ul>
-    <div class="icon-social">
-      <ul class="row first fa-ul">
-        <li *ngFor="let socialIcon of contactSocialArray;">
-          <a href="{{ socialIcon.data.url }}">
-            <i class="{{ socialIcon.data.text }}"></i>
-          </a> 
-        </li>
-      </ul>
+<ng-container>
+  <section id="footer-block-contact">
+    <div class="row row-contact-block-footer">
+      <div class="col-lg-12 col-contact-footer">
+        <div class="container-info-contact">
+            <h6 class="title-contact">{{ contactTitle.title }}</h6>
+            <div class="other-contact-info">
+              <li class="li-contact-footer-mail">
+                <a class="link-mail" href="{{ contactMailLink.link }}">
+                  <i class="fas fa-envelope"></i> 
+                  <p>{{ contactMailLink.label }}</p>
+                </a>
+              </li>
+              <li class="li-contact-footer-icons" *ngFor="let socialIcon of contactSocialArray;">
+                <a class="link-icons" href="{{ socialIcon.data.url }}">
+                  <i class="{{ socialIcon.data.text }} size-of-icons"></i>
+                </a> 
+              </li>
+            </div>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-<hr>
+  </section>
+</ng-container>

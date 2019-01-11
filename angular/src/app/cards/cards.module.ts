@@ -35,7 +35,7 @@ import {AdfModule} from "../@adf/adf.module";
     WorkWithUsComponent,
     BannerComponent,
     TitleComponent,
-    TabsComponent
+    TabsComponent,
   ],
   exports: [
     CarouselIndicatorsComponent,
