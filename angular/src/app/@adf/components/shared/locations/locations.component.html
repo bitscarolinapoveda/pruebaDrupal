@@ -1,39 +1,84 @@
 <section id="title-description">
-    <h4>Nuestra ubicacion</h4>
-    <p>Aqui podra ver la ubicacion de nuestras oficinas</p>
+    <h4 class="title-block-location">Nuestra ubicacion</h4>
+    <p class="description-block-location">Aqui podra ver la ubicacion de nuestras oficinas</p>
+    <!-- CONFIGURACION DE DRUPAL -->
 </section>
-<section id="tabs-vertical">
-    <div class="block-vertical" id="run">
-        <ul class="nav nav-tabs nav-tabs--vertical nav-tabs--left">
-            <li class="nav-item ubicacion" *ngFor="let ubicacion of locations_data"
-                (click)="setCenter(ubicacion.lat, ubicacion.lng)">
-                <a href="#" class="nav-link active" data-toggle="tab" role="tab">
-                    <h5 class="title">{{ubicacion.title}}</h5>
-                    <h6 class="address">{{ubicacion.address}}</h6>
-                    <h6 class="phone">{{ubicacion.telephone}}</h6>
-                </a>
-            </li>
-        </ul>
-        <div class="show-more">
-            <a class="button-more"></a>
+<!-- MOBILE -->
+<section id="accordion-section-mobile" (window:resize)="onResize(mobile)" *ngIf="mobileScreen">
+    <ngb-accordion #acc="ngbAccordion" activeIds="static-0" [closeOthers]="closeOthers">
+        <ngb-panel *ngFor="let ubicacion of locations_data ; let i = index" id="static-{{i}}">
+            <ng-template ngbPanelTitle>
+                <div class="container location-block">
+                    <div class="row location-button">
+                        <div class="col-10 info-location">
+                            <h2 class="location-li title" >{{ubicacion.title}}</h2>
+                            <div id="address-block" class="address-block">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <li class="location-li address">{{ubicacion.address}}</li>
+                            </div>
+                            <div class="telephone-block">
+                                <i class="fas fa-phone"></i>
+                                <li class="location-li telephone">{{ubicacion.telephone}}</li>
+                            </div>
+                        </div>
+                        <div class="col-2 info-icon">
+                            <i class="fas fa-sort-down"></i>
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+            <ng-template ngbPanelContent>
+                <section id="mapa">
+                    <agm-map [latitude]="ubicacion.lat" [longitude]="ubicacion.lng" [styles]="bitsTypeMap" [zoom]="defaultZoomMap" [backgroundColor]="colorWhileLoad" style="height: 300px;">
+                        <agm-marker [latitude]="ubicacion.lat" [longitude]="ubicacion.lng" [iconUrl]="imageIcon"> 
+                            <agm-info-window #window [isOpen]="true">
+                                <h6 class="info-window-location">{{ubicacion.title}}</h6>
+                                <h6 class="info-window-location address">{{ubicacion.address}}</h6>
+                            </agm-info-window>
+                        </agm-marker>
+                    </agm-map>
+                </section>
+            </ng-template>
+        </ngb-panel>
+    </ngb-accordion>
+</section>
+<!-- DESKTOP -->
+<section id="accordion-section-desktop" (window:resize)="onResize(desktop)" *ngIf="desktopScreen">
+    <div class="row general-box-location">
+        <div class="col-4 buttons-location-desktop">
+            <div class="control-button" *ngIf="needButtons">
+                <div class="col-12">
+                    <div class="row arrow-up" (click)="scrollMaps('up')">
+                        <i id ="up-arrow" class="fas fa-chevron-circle-up fa-3x"></i>
+                    </div>
+                    <div class="row arrow-down" (click)="scrollMaps('down')">
+                        <i id ="down-arrow" class="fas fa-chevron-circle-down fa-3x"></i>
+                    </div>
+                </div>
+            </div>
+            <div id="box-of-buttons" class="row location-button">
+                <div id="{{i}}" class="col-12 button-{{i}} info-location" *ngFor="let ubicacion of locations_data ; let i = index" (click)="ubicateCity(ubicacion, i)">
+                    <h2 class="location-li title" >{{ubicacion.title}}</h2>
+                    <div id="address-block" class="address-block">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <li class="location-li address">{{ubicacion.address}}</li>
+                    </div>
+                    <div class="telephone-block">
+                        <i class="fas fa-phone"></i>
+                        <li class="location-li telephone">{{ubicacion.telephone}}</li>
+                    </div>
+                </div>
+            </div>
         </div>
-        <a class="botton-arrive" role="button">
-
-        </a>
-        <a class="botton-down" role="button">
-
-        </a>
+        <div class="col-8 map-location-desktop">
+            <agm-map [latitude]="lat" [longitude]="lng" [styles]="bitsTypeMap" [zoom]="defaultZoomMap" [ngStyle]="{'width': widthOftheMap}" [backgroundColor]="colorWhileLoad" style="height: 519px;">
+                <agm-marker [latitude]="lat" [longitude]="lng" [iconUrl]="imageIcon"> 
+                    <agm-info-window #window [isOpen]="infoWindowOpen">
+                        <h6 class="info-window-location">{{ titleCity }}</h6>
+                        <h6 class="info-window-location address">{{ addressCity }}</h6>
+                    </agm-info-window>
+                </agm-marker>
+            </agm-map>
+        </div>
     </div>
-</section>
-<section id="mapa">
-    <agm-map [latitude]="lat" [longitude]="lng" (mapReady)="mapReady($event)">
-        <agm-marker *ngFor="let ubicacion of locations_data" [latitude]="ubicacion.lat"
-                    [longitude]="ubicacion.lng" [iconUrl]="'/assets/icon/ubication.png'">
-            <agm-info-window>
-                <h5 class="title">{{ubicacion.title}}</h5>
-                <h6 class="addres">{{ubicacion.address}}</h6>
-                <h6 class="phone">{{ubicacion.telephone}}</h6>
-            </agm-info-window>
-        </agm-marker>
-    </agm-map>
 </section>

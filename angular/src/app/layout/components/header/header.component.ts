@@ -24,12 +24,12 @@ export class HeaderComponent implements OnInit {
   }
   @HostListener('window:scroll', [])
   onWindowScroll() {
-    if ($('.image-bits').offset().top > 50) {
+    if ($('.image-bits').offset().top > 40) {
       $('.image-bits').attr('src', 'assets/images/Logocolor.png');
-      $('.menu-caret').css({color:'#002b49'});
+      $('.menu-caret').css({color: '#002b49'});
     } else {
       $('.image-bits').attr('src', 'assets/images/Logowhite.png');
-        $('.menu-caret').css({color:'#fff'});
+        $('.menu-caret').css({color: '#fff'});
     }
   }
 

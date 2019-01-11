@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { isArray } from 'util';
 import { CustomCardService } from '../../../services/cards/v1-card.services';
@@ -14,6 +14,7 @@ export class FloatSocialComponent implements OnInit {
   contactMailLabel: string;
   contactMailLink: string;
   socialmedia: any[];
+  hide = true;
 
   constructor(
     private router: ActivatedRoute,
@@ -24,14 +25,20 @@ export class FloatSocialComponent implements OnInit {
 
   ngOnInit() {
     this.getFloatSocialItems();
-
   }
 
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    const allDocument = document.documentElement;
+    if (allDocument.clientHeight + Math.round(allDocument.scrollTop) === allDocument.scrollHeight) {
+      this.hide = false;
+    } else {
+      this.hide = true;
+    }
+  }
   getFloatSocialItems() {
-
     this.footerBrand2.getCustomCardInformation('contactcard').subscribe((items: {header, others} ) => {
       this.socialmedia = items.others;
     });
   }
-
 }

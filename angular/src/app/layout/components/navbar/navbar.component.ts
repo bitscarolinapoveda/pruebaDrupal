@@ -20,10 +20,12 @@ export class NavbarComponent implements OnInit {
             $('.menu-scroll, .link').toggleClass('tigger-menu scroll-white color-white');
         });
         $(window).scroll(function () {
-            if ($('.menu-scroll, .lines, .link').offset().top > 30) {
+            if ($('.menu-scroll, .lines, .link').offset().top > 10) {
                 $('.menu-scroll, .lines, .link').addClass('inverse-color color-scroll scroll-white');
+                $('.shadow-of-nav').addClass('shadow-if-exit-scroll');
             } else {
                 $('.menu-scroll, .lines, .link').removeClass('inverse-color color-scroll scroll-white');
+                $('.shadow-of-nav').removeClass('shadow-if-exit-scroll');
             }
         });
         this.getNavBarItems();
