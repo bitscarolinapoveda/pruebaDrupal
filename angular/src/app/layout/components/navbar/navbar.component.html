@@ -1,5 +1,5 @@
 <header>
-    <nav class="navbar-expand-lg flex-column flex-md-row  menu-scroll">
+    <nav class="navbar-expand-lg flex-column flex-md-row menu-scroll ">
         <div class="menuToggle menu-scroll ">
             <input type="checkbox" class="Botton "/>
             <span class="lines"></span>
@@ -7,12 +7,12 @@
             <span class="lines"></span>
             <ul class="list-menu">
                 <ng-container *ngFor="let nav of NavbarArray; let i= index ">
-                    <li class="items" [class.menu-has-children]="nav.below">
-                        <a #sub [routerLink]="['/'+nav.uri]" (click)="activeClass(sub)" [routerLinkActive]="'active'"
+                    <li class="items customrow-1" [class.menu-has-children]="nav.below" >
+                        <a #sub [routerLink]="nav.showrow ? ['/'+nav.uri] : null" [routerLinkActive]="'active'"
                            class="link"> {{ nav.title }} </a>
                         <ng-container *ngIf="nav.below">
-                            <i class="fas fa-caret-down menu-caret"></i>
-                            <app-menu-item [padre]="nav" [menus]="nav.below" *ngIf="nav.below"></app-menu-item>
+                            <i class="fas fa-caret-down menu-caret" (click)="activeChild(i)" ></i>
+                            <app-menu-item [padre]="nav" [menus]="nav.below" [col]="i" [row]="2" (addchild)="activeChild($event)" [flActiveActual]="getActiveChild(i)" *ngIf="nav.below"></app-menu-item>
                         </ng-container>
                     </li>
                 </ng-container>
