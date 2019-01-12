@@ -1,44 +1,33 @@
-<footer>
-    <picture>
-        <source media="(max-width:500px)" srcset="../../../../assets/images/footermovil.png">
-        <img class="w-100" src="../../../../assets/images/footer.png" alt="Footer">
-    </picture>
-    <section class="container-elements" id="container-elements">
-        <div class="row">
-            <section class="location">
-                <div class="row">
+<footer id="footer-block">
+    <div class="blue-layer"></div>
+    <div class="general-container footer-img">
+        <section class="first-info-container-footer">
+            <div class="row row-info-footer">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 locations" >
                     <app-footer-block class="locations-container"></app-footer-block>
                 </div>
-                <hr>
-            </section>
-            <section class="newsletter">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h6>NEWSLETTER</h6>
-                        <ul>
-                            <li>Reciba nuestras ultimas noticias</li>
-                        </ul>
-                    </div>
+                <div class="col-sm-12 col-md-12 col-lg-2 col-xl-2 newsletters">
+                    <app-footer-newsletter></app-footer-newsletter>
                 </div>
-                <hr>
-            </section>
-            <section class="contac">
-                <app-footer-contact></app-footer-contact>
-            </section>
-            <section class="logo">
-                <app-footer-brand></app-footer-brand>
-            </section>
-        </div>
-    </section>
-    <section class="privacy">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="politics-site">
-                    <a href="#" class="politics">Politica de Privacidad</a>
-                    <a href="#" class="sites">Mapa del Sitio</a>
-                    <a href="#">PQRS</a>
+                <div class="col-sm-12 col-md-12 col-lg-2 col-xl-2 contact">
+                    <app-footer-contact></app-footer-contact>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-2 col-xl-2 iconbits">
+                    <app-footer-brand></app-footer-brand>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+        <section class="second-info-container-footer">
+            <div class="second-blue-layer"></div>
+            <div class="row row-info-footer">
+                <div class="col-12 list-of-footer">
+                    <a class="items-footer" href="#">politicas</a>
+                    <div class="circule"></div>
+                    <a class="items-footer" href="#">Mapa del sitio</a>
+                    <div class="circule"></div>
+                    <a class="items-footer" href="#">PQRS</a>
+                </div>
+            </div>
+        </section>
+    </div>
 </footer>

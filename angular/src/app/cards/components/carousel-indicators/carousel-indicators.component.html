@@ -30,13 +30,23 @@
     </div>
     <a class="anchor"></a>
 </section> -->
-<ngb-carousel *ngIf="carousel" (window:resize)="onResize()">
-    <ng-template class="prueba" ngbSlide *ngFor="let item of carousel">
-      <img class="carousel-main-image" [src]="item.field_image" alt="Random first slide" [ngStyle]="{'height': height}">
-      <div class="carousel-caption">
-        <h3>{{ item.title }}</h3>
-        <p>{{ item.field_tags }}</p>
-      </div>
-    </ng-template>
-</ngb-carousel>
+<section id="carousel-container">
+    <ngb-carousel *ngIf="carousel" (window:resize)="onResize()">
+        <ng-template class="prueba" ngbSlide *ngFor="let item of carousel">
+            <img class="carousel-main-image" [src]="item.field_image" alt="Random first slide" [ngStyle]="{'height': height}">
+            <div class="carousel-caption">
+            <h3 class="carousel-title">{{ item.title }}</h3>
+            <p class="carousel-subtitle">{{ item.field_tags }}</p>
+            </div>
+        </ng-template>
+    </ngb-carousel>
+    <div class="col section-button-explorar" (click)="slideDown()">       
+        <div class="row button-explorar">
+            <h6 class="anchor">EXPLORAR</h6>
+        </div>
+        <div class="row button-explorar">
+            <i class="fas fa-angle-down"></i>
+        </div>
+    </div>
+</section>
 <!--<a>Anchor</a>-->
