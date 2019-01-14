@@ -8,8 +8,11 @@ import { CustomCardService } from 'src/app/services/cards/v1-card.services';
 })
 
 export class TabsComponent implements OnInit {
-    tabLeft: any = [];
-    tabRight: any = [];
+
+    arrayTabs:Tab[] = [];
+    ids:number = 0;
+    size:number;
+
     constructor(
         private https: CustomCardService,
     ) {}
@@ -19,10 +22,31 @@ export class TabsComponent implements OnInit {
     }
 
     getTabs() {
-      return  this.https.getCustomCardInformation('tabsvertical').subscribe(items =>{
-          this.tabLeft = items.header[0].data;
-          this.tabRight = items.header[1].data;
+      return  this.https.getTabsData().subscribe(items =>{
+        this.size = items.length;
+        for (let tabItem of items) {
+            let objectTab:Tab = {titulo:"",icontab:"",urlicon:"",alticon:"",contenido:""};
+            objectTab.titulo = tabItem.titulo_tab;
+            objectTab.icontab = tabItem.icon_tab;
+            objectTab.urlicon = tabItem.url_icon_tab;
+            objectTab.alticon = tabItem.alt_icon_tab;
+            objectTab.contenido = tabItem.body;
+            this.arrayTabs.push(objectTab);
+        }
       });
     }
+
+    mostrar(link:number){
+        this.ids = link;
+        console.log(this.ids);
+    }
+}
+
+export interface Tab{
+    titulo:string;
+    icontab:string;
+    urlicon:string;
+    alticon:string;
+    contenido:string;
 }
 

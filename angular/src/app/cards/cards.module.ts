@@ -34,10 +34,14 @@ import {RouterModule} from "@angular/router";
 import {AdfModule} from "../@adf/adf.module";
 
 
-
+//Pipes
+import { SafeHtmlPipe } from '../pipes/safehtml.pipe';
+import { SafeCssPipe } from '../pipes/safecss.pipe';
 
 @NgModule({
   declarations: [
+    SafeHtmlPipe,
+    SafeCssPipe,
     CarouselItemComponent,
     CarouselIndicatorsComponent,
     CarouselControlsComponent,
