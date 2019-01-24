@@ -29,25 +29,15 @@ export class CarouselIndicatorsComponent implements OnInit {
       this.carousel = items;
     });
   }
-
-  // down() {
-  //   let x = document.querySelector('.anchor');
-  //   if (x) {
-  //      //  x.scrollIntoView({ behavior: 'smooth'});
-  //     x.scrollIntoView({ behavior: 'smooth', block: 'start'});
-  //   }
-  // }
-
-  // ngOnInit() {
-  //   this.getImages ();
-  // }
-  // getImages () {
-  //   return this.info.getInfo().subscribe(items => {
-  //     this.carousel = items;
-  //     console.log(this.carousel);
-  //   });
-  // }
   onResize() {
     this.height = (window.innerHeight) + 'px';
+  }
+  slideDown() {
+    const navBarHeight = document.querySelector('.navbar-expand-lg').clientHeight;
+    window.scrollBy({
+      top: window.innerHeight - navBarHeight,
+      left: 0,
+      behavior: 'smooth',
+    });
   }
 }

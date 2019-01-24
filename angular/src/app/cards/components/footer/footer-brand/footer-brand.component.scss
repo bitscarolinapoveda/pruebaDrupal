@@ -1,0 +1,32 @@
+#footer-block-brand {
+  margin: 20px 0;
+  .row-brand-footer {
+    margin: 0;
+    padding: 0;
+    .col-brand-footer {
+      margin: 0;
+      padding: 0;
+      .img-brand-footer {
+        width: 135px;
+      }
+      .title-brand {
+        margin-top: 10px;
+        color: rgba($color: white, $alpha: 0.7);
+        font-family: Open Sans Light;
+        font-size: 11px;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 769px) {
+  #footer-block-brand {
+    text-align: center;
+    .row-brand-footer {
+      .col-brand-footer {
+        .img-brand-footer {
+          display: none;
+        }
+      }
+    }
+  }
+}
