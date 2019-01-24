@@ -1,0 +1,25 @@
+<div class="row" *ngIf="orientacion == 'IT'" style="background-color:#f8f9fa">
+    <div class="col-md-4 p-0">
+        <img [src]="imagenCard" alt="" class="img-fluid w-100">
+    </div>
+    <div class="col-md-8 d-block px-4 py-5">
+        <h3 class="condensed">{{ subitituloCard }}</h3>
+        <h1>{{ tituloCard | uppercase }}</h1>
+        <hr class="green">
+        <p class="text-justify">{{ descripcionCard }}</p>
+        <a [href]="linkCard" class="green">{{ linkLabelCard }}</a>
+    </div>
+</div>
+
+<div class="row" *ngIf="orientacion == 'TI'" style="background-color:#f8f9fa">
+    <div class="col-md-8 d-block px-4 py-5">
+        <h3 class="condensed">{{ subitituloCard }}</h3>
+        <h1>{{ tituloCard | uppercase }}</h1>
+        <hr class="green">
+        <p class="text-justify">{{ descripcionCard }}</p>
+        <a [href]="linkCard" class="green">{{ linkLabelCard }}</a>
+    </div>
+    <div class="col-md-4 p-0">
+        <img [src]="imagenCard" alt="" class="img-fluid w-100">
+    </div>
+</div>

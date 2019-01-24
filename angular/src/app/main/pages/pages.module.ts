@@ -23,6 +23,10 @@ import {DynamicFormsCoreModule} from "@ng-dynamic-forms/core";
 import {DynamicFormsBasicUIModule} from "@ng-dynamic-forms/ui-basic";
 import {ReactiveFormsModule} from "@angular/forms";
 
+
+import {iMedicalComponent} from "./iMedical/iMedical.component";
+import {PoliticsComponent} from "./politics/politics.component";
+
 @NgModule({
   declarations: [
     PagesComponent,
@@ -34,6 +38,8 @@ import {ReactiveFormsModule} from "@angular/forms";
     NoPageFoundComponent,
     ProductServicesComponent,
     FloatSocialComponent,
+    iMedicalComponent,
+    PoliticsComponent
   ],
   exports: [
     HomeComponent,

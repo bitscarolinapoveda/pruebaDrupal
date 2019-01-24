@@ -1,0 +1,24 @@
+<div class="row fondoSlide" [ngStyle]="{'background-image':'url('+ slide.bkgSrcSlide +')'}">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7">
+                <div class="mx-4 px-3 pt-7 pb-3 black-trans">
+                    <h1 class="text-light">{{ slide.titleSlide | uppercase }}</h1>
+                    <h2 class="condensed text-green">{{ slide.subtitleSlide | uppercase}}</h2>
+                    <p class="text-light">{{ slide.descriptionSlide }}</p>
+                    <ul>
+                        <li *ngFor="let item of slide.listTextSlide" class="d-flex">
+                            <i class="fas fa-check fa-sm green mr-2"></i>
+                            <p class="text-light">{{ item }}</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="pt-3">
+                    <img [src]="slide.imgSrcSlide" [alt]="slide.titleSlide" width="400" height="400" class="d-block m-auto img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="row bg-light">
+    <div class="col-md-6 p-0">
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" [src]="videoURLSanitizer" allowfullscreen></iframe>
+        </div>
+    </div>
+    <div class="col-md-6 my-5">
+        <h1>{{ titleSection | uppercase}}</h1>
+        <hr class="green">
+        <p>{{ descriptionSection }}</p>
+        <br>
+        <a [href]="link" class="green"><i class="fa fa-link" aria-hidden="true"></i> {{link}}</a>
+    </div>
+</div>

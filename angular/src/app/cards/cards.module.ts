@@ -14,6 +14,19 @@ import { WorkWithUsComponent } from './components/workwithus/workwithus.componen
 import { BannerComponent } from './components/banner/banner.component';
 import { TitleComponent } from './components/titles/titles.component';
 import { TabsComponent } from './components/tabs/tabs.component';
+import { VideoInformationComponent } from './components/video-information/video-information.component';
+import { SeparatorComponent } from './components/separator/separator.component';
+import { ClientCardComponent } from './components/client-card/client-card.component';
+import { ProjectSummaryComponent } from './components/project-summary/project-summary.component';
+import { MenuTemplateComponent } from './components/menu-template/menu-template.component';
+import { SlideComponent } from './components/slide/slide.component';
+import { SliderComponent } from './components/slider/slider.component';
+import { BlurbComponent } from './components/blurb/blurb.component';
+import { CardImgTextComponent } from './components/card-img-text/card-img-text.component';
+import { BlogComponent } from './components/blog/blog.component';
+
+
+
 
 // Servicios
 import { NodeService } from '../services/cards/node.service';
@@ -21,10 +34,14 @@ import {RouterModule} from "@angular/router";
 import {AdfModule} from "../@adf/adf.module";
 
 
-
+//Pipes
+import { SafeHtmlPipe } from '../pipes/safehtml.pipe';
+import { SafeCssPipe } from '../pipes/safecss.pipe';
 
 @NgModule({
   declarations: [
+    SafeHtmlPipe,
+    SafeCssPipe,
     CarouselItemComponent,
     CarouselIndicatorsComponent,
     CarouselControlsComponent,
@@ -36,8 +53,19 @@ import {AdfModule} from "../@adf/adf.module";
     BannerComponent,
     TitleComponent,
     TabsComponent,
+    VideoInformationComponent,
+    SeparatorComponent,
+    ClientCardComponent,
+    ProjectSummaryComponent,
+    MenuTemplateComponent,
+    SlideComponent,
+    SliderComponent,
+    BlurbComponent,
+    CardImgTextComponent,
+    BlogComponent
   ],
   exports: [
+    CarouselItemComponent,
     CarouselIndicatorsComponent,
     CarouselControlsComponent,
     CarouselItem2Component,
@@ -47,7 +75,17 @@ import {AdfModule} from "../@adf/adf.module";
     WorkWithUsComponent,
     BannerComponent,
     TitleComponent,
-    TabsComponent
+    TabsComponent,
+    VideoInformationComponent,
+    SeparatorComponent,
+    ClientCardComponent,
+    ProjectSummaryComponent,
+    MenuTemplateComponent,
+    SlideComponent,
+    SliderComponent,
+    BlurbComponent,
+    CardImgTextComponent,
+    BlogComponent
   ],
   imports: [BrowserModule, CommonModule, NgbModule, RouterModule, AdfModule],
   providers: [NodeService]
