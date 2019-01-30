@@ -1,7 +1,7 @@
 import { ContentType } from '../../../services/cards/content-type.services';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import * as $ from 'jquery';
 
-declare  var $: any;
 @Component({
   selector: 'app-carousel-indicators',
   templateUrl: './carousel-indicators.component.html',
@@ -16,7 +16,7 @@ export class CarouselIndicatorsComponent implements OnInit {
   carousel: {};
 
   constructor(
-    private indicatorsSliderCarouselItems: ContentType
+    private indicatorsSliderCarouselItems: ContentType,
   ) {
     this.height = (window.innerHeight) + 'px';
   }
@@ -34,10 +34,9 @@ export class CarouselIndicatorsComponent implements OnInit {
   }
   slideDown() {
     const navBarHeight = document.querySelector('.navbar-expand-lg').clientHeight;
-    window.scrollBy({
-      top: window.innerHeight - navBarHeight,
-      left: 0,
-      behavior: 'smooth',
-    });
+    $('html, body').animate({
+      scrollTop: window.innerHeight - navBarHeight
+    }, 2000);
+    return false;
   }
 }

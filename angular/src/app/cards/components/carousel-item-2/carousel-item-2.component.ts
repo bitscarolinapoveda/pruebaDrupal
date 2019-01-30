@@ -51,6 +51,7 @@ export class CarouselItem2Component implements OnInit {
     }
     getOurClientsItems() {
         this.ourClientCarouselItems.getContentTypeItems('clients').subscribe( items => {
+        console.log(items);
         this.clients = items.datos;
         this.titleClients = items;
             this.clients = Object.keys(items.datos).map(function (key) { return items.datos[key]; });

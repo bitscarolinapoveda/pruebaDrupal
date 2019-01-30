@@ -37,6 +37,7 @@ export class NavbarComponent implements OnInit {
 
     getNavBarItems() {
         return this.navbar.getMenuItems().subscribe(items => {
+            console.log(items);
             this.NavbarArray = items;
             this.NavbarArray = this.addIdForColToNavbar(this.NavbarArray, 1, 1);
             console.log(this.NavbarArray);
@@ -64,6 +65,7 @@ export class NavbarComponent implements OnInit {
     }
 
     activeChild(idx) {
+        console.log(idx);
         if (!this.flActiveChilds[idx]) {
             this.flActiveChilds[idx] = false;
         }
@@ -86,5 +88,11 @@ export class NavbarComponent implements OnInit {
       else {
         this.resolution = 'desktop';
       }
+    }
+    menuOver(event) {
+        $('.page-wrapper').css('filter', 'blur(5px)');
+    }
+    menuOut($event) {
+        $('.page-wrapper').css('filter', '');
     }
 }

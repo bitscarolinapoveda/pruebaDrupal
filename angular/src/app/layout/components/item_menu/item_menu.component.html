@@ -7,7 +7,7 @@
                 <span class="description">{{ child.description }}</span>
             </a>
             <ng-container *ngIf="child.below">
-                <i class="fas fa-caret-right menu-caret" (click)="activeChild(idx)" ></i>
+                <i class="fas fa-angle-right menu-caret" (click)="activeChild(idx)" ></i>
                 <app-menu-item [menus]="child.below" [col]="col" [row]="row+1" [image]='child.image' [flActiveActual]="getActiveChild(idx)" (addchild)="activeChild($event)" ></app-menu-item>
             </ng-container>
             <ng-container *ngIf="padre?.image">

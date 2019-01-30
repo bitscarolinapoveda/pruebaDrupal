@@ -5,7 +5,7 @@ declare var $: any;
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styles: []
+  styleUrls:  ['./header.component.scss']
 })
 
 export class HeaderComponent implements OnInit {
@@ -14,9 +14,6 @@ export class HeaderComponent implements OnInit {
   constructor(@Inject(DOCUMENT) private document: Document) { }
 
   ngOnInit() {
-
-
-
      $('.Botton').on('click', function () {
 
           $('.blur-logo').attr('src', 'assets/images/Logocolor.png');
@@ -26,10 +23,10 @@ export class HeaderComponent implements OnInit {
   onWindowScroll() {
     if ($('.image-bits').offset().top > 40) {
       $('.image-bits').attr('src', 'assets/images/Logocolor.png');
-      $('.menu-caret').css({color: '#002b49'});
+      $('.arrow-down-change-color').css({color: '#002b49'});
     } else {
       $('.image-bits').attr('src', 'assets/images/Logowhite.png');
-        $('.menu-caret').css({color: '#fff'});
+        $('.arrow-down-change-color').css({color: '#fff'});
     }
   }
 

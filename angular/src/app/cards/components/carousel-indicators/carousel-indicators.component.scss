@@ -97,3 +97,9 @@
     }
   }
 }
+
+@media only screen and (max-width: 321px) {
+  :host /deep/ .carousel-indicators {
+    bottom: 95px;
+  }  
+}
