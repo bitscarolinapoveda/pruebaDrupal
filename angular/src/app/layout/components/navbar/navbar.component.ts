@@ -88,7 +88,7 @@ export class NavbarComponent implements OnInit {
       }
     }
     menuOver(event) {
-        $('.page-wrapper').css('filter', 'blur(5px)');
+        $('.page-wrapper').css('filter', 'blur(2px)');
     }
     menuOut($event) {
         $('.page-wrapper').css('filter', '');

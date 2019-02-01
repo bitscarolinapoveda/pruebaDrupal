@@ -745,10 +745,10 @@
                         display: none;
                     }
                 }
-
+/* 
                 header nav .menuToggle .color-scroll {
                     background: #0c7ffb;
-                }
+                } */
 
                 header nav .menuToggle .lines:first-child {
                     transform-origin: 0% 0%;
@@ -2165,9 +2165,9 @@
                     }
                 }
 
-                header nav .menuToggle .color-scroll {
+                /* header nav .menuToggle .color-scroll {
                     background: #0c7ffb;
-                }
+                } */
 
                 header nav .menuToggle .lines:first-child {
                     transform-origin: 0% 0%;

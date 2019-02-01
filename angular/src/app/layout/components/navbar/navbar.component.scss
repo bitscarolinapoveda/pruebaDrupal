@@ -85,9 +85,9 @@
                   display: none;
               }
           }
-          .color-scroll {
-              background: #0c7ffb;
-          }
+        //   .color-scroll {
+        //       background: #0c7ffb;
+        //   }
           .lines:first-child {
               transform-origin: 0% 0%;
           }
@@ -285,14 +285,14 @@
                 list-style-type: none;
                 position: absolute;
                 padding: 0px;
-                top: 78.63px;
+                // top: 78.63px;
                 right: 0px;
                 @media (max-width: $desktop) {
                     position: relative;
                     bottom: 0;
                 }
                 > li.customrow-2 {
-                    border-bottom: 1px solid rgb(206, 206, 206);
+                    border: 1px solid rgb(206, 206, 206);
                     > a.link {
                         padding: 12px;
                         padding-left: 11px;
@@ -323,6 +323,7 @@
             }
             // Estilos de la fila 2 del menu
             ul.customulrow-3 {
+                border: 1px solid rgb(206, 206, 206);
                 list-style-type: none;
                 padding: 0;
                 @include breakpoint(desktop) {

@@ -1,5 +1,6 @@
-import {Component, Output, EventEmitter, HostListener, Directive} from "@angular/core";
+import {Component, OnInit, Output, EventEmitter, HostListener, Directive} from "@angular/core";
 import { NavbarComponent } from "../navbar/navbar.component";
+declare var $: any;
 
 
 @Component({
@@ -7,11 +8,16 @@ import { NavbarComponent } from "../navbar/navbar.component";
     selector: 'app-menu-item',
     templateUrl: './item_menu.component.html'
 })
-export class ItemMenuComponent {
+export class ItemMenuComponent implements OnInit{
     @Output() addchild = new EventEmitter();
     menus: any[];
     flActiveChilds: any[] = [];
     flActiveActual: boolean = false;
+    public heightTop;
+
+    ngOnInit() {
+        this.heightTop = $('.list-menu').height() +'px';
+    }
 
     activeChild(idx) {
         if (!this.flActiveChilds[idx]) {
