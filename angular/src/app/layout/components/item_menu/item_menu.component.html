@@ -1,4 +1,4 @@
-<ul class="menu-tree-level custmulcol-{{col}} customulrow-{{row}} {{flActiveActual ? 'visible-in-mobile' : 'invisible-in-mobile'}}" [style.backgroundImage]="image != undefined ? 'url(' + image + ')' : 'url(no-existe.png)'" [ngStyle]="{'top': row === 2 ? heightTop : '-1px'}">
+<ul class="menu-tree-level custmulcol-{{col}} customulrow-{{row}} {{flActiveActual ? 'visible-in-mobile' : 'invisible-in-mobile'}}" [style.backgroundImage]="image != undefined ? 'url(' + image + ')' : 'url(no-existe.png)'"  (window:resize)="onResize()" [ngStyle]="{'top': row === 2 ? heightTop : '0px'}">
     <ng-container *ngFor="let child of menus; let idx= index" >
         <li class="menu-item-child index-{{idx}} custmcol-{{col}} customrow-{{row}}" [ngClass]="{'active-ul': child.showrow === true}" >
             <a [routerLink]="['/'+child.uri]"
@@ -7,7 +7,8 @@
                 <span class="description">{{ child.description }}</span>
             </a>
             <ng-container *ngIf="child.below">
-                <i class="fas fa-angle-right menu-caret" (click)="activeChild(idx)" ></i>
+                <i class="fas fa-angle-right menu-caret" (click)="activeChild(idx)" *ngIf="desktop"></i>
+                <i class="fas fa-caret-down menu-caret fa-caret-down-item-menu" (click)="activeChild(idx)" *ngIf="mobile"></i>
                 <app-menu-item [menus]="child.below" [col]="col" [row]="row+1" [image]='child.image' [flActiveActual]="getActiveChild(idx)" (addchild)="activeChild($event)" ></app-menu-item>
             </ng-container>
             <ng-container *ngIf="padre?.image">

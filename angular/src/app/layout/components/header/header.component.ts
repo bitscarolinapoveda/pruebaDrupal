@@ -1,6 +1,7 @@
 import { Component, OnInit, HostListener, Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/platform-browser';
 declare var $: any;
+var count = 0;
 
 @Component({
   selector: 'app-header',
@@ -10,24 +11,64 @@ declare var $: any;
 
 export class HeaderComponent implements OnInit {
 
-
   constructor(@Inject(DOCUMENT) private document: Document) { }
 
   ngOnInit() {
-     $('.Botton').on('click', function () {
-
+    $('.Botton').on('click', function () {
+      count = count + 1; // Numero Impar = menu abierto ; Numero par = menu cerrado
+      if(count%2 === 0) {
+        console.log('par');
+        //PAR MENU CERRADO
+        $('html').css('overflow', 'auto');
+        if (window.scrollY === 0) {
+          $('.blur-logo').attr('src', 'assets/images/Logowhite.png');
+          $('.arrow-down-change-color').css({color: '#002b49'});
+          $('.lines').css({background: '#fff'});
+        }
+      } else {
+        console.log('impar');
+        //IMPAR = MENU ABIERTO 
+        $('html').css('overflow', 'hidden');
+        if (window.scrollY === 0) {
           $('.blur-logo').attr('src', 'assets/images/Logocolor.png');
-        });
+          $('.arrow-down-change-color').css({color: '#002b49'});
+          $('.lines').css({background: '#002b49'});
+        }  
+      }
+      // if (window.scrollY === 0) {
+      //   if ($('.blur-logo').attr('src') === 'assets/images/Logowhite.png') {
+      //     $('.blur-logo').attr('src', 'assets/images/Logocolor.png');
+      //     $('.arrow-down-change-color').css({color: '#002b49'});
+      //     $('.lines').css({background: '#002b49'});
+      //   } else if ($('.blur-logo').attr('src') === 'assets/images/Logocolor.png') {
+      //     $('.blur-logo').attr('src', 'assets/images/Logowhite.png');
+      //     $('.arrow-down-change-color').css({color: '#002b49'});
+      //     $('.lines').css({background: '#fff'});
+      //   }
+      // }
+    });
   }
   @HostListener('window:scroll', [])
   onWindowScroll() {
-    if ($('.image-bits').offset().top > 40) {
+    if(window.scrollY > 0) {
+      if (count) {
+        
+      }
       $('.image-bits').attr('src', 'assets/images/Logocolor.png');
+      $('.lines').css({background: '#002b49'});
       $('.arrow-down-change-color').css({color: '#002b49'});
     } else {
       $('.image-bits').attr('src', 'assets/images/Logowhite.png');
-        $('.arrow-down-change-color').css({color: '#fff'});
+      $('.lines').css({background: '#fff'});
+      $('.arrow-down-change-color').css({color: '#fff'});
     }
+    // if ($('.image-bits').offset().top > 40) {
+    //   $('.image-bits').attr('src', 'assets/images/Logocolor.png');
+    //   $('.arrow-down-change-color').css({color: '#002b49'});
+    // } else {
+    //   $('.image-bits').attr('src', 'assets/images/Logowhite.png');
+    //     $('.arrow-down-change-color').css({color: '#fff'});
+    // }
   }
 
 }

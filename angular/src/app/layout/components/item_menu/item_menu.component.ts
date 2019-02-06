@@ -14,9 +14,22 @@ export class ItemMenuComponent implements OnInit{
     flActiveChilds: any[] = [];
     flActiveActual: boolean = false;
     public heightTop;
+    public desktop;
+    public mobile;
 
     ngOnInit() {
-        this.heightTop = $('.list-menu').height() +'px';
+        this.onResize();
+    }
+    onResize() {
+        if (window.innerWidth > 1080) {
+            this.heightTop = $('.list-menu').height() + 1 +'px';
+            this.mobile = false; 
+            this.desktop = true;
+        } else {
+            this.heightTop = '0px';
+            this.mobile = true;
+            this.desktop = false;
+        }
     }
 
     activeChild(idx) {
