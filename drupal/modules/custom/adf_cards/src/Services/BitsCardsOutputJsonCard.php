@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\bits_cards;
+namespace Drupal\adf_cards\Services;
 
 use Drupal\file\Entity\File;
 use Drupal\node\Entity\Node;
@@ -10,7 +10,7 @@ use Drupal\adf_cards\Services\ExportConfigCardService;
 /**
  * Class 'BitsCardsOutputJsonCard'.
  */
-class BitsCardsOutputJsonCard extends ExportConfigCardService {
+class BitsCardsOutputJsonCard {
 
   /**
    * {@inheritdoc}
