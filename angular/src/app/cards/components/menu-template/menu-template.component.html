@@ -1,0 +1,5 @@
+<ul class="nav justify-content-center mb-3">
+    <li class="nav-item" *ngFor="let menuItem of menuList">
+        <a class="nav-link" [href]="menuItem.url">{{ menuItem.label | uppercase }}</a>
+    </li>
+</ul>

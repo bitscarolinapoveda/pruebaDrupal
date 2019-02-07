@@ -12,14 +12,13 @@ declare var $: any;
 export class CarouselItem2Component implements OnInit {
 
   clients: any[];
-  titleClients ;
+  titleClients:string="";
 
   constructor(
     private router: ActivatedRoute,
     private ourClientCarouselItems: ContentType,
     ) {
             this.clients = [];
-            this.titleClients = [];
   }
 
     ngOnInit() {
@@ -52,7 +51,7 @@ export class CarouselItem2Component implements OnInit {
     getOurClientsItems() {
         this.ourClientCarouselItems.getContentTypeItems('clients').subscribe( items => {
         this.clients = items.datos;
-        this.titleClients = items;
+        this.titleClients = items.titulo;
             this.clients = Object.keys(items.datos).map(function (key) { return items.datos[key]; });
         });
     }

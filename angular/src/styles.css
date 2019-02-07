@@ -27,6 +27,49 @@
 }
 
 body h1,
-body h2 {
+body h2,
+body p {
     font-family: 'Open Sans light';
+}
+
+body h1.condensed,
+body h2.condensed,
+body h3.condensed {
+    font-family: 'Open Sans Codensed';
+}
+
+.green {
+    color: #a6cf24;
+}
+
+hr.green {
+    border-top: 2px solid #a6cf2482;
+}
+
+a.green {
+    color: #a6cf24;
+    font-family: 'Open Sans Codensed';
+    font-size: 20px;
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+}
+
+a.green:hover {
+    color: #8eb11c;
+    font-weight: bold;
+}
+
+.text-green {
+    color: #a6cf24;
+}
+
+.badge-custom {
+    color: white;
+    background-color: #a6cf24;
+}
+
+.black-trans {
+    background-color: #000000aa;
 }

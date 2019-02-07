@@ -1,0 +1,37 @@
+<app-banner titulo="iMedical" imgFondo="../../assets/images/imedicalweb.png"></app-banner>
+<div class="my-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <app-client-card></app-client-card>
+            </div>
+            <div class="col-md-8 mb-3">
+                <app-project-summary></app-project-summary>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <app-menu-template></app-menu-template>
+    <app-slider></app-slider>
+    <div class="container">
+        <app-separator [iconCustom]="'fa-cogs'"></app-separator>
+        <div class="row">
+            <div class="col-md-12 mb-5">
+                <h1 class="condensed text-center">{{ tituloModulos }}</h1>
+                <p class="text-center">{{ descripcionModulos }}</p>
+            </div>
+            <div class="col-md-4" *ngFor="let blurbItem of blurbArray">
+                <app-blurb [blurb]="blurbItem"></app-blurb>
+            </div>
+        </div>
+        <app-separator [iconCustom]="'fa-cogs'"></app-separator>
+        <app-card-img-text [orientacion]="'IT'"></app-card-img-text>
+        <app-separator [iconCustom]="'fa-cogs'"></app-separator>
+        <app-tecnologies></app-tecnologies>
+        <app-separator [iconCustom]="'fa-cogs'"></app-separator>
+        <app-card-img-text [orientacion]="'TI'"></app-card-img-text>
+        <app-separator [iconCustom]="'fa-cogs'"></app-separator>
+        <app-video-information [link]="'www.eliseupnorcum.cedu.co'"></app-video-information>
+        <app-separator [iconCustom]="'fa-cogs'"></app-separator>
+    </div>
+</div>

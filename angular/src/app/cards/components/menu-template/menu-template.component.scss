@@ -1,0 +1,18 @@
+li.nav-item {
+    border-right: 1px solid #a6cf24;
+    &:last-child {
+        border-right: none;
+    }
+}
+
+a {
+    font-family: 'Open Sans light';
+    color: #002b49;
+    transition: 0.3s all;
+    -webkit-transition: 0.3s all;
+    -moz-transition: 0.3s all;
+    -o-transition: 0.3s all;
+    &:hover {
+        font-weight: bold;
+    }
+}
