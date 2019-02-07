@@ -35,17 +35,6 @@ export class HeaderComponent implements OnInit {
           $('.lines').css({background: '#002b49'});
         }  
       }
-      // if (window.scrollY === 0) {
-      //   if ($('.blur-logo').attr('src') === 'assets/images/Logowhite.png') {
-      //     $('.blur-logo').attr('src', 'assets/images/Logocolor.png');
-      //     $('.arrow-down-change-color').css({color: '#002b49'});
-      //     $('.lines').css({background: '#002b49'});
-      //   } else if ($('.blur-logo').attr('src') === 'assets/images/Logocolor.png') {
-      //     $('.blur-logo').attr('src', 'assets/images/Logowhite.png');
-      //     $('.arrow-down-change-color').css({color: '#002b49'});
-      //     $('.lines').css({background: '#fff'});
-      //   }
-      // }
     });
   }
   @HostListener('window:scroll', [])
