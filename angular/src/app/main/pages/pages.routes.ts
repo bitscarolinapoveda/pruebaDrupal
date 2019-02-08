@@ -23,7 +23,7 @@ const pagesRoutes: Routes = [
       {path: 'products', component: ProductsComponent},
       {path: 'projects', component: ProjectsComponent},
       {path: 'services', component: ServicesComponent},
-      {path: 'iMedical', component: iMedicalComponent},
+      {path: 'imedical', component: iMedicalComponent},
       {path: 'politics', component: PoliticsComponent},
       {path: '**', component: NoPageFoundComponent},
 

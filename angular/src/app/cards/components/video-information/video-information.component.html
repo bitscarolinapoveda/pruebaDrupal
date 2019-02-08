@@ -7,7 +7,7 @@
     <div class="col-md-6 my-5">
         <h1>{{ titleSection | uppercase}}</h1>
         <hr class="green">
-        <p>{{ descriptionSection }}</p>
+        <p [innerHTML]="descriptionSection" ></p>
         <br>
         <a [href]="link" class="green"><i class="fa fa-link" aria-hidden="true"></i> {{link}}</a>
     </div>
