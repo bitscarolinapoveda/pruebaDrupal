@@ -5,10 +5,14 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import {HttpClientModule} from '@angular/common/http';
 
+
 // Modulos
 import {AdfModule} from './@adf/adf.module';
 import {PagesModule} from './main/pages/pages.module';
-
+// Import your library
+import { OwlModule } from 'ngx-owl-carousel';
+import { DeferLoadModule } from '@trademe/ng-defer-load';
+import { SlickModule } from 'ngx-slick';
 // Rutas
 import {APP_ROUTES} from './app.routes';
 
@@ -22,13 +26,16 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 // Notificaciones
 import {ToastrModule} from 'ngx-toastr';
 import {NotificationService} from './services/shared/notification.service';
+import { WorkUsComponent } from './work-us/work-us.component';
+
 
 
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    WorkUsComponent    
   ],
   imports: [
     BrowserModule,
@@ -38,7 +45,10 @@ import {NotificationService} from './services/shared/notification.service';
     PagesModule,
     HttpClientModule,
     ToastrModule.forRoot(),
-    APP_ROUTES
+    APP_ROUTES,
+    OwlModule,
+    DeferLoadModule,
+    SlickModule.forRoot()
   ],
   providers: [
     NotificationService,

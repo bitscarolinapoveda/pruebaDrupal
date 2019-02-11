@@ -1,3 +1,42 @@
+<!--<section id="blocks-tabs">
+    <div class="block">
+        <ul class="nav">
+            <li class="list">
+                <a href="#form-contact-us" class="item-block nav-link  active" data-toggle="tab"> {{tabLeft.title}} </a>
+            </li>
+            <li class="list list-color">
+                <a href="#form-workwith-us" class="item-block-2 nav-link" data-toggle="tab"> {{tabRight.title}} </a>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="form-contact-us" role="tabpanel" aria-labelledby="home-tab">
+                FORMULARIO CONTÁCTENOS
+            </div>
+            <div class="tab-pane fade" id="form-workwith-us" role="tabpanel" aria-labelledby="profile-tab">
+                FORMULARIO TRABAJE CON NOSOTROS
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="row my-5">
+    <div class="col-md-12">
+        <ngb-tabset id="tabsetCustom" [justify]="'center'">
+            <ngb-tab *ngFor="let tab of arrayTabs">
+                <ng-template ngbTabTitle>
+                    <div class="d-block div-title">
+                        <img [src]="tab.urlicon" class="d-block mx-auto" width="50" height="50">
+                        <br>
+                        <h3 class="condensed">{{tab.titulo}}</h3>
+                    </div>
+                </ng-template>
+                <ng-template ngbTabContent>
+                    <div [innerHTML]="tab.contenido | safehtml" class="py-5 px-5"></div>
+                </ng-template>
+            </ngb-tab>
+        </ngb-tabset>
+    </div>
+</div>
 <div class="my-5">
     <ul class="nav nav-tabs nav-justified nav-fill">
         <li *ngFor="let tabItem of arrayTabs; let i = index" [class.active]="ids == i" class="nav-item">
@@ -15,4 +54,5 @@
             <div [innerHTML]="tabItem.contenido | safehtml" class="py-5 px-5"></div>
         </div>
     </div>
-</div>
+</div>-->
+

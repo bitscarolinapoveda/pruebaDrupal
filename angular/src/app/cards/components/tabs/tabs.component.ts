@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CustomCardService } from 'src/app/services/cards/v1-card.services';
+import { ContactUsComponent } from 'src/app/main/pages/contact-us/contact-us.component'
 
 @Component({
     selector: 'app-tabs',
@@ -12,7 +13,7 @@ export class TabsComponent implements OnInit {
     arrayTabs:Tab[] = [];
     ids:number = 0;
     size:number;
-
+    
     constructor(
         private https: CustomCardService,
     ) {}
@@ -34,4 +35,3 @@ export interface Tab{
     alticon:string;
     contenido:string;
 }
-

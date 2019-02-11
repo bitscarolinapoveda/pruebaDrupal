@@ -24,6 +24,7 @@ import { SliderComponent } from './components/slider/slider.component';
 import { BlurbComponent } from './components/blurb/blurb.component';
 import { CardImgTextComponent } from './components/card-img-text/card-img-text.component';
 import { BlogComponent } from './components/blog/blog.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -32,6 +33,10 @@ import { BlogComponent } from './components/blog/blog.component';
 import { NodeService } from '../services/cards/node.service';
 import {RouterModule} from "@angular/router";
 import {AdfModule} from "../@adf/adf.module";
+import { SlickModule } from 'ngx-slick';
+import { OwlModule } from 'ngx-owl-carousel';
+import { NgxCarouselModule } from 'ngx-carousel';
+import 'hammerjs';
 
 
 //Pipes
@@ -63,6 +68,7 @@ import { SafeCssPipe } from '../pipes/safecss.pipe';
     BlurbComponent,
     CardImgTextComponent,
     BlogComponent
+      
   ],
   exports: [
     CarouselItemComponent,
@@ -87,7 +93,7 @@ import { SafeCssPipe } from '../pipes/safecss.pipe';
     CardImgTextComponent,
     BlogComponent
   ],
-  imports: [BrowserModule, CommonModule, NgbModule, RouterModule, AdfModule],
+  imports: [BrowserModule, CommonModule, NgbModule, RouterModule, AdfModule,  SlickModule.forRoot(), OwlModule, NgxCarouselModule, BrowserAnimationsModule ],
   providers: [NodeService]
 })
 export class CardsModule {}

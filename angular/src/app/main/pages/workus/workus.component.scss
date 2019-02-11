@@ -146,146 +146,38 @@ input.ng-invalid.ng-touched{
         }
       }
 
-//tabs
-
-.tab{
-  background: #e5e9ec;
-  height: 140px;
-  margin-top: 40px;
-  .contactenos{
-    height: 140px;
-    padding-left:11.8%; 
-    display: inline-block;
-    position: relative;
-    width: 50%;
-    button{
-      display: block;
-      width: 84%;
-      height: 100%;
-      position: absolute;
-      top: 0px;
-      right: 0px;
-      background: url(/assets/images/contact.svg) no-repeat center 10px;
-      background-size: 10%;
-      padding-top: 3.5%;
-      border: none;
-      font-size: 22px;
-      font-family: 'Open Sans light';   
-      color: #2e516a; 
-      cursor: pointer;  
-    }
-    button:active, button.active{
-      background:url(/assets/images/contact-white.svg) no-repeat center 10px, #30506c;
-      background-size: 10%;
-      color: #fff;
-      outline: 0px auto -webkit-focus-ring-color;
-    }
-    button.active::before{
-      content: '';
-    position: absolute;
-    border-width: 22px 65px 0;
-    border-style: solid;
-    border-color: #2e516a transparent transparent;
-    top: 92%;
-    margin-left: 37px;}
-    
-    button::after{
-      content: '';
-      position: absolute;
-      height: 75px;
-      width: 1px;
-      margin-top: -7%;
-      left: 0%;
-      background-color: #95a7b3;
-    }
-    button.active::after{
-      display: none;
-    }
-    @media screen and (max-width:480px){ 
-
-      button, button.active{
-      width: 100%;    
-      font-size: 15px;
-      padding-top: 46px;
-      background-size: 33%;}    
-
-      button.active::before{
-        top: 96%;
-        left: 29%;
-        transform: translate(-50%,-50%);  }
-      button::after{display: none;}
-    }
-    @media (max-width:768px) and (min-width:600px){ 
-      button.active::before{
-        top: 90%;
-    }}
-  }
-  .trabaje{
-    height: 140px;
-    padding-right:11.8%;
-    display: inline-block;
-    position: relative;
-    width: 50%;
-    button{
-      display: block;
-      width: 84%;
-      height: 100%;
-      position: absolute;
-      top: 0px;
-      left: 0px;
-      background: none;
-      padding-top: 3.5%;
-      background: url(/assets/images/contact.svg) no-repeat center 10px;
-      background-size: 10%;
-      border: none;
-      font-size: 22px;
-      font-family: 'Open Sans light';   
-      color: #2e516a;
-      cursor: pointer;
+      .hoja-v{
+        color: transparent;
       }
-      button:active, button.active{
-        background:url(/assets/images/contact-white.svg) no-repeat center 10px, #30506c;
-        background-size: 10%;
-        color: #fff;
-        outline: 0px auto -webkit-focus-ring-color;
+      .hoja-v::-webkit-file-upload-button {
+        visibility: hidden;
       }
-      button.active::before{
+      .hoja-v::before {
         content: '';
-      position: absolute;
-      border-width: 22px 65px 0;
-      border-style: solid;
-      border-color: #2e516a transparent transparent;
-      top: 92%;
-      margin-left: 37px;
+            color: black;
+            display: inline-block;
+            background: url(/assets/images/adjunto.png);
+            background-size: contain;
+            outline: none;
+            white-space: nowrap;
+            -webkit-user-select: none;
+            cursor: pointer;
+            text-shadow: 1px 1px #fff;
+            font-weight: 700;
+            font-size: 10pt;
+            height: 40px;
+            width: 40px;
+            position: absolute;
+            right: 15px;
+            top: 39px;
       }
-      button::after{
-        content: '';
-        position: absolute;
-        height: 75px;
-        width: 1px;
-        margin-top: -7%;
-        right: 0%;
-        background-color: #95a7b3;
+      .hoja-v:hover::before {
+        border-color: black;
       }
-      button.active::after{
-        display: none;
+      .hoja-v:active {
+        outline: 0;
       }
-      @media screen and (max-width:480px){    
-        button, button.active{
-          width: 100%;    
-          font-size: 15px;
-          padding-top: 46px;
-          background-size: 33%;}    
-        button.active::before{
-          top: 96%;
-          left: 29%;
-          transform: translate(-50%,-50%);  }
-        button::after{display: none;}
+      .hoja-v:active::before {
+        background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9); 
       }
-      @media (max-width:768px) and (min-width:600px){ 
-        button.active::before{
-          top: 90%;
-      }}
-  }
-
-}
+      
