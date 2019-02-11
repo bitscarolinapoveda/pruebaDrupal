@@ -6,8 +6,9 @@
     <div class="col-md-12 py-5 px-2">
         <div class="tec-slider">
             <div *ngFor="let im of arrayLogosCustom" class="mx-auto div-slide">
-                <img *ngFor="let img of im" class="img-fluid img-slide" [src]="img.field_tech_image.url" [alt]="img.field_tech_image.alt">
+                <img *ngFor="let img of im"  class="img-fluid img-slide" [src]="img.field_tech_image.url" [alt]="img.field_tech_image.alt">
             </div>
         </div>
     </div>
 </div>
+
