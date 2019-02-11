@@ -594,7 +594,7 @@ class CardBase extends BlockBase {
   public function getRenderData($input) {
     $data = [];
 
-    foreach ($input['table_fields'] as $item) {
+    foreach ((array)  $input['table_fields'] as $item) {
       $element = [];
       switch ($item['type']) {
         case 'managed_file':

@@ -19,22 +19,7 @@ export class TabsComponent implements OnInit {
     ) {}
 
     ngOnInit() {
-        this.getTabs();
-    }
-   
-    getTabs() {
-      return  this.https.getTabsData().subscribe(items =>{
-        this.size = items.length;
-        for (let tabItem of items) {
-            let objectTab:Tab = {titulo:"",icontab:"",urlicon:"",alticon:"",contenido:""};
-            objectTab.titulo = tabItem.titulo_tab;
-            objectTab.icontab = tabItem.icon_tab;
-            objectTab.urlicon = tabItem.url_icon_tab;
-            objectTab.alticon = tabItem.alt_icon_tab;
-            objectTab.contenido = tabItem.body;
-            this.arrayTabs.push(objectTab);
-        }
-      });
+
     }
 
     mostrar(link:number){
@@ -50,4 +35,3 @@ export interface Tab{
     alticon:string;
     contenido:string;
 }
-

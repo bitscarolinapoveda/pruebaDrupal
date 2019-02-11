@@ -42,12 +42,12 @@ export class CustomCardService {
   }
 
   getSliderData():Slide[]{
-    //return this.http.get('v1/card/contact/export/custom?_format=json&bid=slider');
+    // return this.http.get('v1/card/contact/export/custom?_format=json&bid=slider');
     return this.sliderData;
   }
 
   getTabsData(){
-    return this.http.get('v1/card/export/tab-horizontal');
+    //return this.http.get('v1/card/export/tab-horizontal');
   }
 }
 
