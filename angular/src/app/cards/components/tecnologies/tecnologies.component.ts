@@ -1,12 +1,21 @@
 import { CustomCardService } from './../../../services/cards/v1-card.services';
 import { Component, OnInit} from '@angular/core';
+import { animate, trigger, state, style, transition} from '@angular/animations'
 
 declare var jQuery: any;
 declare var $: any;
 @Component({
   selector: 'app-tecnologies',
   templateUrl: './tecnologies.component.html',
-  styleUrls: ['./tecnologies.component.scss']
+  styleUrls: ['./tecnologies.component.scss'],
+  animations: [
+    trigger('fade', [
+      transition('void => *', [
+        style({opacity: 0.1, transform : 'translateX(-100%)'}),
+        animate(5000, style({opacity: 1, transform : 'translateX(0)'}))
+      ])
+    ])
+  ]
 })
 export class TecnologiesComponent implements OnInit{
   arrayLogos:any = [];

@@ -10,25 +10,19 @@
          height: 100%;
      }
      .tec-slider {
+         width: 100%;
+         margin: 0 auto;
+         display: flex;
          .div-slide {
-             display: table !important;
-             width: auto !important;
+            
+             
              @include mediaquery(max_960) {
-                 display: grid !important;
-                 grid-template-columns: 50% 50%;
-                 grid-row-gap: 10px;
-                 grid-column-gap: 10px;
-                 padding: 10px;
-                 margin-left: 5px !important;
+                
              }
              .img-slide {
-                 float: left;
-                 width: 203px;
-                 height: 121px;
-                 margin: 10px 20px;
+                 
                  @include mediaquery(max_960) {
-                     display: block;
-                     margin: 0px auto;
+                    
                  }
              }
          }
