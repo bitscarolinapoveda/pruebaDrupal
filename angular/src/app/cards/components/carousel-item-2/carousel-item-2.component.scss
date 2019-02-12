@@ -288,3 +288,7 @@ h1{
     }
 
   }
+
+  :host ::ng-deep .tile{
+      box-shadow: none !important;
+  }
