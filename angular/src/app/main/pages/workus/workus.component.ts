@@ -26,14 +26,14 @@ ngOnInit() {
 }
 
 verificaValidTouched(campo) {
-return !campo.valid && campo.touched;
+  return !campo.valid && campo.touched;
 }
 
 aplicaCssErro(campo) {
-return {
-  'has-error': this.verificaValidTouched(campo),
-  'has-feedback': this.verificaValidTouched(campo)
-};
+  return {
+    'has-error': this.verificaValidTouched(campo),
+    'has-feedback': this.verificaValidTouched(campo)
+  };
 }
 
 

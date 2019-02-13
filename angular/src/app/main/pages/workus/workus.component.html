@@ -1,83 +1,66 @@
 
 <div class="container">
-        <div class="row">
-                <form id="formulario_contacto" #userForm = "ngForm" (ngSubmit)="onSubmit(userForm.value)" class="col-md-12">
-    
-                        <div class="form-group" [ngClass]="aplicaCssErro(nombre)" class="col-md-12">  
-                            <div class="col-md-6 item" >       
-                            <label for="exampleInputNombre">Nombre</label>
-                            <input type="text" class="form-control" id="nombre" placeholder="Nombre" name="nombre" ngModel required #nombre="ngModel">
-                            <div *ngIf="nombre.invalid && nombre.touched" class="alert alert-danger" role="alert">
-                                    Campo obligatorio o invalido
-                                </div>    
-                            </div>
-                            <div class="col-md-6 item">
-                                <label for="exampleInputEmail1">Email address</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Escriba su email" name="correo_electronico" ngModel required
-                                pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
-                                #correo_electronico="ngModel">
-                                <div *ngIf="correo_electronico.invalid && correo_electronico.touched" class="alert alert-danger" role="alert">
-                                    Campo obligatorio o invalido
-                                </div>
-                            </div>         
-                                                     
-                          </div>
-                                            
-    
-                        <div class="form-group" class="col-md-12">
-                            
-                        <div class="col-md-6 item">
-                                <label for="exampleInputTel">Telefono</label>
-                                <input type="tel" class="form-control" id="org" placeholder="Escriba su telefono" name="telefono" ngModel required 
-                                pattern="^(\([0-9]{3}\)|[0-9]{3})[0-9]{3}[0-9]{4}$" #telefono="ngModel">
-                                <div *ngIf="telefono.invalid && telefono.touched" class="alert alert-danger" role="alert">
-                                        Campo obligatorio o invalido
-                                    </div>
-                        </div>
-                        <div class="col-md-6 item">
-                            <label for="exampleInputOrg">Hoja de vida</label>
-                            <input type="file" class="form-control hoja-v" id="hojav" placeholder="Hoja de vida" name="hojadevida" ngModel #hojadevida="ngModel">
-                          </div>  
-                        </div>
-                        
-                        <div class="form-group" class="col-md-12">
-                          <div class="col-md-6 item">
-                                  <label for="exampleInputPais">Pais</label>
-                                  <select type="select" class="form-control" id="Pais" placeholder="Seleccione su pais" name="pais" ngModel> </select>
-                          </div >
-                          <div class="col-md-6 item">
-                                  <label for="exampleInputPais">Ciudad</label>
-                                  <select type="select" class="form-control" id="ciudad" placeholder="Seleccione su ciudad" name="ciudad" ngModel> </select>
-                          </div >
-                       </div>
-                            <div class="col-md-12">
-                                <div class="col-md-6 item">
-                                    <label for="exampleInputPais">Sitio web personal</label>
-                                    <input type="text" class="form-control" id="web" placeholder="Su sitio web" name="web" ngModel> 
-                            </div >
-                            <div class="col-md-6 item">
-                                <label for="exampleInputPais">Linkedin</label>
-                                <input type="text" class="form-control" id="web" placeholder="Su perfil" name="linkedin" ngModel> 
-                            </div >
-                        </div>
-                        <div class="form-group" class="col-md-12 comentario" >
-                                <label for="exampleInputComm">Comentarios</label>
-                                <textarea class="form-control" id="comentario" placeholder="Escriba sus comentarios" name="comentario" ngModel required #comentario="ngModel"></textarea>
-                                <div *ngIf="comentario.invalid && comentario.touched" class="alert alert-danger" role="alert">
-                                        Campo obligatorio o invalido
-                                    </div>
-                        </div>
-    
-                        <div class="form-group" class="col-md-12 terminos_grupo">
-                                <input type="checkbox" id="terminos" name="form-control"  value="false" ><label ng-reflect-ng-class="" for="terminos">He leído y acepto los términos y condiciones</label>
-                        </div>
-    
-                      <button type="submit" class="btn btn-primary">Enviar</button>
-
-                      <div class="obligatorios col-md-12"> <span>*</span>Datos Obligatorios</div>
-                    </form>
-     </div>
+    <div class="row">
+        <form id="formulario_contacto" #userForm = "ngForm" (ngSubmit)="onSubmit(userForm.value)" class="col-md-12">    
+            <div class="form-group" [ngClass]="aplicaCssErro(nombre)" class="col-md-12">  
+                <div class="col-md-6 item" >       
+                    <label for="exampleInputNombre">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" placeholder="Nombre" name="nombre" ngModel required #nombre="ngModel">
+                    <div *ngIf="nombre.invalid && nombre.touched" class="alert alert-danger" role="alert">Campo obligatorio o invalido</div>    
+                </div>                            
+                <div class="col-md-6 item">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Escriba su email" name="correo_electronico" ngModel required
+                           pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
+                           #correo_electronico="ngModel">
+                    <div *ngIf="correo_electronico.invalid && correo_electronico.touched" class="alert alert-danger" role="alert">Campo obligatorio o invalido</div>
+                </div>                         
+            </div>  
+            <div class="form-group" class="col-md-12">                            
+                <div class="col-md-6 item">
+                    <label for="exampleInputTel">Telefono</label>
+                    <input type="tel" class="form-control" id="org" placeholder="Escriba su telefono" name="telefono" ngModel required 
+                            pattern="^(\([0-9]{3}\)|[0-9]{3})[0-9]{3}[0-9]{4}$" #telefono="ngModel">
+                    <div *ngIf="telefono.invalid && telefono.touched" class="alert alert-danger" role="alert">Campo obligatorio o invalido</div>
+                </div>
+                <div class="col-md-6 item">
+                    <label for="exampleInputOrg">Hoja de vida</label>
+                    <input type="file" class="form-control hoja-v" id="hojav" placeholder="Hoja de vida" name="hojadevida" ngModel #hojadevida="ngModel">
+                </div>  
+            </div>                       
+            <div class="form-group" class="col-md-12">
+                <div class="col-md-6 item">
+                    <label for="exampleInputPais">Pais</label>
+                    <select type="select" class="form-control" id="Pais" placeholder="Seleccione su pais" name="pais" ngModel> </select>
+                </div >
+                <div class="col-md-6 item">
+                    <label for="exampleInputPais">Ciudad</label>
+                    <select type="select" class="form-control" id="ciudad" placeholder="Seleccione su ciudad" name="ciudad" ngModel> </select>
+                 </div >
+            </div>
+            <div class="col-md-12">
+                <div class="col-md-6 item">
+                    <label for="exampleInputPais">Sitio web personal</label>
+                    <input type="text" class="form-control" id="web" placeholder="Su sitio web" name="web" ngModel> 
+                </div >
+                <div class="col-md-6 item">
+                    <label for="exampleInputPais">Linkedin</label>
+                    <input type="text" class="form-control" id="web" placeholder="Su perfil" name="linkedin" ngModel> 
+                </div >
+            </div>
+            <div class="form-group" class="col-md-12 comentario" >
+                <label for="exampleInputComm">Comentarios</label>
+                <textarea class="form-control" id="comentario" placeholder="Escriba sus comentarios" name="comentario" ngModel required #comentario="ngModel"></textarea>
+                <div *ngIf="comentario.invalid && comentario.touched" class="alert alert-danger" role="alert">Campo obligatorio o invalido</div>
+            </div>
+            <div class="form-group" class="col-md-12 terminos_grupo">
+                <input type="checkbox" id="terminos" name="form-control"  value="false" ><label ng-reflect-ng-class="" for="terminos">He leído y acepto los términos y condiciones</label>
+            </div>    
+            <button type="submit" class="btn btn-primary">Enviar</button>
+            <div class="obligatorios col-md-12"> <span>*</span>Datos Obligatorios</div>
+        </form>
     </div>
+</div>
     
 
 
