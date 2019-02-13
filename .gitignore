@@ -13,3 +13,4 @@ drupal/sites/default/settings.php
 estandares_drupal.txt
 estandares_drupalPractice.txt
 drupal/sites/default/services.yml
+drupal/.idea/

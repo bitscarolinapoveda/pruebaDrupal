@@ -27,12 +27,16 @@ class CreateCardCommand extends Command {
    */
   protected $generator;
 
+  private $converter;
+
   /**
    * Constructs a new CreateCardCommand object.
    */
   public function __construct(GeneratorInterface $adf_cards_adf_cards_create_card_generator) {
     $this->generator = $adf_cards_adf_cards_create_card_generator;
     parent::__construct();
+
+    $this->converter = new StringConverter();
   }
 
   /**
@@ -78,7 +82,7 @@ class CreateCardCommand extends Command {
     if (!$module) {
       $module = $this->getIo()->ask(
                 $this->trans('Module'),
-                StringConverter::camelCaseToHuman($module)
+                $this->converter->camelCaseToHuman($module)
             );
       $input->setOption('module', $module);
     }
@@ -97,7 +101,7 @@ class CreateCardCommand extends Command {
     if (!$label) {
       $label = $this->getIo()->ask(
                 $this->trans('Label'),
-                StringConverter::camelCaseToHuman($class)
+                $this->converter->camelCaseToHuman($class)
             );
       $input->setOption('label', $label);
     }
@@ -106,7 +110,7 @@ class CreateCardCommand extends Command {
     if (!$pluginId) {
       $pluginId = $this->getIo()->ask(
                 $this->trans('Plugin-id'),
-                StringConverter::camelCaseToUnderscore($class)
+                $this->converter->camelCaseToUnderscore($class)
             );
       $input->setOption('plugin-id', $pluginId);
     }
