@@ -1,0 +1,5 @@
+name: 'bits_location'
+type: module
+description: 'Enterprise location.'
+core: 8.x
+package: 'Custom'
