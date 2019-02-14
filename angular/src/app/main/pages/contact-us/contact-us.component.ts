@@ -1,6 +1,7 @@
 import { Http } from '@angular/http';
 import { Component, OnInit } from '@angular/core';
 import 'rxjs/add/operator/map';
+import {HttpService} from "../../../services/http/http.service";
 
 declare var jQuery:any;
 declare var $:any;
@@ -13,33 +14,38 @@ declare var $:any;
 })
 
 export class ContactUsComponent implements OnInit {
-
-
-
   hidden = false;
-  
-    usuario: any = {
-      nombre: null,
-      email: null
-    };
-    
- toogleHidden(){
-   this.hidden = !this.hidden;
- }
+  private _token: string;
+  usuario: any = {
+    nombre: null,
+    email: null
+  };
 
-  onSubmit(formulario) { 
+  constructor(private _http: HttpService) { }
+
+  toogleHidden(){
+    this.hidden = !this.hidden;
+  }
+
+  onSubmit(formulario) {
     console.log(formulario);
+    formulario['webform_id'] = 'contact_us';
 
-    this.http.post('http://localhost/webform_rest/submit?_format=json', JSON.stringify(formulario.value))
+    this._http.post('webform_rest/submit?_format=json', formulario, { //Hace el submit del formulario a Drupal
+      'Content-Type': 'application/json',
+      'X-CSRF-Token': this._token
+    })
     .subscribe(datos => {
       console.log(datos);
       formulario.form.reset();
     });
-}
-constructor(private http: Http) { }
+  }
 
-ngOnInit() {
- 
+  ngOnInit() {
+    this._http.get('rest/session/token', {}, {responseType: 'text'}).subscribe((response) => {
+      this._token = response;
+    });
+
     $(".trabaje").on('click',function(){
       $(".trabaje button").toggleClass("active");
       $(".contactenos button").toggleClass("active");
@@ -48,23 +54,16 @@ ngOnInit() {
       $(".trabaje button").toggleClass("active");
           $(".contactenos button").toggleClass("active")
     });
-   
-}
+  }
 
+  verificaValidTouched(campo) {
+    return !campo.valid && campo.touched;
+  }
 
-
-
-
-verificaValidTouched(campo) {
-  return !campo.valid && campo.touched;
-}
-
-aplicaCssErro(campo) {
-  return {
-    'has-error': this.verificaValidTouched(campo),
-    'has-feedback': this.verificaValidTouched(campo)
-  };
-}
-  
-
+  aplicaCssErro(campo) {
+    return {
+      'has-error': this.verificaValidTouched(campo),
+      'has-feedback': this.verificaValidTouched(campo)
+    };
+  }
 }
