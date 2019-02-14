@@ -5,16 +5,15 @@ namespace Drupal\bits_cards\Plugin\Block;
 use Drupal\adf_cards\Plugin\Block\CardBase;
 
 /**
- * Provides a 'ServicesCard' block.
+ * Provides a 'ProductsAndServicesCard' block.
  *
  * @Block(
  *  id = "services_card",
- *  admin_label = @Translation("Services card"),
+ *  admin_label = @Translation("Products and services card"),
  * )
  */
-class ServicesCard extends CardBase
+class ProductsAndServicesCard extends CardBase
 {
-
   /**
    * {@inheritdoc}
    */
