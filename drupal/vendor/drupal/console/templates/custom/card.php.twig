@@ -1,0 +1,48 @@
+{% extends "base/class.php.twig" %}
+
+{% block file_path %}
+\Drupal\{{module}}\Plugin\Block\{{class_name}}.
+{% endblock %}
+
+{% block namespace_class %}
+namespace Drupal\{{module}}\Plugin\Block;
+{% endblock %}
+
+{% block use_class %}
+use Drupal\adf_cards\Plugin\Block\CardBase;
+{% endblock %}
+
+{% block class_declaration %}
+/**
+ * Provides a '{{class_name}}' block.
+ *
+ * @Block(
+ *  id = "{{plugin_id}}",
+ *  admin_label = @Translation("{{label}}"),
+ * )
+ */
+class {{class_name}} extends CardBase
+{% endblock %}
+
+{% block class_construct %}
+{% endblock %}
+
+{% block class_create %}
+{% endblock %}
+
+{% block class_methods %}
+  /**
+   * {@inheritdoc}
+   */
+  public function defaultConfiguration() {
+    return [
+      'header' => [
+        'table_fields' => [],
+      ],
+      'body' => [
+        'table_fields' => [],
+      ],
+      'others' => [],
+    ];
+  }
+{% endblock %}

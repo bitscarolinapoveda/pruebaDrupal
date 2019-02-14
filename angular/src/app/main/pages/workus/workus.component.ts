@@ -1,6 +1,7 @@
 import { Http } from '@angular/http';
 import { Component, OnInit } from '@angular/core';
 import 'rxjs/add/operator/map';
+import {HttpService} from "../../../services/http/http.service";
 
 @Component({
   selector: 'app-workus',
@@ -9,6 +10,8 @@ import 'rxjs/add/operator/map';
 })
 export class WorkusComponent implements OnInit {
 
+  hidden = false;
+  private _token: string;
   usuario: any = {
     nombre: null,
     email: null
@@ -17,12 +20,24 @@ export class WorkusComponent implements OnInit {
 
 onSubmit(formulario) { 
   console.log(formulario);
+  formulario['webform_id'] = 'work_us';
+
+  this._http.post('webform_rest/submit?_format=json', formulario, { //Hace el submit del formulario a Drupal
+    'Content-Type': 'application/json',
+    'X-CSRF-Token': this._token
+  })
+  .subscribe(datos => {
+    console.log(datos);
+    formulario.form.reset();
+  });
 
 }
-constructor(private http: Http) { }
+constructor(private _http: HttpService) { }
 
 ngOnInit() {
-
+  this._http.get('rest/session/token', {}, {responseType: 'text'}).subscribe((response) => {
+    this._token = response;
+  });
 }
 
 verificaValidTouched(campo) {

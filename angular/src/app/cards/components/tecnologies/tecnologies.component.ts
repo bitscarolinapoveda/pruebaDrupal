@@ -17,7 +17,7 @@ declare var $: any;
       })),
       state('hide',   style({
         opacity: 0,
-        transform: "translateY(-100%)"
+        transform: "translateY(100%)"
       })),
       transition('show => hide', animate('300ms ease-out')),
       transition('hide => show', animate('300ms ease-in'))
@@ -40,13 +40,10 @@ export class TecnologiesComponent implements OnInit{
     checkScroll() {
       var componentPosition = this.el.nativeElement.offsetTop
       const scrollPosition = window.pageYOffset
-
-      
-
       if (scrollPosition >= componentPosition) {
-        this.state = 'show' 
-      } else {
         this.state = 'hide' 
+      } else {
+        this.state = 'show' 
       }
 
     }
