@@ -1,6 +1,6 @@
 <section id="title-gallery">
     <div class="title">
-        <h1> {{ titleProducts.titulo }} </h1>
+        <h1> {{ title }} </h1>
     </div>
 </section>
 <section id="gallery-images">
@@ -9,14 +9,12 @@
             <div class="col-sm-6 col-md-4" *ngFor="let ps of servicesProduct">
                 <div class="thumbnai">
                     <div class="background">
-                        <img class="images lightbox" [src]="ps.field_imagen_producto_o_servicio" alt="products software">
+                        <img class="images lightbox" [src]="ps.field_ps_short_image.url" alt="{{ps.field_ps_short_image.alt}}">
                     </div>
                     <div class="box-title">
                         <span class="titlepr">{{ ps.title }}</span>
                         <div class="box-text">
-                            <span class="text">
-                                {{ ps.body }}
-                              </span>
+                            <span class="text" [innerHTML]="ps.body"></span>
                         </div>
                     </div>
                     <div class="box-info">

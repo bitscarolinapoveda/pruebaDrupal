@@ -108,35 +108,6 @@ export class TecnologiesComponent implements OnInit{
       }    
     }
   }
-/*createSlick(){
-    $(document).ready(function(){
-      $('.tec-slider').slick({
-        infinite: true,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        dots: false,
-        autoplay: true,
-        autoplaySpeed: 2000,
-        speed: 3500,
-        fade: true,
-        responsive:[
-          {
-            breakpoint: 600,
-            settings: {
-              infinite: true,
-              slidesToShow: 1,
-              slidesToScroll: 1,
-              dots: false,
-              fade: true,
-              autoplay: true,
-              speed: 3500,
-            }
-          }
-        ]
-      });
-    });
-  }
-*/
 
   getItemsTecnologies() {
     return this._tecnologies.getCustomCardInformation('technologies').subscribe(items => {
