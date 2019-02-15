@@ -53,15 +53,23 @@
             </div>
             <div class="form-group" class="col-md-12 comentario" >
                 <label for="exampleInputComm">Comentarios</label>
-                <textarea class="form-control" id="comentario" placeholder="Escriba sus comentarios" name="comentario" ngModel required #comentario="ngModel"></textarea>
+                <textarea class="form-control" id="comentario" placeholder="Escriba sus comentarios" name="comentario" ngModel #comentario="ngModel"></textarea>
                 <div *ngIf="comentario.invalid && comentario.touched" class="alert alert-danger" role="alert">Campo obligatorio o invalido</div>
             </div>
             <div class="form-group" class="col-md-12 terminos_grupo">
-                <input type="checkbox" id="terminos" name="terms_of_service"  value="false"  ngModel><label ng-reflect-ng-class="" for="terminos">He leído y acepto los términos y condiciones</label>
+                <input type="checkbox" id="terminos" name="terms_of_service"  value="false" required ngModel><label ng-reflect-ng-class="" for="terminos">He leído y acepto los términos y condiciones</label>
             </div>    
-            <button type="submit" class="btn btn-primary">Enviar</button>
+            <button type="submit" class="btn btn-primary" [disabled]="!userForm.form.valid">Enviar</button>
             <div class="obligatorios col-md-12"> <span>*</span>Datos Obligatorios</div>
         </form>
+        <div id="msj-modal" class="modal" role="dialog">
+                <div class="content-modal">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                        </button>   
+                        <p>Gracias por registrar su información</p>
+                </div>
+        </div>
     </div>
 </div>
     

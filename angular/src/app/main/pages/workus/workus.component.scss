@@ -160,3 +160,22 @@ input.ng-invalid.ng-touched{
         background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9); 
       }
       
+      #msj-modal{
+        background: #30506cab;
+        width: 100vw;
+        height: 100vh;
+        .content-modal{
+          display: table;
+          position: relative;
+          margin-top: 25%;
+          width: 50%;
+          margin-left: 25%;
+          padding: 20px;
+          background: #fff;
+          border-radius: 10px;
+          border: solid #91b520 1px;
+          p {text-align: center;}
+        }
+      
+      
+      }
