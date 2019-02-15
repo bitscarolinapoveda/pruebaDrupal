@@ -17,7 +17,7 @@ export class ClientCardComponent implements OnInit{
     ){
         this.titleCard = "El Cliente";
         this.nameClient = "Universidad Javeriana"
-        this.imgSrcClient = "../../../../assets/images/logo-javeriana.png";
+        this.imgSrcClient = "/assets/images/logo-javeriana.png";
     }
 
     ngOnInit(){
