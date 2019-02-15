@@ -7,7 +7,7 @@ import { CustomCardService } from 'src/app/services/cards/v1-card.services';
     styleUrls: ['./client-card.component.scss']
 })
 export class ClientCardComponent implements OnInit{
-    
+
     titleCard:string;
     imgSrcClient:string;
     nameClient:string;

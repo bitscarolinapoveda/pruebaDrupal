@@ -2,8 +2,10 @@ import { ContentType } from '../../../services/cards/content-type.services';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NgxCarousel } from 'ngx-carousel';
+import { CustomCardService } from 'src/app/services/cards/v1-card.services';
 
-declare var jQuery: any;  
+
+declare var jQuery: any;
 declare var $: any;
 
 @Component({
@@ -19,15 +21,15 @@ export class CarouselItem2Component implements OnInit {
   titleClients:string="";
   public carocarouselTile: NgxCarousel;
 
-  constructor(private router: ActivatedRoute, private ourClientCarouselItems: ContentType,) {
+  constructor(private _cardService: CustomCardService) {
     this.clients = [];
   }
 
   ngOnInit() {
 
-      this.getOurClientsItems();       
+      this.getOurClientsItems();
       this.clients = [0, 1, 2, 3, 4, 5,];
- 
+
       this.carocarouselTile = {
         grid: {xs: 1, sm: 2, md: 4, lg: 4, all: 0},
         slide: 2,
@@ -65,22 +67,22 @@ export class CarouselItem2Component implements OnInit {
         easing: 'ease',
         loop: true,
       }
-        
+
   }
-    
-    public carouselTileLoad(evt: any) { 
+
+    public carouselTileLoad(evt: any) {
       const len = this.clients.length
       if (len <= 4) {
       for (let i = len; i < len + 10; i++) { this.clients.push(i); }
       }
     }
-    
+
     getOurClientsItems() {
-        this.ourClientCarouselItems.getContentTypeItems('clients').subscribe( items => {
-          this.clients = items.datos;
-          this.titleClients = items.titulo;
-          this.clients = Object.keys(items.datos).map(function (key) { return items.datos[key]; });
-        });
+      this._cardService.getCustomCardInformation('clientscard').subscribe( items => {
+        this.clients = items.data;
+        this.titleClients = items.header[0].data.title;
+        this.clients = Object.keys(items.data).map(function (key) { return items.data[key]; });
+      });
     }
 }
 

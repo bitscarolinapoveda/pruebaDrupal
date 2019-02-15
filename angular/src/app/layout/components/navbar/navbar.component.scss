@@ -284,7 +284,6 @@
             //  Cuando pasa por encima de cualquier li, el deja visible a los hijos
             li:hover > app-menu-item > ul {
                 display: block;
-
                 li:hover i.fa-angle-right{
                     transform: rotate(90deg);
                     transition: 0.5s ease all;
