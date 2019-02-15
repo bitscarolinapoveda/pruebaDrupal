@@ -10,7 +10,7 @@
                 </div>                            
                 <div class="col-md-6 item">
                     <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Escriba su email" name="correo_electronico" ngModel required
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Escriba su email" name="correo_electronico" ngModel 
                            pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
                            #correo_electronico="ngModel">
                     <div *ngIf="correo_electronico.invalid && correo_electronico.touched" class="alert alert-danger" role="alert">Campo obligatorio o invalido</div>
@@ -19,13 +19,13 @@
             <div class="form-group" class="col-md-12">                            
                 <div class="col-md-6 item">
                     <label for="exampleInputTel">Telefono</label>
-                    <input type="tel" class="form-control" id="org" placeholder="Escriba su telefono" name="telefono" ngModel required 
+                    <input type="tel" class="form-control" id="org" placeholder="Escriba su telefono" name="telefono" ngModel  
                             pattern="^(\([0-9]{3}\)|[0-9]{3})[0-9]{3}[0-9]{4}$" #telefono="ngModel">
                     <div *ngIf="telefono.invalid && telefono.touched" class="alert alert-danger" role="alert">Campo obligatorio o invalido</div>
                 </div>
                 <div class="col-md-6 item">
                     <label for="exampleInputOrg">Hoja de vida</label>
-                    <input type="file" class="form-control hoja-v" id="hojav" placeholder="Hoja de vida" name="hojadevida" ngModel #hojadevida="ngModel">
+                    <input type="file" class="form-control hoja-v" id="hojav" placeholder="Hoja de vida" name="hoja_de_vida" ngModel #hojadevida="ngModel">
                 </div>  
             </div>                       
             <div class="form-group" class="col-md-12">
@@ -41,11 +41,14 @@
             <div class="col-md-12">
                 <div class="col-md-6 item">
                     <label for="exampleInputPais">Sitio web personal</label>
-                    <input type="text" class="form-control" id="web" placeholder="Su sitio web" name="web" ngModel> 
+                    <input type="text" class="form-control" id="web" placeholder="Su sitio web" name="sitio_web" ngModel #sitio_web="ngModel" pattern="https?://.+"> 
+                    <div *ngIf="sitio_web.invalid && sitio_web.touched" class="alert alert-danger" role="alert">Campo obligatorio o invalido</div>
                 </div >
                 <div class="col-md-6 item">
                     <label for="exampleInputPais">Linkedin</label>
-                    <input type="text" class="form-control" id="web" placeholder="Su perfil" name="linkedin" ngModel> 
+                    <input type="text" class="form-control" id="linkedin" placeholder="Su perfil" name="linkedin" ngModel #linkedin="ngModel" pattern="https?://.+"> 
+                    <div *ngIf="linkedin.invalid && linkedin.touched" class="alert alert-danger" role="alert">Campo obligatorio o invalido</div>
+
                 </div >
             </div>
             <div class="form-group" class="col-md-12 comentario" >
@@ -54,7 +57,7 @@
                 <div *ngIf="comentario.invalid && comentario.touched" class="alert alert-danger" role="alert">Campo obligatorio o invalido</div>
             </div>
             <div class="form-group" class="col-md-12 terminos_grupo">
-                <input type="checkbox" id="terminos" name="form-control"  value="false" ><label ng-reflect-ng-class="" for="terminos">He leído y acepto los términos y condiciones</label>
+                <input type="checkbox" id="terminos" name="terms_of_service"  value="false"  ngModel><label ng-reflect-ng-class="" for="terminos">He leído y acepto los términos y condiciones</label>
             </div>    
             <button type="submit" class="btn btn-primary">Enviar</button>
             <div class="obligatorios col-md-12"> <span>*</span>Datos Obligatorios</div>
