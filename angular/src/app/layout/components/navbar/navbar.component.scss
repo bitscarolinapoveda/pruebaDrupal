@@ -1,8 +1,8 @@
 @import './src/assets/scss/mixin.scss';
-#block-navbar { 
+#block-navbar {
     .inverse-color {
         background: #ffffff;
-    } 
+    }
   .color-white {
       background: #ffffff;
   }
@@ -206,6 +206,9 @@
                   .tigger-menu {
                       background: #ffffff;
                       color: #002b49;
+                      @media (max-width: $desktop) {
+                        border-bottom: 1px solid #eef6f9;
+                      }
                   }
               }
               .language {
@@ -226,6 +229,7 @@
                             position: absolute;
                             right: 35px;
                             bottom: 46px;
+                            color: #fff;
                             @media (max-width: 1281px) {
                                 right: 12px;
                                 bottom: 31px;
@@ -292,22 +296,26 @@
                 position: absolute;
                 padding: 0px;
                 right: 0px;
+                @include breakpoint(desktop) {
+                    margin-top: -2px;
+                }
                 @media (max-width: $desktop) {
                     position: relative;
                     bottom: 0;
                 }
                 > li.customrow-2 {
-                    border: 1px solid rgb(206, 206, 206);
+                    // border: 1px solid rgb(206, 206, 206);
                     @media (max-width: 1080px) {
                         border: 1px solid #f5fafc;
                     }
                     > a.link {
+                        border-bottom: 1px solid rgb(206, 206, 206);
                         padding: 12px;
                         padding-left: 11px;
                         text-align: left;
                         background: #fff;
                         display: block;
-                        font-family: Open Sans; 
+                        font-family: Open Sans;
                         font-size: 15px;
                         font-weight: 400;
                         color: #002b49;
@@ -319,6 +327,8 @@
                         @media (max-width: $desktop) {
                             padding-left: 45px;
                             font-family: Open Sans Light;
+                            border: 0;
+                            border-bottom: 1px solid #eef6f9;
                         }
                         &:hover {
                             text-decoration: none;
@@ -330,11 +340,24 @@
                     }
                 }
             }
-            // Estilos de la fila 2 del menu
+            // Estilos de la fila 3 del menu
             ul.customulrow-3 {
                 border: 1px solid rgb(206, 206, 206);
                 list-style-type: none;
                 padding: 0;
+                position: relative;
+                &::before {
+                    @include breakpoint(desktop) {
+                        content: '';
+                        display: block;
+                        background-image: url('/assets/images/MenuLuzDiagonal.png');
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                    }
+                }
                 @include breakpoint(desktop) {
                     width: 430px;
                     background: #fff;
@@ -346,6 +369,10 @@
                     right: 194px;
                     height: 245px;
                     left: -431px;
+
+                }
+                @media (max-width: $desktop) {
+                    border: 0;
                 }
                 > li.customrow-3 {
                     @include breakpoint(desktop) {
@@ -355,20 +382,39 @@
                         float: left;
                     }
                     > a.link {
-                        font-family: Open Sans; 
+                        font-family: Open Sans;
                         font-size: 15px;
                         color: #002b49;
                         display: block;
+                        background-color: transparent;
                         @include breakpoint(desktop) {
                             color: #333;
                             padding: 9px;
                         }
                         @media (max-width: $desktop) {
-                            padding-left: 80px;
+                            padding-left: 76px;
+                            padding-top: 15px;
+                            font-family: Open Sans Light;
+                            border: 0;
+                            text-align: left;
+                            background: #fff;
+                            display: block;
+                            font-size: 15px;
+                            font-weight: 400;
+                            color: #002b49;
+                            min-height: 38px;
+                            height: 49px;
+                            border-bottom: 1px solid #eef6f9;
+                        }
+                        .title {
+                            @media (max-width: $desktop) {
+                                color: #002b49;
+                                font-size: 15px;
+                            }
                         }
                         .description {
                             display: none;
-                            font-family: Open Sans Light; 
+                            font-family: Open Sans Light;
                             font-size: 13px;
                             color: #002b49;
                             @include breakpoint(desktop) {
@@ -429,5 +475,5 @@ app-navbar  /deep/ {
             height: 100%;
             width: 100%;
         }
-    }  
+    }
 }
