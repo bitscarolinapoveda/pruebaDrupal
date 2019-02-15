@@ -30,6 +30,13 @@ export class ContactUsComponent implements OnInit {
   onSubmit(formulario) {
     console.log(formulario);
     formulario['webform_id'] = 'contact_us';
+    $("#formulario_contacto")[0].reset();
+    
+    
+    $("#msj-modal").show();
+    $(".close").click(function() {
+      $("#msj-modal").hide()
+    });
 
     this._http.post('webform_rest/submit?_format=json', formulario, { //Hace el submit del formulario a Drupal
       'Content-Type': 'application/json',
