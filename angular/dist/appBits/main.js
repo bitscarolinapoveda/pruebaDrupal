@@ -1080,7 +1080,7 @@ var CardImgTextComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<section id=\"main-title\">\n    <h2>{{ caroseltitle?.titulo }}</h2>\n</section>\n\n<div class=\"contenedor\">\n    <ngx-carousel\n    [inputs]=\"carocarouselTile\" \n    (carouselLoad)=\"carouselTileLoad($event)\">\n        <ngx-tile NgxCarouselItem *ngFor=\"let main of CarouselControlArray; let i = index\">\n            <a href=\"\" class=\"url-link\">\n                <div class=\"container-img\">\n                    <img class=\"d-block img-fluid img-float  mx-auto\" src=\"{{ main.field_image }}\">\n                </div>\n                <div class=\"info\">\n                    <hr class=\"line\">\n                    <h4 class=\"name-organization\">{{main.title}}</h4>\n                    <h3 class=\"main-title\">{{main.field_category}}</h3>\n                    <h5 class=\"category\">{{main.field_recognition}}</h5>\n                    <h5 class=\"yeard\">{{main.field_year}}</h5>\n                </div>\n            </a>\n        </ngx-tile>                \n    <button NgxCarouselPrev class='leftRs'>&lt;</button>\n    <button NgxCarouselNext class='rightRs'>&gt;</button>\n  </ngx-carousel>\n </div>"
+module.exports = "<section id=\"main-title\">\n    <h2>{{ caroseltitle }}</h2>\n</section>\n\n<div class=\"contenedor\">\n    <ngx-carousel\n    [inputs]=\"carocarouselTile\"\n    (carouselLoad)=\"carouselTileLoad($event)\">\n        <ngx-tile NgxCarouselItem *ngFor=\"let main of CarouselControlArray; let i = index\">\n            <a href=\"\" class=\"url-link\">\n                <div class=\"container-img\">\n                    <img class=\"d-block img-fluid img-float  mx-auto\" src=\"{{ main.field_image.url }}\" alt=\"{{ main.field_image.alt }}\">\n                </div>\n                <div class=\"info\">\n                    <hr class=\"line\">\n                    <h4 class=\"name-organization\">{{main.title}}</h4>\n                    <h3 class=\"main-title\">{{main.field_category}}</h3>\n                    <h5 class=\"category\">{{main.field_recognition}}</h5>\n                    <h5 class=\"yeard\">{{main.field_year}}</h5>\n                </div>\n            </a>\n        </ngx-tile>\n    <button NgxCarouselPrev class='leftRs'>&lt;</button>\n    <button NgxCarouselNext class='rightRs'>&gt;</button>\n  </ngx-carousel>\n </div>"
 
 /***/ }),
 
@@ -1108,6 +1108,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _services_cards_content_type_services__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../services/cards/content-type.services */ "./src/app/services/cards/content-type.services.ts");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var src_app_services_cards_v1_card_services__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/cards/v1-card.services */ "./src/app/services/cards/v1-card.services.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1120,10 +1121,12 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var CarouselControlsComponent = /** @class */ (function () {
-    function CarouselControlsComponent(router, AchievementCarouselItems) {
+    function CarouselControlsComponent(router, AchievementCarouselItems, _cardService) {
         this.router = router;
         this.AchievementCarouselItems = AchievementCarouselItems;
+        this._cardService = _cardService;
         this.CarouselControlArray = [];
         this.caroseltitle = [];
         this.CarouselControlArray = [];
@@ -1156,10 +1159,10 @@ var CarouselControlsComponent = /** @class */ (function () {
     };
     CarouselControlsComponent.prototype.getAchievementsCarouselItems = function () {
         var _this = this;
-        return this.AchievementCarouselItems.getContentTypeItems('achievements').subscribe(function (items) {
-            _this.CarouselControlArray = items.datos;
-            _this.caroseltitle = items.titulo;
-            _this.CarouselControlArray = Object.keys(items.datos).map(function (key) { return items.datos[key]; });
+        return this._cardService.getCustomCardInformation('achievementscard').subscribe(function (items) {
+            _this.CarouselControlArray = items.data;
+            _this.caroseltitle = items.header[0].data.title;
+            _this.CarouselControlArray = Object.keys(items.data).map(function (key) { return items.data[key]; });
         });
     };
     CarouselControlsComponent = __decorate([
@@ -1169,7 +1172,8 @@ var CarouselControlsComponent = /** @class */ (function () {
             styles: [__webpack_require__(/*! ./carousel-controls.component.scss */ "./src/app/cards/components/carousel-controls/carousel-controls.component.scss")]
         }),
         __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
-            _services_cards_content_type_services__WEBPACK_IMPORTED_MODULE_0__["ContentType"]])
+            _services_cards_content_type_services__WEBPACK_IMPORTED_MODULE_0__["ContentType"],
+            src_app_services_cards_v1_card_services__WEBPACK_IMPORTED_MODULE_3__["CustomCardService"]])
     ], CarouselControlsComponent);
     return CarouselControlsComponent;
 }());
@@ -1274,7 +1278,7 @@ var CarouselIndicatorsComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n<section id=\"main-title\">\n    <h2>{{ titleClients }}</h2>\n</section>\n\n<div class=\"contenedor\">\n    <ngx-carousel\n    [inputs]=\"carocarouselTile\" \n    (carouselLoad)=\"carouselTileLoad($event)\">\n\n          <ngx-tile NgxCarouselItem *ngFor=\"let ourC of clients; let i = index\">\n            <a href=\"#\" class=\"url-carousel\" >\n                <div class=\"container-img col-md-3 \">\n                    <img class=\"d-block img-fluid img-float  mx-auto\" src=\"{{ ourC.field_image }}\" alt=\"\">\n                </div>\n                <div class=\"info-carousel\">\n                    <h3 class=\"title\">{{ ourC.title }}</h3>\n                    <p class=\"text-description\">{{ ourC.field_description }}</p>\n                </div>\n            </a>\n\n          </ngx-tile>\n\n        <button NgxCarouselPrev class='leftRs'>&lt;</button>\n        <button NgxCarouselNext class='rightRs'>&gt;</button>\n  </ngx-carousel>\n\n</div>"
+module.exports = "\n<section id=\"main-title\">\n    <h2>{{ titleClients }}</h2>\n</section>\n\n<div class=\"contenedor\">\n    <ngx-carousel\n    [inputs]=\"carocarouselTile\"\n    (carouselLoad)=\"carouselTileLoad($event)\">\n\n          <ngx-tile NgxCarouselItem *ngFor=\"let ourC of clients; let i = index\">\n            <a href=\"#\" class=\"url-carousel\" >\n                <div class=\"container-img col-md-3 \">\n                    <img class=\"d-block img-fluid img-float  mx-auto\" src=\"{{ ourC.field_image.url }}\" alt=\"{{ ourC.field_image.alt }}\">\n                </div>\n                <div class=\"info-carousel\">\n                    <h3 class=\"title\">{{ ourC.title }}</h3>\n                    <p class=\"text-description\">{{ ourC.field_description }}</p>\n                </div>\n            </a>\n\n          </ngx-tile>\n\n        <button NgxCarouselPrev class='leftRs'>&lt;</button>\n        <button NgxCarouselNext class='rightRs'>&gt;</button>\n  </ngx-carousel>\n\n</div>"
 
 /***/ }),
 
@@ -1299,9 +1303,8 @@ module.exports = ".contenedor {\n  width: 80%;\n  margin: 0 auto; }\n\n.item {\n
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CarouselItem2Component", function() { return CarouselItem2Component; });
-/* harmony import */ var _services_cards_content_type_services__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../services/cards/content-type.services */ "./src/app/services/cards/content-type.services.ts");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_app_services_cards_v1_card_services__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/services/cards/v1-card.services */ "./src/app/services/cards/v1-card.services.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1313,11 +1316,9 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 };
 
 
-
 var CarouselItem2Component = /** @class */ (function () {
-    function CarouselItem2Component(router, ourClientCarouselItems) {
-        this.router = router;
-        this.ourClientCarouselItems = ourClientCarouselItems;
+    function CarouselItem2Component(_cardService) {
+        this._cardService = _cardService;
         this.titleClients = "";
         this.clients = [];
     }
@@ -1349,19 +1350,19 @@ var CarouselItem2Component = /** @class */ (function () {
     };
     CarouselItem2Component.prototype.getOurClientsItems = function () {
         var _this = this;
-        this.ourClientCarouselItems.getContentTypeItems('clients').subscribe(function (items) {
-            _this.clients = items.datos;
-            _this.titleClients = items.titulo;
-            _this.clients = Object.keys(items.datos).map(function (key) { return items.datos[key]; });
+        this._cardService.getCustomCardInformation('clientscard').subscribe(function (items) {
+            _this.clients = items.data;
+            _this.titleClients = items.header[0].data.title;
+            _this.clients = Object.keys(items.data).map(function (key) { return items.data[key]; });
         });
     };
     CarouselItem2Component = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-carousel-item-2',
             template: __webpack_require__(/*! ./carousel-item-2.component.html */ "./src/app/cards/components/carousel-item-2/carousel-item-2.component.html"),
             styles: [__webpack_require__(/*! ./carousel-item-2.component.scss */ "./src/app/cards/components/carousel-item-2/carousel-item-2.component.scss")]
         }),
-        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"], _services_cards_content_type_services__WEBPACK_IMPORTED_MODULE_0__["ContentType"]])
+        __metadata("design:paramtypes", [src_app_services_cards_v1_card_services__WEBPACK_IMPORTED_MODULE_1__["CustomCardService"]])
     ], CarouselItem2Component);
     return CarouselItem2Component;
 }());
