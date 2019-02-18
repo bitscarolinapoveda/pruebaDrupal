@@ -2387,7 +2387,7 @@ var ProjectSummaryComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"mt-1 mb-5\">\n    <div class=\"divIconSeparator mx-auto\">\n        <i class=\"fas {{iconCustom}} fa-2x\" aria-hidden=\"true\"></i>\n    </div>\n    <hr>\n</div>"
+module.exports = "<div class=\"conteiner-1\">\n    <div class=\"conteiner-2\">\n        <div class=\"div-left-side\"></div>\n        <div class=\"divIconSeparator\">\n            <i class=\"fas {{iconCustom}} fa-2x\" aria-hidden=\"true\"></i>\n        </div>\n        <div class=\"div-right-side\"></div>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -2398,7 +2398,7 @@ module.exports = "<div class=\"mt-1 mb-5\">\n    <div class=\"divIconSeparator m
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".divIconSeparator {\n  width: 60px;\n  background: white;\n  padding: 10px;\n  border-radius: 100px;\n  transform: translateY(10px);\n  -webkit-transform: translateY(45px); }\n  .divIconSeparator i {\n    color: #002b49; }\n  hr {\n  border-top: 1px solid #002b49; }\n"
+module.exports = ".conteiner-1 {\n  width: 100%;\n  box-sizing: border-box;\n  padding: 70px 65px 40px; }\n\n.conteiner-2 {\n  max-width: 900px;\n  position: relative;\n  margin: 0 auto; }\n\n.conteiner-2 .div-left-side {\n    background: #e2e2e2;\n    background: linear-gradient(to right, #e2e2e2 0%, #135670 100%);\n    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#135670',GradientType=1 );\n    width: 50%;\n    height: 2px;\n    position: absolute;\n    left: 0;\n    margin-left: -30px; }\n\n.conteiner-2 .divIconSeparator {\n    display: block;\n    position: absolute;\n    width: 60px;\n    left: 50%;\n    margin-left: -30px;\n    margin-top: -20px;\n    text-align: center; }\n\n.conteiner-2 .div-right-side {\n    background: #135670;\n    background: linear-gradient(to right, #135670 0%, #e2e2e2 99%);\n    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#135670', endColorstr='#e2e2e2',GradientType=1 );\n    width: 50%;\n    height: 2px;\n    display: block;\n    position: absolute;\n    right: 0;\n    margin-right: -30px; }\n"
 
 /***/ }),
 
