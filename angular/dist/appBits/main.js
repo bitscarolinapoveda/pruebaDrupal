@@ -2673,7 +2673,7 @@ var TabsComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row position-relative row-tec\" [ngStyle]=\"{'background-image':'url(' + background + ')'}\">\n        <div class=\"position-absolute content-trans\"></div>\n        <div class=\"col-md-12 pt-5 pb-2 px-2\">\n            <h1 class=\"text-center text-white\">{{ title }}</h1>\n        </div>\n        <div class=\"col-md-12 py-5 px-2\">\n            <div class=\"tec-slider\">\n                <ngx-tile NgxCarouselItem id=\"logos\" *ngFor=\"let im of arrayLogosCustom\" class=\"mx-auto div-slide\"  >\n                    <img *ngFor=\"let img of im\" [@fade]=\"state\" class=\"img-fluid img-slide\" [src]=\"img.field_tech_image.url\" [alt]=\"img.field_tech_image.alt\">\n                </ngx-tile>\n            </div>\n        </div>\n</div>\n    \n    "
+module.exports = "<div class=\"row position-relative row-tec\" [ngStyle]=\"{'background-image':'url(' + background + ')'}\">\n        <div class=\"position-absolute content-trans\"></div>\n        <div class=\"col-md-12 pt-5 pb-2 px-2\">\n            <h1 class=\"text-center text-white\">{{ title }}</h1>\n        </div>\n        <div class=\"col-md-12 py-5 px-2\">\n            <div class=\"tec-slider\">\n                <ngx-tile NgxCarouselItem id=\"logos\" *ngFor=\"let im of arrayLogosCustom\" >\n                    <img *ngFor=\"let img of im\" [src]=\"img.field_tech_image.url\" [alt]=\"img.field_tech_image.alt\">\n                </ngx-tile>\n            </div>\n        </div>\n</div>\n\n"
 
 /***/ }),
 
@@ -2684,7 +2684,7 @@ module.exports = "<div class=\"row position-relative row-tec\" [ngStyle]=\"{'bac
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".row-tec {\n  background-attachment: fixed;\n  background-position: center;\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-image: url(/assets/images/fnd-tecnologias.jpg) !important;\n  min-height: 380px; }\n  .row-tec .content-trans {\n    background: #002b49c0;\n    width: 100%;\n    height: 100%; }\n  .row-tec .tec-slider {\n    width: 100%;\n    margin: 0 auto;\n    display: flex; }\n  .row-tec .tec-slider .item {\n      margin: 0 auto; }\n  .row-tec .tec-slider .div-slide {\n      margin: 0 auto; }\n  .img-fluid {\n  max-width: 100%;\n  height: auto;\n  margin: 20px; }\n  :host ::ng-deep .tile {\n  box-shadow: none !important; }\n  @media screen and (max-width: 480px) {\n  .img-slide {\n    width: 70%;\n    display: block;\n    height: auto;\n    margin: 20px auto; } }\n"
+module.exports = ".row-tec {\n  background-attachment: fixed;\n  background-position: center;\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-image: url(/assets/images/fnd-tecnologias.jpg) !important;\n  min-height: 380px; }\n  .row-tec .content-trans {\n    background: #002b49c0;\n    width: 100%;\n    height: 100%; }\n  .row-tec .tec-slider {\n    width: 100%;\n    margin: 0 auto;\n    display: flex; }\n  .row-tec .tec-slider .item {\n      margin: 0 auto; }\n  .row-tec .tec-slider .div-slide {\n      margin: 0 auto; }\n  .row-tec .tec-slider /deep/ img {\n      padding-right: 61px;\n      padding-left: 61px; }\n  .img-fluid {\n  max-width: 100%;\n  height: auto;\n  margin: 20px; }\n  :host ::ng-deep .tile {\n  box-shadow: none !important; }\n  @media screen and (max-width: 480px) {\n  .img-slide {\n    width: 70%;\n    display: block;\n    height: auto;\n    margin: 20px auto; } }\n"
 
 /***/ }),
 
