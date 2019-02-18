@@ -23,6 +23,8 @@ export class iMedicalComponent implements OnInit {
     this._http
       .getCustomCardInformation("moduleinformation")
       .subscribe(params => {
+        this.tituloModulos = params.header[0].data.title;
+        this.descripcionModulos = params.header[1].data.title
         for (let blurbItem of params.data) {
           let blurbObject: Blurb = {
             imageSrc: "",
