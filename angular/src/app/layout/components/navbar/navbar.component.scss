@@ -147,6 +147,15 @@
                           border-top: initial;
                       }
                   }
+                  &:hover {
+                    i {
+                        color: #a6cf24;
+                    }
+                    .link {
+                        color: #a6cf24;
+                        text-decoration: none;
+                    }
+                  }
                   .link {
                       color: #002b49;
                       width: 100%;
@@ -159,10 +168,7 @@
                       @media (max-width: $desktop) {
                           display: block;
                       }
-                      &:hover {
-                          color: #a6cf24;
-                          text-decoration: none;
-                      }
+
                       @include breakpoint(desktop) {
                           color: #ffffff;
                           padding-left: 12%;
@@ -307,6 +313,16 @@
                     @media (max-width: 1080px) {
                         border: 1px solid #f5fafc;
                     }
+                    &:hover {
+                        > i {
+
+                            color: #a6cf24;
+                        }
+                        > a.link {
+                            text-decoration: none;
+                            color: #a6cf24;
+                        }
+                    }
                     > a.link {
                         border-bottom: 1px solid rgb(206, 206, 206);
                         padding: 12px;
@@ -329,10 +345,7 @@
                             border: 0;
                             border-bottom: 1px solid #eef6f9;
                         }
-                        &:hover {
-                            text-decoration: none;
-                            color: #a6cf24;
-                        }
+
                     }
                     > img {
                         display: none;
