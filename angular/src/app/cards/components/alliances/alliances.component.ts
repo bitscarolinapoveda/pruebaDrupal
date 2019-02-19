@@ -26,11 +26,6 @@ declare var $: any;
   ]
 })
 export class AlliancesComponent implements OnInit {
-
-  // allianceTitle: any[];
-  // allianceArrayLogos: any[];
-  // allianceBackground: any[];
-
   allianceArrayLogos:any = [];
   arrayLogosCustom:any[][];
   allianceTitle:string = "";
@@ -40,7 +35,6 @@ export class AlliancesComponent implements OnInit {
 
   constructor (
     private alliance: CustomCardService,
-    // private _tecnologies: CustomCardService,
     public el: ElementRef
   ) {
     this.arrayLogosCustom = [];
@@ -60,7 +54,6 @@ export class AlliancesComponent implements OnInit {
 
   ngOnInit () {
     this.getAlliance();
-    // this.getItemsTecnologies() 
     this.allianceArrayLogos = [0, 1, 2, 3, 4, 5,];
     this.carocarouselTile = {
       grid: {xs: 1, sm: 1, md: 1, lg: 1, all: 0},
@@ -115,16 +108,6 @@ export class AlliancesComponent implements OnInit {
       }    
     }
   }
-  
-  // getItemsTecnologies() {
-  //   return this._tecnologies.getCustomCardInformation('technologies').subscribe(items => {
-  //     this.title = items.header[0].data.title;
-  //     this.background = items.body[0].data.back_movil[0].url;
-  //     this.arrayLogos = items.data;
-  //     this.customArrayImages( this.arrayLogos );
-  //     /*this.createSlick();*/
-  //   });
-  // }
 
   getAlliance () {
     return this.alliance.getCustomCardInformation('ouralliance').subscribe(items => {
@@ -132,7 +115,6 @@ export class AlliancesComponent implements OnInit {
       this.allianceBackground = items.body[0].data.back_movil[0].url;
       this.allianceArrayLogos = items.data;
       this.customArrayImages( this.allianceArrayLogos );
-      //this.allianceArrayLogos = items.files[0].data.logo;
     });
   }
 }
