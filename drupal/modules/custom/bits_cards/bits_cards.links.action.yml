@@ -1,0 +1,6 @@
+entity.service_product_bits.add_form:
+  route_name: entity.service_product_bits.add_form
+  title: 'Add Service product bits'
+  appears_on:
+    - entity.service_product_bits.collection
+
