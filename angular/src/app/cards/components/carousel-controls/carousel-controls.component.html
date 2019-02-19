@@ -1,15 +1,15 @@
 <section id="main-title">
-    <h2>{{ caroseltitle?.titulo }}</h2>
+    <h2>{{ caroseltitle }}</h2>
 </section>
 
 <div class="contenedor">
     <ngx-carousel
-    [inputs]="carocarouselTile" 
+    [inputs]="carocarouselTile"
     (carouselLoad)="carouselTileLoad($event)">
         <ngx-tile NgxCarouselItem *ngFor="let main of CarouselControlArray; let i = index">
             <a href="" class="url-link">
                 <div class="container-img">
-                    <img class="d-block img-fluid img-float  mx-auto" src="{{ main.field_image }}">
+                    <img class="d-block img-fluid img-float  mx-auto" src="{{ main.field_image.url }}" alt="{{ main.field_image.alt }}">
                 </div>
                 <div class="info">
                     <hr class="line">
@@ -19,7 +19,7 @@
                     <h5 class="yeard">{{main.field_year}}</h5>
                 </div>
             </a>
-        </ngx-tile>                
+        </ngx-tile>
     <button NgxCarouselPrev class='leftRs'>&lt;</button>
     <button NgxCarouselNext class='rightRs'>&gt;</button>
   </ngx-carousel>

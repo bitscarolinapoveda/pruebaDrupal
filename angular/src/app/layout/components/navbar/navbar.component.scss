@@ -147,6 +147,15 @@
                           border-top: initial;
                       }
                   }
+                  &:hover {
+                    i {
+                        color: #a6cf24 !important;
+                    }
+                    .link {
+                        color: #a6cf24;
+                        text-decoration: none;
+                    }
+                  }
                   .link {
                       color: #002b49;
                       width: 100%;
@@ -159,10 +168,7 @@
                       @media (max-width: $desktop) {
                           display: block;
                       }
-                      &:hover {
-                          color: #a6cf24;
-                          text-decoration: none;
-                      }
+
                       @include breakpoint(desktop) {
                           color: #ffffff;
                           padding-left: 12%;
@@ -284,7 +290,6 @@
             //  Cuando pasa por encima de cualquier li, el deja visible a los hijos
             li:hover > app-menu-item > ul {
                 display: block;
-
                 li:hover i.fa-angle-right{
                     transform: rotate(90deg);
                     transition: 0.5s ease all;
@@ -308,6 +313,16 @@
                     @media (max-width: 1080px) {
                         border: 1px solid #f5fafc;
                     }
+                    &:hover {
+                        > i {
+
+                            color: #a6cf24;
+                        }
+                        > a.link {
+                            text-decoration: none;
+                            color: #a6cf24;
+                        }
+                    }
                     > a.link {
                         border-bottom: 1px solid rgb(206, 206, 206);
                         padding: 12px;
@@ -330,10 +345,7 @@
                             border: 0;
                             border-bottom: 1px solid #eef6f9;
                         }
-                        &:hover {
-                            text-decoration: none;
-                            color: #a6cf24;
-                        }
+
                     }
                     > img {
                         display: none;
