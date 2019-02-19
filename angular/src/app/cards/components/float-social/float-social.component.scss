@@ -6,7 +6,7 @@
   opacity: 0.7;
   position: fixed;
   z-index: 9;
-  bottom: 120px;
+  bottom: 50px;
   display: none;
   @include breakpoint(desktop){
     display: block;
@@ -41,11 +41,11 @@
   border-radius: 50%;
   display: block;
   z-index: 9;
-  right: 40px;
-  bottom: 0;
+  right: 18px;
+  bottom: 15px;
   @include breakpoint(desktop){
     border-radius: 0;
-    bottom: 40px;
+    bottom: 0;
     right: initial;
   }
   .icon-mail {
@@ -56,7 +56,7 @@
       margin-right: 0;
       margin-left: 0;
       .fa-li {
-        left: 0;
+        left: -1px;
         @include breakpoint(desktop){
           left: 0;
         }

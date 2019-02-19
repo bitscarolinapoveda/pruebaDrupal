@@ -32,7 +32,10 @@ export class TecnologiesComponent implements OnInit{
   public carocarouselTile: NgxCarousel;
   state = 'hide'
 
-  constructor(private _tecnologies: CustomCardService, public el: ElementRef) {
+  constructor(
+    private _tecnologies: CustomCardService, 
+    public el: ElementRef
+    ) {
     this.arrayLogosCustom = [];
   }
 
@@ -45,8 +48,7 @@ export class TecnologiesComponent implements OnInit{
       } else {
         this.state = 'show' 
       }
-
-    }
+    }  
 
   ngOnInit() {
     this.getItemsTecnologies();
