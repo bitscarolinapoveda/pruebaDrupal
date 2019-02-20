@@ -7,7 +7,7 @@
         <h3 class="condensed">{{ cil.title }}</h3>
         <h1>{{ titleL | uppercase }}</h1>
         <hr class="green">
-        <p class="text-justify">{{ cil.field_des }}</p>
+        <p class="text-justify" [innerHTML]="cil.field_des"></p>
         <a [href]="cil.field_link_imedical_media" class="green">{{ cil.field_link_imedical_media }}</a>
     </div>
 </div>
@@ -17,7 +17,7 @@
         <h3 class="condensed">{{ cir.title }}</h3>
         <h1>{{ titleR | uppercase }}</h1>
         <hr class="green">
-        <p class="text-justify">{{ cir.field_des }}</p>
+        <p class="text-justify" [innerHTML]="cir.field_des"></p>
         <a [href]="cir.field_link_imedical_media" class="green">{{ cir.field_link_imedical_media }}</a>
     </div>
     <div class="col-md-4 p-0" *ngFor="let cir of cardImgR">
