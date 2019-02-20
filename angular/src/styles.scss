@@ -32,31 +32,3 @@ body {
     }
 }
 
-header .logo {
-    width: 15%;
-    position: fixed;
-    z-index: 1022;
-    .container-logo {
-        width: 100%;
-        padding-left: 50%;
-        padding-top: 28%;
-        position: relative;
-        z-index: 100;
-        @media (min-width: 668px) and (max-width: 1024px) {
-            padding-top: 20%;
-        }
-        .image-url {
-            width: 100%;
-            position: relative;
-            left: 28%;
-            img {
-                width: 90px;
-                @media (min-width: 1025px) {
-                    width: 100%;
-                    padding-left: 4%;
-                    padding-top: 2%;
-                }
-            }
-        }
-    }
-}

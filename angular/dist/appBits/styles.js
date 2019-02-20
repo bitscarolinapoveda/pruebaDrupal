@@ -82,14 +82,14 @@ module.exports = "/* based on angular-toastr css https://github.com/Foxandxss/an
 
 /***/ }),
 
-/***/ "./node_modules/raw-loader/index.js!./node_modules/postcss-loader/lib/index.js??embedded!./src/styles.css":
-/*!**********************************************************************************************!*\
-  !*** ./node_modules/raw-loader!./node_modules/postcss-loader/lib??embedded!./src/styles.css ***!
-  \**********************************************************************************************/
+/***/ "./node_modules/raw-loader/index.js!./node_modules/postcss-loader/lib/index.js??embedded!./node_modules/sass-loader/lib/loader.js??ref--14-3!./src/styles.scss":
+/*!***************************************************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader!./node_modules/postcss-loader/lib??embedded!./node_modules/sass-loader/lib/loader.js??ref--14-3!./src/styles.scss ***!
+  \***************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "@font-face {\n    font-family: 'Open Sans light';\n    font-style: light;\n    font-weight: 300;\n    src: url('OpenSans-Light.ttf');\n}\n\n@font-face {\n    font-family: 'Open Sans bold';\n    font-style: bold;\n    font-weight: 700;\n    src: url('OpenSans-Bold.ttf');\n}\n\n@font-face {\n    font-family: 'Open Sans';\n    font-style: regular;\n    font-weight: 400;\n    src: url('OpenSans-Regular.ttf');\n}\n\n@font-face {\n    font-family: 'Open Sans Codensed';\n    font-style: regular;\n    font-weight: 400;\n    src: url('OpenSansCondensed-Light.ttf');\n}\n\nbody h1,\nbody h2 {\n    font-family: 'Open Sans light';\n}"
+module.exports = "@font-face {\n  font-family: 'Open Sans light';\n  font-style: light;\n  font-weight: 300;\n  src: url('OpenSans-Light.ttf'); }\n\n@font-face {\n  font-family: 'Open Sans bold';\n  font-style: bold;\n  font-weight: 700;\n  src: url('OpenSans-Bold.ttf'); }\n\n@font-face {\n  font-family: 'Open Sans';\n  font-style: regular;\n  font-weight: 400;\n  src: url('OpenSans-Regular.ttf'); }\n\n@font-face {\n  font-family: 'Open Sans Codensed';\n  font-style: regular;\n  font-weight: 400;\n  src: url('OpenSansCondensed-Light.ttf'); }\n\nbody h1, body h2 {\n  font-family: 'Open Sans light'; }\n"
 
 /***/ }),
 
@@ -584,15 +584,15 @@ module.exports = function (css) {
 
 /***/ }),
 
-/***/ "./src/styles.css":
-/*!************************!*\
-  !*** ./src/styles.css ***!
-  \************************/
+/***/ "./src/styles.scss":
+/*!*************************!*\
+  !*** ./src/styles.scss ***!
+  \*************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../node_modules/raw-loader!../node_modules/postcss-loader/lib??embedded!./styles.css */ "./node_modules/raw-loader/index.js!./node_modules/postcss-loader/lib/index.js??embedded!./src/styles.css");
+var content = __webpack_require__(/*! !../node_modules/raw-loader!../node_modules/postcss-loader/lib??embedded!../node_modules/sass-loader/lib/loader.js??ref--14-3!./styles.scss */ "./node_modules/raw-loader/index.js!./node_modules/postcss-loader/lib/index.js??embedded!./node_modules/sass-loader/lib/loader.js??ref--14-3!./src/styles.scss");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -615,15 +615,15 @@ if(false) {}
 /***/ }),
 
 /***/ 2:
-/*!***********************************************************************************************************************!*\
-  !*** multi ./src/styles.css ./node_modules/bootstrap/dist/css/bootstrap.min.css ./node_modules/ngx-toastr/toastr.css ***!
-  \***********************************************************************************************************************/
+/*!************************************************************************************************************************!*\
+  !*** multi ./src/styles.scss ./node_modules/bootstrap/dist/css/bootstrap.min.css ./node_modules/ngx-toastr/toastr.css ***!
+  \************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/bits/Sites/webSiteBitsD8/angular/src/styles.css */"./src/styles.css");
-__webpack_require__(/*! /Users/bits/Sites/webSiteBitsD8/angular/node_modules/bootstrap/dist/css/bootstrap.min.css */"./node_modules/bootstrap/dist/css/bootstrap.min.css");
-module.exports = __webpack_require__(/*! /Users/bits/Sites/webSiteBitsD8/angular/node_modules/ngx-toastr/toastr.css */"./node_modules/ngx-toastr/toastr.css");
+__webpack_require__(/*! /var/www/bitsamericas/webSiteBitsD8/angular/src/styles.scss */"./src/styles.scss");
+__webpack_require__(/*! /var/www/bitsamericas/webSiteBitsD8/angular/node_modules/bootstrap/dist/css/bootstrap.min.css */"./node_modules/bootstrap/dist/css/bootstrap.min.css");
+module.exports = __webpack_require__(/*! /var/www/bitsamericas/webSiteBitsD8/angular/node_modules/ngx-toastr/toastr.css */"./node_modules/ngx-toastr/toastr.css");
 
 
 /***/ })

@@ -2,6 +2,7 @@ import { ContentType } from '../../../services/cards/content-type.services';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { isArray } from 'util';
+import { CustomCardService } from 'src/app/services/cards/v1-card.services';
 
 @Component({
   selector: 'app-product-services',
@@ -10,30 +11,22 @@ import { isArray } from 'util';
 })
 export class ProductServicesComponent implements OnInit {
 
-  servicesProduct: any[];
-  titleProducts ;
+  public servicesProduct: any[];
+  public title: string;
 
   constructor(
-    private router: ActivatedRoute,
-    private contentTypeService: ContentType) {
-    this.titleProducts = [];
+    private _cardService: CustomCardService) {
     this.servicesProduct = [];
-
-
   }
 
   ngOnInit() {
     this.getProductsAndServicesItems();
-
   }
 
   getProductsAndServicesItems() {
-    this.contentTypeService.getContentTypeItems('products').subscribe(items => {
-      this.servicesProduct = items.datos;
-      this.titleProducts = items;
-      this.servicesProduct = Object.keys(items.datos).map(function(key) {
-        return items.datos[key];
-      });
+    this._cardService.getCustomCardInformation('productsandservicescard').subscribe(items => {
+      this.servicesProduct = items.data;
+      this.title = items.header[0].data.title;
     });
   }
 }

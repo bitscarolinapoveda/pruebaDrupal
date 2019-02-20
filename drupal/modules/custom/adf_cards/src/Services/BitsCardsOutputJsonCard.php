@@ -85,11 +85,17 @@ class BitsCardsOutputJsonCard {
 
           if ($type === 'image') {
             $imageData = $node->get($field)->getValue();
-            $file = \Drupal\file\Entity\File::load($imageData[0]['target_id']);
             $data[$field] = [
-              'url' => file_create_url($file->getFileUri()),
-              'alt' => $imageData[0]['alt'],
+              'url' => '',
+              'alt' => '',
             ];
+            if (0 < count($imageData)) {
+              $file = \Drupal\file\Entity\File::load($imageData[0]['target_id']);
+              $data[$field] = [
+                'url' => file_create_url($file->getFileUri()),
+                'alt' => $imageData[0]['alt'],
+              ];
+            }
           }
           elseif ($type === 'text_with_summary') {
             $value = $node->get($field)->getValue();

@@ -15,16 +15,16 @@ export class CustomCardService {
       subtitleSlide: "Subtitulo de diapositiva",
       descriptionSlide: "Reprehenderit cupidatat pariatur qui amet dolore id minim eu qui ipsum qui.",
       listTextSlide: ['Caracteristica #1', 'Caracteristica #2', 'Caracteristica #3'],
-      imgSrcSlide: "../../../../assets/images/phone-mockup.png",
-      bkgSrcSlide: "../../../../assets/images/fondo-hospital.jpg"
+      imgSrcSlide: "/assets/images/phone-mockup.png",
+      bkgSrcSlide: "/assets/images/fondo-hospital.jpg"
     },
     {
       titleSlide: "Título de la diapositiva 2",
       subtitleSlide: "Subtitulo de diapositiva",
       descriptionSlide: "Reprehenderit cupidatat pariatur qui amet dolore id minim eu qui ipsum qui.",
       listTextSlide: ['Caracteristica #1', 'Caracteristica #2', 'Caracteristica #3'],
-      imgSrcSlide: "../../../../assets/images/phone-mockup2.png",
-      bkgSrcSlide: "../../../../assets/images/fondo-hospital2.jpg"
+      imgSrcSlide: "/assets/images/phone-mockup2.png",
+      bkgSrcSlide: "/assets/images/fondo-hospital2.jpg"
     }
   ];
 
@@ -42,12 +42,12 @@ export class CustomCardService {
   }
 
   getSliderData():Slide[]{
-    //return this.http.get('v1/card/contact/export/custom?_format=json&bid=slider');
+    // return this.http.get('v1/card/contact/export/custom?_format=json&bid=slider');
     return this.sliderData;
   }
 
   getTabsData(){
-    return this.http.get('v1/card/export/tab-horizontal');
+    //return this.http.get('v1/card/export/tab-horizontal');
   }
 }
 

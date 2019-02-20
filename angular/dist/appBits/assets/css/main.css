@@ -23,7 +23,7 @@
                 @media (min-width: 1025px) {
                     body footer {
                         width: 100%;
-                    }
+                    }    
                 }
 
                 @media (min-width: 1025px) {
@@ -763,7 +763,7 @@
                     margin-bottom: 0;
                 }
 
-                header .logo {
+                /* header .logo {
                     width: 15%;
                     position: fixed;
                     z-index: 1022;
@@ -806,7 +806,7 @@
                         padding-left: 4%;
                         padding-top: 2%;
                     }
-                }
+                } */
 
                 body footer .privacy {
                     width: 100%;
@@ -2951,9 +2951,9 @@
                   display: block;
                 }
 
-                .menu-caret{
+                /* .menu-caret{
                   color:#fff;
-                }
+                } */
 
                 .submenu-image{
                   /* placement */

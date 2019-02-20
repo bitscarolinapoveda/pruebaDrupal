@@ -1,16 +1,13 @@
-<section id="transition-image2">
-    <picture *ngIf="allianceBackground">
-        <source media="(max-width:500px)" [srcset]="allianceBackground.url">
-        <img class="w-100 backgraund-image" [src]="allianceBackground.url" alt="{{ allianceBackground.title }}">
-    </picture>
-    <h1>{{ allianceTitle?.title }}</h1>
-    <div class="list-image-item">
-        <ul class="row">
-            <li *ngFor="let our of allianceArrayLogos; let id = index">
-                <picture>
-                    <img id="slide-img2-{{ id }}" class="img-item2" [src]="our.field_alliance_image.url" [alt]="our.field_alliance_image.alt" >
-                </picture>
-            </li>
-        </ul>
+<div class="row position-relative row-tec" [ngStyle]="{'background-image':'url(' + allianceBackground + ')'}">
+    <div class="position-absolute content-trans"></div>
+    <div class="col-md-12 pt-5 pb-2 px-2">
+        <h1 class="text-center text-white">{{ allianceTitle }}</h1>
     </div>
-</section>
+    <div class="col-md-12 py-5 px-2">
+        <div class="tec-slider">
+            <ngx-tile NgxCarouselItem id="logos" *ngFor="let im of arrayLogosCustom" class="mx-auto div-slide"  >
+                <img *ngFor="let img of im" [@fade]="state" class="img-fluid img-slide" [src]="img.field_alliance_image.url" [alt]="img.field_alliance_image.alt">
+            </ngx-tile>
+        </div>
+    </div>
+</div>

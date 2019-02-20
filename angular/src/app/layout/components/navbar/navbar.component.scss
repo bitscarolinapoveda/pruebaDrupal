@@ -1,8 +1,8 @@
 @import './src/assets/scss/mixin.scss';
-header {
-  .inverse-color {
-      background: #ffffff;
-  }
+#block-navbar {
+    .inverse-color {
+        background: #ffffff;
+    }
   .color-white {
       background: #ffffff;
   }
@@ -33,6 +33,9 @@ header {
           position: relative;
           width: 100%;
           z-index: 1;
+          @media only screen and (max-width: 1080px){
+            padding-top: 1%;
+          }
           @include breakpoint(tablet) {
               top: 38px;
           }
@@ -85,9 +88,9 @@ header {
                   display: none;
               }
           }
-          .color-scroll {
-              background: #0c7ffb;
-          }
+        //   .color-scroll {
+        //       background: #0c7ffb;
+        //   }
           .lines:first-child {
               transform-origin: 0% 0%;
           }
@@ -114,6 +117,7 @@ header {
                   transition-delay: initial;
               }
               .items {
+                  cursor: pointer;
                   list-style: none;
                   padding-bottom: 7%;
                   padding-top: 7%;
@@ -143,6 +147,15 @@ header {
                           border-top: initial;
                       }
                   }
+                  &:hover {
+                    i {
+                        color: #a6cf24 !important;
+                    }
+                    .link {
+                        color: #a6cf24;
+                        text-decoration: none;
+                    }
+                  }
                   .link {
                       color: #002b49;
                       width: 100%;
@@ -155,10 +168,7 @@ header {
                       @media (max-width: $desktop) {
                           display: block;
                       }
-                      &:hover {
-                          color: #a6cf24;
-                          text-decoration: none;
-                      }
+
                       @include breakpoint(desktop) {
                           color: #ffffff;
                           padding-left: 12%;
@@ -202,6 +212,9 @@ header {
                   .tigger-menu {
                       background: #ffffff;
                       color: #002b49;
+                      @media (max-width: $desktop) {
+                        border-bottom: 1px solid #eef6f9;
+                      }
                   }
               }
               .language {
@@ -217,18 +230,46 @@ header {
                 .menu-caret {
                     display: block;
                     @include breakpoint(desktop) {
-                        position: absolute;
-                        right: 10px;
-                        bottom: 30px;
+                        &.fas.fa-caret-down {
+                            font-size: 10px;
+                            position: absolute;
+                            right: 35px;
+                            bottom: 46px;
+                            color: #fff;
+                            @media (max-width: 1281px) {
+                                right: 12px;
+                                bottom: 31px;
+                            }
+                            @media (min-width: 1282px) and (max-width: 1367px) {
+                                right: 14px;
+                                bottom: 34px;
+                            }
+                            @media (min-width: 1368px) and (max-width: 1441px) {
+                                right: 16px;
+                                bottom: 35px;
+                            }
+
+                        }
+                        &.fas.fa-angle-right {
+                            color: #002b49;
+                            font-size: 13px;
+                            position: absolute;
+                            right: 18px;
+                            bottom: 18px;
+                            transition: 0.5s ease all;
+                        }
                     }
                     @media (max-width: $desktop) {
                         position: absolute;
                         right: 10px;
-                        top: 0px;
+                        top: 8px;
                         width: 45px;
                         height: 45px;
                         box-sizing: border-box;
                         padding: 15px 18px;
+                        &.fa-caret-down-item-menu {
+                            top: 2px;
+                        }
                     }
                 }
             }
@@ -249,60 +290,101 @@ header {
             //  Cuando pasa por encima de cualquier li, el deja visible a los hijos
             li:hover > app-menu-item > ul {
                 display: block;
+                li:hover i.fa-angle-right{
+                    transform: rotate(90deg);
+                    transition: 0.5s ease all;
+                }
             }
             // Estilos de la fila 2 del menu
             ul.customulrow-2 {
                 list-style-type: none;
                 position: absolute;
                 padding: 0px;
-                bottom: -77px;
                 right: 0px;
+                @include breakpoint(desktop) {
+                    margin-top: -2px;
+                }
                 @media (max-width: $desktop) {
                     position: relative;
                     bottom: 0;
                 }
                 > li.customrow-2 {
+                    // border: 1px solid rgb(206, 206, 206);
+                    @media (max-width: 1080px) {
+                        border: 1px solid #f5fafc;
+                    }
+                    &:hover {
+                        > i {
+
+                            color: #a6cf24;
+                        }
+                        > a.link {
+                            text-decoration: none;
+                            color: #a6cf24;
+                        }
+                    }
                     > a.link {
-                        padding: 5px;
-                        padding-left: 23px;
+                        border-bottom: 1px solid rgb(206, 206, 206);
+                        padding: 12px;
+                        padding-left: 11px;
                         text-align: left;
                         background: #fff;
                         display: block;
-                        font-size: 13px;
+                        font-family: Open Sans;
+                        font-size: 15px;
                         font-weight: 400;
-                        color: #333;
+                        color: #002b49;
                         min-height: 38px;
-                        padding-top: 9px;
+                        height: 49px;
                         @include breakpoint(desktop) {
-                            width: 194px;
+                            width: 251px;
                         }
                         @media (max-width: $desktop) {
                             padding-left: 45px;
+                            font-family: Open Sans Light;
+                            border: 0;
+                            border-bottom: 1px solid #eef6f9;
                         }
-                        &:hover {
-                            text-decoration: none;
-                        }
+
                     }
                     > img {
                         display: none;
                     }
                 }
             }
-            // Estilos de la fila 2 del menu
+            // Estilos de la fila 3 del menu
             ul.customulrow-3 {
+                border: 1px solid rgb(206, 206, 206);
                 list-style-type: none;
                 padding: 0;
+                position: relative;
+                &::before {
+                    @include breakpoint(desktop) {
+                        content: '';
+                        display: block;
+                        background-image: url('/assets/images/MenuLuzDiagonal.png');
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                    }
+                }
                 @include breakpoint(desktop) {
-                    width: 333px;
+                    width: 430px;
                     background: #fff;
                     top: 0;
-                    background-position-x: right;
-                    background-position-y: bottom;
+                    background-size: cover;
+                    background-position:  bottom right;
                     background-repeat: no-repeat;
                     position: absolute;
                     right: 194px;
-                    height: 189px;
-                    left: -333px;
+                    height: 245px;
+                    left: -431px;
+
+                }
+                @media (max-width: $desktop) {
+                    border: 0;
                 }
                 > li.customrow-3 {
                     @include breakpoint(desktop) {
@@ -312,16 +394,41 @@ header {
                         float: left;
                     }
                     > a.link {
+                        font-family: Open Sans;
+                        font-size: 15px;
+                        color: #002b49;
                         display: block;
+                        background-color: transparent;
                         @include breakpoint(desktop) {
                             color: #333;
                             padding: 9px;
                         }
                         @media (max-width: $desktop) {
-                            padding-left: 80px;
+                            padding-left: 76px;
+                            padding-top: 15px;
+                            font-family: Open Sans Light;
+                            border: 0;
+                            text-align: left;
+                            background: #fff;
+                            display: block;
+                            font-size: 15px;
+                            font-weight: 400;
+                            color: #002b49;
+                            min-height: 38px;
+                            height: 49px;
+                            border-bottom: 1px solid #eef6f9;
+                        }
+                        .title {
+                            @media (max-width: $desktop) {
+                                color: #002b49;
+                                font-size: 15px;
+                            }
                         }
                         .description {
                             display: none;
+                            font-family: Open Sans Light;
+                            font-size: 13px;
+                            color: #002b49;
                             @include breakpoint(desktop) {
                                 display: block;
                             }
@@ -353,30 +460,32 @@ header {
       }
     }
     .shadow-if-exit-scroll {
-        box-shadow: 0 2px 8px rgb(209, 209, 209);
+        box-shadow: 0 2px 2px rgb(209, 209, 209);
     }
 }
 
 app-navbar  /deep/ {
-    .menu-item-child a{
-        text-decoration: none;
-      }
+    .menu-item-child {
+        .a{
+            text-decoration: none;
+        }
 
-      .menu-tree-level{
-        list-style-type: none;
-        display: none;
-      }
+        .menu-tree-level{
+            list-style-type: none;
+            display: none;
+        }
 
-      .menu-has-children:hover > app-menu-item > .menu-tree-level{
-        display: block;
-      }
+        .menu-has-children:hover > app-menu-item > .menu-tree-level{
+            display: block;
+        }
 
-      .menu-caret{
-        color:#fff;
-      }
+        .fa-angle-right {
+            color: #002b49;
+        }
 
-      .locations-container{
-        height: 100%;
-        width: 100%;
-      }
+        .locations-container{
+            height: 100%;
+            width: 100%;
+        }
+    }
 }

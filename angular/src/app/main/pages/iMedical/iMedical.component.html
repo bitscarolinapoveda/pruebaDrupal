@@ -1,4 +1,4 @@
-<app-banner titulo="iMedical" imgFondo="../../assets/images/imedicalweb.png"></app-banner>
+<app-banner titulo="iMedical" imgFondo="/assets/images/imedicalweb.png"></app-banner>
 <div class="my-5">
     <div class="container">
         <div class="row">
@@ -18,7 +18,7 @@
         <div class="row">
             <div class="col-md-12 mb-5">
                 <h1 class="condensed text-center">{{ tituloModulos }}</h1>
-                <p class="text-center">{{ descripcionModulos }}</p>
+                <p class="text-center" [innerHTML]="descripcionModulos"></p>
             </div>
             <div class="col-md-4" *ngFor="let blurbItem of blurbArray">
                 <app-blurb [blurb]="blurbItem"></app-blurb>
@@ -31,7 +31,10 @@
         <app-separator [iconCustom]="'fa-cogs'"></app-separator>
         <app-card-img-text [orientacion]="'TI'"></app-card-img-text>
         <app-separator [iconCustom]="'fa-cogs'"></app-separator>
-        <app-video-information [link]="'www.eliseupnorcum.cedu.co'"></app-video-information>
+        <app-carousel-item-2></app-carousel-item-2>
         <app-separator [iconCustom]="'fa-cogs'"></app-separator>
+        <app-video-information [link]="'www.eliseupnorcum.cedu.co'"></app-video-information>
+        <app-separator [iconCustom]="'fa-cogs'"></app-separator>        
     </div>
+    <app-workwithus></app-workwithus>
 </div>

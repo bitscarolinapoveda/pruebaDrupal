@@ -2,7 +2,17 @@
 
 :host /deep/ .carousel-control-next, 
 :host /deep/.carousel-control-prev {
-  width: 50px;
+  width: 38px;
+}
+:host /deep/ .carousel-control-prev .carousel-control-prev-icon {
+  background-image: url('/../assets/images/LeftArrow.svg');
+  width: 41px;
+  height: 77px;
+}
+:host /deep/ .carousel-control-next .carousel-control-next-icon {
+  background-image: url('/../assets/images/rightArrow.svg');
+  width: 41px;
+  height: 77px;
 }
 :host /deep/ .carousel-indicators {
   bottom: 150px;
@@ -55,8 +65,9 @@
     .button-explorar {
       justify-content: center;
   
-      .fa-angle-down {
-        color: white;
+      .down-arrow-slider {
+        width: 21px;
+        height: 15px;
       }
       .anchor {
         font-family: Open Sans Codensed;
@@ -80,7 +91,7 @@
   #carousel-container {
     .carousel-caption {
       text-align: center;
-      top: 40%;
+      top: 35%;
       padding: 0 50px 0 50px;
   
       .carousel-title {
@@ -96,4 +107,10 @@
       }
     }
   }
+}
+
+@media only screen and (max-width: 321px) {
+  :host /deep/ .carousel-indicators {
+    bottom: 95px;
+  }  
 }

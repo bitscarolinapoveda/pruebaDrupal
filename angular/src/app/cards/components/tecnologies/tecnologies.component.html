@@ -1,13 +1,14 @@
 <div class="row position-relative row-tec" [ngStyle]="{'background-image':'url(' + background + ')'}">
-    <div class="position-absolute content-trans"></div>
-    <div class="col-md-12 pt-5 pb-2 px-2">
-        <h1 class="text-center text-white">{{ title }}</h1>
-    </div>
-    <div class="col-md-12 py-5 px-2">
-        <div class="tec-slider">
-            <div *ngFor="let im of arrayLogosCustom" class="mx-auto div-slide">
-                <img *ngFor="let img of im" class="img-fluid img-slide" [src]="img.field_tech_image.url" [alt]="img.field_tech_image.alt">
+        <div class="position-absolute content-trans"></div>
+        <div class="col-md-12 pt-5 pb-2 px-2">
+            <h1 class="text-center text-white">{{ title }}</h1>
+        </div>
+        <div class="col-md-12 py-5 px-2">
+            <div class="tec-slider">
+                <ngx-tile NgxCarouselItem id="logos" *ngFor="let im of arrayLogosCustom" >
+                    <img *ngFor="let img of im" [src]="img.field_tech_image.url" [alt]="img.field_tech_image.alt">
+                </ngx-tile>
             </div>
         </div>
-    </div>
 </div>
+

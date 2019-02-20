@@ -7,6 +7,7 @@ import {ContactUsComponent} from './contact-us/contact-us.component';
 import {ProjectsComponent} from "./projects/projects.component";
 import {ProductsComponent} from "./products/products.component";
 import {ServicesComponent} from "./services/services.component";
+import {WorkusComponent} from "./workus/workus.component"
 
 import { iMedicalComponent } from "./iMedical/iMedical.component";
 import { PoliticsComponent } from "./politics/politics.component";
@@ -20,12 +21,14 @@ const pagesRoutes: Routes = [
       {path: '', redirectTo: 'home', pathMatch: 'full'},
       {path: 'home', component: HomeComponent},
       {path: 'contact-us', component: ContactUsComponent},
+      {path: 'workus', component: WorkusComponent},
       {path: 'products', component: ProductsComponent},
       {path: 'projects', component: ProjectsComponent},
       {path: 'services', component: ServicesComponent},
-      {path: 'iMedical', component: iMedicalComponent},
+      {path: 'imedical', component: iMedicalComponent},
       {path: 'politics', component: PoliticsComponent},
-      {path: '**', component: NoPageFoundComponent},
+      {path: '**', component: NoPageFoundComponent}
+      
 
       // { path: 'home', component: HomeComponent },
       // { path: '', component: HomeComponent },
@@ -34,8 +37,11 @@ const pagesRoutes: Routes = [
       // { path: 'home', component: HomeComponent },
       // { path: '', redirectTo: '/home', pathMatch: 'full' },
       // { path: 'contact-us', component: ContactUsComponent },
+      // {path: 'workus', component: WorkusComponent},
       // { path: 'contact-us', redirectTo: '/contact-us' },
+      // {path: 'workus', redirectTo: '/workus'},
       // { path: '**', component: NoPageFoundComponent },
+   
     ]
   }
 ];

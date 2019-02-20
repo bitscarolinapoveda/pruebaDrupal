@@ -1,112 +1,50 @@
 @import './src/assets/scss/mixin.scss';
-#transition-image2 {
-    margin-top: 53px;
-    height: 358px;
-    display: block;
-    @include breakpoint(desktop) {
-        height: 300px;
+.row-tec {
+    width: 100%;
+    margin: 0;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image:url(/assets/images/fnd-tecnologias.jpg);
+    min-height: 380px;
+    .content-trans {
+        background:rgba(0, 0, 0, 0.3);
+        width: 100%;
+        height: 100%;
     }
-    @include breakpoint(tablet) {
-        height: 300px;
-    }
-    picture {
+    .tec-slider {
+        width: 100%;
+        margin: 0 auto;
         display: flex;
-        .backgraund-image {
-            height: 358px;
-            position: absolute;
-            @include breakpoint(desktop) {
-                height: 300px;
+        .item{
+            margin: 0 auto;
+        }
+        .div-slide {
+        margin: 0 auto;             
+            @include mediaquery(max_960) {}
+            .img-slide {                 
+                @include mediaquery(max_960) { }                
             }
-            @include breakpoint(tablet) {
-                height: 300px;
-            }
+            
         }
     }
-    h1 {
-        font-size: 30px;
-        color: #FFFFFF;
-        position: absolute;
-        z-index: 1;
-        margin-top: 62px;
-        width: 100%;
-        text-align: center;
-        @include breakpoint(desktop) {
-            margin-left: 0%;
-            width: 100%;
-            margin-top: 67px;
-            font-size: 40px;
-            text-align: center;
-        }
-        @include breakpoint(tablet) {
-            width: 100%;
-            margin-left: 0%;
-            text-align: center;
-            margin-top: 67px;
-            font-size: 40px;
-        }
-    }
-    .list-image-item {
-        height: 357px;
-        .row {
-            width: 100%;
-            padding: 0%;
-            position: absolute;
-            margin-top: 116px;
-            margin-right: auto;
-            margin-left: auto;
-            justify-content: center;
-            @include breakpoint(desktop) {
-                margin-top: 170px;
-            }
-            @include breakpoint(tablet) {
-                margin-top: 125px;
-            }
-            li {
-                z-index: 1;
-                height: 49px;
-                width: 28%;
-                list-style: none;
-                display: flex;
-                margin-top: 9%;
-                margin-left: 5%;
-                margin-right: 5%;
-                align-items: center;
-                @include breakpoint(desktop) {
-                    height: auto;
-                    width: initial;
-                    justify-items: center;
-                    padding: 0 3.2%;
-                    margin-top: auto;
-                    margin-left: initial;
-                    margin-right: initial;
-                }
-                @include breakpoint(tablet) {
-                    height: auto;
-                    width: initial;
-                    margin-left: initial;
-                    margin-right: initial;
-                    margin-top: 3%;
-                    padding: 0 2.2%;
-                }
-                img {
-                    height: 100%;
-                    width: 100%;
-                }
-            }
-        }
-    }
-    .list-image-item::after {
-        content: "";
-        background-color: #000000;
-        opacity: 0.3;
-        height: 358px;
-        width: 100%;
-        position: absolute;
-        @include breakpoint(desktop) {
-            height: 300px;
-        }
-        @include breakpoint(tablet) {
-            height: 300px;
-        }
+}
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+    margin: 20px;
+}
+
+:host ::ng-deep .tile{
+   box-shadow: none !important;
+}
+
+@media screen and (max-width:480px) { 
+    .img-slide {
+       width: 70%;
+       display: block;
+       height: auto;
+       margin: 20px auto;
     }
 }

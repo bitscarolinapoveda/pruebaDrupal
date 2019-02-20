@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CustomCardService } from 'src/app/services/cards/v1-card.services';
+import { ContactUsComponent } from 'src/app/main/pages/contact-us/contact-us.component'
 
 @Component({
     selector: 'app-tabs',
@@ -12,28 +13,13 @@ export class TabsComponent implements OnInit {
     arrayTabs:Tab[] = [];
     ids:number = 0;
     size:number;
-
+    
     constructor(
         private https: CustomCardService,
     ) {}
 
     ngOnInit() {
-        this.getTabs();
-    }
 
-    getTabs() {
-      return  this.https.getTabsData().subscribe(items =>{
-        this.size = items.length;
-        for (let tabItem of items) {
-            let objectTab:Tab = {titulo:"",icontab:"",urlicon:"",alticon:"",contenido:""};
-            objectTab.titulo = tabItem.titulo_tab;
-            objectTab.icontab = tabItem.icon_tab;
-            objectTab.urlicon = tabItem.url_icon_tab;
-            objectTab.alticon = tabItem.alt_icon_tab;
-            objectTab.contenido = tabItem.body;
-            this.arrayTabs.push(objectTab);
-        }
-      });
     }
 
     mostrar(link:number){
@@ -49,4 +35,3 @@ export interface Tab{
     alticon:string;
     contenido:string;
 }
-

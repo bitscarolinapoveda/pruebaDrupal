@@ -1,36 +1,50 @@
  @import './src/assets/scss/mixin.scss';
- .row-tec {
-     background-attachment: fixed;
-     background-position: center;
-     background-repeat: no-repeat;
-     background-size: cover;
-     .content-trans {
-         background: rgba(0, 0, 0, 0.5);
-         width: 100%;
-         height: 100%;
-     }
-     .tec-slider {
-         .div-slide {
-             display: table !important;
-             width: auto !important;
-             @include mediaquery(max_960) {
-                 display: grid !important;
-                 grid-template-columns: 50% 50%;
-                 grid-row-gap: 10px;
-                 grid-column-gap: 10px;
-                 padding: 10px;
-                 margin-left: 5px !important;
-             }
-             .img-slide {
-                 float: left;
-                 width: 203px;
-                 height: 121px;
-                 margin: 10px 20px;
-                 @include mediaquery(max_960) {
-                     display: block;
-                     margin: 0px auto;
-                 }
-             }
-         }
-     }
- }
+.row-tec {
+    width: 100%;
+    margin: 0;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image:url(/assets/images/fnd-tecnologias.jpg) !important;
+    min-height: 380px;
+    .content-trans {
+        background:#002b49c0;
+        width: 100%;
+        height: 100%;
+    }
+    .tec-slider {
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        .item{
+            margin: 0 auto;
+        }
+        .div-slide {
+        margin: 0 auto;             
+            @include mediaquery(max_960) {}
+            .img-slide {                 
+                @include mediaquery(max_960) { }                
+            }
+            
+        }
+    }
+}
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+    margin: 20px;
+}
+
+:host ::ng-deep .tile{
+   box-shadow: none !important;
+}
+
+@media screen and (max-width:480px) {
+    .img-slide {
+       width: 70%;
+       display: block;
+       height: auto;
+       margin: 20px auto;
+    }
+}

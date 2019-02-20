@@ -7,7 +7,7 @@ import { CustomCardService } from 'src/app/services/cards/v1-card.services';
     styleUrls: ['./client-card.component.scss']
 })
 export class ClientCardComponent implements OnInit{
-    
+
     titleCard:string;
     imgSrcClient:string;
     nameClient:string;
@@ -17,7 +17,7 @@ export class ClientCardComponent implements OnInit{
     ){
         this.titleCard = "El Cliente";
         this.nameClient = "Universidad Javeriana"
-        this.imgSrcClient = "../../../../assets/images/logo-javeriana.png";
+        this.imgSrcClient = "/assets/images/logo-javeriana.png";
     }
 
     ngOnInit(){

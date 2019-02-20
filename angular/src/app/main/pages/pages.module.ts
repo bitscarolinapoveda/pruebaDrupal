@@ -22,10 +22,14 @@ import {HttpService} from "../../services/http/http.service";
 import {DynamicFormsCoreModule} from "@ng-dynamic-forms/core";
 import {DynamicFormsBasicUIModule} from "@ng-dynamic-forms/ui-basic";
 import {ReactiveFormsModule} from "@angular/forms";
-
+import { FormsModule }   from '@angular/forms';
+import { HttpModule }  from '@angular/http'
 
 import {iMedicalComponent} from "./iMedical/iMedical.component";
 import {PoliticsComponent} from "./politics/politics.component";
+import { WorkusComponent } from './workus/workus.component';
+
+
 
 @NgModule({
   declarations: [
@@ -39,7 +43,9 @@ import {PoliticsComponent} from "./politics/politics.component";
     ProductServicesComponent,
     FloatSocialComponent,
     iMedicalComponent,
-    PoliticsComponent
+    PoliticsComponent,
+    WorkusComponent,
+   
   ],
   exports: [
     HomeComponent,
@@ -53,7 +59,9 @@ import {PoliticsComponent} from "./politics/politics.component";
     PagesRoutes,
     ReactiveFormsModule,
     DynamicFormsCoreModule,
-    DynamicFormsBasicUIModule
+    DynamicFormsBasicUIModule,
+    FormsModule,
+    HttpModule    
   ],
   providers: [
     HttpService,
