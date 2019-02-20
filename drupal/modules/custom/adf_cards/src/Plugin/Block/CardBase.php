@@ -9,6 +9,7 @@ use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\file\FileUsage\FileUsageInterface;
 use Drupal\file\Entity\File;
 use Drupal\Core\Entity\ContentEntityType;
+use Drupal\Core\Url;
 
 /**
  * Provides a 'CardBase' block.
@@ -362,6 +363,7 @@ class CardBase extends BlockBase {
           $this->t('Name'),
           $this->t('Description'),
           $this->t('Weight'),
+          $this->t('Operations'),
         ],
         '#empty' => $this->t('Sorry, There are no items!'),
         // TableDrag: Each array value is a list of callback arguments for
@@ -388,6 +390,8 @@ class CardBase extends BlockBase {
           $weight = (int) $this->configuration['entity']['weight'][$id];
         }
 
+        $url = Url::fromRoute('entity.node.edit_form', ['node' => $id], ['attributes' => ['target' => '_blank']]);
+
         $arRows[$id] = [
           // TableDrag: Mark the table row as draggable.
           '#attributes' => ['class' => [0 => 'draggable']],
@@ -397,7 +401,7 @@ class CardBase extends BlockBase {
           'name' => [
             '#markup' => $label,
           ],
-          'casa' => [
+          'description' => [
             '#markup' => $resume,
           ],
           // TableDrag: Weight column element.
@@ -408,6 +412,11 @@ class CardBase extends BlockBase {
             '#default_value' => $weight,
             // Classify the weight element for #tabledrag.
             '#attributes' => ['class' => ['table-sort-weight']],
+          ],          
+          'operation' => [
+            '#type' => 'link',
+            '#title' => $this->t('Edit'),    
+            '#url' => $url        
           ],
         ];
 
