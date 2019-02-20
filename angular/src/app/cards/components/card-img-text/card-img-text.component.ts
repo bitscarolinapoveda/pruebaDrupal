@@ -12,13 +12,6 @@ export class CardImgTextComponent implements OnInit {
     public titleR: string;
     public cardImgR: any[];
 
-    /* tituloCard:string;
-    subitituloCard:string;
-    descripcionCard:string;
-    linkCard:string;
-    linkLabelCard:string;
-     */
-    // imagenCard: string;
     // Si se recibe IT : Imagen luego texto
     // Si se recibe TI : Texto luego imagen
     @Input() orientacion: string;
@@ -26,13 +19,6 @@ export class CardImgTextComponent implements OnInit {
     constructor(
         private _http: CustomCardService
     ) {
-        /* this.tituloCard = "Título de este card con imagen";
-        this.subitituloCard = "Sint labore exercitation sint voluptate aliqua commodo Alegna.";
-        this.descripcionCard = "Lorem ";
-        this.linkCard = "www.loremipsum.com";
-        this.linkLabelCard = "Ver CASOS DE ÉXITO de este producto";
-         */
-        // this.imagenCard = 'assets/images/imagen-iz-de-web.png';
         this.orientacion = '';
         this.cardImgL = [];
         this.cardImgR = [];
@@ -45,12 +31,6 @@ export class CardImgTextComponent implements OnInit {
 
     getCardImgTextServiceL() {
         this._http.getCustomCardInformation('mediaimedicalcard_2').subscribe(params => {
-            /* this.tituloCard = params.data[0].titulo;
-            this.subitituloCard = params.data[0].subtitulo;
-            this.descripcionCard = params.data[0].descripcion;
-            this.linkCard = params.data[0].link;
-            this.linkLabelCard = params.data[0].label;
-            this.imagenCard = params.data[0].imagen;  */
             this.titleL = params.header[0].data.title;
             this.cardImgL = params.data;
         });
