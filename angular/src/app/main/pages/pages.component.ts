@@ -10,11 +10,12 @@ import {HttpService} from "../../services/http/http.service";
 })
 export class PagesComponent {
   public loading: boolean;
+  public heightDarkLayout;
 
   constructor (
     private _http: HttpService,
     private _router: Router,
-  ) {
+  ) { 
   }
 
   ngOnInit () {

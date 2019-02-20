@@ -3,9 +3,7 @@
 </section>
 
 <div class="contenedor">
-    <ngx-carousel
-    [inputs]="carocarouselTile"
-    (carouselLoad)="carouselTileLoad($event)">
+    <ngx-carousel [inputs]="carocarouselTile" (carouselLoad)="carouselTileLoad($event)" *ngIf="CarouselControlArray">
         <ngx-tile NgxCarouselItem *ngFor="let main of CarouselControlArray; let i = index">
             <a href="" class="url-link">
                 <div class="container-img">

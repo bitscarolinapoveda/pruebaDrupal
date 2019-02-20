@@ -38,6 +38,7 @@ import { SlickModule } from 'ngx-slick';
 import { OwlModule } from 'ngx-owl-carousel';
 import { NgxCarouselModule } from 'ngx-carousel';
 import 'hammerjs';
+import { FormsModule }   from '@angular/forms';
 
 
 //Pipes
@@ -94,7 +95,7 @@ import { SafeCssPipe } from '../pipes/safecss.pipe';
     CardImgTextComponent,
     BlogComponent
   ],
-  imports: [BrowserModule, CommonModule, NgbModule, RouterModule, AdfModule,  SlickModule.forRoot(), OwlModule, NgxCarouselModule, BrowserAnimationsModule ],
+  imports: [BrowserModule, CommonModule, NgbModule, RouterModule, AdfModule,  SlickModule.forRoot(), OwlModule, NgxCarouselModule, BrowserAnimationsModule, FormsModule ],
   providers: [NodeService]
 })
 export class CardsModule {}
