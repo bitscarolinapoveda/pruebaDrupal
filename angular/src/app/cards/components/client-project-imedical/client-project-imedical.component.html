@@ -14,7 +14,7 @@
                 <h2 class="condensed">{{ titleSection | uppercase }}</h2>
                 <hr class="green">
                 <h2>{{ titleProject | uppercase }}</h2>
-                <p>{{ summaryProject }}</p>
+                <p [innerHTML]="summaryProject"></p>
                 <h5>
                     <span *ngFor="let tag of tags" class="badge badge-custom mr-2 mt-2 p-2">{{ tag | uppercase }}</span>
                 </h5>
