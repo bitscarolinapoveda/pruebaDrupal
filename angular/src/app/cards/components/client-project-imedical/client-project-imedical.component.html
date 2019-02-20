@@ -1,0 +1,25 @@
+<div class="row">
+    <div class="col-md-4 mb-3">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="condensed">{{ titleCard | uppercase}}</h2>
+                <hr class="green">
+                <img id="logo-cliente" [src]="imgSrcClient" class="img-fluid" alt="{{nameClient}}">
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8 mb-3">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="condensed">{{ titleSection | uppercase }}</h2>
+                <hr class="green">
+                <h2>{{ titleProject | uppercase }}</h2>
+                <p>{{ summaryProject }}</p>
+                <h5>
+                    <span *ngFor="let tag of tags" class="badge badge-custom mr-2 mt-2 p-2">{{ tag | uppercase }}</span>
+                </h5>
+                <a [href]="linkProject" class="green">{{ linkProject }}</a>
+            </div>
+        </div>
+    </div>
+</div>
