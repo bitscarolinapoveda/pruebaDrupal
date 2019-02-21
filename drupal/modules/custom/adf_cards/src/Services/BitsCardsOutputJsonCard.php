@@ -189,7 +189,7 @@ class BitsCardsOutputJsonCard {
             break;
 
           case 'textfield':
-            $element['data']['title'] = $item['input'];
+            $element['data'][$item['service_field']] = $item['input'];
 
             break;
 
