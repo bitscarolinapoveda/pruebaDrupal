@@ -351,12 +351,18 @@ $url_add = Url::fromRoute('node.add', ['node_type' => $entityType], ['attributes
 $form['entity']['add_entity'] = [
   '#type' => 'link',
   '#title' => $this->t('Añadir contenido'),    
-  '#url' => $url_add 
+  '#url' => $url_add,
+  '#attributes' => [
+    'class' => ['button button-action button--primary button--small']
+  ]
 ];
 
 $form['entity']['refresh_entity_table'] = [
   '#type' => 'button',
   '#value' => $this->t('Actualizar tabla'),  
+  '#attributes' => [
+    'class' => ['button button-action button--second button--small']
+  ],
   '#ajax' => [
     'callback' => [$this, 'changeEntityType'],
     'wrapper' => 'entity-content',
