@@ -1,0 +1,24 @@
+bits_prodandserv.service_product_bits.*:
+  type: config_entity
+  label: 'Service product bits config'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Label'
+    uuid:
+      type: string
+    short_image:
+      type: image
+      label: 'Short Image'
+    large_image:
+      type: image
+      label: 'Large Image'
+    description:
+      type: text
+      label: 'Description'
+    type:
+      type: string
+      label: 'Service or Product'

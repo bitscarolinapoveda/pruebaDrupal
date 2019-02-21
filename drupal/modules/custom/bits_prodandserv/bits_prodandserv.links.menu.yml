@@ -1,0 +1,9 @@
+
+# Service product bits menu items definition
+entity.service_product_bits.collection:
+  title: 'Service product bits'
+  route_name: entity.service_product_bits.collection
+  description: 'List Service product bits (bundles)'
+  parent: system.admin_structure
+  weight: 99
+
