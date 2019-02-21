@@ -1,25 +1,27 @@
-<div class="row" *ngIf="orientacion == 'IT'" style="background-color:#f8f9fa">
-    <div class="col-md-4 p-0">
-        <img [src]="imagenCard" alt="" class="img-fluid w-100">
+<div class="row color-back" *ngIf="orientacion == 'IT'">
+    <div class="col-md-4 p-0" *ngFor="let cil of cardImgL">
+        <img [src]="cil.field_imagen_media_product.url" alt="{{cil.field_imagen_media_product.alt}}"
+            class="img-fluid w-100">
     </div>
-    <div class="col-md-8 d-block px-4 py-5">
-        <h3 class="condensed">{{ subitituloCard }}</h3>
-        <h1>{{ tituloCard | uppercase }}</h1>
+    <div class="col-md-8 d-block px-4 py-5" *ngFor="let cil of cardImgL">
+        <h3 class="condensed">{{ cil.title }}</h3>
+        <h1>{{ titleL | uppercase }}</h1>
         <hr class="green">
-        <p class="text-justify">{{ descripcionCard }}</p>
-        <a [href]="linkCard" class="green">{{ linkLabelCard }}</a>
+        <p class="text-justify" [innerHTML]="cil.field_des"></p>
+        <a [href]="cil.field_link_imedical_media" class="green">{{ cil.field_link_imedical_media }}</a>
     </div>
 </div>
 
-<div class="row" *ngIf="orientacion == 'TI'" style="background-color:#f8f9fa">
-    <div class="col-md-8 d-block px-4 py-5">
-        <h3 class="condensed">{{ subitituloCard }}</h3>
-        <h1>{{ tituloCard | uppercase }}</h1>
+<div class="row color-back" *ngIf="orientacion == 'TI'">
+    <div class="col-md-8 d-block px-4 py-5" *ngFor="let cir of cardImgR">
+        <h3 class="condensed">{{ cir.title }}</h3>
+        <h1>{{ titleR | uppercase }}</h1>
         <hr class="green">
-        <p class="text-justify">{{ descripcionCard }}</p>
-        <a [href]="linkCard" class="green">{{ linkLabelCard }}</a>
+        <p class="text-justify" [innerHTML]="cir.field_des"></p>
+        <a [href]="cir.field_link_imedical_media" class="green">{{ cir.field_link_imedical_media }}</a>
     </div>
-    <div class="col-md-4 p-0">
-        <img [src]="imagenCard" alt="" class="img-fluid w-100">
+    <div class="col-md-4 p-0" *ngFor="let cir of cardImgR">
+        <img [src]="cir.field_imagen_media_product.url" alt="{{cir.field_imagen_media_product.alt}}"
+            class="img-fluid w-100">
     </div>
 </div>

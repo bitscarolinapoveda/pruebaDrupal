@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\bits_cards;
+namespace Drupal\adf_cards\Services;
 
 use Drupal\file\Entity\File;
 use Drupal\node\Entity\Node;
@@ -10,7 +10,7 @@ use Drupal\adf_cards\Services\ExportConfigCardService;
 /**
  * Class 'BitsCardsOutputJsonCard'.
  */
-class BitsCardsOutputJsonCard extends ExportConfigCardService {
+class BitsCardsOutputJsonCard {
 
   /**
    * {@inheritdoc}
@@ -36,7 +36,7 @@ class BitsCardsOutputJsonCard extends ExportConfigCardService {
       $viewMode = $settings['entity']['default_view_mode'] ?? 'default';
       $conditions = $settings['entity']['conditions'] ?? [];
       $sorts = $settings['entity']['sorts'] ?? [];
-      $otherData = [];
+      $otherData = [];  
 
       $ids = \Drupal::entityQuery($name)
         ->condition('status', 1)
@@ -58,7 +58,7 @@ class BitsCardsOutputJsonCard extends ExportConfigCardService {
 
       $fields = \Drupal::entityManager()
         ->getStorage('entity_view_display')
-        ->load($name . '.' . $type . '.' . $viewMode)
+        ->load($name . '.' . $type . '.' . $viewMode)        
         ->getComponents();
 
       foreach ($fields as $name => $field) {
@@ -66,7 +66,11 @@ class BitsCardsOutputJsonCard extends ExportConfigCardService {
           continue;
         }
         else {
-          $otherData[] = $name;
+          // Se muestra el campo, siempre que no esté oculto
+          // en el tipo de presentación.
+          if ($field['label'] != 'hidden') {
+            $otherData[] = $name;
+          }
         }
       }
 

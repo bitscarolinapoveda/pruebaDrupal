@@ -6,7 +6,7 @@
         <div class="col-md-12 py-5 px-2">
             <div class="tec-slider">
                 <ngx-tile NgxCarouselItem id="logos" *ngFor="let im of arrayLogosCustom" >
-                    <img *ngFor="let img of im" [src]="img.field_tech_image.url" [alt]="img.field_tech_image.alt">
+                    <img *ngFor="let img of im" [@fade]="state" class="img-fluid img-slide" [src]="img.field_tech_image.url" [alt]="img.field_tech_image.alt">
                 </ngx-tile>
             </div>
         </div>

@@ -102,8 +102,8 @@ export class AlliancesComponent implements OnInit {
           this.arrayLogosCustom[i][j] = arrayLogosOriginal[0];
           arrayLogosOriginal.shift();
         }else{
-          this.arrayLogosCustom[i][j] = this.arrayLogosCustom[i - 1][j2];
-          j2++;
+          // this.arrayLogosCustom[i][j] = this.arrayLogosCustom[i - 1][j2];
+          // j2++;
         }
       }    
     }
@@ -111,6 +111,7 @@ export class AlliancesComponent implements OnInit {
 
   getAlliance () {
     return this.alliance.getCustomCardInformation('ouralliance').subscribe(items => {
+      console.log(items);
       this.allianceTitle = items.header[0].data.title;
       this.allianceBackground = items.body[0].data.back_movil[0].url;
       this.allianceArrayLogos = items.data;

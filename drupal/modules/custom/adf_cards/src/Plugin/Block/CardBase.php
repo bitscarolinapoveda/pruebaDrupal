@@ -9,6 +9,7 @@ use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\file\FileUsage\FileUsageInterface;
 use Drupal\file\Entity\File;
 use Drupal\Core\Entity\ContentEntityType;
+use Drupal\Core\Url;
 
 /**
  * Provides a 'CardBase' block.
@@ -167,28 +168,28 @@ class CardBase extends BlockBase {
       $ourFormState = $form_state->getCompleteFormState();
     }
     $bnCargoDesdeAjax = FALSE;
-    if (!empty((string) $ourFormState->getTriggeringElement()['#value'])) {
-      \Drupal::logger('casa')->notice('cargado desde ajax');
+    if (!empty((string) $ourFormState->getTriggeringElement()['#value'])) {      
       $bnCargoDesdeAjax = TRUE;
     }
+
     if ($bnCargoDesdeAjax) {
       $entityName = $ourFormState->getValue(['settings','entity','name']);
       $entityType = $ourFormState->getValue(['settings','entity','type']);
       $entityLimit = $ourFormState->getValue(['settings','entity','limit']);
-      $entityOffset = $ourFormState->getValue(['settings','entity','offset']);
+      $entityOffset = $ourFormState->getValue(['settings','entity','offset']);      
     }
 
     if (isset($this->configuration['entity'])) {
       $contentEntityTypes = [];
-      $entityTypeDefinations = \Drupal::entityTypeManager()->getDefinitions();
+      $entityTypeDefinitions = \Drupal::entityTypeManager()->getDefinitions();
       /* @var $definition EntityTypeInterface */
-      foreach ($entityTypeDefinations as $definition) {
+      foreach ($entityTypeDefinitions as $definition) {
         $contentEntityTypes[$definition->id()] = $definition->id();
       }
 
-
       // Gather the number of names in the form already.
       $fromAjax = $form_state->get('from_ajax');
+
       // We have to ensure that there is at least one name field.
       if ($fromAjax === NULL) {
         $fromAjax = $form_state->set('from_ajax', FALSE);
@@ -290,6 +291,34 @@ class CardBase extends BlockBase {
           'event' => 'keyup',
         ],
       ];
+
+      // Modo de presentación del contenido.
+      $queryViewModes = \Drupal::entityTypeManager()
+                        ->getStorage('entity_view_display')
+                        ->getQuery();
+      
+      $resultsViewModes = $queryViewModes->execute();
+
+      $condition = $entityName . '.' . $entityType;
+      $optionsViewMode = [];
+
+      foreach ($resultsViewModes as $result) {
+        if (strpos ($result, $condition) !== FALSE) {
+          $formatResult = substr($result, strlen($condition) + 1);
+          $optionsViewMode[$formatResult] = $this->t(ucwords($formatResult));
+        }        
+      }
+      
+      $form['entity']['default_view_mode'] = [
+        '#type' => 'select',
+        '#options' => $optionsViewMode,        
+        '#description' => $this->t('Seleccionar el modo de presentación del contenido.'),
+        '#title' => $this->t('Modo de presentación'),
+        '#default_value' => isset($this->configuration['entity']['default_view_mode'])
+                            ? $this->configuration['entity']['default_view_mode']
+                            : '',        
+      ];
+
 /*
 
     $connection_info = $connection->getConnectionOptions();
@@ -334,6 +363,7 @@ class CardBase extends BlockBase {
           $this->t('Name'),
           $this->t('Description'),
           $this->t('Weight'),
+          $this->t('Operations'),
         ],
         '#empty' => $this->t('Sorry, There are no items!'),
         // TableDrag: Each array value is a list of callback arguments for
@@ -354,11 +384,13 @@ class CardBase extends BlockBase {
         $entity = $entityStorage->load($entityId);
         $label = $entity->label();
         $id = $entity->id();
-
+        $resume = $entity->body->summary;
         $weight = 1;
         if (isset($this->configuration['entity']['weight'][$id])) {
           $weight = (int) $this->configuration['entity']['weight'][$id];
         }
+
+        $url = Url::fromRoute('entity.node.edit_form', ['node' => $id], ['attributes' => ['target' => '_blank']]);
 
         $arRows[$id] = [
           // TableDrag: Mark the table row as draggable.
@@ -369,8 +401,8 @@ class CardBase extends BlockBase {
           'name' => [
             '#markup' => $label,
           ],
-          'casa' => [
-            '#markup' => '<name>bb',
+          'description' => [
+            '#markup' => $resume,
           ],
           // TableDrag: Weight column element.
           'weight' => [
@@ -380,6 +412,11 @@ class CardBase extends BlockBase {
             '#default_value' => $weight,
             // Classify the weight element for #tabledrag.
             '#attributes' => ['class' => ['table-sort-weight']],
+          ],          
+          'operation' => [
+            '#type' => 'link',
+            '#title' => $this->t('Edit'),    
+            '#url' => $url        
           ],
         ];
 

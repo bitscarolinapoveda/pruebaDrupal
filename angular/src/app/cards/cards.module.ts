@@ -16,8 +16,6 @@ import { TitleComponent } from './components/titles/titles.component';
 import { TabsComponent } from './components/tabs/tabs.component';
 import { VideoInformationComponent } from './components/video-information/video-information.component';
 import { SeparatorComponent } from './components/separator/separator.component';
-import { ClientCardComponent } from './components/client-card/client-card.component';
-import { ProjectSummaryComponent } from './components/project-summary/project-summary.component';
 import { MenuTemplateComponent } from './components/menu-template/menu-template.component';
 import { SlideComponent } from './components/slide/slide.component';
 import { SliderComponent } from './components/slider/slider.component';
@@ -25,15 +23,13 @@ import { BlurbComponent } from './components/blurb/blurb.component';
 import { CardImgTextComponent } from './components/card-img-text/card-img-text.component';
 import { BlogComponent } from './components/blog/blog.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-
-
+import { ClientProjectImedicalComponent } from './components/client-project-imedical/client-project-imedical.component';
 
 
 // Servicios
 import { NodeService } from '../services/cards/node.service';
-import {RouterModule} from "@angular/router";
-import {AdfModule} from "../@adf/adf.module";
+import { RouterModule } from '@angular/router';
+import { AdfModule } from '../@adf/adf.module';
 import { SlickModule } from 'ngx-slick';
 import { OwlModule } from 'ngx-owl-carousel';
 import { NgxCarouselModule } from 'ngx-carousel';
@@ -41,9 +37,10 @@ import 'hammerjs';
 import { FormsModule }   from '@angular/forms';
 
 
-//Pipes
+// Pipes
 import { SafeHtmlPipe } from '../pipes/safehtml.pipe';
 import { SafeCssPipe } from '../pipes/safecss.pipe';
+
 
 @NgModule({
   declarations: [
@@ -62,15 +59,13 @@ import { SafeCssPipe } from '../pipes/safecss.pipe';
     TabsComponent,
     VideoInformationComponent,
     SeparatorComponent,
-    ClientCardComponent,
-    ProjectSummaryComponent,
     MenuTemplateComponent,
     SlideComponent,
     SliderComponent,
     BlurbComponent,
     CardImgTextComponent,
-    BlogComponent
-      
+    BlogComponent,
+    ClientProjectImedicalComponent
   ],
   exports: [
     CarouselItemComponent,
@@ -86,18 +81,17 @@ import { SafeCssPipe } from '../pipes/safecss.pipe';
     TabsComponent,
     VideoInformationComponent,
     SeparatorComponent,
-    ClientCardComponent,
-    ProjectSummaryComponent,
     MenuTemplateComponent,
     SlideComponent,
     SliderComponent,
     BlurbComponent,
     CardImgTextComponent,
-    BlogComponent
+    BlogComponent,
+    ClientProjectImedicalComponent
   ],
   imports: [BrowserModule, CommonModule, NgbModule, RouterModule, AdfModule,  SlickModule.forRoot(), OwlModule, NgxCarouselModule, BrowserAnimationsModule, FormsModule ],
   providers: [NodeService]
 })
-export class CardsModule {}
+export class CardsModule { }
 
 
