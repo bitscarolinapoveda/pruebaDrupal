@@ -346,8 +346,31 @@ class CardBase extends BlockBase {
       ];
 */
 
+$url_add = Url::fromRoute('node.add', ['node_type' => $entityType], ['attributes' => ['target' => '_blank']]);
 
-      $query = \Drupal::entityQuery($entityName);
+$form['entity']['add_entity'] = [
+  '#type' => 'link',
+  '#title' => $this->t('Añadir contenido'),    
+  '#url' => $url_add,
+  '#attributes' => [
+    'class' => ['button button-action button--primary button--small']
+  ]
+];
+
+$form['entity']['refresh_entity_table'] = [
+  '#type' => 'button',
+  '#value' => $this->t('Actualizar tabla'),  
+  '#attributes' => [
+    'class' => ['button button-action button--second button--small']
+  ],
+  '#ajax' => [
+    'callback' => [$this, 'changeEntityType'],
+    'wrapper' => 'entity-content',
+    'event' => 'click',
+  ],
+];
+      
+$query = \Drupal::entityQuery($entityName);
         $query->condition('status', 1);
         if ($entityType) {
           $query->condition('type', $entityType);
@@ -390,8 +413,8 @@ class CardBase extends BlockBase {
           $weight = (int) $this->configuration['entity']['weight'][$id];
         }
 
-        $url = Url::fromRoute('entity.node.edit_form', ['node' => $id], ['attributes' => ['target' => '_blank']]);
-
+        $url_edit = Url::fromRoute('entity.node.edit_form', ['node' => $id], ['attributes' => ['target' => '_blank']]);
+        
         $arRows[$id] = [
           // TableDrag: Mark the table row as draggable.
           '#attributes' => ['class' => [0 => 'draggable']],
@@ -416,8 +439,8 @@ class CardBase extends BlockBase {
           'operation' => [
             '#type' => 'link',
             '#title' => $this->t('Edit'),    
-            '#url' => $url        
-          ],
+            '#url' => $url_edit
+          ]
         ];
 
         //  Si esta repetido intenta con un valor menos

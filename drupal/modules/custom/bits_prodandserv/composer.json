@@ -1,0 +1,14 @@
+{
+  "name": "drupal/bits_prodandserv",
+  "type": "drupal-module",
+  "description": "Modulo que contiene la entidad de configuracion ServiceProductBits",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/bits_prodandserv",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/bits_prodandserv",
+    "source": "http://cgit.drupalcode.org/bits_prodandserv"
+  },
+  "require": { }
+}

@@ -1,0 +1,5 @@
+name: 'bits_prodandserv'
+type: module
+description: 'Modulo que contiene la entidad de configuracion ServiceProductBits'
+core: 8.x
+package: 'Custom'
