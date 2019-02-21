@@ -42,7 +42,7 @@ class ServiceProductBitsForm extends EntityForm {
       '#type' => 'machine_name',
       '#default_value' => $service_product_bits->id(),
       '#machine_name' => [
-        'exists' => '\Drupal\bits_cards\Entity\ServiceProductBits::load',
+        'exists' => '\Drupal\bits_prodandserv\Entity\ServiceProductBits::load',
       ],
       '#disabled' => !$service_product_bits->isNew(),
     ];
