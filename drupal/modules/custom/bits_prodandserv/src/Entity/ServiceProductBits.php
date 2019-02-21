@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\bits_cards\Entity;
+namespace Drupal\bits_prodandserv\Entity;
 
 use Drupal\Core\Config\Entity\ConfigEntityBase;
 
@@ -12,14 +12,14 @@ use Drupal\Core\Config\Entity\ConfigEntityBase;
  *   label = @Translation("Service product bits"),
  *   handlers = {
  *     "view_builder" = "Drupal\Core\Entity\EntityViewBuilder",
- *     "list_builder" = "Drupal\bits_cards\ServiceProductBitsListBuilder",
+ *     "list_builder" = "Drupal\bits_prodandserv\ServiceProductBitsListBuilder",
  *     "form" = {
- *       "add" = "Drupal\bits_cards\Form\ServiceProductBitsForm",
- *       "edit" = "Drupal\bits_cards\Form\ServiceProductBitsForm",
- *       "delete" = "Drupal\bits_cards\Form\ServiceProductBitsDeleteForm"
+ *       "add" = "Drupal\bits_prodandserv\Form\ServiceProductBitsForm",
+ *       "edit" = "Drupal\bits_prodandserv\Form\ServiceProductBitsForm",
+ *       "delete" = "Drupal\bits_prodandserv\Form\ServiceProductBitsDeleteForm"
  *     },
  *     "route_provider" = {
- *       "html" = "Drupal\bits_cards\ServiceProductBitsHtmlRouteProvider",
+ *       "html" = "Drupal\bits_prodandserv\ServiceProductBitsHtmlRouteProvider",
  *     },
  *   },
  *   config_prefix = "service_product_bits",

@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\bits_cards;
+namespace Drupal\bits_prodandserv;
 
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Entity\Routing\AdminHtmlRouteProvider;

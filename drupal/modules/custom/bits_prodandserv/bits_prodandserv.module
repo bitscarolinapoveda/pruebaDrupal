@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains bits_prodandserv.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function bits_prodandserv_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the bits_prodandserv module.
+    case 'help.page.bits_prodandserv':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Modulo que contiene la entidad de configuracion ServiceProductBits') . '</p>';
+      return $output;
+
+    default:
+  }
+}

@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\bits_cards;
+namespace Drupal\bits_prodandserv;
 
 use Drupal\Core\Config\Entity\ConfigEntityListBuilder;
 use Drupal\Core\Entity\EntityInterface;

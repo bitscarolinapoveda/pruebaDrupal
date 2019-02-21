@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\bits_cards\Form;
+namespace Drupal\bits_prodandserv\Form;
 
 use Drupal\Core\Entity\EntityForm;
 use Drupal\Core\Form\FormStateInterface;

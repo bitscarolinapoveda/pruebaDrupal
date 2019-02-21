@@ -1,4 +1,4 @@
-bits_cards.service_product_bits.*:
+bits_prodandserv.service_product_bits.*:
   type: config_entity
   label: 'Service product bits config'
   mapping:
