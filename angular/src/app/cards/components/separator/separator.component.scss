@@ -43,3 +43,85 @@
             margin-right: -30px;
         }
     }
+.bits-icon {     
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    background-repeat: no-repeat;
+
+    &.icon-startproject {
+      background-image: url('/assets/icon/aboutus5-startproject.svg');
+    }
+    &.icon-startmeeting {
+        background-image: url('/assets/icon/aboutus5-startprojectv2.svg');
+    }
+    &.icon-people {
+        background-image: url('/assets/icon/template8-team.svg');
+    }
+    &.icon-location {
+        background-image: url('/assets/icon/contactus3-placeholder.svg');
+    }
+    &.icon-module {
+        background-image: url('/assets/icon/template2-module.svg');
+    }
+    &.icon-video {
+        background-image: url('/assets/icon/template3-video.svg');
+    }
+    &.icon-technologies {
+        background-image: url('/assets/icon/template4-tech.svg');
+    }
+    &.icon-opinions {
+        background-image: url('/assets/icon/template5-opinions.svg');
+    }    
+    &.icon-results {
+        background-image: url('/assets/icon/template6-done.svg');
+    }    
+    &.icon-camera {
+        background-image: url('/assets/icon/template7-camera.svg');
+    }
+    &.icon-team {
+        background-image: url('/assets/icon/template8-team.svg');
+    }
+    &.icon-clients {
+        background-image: url('/assets/icon/template9-clients.svg');
+    }
+    &.icon-project {
+        background-image: url('/assets/icon/template10-related.svg');
+    }
+    &.icon-startteam {
+        background-image: url('/assets/icon/aboutus1-whyus.svg');
+    }
+    &.icon-history {
+        background-image: url('/assets/icon/aboutus2-timeline.svg');
+    }
+    &.icon-certficate {
+        background-image: url('/assets/icon/aboutus3-certficate.svg');
+    }
+    &.icon-medal {
+        background-image: url('/assets/icon/medal.png');
+    }
+    &.icon-aboutus {
+        background-image: url('/assets/icon/aboutus4-aboutus.svg');
+    }
+    &.icon-privacity {
+        background-image: url('/assets/icon/privacy1.svg'); 
+    }
+    &.icon-historymedical {
+        background-image: url('/assets/icon/template1A-medical.svg');
+    }
+    &.icon-medicallogistic {
+        background-image: url('/assets/icon/template1B-logistic.svg');
+    }
+    &.icon-medicalIT {
+        background-image: url('/assets/icon/template1C-IT.svg');
+    }
+    &.icon-redes {
+        background-image: url('/assets/icon/template1D-IT.svg');
+    }
+    &.icon-connection {
+        background-image: url('/assets/icon/template1E-IT.svg');
+    }
+    &.icon-engranaje {
+        background-image: url('/assets/icon/engranaje.png');
+    }
+}
