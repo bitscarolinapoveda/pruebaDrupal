@@ -1,16 +1,17 @@
-import {RouterModule, Routes} from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
-import {PagesComponent} from './pages.component';
-import {HomeComponent} from './home/home.component';
-import {NoPageFoundComponent} from './no-page-found/no-page-found.component';
-import {ContactUsComponent} from './contact-us/contact-us.component';
-import {ProjectsComponent} from "./projects/projects.component";
-import {ProductsComponent} from "./products/products.component";
-import {ServicesComponent} from "./services/services.component";
-import {WorkusComponent} from "./workus/workus.component"
+import { PagesComponent } from './pages.component';
+import { HomeComponent } from './home/home.component';
+import { NoPageFoundComponent } from './no-page-found/no-page-found.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
+import { ProjectsComponent } from './projects/projects.component';
+import { ProductsComponent } from './products/products.component';
+import { ServicesComponent } from './services/services.component';
+import { WorkusComponent } from './workus/workus.component';
 
-import { iMedicalComponent } from "./iMedical/iMedical.component";
-import { PoliticsComponent } from "./politics/politics.component";
+import { iMedicalComponent } from './iMedical/iMedical.component';
+import { PoliticsComponent } from './politics/politics.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 import { from } from 'rxjs';
 
 const pagesRoutes: Routes = [
@@ -18,17 +19,17 @@ const pagesRoutes: Routes = [
     path: '',
     component: PagesComponent,
     children: [
-      {path: '', redirectTo: 'home', pathMatch: 'full'},
-      {path: 'home', component: HomeComponent},
-      {path: 'contact-us', component: ContactUsComponent},
-      {path: 'workus', component: WorkusComponent},
-      {path: 'products', component: ProductsComponent},
-      {path: 'projects', component: ProjectsComponent},
-      {path: 'services', component: ServicesComponent},
-      {path: 'imedical', component: iMedicalComponent},
-      {path: 'politics', component: PoliticsComponent},
-      {path: '**', component: NoPageFoundComponent}
-      
+      { path: '', redirectTo: 'home', pathMatch: 'full' },
+      { path: 'home', component: HomeComponent },
+      { path: 'contact-us', component: ContactUsComponent },
+      { path: 'workus', component: WorkusComponent },
+      { path: 'products', component: ProductsComponent },
+      { path: 'projects', component: ProjectsComponent },
+      { path: 'services', component: ServicesComponent },
+      { path: 'imedical', component: iMedicalComponent },
+      { path: 'politics', component: PoliticsComponent },
+      { path: 'about-us', component: AboutUsComponent },
+      { path: '**', component: NoPageFoundComponent }
 
       // { path: 'home', component: HomeComponent },
       // { path: '', component: HomeComponent },
@@ -41,7 +42,7 @@ const pagesRoutes: Routes = [
       // { path: 'contact-us', redirectTo: '/contact-us' },
       // {path: 'workus', redirectTo: '/workus'},
       // { path: '**', component: NoPageFoundComponent },
-   
+
     ]
   }
 ];
