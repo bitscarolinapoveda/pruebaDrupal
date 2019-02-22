@@ -3,11 +3,6 @@
         <h1 class="condensed text-center">{{ titulo }}</h1>
     </div>
     <div class="col-md-12">
-        <p>{{ fechaPublicacion }}</p>
-        <div *ngFor="let postItem of postList">
-            <h1 class="condensed"> {{ postItem.tituloPost }}</h1>
-            <h3 class="condensed"> {{ postItem.subtituloPost }} </h3>
-            <p class="text-justify"> {{ postItem.descripcionPost }}</p>
-        </div>
-    </div>
+        <p class="" [innerHTML]="list"></p>
+    </div> 
 </div>
