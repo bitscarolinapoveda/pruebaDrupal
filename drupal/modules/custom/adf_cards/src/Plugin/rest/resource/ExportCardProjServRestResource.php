@@ -13,8 +13,8 @@ use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
  * Provides a resource to get view modes by entity and bundle.
  *
  * @RestResource(
- *   id = "export_card_config_rest_resource",
- *   label = @Translation("Export card config rest resource"),
+ *   id = "export_card_projserv_rest_resource",
+ *   label = @Translation("Export card project and service rest resource"),
  *   uri_paths = {
  *     "canonical" = "/v1/card/config/{plugin}/{prod_serv}/export"
  *   }
