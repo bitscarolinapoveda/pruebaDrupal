@@ -31,13 +31,23 @@
     }
 }
 .img-fluid {
-    max-width: 100%;
-    height: auto;
-    margin: 20px;
+    width:175px; 
+    height:140px; 
+    background-repeat: no-repeat; 
+    background-position: center; 
+    background-size: contain; 
+    margin: 10px 20px;
+    @media (max-width: 500px) {
+        width:100px; 
+        height:90px; 
+    }
 }
 
 :host ::ng-deep .tile{
    box-shadow: none !important;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
 }
 
 @media screen and (max-width:480px) {

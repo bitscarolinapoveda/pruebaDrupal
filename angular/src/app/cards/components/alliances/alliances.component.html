@@ -5,8 +5,8 @@
     </div>
     <div class="col-md-12 py-5 px-2">
         <div class="tec-slider">
-            <ngx-tile NgxCarouselItem id="logos" *ngFor="let im of arrayLogosCustom" class="mx-auto div-slide"  >
-                <img *ngFor="let img of im" [@fade]="state" class="img-fluid img-slide" [src]="img.field_alliance_image.url" [alt]="img.field_alliance_image.alt">
+            <ngx-tile NgxCarouselItem id="logos" *ngFor="let im of arrayLogosCustom" class="mx-auto div-slide">
+                <div class="img-fluid" *ngFor="let img of im" [ngStyle]="{'background-image':'url(' + img.field_alliance_image.url + ')'}"></div>
             </ngx-tile>
         </div>
     </div>

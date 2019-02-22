@@ -100,9 +100,6 @@ export class TecnologiesComponent implements OnInit{
         if (arrayLogosOriginal.length > 0) {
           this.arrayLogosCustom[i][j] = arrayLogosOriginal[0];
           arrayLogosOriginal.shift();
-        }else{
-          // this.arrayLogosCustom[i][j] = this.arrayLogosCustom[i - 1][j2];
-          // j2++;
         }
       }    
     }
