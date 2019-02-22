@@ -15,7 +15,7 @@ class BitsCardsOutputJsonCard {
   /**
    * {@inheritdoc}
    */
-  public function get($block_id) {
+  public function get($block_id, $prodServ = '') {
     $settings = [];
     $block = Block::load($block_id);
 
@@ -36,7 +36,7 @@ class BitsCardsOutputJsonCard {
       $viewMode = $settings['entity']['default_view_mode'] ?? 'default';
       $conditions = $settings['entity']['conditions'] ?? [];
       $sorts = $settings['entity']['sorts'] ?? [];
-      $otherData = [];  
+      $otherData = [];
 
       $ids = \Drupal::entityQuery($name)
         ->condition('status', 1)
@@ -58,7 +58,7 @@ class BitsCardsOutputJsonCard {
 
       $fields = \Drupal::entityManager()
         ->getStorage('entity_view_display')
-        ->load($name . '.' . $type . '.' . $viewMode)        
+        ->load($name . '.' . $type . '.' . $viewMode)
         ->getComponents();
 
       foreach ($fields as $name => $field) {
