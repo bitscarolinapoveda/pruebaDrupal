@@ -6,6 +6,7 @@ use Drupal\file\Entity\File;
 use Drupal\node\Entity\Node;
 use Drupal\block\Entity\Block;
 use Drupal\adf_cards\Services\ExportConfigCardService;
+use Drupal\taxonomy\Entity\Term;
 
 /**
  * Class 'BitsCardsOutputJsonCard'.
@@ -100,6 +101,19 @@ class BitsCardsOutputJsonCard {
           elseif ($type === 'text_with_summary') {
             $value = $node->get($field)->getValue();
             $data[$field] = $value[0]['value'];
+          }
+          elseif ($field === 'field_tags'){
+            $tid = $node->get('field_tags')->getValue();
+            $terms_name = [];
+            foreach ($tid as $key => $value) {
+              $term = Term::load($value['target_id']);
+              $terms_name[] =$term->getName();
+            }
+            $data[$field] = $terms_name;
+          }
+          elseif ($field === 'field_url_client'){
+            $tid = $node->get('field_url_client')->getValue();
+            $data[$field] = $tid;
           }
           else {
             $data[$field] = $node->get($field)->getString();
