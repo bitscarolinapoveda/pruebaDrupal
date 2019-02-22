@@ -102,8 +102,8 @@ class BitsCardsOutputJsonCard {
             $value = $node->get($field)->getValue();
             $data[$field] = $value[0]['value'];
           }
-          elseif ($field === 'field_tags'){
-            $tid = $node->get('field_tags')->getValue();
+          elseif ($type === 'entity_reference'){
+            $tid = $node->get($field)->getValue();
             $terms_name = [];
             foreach ($tid as $key => $value) {
               $term = Term::load($value['target_id']);
@@ -111,8 +111,8 @@ class BitsCardsOutputJsonCard {
             }
             $data[$field] = $terms_name;
           }
-          elseif ($field === 'field_url_client'){
-            $tid = $node->get('field_url_client')->getValue();
+          elseif ($type === 'link'){
+            $tid = $node->get($field)->getValue();
             $data[$field] = $tid;
           }
           else {
