@@ -3,13 +3,11 @@
 </section>
 
 <div class="contenedor">
-    <ngx-carousel
-    [inputs]="carocarouselTile"
-    (carouselLoad)="carouselTileLoad($event)">
+    <ngx-carousel [inputs]="carocarouselTile" (carouselLoad)="carouselTileLoad($event)" *ngIf="CarouselControlArray">
         <ngx-tile NgxCarouselItem *ngFor="let main of CarouselControlArray; let i = index">
             <a href="" class="url-link">
                 <div class="container-img">
-                    <img class="d-block img-fluid img-float  mx-auto" src="{{ main.field_image.url }}" alt="{{ main.field_image.alt }}">
+                    <img class="d-block img-fluid img-float  mx-auto" src="{{ main.field_image?.url }}" alt="{{ main.field_image?.alt }}">
                 </div>
                 <div class="info">
                     <hr class="line">

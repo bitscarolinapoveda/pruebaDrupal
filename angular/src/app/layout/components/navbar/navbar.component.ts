@@ -48,7 +48,6 @@ export class NavbarComponent implements OnInit {
         return this.navbar.getMenuItems().subscribe(items => {
             this.NavbarArray = items;
             this.NavbarArray = this.addIdForColToNavbar(this.NavbarArray, 1, 1);
-            console.log(this.NavbarArray);
         });
     }
 
@@ -97,9 +96,10 @@ export class NavbarComponent implements OnInit {
       }
     }
     menuOver(event) {
-        $('.page-wrapper').css('filter', 'blur(2px)');
+        $('.hover-menu-dark-layout').removeClass('hide');
+        $('.hover-menu-dark-layout').css('height', document.getElementById('main-wrapper').scrollHeight + 'px');
     }
     menuOut($event) {
-        $('.page-wrapper').css('filter', '');
+        $('.hover-menu-dark-layout').addClass('hide');
     }
 }

@@ -25,7 +25,7 @@ export class CarouselControlsComponent implements OnInit {
     private AchievementCarouselItems: ContentType,
     private _cardService: CustomCardService
     ) {
-            this.CarouselControlArray = [];
+      this.CarouselControlArray = [];
   }
 
   ngOnInit() {
