@@ -5,14 +5,14 @@ namespace Drupal\bits_cards\Plugin\Block;
 use Drupal\adf_cards\Plugin\Block\CardBase;
 
 /**
- * Provides a 'SuccessCaseFilterCard' block.
+ * Provides a 'ServicesFilterCard' block.
  *
  * @Block(
- *  id = "successcasefilter_card",
- *  admin_label = @Translation("SuccessCaseFilter card"),
+ *  id = "servicesfilter_card",
+ *  admin_label = @Translation("ServicesFilter card"),
  * )
  */
-class SuccessCaseFilterCard extends CardBase {
+class ServicesFilterCard extends CardBase {
 
   /**
    * {@inheritdoc}
@@ -24,7 +24,7 @@ class SuccessCaseFilterCard extends CardBase {
           'title' => [
             'type' => 'textfield',
             'title' => $this->t('Título'),
-            'input' => $this->t('Filtrar casos de éxito'),
+            'input' => $this->t('Filtrar Servicios'),
             'service_field' => 'title',
             'show' => 1,
             'weight' => 1,
@@ -41,55 +41,20 @@ class SuccessCaseFilterCard extends CardBase {
       ],
       'body' => [
         'table_fields' => [
-          'client' => [
+          'category_service' => [
             'type' => 'textfield',
-            'title' => $this->t('Cliente'),
-            'input' => $this->t('Cliente'),
-            'service_field' => 'client',
+            'title' => $this->t('Categoría de servicio'),
+            'input' => $this->t('Categoría de servicio'),
+            'service_field' => 'category_service',
             'show' => 1,
             'weight' => 1,
             'max_length' => 50,
           ],
-          'client_placeholder' => [
+          'category_service_placeholder' => [
             'type' => 'textfield',
-            'title' => $this->t('Placeholder de Cliente'),
-            'input' => $this->t('Filtre por cliente'),
-            'service_field' => 'client_placeholder',
-            'show' => 1,
-            'weight' => 1,
-            'max_length' => 50,
-          ],
-          'sector' => [
-            'type' => 'textfield',
-            'title' => $this->t('Sector'),
-            'input' => $this->t('Sector'),
-            'service_field' => 'sector',
-            'show' => 1,
-            'weight' => 1,
-            'max_length' => 50,
-          ],'sector_placeholder' => [
-            'type' => 'textfield',
-            'title' => $this->t('Placeholder de Sector'),
-            'input' => $this->t('Filtre por sector'),
-            'service_field' => 'sector_placeholder',
-            'show' => 1,
-            'weight' => 1,
-            'max_length' => 50,
-          ],
-          'tecnology' => [
-            'type' => 'textfield',
-            'title' => $this->t('Tecnología'),
-            'input' => $this->t('Tecnología'),
-            'service_field' => 'tecnology',
-            'show' => 1,
-            'weight' => 1,
-            'max_length' => 50,
-          ],
-          'tecnology_placeholder' => [
-            'type' => 'textfield',
-            'title' => $this->t('Placeholder de Tecnología'),
-            'input' => $this->t('Filtre por tecnología'),
-            'service_field' => 'tecnology_placeholder',
+            'title' => $this->t('Placeholder de Categoría de servicio'),
+            'input' => $this->t('Filtre por categoría'),
+            'service_field' => 'category_service_placeholder',
             'show' => 1,
             'weight' => 1,
             'max_length' => 50,
@@ -115,7 +80,7 @@ class SuccessCaseFilterCard extends CardBase {
           'button' => [
             'type' => 'textfield',
             'title' => $this->t('Texto del botón'),
-            'input' => $this->t('Ver todos los proyectos'),
+            'input' => $this->t('Ver todos los servicios'),
             'service_field' => 'button',
             'show' => 1,
             'weight' => 1,
