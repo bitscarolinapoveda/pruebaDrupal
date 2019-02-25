@@ -13,7 +13,9 @@
             "drupal/entityqueue": "^1.0",
             "drupal/admin_toolbar": "^1.25",
                 "drupal/webform": "^5.0",
-                "drupal/webform_rest": "^2.0"
+                "drupal/webform_rest": "^2.0",
+                "drupal/devel": "^2.0",
+                "drupal/cors": "^1.0"
         },
         "replace": {
             "drupal/core": "^8.6"

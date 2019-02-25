@@ -104,12 +104,19 @@ class BitsCardsOutputJsonCard {
           }
           elseif ($type === 'entity_reference'){
             $tid = $node->get($field)->getValue();
-            $terms_name = [];
+            $dataDefinition = $node->get($field)->getSetting('handler');
             foreach ($tid as $key => $value) {
-              $term = Term::load($value['target_id']);
-              $terms_name[] =$term->getName();
+              $terms_name = '';
+              if ($dataDefinition == "default:taxonomy_term") {
+                $term = Term::load($value['target_id']);
+              }
+              elseif ($dataDefinition == "default:service_product_bits") {
+                $entityName = explode(':',$dataDefinition)[1];
+                $term = \Drupal::entityTypeManager()->getStorage($entityName)->load($value['target_id']);
+              }
+              $terms_name = $term->label();
+              $data[$field][] = $terms_name;
             }
-            $data[$field] = $terms_name;
           }
           elseif ($type === 'link'){
             $tid = $node->get($field)->getValue();

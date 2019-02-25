@@ -89,7 +89,7 @@ module.exports = "/* based on angular-toastr css https://github.com/Foxandxss/an
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "@font-face {\n  font-family: 'Open Sans light';\n  font-style: light;\n  font-weight: 300;\n  src: url('OpenSans-Light.ttf'); }\n\n@font-face {\n  font-family: 'Open Sans bold';\n  font-style: bold;\n  font-weight: 700;\n  src: url('OpenSans-Bold.ttf'); }\n\n@font-face {\n  font-family: 'Open Sans';\n  font-style: regular;\n  font-weight: 400;\n  src: url('OpenSans-Regular.ttf'); }\n\n@font-face {\n  font-family: 'Open Sans Codensed';\n  font-style: regular;\n  font-weight: 400;\n  src: url('OpenSansCondensed-Light.ttf'); }\n\nbody h1, body h2 {\n  font-family: 'Open Sans light'; }\n"
+module.exports = "@font-face {\n  font-family: 'Open Sans light';\n  font-style: light;\n  font-weight: 300;\n  src: url('OpenSans-Light.ttf'); }\n\n@font-face {\n  font-family: 'Open Sans bold';\n  font-style: bold;\n  font-weight: 700;\n  src: url('OpenSans-Bold.ttf'); }\n\n@font-face {\n  font-family: 'Open Sans';\n  font-style: regular;\n  font-weight: 400;\n  src: url('OpenSans-Regular.ttf'); }\n\n@font-face {\n  font-family: 'Open Sans Codensed';\n  font-style: regular;\n  font-weight: 400;\n  src: url('OpenSansCondensed-Light.ttf'); }\n\nbody h1, body h2 {\n  font-family: 'Open Sans light'; }\n\n.hide {\n  display: none; }\n\n.hover-menu-dark-layout {\n  width: 100%;\n  height: 3000px;\n  background-color: rgba(0, 0, 0, 0.5);\n  position: absolute;\n  z-index: 1; }\n"
 
 /***/ }),
 

@@ -155,7 +155,7 @@ var LoadingComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<section id=\"title-description\">\n    <h4 class=\"title-block-location\">Nuestra ubicacion</h4>\n    <p class=\"description-block-location\">Aqui podra ver la ubicacion de nuestras oficinas</p>\n    <!-- CONFIGURACION DE DRUPAL -->\n</section>\n<!-- MOBILE -->\n<section id=\"accordion-section-mobile\" (window:resize)=\"onResize(mobile)\" *ngIf=\"mobileScreen\">\n    <ngb-accordion #acc=\"ngbAccordion\" activeIds=\"static-0\" [closeOthers]=\"closeOthers\">\n        <ngb-panel *ngFor=\"let ubicacion of locations_data ; let i = index\" id=\"static-{{i}}\">\n            <ng-template ngbPanelTitle>\n                <div class=\"container location-block\">\n                    <div class=\"row location-button\">\n                        <div class=\"col-10 info-location\">\n                            <h2 class=\"location-li title\" >{{ubicacion.title}}</h2>\n                            <div id=\"address-block\" class=\"address-block\">\n                                <i class=\"fas fa-map-marker-alt\"></i>\n                                <li class=\"location-li address\">{{ubicacion.address}}</li>\n                            </div>\n                            <div class=\"telephone-block\">\n                                <i class=\"fas fa-phone\"></i>\n                                <li class=\"location-li telephone\">{{ubicacion.telephone}}</li>\n                            </div>\n                        </div>\n                        <div class=\"col-2 info-icon\">\n                            <i class=\"fas fa-sort-down\"></i>\n                        </div>\n                    </div>\n                </div>\n            </ng-template>\n            <ng-template ngbPanelContent>\n                <section id=\"mapa\">\n                    <agm-map [latitude]=\"ubicacion.lat\" [longitude]=\"ubicacion.lng\" [styles]=\"bitsTypeMap\" [zoom]=\"defaultZoomMap\" [backgroundColor]=\"colorWhileLoad\" style=\"height: 300px;\">\n                        <agm-marker [latitude]=\"ubicacion.lat\" [longitude]=\"ubicacion.lng\" [iconUrl]=\"imageIcon\"> \n                            <agm-info-window #window [isOpen]=\"true\">\n                                <h6 class=\"info-window-location\">{{ubicacion.title}}</h6>\n                                <h6 class=\"info-window-location address\">{{ubicacion.address}}</h6>\n                            </agm-info-window>\n                        </agm-marker>\n                    </agm-map>\n                </section>\n            </ng-template>\n        </ngb-panel>\n    </ngb-accordion>\n</section>\n<!-- DESKTOP -->\n<section id=\"accordion-section-desktop\" (window:resize)=\"onResize(desktop)\" *ngIf=\"desktopScreen\">\n    <div class=\"row general-box-location\">\n        <div class=\"col-4 buttons-location-desktop\">\n            <div class=\"control-button\" *ngIf=\"needButtons\">\n                <div class=\"col-12\">\n                    <div class=\"row arrow-up\" (click)=\"scrollMaps('up')\">\n                        <i id =\"up-arrow\" class=\"fas fa-chevron-circle-up fa-3x\"></i>\n                    </div>\n                    <div class=\"row arrow-down\" (click)=\"scrollMaps('down')\">\n                        <i id =\"down-arrow\" class=\"fas fa-chevron-circle-down fa-3x\"></i>\n                    </div>\n                </div>\n            </div>\n            <div id=\"box-of-buttons\" class=\"row location-button\">\n                <div id=\"{{i}}\" class=\"col-12 button-{{i}} info-location\" *ngFor=\"let ubicacion of locations_data ; let i = index\" (click)=\"ubicateCity(ubicacion, i)\">\n                    <h2 class=\"location-li title\" >{{ubicacion.title}}</h2>\n                    <div id=\"address-block\" class=\"address-block\">\n                        <i class=\"fas fa-map-marker-alt\"></i>\n                        <li class=\"location-li address\">{{ubicacion.address}}</li>\n                    </div>\n                    <div class=\"telephone-block\">\n                        <i class=\"fas fa-phone\"></i>\n                        <li class=\"location-li telephone\">{{ubicacion.telephone}}</li>\n                    </div>\n                </div>\n            </div>\n        </div>\n        <div class=\"col-8 map-location-desktop\">\n            <agm-map [latitude]=\"lat\" [longitude]=\"lng\" [styles]=\"bitsTypeMap\" [zoom]=\"defaultZoomMap\" [ngStyle]=\"{'width': widthOftheMap}\" [backgroundColor]=\"colorWhileLoad\" style=\"height: 519px;\">\n                <agm-marker [latitude]=\"lat\" [longitude]=\"lng\" [iconUrl]=\"imageIcon\"> \n                    <agm-info-window #window [isOpen]=\"infoWindowOpen\">\n                        <h6 class=\"info-window-location\">{{ titleCity }}</h6>\n                        <h6 class=\"info-window-location address\">{{ addressCity }}</h6>\n                    </agm-info-window>\n                </agm-marker>\n            </agm-map>\n        </div>\n    </div>\n</section>\n"
+module.exports = "<section id=\"title-description\">\n    <h4 class=\"title-block-location\">{{title}}</h4>\n    <p class=\"description-block-location\">Aqui podra ver la ubicacion de nuestras oficinas</p>\n    <!-- CONFIGURACION DE DRUPAL -->\n</section>\n<!-- MOBILE -->\n<section id=\"accordion-section-mobile\" (window:resize)=\"onResize(mobile)\" *ngIf=\"mobileScreen\">\n    <ngb-accordion #acc=\"ngbAccordion\" activeIds=\"static-0\" [closeOthers]=\"closeOthers\">\n        <ngb-panel *ngFor=\"let ubicacion of locations_data ; let i = index\" id=\"static-{{i}}\">\n            <ng-template ngbPanelTitle>\n                <div class=\"container location-block\">\n                    <div class=\"row location-button\">\n                        <div class=\"col-10 info-location\">\n                            <h2 class=\"location-li title\" >{{ubicacion.title}}</h2>\n                            <div id=\"address-block\" class=\"address-block\">\n                                <i class=\"fas fa-map-marker-alt\"></i>\n                                <li class=\"location-li address\">{{ubicacion.field_address}}</li>\n                            </div>\n                            <div class=\"telephone-block\">\n                                <i class=\"fas fa-phone\"></i>\n                                <li class=\"location-li telephone\">{{ubicacion.field_telephone}}</li>\n                            </div>\n                        </div>\n                        <div class=\"col-2 info-icon\">\n                            <i class=\"fas fa-sort-down\"></i>\n                        </div>\n                    </div>\n                </div>\n            </ng-template>\n            <ng-template ngbPanelContent>\n                <section id=\"mapa\">\n                    <agm-map [latitude]=\"ubicacion.lat\" [longitude]=\"ubicacion.lng\" [styles]=\"bitsTypeMap\" [zoom]=\"defaultZoomMap\" [backgroundColor]=\"colorWhileLoad\" style=\"height: 300px;\">\n                        <agm-marker [latitude]=\"ubicacion.lat\" [longitude]=\"ubicacion.lng\" [iconUrl]=\"imageIcon\"> \n                            <agm-info-window #window [isOpen]=\"true\">\n                                <h6 class=\"info-window-location\">{{ubicacion.title}}</h6>\n                                <h6 class=\"info-window-location address\">{{ubicacion.field_address}}</h6>\n                            </agm-info-window>\n                        </agm-marker>\n                    </agm-map>\n                </section>\n            </ng-template>\n        </ngb-panel>\n    </ngb-accordion>\n</section>\n<!-- DESKTOP -->\n<section id=\"accordion-section-desktop\" (window:resize)=\"onResize(desktop)\" *ngIf=\"desktopScreen\">\n    <div class=\"row general-box-location\">\n        <div class=\"col-4 buttons-location-desktop\">\n            <div class=\"control-button\" *ngIf=\"needButtons\">\n                <div class=\"col-12\">\n                    <div class=\"row arrow-up\" (click)=\"scrollMaps('up')\">\n                        <i id =\"up-arrow\" class=\"fas fa-chevron-circle-up fa-3x\"></i>\n                    </div>\n                    <div class=\"row arrow-down\" (click)=\"scrollMaps('down')\">\n                        <i id =\"down-arrow\" class=\"fas fa-chevron-circle-down fa-3x\"></i>\n                    </div>\n                </div>\n            </div>\n            <div id=\"box-of-buttons\" class=\"row location-button\">\n                <div id=\"{{i}}\" class=\"col-12 button-{{i}} info-location\" *ngFor=\"let ubicacion of locations_data ; let i = index\" (click)=\"ubicateCity(ubicacion, i)\">\n                    <h2 class=\"location-li title\" >{{ubicacion.title}}</h2>\n                    <div id=\"address-block\" class=\"address-block\">\n                        <i class=\"fas fa-map-marker-alt\"></i>\n                        <li class=\"location-li address\">{{ubicacion.field_address}}</li>\n                    </div>\n                    <div class=\"telephone-block\">\n                        <i class=\"fas fa-phone\"></i>\n                        <li class=\"location-li telephone\">{{ubicacion.field_telephone}}</li>\n                    </div>\n                </div>\n            </div>\n        </div>\n        <div class=\"col-8 map-location-desktop\">\n            <agm-map [latitude]=\"lat\" [longitude]=\"lng\" [styles]=\"bitsTypeMap\" [zoom]=\"defaultZoomMap\" [ngStyle]=\"{'width': widthOftheMap}\" [backgroundColor]=\"colorWhileLoad\" style=\"height: 519px;\">\n                <agm-marker [latitude]=\"lat\" [longitude]=\"lng\" [iconUrl]=\"imageIcon\"> \n                    <agm-info-window #window [isOpen]=\"infoWindowOpen\">\n                        <h6 class=\"info-window-location\">{{ titleCity }}</h6>\n                        <h6 class=\"info-window-location address\">{{ addressCity }}</h6>\n                    </agm-info-window>\n                </agm-marker>\n            </agm-map>\n        </div>\n    </div>\n</section>\n"
 
 /***/ }),
 
@@ -182,6 +182,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LocationsComponent", function() { return LocationsComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _services_http_http_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../services/http/http.service */ "./src/app/services/http/http.service.ts");
+/* harmony import */ var src_app_services_cards_v1_card_services__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/cards/v1-card.services */ "./src/app/services/cards/v1-card.services.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -193,9 +194,12 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 };
 
 
+
 var LocationsComponent = /** @class */ (function () {
-    function LocationsComponent(_http) {
+    function LocationsComponent(_http, service) {
         this._http = _http;
+        this.service = service;
+        this.items = [];
         this.imageIcon = '/assets/icon/iconBitsLocationMarker.svg';
         this.closeOthers = true;
         this.infoWindowOpen = true;
@@ -237,19 +241,25 @@ var LocationsComponent = /** @class */ (function () {
     }
     LocationsComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this._http.get('/location-resources').subscribe(function (items) {
-            for (var index = 0; index < items.length; index++) {
-                items[index].lat = parseFloat(items[index].lat);
-                items[index].lng = parseFloat(items[index].lng);
+        this.service.getCustomCardInformation('locationcard_2').subscribe(function (params) {
+            _this.title = params.header[0].data.title;
+            for (var index = 0; index < params.data.length; index++) {
+                var value = params.data[index].field_location.split(',');
+                _this.items[index] = { lat: '', lon: '', title: '', field_address: '', field_telephone: '' };
+                _this.items[index].lat = parseFloat(value[0].trim());
+                _this.items[index].lng = parseFloat(value[1].trim());
+                _this.items[index].title = params.data[index].title;
+                _this.items[index].field_address = params.data[index].field_address;
+                _this.items[index].field_telephone = params.data[index].field_telephone;
             }
-            if (items.length > 4) {
+            if (params.data.length > 4) {
                 _this.needButtons = true;
             }
-            _this.lat = items[0].lat;
-            _this.lng = items[0].lng;
-            _this.titleCity = items[0].title;
-            _this.addressCity = items[0].address;
-            _this.locations_data = items;
+            _this.lat = _this.items[0].lat;
+            _this.lng = _this.items[0].lng;
+            _this.titleCity = _this.items[0].title;
+            _this.addressCity = _this.items[0].field_address;
+            _this.locations_data = _this.items;
         });
         this.onResize(screen);
     };
@@ -280,7 +290,7 @@ var LocationsComponent = /** @class */ (function () {
         this.lat = parseFloat(ubicacion.lat);
         this.lng = parseFloat(ubicacion.lng);
         this.titleCity = ubicacion.title;
-        this.addressCity = ubicacion.address;
+        this.addressCity = ubicacion.field_address;
         for (var i = 0; i < this.locations_data.length; i++) {
             document.getElementById(i + '').style.backgroundColor = '#f2f4f6';
         }
@@ -313,7 +323,8 @@ var LocationsComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./locations.component.html */ "./src/app/@adf/components/shared/locations/locations.component.html"),
             styles: [__webpack_require__(/*! ./locations.component.scss */ "./src/app/@adf/components/shared/locations/locations.component.scss")]
         }),
-        __metadata("design:paramtypes", [_services_http_http_service__WEBPACK_IMPORTED_MODULE_1__["HttpService"]])
+        __metadata("design:paramtypes", [_services_http_http_service__WEBPACK_IMPORTED_MODULE_1__["HttpService"],
+            src_app_services_cards_v1_card_services__WEBPACK_IMPORTED_MODULE_2__["CustomCardService"]])
     ], LocationsComponent);
     return LocationsComponent;
 }());
@@ -518,25 +529,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_tabs_tabs_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/tabs/tabs.component */ "./src/app/cards/components/tabs/tabs.component.ts");
 /* harmony import */ var _components_video_information_video_information_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/video-information/video-information.component */ "./src/app/cards/components/video-information/video-information.component.ts");
 /* harmony import */ var _components_separator_separator_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/separator/separator.component */ "./src/app/cards/components/separator/separator.component.ts");
-/* harmony import */ var _components_client_card_client_card_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/client-card/client-card.component */ "./src/app/cards/components/client-card/client-card.component.ts");
-/* harmony import */ var _components_project_summary_project_summary_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./components/project-summary/project-summary.component */ "./src/app/cards/components/project-summary/project-summary.component.ts");
-/* harmony import */ var _components_menu_template_menu_template_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./components/menu-template/menu-template.component */ "./src/app/cards/components/menu-template/menu-template.component.ts");
-/* harmony import */ var _components_slide_slide_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./components/slide/slide.component */ "./src/app/cards/components/slide/slide.component.ts");
-/* harmony import */ var _components_slider_slider_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./components/slider/slider.component */ "./src/app/cards/components/slider/slider.component.ts");
-/* harmony import */ var _components_blurb_blurb_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./components/blurb/blurb.component */ "./src/app/cards/components/blurb/blurb.component.ts");
-/* harmony import */ var _components_card_img_text_card_img_text_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./components/card-img-text/card-img-text.component */ "./src/app/cards/components/card-img-text/card-img-text.component.ts");
-/* harmony import */ var _components_blog_blog_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./components/blog/blog.component */ "./src/app/cards/components/blog/blog.component.ts");
-/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
-/* harmony import */ var _services_cards_node_service__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ../services/cards/node.service */ "./src/app/services/cards/node.service.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _adf_adf_module__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ../@adf/adf.module */ "./src/app/@adf/adf.module.ts");
-/* harmony import */ var ngx_slick__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ngx-slick */ "./node_modules/ngx-slick/ngx-slick.umd.js");
-/* harmony import */ var ngx_slick__WEBPACK_IMPORTED_MODULE_29___default = /*#__PURE__*/__webpack_require__.n(ngx_slick__WEBPACK_IMPORTED_MODULE_29__);
-/* harmony import */ var ngx_owl_carousel__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ngx-owl-carousel */ "./node_modules/ngx-owl-carousel/index.js");
-/* harmony import */ var ngx_owl_carousel__WEBPACK_IMPORTED_MODULE_30___default = /*#__PURE__*/__webpack_require__.n(ngx_owl_carousel__WEBPACK_IMPORTED_MODULE_30__);
-/* harmony import */ var ngx_carousel__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ngx-carousel */ "./node_modules/ngx-carousel/index.js");
-/* harmony import */ var hammerjs__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! hammerjs */ "./node_modules/hammerjs/hammer.js");
-/* harmony import */ var hammerjs__WEBPACK_IMPORTED_MODULE_32___default = /*#__PURE__*/__webpack_require__.n(hammerjs__WEBPACK_IMPORTED_MODULE_32__);
+/* harmony import */ var _components_menu_template_menu_template_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/menu-template/menu-template.component */ "./src/app/cards/components/menu-template/menu-template.component.ts");
+/* harmony import */ var _components_slide_slide_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./components/slide/slide.component */ "./src/app/cards/components/slide/slide.component.ts");
+/* harmony import */ var _components_slider_slider_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./components/slider/slider.component */ "./src/app/cards/components/slider/slider.component.ts");
+/* harmony import */ var _components_blurb_blurb_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./components/blurb/blurb.component */ "./src/app/cards/components/blurb/blurb.component.ts");
+/* harmony import */ var _components_card_img_text_card_img_text_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./components/card-img-text/card-img-text.component */ "./src/app/cards/components/card-img-text/card-img-text.component.ts");
+/* harmony import */ var _components_blog_blog_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./components/blog/blog.component */ "./src/app/cards/components/blog/blog.component.ts");
+/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
+/* harmony import */ var _components_client_project_imedical_client_project_imedical_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./components/client-project-imedical/client-project-imedical.component */ "./src/app/cards/components/client-project-imedical/client-project-imedical.component.ts");
+/* harmony import */ var _services_cards_node_service__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ../services/cards/node.service */ "./src/app/services/cards/node.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _adf_adf_module__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ../@adf/adf.module */ "./src/app/@adf/adf.module.ts");
+/* harmony import */ var ngx_slick__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ngx-slick */ "./node_modules/ngx-slick/ngx-slick.umd.js");
+/* harmony import */ var ngx_slick__WEBPACK_IMPORTED_MODULE_28___default = /*#__PURE__*/__webpack_require__.n(ngx_slick__WEBPACK_IMPORTED_MODULE_28__);
+/* harmony import */ var ngx_owl_carousel__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ngx-owl-carousel */ "./node_modules/ngx-owl-carousel/index.js");
+/* harmony import */ var ngx_owl_carousel__WEBPACK_IMPORTED_MODULE_29___default = /*#__PURE__*/__webpack_require__.n(ngx_owl_carousel__WEBPACK_IMPORTED_MODULE_29__);
+/* harmony import */ var ngx_carousel__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ngx-carousel */ "./node_modules/ngx-carousel/index.js");
+/* harmony import */ var hammerjs__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! hammerjs */ "./node_modules/hammerjs/hammer.js");
+/* harmony import */ var hammerjs__WEBPACK_IMPORTED_MODULE_31___default = /*#__PURE__*/__webpack_require__.n(hammerjs__WEBPACK_IMPORTED_MODULE_31__);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 /* harmony import */ var _pipes_safehtml_pipe__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ../pipes/safehtml.pipe */ "./src/app/pipes/safehtml.pipe.ts");
 /* harmony import */ var _pipes_safecss_pipe__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ../pipes/safecss.pipe */ "./src/app/pipes/safecss.pipe.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
@@ -570,7 +581,6 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
-
 // Servicios
 
 
@@ -579,7 +589,8 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
-//Pipes
+
+// Pipes
 
 
 var CardsModule = /** @class */ (function () {
@@ -603,14 +614,13 @@ var CardsModule = /** @class */ (function () {
                 _components_tabs_tabs_component__WEBPACK_IMPORTED_MODULE_14__["TabsComponent"],
                 _components_video_information_video_information_component__WEBPACK_IMPORTED_MODULE_15__["VideoInformationComponent"],
                 _components_separator_separator_component__WEBPACK_IMPORTED_MODULE_16__["SeparatorComponent"],
-                _components_client_card_client_card_component__WEBPACK_IMPORTED_MODULE_17__["ClientCardComponent"],
-                _components_project_summary_project_summary_component__WEBPACK_IMPORTED_MODULE_18__["ProjectSummaryComponent"],
-                _components_menu_template_menu_template_component__WEBPACK_IMPORTED_MODULE_19__["MenuTemplateComponent"],
-                _components_slide_slide_component__WEBPACK_IMPORTED_MODULE_20__["SlideComponent"],
-                _components_slider_slider_component__WEBPACK_IMPORTED_MODULE_21__["SliderComponent"],
-                _components_blurb_blurb_component__WEBPACK_IMPORTED_MODULE_22__["BlurbComponent"],
-                _components_card_img_text_card_img_text_component__WEBPACK_IMPORTED_MODULE_23__["CardImgTextComponent"],
-                _components_blog_blog_component__WEBPACK_IMPORTED_MODULE_24__["BlogComponent"]
+                _components_menu_template_menu_template_component__WEBPACK_IMPORTED_MODULE_17__["MenuTemplateComponent"],
+                _components_slide_slide_component__WEBPACK_IMPORTED_MODULE_18__["SlideComponent"],
+                _components_slider_slider_component__WEBPACK_IMPORTED_MODULE_19__["SliderComponent"],
+                _components_blurb_blurb_component__WEBPACK_IMPORTED_MODULE_20__["BlurbComponent"],
+                _components_card_img_text_card_img_text_component__WEBPACK_IMPORTED_MODULE_21__["CardImgTextComponent"],
+                _components_blog_blog_component__WEBPACK_IMPORTED_MODULE_22__["BlogComponent"],
+                _components_client_project_imedical_client_project_imedical_component__WEBPACK_IMPORTED_MODULE_24__["ClientProjectImedicalComponent"]
             ],
             exports: [
                 _components_carousel_item_carousel_item_component__WEBPACK_IMPORTED_MODULE_4__["CarouselItemComponent"],
@@ -626,17 +636,16 @@ var CardsModule = /** @class */ (function () {
                 _components_tabs_tabs_component__WEBPACK_IMPORTED_MODULE_14__["TabsComponent"],
                 _components_video_information_video_information_component__WEBPACK_IMPORTED_MODULE_15__["VideoInformationComponent"],
                 _components_separator_separator_component__WEBPACK_IMPORTED_MODULE_16__["SeparatorComponent"],
-                _components_client_card_client_card_component__WEBPACK_IMPORTED_MODULE_17__["ClientCardComponent"],
-                _components_project_summary_project_summary_component__WEBPACK_IMPORTED_MODULE_18__["ProjectSummaryComponent"],
-                _components_menu_template_menu_template_component__WEBPACK_IMPORTED_MODULE_19__["MenuTemplateComponent"],
-                _components_slide_slide_component__WEBPACK_IMPORTED_MODULE_20__["SlideComponent"],
-                _components_slider_slider_component__WEBPACK_IMPORTED_MODULE_21__["SliderComponent"],
-                _components_blurb_blurb_component__WEBPACK_IMPORTED_MODULE_22__["BlurbComponent"],
-                _components_card_img_text_card_img_text_component__WEBPACK_IMPORTED_MODULE_23__["CardImgTextComponent"],
-                _components_blog_blog_component__WEBPACK_IMPORTED_MODULE_24__["BlogComponent"]
+                _components_menu_template_menu_template_component__WEBPACK_IMPORTED_MODULE_17__["MenuTemplateComponent"],
+                _components_slide_slide_component__WEBPACK_IMPORTED_MODULE_18__["SlideComponent"],
+                _components_slider_slider_component__WEBPACK_IMPORTED_MODULE_19__["SliderComponent"],
+                _components_blurb_blurb_component__WEBPACK_IMPORTED_MODULE_20__["BlurbComponent"],
+                _components_card_img_text_card_img_text_component__WEBPACK_IMPORTED_MODULE_21__["CardImgTextComponent"],
+                _components_blog_blog_component__WEBPACK_IMPORTED_MODULE_22__["BlogComponent"],
+                _components_client_project_imedical_client_project_imedical_component__WEBPACK_IMPORTED_MODULE_24__["ClientProjectImedicalComponent"]
             ],
-            imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["BrowserModule"], _node_modules_angular_common__WEBPACK_IMPORTED_MODULE_3__["CommonModule"], _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_0__["NgbModule"], _angular_router__WEBPACK_IMPORTED_MODULE_27__["RouterModule"], _adf_adf_module__WEBPACK_IMPORTED_MODULE_28__["AdfModule"], ngx_slick__WEBPACK_IMPORTED_MODULE_29__["SlickModule"].forRoot(), ngx_owl_carousel__WEBPACK_IMPORTED_MODULE_30__["OwlModule"], ngx_carousel__WEBPACK_IMPORTED_MODULE_31__["NgxCarouselModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_25__["BrowserAnimationsModule"]],
-            providers: [_services_cards_node_service__WEBPACK_IMPORTED_MODULE_26__["NodeService"]]
+            imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["BrowserModule"], _node_modules_angular_common__WEBPACK_IMPORTED_MODULE_3__["CommonModule"], _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_0__["NgbModule"], _angular_router__WEBPACK_IMPORTED_MODULE_26__["RouterModule"], _adf_adf_module__WEBPACK_IMPORTED_MODULE_27__["AdfModule"], ngx_slick__WEBPACK_IMPORTED_MODULE_28__["SlickModule"].forRoot(), ngx_owl_carousel__WEBPACK_IMPORTED_MODULE_29__["OwlModule"], ngx_carousel__WEBPACK_IMPORTED_MODULE_30__["NgxCarouselModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_23__["BrowserAnimationsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_32__["FormsModule"]],
+            providers: [_services_cards_node_service__WEBPACK_IMPORTED_MODULE_25__["NodeService"]]
         })
     ], CardsModule);
     return CardsModule;
@@ -653,7 +662,7 @@ var CardsModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<section id=\"transition-image2\">\n    <picture *ngIf=\"allianceBackground\">\n        <source media=\"(max-width:500px)\" [srcset]=\"allianceBackground.url\">\n        <img class=\"w-100 backgraund-image\" [src]=\"allianceBackground.url\" alt=\"{{ allianceBackground.title }}\">\n    </picture>\n    <h1>{{ allianceTitle?.title }}</h1>\n    <div class=\"list-image-item\">\n        <ul class=\"row\">\n            <li *ngFor=\"let our of allianceArrayLogos; let id = index\">\n                <picture>\n                    <img id=\"slide-img2-{{ id }}\" class=\"img-item2\" [src]=\"our.field_alliance_image.url\" [alt]=\"our.field_alliance_image.alt\" >\n                </picture>\n            </li>\n        </ul>\n    </div>\n</section>"
+module.exports = "<div class=\"row position-relative row-tec\" [ngStyle]=\"{'background-image':'url(' + allianceBackground + ')'}\">\n    <div class=\"position-absolute content-trans\"></div>\n    <div class=\"col-md-12 pt-5 pb-2 px-2\">\n        <h1 class=\"text-center text-white\">{{ allianceTitle }}</h1>\n    </div>\n    <div class=\"col-md-12 py-5 px-2\">\n        <div class=\"tec-slider\">\n            <ngx-tile NgxCarouselItem id=\"logos\" *ngFor=\"let im of arrayLogosCustom\" class=\"mx-auto div-slide\">\n                <div class=\"img-fluid\" *ngFor=\"let img of im\" [ngStyle]=\"{'background-image':'url(' + img.field_alliance_image.url + ')'}\"></div>\n            </ngx-tile>\n        </div>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -664,7 +673,7 @@ module.exports = "<section id=\"transition-image2\">\n    <picture *ngIf=\"allia
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "#transition-image2 {\n  margin-top: 53px;\n  height: 358px;\n  display: block; }\n  @media (min-width: 1025px) {\n    #transition-image2 {\n      height: 300px; } }\n  @media (min-width: 668px) and (max-width: 1024px) {\n    #transition-image2 {\n      height: 300px; } }\n  #transition-image2 picture {\n    display: flex; }\n  #transition-image2 picture .backgraund-image {\n      height: 358px;\n      position: absolute; }\n  @media (min-width: 1025px) {\n        #transition-image2 picture .backgraund-image {\n          height: 300px; } }\n  @media (min-width: 668px) and (max-width: 1024px) {\n        #transition-image2 picture .backgraund-image {\n          height: 300px; } }\n  #transition-image2 h1 {\n    font-size: 30px;\n    color: #FFFFFF;\n    position: absolute;\n    z-index: 1;\n    margin-top: 62px;\n    width: 100%;\n    text-align: center; }\n  @media (min-width: 1025px) {\n      #transition-image2 h1 {\n        margin-left: 0%;\n        width: 100%;\n        margin-top: 67px;\n        font-size: 40px;\n        text-align: center; } }\n  @media (min-width: 668px) and (max-width: 1024px) {\n      #transition-image2 h1 {\n        width: 100%;\n        margin-left: 0%;\n        text-align: center;\n        margin-top: 67px;\n        font-size: 40px; } }\n  #transition-image2 .list-image-item {\n    height: 357px; }\n  #transition-image2 .list-image-item .row {\n      width: 100%;\n      padding: 0%;\n      position: absolute;\n      margin-top: 116px;\n      margin-right: auto;\n      margin-left: auto;\n      justify-content: center; }\n  @media (min-width: 1025px) {\n        #transition-image2 .list-image-item .row {\n          margin-top: 170px; } }\n  @media (min-width: 668px) and (max-width: 1024px) {\n        #transition-image2 .list-image-item .row {\n          margin-top: 125px; } }\n  #transition-image2 .list-image-item .row li {\n        z-index: 1;\n        height: 49px;\n        width: 28%;\n        list-style: none;\n        display: flex;\n        margin-top: 9%;\n        margin-left: 5%;\n        margin-right: 5%;\n        align-items: center; }\n  @media (min-width: 1025px) {\n          #transition-image2 .list-image-item .row li {\n            height: auto;\n            width: initial;\n            justify-items: center;\n            padding: 0 3.2%;\n            margin-top: auto;\n            margin-left: initial;\n            margin-right: initial; } }\n  @media (min-width: 668px) and (max-width: 1024px) {\n          #transition-image2 .list-image-item .row li {\n            height: auto;\n            width: initial;\n            margin-left: initial;\n            margin-right: initial;\n            margin-top: 3%;\n            padding: 0 2.2%; } }\n  #transition-image2 .list-image-item .row li img {\n          height: 100%;\n          width: 100%; }\n  #transition-image2 .list-image-item::after {\n    content: \"\";\n    background-color: #000000;\n    opacity: 0.3;\n    height: 358px;\n    width: 100%;\n    position: absolute; }\n  @media (min-width: 1025px) {\n      #transition-image2 .list-image-item::after {\n        height: 300px; } }\n  @media (min-width: 668px) and (max-width: 1024px) {\n      #transition-image2 .list-image-item::after {\n        height: 300px; } }\n"
+module.exports = ".row-tec {\n  width: 100%;\n  margin: 0;\n  background-attachment: fixed;\n  background-position: center;\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-image: url(/assets/images/fnd-tecnologias.jpg);\n  min-height: 380px; }\n  .row-tec .content-trans {\n    background: rgba(0, 0, 0, 0.3);\n    width: 100%;\n    height: 100%; }\n  .row-tec .tec-slider {\n    width: 100%;\n    margin: 0 auto;\n    display: flex; }\n  .row-tec .tec-slider .item {\n      margin: 0 auto; }\n  .row-tec .tec-slider .div-slide {\n      margin: 0 auto; }\n  .img-fluid {\n  width: 175px;\n  height: 140px;\n  background-repeat: no-repeat;\n  background-position: center;\n  background-size: contain;\n  margin: 10px 20px; }\n  @media (max-width: 500px) {\n    .img-fluid {\n      width: 100px;\n      height: 90px; } }\n  :host ::ng-deep .tile {\n  box-shadow: none !important;\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: center; }\n  @media screen and (max-width: 480px) {\n  .img-slide {\n    width: 70%;\n    display: block;\n    height: auto;\n    margin: 20px auto; } }\n"
 
 /***/ }),
 
@@ -680,7 +689,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AlliancesComponent", function() { return AlliancesComponent; });
 /* harmony import */ var _services_cards_v1_card_services__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../../../services/cards/v1-card.services */ "./src/app/services/cards/v1-card.services.ts");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _angular_animations__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/animations */ "./node_modules/@angular/animations/fesm5/animations.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -694,31 +703,93 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 var AlliancesComponent = /** @class */ (function () {
-    function AlliancesComponent(router, alliance) {
-        this.router = router;
+    function AlliancesComponent(alliance, el) {
         this.alliance = alliance;
-        this.allianceBackground = null;
+        this.el = el;
+        this.allianceArrayLogos = [];
+        this.allianceTitle = "";
+        this.allianceBackground = "";
+        this.state = 'hide';
+        this.arrayLogosCustom = [];
     }
+    AlliancesComponent.prototype.checkScroll = function () {
+        var componentPosition = this.el.nativeElement.offsetTop;
+        var scrollPosition = window.pageYOffset;
+        if (scrollPosition >= componentPosition) {
+            this.state = 'hide';
+        }
+        else {
+            this.state = 'show';
+        }
+    };
     AlliancesComponent.prototype.ngOnInit = function () {
         this.getAlliance();
+        this.allianceArrayLogos = [0, 1, 2, 3, 4, 5,];
+        this.carocarouselTile = {
+            grid: { xs: 1, sm: 1, md: 1, lg: 1, all: 0 },
+            slide: 2,
+            speed: 400,
+            animation: 'lazy',
+            point: {
+                visible: true,
+                pointStyles: "\n          .ngxcarouselPoint {\n            list-style-type: none;\n            text-align: center;\n            padding: 12px;\n            margin: 0;\n            white-space: nowrap;\n            overflow: auto;\n            box-sizing: border-box;\n          }\n          .ngxcarouselPoint li {\n            display: inline-block;\n            border-radius: 50%;\n            border: 2px solid rgba(0, 0, 0, 0.55);\n            padding: 4px;\n            margin: 0 3px;\n            transition-timing-function: cubic-bezier(.17, .67, .83, .67);\n            transition: .4s;\n          }\n          .ngxcarouselPoint li.active {\n              background: #6b6b6b;\n              transform: scale(1.2);\n          }\n        "
+            },
+            load: 1,
+            touch: true,
+            easing: 'ease',
+            loop: true,
+        };
+    };
+    AlliancesComponent.prototype.customArrayImages = function (arrayLogosOriginal) {
+        for (var i = 0; i <= arrayLogosOriginal.length; i++) {
+            this.arrayLogosCustom[i] = [];
+            var j2 = 0;
+            for (var j = 0; j < 4; j++) {
+                if (arrayLogosOriginal.length > 0) {
+                    this.arrayLogosCustom[i][j] = arrayLogosOriginal[0];
+                    arrayLogosOriginal.shift();
+                }
+            }
+        }
     };
     AlliancesComponent.prototype.getAlliance = function () {
         var _this = this;
-        this.alliance.getCustomCardInformation('ouralliance').subscribe(function (items) {
-            _this.allianceTitle = items.header[0].data;
-            _this.allianceBackground = items.body[0].data.back_movil[0];
+        return this.alliance.getCustomCardInformation('ouralliance').subscribe(function (items) {
+            console.log(items);
+            _this.allianceTitle = items.header[0].data.title;
+            _this.allianceBackground = items.body[0].data.back_movil[0].url;
             _this.allianceArrayLogos = items.data;
-            //this.allianceArrayLogos = items.files[0].data.logo;
+            _this.customArrayImages(_this.allianceArrayLogos);
         });
     };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["HostListener"])('window:scroll', ['$event']),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", []),
+        __metadata("design:returntype", void 0)
+    ], AlliancesComponent.prototype, "checkScroll", null);
     AlliancesComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-alliances',
             template: __webpack_require__(/*! ./alliances.component.html */ "./src/app/cards/components/alliances/alliances.component.html"),
-            styles: [__webpack_require__(/*! ./alliances.component.scss */ "./src/app/cards/components/alliances/alliances.component.scss")]
+            styles: [__webpack_require__(/*! ./alliances.component.scss */ "./src/app/cards/components/alliances/alliances.component.scss")],
+            animations: [
+                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["trigger"])('fade', [
+                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["state"])('show', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["style"])({
+                        opacity: 1,
+                        transform: "translateY(0)"
+                    })),
+                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["state"])('hide', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["style"])({
+                        opacity: 0,
+                        transform: "translateY(100%)"
+                    })),
+                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["transition"])('show => hide', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["animate"])('300ms ease-out')),
+                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["transition"])('hide => show', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["animate"])('300ms ease-in'))
+                ])
+            ]
         }),
-        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
-            _services_cards_v1_card_services__WEBPACK_IMPORTED_MODULE_0__["CustomCardService"]])
+        __metadata("design:paramtypes", [_services_cards_v1_card_services__WEBPACK_IMPORTED_MODULE_0__["CustomCardService"],
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"]])
     ], AlliancesComponent);
     return AlliancesComponent;
 }());
@@ -745,7 +816,7 @@ module.exports = "<section class=\"page-header\">\n    <div class=\"title\">\n  
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".page-header {\n  height: 352px; }\n  .page-header .title {\n    width: 100%;\n    color: #FFFFFF;\n    position: absolute;\n    margin-top: 178px;\n    text-align: center; }\n  .page-header .title h1 {\n      text-transform: uppercase;\n      position: absolute;\n      width: 100%;\n      margin-left: 50%;\n      font-size: 36px;\n      -webkit-transform: translateX(-50%);\n              transform: translateX(-50%); }\n  @media (min-width: 1025px) {\n        .page-header .title h1 {\n          font-size: 50px; } }\n  @media (min-width: 668px) and (max-width: 1024px) {\n        .page-header .title h1 {\n          font-size: 50px; } }\n  .page-header picture img {\n    width: 100%;\n    height: 352px; }\n  .page-header::before {\n  content: \"\";\n  background-color: #000000;\n  opacity: 0.3;\n  height: 352px;\n  width: 100%;\n  position: absolute; }\n"
+module.exports = ".page-header {\n  height: 352px;\n  overflow: hidden; }\n  .page-header .title {\n    width: 100%;\n    color: #FFFFFF;\n    position: absolute;\n    margin-top: 178px;\n    text-align: center; }\n  .page-header .title h1 {\n      text-transform: uppercase;\n      position: absolute;\n      width: 100%;\n      margin-left: 50%;\n      font-size: 36px;\n      -webkit-transform: translateX(-50%);\n              transform: translateX(-50%); }\n  @media (min-width: 1025px) {\n        .page-header .title h1 {\n          font-size: 50px; } }\n  @media (min-width: 668px) and (max-width: 1024px) {\n        .page-header .title h1 {\n          font-size: 50px; } }\n  .page-header picture img {\n    width: 100%; }\n  .page-header::before {\n  content: \"\";\n  background-color: #000000;\n  opacity: 0.3;\n  height: 352px;\n  width: 100%;\n  position: absolute; }\n"
 
 /***/ }),
 
@@ -833,7 +904,7 @@ var BannerComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\n    <div class=\"col-md-12\">\n        <h1 class=\"condensed text-center\">{{ titulo }}</h1>\n    </div>\n    <div class=\"col-md-12\">\n        <p>{{ fechaPublicacion }}</p>\n        <div *ngFor=\"let postItem of postList\">\n            <h1 class=\"condensed\"> {{ postItem.tituloPost }}</h1>\n            <h3 class=\"condensed\"> {{ postItem.subtituloPost }} </h3>\n            <p class=\"text-justify\"> {{ postItem.descripcionPost }}</p>\n        </div>\n    </div>\n</div>"
+module.exports = "<div class=\"row\" id=\"blog\">\n    <div class=\"col-md-12\">\n        <h1 class=\"condensed text-center\">{{ titulo }}</h1>\n    </div>\n    <div class=\"col-md-12\">\n        <p class=\"\" [innerHTML]=\"list\"></p>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -844,7 +915,7 @@ module.exports = "<div class=\"row\">\n    <div class=\"col-md-12\">\n        <h
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "#blog p, #blog h1, #blog h3, #blog h4 {\n  color: rgba(0, 43, 73, 0.8);\n  font-family: Open Sans Codensed; }\n\n#blog h1 {\n  font-size: 40px; }\n\n#blog /deep/ .date {\n  font-size: 20px; }\n\n#blog /deep/ h3 {\n  font-size: 36px; }\n\n#blog /deep/ h4 {\n  font-size: 22px;\n  text-transform: uppercase; }\n\n#blog /deep/ p {\n  font-size: 20px; }\n"
 
 /***/ }),
 
@@ -874,27 +945,22 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 var BlogComponent = /** @class */ (function () {
     function BlogComponent(_http) {
         this._http = _http;
-        this.titulo = "Política de privacidad BITS Americas S.A.S";
-        this.fechaPublicacion = "Febrero 22, 2018";
-        this.postList = [{
-                tituloPost: "Qui aliquip ex elit aliquip.",
-                subtituloPost: "Laborum aliquip in ipsum nulla sint consequat",
-                descripcionPost: "Reprehenderit ea ad dolor pariatur consequat nulla consequat elit elit velit irure do elit. Aliqua anim do esse esse occaecat eu. Aliquip culpa ad qui mollit exercitation ut nisi excepteur dolore veniam est sunt non exercitation. Irure sit consequat enim reprehenderit do proident consequat aliqua ea dolor esse reprehenderit. Consectetur velit do cupidatat aliqua minim velit esse nisi laboris est ullamco voluptate elit. Do aliqua exercitation mollit est quis labore eu irure esse dolor do."
-            }, {
-                tituloPost: "Qui aliquip ex elit aliquip.",
-                subtituloPost: "Laborum aliquip in ipsum nulla sint consequat",
-                descripcionPost: "Reprehenderit ea ad dolor pariatur consequat nulla consequat elit elit velit irure do elit. Aliqua anim do esse esse occaecat eu. Aliquip culpa ad qui mollit exercitation ut nisi excepteur dolore veniam est sunt non exercitation. Irure sit consequat enim reprehenderit do proident consequat aliqua ea dolor esse reprehenderit. Consectetur velit do cupidatat aliqua minim velit esse nisi laboris est ullamco voluptate elit. Do aliqua exercitation mollit est quis labore eu irure esse dolor do."
-            }, {
-                tituloPost: "Qui aliquip ex elit aliquip.",
-                subtituloPost: "Laborum aliquip in ipsum nulla sint consequat",
-                descripcionPost: "Reprehenderit ea ad dolor pariatur consequat nulla consequat elit elit velit irure do elit. Aliqua anim do esse esse occaecat eu. Aliquip culpa ad qui mollit exercitation ut nisi excepteur dolore veniam est sunt non exercitation. Irure sit consequat enim reprehenderit do proident consequat aliqua ea dolor esse reprehenderit. Consectetur velit do cupidatat aliqua minim velit esse nisi laboris est ullamco voluptate elit. Do aliqua exercitation mollit est quis labore eu irure esse dolor do."
-            }];
+        this.uuid = '';
     }
-    BlogComponent.prototype.ngOnInit = function () { };
+    BlogComponent.prototype.ngOnInit = function () {
+        this.getPoliticService();
+    };
     BlogComponent.prototype.getPoliticService = function () {
-        this._http.getCustomCardInformation('politics').subscribe(function (params) {
+        var _this = this;
+        this._http.getCustomContentBasicPage(this.uuid).subscribe(function (params) {
+            _this.titulo = params.title;
+            _this.list = params.body;
         });
     };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", String)
+    ], BlogComponent.prototype, "uuid", void 0);
     BlogComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-blog',
@@ -991,7 +1057,7 @@ var BlurbComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\" *ngIf=\"orientacion == 'IT'\" style=\"background-color:#f8f9fa\">\n    <div class=\"col-md-4 p-0\">\n        <img [src]=\"imagenCard\" alt=\"\" class=\"img-fluid w-100\">\n    </div>\n    <div class=\"col-md-8 d-block px-4 py-5\">\n        <h3 class=\"condensed\">{{ subitituloCard }}</h3>\n        <h1>{{ tituloCard | uppercase }}</h1>\n        <hr class=\"green\">\n        <p class=\"text-justify\">{{ descripcionCard }}</p>\n        <a [href]=\"linkCard\" class=\"green\">{{ linkLabelCard }}</a>\n    </div>\n</div>\n\n<div class=\"row\" *ngIf=\"orientacion == 'TI'\" style=\"background-color:#f8f9fa\">\n    <div class=\"col-md-8 d-block px-4 py-5\">\n        <h3 class=\"condensed\">{{ subitituloCard }}</h3>\n        <h1>{{ tituloCard | uppercase }}</h1>\n        <hr class=\"green\">\n        <p class=\"text-justify\">{{ descripcionCard }}</p>\n        <a [href]=\"linkCard\" class=\"green\">{{ linkLabelCard }}</a>\n    </div>\n    <div class=\"col-md-4 p-0\">\n        <img [src]=\"imagenCard\" alt=\"\" class=\"img-fluid w-100\">\n    </div>\n</div>"
+module.exports = "<div class=\"row color-back\" *ngIf=\"orientacion == 'IT'\">\n    <div class=\"col-md-4 p-0\" *ngFor=\"let cil of cardImgL\">\n        <img [src]=\"cil.field_imagen_media_product.url\" alt=\"{{cil.field_imagen_media_product.alt}}\"\n            class=\"img-fluid w-100\">\n    </div>\n    <div class=\"col-md-8 d-block px-4 py-5\" *ngFor=\"let cil of cardImgL\">\n        <h3 class=\"condensed\">{{ cil.title }}</h3>\n        <h1>{{ titleL | uppercase }}</h1>\n        <hr class=\"green\">\n        <p class=\"text-justify\" [innerHTML]=\"cil.field_des\"></p>\n        <a [href]=\"cil.field_link_imedical_media\" class=\"green\">{{ cil.field_link_imedical_media }}</a>\n    </div>\n</div>\n\n<div class=\"row color-back\" *ngIf=\"orientacion == 'TI'\">\n    <div class=\"col-md-8 d-block px-4 py-5\" *ngFor=\"let cir of cardImgR\">\n        <h3 class=\"condensed\">{{ cir.title }}</h3>\n        <h1>{{ titleR | uppercase }}</h1>\n        <hr class=\"green\">\n        <p class=\"text-justify\" [innerHTML]=\"cir.field_des\"></p>\n        <a [href]=\"cir.field_link_imedical_media\" class=\"green\">{{ cir.field_link_imedical_media }}</a>\n    </div>\n    <div class=\"col-md-4 p-0\" *ngFor=\"let cir of cardImgR\">\n        <img [src]=\"cir.field_imagen_media_product.url\" alt=\"{{cir.field_imagen_media_product.alt}}\"\n            class=\"img-fluid w-100\">\n    </div>\n</div>"
 
 /***/ }),
 
@@ -1002,7 +1068,7 @@ module.exports = "<div class=\"row\" *ngIf=\"orientacion == 'IT'\" style=\"backg
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "h3.condensed {\n  font-size: 20px;\n  -webkit-transform: scaleY(1.2);\n          transform: scaleY(1.2);\n  letter-spacing: -1px;\n  color: #002b49;\n  font-family: 'Open Sans Condensed', sans-serif;\n  font-weight: lighter; }\n\nh1 {\n  color: #002b49;\n  font-size: 30px;\n  font-weight: lighter;\n  font-family: 'Open Sans Condensed', sans-serif;\n  font-weight: lighter; }\n\nhr {\n  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#a6cf24+54,e5e5e5+100&1+0,0+100 */\n  /* FF3.6-15 */\n  /* Chrome10-25,Safari5.1-6 */\n  background: linear-gradient(to right, #a6cf24 0%, rgba(166, 207, 36, 0.46) 54%, rgba(229, 229, 229, 0) 100%);\n  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */\n  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6cf24', endColorstr='#00e5e5e5',GradientType=1 );\n  /* IE6-9 */\n  height: 1px; }\n\na {\n  color: #91b520;\n  font-family: 'Open Sans Condensed', sans-serif;\n  font-weight: lighter; }\n\np {\n  font-size: 14px;\n  width: 88%;\n  font-family: 'Open Sans Condensed', sans-serif;\n  font-weight: lighter;\n  color: #002b49; }\n"
+module.exports = "h3.condensed {\n  font-size: 20px;\n  -webkit-transform: scaleY(1.2);\n          transform: scaleY(1.2);\n  letter-spacing: -1px;\n  color: #002b49;\n  font-family: 'Open Sans Condensed', sans-serif;\n  font-weight: lighter; }\n\nh1 {\n  color: #002b49;\n  font-size: 30px;\n  font-weight: lighter;\n  font-family: 'Open Sans Condensed', sans-serif;\n  font-weight: lighter; }\n\nhr {\n  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#a6cf24+54,e5e5e5+100&1+0,0+100 */\n  /* FF3.6-15 */\n  /* Chrome10-25,Safari5.1-6 */\n  background: linear-gradient(to right, #a6cf24 0%, rgba(166, 207, 36, 0.46) 54%, rgba(229, 229, 229, 0) 100%);\n  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */\n  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6cf24', endColorstr='#00e5e5e5',GradientType=1 );\n  /* IE6-9 */\n  height: 1px; }\n\na {\n  color: #91b520;\n  font-family: 'Open Sans Condensed', sans-serif;\n  font-weight: lighter; }\n\np {\n  font-size: 14px;\n  width: 88%;\n  font-family: 'Open Sans Condensed', sans-serif;\n  font-weight: lighter;\n  color: #002b49; }\n\n.color-back {\n  background-color: #f8f9fa; }\n"
 
 /***/ }),
 
@@ -1032,26 +1098,26 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 var CardImgTextComponent = /** @class */ (function () {
     function CardImgTextComponent(_http) {
         this._http = _http;
-        this.tituloCard = "Título de este card con imagen";
-        this.subitituloCard = "Sint labore exercitation sint voluptate aliqua commodo.";
-        this.descripcionCard = "Lorem consectetur in enim cillum duis duis excepteur et minim adipisicing. Sint ea irure laboris in do irure do duis irure sint. Esse irure ex irure mollit exercitation. Nulla adipisicing enim reprehenderit occaecat ullamco eiusmod duis cupidatat quis. Elit aliquip officia deserunt tempor minim officia aliquip mollit minim anim nostrud veniam deserunt culpa.";
-        this.linkCard = "www.loremipsum.com";
-        this.linkLabelCard = "Ver CASOS DE ÉXITO de este producto";
-        this.imagenCard = "assets/images/imagen-iz-de-web.png";
-        this.orientacion = "";
+        this.orientacion = '';
+        this.cardImgL = [];
+        this.cardImgR = [];
     }
     CardImgTextComponent.prototype.ngOnInit = function () {
-        //this.getCardImgTextService();
+        this.getCardImgTextServiceL();
+        this.getCardImgTextServiceR();
     };
-    CardImgTextComponent.prototype.getCardImgTextService = function () {
+    CardImgTextComponent.prototype.getCardImgTextServiceL = function () {
         var _this = this;
-        this._http.getCustomCardInformation('card-img-text').subscribe(function (params) {
-            _this.tituloCard = params.data[0].titulo;
-            _this.subitituloCard = params.data[0].subtitulo;
-            _this.descripcionCard = params.data[0].descripcion;
-            _this.linkCard = params.data[0].link;
-            _this.linkLabelCard = params.data[0].label;
-            _this.imagenCard = params.data[0].imagen;
+        this._http.getCustomCardInformation('mediaimedicalcard_2').subscribe(function (params) {
+            _this.titleL = params.header[0].data.title;
+            _this.cardImgL = params.data;
+        });
+    };
+    CardImgTextComponent.prototype.getCardImgTextServiceR = function () {
+        var _this = this;
+        this._http.getCustomCardInformation('mediaimedicalcard').subscribe(function (params) {
+            _this.titleR = params.header[0].data.title;
+            _this.cardImgR = params.data;
         });
     };
     __decorate([
@@ -1080,7 +1146,7 @@ var CardImgTextComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<section id=\"main-title\">\n    <h2>{{ caroseltitle }}</h2>\n</section>\n\n<div class=\"contenedor\">\n    <ngx-carousel\n    [inputs]=\"carocarouselTile\"\n    (carouselLoad)=\"carouselTileLoad($event)\">\n        <ngx-tile NgxCarouselItem *ngFor=\"let main of CarouselControlArray; let i = index\">\n            <a href=\"\" class=\"url-link\">\n                <div class=\"container-img\">\n                    <img class=\"d-block img-fluid img-float  mx-auto\" src=\"{{ main.field_image.url }}\" alt=\"{{ main.field_image.alt }}\">\n                </div>\n                <div class=\"info\">\n                    <hr class=\"line\">\n                    <h4 class=\"name-organization\">{{main.title}}</h4>\n                    <h3 class=\"main-title\">{{main.field_category}}</h3>\n                    <h5 class=\"category\">{{main.field_recognition}}</h5>\n                    <h5 class=\"yeard\">{{main.field_year}}</h5>\n                </div>\n            </a>\n        </ngx-tile>\n    <button NgxCarouselPrev class='leftRs'>&lt;</button>\n    <button NgxCarouselNext class='rightRs'>&gt;</button>\n  </ngx-carousel>\n </div>"
+module.exports = "<section id=\"main-title\">\n    <h2>{{ caroseltitle }}</h2>\n</section>\n\n<div class=\"contenedor\">\n    <ngx-carousel [inputs]=\"carocarouselTile\" (carouselLoad)=\"carouselTileLoad($event)\" *ngIf=\"CarouselControlArray\">\n        <ngx-tile NgxCarouselItem *ngFor=\"let main of CarouselControlArray; let i = index\">\n            <a href=\"\" class=\"url-link\">\n                <div class=\"container-img\">\n                    <img class=\"d-block img-fluid img-float  mx-auto\" src=\"{{ main.field_image?.url }}\" alt=\"{{ main.field_image?.alt }}\">\n                </div>\n                <div class=\"info\">\n                    <hr class=\"line\">\n                    <h4 class=\"name-organization\">{{main.title}}</h4>\n                    <h3 class=\"main-title\">{{main.field_category}}</h3>\n                    <h5 class=\"category\">{{main.field_recognition}}</h5>\n                    <h5 class=\"yeard\">{{main.field_year}}</h5>\n                </div>\n            </a>\n        </ngx-tile>\n    <button NgxCarouselPrev class='leftRs'>&lt;</button>\n    <button NgxCarouselNext class='rightRs'>&gt;</button>\n  </ngx-carousel>\n </div>"
 
 /***/ }),
 
@@ -1189,7 +1255,7 @@ var CarouselControlsComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- <section class=\"Slider\">\n    <div id=\"carouselExampleIndicators\" class=\"carousel slide carousel-slider\" data-ride=\"carousel\">\n        <ol class=\"carousel-indicators slider-botton\">\n            <li *ngFor=\"let car of carouselArray; let i= index\" data-target=\"#carouselExampleIndicators\" [attr.data-slide-to]=\"i\" class=\"circle-botton\"></li>\n        </ol>\n        <div class=\"carousel-inner\">\n            <div class=\"carousel-item active window-complete\">\n                <picture>\n                    <source srcset=\"assets/images/movil.jpg\" media=\"(max-width:{{medius}})\">\n                    <img class=\"d-block w-100\" [src]=\"carouselArray[1]?.field_image\" alt=\"bits\">\n                    <div class=\"carousel-caption  d-md-block text-slider\">\n                        <h1 class=\"title-slider\"> {{carouselArray[1]?.title}} </h1>\n                        <p class=\"description-slider\">{{carouselArray[1]?.field_tags}}</p>\n                    </div>\n                </picture>\n            </div>\n            <app-carousel-item></app-carousel-item>\n        </div>\n        <a class=\"down-main\" (click)=\"down()\">\n            <div class=\"arrow-down\"></div>\n        </a>\n        <a class=\"carousel-control-prev\" href=\"#carouselExampleIndicators\" role=\"button\" data-slide=\"prev\">\n            <span class=\"carousel-control-prev-icon icon-mobile icon-prev\" aria-hidden=\"true\"></span>\n            <span class=\"sr-only\">Previous</span>\n        </a>\n        <a class=\"carousel-control-next \" href=\"#carouselExampleIndicators\" role=\"button\" data-slide=\"next\">\n            <span class=\"carousel-control-next-icon  icon-mobile icon-next\" aria-hidden=\"true\"></span>\n            <span class=\"sr-only\">Next</span>\n        </a>\n    </div>\n    <a class=\"anchor\"></a>\n</section> -->\n<section id=\"carousel-container\">\n    <ngb-carousel *ngIf=\"carousel\" (window:resize)=\"onResize()\">\n        <ng-template class=\"prueba\" ngbSlide *ngFor=\"let item of carousel\">\n            <img class=\"carousel-main-image\" [src]=\"item.field_image\" alt=\"Random first slide\" [ngStyle]=\"{'height': height}\">\n            <div class=\"carousel-caption\">\n            <h3 class=\"carousel-title\">{{ item.title }}</h3>\n            <p class=\"carousel-subtitle\">{{ item.field_tags }}</p>\n            </div>\n        </ng-template>\n    </ngb-carousel>\n    <div class=\"col section-button-explorar\" (click)=\"slideDown()\">       \n        <div class=\"row button-explorar\">\n            <h6 class=\"anchor\">EXPLORAR</h6>\n        </div>\n        <div class=\"row button-explorar\">\n            <i class=\"fas fa-angle-down\"></i>\n        </div>\n    </div>\n</section>\n<!--<a>Anchor</a>-->"
+module.exports = "<section id=\"carousel-container\">\n    <ngb-carousel *ngIf=\"carousel\" (window:resize)=\"onResize()\">\n        <ng-template class=\"prueba\" ngbSlide *ngFor=\"let item of carousel\">\n            <img class=\"carousel-main-image\" [src]=\"item.field_image\" alt=\"Random first slide\" [ngStyle]=\"{'height': height}\">\n            <div class=\"carousel-caption\">\n            <h3 class=\"carousel-title\">{{ item.title }}</h3>\n            <p class=\"carousel-subtitle\">{{ item.field_tags }}</p>\n            </div>\n        </ng-template>\n    </ngb-carousel>\n    <div class=\"col section-button-explorar\" (click)=\"slideDown()\">       \n        <div class=\"row button-explorar\">\n            <h6 class=\"anchor\">EXPLORAR</h6>\n        </div>\n        <div class=\"row button-explorar\">\n            <img class=\"down-arrow-slider\" src=\"../assets/images/DownArrow.svg\" alt=\"DownArrow\">\n        </div>\n    </div>\n</section>"
 
 /***/ }),
 
@@ -1200,7 +1266,7 @@ module.exports = "<!-- <section class=\"Slider\">\n    <div id=\"carouselExample
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ":host /deep/ .carousel-control-next,\n:host /deep/ .carousel-control-prev {\n  width: 50px; }\n\n:host /deep/ .carousel-indicators {\n  bottom: 150px;\n  justify-content: flex-end;\n  margin: 0 100px 0 0; }\n\n:host /deep/ .carousel-indicators li {\n  width: 15px;\n  height: 15px;\n  margin: 0 5px;\n  border-radius: 50%; }\n\n:host /deep/ .carousel-indicators li.active {\n    background-color: #a6cf24; }\n\n#carousel-container .carousel-main-image {\n  max-height: 1080px;\n  -webkit-filter: brightness(0.5);\n          filter: brightness(0.5); }\n\n@media (min-width: 1025px) {\n    #carousel-container .carousel-main-image {\n      width: 100%; } }\n\n#carousel-container .carousel-caption {\n  width: 100%;\n  text-align: right;\n  top: 50%;\n  right: 0;\n  left: 0;\n  padding: 0 100px 0 100px; }\n\n#carousel-container .carousel-caption .carousel-title {\n    font-family: Open Sans light;\n    font-size: 50px;\n    display: block; }\n\n#carousel-container .carousel-caption .carousel-subtitle {\n    font-family: Open Sans light;\n    font-size: 28px;\n    display: block;\n    padding-left: 25%; }\n\n#carousel-container .section-button-explorar {\n  position: absolute;\n  bottom: 35px;\n  cursor: pointer; }\n\n#carousel-container .section-button-explorar .button-explorar {\n    justify-content: center; }\n\n#carousel-container .section-button-explorar .button-explorar .fa-angle-down {\n      color: white; }\n\n#carousel-container .section-button-explorar .button-explorar .anchor {\n      font-family: Open Sans Codensed;\n      font-size: 16px;\n      color: white; }\n\n@media only screen and (max-width: 1024px) {\n  :host /deep/ .carousel-control-next,\n  :host /deep/ .carousel-control-prev {\n    visibility: hidden; }\n  :host /deep/ .carousel-indicators {\n    bottom: 150px;\n    justify-content: center;\n    margin: 0 0 0 0; }\n  #carousel-container .carousel-caption {\n    text-align: center;\n    top: 40%;\n    padding: 0 50px 0 50px; }\n    #carousel-container .carousel-caption .carousel-title {\n      font-family: Open Sans light;\n      font-size: 36px;\n      display: block; }\n    #carousel-container .carousel-caption .carousel-subtitle {\n      font-family: Open Sans light;\n      font-size: 18px;\n      display: block;\n      padding: 0; } }\n\n@media only screen and (max-width: 321px) {\n  :host /deep/ .carousel-indicators {\n    bottom: 95px; } }\n"
+module.exports = ":host /deep/ .carousel-control-next,\n:host /deep/ .carousel-control-prev {\n  width: 38px; }\n\n:host /deep/ .carousel-control-prev .carousel-control-prev-icon {\n  background-image: url(\"/../assets/images/LeftArrow.svg\");\n  width: 41px;\n  height: 77px; }\n\n:host /deep/ .carousel-control-next .carousel-control-next-icon {\n  background-image: url(\"/../assets/images/rightArrow.svg\");\n  width: 41px;\n  height: 77px; }\n\n:host /deep/ .carousel-indicators {\n  bottom: 150px;\n  justify-content: flex-end;\n  margin: 0 100px 0 0; }\n\n:host /deep/ .carousel-indicators li {\n  width: 15px;\n  height: 15px;\n  margin: 0 5px;\n  border-radius: 50%; }\n\n:host /deep/ .carousel-indicators li.active {\n    background-color: #a6cf24; }\n\n#carousel-container .carousel-main-image {\n  max-height: 1080px;\n  -webkit-filter: brightness(0.5);\n          filter: brightness(0.5); }\n\n@media (min-width: 1025px) {\n    #carousel-container .carousel-main-image {\n      width: 100%; } }\n\n#carousel-container .carousel-caption {\n  width: 100%;\n  text-align: right;\n  top: 50%;\n  right: 0;\n  left: 0;\n  padding: 0 100px 0 100px; }\n\n#carousel-container .carousel-caption .carousel-title {\n    font-family: Open Sans light;\n    font-size: 50px;\n    display: block; }\n\n#carousel-container .carousel-caption .carousel-subtitle {\n    font-family: Open Sans light;\n    font-size: 28px;\n    display: block;\n    padding-left: 25%; }\n\n#carousel-container .section-button-explorar {\n  position: absolute;\n  bottom: 35px;\n  cursor: pointer; }\n\n#carousel-container .section-button-explorar .button-explorar {\n    justify-content: center; }\n\n#carousel-container .section-button-explorar .button-explorar .down-arrow-slider {\n      width: 21px;\n      height: 15px; }\n\n#carousel-container .section-button-explorar .button-explorar .anchor {\n      font-family: Open Sans Codensed;\n      font-size: 16px;\n      color: white; }\n\n@media only screen and (max-width: 1024px) {\n  :host /deep/ .carousel-control-next,\n  :host /deep/ .carousel-control-prev {\n    visibility: hidden; }\n  :host /deep/ .carousel-indicators {\n    bottom: 150px;\n    justify-content: center;\n    margin: 0 0 0 0; }\n  #carousel-container .carousel-caption {\n    text-align: center;\n    top: 35%;\n    padding: 0 50px 0 50px; }\n    #carousel-container .carousel-caption .carousel-title {\n      font-family: Open Sans light;\n      font-size: 36px;\n      display: block; }\n    #carousel-container .carousel-caption .carousel-subtitle {\n      font-family: Open Sans light;\n      font-size: 18px;\n      display: block;\n      padding: 0; } }\n\n@media only screen and (max-width: 321px) {\n  :host /deep/ .carousel-indicators {\n    bottom: 95px; } }\n"
 
 /***/ }),
 
@@ -1278,7 +1344,7 @@ var CarouselIndicatorsComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n<section id=\"main-title\">\n    <h2>{{ titleClients }}</h2>\n</section>\n\n<div class=\"contenedor\">\n    <ngx-carousel\n    [inputs]=\"carocarouselTile\"\n    (carouselLoad)=\"carouselTileLoad($event)\">\n\n          <ngx-tile NgxCarouselItem *ngFor=\"let ourC of clients; let i = index\">\n            <a href=\"#\" class=\"url-carousel\" >\n                <div class=\"container-img col-md-3 \">\n                    <img class=\"d-block img-fluid img-float  mx-auto\" src=\"{{ ourC.field_image.url }}\" alt=\"{{ ourC.field_image.alt }}\">\n                </div>\n                <div class=\"info-carousel\">\n                    <h3 class=\"title\">{{ ourC.title }}</h3>\n                    <p class=\"text-description\">{{ ourC.field_description }}</p>\n                </div>\n            </a>\n\n          </ngx-tile>\n\n        <button NgxCarouselPrev class='leftRs'>&lt;</button>\n        <button NgxCarouselNext class='rightRs'>&gt;</button>\n  </ngx-carousel>\n\n</div>"
+module.exports = "\n<section id=\"main-title\">\n    <h2>{{ titleClients }}</h2>\n</section>\n\n<div class=\"contenedor\">\n    <ngx-carousel\n    [inputs]=\"carocarouselTile\"\n    (carouselLoad)=\"carouselTileLoad($event)\">\n\n          <ngx-tile NgxCarouselItem *ngFor=\"let ourC of clients; let i = index\">\n            <a href=\"#\" class=\"url-carousel\" >\n                <div class=\"container-img col-md-3 \">\n                    <img class=\"d-block img-fluid img-float  mx-auto\" src=\"{{ ourC.field_image?.url }}\" alt=\"{{ ourC.field_image?.alt }}\">\n                </div>\n                <div class=\"info-carousel\">\n                    <h3 class=\"title\">{{ ourC.title }}</h3>\n                    <p class=\"text-description\">{{ ourC.field_description }}</p>\n                </div>\n            </a>\n\n          </ngx-tile>\n\n        <button NgxCarouselPrev class='leftRs'>&lt;</button>\n        <button NgxCarouselNext class='rightRs'>&gt;</button>\n  </ngx-carousel>\n\n</div>"
 
 /***/ }),
 
@@ -1448,38 +1514,38 @@ var CarouselItemComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/cards/components/client-card/client-card.component.html":
-/*!*************************************************************************!*\
-  !*** ./src/app/cards/components/client-card/client-card.component.html ***!
-  \*************************************************************************/
+/***/ "./src/app/cards/components/client-project-imedical/client-project-imedical.component.html":
+/*!*************************************************************************************************!*\
+  !*** ./src/app/cards/components/client-project-imedical/client-project-imedical.component.html ***!
+  \*************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\n    <div class=\"col-md-12\">\n        <h2 class=\"condensed\">{{ titleCard | uppercase}}</h2>\n        <hr class=\"green\">\n        <img id=\"logo-cliente\" [src]=\"imgSrcClient\" class=\"img-fluid\" alt=\"Logo de {{nameClient}}\">\n    </div>\n</div>"
+module.exports = "<div class=\"row\">\n    <div class=\"col-md-4 mb-3\">\n        <div class=\"row\">\n            <div class=\"col-md-12\">\n                <h2 class=\"condensed\">{{ titleCard | uppercase}}</h2>\n                <hr class=\"green\">\n                <img id=\"logo-cliente\" [src]=\"imgSrcClient\" class=\"img-fluid\" alt=\"{{nameClient}}\">\n            </div>\n        </div>\n    </div>\n    <div class=\"col-md-8 mb-3\">\n        <div class=\"row\">\n            <div class=\"col-md-12\">\n                <h2 class=\"condensed\">{{ titleSection | uppercase }}</h2>\n                <hr class=\"green\">\n                <h2>{{ titleProject | uppercase }}</h2>\n                <p [innerHTML]=\"summaryProject\"></p>\n                <h5>\n                    <span *ngFor=\"let tag of tags\" class=\"badge badge-custom mr-2 mt-2 p-2\">{{ tag | uppercase }}</span>\n                </h5>\n                <a [href]=\"linkProject\" class=\"green\">{{ linkProject }}</a>\n            </div>\n        </div>\n    </div>\n</div>"
 
 /***/ }),
 
-/***/ "./src/app/cards/components/client-card/client-card.component.scss":
-/*!*************************************************************************!*\
-  !*** ./src/app/cards/components/client-card/client-card.component.scss ***!
-  \*************************************************************************/
+/***/ "./src/app/cards/components/client-project-imedical/client-project-imedical.component.scss":
+/*!*************************************************************************************************!*\
+  !*** ./src/app/cards/components/client-project-imedical/client-project-imedical.component.scss ***!
+  \*************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "#logo-cliente {\n  width: 50%;\n  display: block;\n  margin: 0px auto; }\n\nhr {\n  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#a6cf24+54,e5e5e5+100&1+0,0+100 */\n  /* FF3.6-15 */\n  /* Chrome10-25,Safari5.1-6 */\n  background: linear-gradient(to right, #a6cf24 0%, rgba(166, 207, 36, 0.46) 54%, rgba(229, 229, 229, 0) 100%);\n  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */\n  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6cf24', endColorstr='#00e5e5e5',GradientType=1 );\n  /* IE6-9 */\n  height: 1px; }\n\nh2 {\n  color: #002b49;\n  font-size: 30px;\n  font-weight: lighter; }\n\nh2.condensed {\n  color: #002b4994;\n  font-size: 22px; }\n"
+module.exports = "#logo-cliente {\n  width: 50%;\n  display: block;\n  margin: 0px auto; }\n\nhr {\n  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#a6cf24+54,e5e5e5+100&1+0,0+100 */\n  /* FF3.6-15 */\n  /* Chrome10-25,Safari5.1-6 */\n  background: linear-gradient(to right, #a6cf24 0%, rgba(166, 207, 36, 0.46) 54%, rgba(229, 229, 229, 0) 100%);\n  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */\n  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6cf24', endColorstr='#00e5e5e5',GradientType=1 );\n  /* IE6-9 */\n  height: 1px; }\n\nh2 {\n  color: #002b49;\n  font-size: 30px;\n  font-weight: lighter; }\n\n.condensed {\n  color: #002b4994;\n  font-size: 22px;\n  letter-spacing: -1px; }\n\n.badge-custom {\n  background: #91b520;\n  border-radius: 0px;\n  color: #fff;\n  font-size: 14px;\n  font-weight: lighter; }\n\na {\n  color: #91b520;\n  font-family: 'Open Sans Condensed', sans-serif; }\n"
 
 /***/ }),
 
-/***/ "./src/app/cards/components/client-card/client-card.component.ts":
-/*!***********************************************************************!*\
-  !*** ./src/app/cards/components/client-card/client-card.component.ts ***!
-  \***********************************************************************/
-/*! exports provided: ClientCardComponent */
+/***/ "./src/app/cards/components/client-project-imedical/client-project-imedical.component.ts":
+/*!***********************************************************************************************!*\
+  !*** ./src/app/cards/components/client-project-imedical/client-project-imedical.component.ts ***!
+  \***********************************************************************************************/
+/*! exports provided: ClientProjectImedicalComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ClientCardComponent", function() { return ClientCardComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ClientProjectImedicalComponent", function() { return ClientProjectImedicalComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var src_app_services_cards_v1_card_services__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/services/cards/v1-card.services */ "./src/app/services/cards/v1-card.services.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
@@ -1493,33 +1559,43 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 };
 
 
-var ClientCardComponent = /** @class */ (function () {
-    function ClientCardComponent(_http) {
+var ClientProjectImedicalComponent = /** @class */ (function () {
+    function ClientProjectImedicalComponent(_http) {
         this._http = _http;
-        this.titleCard = "El Cliente";
-        this.nameClient = "Universidad Javeriana";
-        this.imgSrcClient = "/assets/images/logo-javeriana.png";
+        this.titleCard = '';
+        this.imgSrcClient = '';
+        this.nameClient = '';
+        this.titleSection = '';
+        this.titleProject = '';
+        this.summaryProject = '';
+        this.tags = [];
+        this.linkProject = '';
     }
-    ClientCardComponent.prototype.ngOnInit = function () {
-        //this.getClientCardService();
+    ClientProjectImedicalComponent.prototype.ngOnInit = function () {
+        this.getClientProjectImedicalService();
     };
-    ClientCardComponent.prototype.getClientCardService = function () {
+    ClientProjectImedicalComponent.prototype.getClientProjectImedicalService = function () {
         var _this = this;
-        this._http.getCustomCardInformation('client-card').subscribe(function (params) {
-            _this.titleCard = params.data[0].title;
-            _this.imgSrcClient = params.data[0].src;
-            _this.nameClient = params.data[0].name;
+        this._http.getCustomCardInformation('imedicalclients_2').subscribe(function (params) {
+            _this.titleCard = 'El Cliente';
+            _this.imgSrcClient = params.data[0].field_image.url;
+            _this.nameClient = params.data[0].field_image.alt;
+            _this.titleSection = 'El Proyecto';
+            _this.titleProject = params.data[0].field_title_description;
+            _this.summaryProject = params.data[0].field_description;
+            _this.tags = ['salud', 'cloud', 'angularjs', 'mobile', 'tag'];
+            _this.linkProject = params.data[0].field_url_client;
         });
     };
-    ClientCardComponent = __decorate([
+    ClientProjectImedicalComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-client-card',
-            template: __webpack_require__(/*! ./client-card.component.html */ "./src/app/cards/components/client-card/client-card.component.html"),
-            styles: [__webpack_require__(/*! ./client-card.component.scss */ "./src/app/cards/components/client-card/client-card.component.scss")]
+            selector: 'app-client-project-imedical',
+            template: __webpack_require__(/*! ./client-project-imedical.component.html */ "./src/app/cards/components/client-project-imedical/client-project-imedical.component.html"),
+            styles: [__webpack_require__(/*! ./client-project-imedical.component.scss */ "./src/app/cards/components/client-project-imedical/client-project-imedical.component.scss")]
         }),
         __metadata("design:paramtypes", [src_app_services_cards_v1_card_services__WEBPACK_IMPORTED_MODULE_1__["CustomCardService"]])
-    ], ClientCardComponent);
-    return ClientCardComponent;
+    ], ClientProjectImedicalComponent);
+    return ClientProjectImedicalComponent;
 }());
 
 
@@ -1544,7 +1620,7 @@ module.exports = "<section id=\"float-social-block\" [hidden]=\"!hide\">\n  <sec
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".social-networks {\n  width: 41px;\n  height: auto;\n  background-color: #517bbd;\n  opacity: 0.7;\n  position: fixed;\n  z-index: 9;\n  bottom: 120px;\n  display: none; }\n  @media (min-width: 1025px) {\n    .social-networks {\n      display: block; } }\n  .social-networks .icon-social {\n    display: block; }\n  .social-networks .icon-social .row {\n      margin-left: 13px;\n      width: 0; }\n  .social-networks .icon-social .row li {\n        margin-right: 1px;\n        margin-bottom: 9px; }\n  .social-networks .icon-social .row li a {\n          display: block;\n          color: #FFFFFF;\n          margin-top: 11px; }\n  .social-networks .icon-social .row a:hover {\n        color: #a6cf24; }\n  .envolope {\n  width: 41px;\n  height: 41px;\n  background-color: #a6cf24;\n  opacity: 0.7;\n  position: fixed;\n  border-radius: 50%;\n  display: block;\n  z-index: 9;\n  right: 40px;\n  bottom: 0; }\n  @media (min-width: 1025px) {\n    .envolope {\n      border-radius: 0;\n      bottom: 40px;\n      right: initial; } }\n  .envolope .icon-mail {\n    font-size: 22px;\n    margin-top: 5px;\n    margin-left: 0px; }\n  .envolope .icon-mail .row {\n      margin-right: 0;\n      margin-left: 0; }\n  .envolope .icon-mail .row .fa-li {\n        left: 0; }\n  @media (min-width: 1025px) {\n          .envolope .icon-mail .row .fa-li {\n            left: 0; } }\n  .envolope .icon-mail a {\n      color: #FFFFFF; }\n"
+module.exports = ".social-networks {\n  width: 41px;\n  height: auto;\n  background-color: #517bbd;\n  opacity: 0.7;\n  position: fixed;\n  z-index: 9;\n  bottom: 50px;\n  display: none; }\n  @media (min-width: 1025px) {\n    .social-networks {\n      display: block; } }\n  .social-networks .icon-social {\n    display: block; }\n  .social-networks .icon-social .row {\n      margin-left: 13px;\n      width: 0; }\n  .social-networks .icon-social .row li {\n        margin-right: 1px;\n        margin-bottom: 9px; }\n  .social-networks .icon-social .row li a {\n          display: block;\n          color: #FFFFFF;\n          margin-top: 11px; }\n  .social-networks .icon-social .row a:hover {\n        color: #a6cf24; }\n  .envolope {\n  width: 41px;\n  height: 41px;\n  background-color: #a6cf24;\n  opacity: 0.7;\n  position: fixed;\n  border-radius: 50%;\n  display: block;\n  z-index: 9;\n  right: 18px;\n  bottom: 15px; }\n  @media (min-width: 1025px) {\n    .envolope {\n      border-radius: 0;\n      bottom: 0;\n      right: initial; } }\n  .envolope .icon-mail {\n    font-size: 22px;\n    margin-top: 5px;\n    margin-left: 0px; }\n  .envolope .icon-mail .row {\n      margin-right: 0;\n      margin-left: 0; }\n  .envolope .icon-mail .row .fa-li {\n        left: -1px; }\n  @media (min-width: 1025px) {\n          .envolope .icon-mail .row .fa-li {\n            left: 0; } }\n  .envolope .icon-mail a {\n      color: #FFFFFF; }\n"
 
 /***/ }),
 
@@ -1627,7 +1703,7 @@ var FloatSocialComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ng-container>\n    <section id=\"footer-block-location\">\n        <div class=\"row row-block\">\n            <div class=\"col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-block\" *ngFor=\"let ubicacion of dataUbicaciones; let i = index\">\n                <div class=\"footer-block-location\" [class.site]=\"i > 0\" [class.random]=\"i > 0\">\n                    <div class=\"row location-row\">\n                        <div class=\"col-10 info-location\">\n                            <h2 class=\"title-location\" >{{ ubicacion.title }}</h2>\n                            <div class=\"subtitle-location\">\n                                <li class=\"location-li address\">{{ubicacion.address}}</li>\n                                <li class=\"location-li telephone\">{{ubicacion.telephone}}</li>\n                                <li class=\"location-li see-location office\" *ngIf=\"i == 0\">\n                                    <a class=\"link-location\" routerLink=\"/contact-us/\" fragment=\"title-description\" (click)=\"cargarMapaUbicaciones()\">\n                                        <i class=\"location-green\"></i>\n                                        Ver todas nuestras oficinas\n                                    </a>\n                                </li>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </section>\n</ng-container>"
+module.exports = "<ng-container>\n    <section id=\"footer-block-location\">\n        <div class=\"row row-block\">\n            <div class=\"col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-block\"\n                *ngFor=\"let ubicacion of dataUbicaciones; let i = index\">\n                <div class=\"footer-block-location\" [class.site]=\"i > 0\" [class.random]=\"i > 0\">\n                    <div class=\"row location-row\">\n                        <div class=\"col-10 info-location\">\n                            <h2 class=\"title-location\">{{ubicacion.title}}</h2>\n                            <div class=\"subtitle-location\">\n                                <li class=\"location-li address\">{{ubicacion.field_address}}</li>\n                                <li class=\"location-li telephone\">{{ubicacion.field_telephone}}</li>\n                                <li class=\"location-li see-location office\" *ngIf=\"i == 0\">\n                                    <a class=\"link-location\" routerLink=\"/contact-us/\" fragment=\"title-description\"\n                                        (click)=\"cargarMapaUbicaciones()\">\n                                        <i class=\"location-green\"></i>\n                                        {{title}}\n                                    </a>\n                                </li>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </section>\n</ng-container>"
 
 /***/ }),
 
@@ -1646,15 +1722,16 @@ module.exports = "#footer-block-location {\n  margin: 20px 0 20px 31%;\n  paddin
 /*!**********************************************************************!*\
   !*** ./src/app/cards/components/footer/footer-block/footer-block.ts ***!
   \**********************************************************************/
-/*! exports provided: FooterBlock */
+/*! exports provided: FooterBlockComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FooterBlock", function() { return FooterBlock; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FooterBlockComponent", function() { return FooterBlockComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _services_http_http_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../services/http/http.service */ "./src/app/services/http/http.service.ts");
+/* harmony import */ var src_app_services_cards_v1_card_services__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/cards/v1-card.services */ "./src/app/services/cards/v1-card.services.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1667,29 +1744,26 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
-var FooterBlock = /** @class */ (function () {
-    function FooterBlock(router, _http) {
+
+var FooterBlockComponent = /** @class */ (function () {
+    function FooterBlockComponent(router, _http, service) {
         this.router = router;
         this._http = _http;
+        this.service = service;
         this.dataUbicaciones = [];
     }
-    FooterBlock.prototype.ngOnInit = function () {
+    FooterBlockComponent.prototype.ngOnInit = function () {
         this.getFooterBlockItems();
     };
-    FooterBlock.prototype.getFooterBlockItems = function () {
+    FooterBlockComponent.prototype.getFooterBlockItems = function () {
         var _this = this;
-        this._http.get('location-resources?_format=json', { 'limit': 2 }).subscribe(function (items) {
-            _this.dataUbicaciones = items;
+        this.service.getCustomCardInformation('locationcard').subscribe(function (params) {
+            _this.title = params.header[0].data.title;
+            _this.dataUbicaciones = params.data;
         });
-        /*this.footerBlockService.getCustomCardInformation('footerblock').subscribe((items) => {
-          this.dataUbicaciones = items.data;
-          /*console.log(items);
-          this.subtitle = items.header[0].data;
-          this.body = items.body[0].data;-/
-        });*/
     };
-    FooterBlock.prototype.cargarMapaUbicaciones = function () {
-        var x = document.querySelector("#title-description");
+    FooterBlockComponent.prototype.cargarMapaUbicaciones = function () {
+        var x = document.querySelector('#title-description');
         if (x) {
             x.scrollIntoView();
         }
@@ -1697,17 +1771,18 @@ var FooterBlock = /** @class */ (function () {
     __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
         __metadata("design:type", String)
-    ], FooterBlock.prototype, "idBlock", void 0);
-    FooterBlock = __decorate([
+    ], FooterBlockComponent.prototype, "idBlock", void 0);
+    FooterBlockComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-footer-block',
             template: __webpack_require__(/*! ./footer-block.html */ "./src/app/cards/components/footer/footer-block/footer-block.html"),
             styles: [__webpack_require__(/*! ./footer-block.scss */ "./src/app/cards/components/footer/footer-block/footer-block.scss")]
         }),
         __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"],
-            _services_http_http_service__WEBPACK_IMPORTED_MODULE_2__["HttpService"]])
-    ], FooterBlock);
-    return FooterBlock;
+            _services_http_http_service__WEBPACK_IMPORTED_MODULE_2__["HttpService"],
+            src_app_services_cards_v1_card_services__WEBPACK_IMPORTED_MODULE_3__["CustomCardService"]])
+    ], FooterBlockComponent);
+    return FooterBlockComponent;
 }());
 
 
@@ -2298,88 +2373,6 @@ var ProductServicesComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/cards/components/project-summary/project-summary.component.html":
-/*!*********************************************************************************!*\
-  !*** ./src/app/cards/components/project-summary/project-summary.component.html ***!
-  \*********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"row\">\n    <div class=\"col-md-12\">\n        <h2 class=\"condensed\">{{ titleSection | uppercase }}</h2>\n        <hr class=\"green\">\n        <h2>{{ titleProject | uppercase }}</h2>\n        <p>{{ summaryProject }}</p>\n        <h5>\n            <span *ngFor=\"let tag of tags\" class=\"badge badge-custom mr-2 mt-2 p-2\">{{ tag | uppercase }}</span>\n        </h5>\n        <a [href]=\"linkProject\" class=\"green\">{{ linkProject }}</a>\n    </div>\n</div>"
-
-/***/ }),
-
-/***/ "./src/app/cards/components/project-summary/project-summary.component.scss":
-/*!*********************************************************************************!*\
-  !*** ./src/app/cards/components/project-summary/project-summary.component.scss ***!
-  \*********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "hr {\n  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#a6cf24+54,e5e5e5+100&1+0,0+100 */\n  /* FF3.6-15 */\n  /* Chrome10-25,Safari5.1-6 */\n  background: linear-gradient(to right, #a6cf24 0%, rgba(166, 207, 36, 0.46) 54%, rgba(229, 229, 229, 0) 100%);\n  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */\n  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6cf24', endColorstr='#00e5e5e5',GradientType=1 );\n  /* IE6-9 */\n  height: 1px; }\n\nh2 {\n  color: #002b49;\n  font-size: 30px;\n  font-weight: lighter; }\n\nh2.condensed {\n  color: #002b4994;\n  font-size: 22px;\n  letter-spacing: -1px; }\n\n.badge-custom {\n  background: #91b520;\n  border-radius: 0px;\n  color: #fff;\n  font-size: 14px;\n  font-weight: lighter; }\n\na {\n  color: #91b520;\n  font-family: 'Open Sans Condensed', sans-serif; }\n"
-
-/***/ }),
-
-/***/ "./src/app/cards/components/project-summary/project-summary.component.ts":
-/*!*******************************************************************************!*\
-  !*** ./src/app/cards/components/project-summary/project-summary.component.ts ***!
-  \*******************************************************************************/
-/*! exports provided: ProjectSummaryComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProjectSummaryComponent", function() { return ProjectSummaryComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _services_cards_v1_card_services__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../services/cards/v1-card.services */ "./src/app/services/cards/v1-card.services.ts");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-var ProjectSummaryComponent = /** @class */ (function () {
-    function ProjectSummaryComponent(_http) {
-        this._http = _http;
-        this.titleSection = "El Proyecto";
-        this.titleProject = "Sistema de gestión de rotaciones médicas";
-        this.summaryProject = "Mollit id aliqua commodo ipsum sit do velit labore id. Id ea ullamco ullamco ea amet dolore sit est veniam qui veniam et ipsum. Aliquip esse eiusmod proident do tempor culpa velit eu fugiat enim deserunt amet.";
-        this.tags = ['salud', 'cloud', 'angularjs', 'mobile', 'tag'];
-        this.linkProject = "www.loremipsuotus.com.co";
-    }
-    ProjectSummaryComponent.prototype.ngOnInit = function () {
-        //this.getProjectSummaryService();
-    };
-    ProjectSummaryComponent.prototype.getProjectSummaryService = function () {
-        var _this = this;
-        this._http.getCustomCardInformation('summary-project').subscribe(function (params) {
-            _this.titleSection = params.data[0].titleSection;
-            _this.titleProject = params.data[0].nameProject;
-            _this.summaryProject = params.data[0].summary;
-            _this.linkProject = params.data[0].url;
-            _this.tags = params.data[0].listTags;
-        });
-    };
-    ProjectSummaryComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-project-summary',
-            template: __webpack_require__(/*! ./project-summary.component.html */ "./src/app/cards/components/project-summary/project-summary.component.html"),
-            styles: [__webpack_require__(/*! ./project-summary.component.scss */ "./src/app/cards/components/project-summary/project-summary.component.scss")]
-        }),
-        __metadata("design:paramtypes", [_services_cards_v1_card_services__WEBPACK_IMPORTED_MODULE_1__["CustomCardService"]])
-    ], ProjectSummaryComponent);
-    return ProjectSummaryComponent;
-}());
-
-
-
-/***/ }),
-
 /***/ "./src/app/cards/components/separator/separator.component.html":
 /*!*********************************************************************!*\
   !*** ./src/app/cards/components/separator/separator.component.html ***!
@@ -2387,7 +2380,7 @@ var ProjectSummaryComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"conteiner-1\">\n    <div class=\"conteiner-2\">\n        <div class=\"div-left-side\"></div>\n        <div class=\"divIconSeparator\">\n            <i class=\"fas {{iconCustom}} fa-2x\" aria-hidden=\"true\"></i>\n        </div>\n        <div class=\"div-right-side\"></div>\n    </div>\n</div>"
+module.exports = "<div class=\"conteiner-1\">\n    <div class=\"conteiner-2\">\n        <div class=\"div-left-side\"></div>\n        <div class=\"divIconSeparator\">                      \n            <i class=\"bits-icon {{iconCustom}}\" aria-hidden=\"true\"></i>            \n        </div>\n        <div class=\"div-right-side\"></div>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -2398,7 +2391,7 @@ module.exports = "<div class=\"conteiner-1\">\n    <div class=\"conteiner-2\">\n
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".conteiner-1 {\n  width: 100%;\n  box-sizing: border-box;\n  padding: 70px 65px 40px; }\n\n.conteiner-2 {\n  max-width: 900px;\n  position: relative;\n  margin: 0 auto; }\n\n.conteiner-2 .div-left-side {\n    background: #e2e2e2;\n    background: linear-gradient(to right, #e2e2e2 0%, #135670 100%);\n    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#135670',GradientType=1 );\n    width: 50%;\n    height: 2px;\n    position: absolute;\n    left: 0;\n    margin-left: -30px; }\n\n.conteiner-2 .divIconSeparator {\n    display: block;\n    position: absolute;\n    width: 60px;\n    left: 50%;\n    margin-left: -30px;\n    margin-top: -20px;\n    text-align: center; }\n\n.conteiner-2 .div-right-side {\n    background: #135670;\n    background: linear-gradient(to right, #135670 0%, #e2e2e2 99%);\n    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#135670', endColorstr='#e2e2e2',GradientType=1 );\n    width: 50%;\n    height: 2px;\n    display: block;\n    position: absolute;\n    right: 0;\n    margin-right: -30px; }\n"
+module.exports = ".conteiner-1 {\n  width: 100%;\n  box-sizing: border-box;\n  padding: 70px 65px 40px; }\n\n.conteiner-2 {\n  max-width: 900px;\n  position: relative;\n  margin: 0 auto; }\n\n.conteiner-2 .div-left-side {\n    background: #e2e2e2;\n    background: linear-gradient(to right, #e2e2e2 0%, #135670 100%);\n    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#135670',GradientType=1 );\n    width: 50%;\n    height: 2px;\n    position: absolute;\n    left: 0;\n    margin-left: -30px; }\n\n.conteiner-2 .divIconSeparator {\n    display: block;\n    position: absolute;\n    width: 60px;\n    left: 50%;\n    margin-left: -30px;\n    margin-top: -20px;\n    text-align: center; }\n\n.conteiner-2 .div-right-side {\n    background: #135670;\n    background: linear-gradient(to right, #135670 0%, #e2e2e2 99%);\n    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#135670', endColorstr='#e2e2e2',GradientType=1 );\n    width: 50%;\n    height: 2px;\n    display: block;\n    position: absolute;\n    right: 0;\n    margin-right: -30px; }\n\n.bits-icon {\n  display: inline-block;\n  width: 45px;\n  height: 45px;\n  background-repeat: no-repeat; }\n\n.bits-icon.icon-startproject {\n    background-image: url(\"/assets/icon/aboutus5-startproject.svg\"); }\n\n.bits-icon.icon-startmeeting {\n    background-image: url(\"/assets/icon/aboutus5-startprojectv2.svg\"); }\n\n.bits-icon.icon-people {\n    background-image: url(\"/assets/icon/template8-team.svg\"); }\n\n.bits-icon.icon-location {\n    background-image: url(\"/assets/icon/contactus3-placeholder.svg\"); }\n\n.bits-icon.icon-module {\n    background-image: url(\"/assets/icon/template2-module.svg\"); }\n\n.bits-icon.icon-video {\n    background-image: url(\"/assets/icon/template3-video.svg\"); }\n\n.bits-icon.icon-technologies {\n    background-image: url(\"/assets/icon/template4-tech.svg\"); }\n\n.bits-icon.icon-opinions {\n    background-image: url(\"/assets/icon/template5-opinions.svg\"); }\n\n.bits-icon.icon-results {\n    background-image: url(\"/assets/icon/template6-done.svg\"); }\n\n.bits-icon.icon-camera {\n    background-image: url(\"/assets/icon/template7-camera.svg\"); }\n\n.bits-icon.icon-team {\n    background-image: url(\"/assets/icon/template8-team.svg\"); }\n\n.bits-icon.icon-clients {\n    background-image: url(\"/assets/icon/template9-clients.svg\"); }\n\n.bits-icon.icon-project {\n    background-image: url(\"/assets/icon/template10-related.svg\"); }\n\n.bits-icon.icon-startteam {\n    background-image: url(\"/assets/icon/aboutus1-whyus.svg\"); }\n\n.bits-icon.icon-history {\n    background-image: url(\"/assets/icon/aboutus2-timeline.svg\"); }\n\n.bits-icon.icon-certficate {\n    background-image: url(\"/assets/icon/aboutus3-certficate.svg\"); }\n\n.bits-icon.icon-medal {\n    background-image: url(\"/assets/icon/medalla.svg\"); }\n\n.bits-icon.icon-aboutus {\n    background-image: url(\"/assets/icon/aboutus4-aboutus.svg\"); }\n\n.bits-icon.icon-privacity {\n    background-image: url(\"/assets/icon/privacy1.svg\"); }\n\n.bits-icon.icon-historymedical {\n    background-image: url(\"/assets/icon/template1A-medical.svg\"); }\n\n.bits-icon.icon-medicallogistic {\n    background-image: url(\"/assets/icon/template1B-logistic.svg\"); }\n\n.bits-icon.icon-medicalIT {\n    background-image: url(\"/assets/icon/template1C-IT.svg\"); }\n\n.bits-icon.icon-redes {\n    background-image: url(\"/assets/icon/template1D-IT.svg\"); }\n\n.bits-icon.icon-connection {\n    background-image: url(\"/assets/icon/template1E-IT.svg\"); }\n\n.bits-icon.icon-engranaje {\n    background-image: url(\"/assets/icon/Engranes.svg\"); }\n"
 
 /***/ }),
 
@@ -2601,7 +2594,7 @@ var SliderComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!--<section id=\"blocks-tabs\">\n    <div class=\"block\">\n        <ul class=\"nav\">\n            <li class=\"list\">\n                <a href=\"#form-contact-us\" class=\"item-block nav-link  active\" data-toggle=\"tab\"> {{tabLeft.title}} </a>\n            </li>\n            <li class=\"list list-color\">\n                <a href=\"#form-workwith-us\" class=\"item-block-2 nav-link\" data-toggle=\"tab\"> {{tabRight.title}} </a>\n            </li>\n        </ul>\n        <div class=\"tab-content\" id=\"myTabContent\">\n            <div class=\"tab-pane fade show active\" id=\"form-contact-us\" role=\"tabpanel\" aria-labelledby=\"home-tab\">\n                FORMULARIO CONTÁCTENOS\n            </div>\n            <div class=\"tab-pane fade\" id=\"form-workwith-us\" role=\"tabpanel\" aria-labelledby=\"profile-tab\">\n                FORMULARIO TRABAJE CON NOSOTROS\n            </div>\n        </div>\n    </div>\n</section>\n\n<div class=\"row my-5\">\n    <div class=\"col-md-12\">\n        <ngb-tabset id=\"tabsetCustom\" [justify]=\"'center'\">\n            <ngb-tab *ngFor=\"let tab of arrayTabs\">\n                <ng-template ngbTabTitle>\n                    <div class=\"d-block div-title\">\n                        <img [src]=\"tab.urlicon\" class=\"d-block mx-auto\" width=\"50\" height=\"50\">\n                        <br>\n                        <h3 class=\"condensed\">{{tab.titulo}}</h3>\n                    </div>\n                </ng-template>\n                <ng-template ngbTabContent>\n                    <div [innerHTML]=\"tab.contenido | safehtml\" class=\"py-5 px-5\"></div>\n                </ng-template>\n            </ngb-tab>\n        </ngb-tabset>\n    </div>\n</div>\n<div class=\"my-5\">\n    <ul class=\"nav nav-tabs nav-justified nav-fill\">\n        <li *ngFor=\"let tabItem of arrayTabs; let i = index\" [class.active]=\"ids == i\" class=\"nav-item\">\n            <a href=\"#{{i}}\" data-toggle=\"tab\" (click)=\"mostrar(i)\">\n                <div class=\"d-block\">\n                    <img [src]=\"tabItem.urlicon\" [alt]=\"tabItem.alticon\" width=\"50\" height=\"50\" class=\"d-block mx-auto\">\n                    <br>\n                    <h3 class=\"condensed\">{{tabItem.titulo}}</h3>\n                </div>\n            </a>\n        </li>\n    </ul>\n    <div class=\"tab-content\">\n        <div id=\"{{i}}\" class=\"tab-pane\" role=\"tabpanel\" *ngFor=\"let tabItem of arrayTabs; let i = index\" [class.active]=\"ids == i\">\n            <div [innerHTML]=\"tabItem.contenido | safehtml\" class=\"py-5 px-5\"></div>\n        </div>\n    </div>\n</div>-->\n\n"
+module.exports = "<div class=\"tab\">\n\t<div class=\"contactenos\">\n\t\t<button class=\"active\" (click)=\"toogleHidden()\">\n            Comenzar un proyecto\n        </button>\n\t</div>\n\t<div class=\"trabaje\">\n\t\t<button (click)=\"toogleHidden()\">Trabaja con nosotros</button>\n\t</div>\n</div>\n<br/><br/>\n<div class=\"container\" [hidden]=\"hidden\">\n\t<div class=\"row\">\n\t\t<form id=\"formulario_contacto\" #userForm = \"ngForm\" (ngSubmit)=\"onSubmit(userForm.value)\" class=\"col-md-12\">\n\t\t\t<div class=\"form-group\" [ngClass]=\"aplicaCssErro(nombre)\" class=\"col-md-12\">\n\t\t\t\t<div class=\"col-md-6 item\" >\n\t\t\t\t\t<label for=\"exampleInputNombre\">Nombre</label>\n\t\t\t\t\t<input type=\"text\" class=\"form-control\" id=\"nombre\" placeholder=\"Nombre\" name=\"nombre\" ngModel required #nombre=\"ngModel\">\n\t\t\t\t\t<div *ngIf=\"nombre.invalid && nombre.touched\" class=\"alert alert-danger\" role=\"alert\">\n\t\t\t\t\t\tCampo obligatorio o invalido\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-md-6 item\">\n\t\t\t\t\t<label for=\"exampleInputOrg\">Organización</label>\n\t\t\t\t\t<input type=\"text\" class=\"form-control\" id=\"organizacion\" placeholder=\"Organización\" name=\"organizacion\" ngModel #organizacion=\"ngModel\">\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"form-group\" class=\"col-md-12\">\n\t\t\t\t<div class=\"col-md-6 item\">\n\t\t\t\t\t<label for=\"exampleInputEmail1\">Email address</label>\n                    <input type=\"email\" class=\"form-control\" id=\"exampleInputEmail1\" aria-describedby=\"emailHelp\" placeholder=\"Escriba su email\" name=\"correo_electronico\" ngModel                        \n                    pattern=\"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\" #correo_electronico=\"ngModel\">\n\t\t\t\t\t<div *ngIf=\"correo_electronico.invalid && correo_electronico.touched\" class=\"alert alert-danger\" role=\"alert\">\n\t\t\t\t\t\tCampo obligatorio o invalido\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-md-6 item\">\n\t\t\t\t\t<label for=\"exampleInputTel\">Telefono</label>\n\t\t\t\t\t<input type=\"tel\" class=\"form-control\" id=\"org\" placeholder=\"Escriba su telefono\" name=\"telefono\" ngModel\n\t\t\t\t\tpattern=\"^(\\([0-9]{3}\\)|[0-9]{3})[0-9]{3}[0-9]{4}$\" #telefono=\"ngModel\">\n\t\t\t\t\t<div *ngIf=\"telefono.invalid && telefono.touched\" class=\"alert alert-danger\" role=\"alert\">\n\t\t\t\t\t\tCampo obligatorio o invalido\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"form-group\" class=\"col-md-12\">\n\t\t\t\t<div class=\"col-md-12 item\">\n\t\t\t\t\t<label for=\"exampleInputPais\">Pais</label>\n\t\t\t\t\t<select type=\"select\" class=\"form-control\" id=\"Pais\" placeholder=\"Seleccione su pais\" name=\"pais\" ngModel></select>\n\t\t\t\t</div >\n\t\t\t</div>\n\t\t\t<div class=\"col-md-12\">\n\t\t\t\t<div class=\"col-md-6 item\">\n\t\t\t\t\t<label for=\"exampleInputPinteres\">Producto de interés</label>\n\t\t\t\t\t<select type=\"select\" class=\"form-control\" id=\"Producto\" placeholder=\"Seleccione un producto\" name=\"Producto\" ngModel></select>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-md-6 item\">\n\t\t\t\t\t<label for=\"exampleInputSinteres\">Servicio de interés</label>\n\t\t\t\t\t<select type=\"select\" class=\"form-control\" id=\"Servicio\" placeholder=\"Seleccione un servicio\" name=\"Servicio\" ngModel></select>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"form-group\" class=\"col-md-12 comentario\" >\n\t\t\t\t<label for=\"exampleInputComm\">Comentarios</label>\n\t\t\t\t\t<textarea class=\"form-control\" id=\"comentario\" placeholder=\"Escriba sus comentarios\" name=\"comentario\" ngModel #comentario=\"ngModel\"></textarea>\n\t\t\t\t\t<div *ngIf=\"comentario.invalid && comentario.touched\" class=\"alert alert-danger\" role=\"alert\">\n\t\t\t\t\t\tCampo obligatorio o invalido\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"form-group\" class=\"col-md-12 terminos_grupo\">\n\t\t\t\t\t<input type=\"checkbox\" checked=\"checked\" id=\"terms-of-service\" name=\"terms_of_service\"  value=\"false\" ngModel required>\n\t\t\t\t\t<label ng-reflect-ng-class=\"\" for=\"terms-of-service\">He leído y acepto los <a role=\"button\" href=\"#terms\">términos y condiciones</a></label>\n\t\t\t\t</div>\n\t\t\t\t<button type=\"submit\" class=\"btn btn-primary\">Enviar</button>\n\t\t\t\t<div class=\"obligatorios col-md-12\"> <span>*</span>Datos Obligatorios</div>\n\t\t</form>\n\t</div>\n</div>\n\n"
 
 /***/ }),
 
@@ -2612,7 +2605,7 @@ module.exports = "<!--<section id=\"blocks-tabs\">\n    <div class=\"block\">\n 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".nav {\n  background-color: #d9e0e4; }\n  @media (max-width: 480px) {\n    .nav {\n      display: block; } }\n  .nav li {\n    margin: 0px 10px;\n    padding: 10px; }\n  .nav li h3 {\n      color: #002b49; }\n  .nav li.active {\n      background-color: #002b49; }\n  .nav li.active h3 {\n        color: white; }\n  .nav li.active:after {\n        width: 0;\n        height: 0;\n        border-left: 15px solid transparent;\n        border-right: 15px solid transparent;\n        border-top: 15px solid #002b49;\n        content: \" \";\n        position: absolute;\n        bottom: 20px; }\n  @media (max-width: 736px) {\n          .nav li.active:after {\n            bottom: 50px; } }\n  @media (max-width: 480px) {\n          .nav li.active:after {\n            display: none; } }\n  .nav li a {\n      text-decoration: none; }\n"
+module.exports = "*, *::before, *::after {\n  box-sizing: border-box; }\n\n.item {\n  display: inline-block; }\n\nlabel {\n  color: #c0dc74;\n  margin-top: 20px;\n  margin-bottom: -1px;\n  font-weight: 100;\n  font-family: 'Open Sans light'; }\n\ninput, select {\n  width: 100%;\n  padding: 4px 2px;\n  outline: none;\n  border: none;\n  border-bottom: 1px solid #b2c6cd;\n  color: #002b49;\n  border-radius: 0px;\n  font-family: 'Open Sans light'; }\n\ninput.ng-invalid.ng-touched {\n  border: solid 1px red; }\n\nselect {\n  background: #f8f8f8;\n  font-family: 'Open Sans light'; }\n\ninput::-webkit-input-placeholder {\n  /* Chrome/Opera/Safari */\n  color: #808080; }\n\ninput::-moz-placeholder {\n  /* Firefox 19+ */\n  color: #808080; }\n\ninput:-ms-input-placeholder {\n  /* IE 10+ */\n  color: #808080; }\n\ninput:-moz-placeholder {\n  /* Firefox 18- */\n  color: #808080; }\n\n.comentario {\n  width: 98%;\n  margin: 0 auto; }\n\n@media screen and (max-width: 480px) {\n    .comentario {\n      width: 91%; } }\n\n.comentario textarea {\n    min-height: 40px;\n    border-radius: 0px;\n    border: 1px solid #b2c6cd;\n    padding: 10px 20px;\n    font-family: 'Open Sans light'; }\n\n.terminos_grupo {\n  position: relative;\n  max-width: 380px;\n  margin: 40px auto;\n  text-align: center;\n  /* OFF */\n  /* ON */ }\n\n.terminos_grupo [type=\"checkbox\"] {\n    position: absolute;\n    left: -9999px; }\n\n.terminos_grupo [type=\"checkbox\"] + label:after {\n    content: '';\n    position: absolute; }\n\n.terminos_grupo [type=\"checkbox\"] + label {\n    display: block;\n    position: relative;\n    padding-left: 26px;\n    cursor: pointer;\n    line-height: 36px;\n    font-size: 1rem;\n    color: rgba(0, 43, 73, 0.8);\n    transition: color .3s; }\n\n.terminos_grupo [type=\"checkbox\"] + label a {\n    color: #91b520; }\n\n.terminos_grupo [type=\"checkbox\"] + label:after {\n    width: 30px;\n    height: 30px;\n    transition: all .2s;\n    top: 0;\n    left: 0; }\n\n.terminos_grupo [type=\"checkbox\"]:not(:checked) + label:after {\n    background: url(\"/assets/images/check2_off.png\") left center no-repeat; }\n\n.terminos_grupo [type=\"checkbox\"]:checked + label:after {\n    background: url(\"/assets/images/check2.png\") left center no-repeat; }\n\n.btn-primary {\n  border-radius: 0px;\n  background: #91b520;\n  padding: 13px 37px;\n  background-color: #a6cf24 !important;\n  border: none;\n  margin: 0 auto;\n  display: block;\n  font-family: 'Open Sans light'; }\n\n.obligatorios {\n  text-align: center;\n  margin-top: 20px;\n  color: #6d747f;\n  font-family: 'Open Sans light'; }\n\n.obligatorios span {\n    color: #91b520; }\n\n.tab {\n  background: #e5e9ec;\n  height: 140px;\n  margin-top: 40px; }\n\n.tab .contactenos {\n    height: 140px;\n    padding-left: 11.8%;\n    display: inline-block;\n    position: relative;\n    width: 50%; }\n\n.tab .contactenos button {\n      display: block;\n      width: 84%;\n      height: 100%;\n      position: absolute;\n      top: 0px;\n      right: 0px;\n      background: url(/assets/images/contactus1-newproject.svg) no-repeat center 25px;\n      background-size: 10%;\n      padding-top: 8.5%;\n      border: none;\n      font-size: 22px;\n      font-family: 'Open Sans light';\n      color: #2e516a;\n      cursor: pointer; }\n\n@media (min-width: 1367px) {\n        .tab .contactenos button {\n          background-size: 8%; } }\n\n.tab .contactenos button:active, .tab .contactenos button.active {\n      background: url(/assets/images/contactus1-newproject-white.svg) no-repeat center 25px, #30506c;\n      background-size: 10%;\n      color: #fff;\n      outline: 0px auto -webkit-focus-ring-color; }\n\n@media (min-width: 1367px) {\n        .tab .contactenos button:active, .tab .contactenos button.active {\n          background-size: 8%; } }\n\n.tab .contactenos button.active::before {\n      content: '';\n      position: absolute;\n      border-width: 30px 65px 0;\n      border-style: solid;\n      border-color: #2e516a transparent transparent;\n      top: 97%;\n      margin-left: 37px; }\n\n.tab .contactenos button::after {\n      content: '';\n      position: absolute;\n      height: 75px;\n      width: 1px;\n      margin-top: -7%;\n      left: 0%;\n      background-color: #95a7b3; }\n\n.tab .contactenos button.active::after {\n      display: none; }\n\n@media screen and (max-width: 480px) {\n      .tab .contactenos button, .tab .contactenos button.active {\n        width: 100%;\n        font-size: 15px;\n        padding-top: 46px;\n        background-size: 33%; }\n      .tab .contactenos button.active::before {\n        top: 96%;\n        left: 29%;\n        -webkit-transform: translate(-50%, -50%);\n                transform: translate(-50%, -50%); }\n      .tab .contactenos button::after {\n        display: none; } }\n\n@media (max-width: 768px) and (min-width: 600px) {\n      .tab .contactenos button.active::before {\n        top: 90%; } }\n\n.tab .trabaje {\n    height: 140px;\n    padding-right: 11.8%;\n    display: inline-block;\n    position: relative;\n    width: 50%; }\n\n.tab .trabaje button {\n      display: block;\n      width: 84%;\n      height: 100%;\n      position: absolute;\n      top: 0px;\n      left: 0px;\n      background: none;\n      padding-top: 8.5%;\n      background: url(/assets/images/contactus2-joinus.svg) no-repeat center 25px;\n      background-size: 10%;\n      border: none;\n      font-size: 22px;\n      font-family: 'Open Sans light';\n      color: #2e516a;\n      cursor: pointer; }\n\n@media (min-width: 1367px) {\n        .tab .trabaje button {\n          background-size: 8%; } }\n\n.tab .trabaje button:active, .tab .trabaje button.active {\n      background: url(/assets/images/contactus2-joinus-white.svg) no-repeat center 25px, #30506c;\n      background-size: 10%;\n      color: #fff;\n      outline: 0px auto -webkit-focus-ring-color; }\n\n@media (min-width: 1367px) {\n        .tab .trabaje button:active, .tab .trabaje button.active {\n          background-size: 8%; } }\n\n.tab .trabaje button.active::before {\n      content: '';\n      position: absolute;\n      border-width: 30px 65px 0;\n      border-style: solid;\n      border-color: #2e516a transparent transparent;\n      top: 97%;\n      margin-left: 37px; }\n\n.tab .trabaje button::after {\n      content: '';\n      position: absolute;\n      height: 75px;\n      width: 1px;\n      margin-top: -7%;\n      right: 0%;\n      background-color: #95a7b3; }\n\n.tab .trabaje button.active::after {\n      display: none; }\n\n@media screen and (max-width: 480px) {\n      .tab .trabaje button, .tab .trabaje button.active {\n        width: 100%;\n        font-size: 15px;\n        padding-top: 46px;\n        background-size: 33%; }\n      .tab .trabaje button.active::before {\n        top: 96%;\n        left: 29%;\n        -webkit-transform: translate(-50%, -50%);\n                transform: translate(-50%, -50%); }\n      .tab .trabaje button::after {\n        display: none; } }\n\n@media (max-width: 768px) and (min-width: 600px) {\n      .tab .trabaje button.active::before {\n        top: 90%; } }\n\n#msj-modal {\n  background: #30506cab;\n  width: 100vw;\n  height: 100vh; }\n\n#msj-modal .content-modal {\n    display: table;\n    position: relative;\n    margin-top: 25%;\n    width: 50%;\n    margin-left: 25%;\n    padding: 20px;\n    background: #fff;\n    border-radius: 10px;\n    border: solid #91b520 1px; }\n\n#msj-modal .content-modal p {\n      text-align: center; }\n"
 
 /***/ }),
 
@@ -2627,7 +2620,8 @@ module.exports = ".nav {\n  background-color: #d9e0e4; }\n  @media (max-width: 4
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TabsComponent", function() { return TabsComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var src_app_services_cards_v1_card_services__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/services/cards/v1-card.services */ "./src/app/services/cards/v1-card.services.ts");
+/* harmony import */ var rxjs_add_operator_map__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs/add/operator/map */ "./node_modules/rxjs-compat/_esm5/add/operator/map.js");
+/* harmony import */ var _services_http_http_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../services/http/http.service */ "./src/app/services/http/http.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2639,17 +2633,58 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 };
 
 
+
 var TabsComponent = /** @class */ (function () {
-    function TabsComponent(https) {
-        this.https = https;
-        this.arrayTabs = [];
-        this.ids = 0;
+    function TabsComponent(_http) {
+        this._http = _http;
+        this.hidden = false;
+        this.usuario = {
+            nombre: null,
+            email: null
+        };
     }
-    TabsComponent.prototype.ngOnInit = function () {
+    TabsComponent.prototype.toogleHidden = function () {
+        this.hidden = !this.hidden;
     };
-    TabsComponent.prototype.mostrar = function (link) {
-        this.ids = link;
-        console.log(this.ids);
+    TabsComponent.prototype.onSubmit = function (formulario) {
+        console.log(formulario);
+        formulario['webform_id'] = 'contact_us';
+        $("#formulario_contacto")[0].reset();
+        $("#msj-modal").show();
+        $(".close").click(function () {
+            $("#msj-modal").hide();
+        });
+        this._http.post('webform_rest/submit?_format=json', formulario, {
+            'Content-Type': 'application/json',
+            'X-CSRF-Token': this._token
+        })
+            .subscribe(function (datos) {
+            console.log(datos);
+            formulario.form.reset();
+        });
+    };
+    TabsComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this._http.get('rest/session/token', {}, { responseType: 'text' }).subscribe(function (response) {
+            _this._token = response;
+        });
+        $(".trabaje").on('click', function () {
+            $(".trabaje button").toggleClass("active");
+            $(".contactenos button").toggleClass("active");
+        });
+        $(".contactenos").on('click', function () {
+            $(".trabaje button").toggleClass("active");
+            $(".contactenos button").toggleClass("active");
+        });
+    };
+    TabsComponent.prototype.verificaValidTouched = function (campo) {
+        return !campo.valid && campo.touched;
+    };
+    TabsComponent.prototype.aplicaCssErro = function (campo) {
+        return {
+            'has-error': this.verificaValidTouched(campo),
+            'has-feedback': this.verificaValidTouched(campo)
+        };
     };
     TabsComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -2657,11 +2692,31 @@ var TabsComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./tabs.component.html */ "./src/app/cards/components/tabs/tabs.component.html"),
             styles: [__webpack_require__(/*! ./tabs.component.scss */ "./src/app/cards/components/tabs/tabs.component.scss")]
         }),
-        __metadata("design:paramtypes", [src_app_services_cards_v1_card_services__WEBPACK_IMPORTED_MODULE_1__["CustomCardService"]])
+        __metadata("design:paramtypes", [_services_http_http_service__WEBPACK_IMPORTED_MODULE_2__["HttpService"]])
     ], TabsComponent);
     return TabsComponent;
 }());
 
+//     arrayTabs:Tab[] = [];
+//     ids:number = 0;
+//     size:number;
+//     constructor(
+//         private https: CustomCardService,
+//     ) {}
+//     ngOnInit() {
+//     }
+//     mostrar(link:number){
+//         this.ids = link;
+//         console.log(this.ids);
+//     }
+// }
+// export interface Tab{
+//     titulo:string;
+//     icontab:string;
+//     urlicon:string;
+//     alticon:string;
+//     contenido:string;
+// }
 
 
 /***/ }),
@@ -2673,7 +2728,7 @@ var TabsComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row position-relative row-tec\" [ngStyle]=\"{'background-image':'url(' + background + ')'}\">\n        <div class=\"position-absolute content-trans\"></div>\n        <div class=\"col-md-12 pt-5 pb-2 px-2\">\n            <h1 class=\"text-center text-white\">{{ title }}</h1>\n        </div>\n        <div class=\"col-md-12 py-5 px-2\">\n            <div class=\"tec-slider\">\n                <ngx-tile NgxCarouselItem id=\"logos\" *ngFor=\"let im of arrayLogosCustom\" >\n                    <img *ngFor=\"let img of im\" [src]=\"img.field_tech_image.url\" [alt]=\"img.field_tech_image.alt\">\n                </ngx-tile>\n            </div>\n        </div>\n</div>\n\n"
+module.exports = "<div class=\"row position-relative row-tec\" [ngStyle]=\"{'background-image':'url(' + background + ')'}\">\n        <div class=\"position-absolute content-trans\"></div>\n        <div class=\"col-md-12 pt-5 pb-2 px-2\">\n            <h1 class=\"text-center text-white\">{{ title }}</h1>\n        </div>\n        <div class=\"col-md-12 py-5 px-2\">\n            <div class=\"tec-slider\">\n                <ngx-tile NgxCarouselItem id=\"logos\" *ngFor=\"let im of arrayLogosCustom\" >\n                    <div class=\"img-fluid\" *ngFor=\"let img of im\" [ngStyle]=\"{'background-image':'url(' + img.field_tech_image?.url + ')'}\"></div>\n                </ngx-tile>\n            </div>\n        </div>\n</div>\n\n"
 
 /***/ }),
 
@@ -2684,7 +2739,7 @@ module.exports = "<div class=\"row position-relative row-tec\" [ngStyle]=\"{'bac
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".row-tec {\n  background-attachment: fixed;\n  background-position: center;\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-image: url(/assets/images/fnd-tecnologias.jpg) !important;\n  min-height: 380px; }\n  .row-tec .content-trans {\n    background: #002b49c0;\n    width: 100%;\n    height: 100%; }\n  .row-tec .tec-slider {\n    width: 100%;\n    margin: 0 auto;\n    display: flex; }\n  .row-tec .tec-slider .item {\n      margin: 0 auto; }\n  .row-tec .tec-slider .div-slide {\n      margin: 0 auto; }\n  .row-tec .tec-slider /deep/ img {\n      padding-right: 61px;\n      padding-left: 61px; }\n  .img-fluid {\n  max-width: 100%;\n  height: auto;\n  margin: 20px; }\n  :host ::ng-deep .tile {\n  box-shadow: none !important; }\n  @media screen and (max-width: 480px) {\n  .img-slide {\n    width: 70%;\n    display: block;\n    height: auto;\n    margin: 20px auto; } }\n"
+module.exports = ".row-tec {\n  width: 100%;\n  margin: 0;\n  background-attachment: fixed;\n  background-position: center;\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-image: url(/assets/images/fnd-tecnologias.jpg) !important;\n  min-height: 380px; }\n  .row-tec .content-trans {\n    background: #002b49c0;\n    width: 100%;\n    height: 100%; }\n  .row-tec .tec-slider {\n    width: 100%;\n    margin: 0 auto;\n    display: flex; }\n  .row-tec .tec-slider .item {\n      margin: 0 auto; }\n  .row-tec .tec-slider .div-slide {\n      margin: 0 auto; }\n  .img-fluid {\n  width: 175px;\n  height: 140px;\n  background-repeat: no-repeat;\n  background-position: center;\n  background-size: contain;\n  margin: 10px 20px; }\n  @media (max-width: 500px) {\n    .img-fluid {\n      width: 100px;\n      height: 90px; } }\n  :host ::ng-deep .tile {\n  box-shadow: none !important;\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: center; }\n  @media screen and (max-width: 480px) {\n  .img-slide {\n    width: 70%;\n    display: block;\n    height: auto;\n    margin: 20px auto; } }\n"
 
 /***/ }),
 
@@ -2760,10 +2815,6 @@ var TecnologiesComponent = /** @class */ (function () {
                     this.arrayLogosCustom[i][j] = arrayLogosOriginal[0];
                     arrayLogosOriginal.shift();
                 }
-                else {
-                    this.arrayLogosCustom[i][j] = this.arrayLogosCustom[i - 1][j2];
-                    j2++;
-                }
             }
         }
     };
@@ -2803,7 +2854,8 @@ var TecnologiesComponent = /** @class */ (function () {
                 ])
             ]
         }),
-        __metadata("design:paramtypes", [_services_cards_v1_card_services__WEBPACK_IMPORTED_MODULE_0__["CustomCardService"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"]])
+        __metadata("design:paramtypes", [_services_cards_v1_card_services__WEBPACK_IMPORTED_MODULE_0__["CustomCardService"],
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"]])
     ], TecnologiesComponent);
     return TecnologiesComponent;
 }());
@@ -3142,7 +3194,7 @@ module.exports = "<header>\n    <section class=\"logo\">\n        <div class=\"c
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "header .logo {\n  width: 15%;\n  position: fixed;\n  z-index: 1022; }\n  header .logo .container-logo {\n    width: 100%;\n    padding-left: 40%;\n    padding-top: 5%;\n    position: relative;\n    z-index: 100; }\n  @media (min-width: 300px) and (max-width: 1024px) {\n      header .logo .container-logo {\n        padding-top: 20%; } }\n  header .logo .container-logo .image-url {\n      width: 100%;\n      position: relative;\n      left: 28%; }\n  header .logo .container-logo .image-url img {\n        width: 90px; }\n  @media (min-width: 1025px) {\n          header .logo .container-logo .image-url img {\n            width: 100%;\n            padding-left: 4%;\n            padding-top: 2%; } }\n  header .inverse-color {\n  background: #ffffff; }\n  header .tigger-menu {\n  background: #ffffff;\n  color: #002b49; }\n  header nav {\n  width: 100%;\n  padding-top: 6%;\n  border-bottom: 1px solid transparent;\n  position: fixed;\n  float: left;\n  font-weight: bold;\n  background: transparent;\n  text-decoration: none;\n  z-index: 1020; }\n  @media (min-width: 668px) and (max-width: 1024px) {\n  header nav {\n    padding-top: 0%;\n    width: 100%;\n    position: fixed; } }\n  @media (min-width: 1025px) {\n  header nav {\n    float: right;\n    padding-top: 0%;\n    width: 100%;\n    position: fixed;\n    text-align: right; } }\n  header nav .menuToggle {\n  display: block;\n  position: relative;\n  width: 100%;\n  z-index: 1; }\n  @media (min-width: 668px) and (max-width: 1024px) {\n  header nav .menuToggle {\n    top: 22px; } }\n  header nav .menuToggle .Botton {\n  display: block;\n  width: 22%;\n  height: auto;\n  position: absolute;\n  left: 75%;\n  cursor: pointer;\n  opacity: 0;\n  z-index: 2; }\n  @media (min-width: 1025px) {\n  header nav .menuToggle .Botton {\n    display: none; } }\n  header nav .menuToggle .Botton:checked ~ .lines {\n  opacity: 1;\n  -webkit-transform: rotate(45deg) translate(1px, 0px);\n          transform: rotate(45deg) translate(1px, 0px);\n  background: #0c7ffb; }\n  header nav .menuToggle .Botton:checked ~ .lines:nth-last-child(3) {\n  opacity: 0;\n  -webkit-transform: rotate(0deg) scale(0.2, 0.2);\n          transform: rotate(0deg) scale(0.2, 0.2); }\n  header nav .menuToggle .Botton:checked ~ .lines:nth-last-child(2) {\n  opacity: 1;\n  -webkit-transform: rotate(-45deg) translate(1px, 2px);\n          transform: rotate(-45deg) translate(1px, 2px); }\n  header nav .menuToggle .Botton:checked ~ .list-menu {\n  display: block;\n  -webkit-transform: none;\n          transform: none; }\n  header nav .menuToggle .lines {\n  display: block;\n  width: 26px;\n  height: 2.4px;\n  margin-bottom: 5px;\n  margin-left: 81%;\n  position: relative;\n  background: #ffffff;\n  border-radius: 30%;\n  z-index: 1;\n  -webkit-transform-origin: 4px 0px;\n          transform-origin: 4px 0px;\n  transition: background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease, -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);\n  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;\n  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease, -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1); }\n  @media (min-width: 1025px) {\n  header nav .menuToggle .lines {\n    display: none; } }\n  header nav .menuToggle .color-scroll {\n  background: #0c7ffb; }\n  header nav .menuToggle .lines:first-child {\n  -webkit-transform-origin: 0% 0%;\n          transform-origin: 0% 0%; }\n  header nav .menuToggle .lines:nth-last-child(2) {\n  -webkit-transform-origin: 0% 100%;\n          transform-origin: 0% 100%;\n  margin-bottom: 8%; }\n  header nav .menuToggle ul {\n  margin-bottom: 0; }\n  header nav .menuToggle .list-menu {\n  padding-left: 0%;\n  width: 100%;\n  position: relative;\n  display: none;\n  -webkit-font-smoothing: antialiased;\n  -webkit-transform: translate(0, -100%);\n          transform: translate(0, -100%);\n  transition: -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);\n  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);\n  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1); }\n  @media (min-width: 1025px) {\n  header nav .menuToggle .list-menu {\n    display: block;\n    -webkit-transform: initial;\n            transform: initial;\n    transition-delay: initial; } }\n  header nav .menuToggle .list-menu .items {\n  list-style: none;\n  padding-bottom: 7%;\n  padding-top: 7%;\n  padding-left: 12%;\n  border-bottom: 1px solid #f5fafc; }\n  @media (min-width: 1025px) {\n  header nav .menuToggle .list-menu .items {\n    width: 8%;\n    padding-top: 2%;\n    padding-bottom: 2%;\n    padding-left: 0%;\n    padding-right: 0%;\n    border-bottom: initial;\n    display: inline-block; } }\n  header nav .menuToggle .list-menu .items:nth-child(1) {\n  border-top: 1px solid #cfe3ee; }\n  @media (min-width: 668px) and (max-width: 1024px) {\n  header nav .menuToggle .list-menu .items:nth-child(1) {\n    border-top: initial; } }\n  @media (min-width: 1025px) {\n  header nav .menuToggle .list-menu .items:nth-child(1) {\n    border-top: initial; } }\n  @media (min-width: 1025px) {\n  header nav .menuToggle .list-menu .items:nth-child(7) {\n    padding-right: 3%; } }\n  header nav .menuToggle .list-menu .items .scroll-white {\n  color: #002b49; }\n  header nav .menuToggle .list-menu .language {\n  list-style: none; }\n  header .logo {\n  width: 15%;\n  position: fixed;\n  z-index: 1022; }\n  header .logo .container-logo {\n  width: 100%;\n  padding-left: 50%;\n  padding-top: 28%;\n  position: relative;\n  z-index: 100; }\n  @media (min-width: 668px) and (max-width: 1024px) {\n  header .logo .container-logo {\n    padding-top: 20%; } }\n  @media (min-width: 1025px) {\n  header .logo .container-logo {\n    padding-top: 4%;\n    padding-left: 43%; } }\n  header .logo .container-logo .image-url {\n  width: 100%;\n  position: relative;\n  left: 28%; }\n  header .logo .container-logo .image-url img {\n  width: 90px; }\n  @media (min-width: 1025px) {\n  header .logo .container-logo .image-url img {\n    width: 100%;\n    padding-left: 4%;\n    padding-top: 2%; } }\n"
+module.exports = "header {\n  z-index: 10; }\n  header .logo {\n    width: 15%;\n    position: fixed;\n    z-index: 1022; }\n  header .logo .container-logo {\n      width: 100%;\n      padding-left: 40%;\n      padding-top: 5%;\n      position: relative;\n      z-index: 100; }\n  @media (min-width: 300px) and (max-width: 1024px) {\n        header .logo .container-logo {\n          padding-top: 20%; } }\n  header .logo .container-logo .image-url {\n        width: 100%;\n        position: relative;\n        left: 28%; }\n  header .logo .container-logo .image-url img {\n          width: 90px; }\n  @media (min-width: 1025px) {\n            header .logo .container-logo .image-url img {\n              width: 100%;\n              padding-left: 4%;\n              padding-top: 2%; } }\n  header .inverse-color {\n  background: #ffffff; }\n  header .tigger-menu {\n  background: #ffffff;\n  color: #002b49; }\n  header nav {\n  width: 100%;\n  padding-top: 6%;\n  border-bottom: 1px solid transparent;\n  position: fixed;\n  float: left;\n  font-weight: bold;\n  background: transparent;\n  text-decoration: none;\n  z-index: 1020; }\n  @media (min-width: 668px) and (max-width: 1024px) {\n  header nav {\n    padding-top: 0%;\n    width: 100%;\n    position: fixed; } }\n  @media (min-width: 1025px) {\n  header nav {\n    float: right;\n    padding-top: 0%;\n    width: 100%;\n    position: fixed;\n    text-align: right; } }\n  header nav .menuToggle {\n  display: block;\n  position: relative;\n  width: 100%;\n  z-index: 1; }\n  @media (min-width: 668px) and (max-width: 1024px) {\n  header nav .menuToggle {\n    top: 22px; } }\n  header nav .menuToggle .Botton {\n  display: block;\n  width: 22%;\n  height: auto;\n  position: absolute;\n  left: 75%;\n  cursor: pointer;\n  opacity: 0;\n  z-index: 2; }\n  @media (min-width: 1025px) {\n  header nav .menuToggle .Botton {\n    display: none; } }\n  header nav .menuToggle .Botton:checked ~ .lines {\n  opacity: 1;\n  -webkit-transform: rotate(45deg) translate(1px, 0px);\n          transform: rotate(45deg) translate(1px, 0px);\n  background: #0c7ffb; }\n  header nav .menuToggle .Botton:checked ~ .lines:nth-last-child(3) {\n  opacity: 0;\n  -webkit-transform: rotate(0deg) scale(0.2, 0.2);\n          transform: rotate(0deg) scale(0.2, 0.2); }\n  header nav .menuToggle .Botton:checked ~ .lines:nth-last-child(2) {\n  opacity: 1;\n  -webkit-transform: rotate(-45deg) translate(1px, 2px);\n          transform: rotate(-45deg) translate(1px, 2px); }\n  header nav .menuToggle .Botton:checked ~ .list-menu {\n  display: block;\n  -webkit-transform: none;\n          transform: none; }\n  header nav .menuToggle .lines {\n  display: block;\n  width: 26px;\n  height: 2.4px;\n  margin-bottom: 5px;\n  margin-left: 81%;\n  position: relative;\n  background: #ffffff;\n  border-radius: 30%;\n  z-index: 1;\n  -webkit-transform-origin: 4px 0px;\n          transform-origin: 4px 0px;\n  transition: background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease, -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);\n  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;\n  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease, -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1); }\n  @media (min-width: 1025px) {\n  header nav .menuToggle .lines {\n    display: none; } }\n  header nav .menuToggle .color-scroll {\n  background: #0c7ffb; }\n  header nav .menuToggle .lines:first-child {\n  -webkit-transform-origin: 0% 0%;\n          transform-origin: 0% 0%; }\n  header nav .menuToggle .lines:nth-last-child(2) {\n  -webkit-transform-origin: 0% 100%;\n          transform-origin: 0% 100%;\n  margin-bottom: 8%; }\n  header nav .menuToggle ul {\n  margin-bottom: 0; }\n  header nav .menuToggle .list-menu {\n  padding-left: 0%;\n  width: 100%;\n  position: relative;\n  display: none;\n  -webkit-font-smoothing: antialiased;\n  -webkit-transform: translate(0, -100%);\n          transform: translate(0, -100%);\n  transition: -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);\n  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);\n  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1); }\n  @media (min-width: 1025px) {\n  header nav .menuToggle .list-menu {\n    display: block;\n    -webkit-transform: initial;\n            transform: initial;\n    transition-delay: initial; } }\n  header nav .menuToggle .list-menu .items {\n  list-style: none;\n  padding-bottom: 7%;\n  padding-top: 7%;\n  padding-left: 12%;\n  border-bottom: 1px solid #f5fafc; }\n  @media (min-width: 1025px) {\n  header nav .menuToggle .list-menu .items {\n    width: 8%;\n    padding-top: 2%;\n    padding-bottom: 2%;\n    padding-left: 0%;\n    padding-right: 0%;\n    border-bottom: initial;\n    display: inline-block; } }\n  header nav .menuToggle .list-menu .items:nth-child(1) {\n  border-top: 1px solid #cfe3ee; }\n  @media (min-width: 668px) and (max-width: 1024px) {\n  header nav .menuToggle .list-menu .items:nth-child(1) {\n    border-top: initial; } }\n  @media (min-width: 1025px) {\n  header nav .menuToggle .list-menu .items:nth-child(1) {\n    border-top: initial; } }\n  @media (min-width: 1025px) {\n  header nav .menuToggle .list-menu .items:nth-child(7) {\n    padding-right: 3%; } }\n  header nav .menuToggle .list-menu .items .scroll-white {\n  color: #002b49; }\n  header nav .menuToggle .list-menu .language {\n  list-style: none; }\n  header .logo {\n  width: 15%;\n  position: fixed;\n  z-index: 1022; }\n  header .logo .container-logo {\n  width: 100%;\n  padding-left: 50%;\n  padding-top: 28%;\n  position: relative;\n  z-index: 100; }\n  @media (min-width: 668px) and (max-width: 1024px) {\n  header .logo .container-logo {\n    padding-top: 20%; } }\n  @media (min-width: 1025px) {\n  header .logo .container-logo {\n    padding-top: 4%;\n    padding-left: 43%; } }\n  header .logo .container-logo .image-url {\n  width: 100%;\n  position: relative;\n  left: 28%; }\n  header .logo .container-logo .image-url img {\n  width: 90px; }\n  @media (min-width: 1025px) {\n  header .logo .container-logo .image-url img {\n    width: 100%;\n    padding-left: 4%;\n    padding-top: 2%; } }\n"
 
 /***/ }),
 
@@ -3416,7 +3468,6 @@ var NavbarComponent = /** @class */ (function () {
         return this.navbar.getMenuItems().subscribe(function (items) {
             _this.NavbarArray = items;
             _this.NavbarArray = _this.addIdForColToNavbar(_this.NavbarArray, 1, 1);
-            console.log(_this.NavbarArray);
         });
     };
     NavbarComponent.prototype.addIdForColToNavbar = function (navbarArray, posCol, posRow) {
@@ -3458,10 +3509,11 @@ var NavbarComponent = /** @class */ (function () {
         }
     };
     NavbarComponent.prototype.menuOver = function (event) {
-        $('.page-wrapper').css('filter', 'blur(2px)');
+        $('.hover-menu-dark-layout').removeClass('hide');
+        $('.hover-menu-dark-layout').css('height', document.getElementById('main-wrapper').scrollHeight + 'px');
     };
     NavbarComponent.prototype.menuOut = function ($event) {
-        $('.page-wrapper').css('filter', '');
+        $('.hover-menu-dark-layout').addClass('hide');
     };
     __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["HostListener"])('window:resize', ['$event']),
@@ -3542,7 +3594,7 @@ var LayoutModule = /** @class */ (function () {
                 _cards_components_footer_footer_contact_footer_contact_component__WEBPACK_IMPORTED_MODULE_7__["FooterContactComponent"],
                 _cards_components_footer_footer_newsletter_footer_newsletter_component__WEBPACK_IMPORTED_MODULE_8__["FooterNewsletterComponent"],
                 _cards_components_generator_of_links_generator_of_links_component__WEBPACK_IMPORTED_MODULE_9__["GeneratorOfLinksComponent"],
-                _cards_components_footer_footer_block_footer_block__WEBPACK_IMPORTED_MODULE_10__["FooterBlock"],
+                _cards_components_footer_footer_block_footer_block__WEBPACK_IMPORTED_MODULE_10__["FooterBlockComponent"],
             ],
             exports: [
                 _components_header_header_component__WEBPACK_IMPORTED_MODULE_2__["HeaderComponent"],
@@ -3557,6 +3609,69 @@ var LayoutModule = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/main/pages/about-us/about-us.component.html":
+/*!*************************************************************!*\
+  !*** ./src/app/main/pages/about-us/about-us.component.html ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<app-banner titulo=\"about-us\" imgFondo=\"/assets/images/cabezerainternaweb.png\"></app-banner>\n<app-carousel-controls></app-carousel-controls>\n<app-alliances></app-alliances>\n<app-workwithus></app-workwithus>"
+
+/***/ }),
+
+/***/ "./src/app/main/pages/about-us/about-us.component.scss":
+/*!*************************************************************!*\
+  !*** ./src/app/main/pages/about-us/about-us.component.scss ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/main/pages/about-us/about-us.component.ts":
+/*!***********************************************************!*\
+  !*** ./src/app/main/pages/about-us/about-us.component.ts ***!
+  \***********************************************************/
+/*! exports provided: AboutUsComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AboutUsComponent", function() { return AboutUsComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var AboutUsComponent = /** @class */ (function () {
+    function AboutUsComponent() {
+    }
+    AboutUsComponent.prototype.ngOnInit = function () {
+    };
+    AboutUsComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-about-us',
+            template: __webpack_require__(/*! ./about-us.component.html */ "./src/app/main/pages/about-us/about-us.component.html"),
+            styles: [__webpack_require__(/*! ./about-us.component.scss */ "./src/app/main/pages/about-us/about-us.component.scss")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], AboutUsComponent);
+    return AboutUsComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/main/pages/contact-us/contact-us.component.html":
 /*!*****************************************************************!*\
   !*** ./src/app/main/pages/contact-us/contact-us.component.html ***!
@@ -3564,7 +3679,7 @@ var LayoutModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-banner></app-banner>\n<app-title></app-title>\n<!--<app-tabs></app-tabs>-->\n\n<div class=\"tab\">\n\t<div class=\"contactenos\">\n\t\t<button class=\"active\" (click)=\"toogleHidden()\">Comenzar un proyecto</button>\n\t</div>\n\t<div class=\"trabaje\">\n\t\t<button (click)=\"toogleHidden()\">Trabaja con nosotros</button>\n\t</div>\n</div>\n<br/><br/>\n<div class=\"container\" [hidden]=\"hidden\">\n\t<div class=\"row\">\n\t\t<form id=\"formulario_contacto\" #userForm = \"ngForm\" (ngSubmit)=\"onSubmit(userForm.value)\" class=\"col-md-12\">\n\t\t\t<div class=\"form-group\" [ngClass]=\"aplicaCssErro(nombre)\" class=\"col-md-12\">\n\t\t\t\t<div class=\"col-md-6 item\" >\n\t\t\t\t\t<label for=\"exampleInputNombre\">Nombre</label>\n\t\t\t\t\t<input type=\"text\" class=\"form-control\" id=\"nombre\" placeholder=\"Nombre\" name=\"nombre\" ngModel required #nombre=\"ngModel\">\n\t\t\t\t\t<div *ngIf=\"nombre.invalid && nombre.touched\" class=\"alert alert-danger\" role=\"alert\">\n\t\t\t\t\t\tCampo obligatorio o invalido\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-md-6 item\">\n\t\t\t\t\t<label for=\"exampleInputOrg\">Organización</label>\n\t\t\t\t\t<input type=\"text\" class=\"form-control\" id=\"organizacion\" placeholder=\"Organización\" name=\"organizacion\" ngModel #organizacion=\"ngModel\">\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"form-group\" class=\"col-md-12\">\n\t\t\t\t<div class=\"col-md-6 item\">\n\t\t\t\t\t<label for=\"exampleInputEmail1\">Email address</label>\n\t\t\t\t\t<input type=\"email\" class=\"form-control\" id=\"exampleInputEmail1\" aria-describedby=\"emailHelp\" placeholder=\"Escriba su email\" name=\"correo_electronico\" ngModel                        pattern=\"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\"\n\t\t\t\t\t#correo_electronico=\"ngModel\">\n\t\t\t\t\t<div *ngIf=\"correo_electronico.invalid && correo_electronico.touched\" class=\"alert alert-danger\" role=\"alert\">\n\t\t\t\t\t\tCampo obligatorio o invalido\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-md-6 item\">\n\t\t\t\t\t<label for=\"exampleInputTel\">Telefono</label>\n\t\t\t\t\t<input type=\"tel\" class=\"form-control\" id=\"org\" placeholder=\"Escriba su telefono\" name=\"telefono\" ngModel\n\t\t\t\t\tpattern=\"^(\\([0-9]{3}\\)|[0-9]{3})[0-9]{3}[0-9]{4}$\" #telefono=\"ngModel\">\n\t\t\t\t\t<div *ngIf=\"telefono.invalid && telefono.touched\" class=\"alert alert-danger\" role=\"alert\">\n\t\t\t\t\t\tCampo obligatorio o invalido\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"form-group\" class=\"col-md-12\">\n\t\t\t\t<div class=\"col-md-12 item\">\n\t\t\t\t\t<label for=\"exampleInputPais\">Pais</label>\n\t\t\t\t\t<select type=\"select\" class=\"form-control\" id=\"Pais\" placeholder=\"Seleccione su pais\" name=\"pais\" ngModel></select>\n\t\t\t\t</div >\n\t\t\t</div>\n\t\t\t<div class=\"col-md-12\">\n\t\t\t\t<div class=\"col-md-6 item\">\n\t\t\t\t\t<label for=\"exampleInputPinteres\">Producto de interés</label>\n\t\t\t\t\t<select type=\"select\" class=\"form-control\" id=\"Producto\" placeholder=\"Seleccione un producto\" name=\"Producto\" ngModel></select>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-md-6 item\">\n\t\t\t\t\t<label for=\"exampleInputSinteres\">Servicio de interés</label>\n\t\t\t\t\t<select type=\"select\" class=\"form-control\" id=\"Servicio\" placeholder=\"Seleccione un servicio\" name=\"Servicio\" ngModel></select>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"form-group\" class=\"col-md-12 comentario\" >\n\t\t\t\t<label for=\"exampleInputComm\">Comentarios</label>\n\t\t\t\t\t<textarea class=\"form-control\" id=\"comentario\" placeholder=\"Escriba sus comentarios\" name=\"comentario\" ngModel #comentario=\"ngModel\"></textarea>\n\t\t\t\t\t<div *ngIf=\"comentario.invalid && comentario.touched\" class=\"alert alert-danger\" role=\"alert\">\n\t\t\t\t\t\tCampo obligatorio o invalido\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"form-group\" class=\"col-md-12 terminos_grupo\">\n\t\t\t\t\t<input type=\"checkbox\" checked=\"checked\" id=\"terms-of-service\" name=\"terms_of_service\"  value=\"false\" ngModel required>\n\t\t\t\t\t<label ng-reflect-ng-class=\"\" for=\"terms-of-service\">He leído y acepto los <a role=\"button\" href=\"#terms\">términos y condiciones</a></label>\n\t\t\t\t</div>\n\t\t\t\t<button type=\"submit\" class=\"btn btn-primary\">Enviar</button>\n\t\t\t\t<div class=\"obligatorios col-md-12\"> <span>*</span>Datos Obligatorios</div>\n\n\t\t</form>\n\t</div>\n</div>\n\n<app-workus [hidden]=\"!hidden\" ></app-workus>\n<app-separator [iconCustom]=\"'fa-map-marker'\"></app-separator>\n<app-locations></app-locations>\n\n"
+module.exports = "<app-banner></app-banner>\n<app-title></app-title>\n<app-tabs></app-tabs>\n<app-workus [hidden]=\"!hidden\" ></app-workus>\n<app-separator [iconCustom]=\"'icon-location'\"></app-separator>\n<app-locations></app-locations>\n\n"
 
 /***/ }),
 
@@ -3575,7 +3690,7 @@ module.exports = "<app-banner></app-banner>\n<app-title></app-title>\n<!--<app-t
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "*, *::before, *::after {\n  box-sizing: border-box; }\n\n.item {\n  display: inline-block; }\n\nlabel {\n  color: #c0dc74;\n  margin-top: 20px;\n  margin-bottom: -1px;\n  font-weight: 100;\n  font-family: 'Open Sans light'; }\n\ninput, select {\n  width: 100%;\n  padding: 4px 2px;\n  outline: none;\n  border: none;\n  border-bottom: 1px solid #b2c6cd;\n  color: #002b49;\n  border-radius: 0px;\n  font-family: 'Open Sans light'; }\n\ninput.ng-invalid.ng-touched {\n  border: solid 1px red; }\n\nselect {\n  background: #f8f8f8;\n  font-family: 'Open Sans light'; }\n\ninput::-webkit-input-placeholder {\n  /* Chrome/Opera/Safari */\n  color: #808080; }\n\ninput::-moz-placeholder {\n  /* Firefox 19+ */\n  color: #808080; }\n\ninput:-ms-input-placeholder {\n  /* IE 10+ */\n  color: #808080; }\n\ninput:-moz-placeholder {\n  /* Firefox 18- */\n  color: #808080; }\n\n.comentario {\n  width: 98%;\n  margin: 0 auto; }\n\n@media screen and (max-width: 480px) {\n    .comentario {\n      width: 91%; } }\n\n.comentario textarea {\n    min-height: 40px;\n    border-radius: 0px;\n    border: 1px solid #b2c6cd;\n    padding: 10px 20px;\n    font-family: 'Open Sans light'; }\n\n.terminos_grupo {\n  position: relative;\n  max-width: 380px;\n  margin: 40px auto;\n  text-align: center;\n  /* OFF */\n  /* ON */ }\n\n.terminos_grupo [type=\"checkbox\"] {\n    position: absolute;\n    left: -9999px; }\n\n.terminos_grupo [type=\"checkbox\"] + label:after {\n    content: '';\n    position: absolute; }\n\n.terminos_grupo [type=\"checkbox\"] + label {\n    display: block;\n    position: relative;\n    padding-left: 26px;\n    cursor: pointer;\n    line-height: 36px;\n    font-size: 1rem;\n    color: rgba(0, 43, 73, 0.8);\n    transition: color .3s; }\n\n.terminos_grupo [type=\"checkbox\"] + label a {\n    color: #91b520; }\n\n.terminos_grupo [type=\"checkbox\"] + label:after {\n    width: 30px;\n    height: 30px;\n    transition: all .2s;\n    top: 0;\n    left: 0; }\n\n.terminos_grupo [type=\"checkbox\"]:not(:checked) + label:after {\n    background: url(\"/assets/images/check2_off.png\") left center no-repeat; }\n\n.terminos_grupo [type=\"checkbox\"]:checked + label:after {\n    background: url(\"/assets/images/check2.png\") left center no-repeat; }\n\n.btn-primary {\n  border-radius: 0px;\n  background: #91b520;\n  padding: 13px 37px;\n  background-color: #a6cf24 !important;\n  border: none;\n  margin: 0 auto;\n  display: block;\n  font-family: 'Open Sans light'; }\n\n.obligatorios {\n  text-align: center;\n  margin-top: 20px;\n  color: #6d747f;\n  font-family: 'Open Sans light'; }\n\n.obligatorios span {\n    color: #91b520; }\n\n.tab {\n  background: #e5e9ec;\n  height: 140px;\n  margin-top: 40px; }\n\n.tab .contactenos {\n    height: 140px;\n    padding-left: 11.8%;\n    display: inline-block;\n    position: relative;\n    width: 50%; }\n\n.tab .contactenos button {\n      display: block;\n      width: 84%;\n      height: 100%;\n      position: absolute;\n      top: 0px;\n      right: 0px;\n      background: url(/assets/images/contact.svg) no-repeat center 10px;\n      background-size: 10%;\n      padding-top: 3.5%;\n      border: none;\n      font-size: 22px;\n      font-family: 'Open Sans light';\n      color: #2e516a;\n      cursor: pointer; }\n\n.tab .contactenos button:active, .tab .contactenos button.active {\n      background: url(/assets/images/contact-white.svg) no-repeat center 10px, #30506c;\n      background-size: 10%;\n      color: #fff;\n      outline: 0px auto -webkit-focus-ring-color; }\n\n.tab .contactenos button.active::before {\n      content: '';\n      position: absolute;\n      border-width: 22px 65px 0;\n      border-style: solid;\n      border-color: #2e516a transparent transparent;\n      top: 92%;\n      margin-left: 37px; }\n\n.tab .contactenos button::after {\n      content: '';\n      position: absolute;\n      height: 75px;\n      width: 1px;\n      margin-top: -7%;\n      left: 0%;\n      background-color: #95a7b3; }\n\n.tab .contactenos button.active::after {\n      display: none; }\n\n@media screen and (max-width: 480px) {\n      .tab .contactenos button, .tab .contactenos button.active {\n        width: 100%;\n        font-size: 15px;\n        padding-top: 46px;\n        background-size: 33%; }\n      .tab .contactenos button.active::before {\n        top: 96%;\n        left: 29%;\n        -webkit-transform: translate(-50%, -50%);\n                transform: translate(-50%, -50%); }\n      .tab .contactenos button::after {\n        display: none; } }\n\n@media (max-width: 768px) and (min-width: 600px) {\n      .tab .contactenos button.active::before {\n        top: 90%; } }\n\n.tab .trabaje {\n    height: 140px;\n    padding-right: 11.8%;\n    display: inline-block;\n    position: relative;\n    width: 50%; }\n\n.tab .trabaje button {\n      display: block;\n      width: 84%;\n      height: 100%;\n      position: absolute;\n      top: 0px;\n      left: 0px;\n      background: none;\n      padding-top: 3.5%;\n      background: url(/assets/images/contact.svg) no-repeat center 10px;\n      background-size: 10%;\n      border: none;\n      font-size: 22px;\n      font-family: 'Open Sans light';\n      color: #2e516a;\n      cursor: pointer; }\n\n.tab .trabaje button:active, .tab .trabaje button.active {\n      background: url(/assets/images/contact-white.svg) no-repeat center 10px, #30506c;\n      background-size: 10%;\n      color: #fff;\n      outline: 0px auto -webkit-focus-ring-color; }\n\n.tab .trabaje button.active::before {\n      content: '';\n      position: absolute;\n      border-width: 22px 65px 0;\n      border-style: solid;\n      border-color: #2e516a transparent transparent;\n      top: 92%;\n      margin-left: 37px; }\n\n.tab .trabaje button::after {\n      content: '';\n      position: absolute;\n      height: 75px;\n      width: 1px;\n      margin-top: -7%;\n      right: 0%;\n      background-color: #95a7b3; }\n\n.tab .trabaje button.active::after {\n      display: none; }\n\n@media screen and (max-width: 480px) {\n      .tab .trabaje button, .tab .trabaje button.active {\n        width: 100%;\n        font-size: 15px;\n        padding-top: 46px;\n        background-size: 33%; }\n      .tab .trabaje button.active::before {\n        top: 96%;\n        left: 29%;\n        -webkit-transform: translate(-50%, -50%);\n                transform: translate(-50%, -50%); }\n      .tab .trabaje button::after {\n        display: none; } }\n\n@media (max-width: 768px) and (min-width: 600px) {\n      .tab .trabaje button.active::before {\n        top: 90%; } }\n\n#msj-modal {\n  background: #30506cab;\n  width: 100vw;\n  height: 100vh; }\n\n#msj-modal .content-modal {\n    display: table;\n    position: relative;\n    margin-top: 25%;\n    width: 50%;\n    margin-left: 25%;\n    padding: 20px;\n    background: #fff;\n    border-radius: 10px;\n    border: solid #91b520 1px; }\n\n#msj-modal .content-modal p {\n      text-align: center; }\n"
+module.exports = ""
 
 /***/ }),
 
@@ -3591,7 +3706,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContactUsComponent", function() { return ContactUsComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var rxjs_add_operator_map__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs/add/operator/map */ "./node_modules/rxjs-compat/_esm5/add/operator/map.js");
-/* harmony import */ var _services_http_http_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../services/http/http.service */ "./src/app/services/http/http.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3603,66 +3717,16 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 };
 
 
-
 var ContactUsComponent = /** @class */ (function () {
-    function ContactUsComponent(_http) {
-        this._http = _http;
-        this.hidden = false;
-        this.usuario = {
-            nombre: null,
-            email: null
-        };
+    function ContactUsComponent() {
     }
-    ContactUsComponent.prototype.toogleHidden = function () {
-        this.hidden = !this.hidden;
-    };
-    ContactUsComponent.prototype.onSubmit = function (formulario) {
-        console.log(formulario);
-        formulario['webform_id'] = 'contact_us';
-        $("#formulario_contacto")[0].reset();
-        $("#msj-modal").show();
-        $(".close").click(function () {
-            $("#msj-modal").hide();
-        });
-        this._http.post('webform_rest/submit?_format=json', formulario, {
-            'Content-Type': 'application/json',
-            'X-CSRF-Token': this._token
-        })
-            .subscribe(function (datos) {
-            console.log(datos);
-            formulario.form.reset();
-        });
-    };
-    ContactUsComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this._http.get('rest/session/token', {}, { responseType: 'text' }).subscribe(function (response) {
-            _this._token = response;
-        });
-        $(".trabaje").on('click', function () {
-            $(".trabaje button").toggleClass("active");
-            $(".contactenos button").toggleClass("active");
-        });
-        $(".contactenos").on('click', function () {
-            $(".trabaje button").toggleClass("active");
-            $(".contactenos button").toggleClass("active");
-        });
-    };
-    ContactUsComponent.prototype.verificaValidTouched = function (campo) {
-        return !campo.valid && campo.touched;
-    };
-    ContactUsComponent.prototype.aplicaCssErro = function (campo) {
-        return {
-            'has-error': this.verificaValidTouched(campo),
-            'has-feedback': this.verificaValidTouched(campo)
-        };
-    };
     ContactUsComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-contact-us',
             template: __webpack_require__(/*! ./contact-us.component.html */ "./src/app/main/pages/contact-us/contact-us.component.html"),
             styles: [__webpack_require__(/*! ./contact-us.component.scss */ "./src/app/main/pages/contact-us/contact-us.component.scss")]
         }),
-        __metadata("design:paramtypes", [_services_http_http_service__WEBPACK_IMPORTED_MODULE_2__["HttpService"]])
+        __metadata("design:paramtypes", [])
     ], ContactUsComponent);
     return ContactUsComponent;
 }());
@@ -3739,7 +3803,7 @@ var HomeComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-banner titulo=\"iMedical\" imgFondo=\"/assets/images/imedicalweb.png\"></app-banner>\n<div class=\"my-5\">\n    <div class=\"container\">\n        <div class=\"row\">\n            <div class=\"col-md-4 mb-3\">\n                <app-client-card></app-client-card>\n            </div>\n            <div class=\"col-md-8 mb-3\">\n                <app-project-summary></app-project-summary>\n            </div>\n        </div>\n    </div>\n    <hr>\n    <app-menu-template></app-menu-template>\n    <app-slider></app-slider>\n    <div class=\"container\">\n        <app-separator [iconCustom]=\"'fa-cogs'\"></app-separator>\n        <div class=\"row\">\n            <div class=\"col-md-12 mb-5\">\n                <h1 class=\"condensed text-center\">{{ tituloModulos }}</h1>\n                <p class=\"text-center\" [innerHTML]=\"descripcionModulos\"></p>\n            </div>\n            <div class=\"col-md-4\" *ngFor=\"let blurbItem of blurbArray\">\n                <app-blurb [blurb]=\"blurbItem\"></app-blurb>\n            </div>\n        </div>\n        <app-separator [iconCustom]=\"'fa-cogs'\"></app-separator>\n        <app-card-img-text [orientacion]=\"'IT'\"></app-card-img-text>\n        <app-separator [iconCustom]=\"'fa-cogs'\"></app-separator>\n        <app-tecnologies></app-tecnologies>\n        <app-separator [iconCustom]=\"'fa-cogs'\"></app-separator>\n        <app-card-img-text [orientacion]=\"'TI'\"></app-card-img-text>\n        <app-separator [iconCustom]=\"'fa-cogs'\"></app-separator>\n        <app-carousel-item-2></app-carousel-item-2>\n        <app-separator [iconCustom]=\"'fa-cogs'\"></app-separator>\n        <app-video-information [link]=\"'www.eliseupnorcum.cedu.co'\"></app-video-information>\n        <app-separator [iconCustom]=\"'fa-cogs'\"></app-separator>        \n    </div>\n    <app-workwithus></app-workwithus>\n</div>"
+module.exports = "<app-banner titulo=\"iMedical\" imgFondo=\"/assets/images/imedicalweb.png\"></app-banner>\n<div class=\"my-5\">\n    <div class=\"container\">        \n            <app-client-project-imedical></app-client-project-imedical>        \n    </div>\n    <hr>\n    <app-menu-template></app-menu-template>\n    <app-slider></app-slider>\n    <div class=\"container\">\n        <app-separator [iconCustom]=\"'fa-cogs'\"></app-separator>\n        <div class=\"row\">\n            <div class=\"col-md-12 mb-5\">\n                <h1 class=\"condensed text-center\">{{ tituloModulos }}</h1>\n                <p class=\"text-center\" [innerHTML]=\"descripcionModulos\"></p>\n            </div>\n            <div class=\"col-md-4\" *ngFor=\"let blurbItem of blurbArray\">\n                <app-blurb [blurb]=\"blurbItem\"></app-blurb>\n            </div>\n        </div>\n        <app-separator [iconCustom]=\"'fa-cogs'\"></app-separator>\n        <app-card-img-text [orientacion]=\"'IT'\"></app-card-img-text>\n        <app-separator [iconCustom]=\"'fa-cogs'\"></app-separator>\n        <app-tecnologies></app-tecnologies>\n        <app-separator [iconCustom]=\"'fa-cogs'\"></app-separator>\n        <app-card-img-text [orientacion]=\"'TI'\"></app-card-img-text>\n        <app-separator [iconCustom]=\"'fa-cogs'\"></app-separator>\n        <app-carousel-item-2></app-carousel-item-2>\n        <app-separator [iconCustom]=\"'fa-cogs'\"></app-separator>\n        <app-video-information [link]=\"'www.eliseupnorcum.cedu.co'\"></app-video-information>\n        <app-separator [iconCustom]=\"'fa-cogs'\"></app-separator>\n    </div>\n    <app-workwithus></app-workwithus>\n</div>"
 
 /***/ }),
 
@@ -3891,7 +3955,7 @@ var NoPageFoundComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-loading id=\"page-loader\" [hidden]=\"!loading\"></app-loading>\n<!-- ============================================================== -->\n<!-- Main wrapper - style you can find in pages.scss -->\n<!-- ============================================================== -->\n<div id=\"main-wrapper\">\n\n    <app-header></app-header>\n\n    <!-- ============================================================== -->\n    <!-- Page wrapper  -->\n    <!-- ============================================================== -->\n    <div class=\"page-wrapper\">\n\n        <!-- ============================================================== -->\n        <!-- Container fluid  -->\n        <!-- ============================================================== -->\n        <div class=\"\">\n\n\n            <!-- ============================================================== -->\n            <!-- Start Page Content -->\n            <!-- ============================================================== -->\n\n            <router-outlet></router-outlet>\n\n            <!-- ============================================================== -->\n            <!-- End Page Content -->\n            <!-- ============================================================== -->\n\n        </div>\n        <!-- ============================================================== -->\n        <!-- Container fluid  -->\n        <!-- ============================================================== -->\n\n\n    </div>\n    <!-- ============================================================== -->\n    <!-- END Page wrapper  -->\n    <!-- ============================================================== -->\n     <app-footer></app-footer>\n\n</div>"
+module.exports = "<app-loading id=\"page-loader\" [hidden]=\"!loading\"></app-loading>\n<!-- ============================================================== -->\n<!-- Main wrapper - style you can find in pages.scss -->\n<!-- ============================================================== -->\n<div id=\"main-wrapper\">\n\n    <app-header></app-header>\n    <div class=\"hover-menu-dark-layout hide\"></div>\n    <!-- ============================================================== -->\n    <!-- Page wrapper  -->\n    <!-- ============================================================== -->\n    <div class=\"page-wrapper\">\n\n        <!-- ============================================================== -->\n        <!-- Container fluid  -->\n        <!-- ============================================================== -->\n        <div class=\"\">\n\n\n            <!-- ============================================================== -->\n            <!-- Start Page Content -->\n            <!-- ============================================================== -->\n\n            <router-outlet></router-outlet>\n\n            <!-- ============================================================== -->\n            <!-- End Page Content -->\n            <!-- ============================================================== -->\n\n        </div>\n        <!-- ============================================================== -->\n        <!-- Container fluid  -->\n        <!-- ============================================================== -->\n\n\n    </div>\n    <!-- ============================================================== -->\n    <!-- END Page wrapper  -->\n    <!-- ============================================================== -->\n     <app-footer></app-footer>\n\n</div>"
 
 /***/ }),
 
@@ -3995,12 +4059,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _iMedical_iMedical_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./iMedical/iMedical.component */ "./src/app/main/pages/iMedical/iMedical.component.ts");
 /* harmony import */ var _politics_politics_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./politics/politics.component */ "./src/app/main/pages/politics/politics.component.ts");
 /* harmony import */ var _workus_workus_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./workus/workus.component */ "./src/app/main/pages/workus/workus.component.ts");
+/* harmony import */ var _about_us_about_us_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./about-us/about-us.component */ "./src/app/main/pages/about-us/about-us.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -4044,6 +4110,7 @@ var PagesModule = /** @class */ (function () {
                 _iMedical_iMedical_component__WEBPACK_IMPORTED_MODULE_21__["iMedicalComponent"],
                 _politics_politics_component__WEBPACK_IMPORTED_MODULE_22__["PoliticsComponent"],
                 _workus_workus_component__WEBPACK_IMPORTED_MODULE_23__["WorkusComponent"],
+                _about_us_about_us_component__WEBPACK_IMPORTED_MODULE_24__["AboutUsComponent"]
             ],
             exports: [
                 _home_home_component__WEBPACK_IMPORTED_MODULE_8__["HomeComponent"],
@@ -4095,6 +4162,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _workus_workus_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./workus/workus.component */ "./src/app/main/pages/workus/workus.component.ts");
 /* harmony import */ var _iMedical_iMedical_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./iMedical/iMedical.component */ "./src/app/main/pages/iMedical/iMedical.component.ts");
 /* harmony import */ var _politics_politics_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./politics/politics.component */ "./src/app/main/pages/politics/politics.component.ts");
+/* harmony import */ var _about_us_about_us_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./about-us/about-us.component */ "./src/app/main/pages/about-us/about-us.component.ts");
+
 
 
 
@@ -4120,6 +4189,7 @@ var pagesRoutes = [
             { path: 'services', component: _services_services_component__WEBPACK_IMPORTED_MODULE_7__["ServicesComponent"] },
             { path: 'imedical', component: _iMedical_iMedical_component__WEBPACK_IMPORTED_MODULE_9__["iMedicalComponent"] },
             { path: 'politics', component: _politics_politics_component__WEBPACK_IMPORTED_MODULE_10__["PoliticsComponent"] },
+            { path: 'about-us', component: _about_us_about_us_component__WEBPACK_IMPORTED_MODULE_11__["AboutUsComponent"] },
             { path: '**', component: _no_page_found_no_page_found_component__WEBPACK_IMPORTED_MODULE_3__["NoPageFoundComponent"] }
             // { path: 'home', component: HomeComponent },
             // { path: '', component: HomeComponent },
@@ -4147,7 +4217,7 @@ var PagesRoutes = _angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"].f
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-banner [titulo]=\"'Politicas'\"></app-banner>\n<div class=\"container my-5\">\n    <app-blog></app-blog>\n    <app-separator [iconCustom]=\"'fa-map-marked-alt'\"></app-separator>\n    <app-blog></app-blog>\n</div>"
+module.exports = "<app-banner [titulo]=\"'Politicas'\"></app-banner>\n<div class=\"container my-5\">\n    <app-blog [uuid]=\"'b63181f1-38dd-40c9-a993-c4b8d7faf305'\"></app-blog>\n    <app-separator [iconCustom]=\"'icon-location'\"></app-separator>\n    <app-blog [uuid]=\"'c00ea48d-1ce3-4bba-b65e-d57daf71cf4a'\"></app-blog>\n</div>"
 
 /***/ }),
 
@@ -4744,25 +4814,29 @@ var CustomCardService = /** @class */ (function () {
         this.http = http;
         this.sliderData = [
             {
-                titleSlide: "Título de la diapositiva 1",
-                subtitleSlide: "Subtitulo de diapositiva",
-                descriptionSlide: "Reprehenderit cupidatat pariatur qui amet dolore id minim eu qui ipsum qui.",
+                titleSlide: 'Título de la diapositiva 1',
+                subtitleSlide: 'Subtitulo de diapositiva',
+                descriptionSlide: 'Reprehenderit cupidatat pariatur qui amet dolore id minim eu qui ipsum qui.',
                 listTextSlide: ['Caracteristica #1', 'Caracteristica #2', 'Caracteristica #3'],
-                imgSrcSlide: "/assets/images/phone-mockup.png",
-                bkgSrcSlide: "/assets/images/fondo-hospital.jpg"
+                imgSrcSlide: '/assets/images/phone-mockup.png',
+                bkgSrcSlide: '/assets/images/fondo-hospital.jpg'
             },
             {
-                titleSlide: "Título de la diapositiva 2",
-                subtitleSlide: "Subtitulo de diapositiva",
-                descriptionSlide: "Reprehenderit cupidatat pariatur qui amet dolore id minim eu qui ipsum qui.",
+                titleSlide: 'Título de la diapositiva 2',
+                subtitleSlide: 'Subtitulo de diapositiva',
+                descriptionSlide: 'Reprehenderit cupidatat pariatur qui amet dolore id minim eu qui ipsum qui.',
                 listTextSlide: ['Caracteristica #1', 'Caracteristica #2', 'Caracteristica #3'],
-                imgSrcSlide: "/assets/images/phone-mockup2.png",
-                bkgSrcSlide: "/assets/images/fondo-hospital2.jpg"
+                imgSrcSlide: '/assets/images/phone-mockup2.png',
+                bkgSrcSlide: '/assets/images/fondo-hospital2.jpg'
             }
         ];
     }
     CustomCardService.prototype.getCustomCardInformation = function (idblock) {
         var url = "v1/card/config/" + idblock + "/export?_format=json";
+        return this.http.get(url);
+    };
+    CustomCardService.prototype.getCustomContentBasicPage = function (uuid) {
+        var url = "v1/content/" + uuid + "/export?_format=json";
         return this.http.get(url);
     };
     CustomCardService.prototype.getFooterContactItems = function () {
@@ -4773,7 +4847,7 @@ var CustomCardService = /** @class */ (function () {
         return this.sliderData;
     };
     CustomCardService.prototype.getTabsData = function () {
-        //return this.http.get('v1/card/export/tab-horizontal');
+        // return this.http.get('v1/card/export/tab-horizontal');
     };
     CustomCardService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
