@@ -505,13 +505,14 @@ function admin_toolbar_tools_menu_links_discovered_alter(&$links) {
       'menu_name' => 'admin',
       'parent' => 'admin_development',
     ];
+    /*
     $links['admin_toolbar_tools.devel.execute_php'] = [
       'title' => t('Execute PHP Code'),
       'provider' => 'admin_toolbar_tools',
       'route_name' => 'devel.execute_php',
       'menu_name' => 'admin',
       'parent' => 'admin_development',
-    ];
+    ];*/
     $links['admin_toolbar_tools.devel.session'] = [
       'title' => t('Session viewer'),
       'provider' => 'admin_toolbar_tools',
