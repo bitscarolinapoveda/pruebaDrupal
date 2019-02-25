@@ -20,7 +20,7 @@
   border-radius: 0;
 }
 :host /deep/ .gm-ui-hover-effect{
-  top: -18px !important;
+  top: -40px !important;
   right: -69px !important;
 }
 :host /deep/ .gm-style-iw {
@@ -135,12 +135,23 @@
         margin-top: 3px;
       }
     }
+    .telephone-block-info-window {
+      display: flex;
+      flex-direction: row;
+      .fa-phone {
+        color: white;
+        font-size: 12px;
+        margin-right: 5px;
+        margin-top: 3px;
+      }
+    }
     .info-window-location {
       color: #ffffff;
       font-family: Open Sans Codensed;
       font-size: 10px;
       list-style: none;
-      &.address {
+      &.address,
+      &.telephone {
         margin: 0;
       }
     }
@@ -255,12 +266,24 @@
         margin-top: 3px;
       }
     }
+    .telephone-block-info-window {
+      display: flex;
+      flex-direction: row;
+      .fa-phone {
+        color: white;
+        font-size: 12px;
+        margin-right: 5px;
+        margin-top: 3px;
+        transform: rotate(90deg);
+      }
+    }
     .info-window-location {
       color: #ffffff;
       font-family: Open Sans Codensed;
       font-size: 18px;
       list-style: none;
-      &.address {
+      &.address,
+      &.telephone {
         margin: 0;
         font-size: 14px;
       }

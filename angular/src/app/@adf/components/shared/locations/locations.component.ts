@@ -15,6 +15,7 @@ export class LocationsComponent implements OnInit {
   public lng: number;
   public titleCity;
   public addressCity;
+  public telephoneCity;
   public colorWhileLoad = 'rgb(202, 202, 202)';
   public map: any;
   public mobileScreen = false;
@@ -70,6 +71,7 @@ export class LocationsComponent implements OnInit {
       this.lng = items[0].lng;
       this.titleCity = items[0].title;
       this.addressCity = items[0].address;
+      this.telephoneCity = items[0].telephone;
       this.locations_data = items;
     });
     this.onResize(screen);
@@ -100,6 +102,7 @@ export class LocationsComponent implements OnInit {
     this.lng = parseFloat(ubicacion.lng);
     this.titleCity = ubicacion.title;
     this.addressCity = ubicacion.address;
+    this.telephoneCity = ubicacion.telephone;
     for (let i = 0; i < this.locations_data.length ; i++) {
       document.getElementById( i + '').style.backgroundColor = '#f2f4f6';
     }

@@ -37,6 +37,10 @@
                                     <i class="fas fa-map-marker-alt"></i>
                                     <li class="info-window-location address">{{ubicacion.address}}</li>
                                 </div>
+                                <div class="telephone-block-info-window">
+                                    <i class="fas fa-phone"></i>
+                                    <li class="info-window-location telephone">{{ubicacion.telephone}}</li>
+                                </div>
                             </agm-info-window>
                         </agm-marker>
                     </agm-map>
@@ -49,7 +53,6 @@
 <section id="accordion-section-desktop" (window:resize)="onResize(desktop)" *ngIf="desktopScreen">
     <div class="row general-box-location">
         <div class="col-4 buttons-location-desktop">
-            
             <div id="box-of-buttons" class="row location-button">
                 <div id="{{i}}" class="col-12 button-{{i}} info-location" *ngFor="let ubicacion of locations_data ; let i = index" (click)="ubicateCity(ubicacion, i)">
                     <h2 class="location-li title" >{{ubicacion.title}}</h2>
@@ -79,7 +82,10 @@
                             <i class="fas fa-map-marker-alt"></i>
                             <li class="info-window-location address">{{addressCity}}</li>
                         </div>
-                        <!-- <h6 class="info-window-location address">{{ addressCity }}</h6> -->
+                        <div class="telephone-block-info-window">
+                            <i class="fas fa-phone"></i>
+                            <li class="info-window-location telephone">{{telephoneCity}}</li>
+                        </div>
                     </agm-info-window>
                 </agm-marker>
             </agm-map>
