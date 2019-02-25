@@ -31,7 +31,7 @@
                 <section id="mapa">
                     <agm-map [latitude]="ubicacion.lat" [longitude]="ubicacion.lng" [styles]="bitsTypeMap" [zoom]="defaultZoomMap" [backgroundColor]="colorWhileLoad" style="height: 300px;">
                         <agm-marker [latitude]="ubicacion.lat" [longitude]="ubicacion.lng" [iconUrl]="imageIcon"> 
-                            <agm-info-window #window [isOpen]="true">
+                            <agm-info-window #windowMobile [isOpen]="true">
                                 <h6 class="info-window-location">{{ubicacion.title}}</h6>
                                 <div class="address-block-info-window">
                                     <i class="fas fa-map-marker-alt"></i>
@@ -76,7 +76,7 @@
         <div class="col-8 map-location-desktop">
             <agm-map [latitude]="lat" [longitude]="lng" [styles]="bitsTypeMap" [zoom]="defaultZoomMap" [ngStyle]="{'width': widthOftheMap}" [backgroundColor]="colorWhileLoad" style="height: 519px;">
                 <agm-marker [latitude]="lat" [longitude]="lng" [iconUrl]="imageIcon"> 
-                    <agm-info-window #window [isOpen]="infoWindowOpen">
+                    <agm-info-window #windowDesktop [isOpen]="true">
                         <h6 class="info-window-location">{{ titleCity }}</h6>
                         <div class="address-block-info-window">
                             <i class="fas fa-map-marker-alt"></i>
