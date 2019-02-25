@@ -78,12 +78,12 @@ export class LocationsComponent implements OnInit {
       if (params.data.length > 4) {
         this.needButtons = true;
       }
-      this.lat = items[0].lat;
-      this.lng = items[0].lng;
-      this.titleCity = items[0].title;
-      this.addressCity = items[0].address;
-      this.telephoneCity = items[0].telephone;
-      this.locations_data = items;
+      this.lat = this.items[0].lat;
+      this.lng = this.items[0].lng;
+      this.titleCity = this.items[0].title;
+      this.addressCity = this.items[0].field_address;
+      this.telephoneCity = this.items[0].field_telephone;
+      this.locations_data = this.items;
     });
     this.onResize(screen);
   }
