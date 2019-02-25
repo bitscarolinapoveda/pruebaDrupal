@@ -291,8 +291,8 @@ var LocationsComponent = /** @class */ (function () {
         this.lat = parseFloat(ubicacion.lat);
         this.lng = parseFloat(ubicacion.lng);
         this.titleCity = ubicacion.title;
-        this.addressCity = ubicacion.address;
-        this.telephoneCity = ubicacion.telephone;
+        this.addressCity = ubicacion.field_address;
+        this.telephoneCity = ubicacion.field_telephone;
         for (var i = 0; i < this.locations_data.length; i++) {
             document.getElementById(i + '').style.backgroundColor = '#f2f4f6';
         }
