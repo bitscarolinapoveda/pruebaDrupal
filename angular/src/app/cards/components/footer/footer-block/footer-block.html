@@ -1,19 +1,21 @@
 <ng-container>
     <section id="footer-block-location">
         <div class="row row-block">
-            <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-block" *ngFor="let ubicacion of dataUbicaciones; let i = index">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-block"
+                *ngFor="let ubicacion of dataUbicaciones; let i = index">
                 <div class="footer-block-location" [class.site]="i > 0" [class.random]="i > 0">
                     <div class="row location-row">
                         <div class="col-10 info-location">
-                            <h2 class="title-location" >{{ ubicacion.title }}</h2>
+                            <h2 class="title-location">{{ubicacion.title}}</h2>
                             <div class="subtitle-location">
-                                <li class="location-li address">{{ubicacion.address}}</li>
-                                <li class="location-li telephone">{{ubicacion.telephone}}</li>
+                                <li class="location-li address">{{ubicacion.field_address}}</li>
+                                <li class="location-li telephone">{{ubicacion.field_telephone}}</li>
                                 <li class="location-li see-location office" *ngIf="i == 0">
-                                    <a class="link-location" routerLink="/contact-us/" fragment="title-description" (click)="cargarMapaUbicaciones()">
+                                    <a class="link-location" routerLink="/contact-us/" fragment="title-description"
+                                        (click)="cargarMapaUbicaciones()">
                                         <i class="location-green"></i>
                                         <i class="location-green-hover"></i>
-                                        Ver todas nuestras oficinas
+                                        {{title}}
                                     </a>
                                 </li>
                             </div>

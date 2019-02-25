@@ -29,6 +29,13 @@ class LocationCard extends CardBase {
             'weight' => 1,
             'max_length' => 50,
           ],
+          'subtitle' => [
+            'type' => 'textfield',
+            'title' => $this->t('Subtítulo'),
+            'service_field' => 'subtitle',
+            'show' => 1,
+            'weight' => 1,
+          ],
         ],
       ],
       'body' => [],

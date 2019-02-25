@@ -6,6 +6,7 @@ use Drupal\file\Entity\File;
 use Drupal\node\Entity\Node;
 use Drupal\block\Entity\Block;
 use Drupal\adf_cards\Services\ExportConfigCardService;
+use Drupal\taxonomy\Entity\Term;
 
 /**
  * Class 'BitsCardsOutputJsonCard'.
@@ -15,7 +16,7 @@ class BitsCardsOutputJsonCard {
   /**
    * {@inheritdoc}
    */
-  public function get($block_id) {
+  public function get($block_id, $prodServ = '') {
     $settings = [];
     $block = Block::load($block_id);
 
@@ -36,7 +37,7 @@ class BitsCardsOutputJsonCard {
       $viewMode = $settings['entity']['default_view_mode'] ?? 'default';
       $conditions = $settings['entity']['conditions'] ?? [];
       $sorts = $settings['entity']['sorts'] ?? [];
-      $otherData = [];  
+      $otherData = [];
 
       $ids = \Drupal::entityQuery($name)
         ->condition('status', 1)
@@ -58,7 +59,7 @@ class BitsCardsOutputJsonCard {
 
       $fields = \Drupal::entityManager()
         ->getStorage('entity_view_display')
-        ->load($name . '.' . $type . '.' . $viewMode)        
+        ->load($name . '.' . $type . '.' . $viewMode)
         ->getComponents();
 
       foreach ($fields as $name => $field) {
@@ -100,6 +101,26 @@ class BitsCardsOutputJsonCard {
           elseif ($type === 'text_with_summary') {
             $value = $node->get($field)->getValue();
             $data[$field] = $value[0]['value'];
+          }
+          elseif ($type === 'entity_reference'){
+            $tid = $node->get($field)->getValue();
+            $dataDefinition = $node->get($field)->getSetting('handler');
+            foreach ($tid as $key => $value) {
+              $terms_name = '';
+              if ($dataDefinition == "default:taxonomy_term") {
+                $term = Term::load($value['target_id']);
+              }
+              elseif ($dataDefinition == "default:service_product_bits") {
+                $entityName = explode(':',$dataDefinition)[1];
+                $term = \Drupal::entityTypeManager()->getStorage($entityName)->load($value['target_id']);
+              }
+              $terms_name = $term->label();
+              $data[$field][] = $terms_name;
+            }
+          }
+          elseif ($type === 'link'){
+            $tid = $node->get($field)->getValue();
+            $data[$field] = $tid;
           }
           else {
             $data[$field] = $node->get($field)->getString();
@@ -189,7 +210,7 @@ class BitsCardsOutputJsonCard {
             break;
 
           case 'textfield':
-            $element['data']['title'] = $item['input'];
+            $element['data'][$item['service_field']] = $item['input'];
 
             break;
 

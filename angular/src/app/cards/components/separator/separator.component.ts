@@ -7,9 +7,10 @@ import { Component, Input } from '@angular/core';
 })
 export class SeparatorComponent {
 
-    @Input() iconCustom:string;
+    @Input() iconCustom: string;
 
-    constructor(){
-        
+    constructor() {
+
     }
+
 }

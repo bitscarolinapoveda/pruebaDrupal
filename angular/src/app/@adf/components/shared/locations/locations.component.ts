@@ -1,5 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {HttpService} from '../../../../services/http/http.service';
+import { Component, OnInit } from '@angular/core';
+import { HttpService } from '../../../../services/http/http.service';
+import { CustomCardService } from 'src/app/services/cards/v1-card.services';
 
 @Component({
   selector: 'app-locations',
@@ -7,6 +8,8 @@ import {HttpService} from '../../../../services/http/http.service';
   styleUrls: ['./locations.component.scss']
 })
 export class LocationsComponent implements OnInit {
+  public items = [];
+  public title: string;
   public imageIcon = '/assets/icon/iconBitsLocationMarker.svg';
   public closeOthers = true;
   public infoWindowOpen = true;
@@ -52,19 +55,27 @@ export class LocationsComponent implements OnInit {
     }
   ];
 
-  constructor (
+
+  constructor(
     private _http: HttpService,
+    private service: CustomCardService
   ) {
     this.locations_data = [];
     this.infoWindowOpen = true;
   }
-  ngOnInit () {
-    this._http.get('/location-resources').subscribe((items) => {
-      for (let index = 0; index < items.length; index++) {
-        items[index].lat = parseFloat(items[index].lat);
-        items[index].lng = parseFloat(items[index].lng);
+  ngOnInit() {
+    this.service.getCustomCardInformation('locationcard_2').subscribe((params) => {
+      this.title = params.header[0].data.title;
+      for (let index = 0; index < params.data.length; index++) {
+        const value = params.data[index].field_location.split(',');
+        this.items[index] = { lat: '', lon: '', title: '', field_address: '', field_telephone: '' };
+        this.items[index].lat = parseFloat(value[0].trim());
+        this.items[index].lng = parseFloat(value[1].trim());
+        this.items[index].title = params.data[index].title;
+        this.items[index].field_address = params.data[index].field_address;
+        this.items[index].field_telephone = params.data[index].field_telephone;
       }
-      if (items.length > 4) {
+      if (params.data.length > 4) {
         this.needButtons = true;
       }
       this.lat = items[0].lat;
@@ -94,10 +105,10 @@ export class LocationsComponent implements OnInit {
       const widthOfDiv = document.querySelector('.map-location-desktop').clientWidth + 'px';
       this.widthOftheMap = widthOfDiv;
     } else {
-    return false;
+      return false;
     }
   }
-  ubicateCity (ubicacion, index) {
+  ubicateCity(ubicacion, index) {
     this.lat = parseFloat(ubicacion.lat);
     this.lng = parseFloat(ubicacion.lng);
     this.titleCity = ubicacion.title;
@@ -106,7 +117,7 @@ export class LocationsComponent implements OnInit {
     for (let i = 0; i < this.locations_data.length ; i++) {
       document.getElementById( i + '').style.backgroundColor = '#f2f4f6';
     }
-    document.getElementById( index + '').style.backgroundColor = '#d9dfe4';
+    document.getElementById(index + '').style.backgroundColor = '#d9dfe4';
   }
   scrollMaps(direction) {
     const elem = document.getElementById('box-of-buttons');
