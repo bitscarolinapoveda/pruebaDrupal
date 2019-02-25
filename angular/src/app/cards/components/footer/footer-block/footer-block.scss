@@ -39,10 +39,17 @@
                   &:hover {
                     color: #83a024;
                     text-decoration: none;
+                    .location-green {
+                      background-image: url('/assets/icon/hover-location-icon.svg');
+                      background-position: center;
+                      background-repeat: no-repeat;
+                    }  
                   }
                   .location-green {
-                    background-image: url('/assets/icon/placeholders-green.png');
+                    background-image: url('/assets/icon/placeholders-green.svg');
                     display: inline-block;
+                    background-position: center;
+                    background-repeat: no-repeat;
                     width: 16px;
                     height: 16px;
                   }

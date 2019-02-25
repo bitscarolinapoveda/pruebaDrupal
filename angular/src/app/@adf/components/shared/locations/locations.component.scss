@@ -19,6 +19,23 @@
 :host /deep/ .card{
   border-radius: 0;
 }
+:host /deep/ .gm-ui-hover-effect{
+  display: none !important;
+}
+:host /deep/ .gm-style-iw {
+  position: relative;
+  overflow: visible;
+  .agm-info-window-content {
+    position: absolute;
+    background: rgb(0, 43, 73);
+    min-width: 208px;
+    width: auto;
+    height: auto;
+    padding: 10px 20px;
+    bottom: -29px;
+    left: -71px;
+  }
+}
 :host /deep/ .card-header,
 :host /deep/ .card-body {
   padding: 0;
@@ -108,11 +125,33 @@
   }
 
   #mapa {
+    .address-block-info-window {
+      display: flex;
+      flex-direction: row;
+      .fa-map-marker-alt {
+        color: white;
+        font-size: 12px;
+        margin-right: 5px;
+        margin-top: 3px;
+      }
+    }
+    .telephone-block-info-window {
+      display: flex;
+      flex-direction: row;
+      .fa-phone {
+        color: white;
+        font-size: 12px;
+        margin-right: 5px;
+        margin-top: 3px;
+      }
+    }
     .info-window-location {
-      color: #002b49;
+      color: #ffffff;
       font-family: Open Sans Codensed;
       font-size: 10px;
-      &.address {
+      list-style: none;
+      &.address,
+      &.telephone {
         margin: 0;
       }
     }
@@ -142,20 +181,25 @@
     margin: 0;
     .control-button {
       position: absolute;
-      right: 20px;
-      z-index: 1;
+      top: 0;
+      right: 2px;
+      z-index: 0;
 
       .arrow-up {
+        background-image: url(/assets/images/up-arrow-angle.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 45px;
+        height: 45px;
         margin: 20px 0 385px 0;
-        .fa-chevron-circle-up {
-          color: #c0c9d1;
-        }
       }
       .arrow-down {
+        background-image: url(/assets/images/down-arrow-angle.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 45px;
+        height: 45px;
         margin: 0;
-        .fa-chevron-circle-down {
-          color: #c0c9d1;
-        }
       }
     }
   }
@@ -212,11 +256,34 @@
   }
   .map-location-desktop {
     padding: 0;
+    .address-block-info-window {
+      display: flex;
+      flex-direction: row;
+      .fa-map-marker-alt {
+        color: white;
+        font-size: 14px;
+        margin-right: 5px;
+        margin-top: 3px;
+      }
+    }
+    .telephone-block-info-window {
+      display: flex;
+      flex-direction: row;
+      .fa-phone {
+        color: white;
+        font-size: 12px;
+        margin-right: 5px;
+        margin-top: 3px;
+        transform: rotate(90deg);
+      }
+    }
     .info-window-location {
-      color: #002b49;
+      color: #ffffff;
       font-family: Open Sans Codensed;
       font-size: 18px;
-      &.address {
+      list-style: none;
+      &.address,
+      &.telephone {
         margin: 0;
         font-size: 14px;
       }
@@ -242,7 +309,17 @@
       margin: 0;
     }
   }
-  :host /deep/ .agm-info-window-content {
-    height: 46px;
+  :host /deep/ .gm-style-iw {
+    position: relative;
+    overflow: visible;
+    .agm-info-window-content {
+      position: absolute;
+      background: #426177;
+      width: 170px;
+      height: auto;
+      padding: 10px 20px;
+      bottom: -29px;
+      left: -71px;
+    }
   }
 }
