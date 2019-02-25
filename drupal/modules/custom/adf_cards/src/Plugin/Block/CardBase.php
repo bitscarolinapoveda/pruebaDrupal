@@ -525,7 +525,15 @@ $query = \Drupal::entityQuery($entityName);
 
       if ($entity['type'] == 'managed_file') {
         $form[$key]['table_fields'][$id]['input']['#upload_location'] = 'public://cards';
-        $form[$key]['table_fields'][$id]['input']['#multiple'] = TRUE;
+        if(isset($entity['max_length']) && $entity['max_length'] == 1){
+          $form[$key]['table_fields'][$id]['input']['#multiple'] = FALSE;
+        }
+        else {
+          $form[$key]['table_fields'][$id]['input']['#multiple'] = TRUE;
+        }
+        if(isset($entity['upload_validators'])){
+          $form[$key]['table_fields'][$id]['input']['#upload_validators'] = $entity['upload_validators'];
+        }
       }
 
       if ($entity['type'] == 'text_format') {
