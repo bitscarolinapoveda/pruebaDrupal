@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains bits_newsletter.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function bits_newsletter_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the bits_newsletter module.
+    case 'help.page.bits_newsletter':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Newsletter module for bits website') . '</p>';
+      return $output;
+
+    default:
+  }
+}
