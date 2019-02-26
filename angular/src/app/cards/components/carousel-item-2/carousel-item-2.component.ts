@@ -1,5 +1,5 @@
 import { ContentType } from '../../../services/cards/content-type.services';
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NgxCarousel } from 'ngx-carousel';
 import { CustomCardService } from 'src/app/services/cards/v1-card.services';
@@ -25,11 +25,17 @@ export class CarouselItem2Component implements OnInit {
 
   datosMenu: DataMenu;
 
+  @Input() type: string;
+
   constructor(private _cardService: CustomCardService) {
     this.clients = [];
   }
 
   ngOnInit() {
+
+    while (this.type.indexOf('-') > -1) {
+      this.type = this.type.replace('-', '_');
+    }
 
     this.datosMenu = {
       label: 'CAROUSEL',
@@ -90,7 +96,7 @@ export class CarouselItem2Component implements OnInit {
   }
 
   getOurClientsItems() {
-    this._cardService.getCustomCardInformation('clientscard').subscribe(items => {
+    this._cardService.getCustomCardInformationType('clientscard', this.type).subscribe(items => {
       this.clients = items.data;
       this.titleClients = items.header[0].data.title;
       this.clients = Object.keys(items.data).map(function (key) { return items.data[key]; });

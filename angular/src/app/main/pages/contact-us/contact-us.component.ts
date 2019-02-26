@@ -1,10 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import 'rxjs/add/operator/map';
-import {HttpService} from "../../../services/http/http.service";
-
-declare var jQuery:any;
-declare var $:any;
-
+import { HttpService } from '../../../services/http/http.service';
 
 @Component({
   selector: 'app-contact-us',
@@ -14,5 +10,5 @@ declare var $:any;
 
 export class ContactUsComponent {
   constructor() { }
-  
+
 }

@@ -8,7 +8,7 @@ import { ProjectsComponent } from './projects/projects.component';
 import { ProductsComponent } from './products/products.component';
 import { ServicesComponent } from './services/services.component';
 import { WorkusComponent } from './workus/workus.component';
-import { iMedicalComponent } from './iMedical/iMedical.component';
+import { ProductsOrServicesComponent } from './products-or-services/products-or-services.component';
 import { PoliticsComponent } from './politics/politics.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { from } from 'rxjs';
@@ -23,11 +23,10 @@ const pagesRoutes: Routes = [
       { path: 'contact-us', component: ContactUsComponent },
       { path: 'workus', component: WorkusComponent },
       { path: 'products', component: ProductsComponent },
-      { path: 'products/:type', component: iMedicalComponent },
+      { path: 'product/:type', component: ProductsOrServicesComponent },
       { path: 'projects', component: ProjectsComponent },
       { path: 'services', component: ServicesComponent },
-      { path: 'services/:type', component: iMedicalComponent },
-      { path: 'imedical', component: iMedicalComponent },
+      { path: 'service/:type', component: ProductsOrServicesComponent },
       { path: 'politics', component: PoliticsComponent },
       { path: 'about-us', component: AboutUsComponent },
       { path: '**', component: NoPageFoundComponent }

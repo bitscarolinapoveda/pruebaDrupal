@@ -20,11 +20,17 @@ export class VideoInformationComponent implements OnInit {
 
     datosMenu: DataMenu;
 
+    @Input() type: string;
+
     constructor(
         private https: CustomCardService,
         private sanitizer: DomSanitizer) { }
 
     ngOnInit() {
+        while (this.type.indexOf('-') > -1) {
+            this.type = this.type.replace('-', '_');
+        }
+
         this.datosMenu = {
             label: 'VIDEOS',
             id: 'a7',
@@ -36,13 +42,13 @@ export class VideoInformationComponent implements OnInit {
     }
 
     getVideoInformationService() {
-        this.https.getCustomCardInformation('videoplusinformation').subscribe(items => {
+        this.https.getCustomCardInformationType('videoplusinformation', this.type).subscribe(items => {
             this.titleSection = items.data[0].title;
             this.descriptionSection = items.data[0].body;
             this.videoURL = items.data[0].field_url_video.split(',')[0];
             if (this.videoURL.includes('watch?v=')) {
                 this.videoURLSanitizer = this.sanitizer
-                .bypassSecurityTrustResourceUrl(`${this.videoURL.split('watch?v=')[0]}embed/${this.videoURL.split('watch?v=')[1]}`);
+                    .bypassSecurityTrustResourceUrl(`${this.videoURL.split('watch?v=')[0]}embed/${this.videoURL.split('watch?v=')[1]}`);
             } else {
                 this.videoURLSanitizer = this.sanitizer.bypassSecurityTrustResourceUrl(this.videoURL);
             }

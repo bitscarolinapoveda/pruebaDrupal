@@ -5,21 +5,24 @@ import { DataMenu } from '../../../cards/components/menu-template/menu-template.
 import { HttpService } from '../../../services/http/http.service';
 
 @Component({
-  selector: 'app-iMedical',
-  templateUrl: './iMedical.component.html',
-  styleUrls: ['./iMedical.component.scss']
+  selector: 'app-products-or-services',
+  templateUrl: './products-or-services.component.html',
+  styleUrls: ['./products-or-services.component.scss']
 })
-export class iMedicalComponent implements OnInit {
+export class ProductsOrServicesComponent implements OnInit {
   blurbArray: Blurb[];
   tituloModulos: string;
   descripcionModulos: string;
   public type: string;
+  public nid: string;
   listMenu: DataMenu[];
 
   constructor(private _http: CustomCardService, private rutaActiva: ActivatedRoute, private service: HttpService) {
     this.blurbArray = [];
     this.listMenu = [];
+  }
 
+  ngOnInit() {
     this.type = this.rutaActiva.snapshot.params.type;
 
     this.rutaActiva.params.subscribe(
@@ -27,9 +30,7 @@ export class iMedicalComponent implements OnInit {
         this.type = params.type;
       }
     );
-  }
 
-  ngOnInit() {
     this.getModulesService();
   }
 

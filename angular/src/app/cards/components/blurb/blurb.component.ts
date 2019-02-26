@@ -11,6 +11,8 @@ export class BlurbComponent implements OnInit {
 
     @Input() blurb: Blurb;
 
+    @Input() type: string;
+
     @Output() propagar = new EventEmitter<DataMenu>();
 
     datosMenu: DataMenu;
@@ -26,10 +28,15 @@ export class BlurbComponent implements OnInit {
     }
 
     ngOnInit() {
+
+        while (this.type.indexOf('-') > -1) {
+            this.type = this.type.replace('-', '_');
+        }
+
         this.datosMenu = {
             label: 'MÓDULOS',
             id: 'a1',
-            url: '/imedical'
+            url: '/products'
         };
 
         this.propagar.emit(this.datosMenu);

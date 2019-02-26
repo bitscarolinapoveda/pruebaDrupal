@@ -37,6 +37,11 @@ export class CustomCardService {
     return this.http.get(url);
   }
 
+  getCustomCardInformationType(idblock, type) {
+    const url = `v1/card/config/${idblock}/${type}/export?_format=json`;
+    return this.http.get(url);
+  }
+
   getCustomContentBasicPage(uuid) {
     const url = `v1/content/${uuid}/export?_format=json`;
     return this.http.get(url);
