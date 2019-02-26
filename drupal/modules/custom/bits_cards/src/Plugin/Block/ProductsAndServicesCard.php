@@ -8,7 +8,7 @@ use Drupal\adf_cards\Plugin\Block\CardBase;
  * Provides a 'ProductsAndServicesCard' block.
  *
  * @Block(
- *  id = "services_card",
+ *  id = "product_services_card",
  *  admin_label = @Translation("Products and services card"),
  * )
  */
@@ -31,12 +31,12 @@ class ProductsAndServicesCard extends CardBase
           ],
         ],
       ],
+      'body' => [],
+      'files' => [],
       'entity' => [
-        'name' => 'node',
-        'type' => 'products_services',
+        'name' => 'service_product_bits',
         'limit' => 6,
         'offset' => 0,
-        'default_view_mode' => 'default',
       ],
       'others' => [],
     ];

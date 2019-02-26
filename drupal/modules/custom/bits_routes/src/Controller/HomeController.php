@@ -27,10 +27,31 @@ class HomeController extends ControllerBase {
     ];
   }
 
+  public function serviceId() {
+    return [
+      '#type' => 'markup',
+      '#markup' => 'Service id',
+    ];
+  }
+
+  public function projectId() {
+    return [
+      '#type' => 'markup',
+      '#markup' => 'Project id',
+    ];
+  }
+
   public function products() {
     return [
       '#type' => 'markup',
       '#markup' => 'Products',
+    ];
+  }
+
+  public function aboutUs() {
+    return [
+      '#type' => 'markup',
+      '#markup' => 'About us',
     ];
   }
 

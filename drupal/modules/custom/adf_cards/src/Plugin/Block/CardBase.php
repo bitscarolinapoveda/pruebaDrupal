@@ -124,12 +124,14 @@ class CardBase extends BlockBase {
       ],
     ];
 
-    $table_fields = $this->configuration['body']['table_fields'];
-    $this->_uaSort($table_fields);
+    if(isset($this->configuration['body']) && isset($this->configuration['body']['table_fields'])) {
+      $table_fields = $this->configuration['body']['table_fields'];
+      $this->_uaSort($table_fields);
 
-    $form = $this->generateTable('body', $table_fields, $form);
+      $form = $this->generateTable('body', $table_fields, $form);
 
-    unset($table_fields);
+      unset($table_fields);
+    }
 
     $form['files'] = [
       '#type' => 'details',
@@ -168,7 +170,7 @@ class CardBase extends BlockBase {
       $ourFormState = $form_state->getCompleteFormState();
     }
     $bnCargoDesdeAjax = FALSE;
-    if (!empty((string) $ourFormState->getTriggeringElement()['#value'])) {      
+    if (!empty((string) $ourFormState->getTriggeringElement()['#value'])) {
       $bnCargoDesdeAjax = TRUE;
     }
 
@@ -176,7 +178,7 @@ class CardBase extends BlockBase {
       $entityName = $ourFormState->getValue(['settings','entity','name']);
       $entityType = $ourFormState->getValue(['settings','entity','type']);
       $entityLimit = $ourFormState->getValue(['settings','entity','limit']);
-      $entityOffset = $ourFormState->getValue(['settings','entity','offset']);      
+      $entityOffset = $ourFormState->getValue(['settings','entity','offset']);
     }
 
     if (isset($this->configuration['entity'])) {
@@ -296,8 +298,9 @@ class CardBase extends BlockBase {
       $queryViewModes = \Drupal::entityTypeManager()
                         ->getStorage('entity_view_display')
                         ->getQuery();
-      
+
       $resultsViewModes = $queryViewModes->execute();
+
 
       $condition = $entityName . '.' . $entityType;
       $optionsViewMode = [];
@@ -306,78 +309,54 @@ class CardBase extends BlockBase {
         if (strpos ($result, $condition) !== FALSE) {
           $formatResult = substr($result, strlen($condition) + 1);
           $optionsViewMode[$formatResult] = $this->t(ucwords($formatResult));
-        }        
+        }
       }
-      
+
       $form['entity']['default_view_mode'] = [
         '#type' => 'select',
-        '#options' => $optionsViewMode,        
+        '#options' => $optionsViewMode,
         '#description' => $this->t('Seleccionar el modo de presentación del contenido.'),
         '#title' => $this->t('Modo de presentación'),
         '#default_value' => isset($this->configuration['entity']['default_view_mode'])
                             ? $this->configuration['entity']['default_view_mode']
-                            : '',        
+                            : '',
       ];
 
-/*
-
-    $connection_info = $connection->getConnectionOptions();
-    // Order by primary keys.
-    $order = '';
-    $query = "SELECT `COLUMN_NAME` FROM `information_schema`.`COLUMNS`
-    WHERE (`TABLE_SCHEMA` = '" . $connection_info['database'] . "')
-    AND (`TABLE_NAME` = '{" . $table . "}') AND (`COLUMN_KEY` = 'PRI')
-    ORDER BY COLUMN_NAME";
-    $results = $connection->query($query);
-    while (($row = $results->fetchAssoc()) !== FALSE) {
-      $order .= $row['COLUMN_NAME'] . ', ';
-    }
-
-      $records = db_query('SELECT name FROM {config} WHERE name LIKE "core.entity_view_display.' . $entityName . '.%"')->fetchField();
-      foreach ($records as $record) {
-
+      if ($entityType !== "") {
+        $url_add = Url::fromRoute('node.add', ['node_type' => $entityType], ['attributes' => ['target' => '_blank']]);
+      }
+      else {
+        $url_add = Url::fromRoute('entity.' . $entityName . '.add_form', [], ['attributes' => ['target' => '_blank']]);
       }
 
-      $form['entity']['default_view_mode'] = [
-        '#type' => 'radios',
-        '#title' => t('Preview comment'),
-        '#default_value' => variable_get('comment_preview', 1),
-        '#options' => array(t('Optional'), t('Required')),
+      $form['entity']['add_entity'] = [
+        '#type' => 'link',
+        '#title' => $this->t('Añadir contenido'),
+        '#url' => $url_add,
+        '#attributes' => [
+          'class' => ['button button-action button--primary button--small']
+        ]
       ];
-*/
 
-$url_add = Url::fromRoute('node.add', ['node_type' => $entityType], ['attributes' => ['target' => '_blank']]);
+      $form['entity']['refresh_entity_table'] = [
+        '#type' => 'button',
+        '#value' => $this->t('Actualizar tabla'),
+        '#attributes' => [
+          'class' => ['button button-action button--second button--small']
+        ],
+        '#ajax' => [
+          'callback' => [$this, 'changeEntityType'],
+          'wrapper' => 'entity-content',
+          'event' => 'click',
+        ],
+      ];
 
-$form['entity']['add_entity'] = [
-  '#type' => 'link',
-  '#title' => $this->t('Añadir contenido'),    
-  '#url' => $url_add,
-  '#attributes' => [
-    'class' => ['button button-action button--primary button--small']
-  ]
-];
-
-$form['entity']['refresh_entity_table'] = [
-  '#type' => 'button',
-  '#value' => $this->t('Actualizar tabla'),  
-  '#attributes' => [
-    'class' => ['button button-action button--second button--small']
-  ],
-  '#ajax' => [
-    'callback' => [$this, 'changeEntityType'],
-    'wrapper' => 'entity-content',
-    'event' => 'click',
-  ],
-];
-      
-$query = \Drupal::entityQuery($entityName);
+      $query = \Drupal::entityQuery($entityName);
         $query->condition('status', 1);
         if ($entityType) {
           $query->condition('type', $entityType);
         }
-        if (isset($entityLimit) && isset($entityOffset)) {
-          $query->range($entityOffset, $entityLimit + $entityOffset);
-        }
+        $query->range($entityOffset, $entityLimit + $entityOffset);
         $entityIds = $query->execute();
 
       $form['entity']['table-row'] = [
@@ -407,14 +386,22 @@ $query = \Drupal::entityQuery($entityName);
         $entity = $entityStorage->load($entityId);
         $label = $entity->label();
         $id = $entity->id();
-        $resume = $entity->body->summary;
+        $resume = "";
+        if ($entity->body && $entity->body->summary) {
+          $resume = $entity->body->summary;
+        }
         $weight = 1;
         if (isset($this->configuration['entity']['weight'][$id])) {
           $weight = (int) $this->configuration['entity']['weight'][$id];
         }
 
-        $url_edit = Url::fromRoute('entity.node.edit_form', ['node' => $id], ['attributes' => ['target' => '_blank']]);
-        
+        if ($entityType !== "") {
+          $url_edit = Url::fromRoute('entity.node.edit_form', ['node' => $id], ['attributes' => ['target' => '_blank']]);
+        }
+        else {
+          $url_edit = Url::fromRoute('entity.' . $entityName . '.edit_form', ['service_product_bits' => $entityId], ['attributes' => ['target' => '_blank']]);
+        }
+
         $arRows[$id] = [
           // TableDrag: Mark the table row as draggable.
           '#attributes' => ['class' => [0 => 'draggable']],
@@ -435,10 +422,10 @@ $query = \Drupal::entityQuery($entityName);
             '#default_value' => $weight,
             // Classify the weight element for #tabledrag.
             '#attributes' => ['class' => ['table-sort-weight']],
-          ],          
+          ],
           'operation' => [
             '#type' => 'link',
-            '#title' => $this->t('Edit'),    
+            '#title' => $this->t('Edit'),
             '#url' => $url_edit
           ]
         ];

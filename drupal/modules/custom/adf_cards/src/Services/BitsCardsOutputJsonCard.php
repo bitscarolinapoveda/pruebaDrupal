@@ -30,7 +30,7 @@ class BitsCardsOutputJsonCard {
     $response['others'] = $this->getRenderData($settings, 'others', $settings['id']);
     $response['data'] = [];
 
-    if ($settings['entity'] && $type = $settings['entity']['type']) {
+    if ($settings['entity']) {
       $name = $settings['entity']['name'] ?? 'node';
       $limit = $settings['entity']['limit'] ?? 6;
       $offset = $settings['entity']['offset'] ?? 0;
@@ -40,27 +40,38 @@ class BitsCardsOutputJsonCard {
       $otherData = [];
 
       $ids = \Drupal::entityQuery($name)
-        ->condition('status', 1)
-        ->condition('type', $type)
-        ->range($offset, $limit);
+        ->condition('status', 1);
 
       foreach ($conditions as $f => $v) {
         $ids->condition($f, $v);
       }
-
       foreach ($sorts as $f => $v) {
         $ids->sort($f, $v);
       }
+      if ($type = $settings['entity']['type']) {
+        $ids->condition('type', $type);
+      }
+      $ids->range($offset, $limit);
 
       $ids = $ids->execute();
 
       // Load nodes.
-      $nodes = Node::loadMultiple($ids);
+      $nodes = \Drupal::entityTypeManager()->getStorage($name)->loadMultiple($ids);
 
-      $fields = \Drupal::entityManager()
+      $queryFields = \Drupal::entityManager()
         ->getStorage('entity_view_display')
-        ->load($name . '.' . $type . '.' . $viewMode)
-        ->getComponents();
+        ->load($name . '.' . $type . '.' . $viewMode);
+
+      $fields = [];
+      if ($queryFields) {
+        $fields = $queryFields->getComponents();
+        $isContentEntity = true;
+      }
+      //  Si no es una entidad de contenido intenta como de configuración
+      else {
+        $fields = get_object_vars(array_shift(array_values($nodes)));
+        $isContentEntity = false;
+      }
 
       foreach ($fields as $name => $field) {
         if (in_array($name, ['title', 'created', 'uid', 'links'])) {
@@ -76,55 +87,76 @@ class BitsCardsOutputJsonCard {
       }
 
       foreach ($nodes as $node) {
-        $data = [
-          'nid' => $node->id(),
-          'title' => $node->title->value,
-        ];
+        if ($isContentEntity) {
+          $data = [
+            'nid' => $node->id(),
+            'title' => $node->title->value,
+          ];
+        }
+        else {
+          $data = [
+            'nid' => $node->id(),
+            'label' => $node->label(),
+          ];
+        }
 
         foreach ($otherData as $field) {
-          $type = $node->get($field)->getFieldDefinition()->getType();
+          if ($isContentEntity) {
+            $type = $node->get($field)->getFieldDefinition()->getType();
 
-          if ($type === 'image') {
-            $imageData = $node->get($field)->getValue();
-            $data[$field] = [
-              'url' => '',
-              'alt' => '',
-            ];
-            if (0 < count($imageData)) {
-              $file = \Drupal\file\Entity\File::load($imageData[0]['target_id']);
+            if ($type === 'image') {
+              $imageData = $node->get($field)->getValue();
               $data[$field] = [
-                'url' => file_create_url($file->getFileUri()),
-                'alt' => $imageData[0]['alt'],
+                'url' => '',
+                'alt' => '',
               ];
-            }
-          }
-          elseif ($type === 'text_with_summary') {
-            $value = $node->get($field)->getValue();
-            $data[$field] = $value[0]['value'];
-          }
-          elseif ($type === 'entity_reference'){
-            $tid = $node->get($field)->getValue();
-            $dataDefinition = $node->get($field)->getSetting('handler');
-            foreach ($tid as $key => $value) {
-              $terms_name = '';
-              if ($dataDefinition == "default:taxonomy_term") {
-                $term = Term::load($value['target_id']);
+              if (0 < count($imageData)) {
+                $file = \Drupal\file\Entity\File::load($imageData[0]['target_id']);
+                $data[$field] = [
+                  'url' => file_create_url($file->getFileUri()),
+                  'alt' => $imageData[0]['alt'],
+                ];
               }
-              elseif ($dataDefinition == "default:service_product_bits") {
-                $entityName = explode(':',$dataDefinition)[1];
-                $term = \Drupal::entityTypeManager()->getStorage($entityName)->load($value['target_id']);
-              }
-              $terms_name = $term->label();
-              $data[$field][] = $terms_name;
             }
-          }
-          elseif ($type === 'link'){
-            $tid = $node->get($field)->getValue();
-            $data[$field] = $tid;
+            elseif ($type === 'text_with_summary') {
+              $value = $node->get($field)->getValue();
+              $data[$field] = $value[0]['value'];
+            }
+            elseif ($type === 'entity_reference'){
+              $tid = $node->get($field)->getValue();
+              $dataDefinition = $node->get($field)->getSetting('handler');
+              foreach ($tid as $key => $value) {
+                $terms_name = '';
+                if ($dataDefinition == "default:taxonomy_term") {
+                  $term = Term::load($value['target_id']);
+                }
+                elseif ($dataDefinition == "default:service_product_bits") {
+                  $entityName = explode(':',$dataDefinition)[1];
+                  $term = \Drupal::entityTypeManager()->getStorage($entityName)->load($value['target_id']);
+                }
+                $data[$field][] = ['id' => $term->id(), 'label'=> $term->label()];
+              }
+            }
+            elseif ($type === 'link'){
+              $tid = $node->get($field)->getValue();
+              $data[$field] = $tid;
+            }
+            else {
+              $data[$field] = $node->get($field)->getString();
+            }
           }
           else {
-            $data[$field] = $node->get($field)->getString();
+            if (method_exists($node, 'getValueJson')) {
+              $value = $node->getValueJson($field, '');
+              $data[$field] = $value;
+            }
+            else {
+              $node = (array) $node;
+              $data[$field] = $node[$field];
+            }
           }
+
+
         }
 
         $response['data'][] = $data;
@@ -210,7 +242,7 @@ class BitsCardsOutputJsonCard {
             break;
 
           case 'textfield':
-            $element['data'][$item['service_field']] = $item['input'];
+            $element['data'][preg_replace('@[^a-z0-9-]+@','_', strtolower($item['service_field']))] = $item['input'];
 
             break;
 
