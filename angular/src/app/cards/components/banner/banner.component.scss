@@ -1,13 +1,16 @@
 @import './src/assets/scss/mixin.scss';
+
 .page-header {
     height: 352px;
     overflow: hidden;
+
     .title {
         width: 100%;
         color: #FFFFFF;
         position: absolute;
         margin-top: 178px;
         text-align: center;
+
         h1 {
             text-transform: uppercase;
             position: absolute;
@@ -15,17 +18,20 @@
             margin-left: 50%;
             font-size: 36px;
             transform: translateX(-50%);
+
             @include breakpoint(desktop) {
                 font-size: 50px;
             }
+
             @include breakpoint(tablet) {
                 font-size: 50px;
             }
         }
     }
+
     picture {
         img {
-            width: 100%;           
+            width: 100%;
         }
     }
 }
@@ -37,4 +43,15 @@
     height: 352px;
     width: 100%;
     position: absolute;
+}
+
+#descrip-banner {
+    p {
+        color: #002b49cc;
+        font-family: Open Sans Codensed;
+        margin-right: 180px;
+        margin-left: 200px;
+        margin-top: 30px;
+        font-size: 20px;
+    }    
 }
