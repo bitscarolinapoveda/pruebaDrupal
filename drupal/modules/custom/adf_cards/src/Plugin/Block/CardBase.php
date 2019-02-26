@@ -102,7 +102,7 @@ class CardBase extends BlockBase {
       '#type' => 'details',
       '#title' => $this->t('Body'),
       '#description' => $this->t('Parámetros parte inferior'),
-      '#open' => TRUE,
+      '#open' => FALSE,
     ];
 
     $form['body']['table_fields'] = [
@@ -129,6 +129,7 @@ class CardBase extends BlockBase {
       $this->_uaSort($table_fields);
 
       $form = $this->generateTable('body', $table_fields, $form);
+      $form['body']['#open'] = TRUE;
 
       unset($table_fields);
     }
