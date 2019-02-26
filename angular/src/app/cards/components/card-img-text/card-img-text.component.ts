@@ -21,6 +21,8 @@ export class CardImgTextComponent implements OnInit {
 
     datosMenu: DataMenu;
 
+    @Input() type: string;
+
     constructor(
         private _http: CustomCardService
     ) {
@@ -30,6 +32,10 @@ export class CardImgTextComponent implements OnInit {
     }
 
     ngOnInit() {
+        while (this.type.indexOf('-') > -1) {
+            this.type = this.type.replace('-', '_');
+        }
+
         if (this.orientacion === 'IT') {
             this.datosMenu = {
                 label: 'IMAG L',
@@ -51,13 +57,13 @@ export class CardImgTextComponent implements OnInit {
     }
 
     getCardImgTextServiceL() {
-        this._http.getCustomCardInformation('mediaimedicalcard_2').subscribe(params => {
+        this._http.getCustomCardInformationType('mediaimedicalcard_2', this.type).subscribe(params => {
             this.titleL = params.header[0].data.title;
             this.cardImgL = params.data;
         });
     }
     getCardImgTextServiceR() {
-        this._http.getCustomCardInformation('mediaimedicalcard').subscribe(params => {
+        this._http.getCustomCardInformationType('mediaimedicalcard', this.type).subscribe(params => {
             this.titleR = params.header[0].data.title;
             this.cardImgR = params.data;
         });
