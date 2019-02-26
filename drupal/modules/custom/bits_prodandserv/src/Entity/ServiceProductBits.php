@@ -73,20 +73,10 @@ class ServiceProductBits extends ConfigEntityBase implements ServiceProductBitsI
       return $this->description;
     }
     elseif ($field == "short_image") {
-      $numImages = count($this->short_image);
-      $data = [];
-      for ($i = 0; $i < $numImages; $i++) {
-        $data[] = $this->loadImageData($this->short_image[$i]);
-      }
-      return $data;
+      return $this->loadImagesData($this->short_image);
     }
     elseif ($field == "large_image") {
-      $numImages = count($this->large_image);
-      $data = [];
-      for ($i = 0; $i < $numImages; $i++) {
-        $data[] = $this->loadImageData($this->large_image[$i]);
-      }
-      return $data;
+      return $this->loadImagesData($this->large_image);
     }
     elseif ($field == "type") {
       return $this->id;
@@ -94,11 +84,31 @@ class ServiceProductBits extends ConfigEntityBase implements ServiceProductBitsI
     return $defaultValue;
   }
 
-  private function loadImageData($image) {
-    $file = \Drupal\file\Entity\File::load($image);
-    return [
-      'url' => file_create_url($file->getFileUri()),
-      'alt' => $this->label(),
-    ];
+  private function loadImagesData($images) {
+    $data = [];
+    $haveData = FALSE;
+
+    foreach ($images as $image) {
+      if ($image) {
+        $file = \Drupal\file\Entity\File::load($image);
+        if ($file) {
+          $data[] = [
+            'url' => file_create_url($file->getFileUri()),
+            'alt' => $this->label(),
+          ];
+          $haveData = TRUE;
+        }
+      }
+    }
+
+    if (!$haveData) {
+      $data[] = [
+        'url' => '',
+        'alt' => ''
+      ];
+    }
+
+    return $data;
   }
+
 }
