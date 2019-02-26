@@ -1,4 +1,4 @@
-<div class="row color-back" *ngIf="orientacion == 'IT'">
+<div class="row color-back" *ngIf="orientacion == 'IT'" [id]="datosMenu.id">
     <div class="col-md-4 p-0" *ngFor="let cil of cardImgL">
         <img [src]="cil.field_imagen_media_product.url" alt="{{cil.field_imagen_media_product.alt}}"
             class="img-fluid w-100">
@@ -12,15 +12,15 @@
     </div>
 </div>
 
-<div class="row color-back" *ngIf="orientacion == 'TI'">
-    <div class="col-md-8 d-block px-4 py-5" *ngFor="let cir of cardImgR">
+<div class="row color-back" *ngIf="orientacion == 'TI'" [id]="datosMenu.id">
+    <div class="col-md-8 d-block px-4 py-5" *ngFor="let cir of cardImgR"  >
         <h3 class="condensed">{{ cir.title }}</h3>
         <h1>{{ titleR | uppercase }}</h1>
         <hr class="green">
         <p class="text-justify" [innerHTML]="cir.field_des"></p>
         <a [href]="cir.field_link_imedical_media" class="green">{{ cir.field_link_imedical_media }}</a>
     </div>
-    <div class="col-md-4 p-0" *ngFor="let cir of cardImgR">
+    <div class="col-md-4 p-0" *ngFor="let cir of cardImgR" >
         <img [src]="cir.field_imagen_media_product.url" alt="{{cir.field_imagen_media_product.alt}}"
             class="img-fluid w-100">
     </div>

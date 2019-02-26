@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { CustomCardService } from 'src/app/services/cards/v1-card.services';
+import { DataMenu } from '../menu-template/menu-template.component';
 
 @Component({
   selector: 'app-client-project-imedical',
@@ -15,7 +16,8 @@ export class ClientProjectImedicalComponent implements OnInit {
   summaryProject: string;
   tags: any[];
   linkProject: string;
-
+  @Output() propagar = new EventEmitter<DataMenu>();
+  datosMenu: DataMenu;
 
   constructor(private _http: CustomCardService) {
     this.titleCard = '';
@@ -29,6 +31,13 @@ export class ClientProjectImedicalComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.datosMenu = {
+      label: 'CLIENTS',
+      id: 'a8',
+      url: '/imedical'
+    };
+
+    this.propagar.emit(this.datosMenu);
     this.getClientProjectImedicalService();
   }
 
