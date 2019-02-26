@@ -5,14 +5,14 @@ namespace Drupal\bits_cards\Plugin\Block;
 use Drupal\adf_cards\Plugin\Block\CardBase;
 
 /**
- * Provides a 'TeamBitsAmericas' block.
+ * Provides a 'AchievementsBitsAmericasCard' block.
  *
  * @Block(
- *  id = "team_bits_americas",
- *  admin_label = @Translation("Team Bits Americas"),
+ *  id = "achievements_bits_americas",
+ *  admin_label = @Translation("Achievements Bits Americas"),
  * )
  */
-class TeamBitsAmericas extends CardBase {
+class AchievementsBitsAmericasCard extends CardBase {
 
   /**
    * {@inheritdoc}
@@ -43,8 +43,8 @@ class TeamBitsAmericas extends CardBase {
       'files' => [],
       'entity' => [
         'name' => 'node',
-        'type' => 'equipo_de_trabajo',
-        'limit' => 4,
+        'type' => 'logros',
+        'limit' => 3,
         'offset' => 0,
         'default_view_mode' => 'default',
       ],

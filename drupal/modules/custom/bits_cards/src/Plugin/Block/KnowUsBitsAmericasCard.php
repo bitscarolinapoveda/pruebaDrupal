@@ -5,14 +5,14 @@ namespace Drupal\bits_cards\Plugin\Block;
 use Drupal\adf_cards\Plugin\Block\CardBase;
 
 /**
- * Provides a 'KnowUsBitsAmericas' block.
+ * Provides a 'KnowUsBitsAmericasCard' block.
  *
  * @Block(
  *  id = "know_us_bits_americas",
  *  admin_label = @Translation("Know Us Bits Americas"),
  * )
  */
-class KnowUsBitsAmericas extends CardBase {
+class KnowUsBitsAmericasCard extends CardBase {
 
   /**
    * {@inheritdoc}

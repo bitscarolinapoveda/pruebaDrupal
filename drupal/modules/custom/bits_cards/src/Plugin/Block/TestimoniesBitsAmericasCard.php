@@ -5,14 +5,14 @@ namespace Drupal\bits_cards\Plugin\Block;
 use Drupal\adf_cards\Plugin\Block\CardBase;
 
 /**
- * Provides a 'WhyBitsAmericas' block.
+ * Provides a 'TestimoniesBitsAmericasCard' block.
  *
  * @Block(
- *  id = "why_bits_americas",
- *  admin_label = @Translation("Why Bits Americas"),
+ *  id = "testimonies_bits_americas",
+ *  admin_label = @Translation("Testimonies Bits Americas"),
  * )
  */
-class WhyBitsAmericas extends CardBase {
+class TestimoniesBitsAmericasCard extends CardBase {
 
   /**
    * {@inheritdoc}
@@ -43,10 +43,10 @@ class WhyBitsAmericas extends CardBase {
       'files' => [],
       'entity' => [
         'name' => 'node',
-        'type' => 'por_que_bits',
-        'limit' => 6,
+        'type' => 'lo_que_dice_el_cliente',
+        'limit' => 5,
         'offset' => 0,
-        'default_view_mode' => 'default',
+        'default_view_mode' => 'slide',
       ],
       'others' => [],
     ];
