@@ -1,5 +1,6 @@
-import { OnInit, Component, Input } from '@angular/core';
+import { OnInit, Component, Input, Output, EventEmitter } from '@angular/core';
 import { CustomCardService } from 'src/app/services/cards/v1-card.services';
+import { DataMenu } from '../menu-template/menu-template.component';
 
 @Component({
     selector: 'app-card-img-text',
@@ -16,6 +17,10 @@ export class CardImgTextComponent implements OnInit {
     // Si se recibe TI : Texto luego imagen
     @Input() orientacion: string;
 
+    @Output() propagar = new EventEmitter<DataMenu>();
+
+    datosMenu: DataMenu;
+
     constructor(
         private _http: CustomCardService
     ) {
@@ -25,6 +30,22 @@ export class CardImgTextComponent implements OnInit {
     }
 
     ngOnInit() {
+        if (this.orientacion === 'IT') {
+            this.datosMenu = {
+                label: 'IMAG L',
+                id: 'a3',
+                url: '/imedical'
+            };
+        } else {
+            this.datosMenu = {
+                label: 'IMAG R',
+                id: 'a4',
+                url: '/imedical'
+            };
+        }
+
+        this.propagar.emit(this.datosMenu);
+
         this.getCardImgTextServiceL();
         this.getCardImgTextServiceR();
     }

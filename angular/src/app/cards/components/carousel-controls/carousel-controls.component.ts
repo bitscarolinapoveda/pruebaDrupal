@@ -21,7 +21,6 @@ export class CarouselControlsComponent implements OnInit {
   public carocarouselTile: NgxCarousel;
 
   constructor(
-    private router: ActivatedRoute,
     private AchievementCarouselItems: ContentType,
     private _cardService: CustomCardService
     ) {
@@ -32,7 +31,7 @@ export class CarouselControlsComponent implements OnInit {
     this.getAchievementsCarouselItems();
     this.CarouselControlArray = [0, 1, 2, 3];
     this.carocarouselTile = {
-      grid: {xs: 1, sm: 2, md: 4, lg: 4, all: 0},
+      grid: { xs: 1, sm: 2, md: 4, lg: 4, all: 0 },
       slide: 1,
       speed: 400,
       animation: 'lazy',
@@ -67,11 +66,11 @@ export class CarouselControlsComponent implements OnInit {
       touch: true,
       easing: 'ease',
       loop: true,
-    }
+    };
   }
 
   public carouselTileLoad(evt: any) {
-    const len = this.CarouselControlArray.length
+    const len = this.CarouselControlArray.length;
     if (len <= 4) {
       for (let i = len; i < len + 0; i++) {
         this.CarouselControlArray.push(i);

@@ -1,10 +1,10 @@
-<app-banner titulo="iMedical" imgFondo="/assets/images/imedicalweb.png"></app-banner>
+<app-banner titulo="{{type}}" imgFondo="/assets/images/imedicalweb.png"></app-banner>
 <div class="my-5">
-    <div class="container">        
-            <app-client-project-imedical></app-client-project-imedical>        
+    <div class="container">
+        <app-client-project-imedical (propagar)="onMenu($event)"></app-client-project-imedical>
     </div>
     <hr>
-    <app-menu-template></app-menu-template>
+    <app-menu-template [menuList]="listMenu"></app-menu-template>
     <app-slider></app-slider>
     <div class="container">
         <app-separator [iconCustom]="'fa-cogs'"></app-separator>
@@ -14,20 +14,20 @@
                 <p class="text-center" [innerHTML]="descripcionModulos"></p>
             </div>
             <div class="col-md-4" *ngFor="let blurbItem of blurbArray">
-                <app-blurb [blurb]="blurbItem"></app-blurb>
+                <app-blurb [blurb]="blurbItem" (propagar)="onMenu($event)"></app-blurb>
             </div>
         </div>
         <app-separator [iconCustom]="'fa-cogs'"></app-separator>
-        <app-card-img-text [orientacion]="'IT'"></app-card-img-text>
+        <app-card-img-text [orientacion]="'IT'" (propagar)="onMenu($event)"></app-card-img-text>
         <app-separator [iconCustom]="'fa-cogs'"></app-separator>
-        <app-tecnologies></app-tecnologies>
+        <app-tecnologies (propagar)="onMenu($event)"></app-tecnologies>
         <app-separator [iconCustom]="'fa-cogs'"></app-separator>
-        <app-card-img-text [orientacion]="'TI'"></app-card-img-text>
+        <app-card-img-text [orientacion]="'TI'" (propagar)="onMenu($event)"></app-card-img-text>
         <app-separator [iconCustom]="'fa-cogs'"></app-separator>
-        <app-carousel-item-2></app-carousel-item-2>
+        <app-carousel-item-2 (propagar)="onMenu($event)"></app-carousel-item-2>
         <app-separator [iconCustom]="'fa-cogs'"></app-separator>
-        <app-video-information [link]="'www.eliseupnorcum.cedu.co'"></app-video-information>
+        <app-video-information [link]="'www.eliseupnorcum.cedu.co'" (propagar)="onMenu($event)"></app-video-information>
         <app-separator [iconCustom]="'fa-cogs'"></app-separator>
     </div>
-    <app-workwithus></app-workwithus>
+    <app-workwithus (propagar)="onMenu($event)"></app-workwithus>
 </div>

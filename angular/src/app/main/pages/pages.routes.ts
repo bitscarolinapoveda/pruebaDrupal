@@ -8,7 +8,6 @@ import { ProjectsComponent } from './projects/projects.component';
 import { ProductsComponent } from './products/products.component';
 import { ServicesComponent } from './services/services.component';
 import { WorkusComponent } from './workus/workus.component';
-
 import { iMedicalComponent } from './iMedical/iMedical.component';
 import { PoliticsComponent } from './politics/politics.component';
 import { AboutUsComponent } from './about-us/about-us.component';
@@ -24,8 +23,10 @@ const pagesRoutes: Routes = [
       { path: 'contact-us', component: ContactUsComponent },
       { path: 'workus', component: WorkusComponent },
       { path: 'products', component: ProductsComponent },
+      { path: 'products/:type', component: iMedicalComponent },
       { path: 'projects', component: ProjectsComponent },
       { path: 'services', component: ServicesComponent },
+      { path: 'services/:type', component: iMedicalComponent },
       { path: 'imedical', component: iMedicalComponent },
       { path: 'politics', component: PoliticsComponent },
       { path: 'about-us', component: AboutUsComponent },

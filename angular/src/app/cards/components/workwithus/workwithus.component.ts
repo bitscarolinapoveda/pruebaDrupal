@@ -1,7 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { isArray } from 'util';
 import { CustomCardService } from '../../../services/cards/v1-card.services';
+import { DataMenu } from '../menu-template/menu-template.component';
 
 @Component({
   selector: 'app-workwithus',
@@ -15,24 +16,33 @@ export class WorkWithUsComponent implements OnInit {
   workWithUsButton: string;
   workWithUsThirdText: string;
   body: string;
+  @Output() propagar = new EventEmitter<DataMenu>();
+  datosMenu: DataMenu;
 
 
   constructor(
     private router: ActivatedRoute,
     private footerService: CustomCardService,
-    ) {
-      this.workWithUsTitle = '';
-      this.workWithUsSubtitle = '';
-      this.url = '';
-      this.workWithUsButton = '';
+  ) {
+    this.workWithUsTitle = '';
+    this.workWithUsSubtitle = '';
+    this.url = '';
+    this.workWithUsButton = '';
   }
 
   ngOnInit(): void {
+    this.datosMenu = {
+      label: 'RELACIONADOS',
+      id: 'a2',
+      url: '/imedical'
+    };
+
+    this.propagar.emit(this.datosMenu);
     this.getWorkwithUsItems();
   }
 
   getWorkwithUsItems() {
-    this.footerService.getCustomCardInformation('workwithus').subscribe((items: {header, body, others} ) => {
+    this.footerService.getCustomCardInformation('workwithus').subscribe((items: { header, body, others }) => {
       this.workWithUsTitle = items.header[0].data;
       this.workWithUsSubtitle = items.header[1].data;
       this.url = items.body[0].data.link;

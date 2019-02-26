@@ -1,18 +1,32 @@
-import { Component, OnInit } from "@angular/core";
-import { CustomCardService,Blurb } from "../../../services/cards/v1-card.services";
+import { Component, OnInit } from '@angular/core';
+import { CustomCardService, Blurb } from '../../../services/cards/v1-card.services';
+import { ActivatedRoute, Params } from '@angular/router';
+import { DataMenu } from '../../../cards/components/menu-template/menu-template.component';
+import { HttpService } from '../../../services/http/http.service';
 
 @Component({
-  selector: "app-iMedical",
-  templateUrl: "./iMedical.component.html",
-  styleUrls: ["./iMedical.component.scss"]
+  selector: 'app-iMedical',
+  templateUrl: './iMedical.component.html',
+  styleUrls: ['./iMedical.component.scss']
 })
 export class iMedicalComponent implements OnInit {
   blurbArray: Blurb[];
   tituloModulos: string;
   descripcionModulos: string;
+  public type: string;
+  listMenu: DataMenu[];
 
-  constructor(private _http: CustomCardService) {
+  constructor(private _http: CustomCardService, private rutaActiva: ActivatedRoute, private service: HttpService) {
     this.blurbArray = [];
+    this.listMenu = [];
+
+    this.type = this.rutaActiva.snapshot.params.type;
+
+    this.rutaActiva.params.subscribe(
+      (params: Params) => {
+        this.type = params.type;
+      }
+    );
   }
 
   ngOnInit() {
@@ -21,15 +35,15 @@ export class iMedicalComponent implements OnInit {
 
   getModulesService() {
     this._http
-      .getCustomCardInformation("moduleinformation")
+      .getCustomCardInformation('moduleinformation')
       .subscribe(params => {
         this.tituloModulos = params.header[0].data.title;
-        this.descripcionModulos = params.header[1].data.title
+        this.descripcionModulos = params.header[1].data.title;
         for (let blurbItem of params.data) {
           let blurbObject: Blurb = {
-            imageSrc: "",
-            title: "",
-            description: ""
+            imageSrc: '',
+            title: '',
+            description: ''
           };
           blurbObject.imageSrc = blurbItem.field_image.url;
           blurbObject.title = blurbItem.title;
@@ -38,4 +52,18 @@ export class iMedicalComponent implements OnInit {
         }
       });
   }
+
+  onMenu(listMenu) {
+    let cont = 0;
+    for (let index = 0; index < this.listMenu.length; index++) {
+      if (listMenu.id === this.listMenu[index].id) {
+        cont++;
+      }
+    }
+    if (cont === 0) {
+      this.listMenu.push(listMenu);
+    }
+    console.log(this.listMenu);
+  }
 }
+

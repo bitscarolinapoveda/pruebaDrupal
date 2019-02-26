@@ -1,9 +1,8 @@
-
 <section id="main-title">
-    <h2>{{ titleClients }}</h2>
+    <h2 [id]="datosMenu.id">{{ titleClients }}</h2>
 </section>
 
-<div class="contenedor">
+<div class="contenedor" >
     <ngx-carousel
     [inputs]="carocarouselTile"
     (carouselLoad)="carouselTileLoad($event)">
