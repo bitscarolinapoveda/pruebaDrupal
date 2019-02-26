@@ -19,7 +19,9 @@ export class iMedicalComponent implements OnInit {
   constructor(private _http: CustomCardService, private rutaActiva: ActivatedRoute, private service: HttpService) {
     this.blurbArray = [];
     this.listMenu = [];
+  }
 
+  ngOnInit() {
     this.type = this.rutaActiva.snapshot.params.type;
 
     this.rutaActiva.params.subscribe(
@@ -27,9 +29,11 @@ export class iMedicalComponent implements OnInit {
         this.type = params.type;
       }
     );
-  }
 
-  ngOnInit() {
+    if (this.type === undefined || this.type === '') {
+      this.type = 'iMedical';
+    }
+
     this.getModulesService();
   }
 

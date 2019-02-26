@@ -9,17 +9,17 @@
             <div class="col-sm-6 col-md-4" *ngFor="let ps of servicesProduct">
                 <div class="thumbnai">
                     <div class="background">
-                        <img class="images lightbox" [src]="ps.field_ps_short_image.url" alt="{{ps.field_ps_short_image.alt}}">
+                        <img class="images lightbox" [src]="ps.short_image[0].url" alt="{{ps.short_image[0].alt}}">
                     </div>
                     <div class="box-title">
-                        <span class="titlepr">{{ ps.title }}</span>
+                        <span class="titlepr">{{ ps.label }}</span>
                         <div class="box-text">
-                            <span class="text" [innerHTML]="ps.body"></span>
+                            <span class="text" [innerHTML]="ps.description"></span>
                         </div>
                     </div>
                     <div class="box-info">
                         <div class="box-botton">
-                            <a class="botton_products" routerLink="/about-us">Ver Mas</a>
+                            <a class="botton_products" [routerLink]="[ps.type, ps.nid]">Ver Mas</a>
                         </div>
                     </div>
                 </div>
@@ -30,8 +30,8 @@
 <section id="bottons-services">
     <div class="totalbottons">
         <div class="bottons">
-            <a class="bottonleft" routerLink="products">VER PRODUCTOS </a>
-            <a class="bottonrigth" routerLink="services">VER SERVICIOS </a>
+            <a class="bottonleft" routerLink="product">VER PRODUCTOS </a>
+            <a class="bottonrigth" routerLink="service">VER SERVICIOS </a>
         </div>
     </div>
 </section>

@@ -24,9 +24,15 @@ export class ProductServicesComponent implements OnInit {
   }
 
   getProductsAndServicesItems() {
-    this._cardService.getCustomCardInformation('productsandservicescard').subscribe(items => {
+    this._cardService.getCustomCardInformation('productsandservicescard_2').subscribe(items => {
       this.servicesProduct = items.data;
       this.title = items.header[0].data.title;
+      for (let index = 0; index < this.servicesProduct.length; index++) {
+        this.servicesProduct[index].type = '/' + this.servicesProduct[index].type;
+        while (this.servicesProduct[index].nid.indexOf('_') > -1) {
+          this.servicesProduct[index].nid = this.servicesProduct[index].nid.replace('_', '-');
+        }
+      }
     });
   }
 }

@@ -1,4 +1,4 @@
-<app-banner titulo="{{type}}" imgFondo="/assets/images/imedicalweb.png"></app-banner>
+<app-banner [titulo]="type" imgFondo="/assets/images/imedicalweb.png"></app-banner>
 <div class="my-5">
     <div class="container">
         <app-client-project-imedical (propagar)="onMenu($event)"></app-client-project-imedical>
