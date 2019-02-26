@@ -79,7 +79,7 @@ class ServiceProductBits extends ConfigEntityBase implements ServiceProductBitsI
       return $this->loadImagesData($this->large_image);
     }
     elseif ($field == "type") {
-      return $this->id;
+      return $this->type;
     }
     return $defaultValue;
   }
