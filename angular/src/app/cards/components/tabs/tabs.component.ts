@@ -2,64 +2,102 @@ import { CustomCardService } from 'src/app/services/cards/v1-card.services';
 import { ContactUsComponent } from 'src/app/main/pages/contact-us/contact-us.component';
 import { Component, OnInit } from '@angular/core';
 import 'rxjs/add/operator/map';
-import {HttpService} from "../../../services/http/http.service";
+import { HttpService } from '../../../services/http/http.service';
+import { DataMessage } from '../message/message.component';
 
-declare var jQuery:any;
-declare var $:any;
+declare var jQuery: any;
+declare var $: any;
 
 @Component({
-    selector: 'app-tabs',
-    templateUrl: './tabs.component.html',
-    styleUrls: ['./tabs.component.scss']
+  selector: 'app-tabs',
+  templateUrl: './tabs.component.html',
+  styleUrls: ['./tabs.component.scss']
 })
 
 export class TabsComponent implements OnInit {
-    hidden = false;
-    private _token: string;
-    usuario: any = {
+  hidden = false;
+  private _token: string;
+  usuario: any = {
     nombre: null,
     email: null
-    };
+  };
+  datos: string[];
+  dataMessage: DataMessage[];
+  title_a: string;
+  title_b: string;
 
-  constructor(private _http: HttpService) { }
+  constructor(private _http: HttpService, private _service: CustomCardService) {
+    this.dataMessage = [];
+  }
 
-  toogleHidden(){
+  toogleHidden() {
+    this.dataMessage = [];
     this.hidden = !this.hidden;
   }
 
   onSubmit(formulario) {
+    this.dataMessage = [];
     console.log(formulario);
     formulario['webform_id'] = 'contact_us';
-    $("#formulario_contacto")[0].reset();
-    
-    
-    $("#msj-modal").show();
-    $(".close").click(function() {
-      $("#msj-modal").hide()
-    });
+    $('#formulario_contacto')[0].reset();
 
-    this._http.post('webform_rest/submit?_format=json', formulario, { //Hace el submit del formulario a Drupal
+
+    /* $('#msj-modal').show();
+    $('.close').click(function () {
+      $('#msj-modal').hide();
+    }); */
+
+    this._http.post('webform_rest/submit?_format=json', formulario, { // Hace el submit del formulario a Drupal
       'Content-Type': 'application/json',
       'X-CSRF-Token': this._token
     })
-    .subscribe(datos => {
-      console.log(datos);
-      formulario.form.reset();
-    });
+      .subscribe(datos => {
+
+        if (datos.error) {
+          for (var key in datos.error) {
+            this.dataMessage.push(
+              {
+                visible: true,
+                status: 'error',
+                message: datos.error[key]
+              }
+            );
+          }
+        } else if (datos.sid) {
+          this.dataMessage.push(
+            {
+              visible: true,
+              status: 'success',
+              message: 'Respuesta satisfactoria'
+            }
+          );
+        }
+        // formulario.form.reset();
+      });
   }
 
   ngOnInit() {
-    this._http.get('rest/session/token', {}, {responseType: 'text'}).subscribe((response) => {
+
+    this.getTabsData();
+
+    this._http.get('rest/session/token', {}, { responseType: 'text' }).subscribe((response) => {
       this._token = response;
     });
 
-    $(".trabaje").on('click',function(){
-      $(".trabaje button").toggleClass("active");
-      $(".contactenos button").toggleClass("active");
+    $('.trabaje').on('click', function () {
+      $('.trabaje button').toggleClass('active');
+      $('.contactenos button').toggleClass('active');
     });
-    $(".contactenos").on('click', function(){
-      $(".trabaje button").toggleClass("active");
-          $(".contactenos button").toggleClass("active")
+    $('.contactenos').on('click', function () {
+      $('.trabaje button').toggleClass('active');
+      $('.contactenos button').toggleClass('active');
+    });
+  }
+
+  getTabsData() {
+    this._service.getCustomCardInformation('howcanwehelpyoucard').subscribe(items => {
+      this.title_a = items.body[0].data.text_form_left;
+      this.title_b = items.body[2].data.text_form_right;
     });
   }
 
@@ -78,7 +116,7 @@ export class TabsComponent implements OnInit {
 //     arrayTabs:Tab[] = [];
 //     ids:number = 0;
 //     size:number;
-    
+
 //     constructor(
 //         private https: CustomCardService,
 //     ) {}

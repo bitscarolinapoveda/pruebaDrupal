@@ -1,7 +1,7 @@
-
+<app-message [dataMessage]="dataMessage"></app-message>
 <div class="container">
   <div class="row">
-    <form id="formulario_contacto" #userForm = "ngForm" (ngSubmit)="onSubmit(userForm.value)" class="col-md-12">
+    <form id="formulario_contacto" #userForm = "ngForm" (ngSubmit)="onSubmit(userForm.value)" class="col-md-12" name="formulario_contacto">
         <div class="form-group" [ngClass]="aplicaCssErro(nombre)" class="col-md-12">
             <div class="col-md-6 item" >
                 <label for="exampleInputNombre">Nombre</label>

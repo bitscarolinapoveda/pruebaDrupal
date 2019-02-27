@@ -1,0 +1,7 @@
+<ul class="" *ngIf="dataMessage.length > 0">
+  <li class="" *ngFor="let data of dataMessage">
+    <div class="" *ngIf="data.visible == true">
+      {{ data.status }}: {{ data.message}}
+    </div>
+  </li>
+</ul>
