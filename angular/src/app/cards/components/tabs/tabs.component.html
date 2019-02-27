@@ -1,19 +1,22 @@
 <div class="tab">
 	<div class="contactenos">
 		<button class="active" (click)="toogleHidden()">
-            Comenzar un proyecto
-        </button>
+			{{this.title_a}}
+		</button>
 	</div>
 	<div class="trabaje">
-		<button (click)="toogleHidden()">Trabaja con nosotros</button>
+		<button (click)="toogleHidden()">
+			{{this.title_b}}
+		</button>
 	</div>
 </div>
-<br/><br/>
+<br /><br />
+<app-message [dataMessage]="dataMessage"></app-message>
 <div class="container" [hidden]="hidden">
 	<div class="row">
-		<form id="formulario_contacto" #userForm = "ngForm" (ngSubmit)="onSubmit(userForm.value)" class="col-md-12">
+		<form id="formulario_contacto" #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)" class="col-md-12" name="formulario_contacto">
 			<div class="form-group" [ngClass]="aplicaCssErro(nombre)" class="col-md-12">
-				<div class="col-md-6 item" >
+				<div class="col-md-6 item">
 					<label for="exampleInputNombre">Nombre</label>
 					<input type="text" class="form-control" id="nombre" placeholder="Nombre" name="nombre" ngModel required #nombre="ngModel">
 					<div *ngIf="nombre.invalid && nombre.touched" class="alert alert-danger" role="alert">
@@ -22,22 +25,24 @@
 				</div>
 				<div class="col-md-6 item">
 					<label for="exampleInputOrg">Organización</label>
-					<input type="text" class="form-control" id="organizacion" placeholder="Organización" name="organizacion" ngModel #organizacion="ngModel">
+					<input type="text" class="form-control" id="organizacion" placeholder="Organización" name="organizacion" ngModel
+					 #organizacion="ngModel">
 				</div>
 			</div>
 			<div class="form-group" class="col-md-12">
 				<div class="col-md-6 item">
 					<label for="exampleInputEmail1">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Escriba su email" name="correo_electronico" ngModel
-                    pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?" #correo_electronico="ngModel">
+					<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Escriba su email"
+					 name="correo_electronico" ngModel pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
+					 #correo_electronico="ngModel">
 					<div *ngIf="correo_electronico.invalid && correo_electronico.touched" class="alert alert-danger" role="alert">
 						Campo obligatorio o invalido
 					</div>
 				</div>
 				<div class="col-md-6 item">
 					<label for="exampleInputTel">Telefono</label>
-					<input type="tel" class="form-control" id="org" placeholder="Escriba su telefono" name="telefono" ngModel
-					pattern="^(\([0-9]{3}\)|[0-9]{3})[0-9]{3}[0-9]{4}$" #telefono="ngModel">
+					<input type="tel" class="form-control" id="org" placeholder="Escriba su telefono" name="telefono" ngModel pattern="^(\([0-9]{3}\)|[0-9]{3})[0-9]{3}[0-9]{4}$"
+					 #telefono="ngModel">
 					<div *ngIf="telefono.invalid && telefono.touched" class="alert alert-danger" role="alert">
 						Campo obligatorio o invalido
 					</div>
@@ -47,36 +52,41 @@
 				<div class="col-md-6 item">
 					<label for="pais">Pais</label>
 					<select type="select" class="form-control" id="pais" placeholder="Seleccione su pais" name="pais" ngModel></select>
-				</div >
+				</div>
 				<div class="col-md-6 item">
 					<label for="ciudad">Ciudad</label>
 					<select type="select" class="form-control" id="ciudad" placeholder="Seleccione su ciudad" name="ciudad" ngModel></select>
-			 	</div>
+				</div>
 			</div>
 			<div class="col-md-12">
 				<div class="col-md-6 item">
 					<label for="producto">Producto de interés</label>
-					<select type="select" class="form-control" id="producto" placeholder="Seleccione un producto" name="Producto" ngModel></select>
+					<select type="select" class="form-control" id="producto" placeholder="Seleccione un producto" name="Producto"
+					 ngModel></select>
 				</div>
 				<div class="col-md-6 item">
 					<label for="servicio">Servicio de interés</label>
-					<select type="select" class="form-control" id="servicio" placeholder="Seleccione un servicio" name="Servicio" ngModel></select>
+					<select type="select" class="form-control" id="servicio" placeholder="Seleccione un servicio" name="Servicio"
+					 ngModel></select>
 				</div>
 			</div>
-			<div class="form-group" class="col-md-12 comentario" >
+			<div class="form-group" class="col-md-12 comentario">
 				<label for="exampleInputComm">Comentarios</label>
-					<textarea class="form-control" id="comentario" placeholder="Escriba sus comentarios" name="comentario" ngModel #comentario="ngModel"></textarea>
-					<div *ngIf="comentario.invalid && comentario.touched" class="alert alert-danger" role="alert">
-						Campo obligatorio o invalido
-					</div>
+				<textarea class="form-control" id="comentario" placeholder="Escriba sus comentarios" name="comentario" ngModel
+				 #comentario="ngModel"></textarea>
+				<div *ngIf="comentario.invalid && comentario.touched" class="alert alert-danger" role="alert">
+					Campo obligatorio o invalido
 				</div>
-				<div class="form-group" class="col-md-12 terminos_grupo">
-					<input type="checkbox" checked="checked" id="terms-of-service" name="terms_of_service"  value="false" ngModel required>
-					<label ng-reflect-ng-class="" for="terms-of-service">He leído y acepto los <a role="button" href="#terms">términos y condiciones</a></label>
-				</div>
-				<button type="submit" class="btn btn-primary">Enviar</button>
-				<div class="obligatorios col-md-12"> <span>*</span>Datos Obligatorios</div>
+			</div>
+			<div class="form-group" class="col-md-12 terminos_grupo">
+				<input type="checkbox" checked="checked" id="terms-of-service" name="terms_of_service" value="false" ngModel
+				 required>
+				<label ng-reflect-ng-class="" for="terms-of-service">He leído y acepto los <a role="button" href="#terms">términos
+						y condiciones</a></label>
+			</div>
+			<button type="submit" class="btn btn-primary">Enviar</button>
+			<div class="obligatorios col-md-12"> <span>*</span>Datos Obligatorios</div>
 		</form>
 	</div>
 </div>
-<app-workus [hidden]="!hidden" ></app-workus>
+<app-workus [hidden]="!hidden"></app-workus>

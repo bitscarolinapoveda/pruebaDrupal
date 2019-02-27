@@ -11,13 +11,14 @@ export class TitleComponent implements OnInit {
     titleArray: any = [];
     constructor(
         private title: CustomCardService,
-    ) {}
+    ) { }
 
     ngOnInit() {
         this.getTitiles();
     }
     getTitiles() {
-        this.title.getCustomCardInformation('contact_title').subscribe(items => {
+        // this.title.getCustomCardInformation('contact_title').subscribe(items => {
+        this.title.getCustomCardInformation('howcanwehelpyoucard').subscribe(items => {
             this.titleArray = items.header[0].data.title;
         });
     }

@@ -43,6 +43,7 @@ import { SafeHtmlPipe } from '../pipes/safehtml.pipe';
 import { SafeCssPipe } from '../pipes/safecss.pipe';
 import { ClientProServComponent } from './components/client-proserv/client-proserv.component';
 import { WorkusComponent } from './components/workus/workus.component';
+import { MessageComponent } from './components/message/message.component';
 
 @NgModule({
   declarations: [
@@ -70,7 +71,8 @@ import { WorkusComponent } from './components/workus/workus.component';
     CardImgTextComponent,
     BlogComponent,
     ClientProjectImedicalComponent,
-    ClientProServComponent
+    ClientProServComponent,
+    MessageComponent
   ],
   exports: [
     CarouselItemComponent,
