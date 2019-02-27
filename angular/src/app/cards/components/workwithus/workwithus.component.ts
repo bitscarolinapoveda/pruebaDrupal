@@ -31,6 +31,7 @@ export class WorkWithUsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
     while (this.type.indexOf('-') > -1) {
       this.type = this.type.replace('-', '_');
     }
