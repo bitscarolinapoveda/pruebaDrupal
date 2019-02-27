@@ -9,16 +9,50 @@ import { CustomCardService, Slide } from "src/app/services/cards/v1-card.service
 export class SliderComponent implements OnInit{
     
     sliderArray:Slide[];
-    
-    constructor(
-        private _http:CustomCardService
-    ) {
-        this.sliderArray = this._http.getSliderData();
-    }
 
-    ngOnInit(): void {
-        //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-        //Add 'implements OnInit' to the class.
-        
+    constructor(private _cardService: CustomCardService) {
+        this.sliderArray = [];
+        // debugger;
+    }
+// }
+//
+// import { OnInit, Component } from "@angular/core";
+// import { CustomCardService, Slide } from "src/app/services/cards/v1-card.services";
+//
+// @Component({
+//     selector: 'app-slider',
+//     templateUrl: './slider.component.html',
+//     styleUrls: ['./slider.component.scss']
+// })
+// export class SliderComponent implements OnInit{
+//
+//     sliderArray: any[];
+//
+//     constructor(private _cardService: CustomCardService) {
+//         this.sliderArray = [];
+//     }
+//
+    ngOnInit() {
+        this.getSliderItems();
+    }
+    getSliderItems()  {
+        this._cardService.getCustomCardInformation('sliderbackmediarightcard').subscribe(items => {
+            let sliders = [];
+            for(let item of items.data){
+                let slide: Slide;
+                debugger;
+                slide = {
+                        titleSlide : item.title,
+                        subtitleSlide : item.field_subtitle,
+                        descriptionSlide : item.field_large_description,
+                        listTextSlide : [],
+                        imgSrcSlide : item.field_right_image.url,
+                        bkgSrcSlide : item.field_background_image.url,
+                    };
+                sliders.push(slide);
+            }
+            this.sliderArray = sliders;
+            debugger;
+        });
     }
 }

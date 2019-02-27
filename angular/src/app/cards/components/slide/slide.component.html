@@ -5,7 +5,7 @@
                 <div class="mx-4 px-3 pt-7 pb-3 black-trans">
                     <h1 class="text-light">{{ slide.titleSlide | uppercase }}</h1>
                     <h2 class="condensed text-green">{{ slide.subtitleSlide | uppercase}}</h2>
-                    <p class="text-light">{{ slide.descriptionSlide }}</p>
+                    <div class="text-light" >{{ slide.descriptionSlide }}</div>
                     <ul>
                         <li *ngFor="let item of slide.listTextSlide" class="d-flex">
                             <i class="fas fa-check fa-sm green mr-2"></i>
