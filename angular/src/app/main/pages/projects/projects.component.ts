@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -6,8 +6,9 @@ import {Component} from '@angular/core';
   styleUrls: ['./projects.component.scss']
 })
 export class ProjectsComponent {
-  public title: string = 'Proyectos';
+  public title: string;
 
-  constructor () {
+  constructor() {
+    this.title = 'Proyectos';
   }
 }

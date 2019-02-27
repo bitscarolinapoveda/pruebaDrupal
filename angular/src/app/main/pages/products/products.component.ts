@@ -6,8 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent {
-  public title: string = 'Productos';
+  public title: string;
 
   constructor() {
+    this.title = 'Productos';
   }
 }

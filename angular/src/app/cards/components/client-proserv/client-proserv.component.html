@@ -1,0 +1,27 @@
+<section id="main-title">
+  <h2 [id]="datosMenu.id">{{ titleClients }}</h2>
+</section>
+
+<div class="contenedor" >
+  <ngx-carousel
+  [inputs]="carocarouselTile"
+  (carouselLoad)="carouselTileLoad($event)">
+
+        <ngx-tile NgxCarouselItem *ngFor="let ourC of clients; let i = index">
+          <a href="#" class="url-carousel" >
+              <div class="container-img col-md-3 ">
+                  <img class="d-block img-fluid img-float  mx-auto" src="{{ ourC.field_image?.url }}" alt="{{ ourC.field_image?.alt }}">
+              </div>
+              <div class="info-carousel">
+                  <h3 class="title">{{ ourC.title }}</h3>
+                  <p class="text-description">{{ ourC.field_description }}</p>
+              </div>
+          </a>
+
+        </ngx-tile>
+
+      <button NgxCarouselPrev class='leftRs'>&lt;</button>
+      <button NgxCarouselNext class='rightRs'>&gt;</button>
+</ngx-carousel>
+
+</div>

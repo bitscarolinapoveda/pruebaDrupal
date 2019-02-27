@@ -11,6 +11,7 @@ import { CarouselItem2Component } from './components/carousel-item-2/carousel-it
 import { AlliancesComponent } from './components/alliances/alliances.component';
 import { CarouselControlsComponent } from './components/carousel-controls/carousel-controls.component';
 import { WorkWithUsComponent } from './components/workwithus/workwithus.component';
+import { WorkWithUsProServComponent } from './components/workwithus-proserv/workwithus-proserv.component';
 import { BannerComponent } from './components/banner/banner.component';
 import { TitleComponent } from './components/titles/titles.component';
 import { TabsComponent } from './components/tabs/tabs.component';
@@ -40,7 +41,9 @@ import { FormsModule }   from '@angular/forms';
 // Pipes
 import { SafeHtmlPipe } from '../pipes/safehtml.pipe';
 import { SafeCssPipe } from '../pipes/safecss.pipe';
-
+import { ClientProServComponent } from './components/client-proserv/client-proserv.component';
+import { WorkusComponent } from './components/workus/workus.component';
+import { MessageComponent } from './components/message/message.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +57,8 @@ import { SafeCssPipe } from '../pipes/safecss.pipe';
     PorqueBitsComponent,
     AlliancesComponent,
     WorkWithUsComponent,
+    WorkWithUsProServComponent,
+    WorkusComponent,
     BannerComponent,
     TitleComponent,
     TabsComponent,
@@ -65,7 +70,9 @@ import { SafeCssPipe } from '../pipes/safecss.pipe';
     BlurbComponent,
     CardImgTextComponent,
     BlogComponent,
-    ClientProjectImedicalComponent
+    ClientProjectImedicalComponent,
+    ClientProServComponent,
+    MessageComponent
   ],
   exports: [
     CarouselItemComponent,
@@ -75,7 +82,9 @@ import { SafeCssPipe } from '../pipes/safecss.pipe';
     TecnologiesComponent,
     PorqueBitsComponent,
     AlliancesComponent,
+    WorkusComponent,
     WorkWithUsComponent,
+    WorkWithUsProServComponent,
     BannerComponent,
     TitleComponent,
     TabsComponent,
@@ -87,7 +96,8 @@ import { SafeCssPipe } from '../pipes/safecss.pipe';
     BlurbComponent,
     CardImgTextComponent,
     BlogComponent,
-    ClientProjectImedicalComponent
+    ClientProjectImedicalComponent,
+    ClientProServComponent
   ],
   imports: [BrowserModule, CommonModule, NgbModule, RouterModule, AdfModule,  SlickModule.forRoot(), OwlModule, NgxCarouselModule, BrowserAnimationsModule, FormsModule ],
   providers: [NodeService]

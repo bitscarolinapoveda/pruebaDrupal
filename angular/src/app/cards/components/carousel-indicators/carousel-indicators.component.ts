@@ -1,6 +1,7 @@
 import { ContentType } from '../../../services/cards/content-type.services';
 import { Component, OnInit, Inject } from '@angular/core';
 import * as $ from 'jquery';
+import {CustomCardService} from "../../../services/cards/v1-card.services";
 
 @Component({
   selector: 'app-carousel-indicators',
@@ -10,14 +11,12 @@ import * as $ from 'jquery';
 export class CarouselIndicatorsComponent implements OnInit {
 
   medius = '550px';
-  carouselArray: any = [] ;
+  public carousel: any[];
 
   height: any;
-  carousel: {};
 
-  constructor(
-    private indicatorsSliderCarouselItems: ContentType,
-  ) {
+  constructor(private _cardService: CustomCardService) {
+    this.carousel = [];
     this.height = (window.innerHeight) + 'px';
   }
 
@@ -25,10 +24,11 @@ export class CarouselIndicatorsComponent implements OnInit {
     this.getIndicatorsSliderItems();
   }
   getIndicatorsSliderItems()  {
-    return this.indicatorsSliderCarouselItems.getContentTypeItems('articles').subscribe(items => {
-      this.carousel = items;
+    this._cardService.getCustomCardInformation('slidercard').subscribe(items => {
+      this.carousel = items.data;
     });
   }
+
   onResize() {
     this.height = (window.innerHeight) + 'px';
   }

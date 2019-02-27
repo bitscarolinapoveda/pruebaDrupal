@@ -18,7 +18,7 @@ export class WorkWithUsComponent implements OnInit {
   body: string;
   @Output() propagar = new EventEmitter<DataMenu>();
   datosMenu: DataMenu;
-
+  @Input() type: string;
 
   constructor(
     private router: ActivatedRoute,
@@ -31,6 +31,11 @@ export class WorkWithUsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+    while (this.type.indexOf('-') > -1) {
+      this.type = this.type.replace('-', '_');
+    }
+
     this.datosMenu = {
       label: 'RELACIONADOS',
       id: 'a2',
@@ -42,7 +47,7 @@ export class WorkWithUsComponent implements OnInit {
   }
 
   getWorkwithUsItems() {
-    this.footerService.getCustomCardInformation('workwithus').subscribe((items: { header, body, others }) => {
+    this.footerService.getCustomCardInformationType('workwithus', this.type).subscribe((items: { header, body, others }) => {
       this.workWithUsTitle = items.header[0].data;
       this.workWithUsSubtitle = items.header[1].data;
       this.url = items.body[0].data.link;

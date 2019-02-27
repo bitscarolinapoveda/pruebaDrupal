@@ -28,11 +28,18 @@ export class BannerComponent implements OnInit {
         } else {
             this.bannerBackground = '/assets/images/cabezerainternaweb.png';
         }
-        this.getBannerService();
+
+        if (this.uuid === undefined || this.uuid === '') {
+            while (this.titulo.indexOf('-') > -1) {
+                this.titulo = this.titulo.replace('-', ' ');
+            }
+            this.bannerTitle = this.titulo;
+        } else {
+            this.getBannerService();
+        }
     }
 
     getBannerService() {
-        console.log(this.uuid);
         this.banner.getCustomContentBasicPage(this.uuid).subscribe(params => {
             this.bannerTitle = params.title;
             this.bannerDescrip = params.body;
