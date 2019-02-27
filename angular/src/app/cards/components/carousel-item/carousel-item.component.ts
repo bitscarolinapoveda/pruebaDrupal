@@ -1,5 +1,6 @@
-import { ContentType } from './../../../services/cards/content-type.services';
+// import { ContentType } from './../../../services/cards/content-type.services';
 import { Component, OnInit } from '@angular/core';
+import {CustomCardService} from "../../../services/cards/v1-card.services";
 
 @Component({
   selector: 'app-carousel-item',
@@ -7,23 +8,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./carousel-item.component.scss']
 })
 export class CarouselItemComponent implements OnInit {
-  carouselsArray: any = [];
-     medius = '550px';
-  constructor(
-    private sliderCarouselItems: ContentType,
-    ) { }
+  carouselArray: any[];
+  medius = '550px';
+
+  constructor(private _cardService: CustomCardService) {
+    this.carouselArray = [];
+  }
 
   ngOnInit() {
     this.getCarouselsItems();
   }
 
   getCarouselsItems() {
-    return this.sliderCarouselItems.getContentTypeItems('articles').subscribe(items => {
-      this.carouselsArray = Object.keys(items).map(function (key) {
-        return items[key];
-      });
-
+    return this._cardService.getCustomCardInformation('slidercard').subscribe(items => {
+      this.carouselArray = items.data;
     });
   }
-
 }
