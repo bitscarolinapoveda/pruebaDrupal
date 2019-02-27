@@ -28,7 +28,7 @@
 			<div class="form-group" class="col-md-12">
 				<div class="col-md-6 item">
 					<label for="exampleInputEmail1">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Escriba su email" name="correo_electronico" ngModel                        
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Escriba su email" name="correo_electronico" ngModel
                     pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?" #correo_electronico="ngModel">
 					<div *ngIf="correo_electronico.invalid && correo_electronico.touched" class="alert alert-danger" role="alert">
 						Campo obligatorio o invalido
@@ -44,19 +44,23 @@
 				</div>
 			</div>
 			<div class="form-group" class="col-md-12">
-				<div class="col-md-12 item">
-					<label for="exampleInputPais">Pais</label>
-					<select type="select" class="form-control" id="Pais" placeholder="Seleccione su pais" name="pais" ngModel></select>
+				<div class="col-md-6 item">
+					<label for="pais">Pais</label>
+					<select type="select" class="form-control" id="pais" placeholder="Seleccione su pais" name="pais" ngModel></select>
 				</div >
+				<div class="col-md-6 item">
+					<label for="ciudad">Ciudad</label>
+					<select type="select" class="form-control" id="ciudad" placeholder="Seleccione su ciudad" name="ciudad" ngModel></select>
+			 	</div>
 			</div>
 			<div class="col-md-12">
 				<div class="col-md-6 item">
-					<label for="exampleInputPinteres">Producto de interés</label>
-					<select type="select" class="form-control" id="Producto" placeholder="Seleccione un producto" name="Producto" ngModel></select>
+					<label for="producto">Producto de interés</label>
+					<select type="select" class="form-control" id="producto" placeholder="Seleccione un producto" name="Producto" ngModel></select>
 				</div>
 				<div class="col-md-6 item">
-					<label for="exampleInputSinteres">Servicio de interés</label>
-					<select type="select" class="form-control" id="Servicio" placeholder="Seleccione un servicio" name="Servicio" ngModel></select>
+					<label for="servicio">Servicio de interés</label>
+					<select type="select" class="form-control" id="servicio" placeholder="Seleccione un servicio" name="Servicio" ngModel></select>
 				</div>
 			</div>
 			<div class="form-group" class="col-md-12 comentario" >
@@ -75,4 +79,4 @@
 		</form>
 	</div>
 </div>
-
+<app-workus [hidden]="!hidden" ></app-workus>

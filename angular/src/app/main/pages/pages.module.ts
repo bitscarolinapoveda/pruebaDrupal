@@ -27,7 +27,6 @@ import { HttpModule } from '@angular/http';
 
 import { ProductsOrServicesComponent } from './products-or-services/products-or-services.component';
 import { PoliticsComponent } from './politics/politics.component';
-import { WorkusComponent } from './workus/workus.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 
 @NgModule({
@@ -43,7 +42,6 @@ import { AboutUsComponent } from './about-us/about-us.component';
     FloatSocialComponent,
     ProductsOrServicesComponent,
     PoliticsComponent,
-    WorkusComponent,
     AboutUsComponent
   ],
   exports: [

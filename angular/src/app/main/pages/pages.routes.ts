@@ -7,7 +7,6 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { ProductsComponent } from './products/products.component';
 import { ServicesComponent } from './services/services.component';
-import { WorkusComponent } from './workus/workus.component';
 import { ProductsOrServicesComponent } from './products-or-services/products-or-services.component';
 import { PoliticsComponent } from './politics/politics.component';
 import { AboutUsComponent } from './about-us/about-us.component';
@@ -21,7 +20,6 @@ const pagesRoutes: Routes = [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: 'home', component: HomeComponent },
       { path: 'contact-us', component: ContactUsComponent },
-      { path: 'workus', component: WorkusComponent },
       { path: 'products', component: ProductsComponent },
       { path: 'product/:type', component: ProductsOrServicesComponent },
       { path: 'projects', component: ProjectsComponent },

@@ -22,7 +22,7 @@ export class WorkusComponent implements OnInit {
 
   onSubmit(formulario) {
     console.log(formulario);
-    formulario['webform_id'] = 'work_us';
+    formulario['webform_id'] = 'work_with_us';
 
     jQuery('#formulario_contacto')[0].reset();
 
