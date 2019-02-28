@@ -27,18 +27,47 @@
 }
 
 body {
-    h1, h2 {
+
+    h1,
+    h2 {
         font-family: 'Open Sans light';
     }
 }
+
 .hide {
     display: none;
 }
+
 .hover-menu-dark-layout {
-    width: 100%; 
-    height: 3000px; 
-    background-color: rgba(0, 0, 0, 0.5); 
-    position: absolute; 
+    width: 100%;
+    height: 3000px;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
     z-index: 1;
 }
 
+.popover {
+    max-width: 1000px !important;
+    font-weight: 600 !important;
+
+    .popover-body {
+        font-family: 'Open Sans light' !important;
+        font-size: 18px !important;
+        height: 150px;
+        overflow-y: scroll;
+
+        p,
+        h3,
+        h4 {
+            font-size: 15px !important;
+            text-align: justify;
+        }
+    }
+
+    .popover-header {
+        background: #426177 !important;
+        color: #ffffff !important;
+        text-transform: uppercase;
+        text-align: center;
+    }
+}

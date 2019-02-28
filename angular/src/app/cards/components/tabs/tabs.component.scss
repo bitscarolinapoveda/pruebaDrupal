@@ -1,4 +1,5 @@
 @import './src/assets/scss/mixin.scss';
+
 // .nav {
 //     background-color: #d9e0e4;
 //     @include mediaquery(max_480) {
@@ -37,146 +38,174 @@
 //         }
 //     }
 // }
-*, *::before, *::after {
-    box-sizing: border-box;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.item {
+  display: inline-block;
+}
+
+label {
+  color: #c0dc74;
+  margin-top: 20px;
+  margin-bottom: -1px;
+  font-weight: 100;
+  font-family: 'Open Sans light';
+}
+
+input,
+select {
+  width: 100%;
+  padding: 4px 2px;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #b2c6cd;
+  color: #002b49;
+  border-radius: 0px;
+  font-family: 'Open Sans light';
+}
+
+input.ng-invalid.ng-touched {
+  border: solid 1px red;
+}
+
+select {
+  background: #f8f8f8;
+  font-family: 'Open Sans light';
+}
+
+input::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: #808080;
+}
+
+input::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #808080;
+}
+
+input:-ms-input-placeholder {
+  /* IE 10+ */
+  color: #808080;
+}
+
+input:-moz-placeholder {
+  /* Firefox 18- */
+  color: #808080;
+}
+
+.comentario {
+  width: 98%;
+  margin: 0 auto;
+
+  @media screen and (max-width: 480px) {
+    width: 91%;
+    ;
   }
-.item{
-    display: inline-block;
-}
-label{    
-    color: #c0dc74;
-    margin-top: 20px;
-    margin-bottom: -1px;
-    font-weight: 100;
-    font-family: 'Open Sans light';}
 
-input, select{
-    width: 100%;
-    padding: 4px 2px;
-    outline: none;
-    border: none;
-    border-bottom: 1px solid #b2c6cd;
-    color: #002b49;
-    border-radius:0px;  
-    font-family: 'Open Sans light';   
+  textarea {
+    min-height: 40px;
+    border-radius: 0px;
+    border: 1px solid #b2c6cd;
+    padding: 10px 20px;
+    font-family: 'Open Sans light';
+  }
 }
 
-input.ng-invalid.ng-touched{
-    border: solid 1px red;
-  }  
+.terminos_grupo {
+  position: relative;
+  max-width: 380px;
+  margin: 40px auto;
+  text-align: center;
 
-    select{
-        background:#f8f8f8;
-        font-family: 'Open Sans light';
-    }
+  [type="checkbox"] {
+    position: absolute;
+    left: -9999px;
+  }
 
-    input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-        color: #808080;
-      }
-      input::-moz-placeholder { /* Firefox 19+ */
-        color: #808080;
-      }
-      input:-ms-input-placeholder { /* IE 10+ */
-        color: #808080;
-      }
-      input:-moz-placeholder { /* Firefox 18- */
-        color: #808080;
-      }
-      .comentario{
-          width: 98%;
-          margin: 0 auto;
-          @media screen and (max-width:480px) {
-            width: 91%;;
-          }
-          textarea{
-              min-height: 40px;
-              border-radius: 0px; 
-              border: 1px solid #b2c6cd;
-              padding: 10px 20px;
-              font-family: 'Open Sans light';
-          }
-      }
-      .terminos_grupo{
-          position: relative;
-          max-width: 380px;
-          margin: 40px auto;
-          text-align: center;
-          [type="checkbox"] {
-            position: absolute;
-            left: -9999px;
-          }
-          [type="checkbox"] + label:after {
-            content: '';
-            position: absolute;
-          }
-          [type="checkbox"] + label {
-            display: block;
-            position: relative;
-            padding-left: 26px;
-            cursor: pointer;
-            line-height: 36px;
-            font-size: 1rem;
-            color: rgba(0, 43, 73, 0.8);
-            transition: color .3s;
-          }
-          [type="checkbox"] + label a{
-            color: #91b520;
-          }
-          [type="checkbox"] + label:after {
-            width: 30px; 
-            height: 30px;
-            transition: all .2s;
-            top: 0; 
-            left: 0;
-          }
-          /* OFF */
-          [type="checkbox"]:not(:checked) + label:after {
-            background: url('/assets/images/check2_off.png') left center no-repeat;
-          }
-          /* ON */
-          [type="checkbox"]:checked + label {
-            
-                     }
-          [type="checkbox"]:checked + label:after {
-            background: url('/assets/images/check2.png') left center no-repeat;
-          }
+  [type="checkbox"]+label:after {
+    content: '';
+    position: absolute;
+  }
 
-          
-      }
+  [type="checkbox"]+label {
+    display: block;
+    position: relative;
+    padding-left: 26px;
+    cursor: pointer;
+    line-height: 36px;
+    font-size: 1rem;
+    color: rgba(0, 43, 73, 0.8);
+    transition: color .3s;
+  }
 
-      .btn-primary{
-        border-radius: 0px;
-        background: #91b520;
-        padding: 13px 37px;
-        background-color: #a6cf24 !important;
-        border: none;
-        margin: 0 auto;
-        display: block;
-        font-family: 'Open Sans light';
-      }
-      .obligatorios{
-        text-align: center;
-        margin-top: 20px;
-        color: #6d747f;
-        font-family: 'Open Sans light';
-        span{
-            color:#91b520;
-        }
-      }
+  [type="checkbox"]+label a {
+    color: #91b520;
+  }
+
+  [type="checkbox"]+label:after {
+    width: 30px;
+    height: 30px;
+    transition: all .2s;
+    top: 0;
+    left: 0;
+  }
+
+  /* OFF */
+  [type="checkbox"]:not(:checked)+label:after {
+    background: url('/assets/images/check2_off.png') left center no-repeat;
+  }
+
+  /* ON */
+  [type="checkbox"]:checked+label {}
+
+  [type="checkbox"]:checked+label:after {
+    background: url('/assets/images/check2.png') left center no-repeat;
+  }
+
+
+}
+
+.btn-primary {
+  border-radius: 0px;
+  background: #91b520;
+  padding: 13px 37px;
+  background-color: #a6cf24 !important;
+  border: none;
+  margin: 0 auto;
+  display: block;
+  font-family: 'Open Sans light';
+}
+
+.obligatorios {
+  text-align: center;
+  margin-top: 20px;
+  color: #6d747f;
+  font-family: 'Open Sans light';
+
+  span {
+    color: #91b520;
+  }
+}
 
 //tabs
 
-.tab{
+.tab {
   background: #e5e9ec;
   height: 140px;
   margin-top: 40px;
-  .contactenos{
+
+  .contactenos {
     height: 140px;
-    padding-left:11.8%; 
+    padding-left: 11.8%;
     display: inline-block;
     position: relative;
     width: 50%;
-    button{
+
+    button {
       display: block;
       width: 84%;
       height: 100%;
@@ -185,35 +214,43 @@ input.ng-invalid.ng-touched{
       right: 0px;
       background: url(/assets/images/contactus1-newproject.svg) no-repeat center 25px;
       background-size: 10%;
+
       @media (min-width: 1367px) {
-        background-size: 8%; 
+        background-size: 8%;
       }
+
       padding-top: 8.5%;
       border: none;
       font-size: 22px;
-      font-family: 'Open Sans light';   
-      color: #2e516a; 
-      cursor: pointer;  
+      font-family: 'Open Sans light';
+      color: #2e516a;
+      cursor: pointer;
     }
-    button:active, button.active{
-      background:url(/assets/images/contactus1-newproject-white.svg) no-repeat center 25px, #30506c;
+
+    button:active,
+    button.active {
+      background: url(/assets/images/contactus1-newproject-white.svg) no-repeat center 25px, #30506c;
       background-size: 10%;
+
       @media (min-width: 1367px) {
-        background-size: 8%; 
+        background-size: 8%;
       }
+
       color: #fff;
       outline: 0px auto -webkit-focus-ring-color;
     }
-    button.active::before{
+
+    button.active::before {
       content: '';
-    position: absolute;
-    border-width: 30px 65px 0;
-    border-style: solid;
-    border-color: #2e516a transparent transparent;
-    top: 97%;
-    margin-left: 37px;}
-    
-    button::after{
+      position: absolute;
+      border-width: 30px 65px 0;
+      border-style: solid;
+      border-color: #2e516a transparent transparent;
+      top: 97%;
+      margin-left: 37px;
+    }
+
+    button::after {
       content: '';
       position: absolute;
       height: 75px;
@@ -222,35 +259,47 @@ input.ng-invalid.ng-touched{
       left: 0%;
       background-color: #95a7b3;
     }
-    button.active::after{
+
+    button.active::after {
       display: none;
     }
-    @media screen and (max-width:480px){ 
 
-      button, button.active{
-      width: 100%;    
-      font-size: 15px;
-      padding-top: 46px;
-      background-size: 33%;}    
+    @media screen and (max-width:480px) {
 
-      button.active::before{
+      button,
+      button.active {
+        width: 100%;
+        font-size: 15px;
+        padding-top: 46px;
+        background-size: 33%;
+      }
+
+      button.active::before {
         top: 96%;
         left: 29%;
-        transform: translate(-50%,-50%);  }
-      button::after{display: none;}
+        transform: translate(-50%, -50%);
+      }
+
+      button::after {
+        display: none;
+      }
     }
-    @media (max-width:768px) and (min-width:600px){ 
-      button.active::before{
+
+    @media (max-width:768px) and (min-width:600px) {
+      button.active::before {
         top: 90%;
-    }}
+      }
+    }
   }
-  .trabaje{
+
+  .trabaje {
     height: 140px;
-    padding-right:11.8%;
+    padding-right: 11.8%;
     display: inline-block;
     position: relative;
     width: 50%;
-    button{
+
+    button {
       display: block;
       width: 84%;
       height: 100%;
@@ -261,71 +310,92 @@ input.ng-invalid.ng-touched{
       padding-top: 8.5%;
       background: url(/assets/images/contactus2-joinus.svg) no-repeat center 25px;
       background-size: 10%;
+
       @media (min-width: 1367px) {
-        background-size: 8%; 
+        background-size: 8%;
       }
+
       border: none;
       font-size: 22px;
-      font-family: 'Open Sans light';   
+      font-family: 'Open Sans light';
       color: #2e516a;
       cursor: pointer;
+    }
+
+    button:active,
+    button.active {
+      background: url(/assets/images/contactus2-joinus-white.svg) no-repeat center 25px, #30506c;
+      background-size: 10%;
+
+      @media (min-width: 1367px) {
+        background-size: 8%;
       }
-      button:active, button.active{
-        background:url(/assets/images/contactus2-joinus-white.svg) no-repeat center 25px, #30506c;
-        background-size: 10%;
-        @media (min-width: 1367px) {
-          background-size: 8%; 
-        }
-        color: #fff;
-        outline: 0px auto -webkit-focus-ring-color;
+
+      color: #fff;
+      outline: 0px auto -webkit-focus-ring-color;
+    }
+
+    button.active::before {
+      content: '';
+      position: absolute;
+      border-width: 30px 65px 0;
+      border-style: solid;
+      border-color: #2e516a transparent transparent;
+      top: 97%;
+      margin-left: 37px;
+    }
+
+    button::after {
+      content: '';
+      position: absolute;
+      height: 75px;
+      width: 1px;
+      margin-top: -7%;
+      right: 0%;
+      background-color: #95a7b3;
+    }
+
+    button.active::after {
+      display: none;
+    }
+
+    @media screen and (max-width:480px) {
+
+      button,
+      button.active {
+        width: 100%;
+        font-size: 15px;
+        padding-top: 46px;
+        background-size: 33%;
       }
-      button.active::before{
-        content: '';
-        position: absolute;
-        border-width: 30px 65px 0;
-        border-style: solid;
-        border-color: #2e516a transparent transparent;
-        top: 97%;
-        margin-left: 37px;
+
+      button.active::before {
+        top: 96%;
+        left: 29%;
+        transform: translate(-50%, -50%);
       }
-      button::after{
-        content: '';
-        position: absolute;
-        height: 75px;
-        width: 1px;
-        margin-top: -7%;
-        right: 0%;
-        background-color: #95a7b3;
-      }
-      button.active::after{
+
+      button::after {
         display: none;
       }
-      @media screen and (max-width:480px){    
-        button, button.active{
-          width: 100%;    
-          font-size: 15px;
-          padding-top: 46px;
-          background-size: 33%;}    
-        button.active::before{
-          top: 96%;
-          left: 29%;
-          transform: translate(-50%,-50%);  }
-        button::after{display: none;}
+    }
+
+    @media (max-width:768px) and (min-width:600px) {
+      button.active::before {
+        top: 90%;
       }
-      @media (max-width:768px) and (min-width:600px){ 
-        button.active::before{
-          top: 90%;
-      }}
+    }
   }
 
 }
 
 
-#msj-modal{
+#msj-modal {
   background: #30506cab;
   width: 100vw;
   height: 100vh;
-  .content-modal{
+
+  .content-modal {
     display: table;
     position: relative;
     margin-top: 25%;
@@ -335,8 +405,16 @@ input.ng-invalid.ng-touched{
     background: #fff;
     border-radius: 10px;
     border: solid #91b520 1px;
-    p {text-align: center;}
+
+    p {
+      text-align: center;
+    }
   }
 
 
+}
+
+#popover-title,
+#popover-content {
+  display: none;
 }
