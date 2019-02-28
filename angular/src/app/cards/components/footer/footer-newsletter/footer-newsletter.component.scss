@@ -31,6 +31,195 @@
       }
     }
   }
+  .modal {
+    .modal-content {
+      border: 2px solid #a6cf24;
+      width: auto;
+      height: auto;
+      .modal-header {
+        position: relative;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 67px 35px 40px 35px;
+        border: none;
+        @media (max-width: 768px) {
+          padding: 67px 35px 14px 35px;
+        }
+        .modal-title {
+          color: #022944;
+          font-family: Open Sans light;
+          font-size: 29px;
+          margin-bottom: 15px;
+          text-align: center;
+          @media (max-width: 768px) {
+            font-size: 25px;
+          }
+        }
+        .description-modal {
+          color: #022944;
+          font-family: Open Sans light;
+          font-size: 16px;
+          text-align: center;
+          padding: 0 20px;
+          @media (max-width: 768px) {
+            font-size: 10px;
+          }
+        }
+        .button-modal {
+          width: auto;
+          height: auto;
+          position: absolute;
+          top: 0;
+          right: 10px;
+          color: #a6cf24;
+          span {
+            font-size: 40px;
+          }
+        }
+      }
+      .modal-body {
+        border: none;
+        form {
+          .item {
+            margin-bottom: 25px;
+          }
+          .label-modal {
+            font-family: Open Sans Codensed;
+            font-size: 18px;
+            color: #a6cf24;
+            display: block;
+            margin-bottom: 10px;
+            text-align: left; 
+            @media (max-width: 768px) {
+              font-size: 15px;
+            }
+          }
+          .input-modal {
+            border-top: none;
+            border-right: none;
+            border-left: none; 
+            display: block;
+            width: 100%;
+            font-family: Open Sans light;
+            &::placeholder { 
+              color: #93a4aa;
+            }
+            &:focus {
+              outline: none;
+            }
+            @media (max-width: 768px) {
+              font-size: 15px;
+            }
+          }
+        }
+      }
+      .modal-footer {
+        border: none;
+        flex-direction: column;
+        justify-content: center;
+        padding: 1.5rem;
+        .terminos_grupo {
+          text-align: center;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: #93a4aa;
+          .check-modal-terms {
+            background: transparent;
+            border: 1px solid #a6cf24;
+          }
+          [type="checkbox"] {
+            position: absolute;
+            left: -9999px;
+          }
+          [type="checkbox"] + label:after {
+            content: '';
+            position: absolute;
+          }
+          [type="checkbox"] + label.label-modal-terms {
+            font-family: Open Sans light;
+            font-size: 17px;
+            @media (max-width: 768px) {
+              font-size: 10px;
+            }
+            display: block;
+            position: relative;
+            padding-left: 26px;
+            cursor: pointer;
+            line-height: 36px;
+            color: rgba(0, 43, 73, 0.8);
+            transition: color .3s;
+          }
+          [type="checkbox"] + label a.link-modal-terms {
+            text-decoration: none;
+            color: #a6cf24;
+          }
+          [type="checkbox"] + label:after {
+            width: 30px; 
+            height: 30px;
+            transition: all .2s;
+            top: 0; 
+            left: 0;
+          }
+          /* OFF */
+          [type="checkbox"]:not(:checked) + label:after {
+            background: url('/assets/images/check2_off.png') left center no-repeat;
+          }
+          /* ON */
+          [type="checkbox"]:checked + label:after {
+            background: url('/assets/images/check2.png') left center no-repeat;
+          } 
+          .tooltip-modal {
+            width: 440px; 
+            height: 400px; 
+            padding: 50px 20px 20px 20px;
+            border-radius: 5px;
+            box-shadow:  2px 2px 10px 2px #888888;
+            background: rgb(255, 255, 255); 
+            position: absolute; 
+            bottom: 110px;
+            color: rgba(0, 43, 73, 1);
+            overflow: scroll;
+            @media (max-width: 768px) {
+              width: auto; 
+              height: 400px;
+              right: 20px;
+              left: 20px; 
+            }
+            &::after {
+              content: 'AUTORIZACIÓN ONLINE';
+              text-align: center;
+              font-size: 12px;
+              width: 100%;
+              height: 30px;
+              background-color: #e5e9ec;
+              position: absolute;
+              top: 0;
+              left: 0;
+              padding-top: 5px;
+            }
+          }
+        }
+        .save-modal-button {
+          background: #a6cf24;
+          color: white;
+          text-align: center;
+          width: 99px;
+          height: 40px;
+          font-size: 17px;
+          @media (max-width: 768px) {
+            width: 89px;
+            height: 30px;
+            font-size: 10px;
+          }
+        }
+        .fa-info-circle {
+          margin: 0px 5px 8px 8px;
+        }
+      }
+    }
+  }
 }
 @media only screen and (max-width: 769px) {
   #footer-block-newsletter {
@@ -54,4 +243,33 @@
       }
     }  
   }
-}  
+}
+:host /deep/ .tooltip {
+  transform: translate3d(8px, 130px, 0px) !important;
+}
+:host /deep/ .tooltip-inner {
+  background: rgb(228, 228, 228);
+  max-width: 496px;
+  width: 480px;
+  min-height: 400px;
+  height: 400px;
+  overflow: scroll;
+}
+:host /deep/ .arrow {
+  display: none; 
+}
+:host /deep/ .tooltip-modal h3 {
+  font-family: Open Sans Codensed;
+  font-size: 18px;
+  text-align: justify;
+}
+:host /deep/ .tooltip-modal h4 {
+  font-family: Open Sans Codensed;
+  font-size: 20px;
+  text-align: justify;
+}
+:host /deep/ .tooltip-modal p {
+  font-family: Open Sans Codensed;
+  font-size: 12px;
+  text-align: justify;
+}

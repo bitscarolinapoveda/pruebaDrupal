@@ -26,7 +26,7 @@ export class TabsComponent implements OnInit {
   title_a: string;
   title_b: string;
   titulo: string;
-  list: [];
+  list:any[];
 
   constructor(private _http: HttpService, private _service: CustomCardService) {
     this.dataMessage = [];
