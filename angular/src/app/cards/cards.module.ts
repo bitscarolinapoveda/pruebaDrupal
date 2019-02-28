@@ -35,7 +35,7 @@ import { SlickModule } from 'ngx-slick';
 import { OwlModule } from 'ngx-owl-carousel';
 import { NgxCarouselModule } from 'ngx-carousel';
 import 'hammerjs';
-import { FormsModule }   from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 
 // Pipes
@@ -44,6 +44,7 @@ import { SafeCssPipe } from '../pipes/safecss.pipe';
 import { ClientProServComponent } from './components/client-proserv/client-proserv.component';
 import { WorkusComponent } from './components/workus/workus.component';
 import { MessageComponent } from './components/message/message.component';
+import { KnowusComponent } from './components/knowus/knowus.component';
 
 @NgModule({
   declarations: [
@@ -72,7 +73,8 @@ import { MessageComponent } from './components/message/message.component';
     BlogComponent,
     ClientProjectImedicalComponent,
     ClientProServComponent,
-    MessageComponent
+    MessageComponent,
+    KnowusComponent
   ],
   exports: [
     CarouselItemComponent,
@@ -97,9 +99,21 @@ import { MessageComponent } from './components/message/message.component';
     CardImgTextComponent,
     BlogComponent,
     ClientProjectImedicalComponent,
-    ClientProServComponent
+    ClientProServComponent,
+    KnowusComponent
   ],
-  imports: [BrowserModule, CommonModule, NgbModule, RouterModule, AdfModule,  SlickModule.forRoot(), OwlModule, NgxCarouselModule, BrowserAnimationsModule, FormsModule ],
+  imports: [
+    BrowserModule,
+    CommonModule,
+    NgbModule,
+    RouterModule,
+    AdfModule,
+    SlickModule.forRoot(),
+    OwlModule,
+    NgxCarouselModule,
+    BrowserAnimationsModule,
+    FormsModule
+  ],
   providers: [NodeService]
 })
 export class CardsModule { }

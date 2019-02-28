@@ -1,0 +1,71 @@
+@import './src/assets/scss/mixin.scss';
+
+#kw-title {
+    h2 {
+        margin-left: 3%;
+        font-size: 40px;
+        text-transform: uppercase;
+        color: #002b49;
+        text-align: center;
+        margin-top: 64px;
+    }
+
+    p {
+        color: #002b49cc;
+        font-family: Open Sans Codensed;
+        margin-right: 180px;
+        margin-left: 200px;
+        margin-top: 10px;
+        font-size: 20px;
+        text-align: center;
+    }
+}
+
+.Knowus {
+
+    width: 90%;
+    margin-top: 39px;
+
+    .images-knowus {
+        .images {
+            margin-left: 0;
+            margin-right: 0;
+
+            @include breakpoint(desktop) {
+                margin-left: 9%;
+            }
+
+            li {
+                list-style: none;
+                margin-top: 17px;
+
+                img {
+                    width: 50%;
+                    float: left;
+                }
+
+                label {
+                    font-family: 'Open Sans light';
+                    color: #002b49;
+                    font-weight: 700;
+                    padding-left: 0 !important;
+                    padding-right: 0 !important;
+                    text-align: left;
+
+                    span.plus {
+                        color: #a6cf24;
+                        font-size: 40px;
+                    }
+
+                    span {
+                        font-size: 40px
+                    }
+
+                    p {
+                        font-weight: 300;
+                    }
+                }
+            }
+        }
+    }
+}
