@@ -23,7 +23,7 @@ export class WorkusComponent implements OnInit {
   };
   dataMessage: DataMessage[];
   titulo: string;
-  list: [];
+  list: any[];
 
 
   onSubmit(formulario) {
