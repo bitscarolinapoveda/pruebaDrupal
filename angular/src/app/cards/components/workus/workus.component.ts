@@ -3,6 +3,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import 'rxjs/add/operator/map';
 import { HttpService } from '../../../services/http/http.service';
 import { DataMessage } from '../message/message.component';
+import { CustomCardService } from 'src/app/services/cards/v1-card.services';
 
 declare var jQuery: any;
 declare var $: any;
@@ -21,6 +22,8 @@ export class WorkusComponent implements OnInit {
     email: null
   };
   dataMessage: DataMessage[];
+  titulo: string;
+  list: [];
 
 
   onSubmit(formulario) {
@@ -63,18 +66,44 @@ export class WorkusComponent implements OnInit {
       });
 
   }
-  constructor(private _http: HttpService) {
+  constructor(private _http: HttpService, private _service: CustomCardService) {
     this.dataMessage = [];
+    this.list = [];
   }
 
   ngOnInit() {
     this._http.get('rest/session/token', {}, { responseType: 'text' }).subscribe((response) => {
       this._token = response;
     });
+    this.getPopoverService();
+
+    $(function () {
+      $('[data-toggle="popover"]').popover(
+        {
+          html: true,
+          title: function () {
+            return $('#popover-title').html();
+          },
+          content: function () {
+            return document.getElementById('#popover-content').innerHTML;
+
+          }
+        }
+      ).click(function (e) {
+        e.preventDefault();
+      });
+    });
   }
 
   verificaValidTouched(campo) {
     return !campo.valid && campo.touched;
+  }
+
+  getPopoverService() {
+    this._service.getCustomContentBasicPage('c00ea48d-1ce3-4bba-b65e-d57daf71cf4a').subscribe(params => {
+      this.titulo = params.title;
+      this.list = params.body;
+    });
   }
 
   aplicaCssErro(campo) {
