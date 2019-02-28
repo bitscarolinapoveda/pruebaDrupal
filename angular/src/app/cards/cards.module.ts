@@ -25,7 +25,9 @@ import { CardImgTextComponent } from './components/card-img-text/card-img-text.c
 import { BlogComponent } from './components/blog/blog.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ClientProjectImedicalComponent } from './components/client-project-imedical/client-project-imedical.component';
-
+import { MessageComponent } from './components/message/message.component';
+import { KnowusComponent } from './components/knowus/knowus.component';
+import { TeamComponent } from './components/team/team.component';
 
 // Servicios
 import { NodeService } from '../services/cards/node.service';
@@ -37,14 +39,11 @@ import { NgxCarouselModule } from 'ngx-carousel';
 import 'hammerjs';
 import { FormsModule } from '@angular/forms';
 
-
 // Pipes
 import { SafeHtmlPipe } from '../pipes/safehtml.pipe';
 import { SafeCssPipe } from '../pipes/safecss.pipe';
 import { ClientProServComponent } from './components/client-proserv/client-proserv.component';
 import { WorkusComponent } from './components/workus/workus.component';
-import { MessageComponent } from './components/message/message.component';
-import { KnowusComponent } from './components/knowus/knowus.component';
 
 @NgModule({
   declarations: [
@@ -74,7 +73,8 @@ import { KnowusComponent } from './components/knowus/knowus.component';
     ClientProjectImedicalComponent,
     ClientProServComponent,
     MessageComponent,
-    KnowusComponent
+    KnowusComponent,
+    TeamComponent
   ],
   exports: [
     CarouselItemComponent,
@@ -100,7 +100,8 @@ import { KnowusComponent } from './components/knowus/knowus.component';
     BlogComponent,
     ClientProjectImedicalComponent,
     ClientProServComponent,
-    KnowusComponent
+    KnowusComponent,
+    TeamComponent
   ],
   imports: [
     BrowserModule,
