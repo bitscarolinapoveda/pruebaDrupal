@@ -12,26 +12,7 @@ export class SliderComponent implements OnInit{
 
     constructor(private _cardService: CustomCardService) {
         this.sliderArray = [];
-        // debugger;
     }
-// }
-//
-// import { OnInit, Component } from "@angular/core";
-// import { CustomCardService, Slide } from "src/app/services/cards/v1-card.services";
-//
-// @Component({
-//     selector: 'app-slider',
-//     templateUrl: './slider.component.html',
-//     styleUrls: ['./slider.component.scss']
-// })
-// export class SliderComponent implements OnInit{
-//
-//     sliderArray: any[];
-//
-//     constructor(private _cardService: CustomCardService) {
-//         this.sliderArray = [];
-//     }
-//
     ngOnInit() {
         this.getSliderItems();
     }
