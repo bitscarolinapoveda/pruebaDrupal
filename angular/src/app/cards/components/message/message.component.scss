@@ -1,0 +1,21 @@
+ul {
+    padding: 25px;
+
+    li {
+        list-style: none;
+        margin-top: 5px;
+        margin-bottom: 5px;
+
+        .error {
+            background-color: #efcfd2;
+            color: #721c24;
+            padding: 10px;
+        }
+
+        .success {
+            background-color: #e7efcd;
+            padding: 10px;
+            color: #002b49;
+        }
+    }
+}
