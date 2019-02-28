@@ -31,7 +31,31 @@ class ProductsAndServicesCard extends CardBase
           ],
         ],
       ],
-      'body' => [],
+      'body' => [
+        'table_fields' => [
+          'link_services' => [
+            'type' => 'url',
+            'title' => $this->t('Btn servicios'),
+            'input' => ['label' =>$this->t('Ver servicios')],
+            'service_field' => 'link_services',
+            'show' => 1,
+            'weight' => 1,
+            'max_length' => 100,
+            "attributes" => [
+              'onchange' => "var a = document.createElement('a'); a.setAttribute('href', this.value); this.value = a.href;"
+            ],
+          ],
+          'link_products' => [
+            'type' => 'url',
+            'title' => $this->t('Btn productos'),
+            'input' => ['label' => $this->t('Ver productos')],
+            'service_field' => 'link_products',
+            'show' => 1,
+            'weight' => 1,
+            'max_length' => 100,
+          ],
+        ]
+      ],
       'files' => [],
       'entity' => [
         'name' => 'service_product_bits',

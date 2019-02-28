@@ -22,6 +22,7 @@
                             <a class="botton_products" [routerLink]="[ps.type, ps.nid]">Ver Mas</a>
                         </div>
                     </div>
+                    <input type="url">
                 </div>
             </div>
         </div>
@@ -30,8 +31,8 @@
 <section id="bottons-services">
     <div class="totalbottons">
         <div class="bottons">
-            <a class="bottonleft" routerLink="/products">VER PRODUCTOS </a>
-            <a class="bottonrigth" routerLink="/services">VER SERVICIOS </a>
+            <a class="bottonleft" routerLink="buttons[0].link">{{ buttons[0].label }}</a>
+            <a class="bottonrigth" routerLink="buttons[1].link">{{ buttons[1].label }} </a>
         </div>
     </div>
 </section>
