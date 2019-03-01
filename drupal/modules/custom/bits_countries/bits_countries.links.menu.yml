@@ -1,0 +1,9 @@
+
+# Countries api entity menu items definition
+entity.countries_api_entity.collection:
+  title: 'Countries api entity'
+  route_name: entity.countries_api_entity.collection
+  description: 'List Countries api entity (bundles)'
+  parent: system.admin_structure
+  weight: 99
+
