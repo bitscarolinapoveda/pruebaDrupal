@@ -25,9 +25,12 @@ export class TabsComponent implements OnInit {
   dataMessage: DataMessage[];
   title_a: string;
   title_b: string;
+  titulo: string;
+  list:any[];
 
   constructor(private _http: HttpService, private _service: CustomCardService) {
     this.dataMessage = [];
+    this.list = [];
   }
 
   toogleHidden() {
@@ -78,6 +81,7 @@ export class TabsComponent implements OnInit {
 
   ngOnInit() {
 
+
     this.getTabsData();
 
     this._http.get('rest/session/token', {}, { responseType: 'text' }).subscribe((response) => {
@@ -92,12 +96,37 @@ export class TabsComponent implements OnInit {
       $('.trabaje button').toggleClass('active');
       $('.contactenos button').toggleClass('active');
     });
+
+    this.getPopoverService();
+
+    $(function () {
+      $('[data-toggle="popover"]').popover(
+        {
+          html: true,
+          title: function () {
+            return $('#popover-title').html();
+          },
+          content: function () {
+            return document.getElementById('popover-content').innerHTML;
+          }
+        }
+      ).click(function (e) {
+        e.preventDefault();
+      });
+    });
   }
 
   getTabsData() {
     this._service.getCustomCardInformation('howcanwehelpyoucard').subscribe(items => {
       this.title_a = items.body[0].data.text_form_left;
       this.title_b = items.body[2].data.text_form_right;
+    });
+  }
+
+  getPopoverService() {
+    this._service.getCustomContentBasicPage('c00ea48d-1ce3-4bba-b65e-d57daf71cf4a').subscribe(params => {
+      this.titulo = params.title;
+      this.list = params.body;
     });
   }
 
