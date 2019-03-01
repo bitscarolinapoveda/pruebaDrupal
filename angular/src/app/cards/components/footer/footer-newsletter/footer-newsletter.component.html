@@ -1,10 +1,11 @@
 <ng-container>
   <section id="footer-block-newsletter">
     <div class="newsletter-info">
-      <h6>NEWSLETTER</h6>
-      <p>Reciba nuestras ultimas noticias</p>
+      <p>{{ footerData.title | uppercase }}</p>
       <button data-toggle="modal" data-target="#newsletterModal">
-          Subscribirse
+        {{ footerData.subtitle }}</p>
+      <button>
+          {{ footerData.button }}
           <i class="fas fa-paper-plane"></i>
       </button>
       <!-- Modal -->

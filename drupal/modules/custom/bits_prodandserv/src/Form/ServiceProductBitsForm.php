@@ -4,6 +4,7 @@ namespace Drupal\bits_prodandserv\Form;
 
 use Drupal\Core\Entity\EntityForm;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\file\Entity\File;
 
 /**
  * Class ServiceProductBitsForm.
@@ -73,6 +74,30 @@ class ServiceProductBitsForm extends EntityForm {
 
     return $form;
   }
+  /**
+   * {@inheritdoc}
+   */
+  public function setFileAsPermanent($fid) {
+    if (is_array($fid)) {
+      $fid = array_shift($fid);
+    }
+
+    $file = File::load($fid);
+
+    // If file doesn't exist return.
+    if (!is_object($file)) {
+      return;
+    }
+
+    // Set as permanent.
+    $file->setPermanent();
+
+    // Save file.
+    $file->save();
+
+    // Add usage file.
+    \Drupal::service('file.usage')->add($file, 'bits_prodandserv', 'bits_prodandserv', 1);
+  }
 
   /**
    * {@inheritdoc}
@@ -80,7 +105,6 @@ class ServiceProductBitsForm extends EntityForm {
   public function save(array $form, FormStateInterface $form_state) {
     $service_product_bits = $this->entity;
     $status = $service_product_bits->save();
-
     switch ($status) {
       case SAVED_NEW:
         drupal_set_message($this->t('Created the %label Service product bits.', [
@@ -92,6 +116,16 @@ class ServiceProductBitsForm extends EntityForm {
         drupal_set_message($this->t('Saved the %label Service product bits.', [
           '%label' => $service_product_bits->label(),
         ]));
+    }
+    $fid = reset($service_product_bits->short_image);
+    // Save file permanently.
+    if ($fid) {
+      $this->setFileAsPermanent($fid);
+    }
+    $fidlarge = reset($service_product_bits->large_image);
+    // Save file permanently.
+    if ($fidlarge) {
+      $this->setFileAsPermanent($fidlarge);
     }
     $form_state->setRedirectUrl($service_product_bits->toUrl('collection'));
   }
