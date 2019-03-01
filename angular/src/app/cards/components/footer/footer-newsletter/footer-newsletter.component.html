@@ -3,9 +3,6 @@
     <div class="newsletter-info">
       <p>{{ footerData.title | uppercase }}</p>
       <button data-toggle="modal" data-target="#newsletterModal">
-        {{ footerData.subtitle }}</p>
-      <button>
-          {{ footerData.button }}
           <i class="fas fa-paper-plane"></i>
       </button>
       <!-- Modal -->
@@ -37,7 +34,7 @@
                 </div>
                 <div class="col-md-12 item">
                   <label class="label-modal" for="exampleInputEmail1">{{ emailInput }}*</label>
-                  <input class="input-modal" type="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="{{ emailInputPlaceholder }}" name="correo_electronico"                     
+                  <input class="input-modal" type="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="{{ emailInputPlaceholder }}" name="correo_electronico"
                   pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?">
                   <div *ngIf="false" class="alert alert-danger" role="alert">
                     Campo obligatorio o invalido
