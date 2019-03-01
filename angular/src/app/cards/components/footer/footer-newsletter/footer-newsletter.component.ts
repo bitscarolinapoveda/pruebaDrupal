@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NewsLetter } from "./newsletterModel";
+
 import { CustomCardService } from './../../../../services/cards/v1-card.services';
 
 declare var $: any;
@@ -8,59 +10,97 @@ declare var $: any;
   templateUrl: './footer-newsletter.component.html',
   styleUrls: ['./footer-newsletter.component.scss']
 })
+
 export class FooterNewsletterComponent implements OnInit {
-  public titleNewsletter;
-  public descriptionNewsletter ;
-  public nameInput;
-  public nameInputPlaceholder;
-  public lastNameInput;
-  public lastNameInputPlaceholder;
-  public emailInput;
-  public emailInputPlaceholder;
-  public linkTerms;
-  public labelTerms;
-  public buttonSendNewsletter;
+  footerData: NewsLetter;
   public titleTermsTooltip;
   public bodyTermsTooltip;
   public showTooltip;
+  titleNewsletter: string;
+  descriptionNewsletter: string;
+  nameInput: string;
+  nameInputPlaceholder: string;
+  lastNameInput: string;
+  lastNameInputPlaceholder: string;
+  emailInput: string;
+  emailInputPlaceholder: string;
+  linkTerms: string;
+  labelTerms: string;
+  buttonSendNewsletter: string;
 
   constructor(
-    private newsletter: CustomCardService,
-  ) { }
+    private _cardService: CustomCardService,
+    private newsletter: CustomCardService
+  ) {
+  }
 
   ngOnInit() {
-    this.getNewsLetterInfo ();
-    this.getNewsLetterTooltip ();
+    this.getIndicatorsSliderItems();
+    this.getModalCard();
   }
-
-  getNewsLetterInfo () {
-    return this.newsletter.getCustomCardInformation('newslettermodalcard').subscribe(items => {
-      this.titleNewsletter = items.header[0].data.title;
-      this.descriptionNewsletter = items.header[1].data.subtitle;
-
-      this.nameInput = items.body[0].data.name;
-      this.nameInputPlaceholder = items.body[1].data.name_description;
-      this.lastNameInput = items.body[2].data.last_name;
-      this.lastNameInputPlaceholder = items.body[3].data.last_name_description;
-      this.emailInput = items.body[4].data.email;
-      this.emailInputPlaceholder = items.body[5].data.email_description;
-
-      this.linkTerms = items.body[6].data.link;
-      this.labelTerms = items.body[6].data.label;
-      this.buttonSendNewsletter = items.body[7].data.button;
+  getIndicatorsSliderItems() {
+    this._cardService.getCustomCardInformation('newslettercard_2').subscribe(items => {
+      let title, subtitle, button;
+      for (let attr of items.header) {
+        let obj = attr.data;
+        if (obj['title']) {
+          title = obj.title;
+        } else if (obj['subtitle'])
+          subtitle = obj.subtitle;
+      }
+      for (let attr of items.body) {
+        let obj = attr.data;
+        if (obj['button']) {
+          button = obj.button;
+        }
+      }
+      this.footerData = {
+        title: title,
+        subtitle: subtitle,
+        button: button,
+      };
     });
   }
-  getNewsLetterTooltip () {
-    return this.newsletter.getCustomContentBasicPage('c00ea48d-1ce3-4bba-b65e-d57daf71cf4a').subscribe(items => { 
-      console.log(items);
+  getModalCard() {
+    this._cardService.getCustomCardInformation('newslettermodalcard').subscribe(items => {
+      this.titleNewsletter = items.header[0].data.title;
+      this.descriptionNewsletter = items.header[1].data.subtitle;
+      for (let attr of items.body) {
+        let obj = attr.data;
+        if (obj['name']) {
+          this.nameInput = obj.name;
+        } else if (obj['name_description']) {
+          this.nameInputPlaceholder = obj.name_description;
+        } else if (obj['last_name']) {
+          this.lastNameInput = obj.last_name;
+        } else if (obj['last_name_description']) {
+          this.lastNameInputPlaceholder = obj.last_name_description;
+        } else if (obj['email']) {
+          this.emailInput = obj.email;
+        } else if (obj['email_description']) {
+          this.emailInputPlaceholder = obj.email_description;
+        } else if (obj['link']) {
+          this.linkTerms = obj.link;
+        } else if (obj['label']) {
+          this.labelTerms = obj.label;
+        } else if (obj['button']) {
+          this.buttonSendNewsletter = obj.button;
+        }
+      }
+
+    });
+  }
+
+  getNewsLetterTooltip() {
+    return this.newsletter.getCustomContentBasicPage('c00ea48d-1ce3-4bba-b65e-d57daf71cf4a').subscribe(items => {
       this.titleTermsTooltip = items.title;
       this.bodyTermsTooltip = items.body;
     });
   }
-  showModalOnHover () {
+  showModalOnHover() {
     this.showTooltip = true;
   }
-  hideModalWithoutHover () {
+  hideModalWithoutHover() {
     this.showTooltip = false;
   }
 }

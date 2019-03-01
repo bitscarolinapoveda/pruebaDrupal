@@ -11,17 +11,7 @@ export class SlideComponent implements OnInit{
     @Input() slide:Slide;
 
     constructor(
-        private _http:CustomCardService
     ) {
-
-        this.slide = {
-            titleSlide : "Título de la diapositiva",
-            subtitleSlide : "Subtitulo de diapositiva",
-            descriptionSlide : "Reprehenderit cupidatat pariatur qui amet dolore id minim eu qui ipsum qui.",
-            listTextSlide : ['Caracteristica #1','Caracteristica #2','Caracteristica #3'],
-            imgSrcSlide : "/assets/images/phone-mockup.png",
-            bkgSrcSlide : "/assets/images/fondo-hospital.jpg"
-        }
     }
 
     ngOnInit(): void {

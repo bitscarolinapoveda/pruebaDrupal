@@ -11,10 +11,11 @@
 	</div>
 </div>
 <br /><br />
-<app-message [dataMessage]="dataMessage"></app-message>
 <div class="container" [hidden]="hidden">
+
 	<div class="row">
 		<form id="formulario_contacto" #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)" class="col-md-12" name="formulario_contacto">
+			<app-message [dataMessage]="dataMessage"></app-message>
 			<div class="form-group" [ngClass]="aplicaCssErro(nombre)" class="col-md-12">
 				<div class="col-md-6 item">
 					<label for="exampleInputNombre">Nombre</label>
@@ -81,8 +82,11 @@
 			<div class="form-group" class="col-md-12 terminos_grupo">
 				<input type="checkbox" checked="checked" id="terms-of-service" name="terms_of_service" value="false" ngModel
 				 required>
-				<label ng-reflect-ng-class="" for="terms-of-service">He leído y acepto los <a role="button" href="#terms">términos
-						y condiciones</a></label>
+				<label ng-reflect-ng-class="" for="terms-of-service">He leído y acepto los
+					<a data-trigger="focus" role="button" data-toggle="popover" data-placement="top" href="#">
+						términos y condiciones
+					</a>
+				</label>
 			</div>
 			<button type="submit" class="btn btn-primary">Enviar</button>
 			<div class="obligatorios col-md-12"> <span>*</span>Datos Obligatorios</div>
@@ -90,3 +94,5 @@
 	</div>
 </div>
 <app-workus [hidden]="!hidden"></app-workus>
+<div id='popover-title'>{{titulo}}</div>
+<div id='popover-content' [innerHTML]='list'></div>
