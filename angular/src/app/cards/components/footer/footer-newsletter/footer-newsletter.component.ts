@@ -29,7 +29,6 @@ export class FooterNewsletterComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-
     this.getNewsLetterInfo ();
     this.getNewsLetterTooltip ();
   }

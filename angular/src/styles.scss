@@ -25,7 +25,12 @@
     font-weight: 400;
     src: url('./assets/fonts/Open-Sans-Codensed/OpenSansCondensed-Light.ttf');
 }
-
+@font-face {
+    font-family: 'Open Sans Codensed Light';
+    font-style: light;
+    font-weight: 100;
+    src: url('./assets/fonts/Open-Sans-Codensed/OpenSansCondensed-Light.ttf');
+}
 body {
     h1, h2 {
         font-family: 'Open Sans light';

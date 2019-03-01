@@ -25,6 +25,7 @@ import { CardImgTextComponent } from './components/card-img-text/card-img-text.c
 import { BlogComponent } from './components/blog/blog.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ClientProjectImedicalComponent } from './components/client-project-imedical/client-project-imedical.component';
+import { WhybitsamericasComponent } from './components/whybitsamericas/whybitsamericas.component';
 
 
 // Servicios
@@ -72,7 +73,8 @@ import { MessageComponent } from './components/message/message.component';
     BlogComponent,
     ClientProjectImedicalComponent,
     ClientProServComponent,
-    MessageComponent
+    MessageComponent,
+    WhybitsamericasComponent
   ],
   exports: [
     CarouselItemComponent,
@@ -97,7 +99,8 @@ import { MessageComponent } from './components/message/message.component';
     CardImgTextComponent,
     BlogComponent,
     ClientProjectImedicalComponent,
-    ClientProServComponent
+    ClientProServComponent,
+    WhybitsamericasComponent
   ],
   imports: [BrowserModule, CommonModule, NgbModule, RouterModule, AdfModule,  SlickModule.forRoot(), OwlModule, NgxCarouselModule, BrowserAnimationsModule, FormsModule ],
   providers: [NodeService]
