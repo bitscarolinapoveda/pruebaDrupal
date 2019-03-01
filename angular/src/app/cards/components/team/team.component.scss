@@ -3,10 +3,15 @@
 #kw-title {
     h2 {
         margin-left: 3%;
-        font-size: 40px;        
+        font-size: 40px;
         color: #002b49;
         text-align: center;
         margin-top: 64px;
+
+        @include breakpoint (phone) {      
+            font-size: 28px;     
+            margin-left: 0;
+        }
     }
 
     p {
@@ -17,6 +22,16 @@
         margin-top: 10px;
         font-size: 20px;
         text-align: center;
+
+        @include breakpoint (desktop) {
+            margin-right: 0;
+            margin-left: 0;
+        }
+
+        @include breakpoint (phone) {
+            margin-right: 20px;
+            margin-left: 0;
+        }
     }
 }
 
@@ -51,7 +66,7 @@
 
     .container-img {
         height: 123px;
-        position: relative;        
+        position: relative;
 
         @include breakpoint (tablet) {
             padding-left: 0%;
@@ -151,7 +166,11 @@
             @include breakpoint (desktop) {
                 padding-left: 12%;
                 padding-right: 12%;
-                width: 100%;                
+                width: 100%;
+            }
+
+            @include breakpoint (phone) {
+                padding: 0;
             }
         }
 

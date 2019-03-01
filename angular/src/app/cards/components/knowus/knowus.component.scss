@@ -8,6 +8,11 @@
         color: #002b49;
         text-align: center;
         margin-top: 64px;
+
+        @include breakpoint (phone) {
+            font-size: 30px;
+            margin-left: 0;
+        }
     }
 
     p {
@@ -18,13 +23,29 @@
         margin-top: 10px;
         font-size: 20px;
         text-align: center;
+
+        @include breakpoint (desktop) {
+            margin-right: 0;
+            margin-left: 0;
+        }
+
+        @include breakpoint (phone) {
+            margin-right: 20px;
+            margin-left: 0;
+        }
     }
 }
 
 .Knowus {
 
     width: 90%;
-    margin-top: 39px;
+    margin-top: 20px;
+
+    ul {
+        @include breakpoint (phone) {
+            padding: 0;
+        }
+    }
 
     .images-knowus {
         .images {
@@ -39,9 +60,22 @@
                 list-style: none;
                 margin-top: 17px;
 
+                @include breakpoint (phone) {
+                    margin-bottom: 35px;
+                }
+
                 img {
                     width: 50%;
                     float: left;
+
+                    @include breakpoint (desktop) {
+                        position: relative;
+                    }
+
+                    @include breakpoint (phone) {
+                        width: 50%;
+                        position: relative;
+                    }
                 }
 
                 label {
@@ -58,11 +92,26 @@
                     }
 
                     span {
-                        font-size: 40px
+                        font-size: 40px;
+
+                        @include breakpoint (phone) {
+                            font-size: 30px;
+                        }
+
                     }
 
                     p {
                         font-weight: 300;
+                    }
+
+                    @include breakpoint (desktop) {
+                        position: absolute;
+                    }
+
+                    @include breakpoint (phone) {
+                        position: absolute;
+                        width: 70%;
+                        top: -20px;
                     }
                 }
             }
