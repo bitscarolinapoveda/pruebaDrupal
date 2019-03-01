@@ -12,11 +12,13 @@ import { CustomCardService } from 'src/app/services/cards/v1-card.services';
 export class ProductServicesComponent implements OnInit {
 
   public servicesProduct: any[];
+  public buttons: any[];
   public title: string;
 
   constructor(
     private _cardService: CustomCardService) {
     this.servicesProduct = [];
+    this.buttons = [];
   }
 
   ngOnInit() {
@@ -32,6 +34,9 @@ export class ProductServicesComponent implements OnInit {
         while (this.servicesProduct[index].nid.indexOf('_') > -1) {
           this.servicesProduct[index].nid = this.servicesProduct[index].nid.replace('_', '-');
         }
+      }
+      for(let link of items.body) {
+        this.buttons.push(link.data);
       }
     });
   }

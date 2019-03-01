@@ -486,10 +486,13 @@ class CardBase extends BlockBase {
         ];
 
         $form[$key]['table_fields'][$id]['input']['link'] = [
-          '#type' => 'url',
+          '#type' => 'textfield',
           '#title' => $this->t('Url'),
           '#default_value' => $entity['input']['link'],
           '#size' => 40,
+          '#attributes' => [
+            'pattern' => '(https?://|ftps?://|/)[^ :]+'
+          ]
         ];
 
         $form[$key]['table_fields'][$id]['input']['label'] = [
