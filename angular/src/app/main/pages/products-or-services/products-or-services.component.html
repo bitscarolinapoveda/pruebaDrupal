@@ -20,7 +20,11 @@
         <app-separator [iconCustom]="'icon-historymedical'"></app-separator>
         <app-card-img-text [orientacion]="'IT'" (propagar)="onMenu($event)" [type]="type"></app-card-img-text>
         <app-separator [iconCustom]="'icon-historymedical'"></app-separator>
+        <app-achievements (propagar)="onMenu($event)" [type]="type"></app-achievements>
+        <app-separator [iconCustom]="'icon-historymedical'"></app-separator>
         <app-tecnologies (propagar)="onMenu($event)"></app-tecnologies>
+        <app-separator [iconCustom]="'icon-historymedical'"></app-separator>
+        <app-team (propagar)="onMenu($event)" [type]="type"></app-team>
         <app-separator [iconCustom]="'icon-historymedical'"></app-separator>
         <app-card-img-text [orientacion]="'TI'" (propagar)="onMenu($event)" [type]="type"></app-card-img-text>
         <app-separator [iconCustom]="'icon-historymedical'"></app-separator>

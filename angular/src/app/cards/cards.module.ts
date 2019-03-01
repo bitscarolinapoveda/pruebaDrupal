@@ -25,7 +25,10 @@ import { CardImgTextComponent } from './components/card-img-text/card-img-text.c
 import { BlogComponent } from './components/blog/blog.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ClientProjectImedicalComponent } from './components/client-project-imedical/client-project-imedical.component';
-
+import { MessageComponent } from './components/message/message.component';
+import { KnowusComponent } from './components/knowus/knowus.component';
+import { TeamComponent } from './components/team/team.component';
+import { AchievementsComponent } from './components/achievements/achievements.component';
 
 // Servicios
 import { NodeService } from '../services/cards/node.service';
@@ -35,15 +38,14 @@ import { SlickModule } from 'ngx-slick';
 import { OwlModule } from 'ngx-owl-carousel';
 import { NgxCarouselModule } from 'ngx-carousel';
 import 'hammerjs';
-import { FormsModule }   from '@angular/forms';
-
+import { FormsModule } from '@angular/forms';
 
 // Pipes
 import { SafeHtmlPipe } from '../pipes/safehtml.pipe';
 import { SafeCssPipe } from '../pipes/safecss.pipe';
 import { ClientProServComponent } from './components/client-proserv/client-proserv.component';
 import { WorkusComponent } from './components/workus/workus.component';
-import { MessageComponent } from './components/message/message.component';
+
 
 @NgModule({
   declarations: [
@@ -72,7 +74,10 @@ import { MessageComponent } from './components/message/message.component';
     BlogComponent,
     ClientProjectImedicalComponent,
     ClientProServComponent,
-    MessageComponent
+    MessageComponent,
+    KnowusComponent,
+    TeamComponent,
+    AchievementsComponent
   ],
   exports: [
     CarouselItemComponent,
@@ -97,9 +102,23 @@ import { MessageComponent } from './components/message/message.component';
     CardImgTextComponent,
     BlogComponent,
     ClientProjectImedicalComponent,
-    ClientProServComponent
+    ClientProServComponent,
+    KnowusComponent,
+    TeamComponent,
+    AchievementsComponent
   ],
-  imports: [BrowserModule, CommonModule, NgbModule, RouterModule, AdfModule,  SlickModule.forRoot(), OwlModule, NgxCarouselModule, BrowserAnimationsModule, FormsModule ],
+  imports: [
+    BrowserModule,
+    CommonModule,
+    NgbModule,
+    RouterModule,
+    AdfModule,
+    SlickModule.forRoot(),
+    OwlModule,
+    NgxCarouselModule,
+    BrowserAnimationsModule,
+    FormsModule
+  ],
   providers: [NodeService]
 })
 export class CardsModule { }

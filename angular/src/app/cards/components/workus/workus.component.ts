@@ -43,6 +43,7 @@ export class WorkusComponent implements OnInit {
       'X-CSRF-Token': this._token
     })
       .subscribe(datos => {
+        this.ubicar();
         if (datos.error) {
           for (var key in datos.error) {
             this.dataMessage.push(
@@ -111,5 +112,13 @@ export class WorkusComponent implements OnInit {
       'has-error': this.verificaValidTouched(campo),
       'has-feedback': this.verificaValidTouched(campo)
     };
+  }
+
+  ubicar() {
+    const x = document.querySelector('.tab');
+    console.log(x);
+    if (x) {
+      x.scrollIntoView({ block: 'start', inline: 'start', behavior: 'smooth' });
+    }
   }
 }

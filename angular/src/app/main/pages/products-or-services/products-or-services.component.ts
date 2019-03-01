@@ -64,7 +64,6 @@ export class ProductsOrServicesComponent implements OnInit {
     if (cont === 0) {
       this.listMenu.push(listMenu);
     }
-    console.log(this.listMenu);
   }
 }
 
