@@ -42,8 +42,8 @@ class ExpertsInImedicalCard extends CardBase {
       'body' => [],
       'entity' => [
         'name' => 'node',
-        'type' => 'imedical_expertsin',
-        'limit' => 5,
+        'type' => 'clients',
+        'limit' => 100,
         'offset' => 0,
       ],
       'others' => [],
