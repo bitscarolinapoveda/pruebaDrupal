@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NewsLetter } from "./newsletterModel";
-
+import { NewsLetter } from './newsletterModel';
 import { CustomCardService } from './../../../../services/cards/v1-card.services';
 
 declare var $: any;
@@ -32,9 +31,31 @@ export class FooterNewsletterComponent implements OnInit {
     private _cardService: CustomCardService,
     private newsletter: CustomCardService
   ) {
+    this.footerData = {
+      title: '',
+      subtitle: '',
+      button: ''
+    };
   }
 
   ngOnInit() {
+    this.getPopoverService();
+
+    $(function () {
+      $('[data-toggle="popover"]').popover(
+        {
+          html: true,
+          title: function () {
+            return $('#popover-title').html();
+          },
+          content: function () {
+            return document.getElementById('popover-content').innerHTML;
+          }
+        }
+      ).click(function (e) {
+        e.preventDefault();
+      });
+    });
     this.getIndicatorsSliderItems();
     this.getModalCard();
   }
@@ -91,16 +112,11 @@ export class FooterNewsletterComponent implements OnInit {
     });
   }
 
-  getNewsLetterTooltip() {
-    return this.newsletter.getCustomContentBasicPage('c00ea48d-1ce3-4bba-b65e-d57daf71cf4a').subscribe(items => {
-      this.titleTermsTooltip = items.title;
-      this.bodyTermsTooltip = items.body;
+  getPopoverService() {
+    this.newsletter.getCustomContentBasicPage('c00ea48d-1ce3-4bba-b65e-d57daf71cf4a').subscribe(params => {
+      this.titleTermsTooltip = params.title;
+      this.bodyTermsTooltip = params.body;
     });
   }
-  showModalOnHover() {
-    this.showTooltip = true;
-  }
-  hideModalWithoutHover() {
-    this.showTooltip = false;
-  }
+
 }
