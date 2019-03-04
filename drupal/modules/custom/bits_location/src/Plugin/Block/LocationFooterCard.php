@@ -51,6 +51,12 @@ class LocationFooterCard extends CardBase
           ],
         ],
       ],
+      'entity' => [
+        'name' => 'node',
+        'type' => 'locations',
+        'limit' => 6,
+        'offset' => 0,
+      ],
     ];
   }
 }
