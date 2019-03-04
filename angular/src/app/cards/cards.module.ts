@@ -31,6 +31,7 @@ import { MessageComponent } from './components/message/message.component';
 import { KnowusComponent } from './components/knowus/knowus.component';
 import { TeamComponent } from './components/team/team.component';
 import { AchievementsComponent } from './components/achievements/achievements.component';
+import { TestimoniesComponent } from './components/testimonies/testimonies.component';
 import { TecnologiesProjectserviceComponent } from './components/tecnologies-projectservice/tecnologies-projectservice.component';
 
 // Servicios
@@ -81,6 +82,7 @@ import { WorkusComponent } from './components/workus/workus.component';
     KnowusComponent,
     TeamComponent,
     AchievementsComponent,
+    TestimoniesComponent,
     TecnologiesProjectserviceComponent
   ],
   exports: [
@@ -111,6 +113,7 @@ import { WorkusComponent } from './components/workus/workus.component';
     KnowusComponent,
     TeamComponent,
     AchievementsComponent,
+    TestimoniesComponent,
     TecnologiesProjectserviceComponent
   ],
   imports: [
