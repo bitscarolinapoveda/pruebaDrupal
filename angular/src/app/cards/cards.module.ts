@@ -47,6 +47,7 @@ import { SafeHtmlPipe } from '../pipes/safehtml.pipe';
 import { SafeCssPipe } from '../pipes/safecss.pipe';
 import { ClientProServComponent } from './components/client-proserv/client-proserv.component';
 import { WorkusComponent } from './components/workus/workus.component';
+import { TestimoniesComponent } from './components/testimonies/testimonies.component';
 
 
 @NgModule({
@@ -80,7 +81,8 @@ import { WorkusComponent } from './components/workus/workus.component';
     WhybitsamericasComponent,
     KnowusComponent,
     TeamComponent,
-    AchievementsComponent
+    AchievementsComponent,
+    TestimoniesComponent
   ],
   exports: [
     CarouselItemComponent,
@@ -109,7 +111,8 @@ import { WorkusComponent } from './components/workus/workus.component';
     WhybitsamericasComponent,
     KnowusComponent,
     TeamComponent,
-    AchievementsComponent
+    AchievementsComponent,
+    TestimoniesComponent
   ],
   imports: [
     BrowserModule,
