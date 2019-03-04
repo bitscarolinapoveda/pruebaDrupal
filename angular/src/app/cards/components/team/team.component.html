@@ -8,7 +8,7 @@
     <ngx-tile NgxCarouselItem *ngFor="let main of CarouselControlArray; let i = index">
       <a href="" class="url-link">
         <div class="container-img">
-          <img class="d-block img-fluid img-float mx-auto" [src]="main.field_imagen.url" [alt]="main.field_imagen.alt" />
+          <img class="d-block img-fluid img-float mx-auto" [src]="main.field_imagen?.url" [alt]="main.field_imagen?.alt" />
         </div>
         <div class="info">
           <h4 class="name-cargo">{{main.field_cargo}}</h4>
