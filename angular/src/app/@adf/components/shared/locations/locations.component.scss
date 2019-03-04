@@ -27,7 +27,7 @@
   overflow: visible;
   .agm-info-window-content {
     position: absolute;
-    background: rgb(0, 43, 73);
+    background: #426177;
     min-width: 208px;
     width: auto;
     height: auto;
@@ -143,6 +143,7 @@
         font-size: 12px;
         margin-right: 5px;
         margin-top: 3px;
+        transform: rotate(90deg);
       }
     }
     .info-window-location {

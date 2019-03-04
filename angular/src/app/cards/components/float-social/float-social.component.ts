@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { isArray } from 'util';
 import { CustomCardService } from '../../../services/cards/v1-card.services';
 
+declare var $: any;
+
 @Component({
   selector: 'app-float-social',
   templateUrl: './float-social.component.html',
@@ -29,8 +31,13 @@ export class FloatSocialComponent implements OnInit {
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
-    const allDocument = document.documentElement;
-    if (allDocument.clientHeight + Math.round(allDocument.scrollTop) === allDocument.scrollHeight) {
+    // const allDocument = document.documentElement;
+    // if (allDocument.clientHeight + Math.round(allDocument.scrollTop) === allDocument.scrollHeight) {
+    //   this.hide = false;
+    // } else {
+    //   this.hide = true;
+    // }
+    if ($(window).height() + $(document).scrollTop() === $(document).height()) {
       this.hide = false;
     } else {
       this.hide = true;
