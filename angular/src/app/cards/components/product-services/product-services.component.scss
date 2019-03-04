@@ -250,7 +250,7 @@
             text-align: center;
             z-index: 10;
             @include breakpoint(desktop) {
-                float: right;
+                // float: right;
                 clear: both;
                 bottom: 62.5%;
                 padding-left: 25%;
