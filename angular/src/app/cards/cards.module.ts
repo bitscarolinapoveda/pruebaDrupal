@@ -31,6 +31,8 @@ import { MessageComponent } from './components/message/message.component';
 import { KnowusComponent } from './components/knowus/knowus.component';
 import { TeamComponent } from './components/team/team.component';
 import { AchievementsComponent } from './components/achievements/achievements.component';
+import { TestimoniesComponent } from './components/testimonies/testimonies.component';
+import { TecnologiesProjectserviceComponent } from './components/tecnologies-projectservice/tecnologies-projectservice.component';
 
 // Servicios
 import { NodeService } from '../services/cards/node.service';
@@ -47,8 +49,6 @@ import { SafeHtmlPipe } from '../pipes/safehtml.pipe';
 import { SafeCssPipe } from '../pipes/safecss.pipe';
 import { ClientProServComponent } from './components/client-proserv/client-proserv.component';
 import { WorkusComponent } from './components/workus/workus.component';
-import { TestimoniesComponent } from './components/testimonies/testimonies.component';
-
 
 @NgModule({
   declarations: [
@@ -82,7 +82,8 @@ import { TestimoniesComponent } from './components/testimonies/testimonies.compo
     KnowusComponent,
     TeamComponent,
     AchievementsComponent,
-    TestimoniesComponent
+    TestimoniesComponent,
+    TecnologiesProjectserviceComponent
   ],
   exports: [
     CarouselItemComponent,
@@ -112,7 +113,8 @@ import { TestimoniesComponent } from './components/testimonies/testimonies.compo
     KnowusComponent,
     TeamComponent,
     AchievementsComponent,
-    TestimoniesComponent
+    TestimoniesComponent,
+    TecnologiesProjectserviceComponent
   ],
   imports: [
     BrowserModule,
