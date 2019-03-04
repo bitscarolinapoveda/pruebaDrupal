@@ -1,0 +1,11 @@
+
+bits_countries.load_countries_data_form:
+  path: '/admin/config/bits_countries/loadcountriesdata'
+  defaults:
+    _form: '\Drupal\bits_countries\Form\LoadCountriesDataForm'
+    _title: 'LoadCountriesDataForm'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE
+

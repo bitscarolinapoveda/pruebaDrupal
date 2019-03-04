@@ -4,3 +4,13 @@ entity.countries_api_entity.add_form:
   appears_on:
     - entity.countries_api_entity.collection
 
+entity.country_entity.add_form:
+  route_name: entity.country_entity.add_form
+  title: 'Add Country entity'
+  appears_on:
+    - entity.country_entity.collection
+entity.city_entity.add_form:
+  route_name: entity.city_entity.add_form
+  title: 'Add City entity'
+  appears_on:
+    - entity.city_entity.collection
