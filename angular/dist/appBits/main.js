@@ -545,27 +545,31 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_knowus_knowus_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./components/knowus/knowus.component */ "./src/app/cards/components/knowus/knowus.component.ts");
 /* harmony import */ var _components_team_team_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./components/team/team.component */ "./src/app/cards/components/team/team.component.ts");
 /* harmony import */ var _components_achievements_achievements_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./components/achievements/achievements.component */ "./src/app/cards/components/achievements/achievements.component.ts");
-/* harmony import */ var _services_cards_node_service__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ../services/cards/node.service */ "./src/app/services/cards/node.service.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _adf_adf_module__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ../@adf/adf.module */ "./src/app/@adf/adf.module.ts");
-/* harmony import */ var ngx_slick__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ngx-slick */ "./node_modules/ngx-slick/ngx-slick.umd.js");
-/* harmony import */ var ngx_slick__WEBPACK_IMPORTED_MODULE_34___default = /*#__PURE__*/__webpack_require__.n(ngx_slick__WEBPACK_IMPORTED_MODULE_34__);
-/* harmony import */ var ngx_owl_carousel__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ngx-owl-carousel */ "./node_modules/ngx-owl-carousel/index.js");
-/* harmony import */ var ngx_owl_carousel__WEBPACK_IMPORTED_MODULE_35___default = /*#__PURE__*/__webpack_require__.n(ngx_owl_carousel__WEBPACK_IMPORTED_MODULE_35__);
-/* harmony import */ var ngx_carousel__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ngx-carousel */ "./node_modules/ngx-carousel/index.js");
-/* harmony import */ var hammerjs__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! hammerjs */ "./node_modules/hammerjs/hammer.js");
-/* harmony import */ var hammerjs__WEBPACK_IMPORTED_MODULE_37___default = /*#__PURE__*/__webpack_require__.n(hammerjs__WEBPACK_IMPORTED_MODULE_37__);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
-/* harmony import */ var _pipes_safehtml_pipe__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ../pipes/safehtml.pipe */ "./src/app/pipes/safehtml.pipe.ts");
-/* harmony import */ var _pipes_safecss_pipe__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ../pipes/safecss.pipe */ "./src/app/pipes/safecss.pipe.ts");
-/* harmony import */ var _components_client_proserv_client_proserv_component__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! ./components/client-proserv/client-proserv.component */ "./src/app/cards/components/client-proserv/client-proserv.component.ts");
-/* harmony import */ var _components_workus_workus_component__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! ./components/workus/workus.component */ "./src/app/cards/components/workus/workus.component.ts");
+/* harmony import */ var _components_testimonies_testimonies_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./components/testimonies/testimonies.component */ "./src/app/cards/components/testimonies/testimonies.component.ts");
+/* harmony import */ var _components_tecnologies_projectservice_tecnologies_projectservice_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./components/tecnologies-projectservice/tecnologies-projectservice.component */ "./src/app/cards/components/tecnologies-projectservice/tecnologies-projectservice.component.ts");
+/* harmony import */ var _services_cards_node_service__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ../services/cards/node.service */ "./src/app/services/cards/node.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _adf_adf_module__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ../@adf/adf.module */ "./src/app/@adf/adf.module.ts");
+/* harmony import */ var ngx_slick__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ngx-slick */ "./node_modules/ngx-slick/ngx-slick.umd.js");
+/* harmony import */ var ngx_slick__WEBPACK_IMPORTED_MODULE_36___default = /*#__PURE__*/__webpack_require__.n(ngx_slick__WEBPACK_IMPORTED_MODULE_36__);
+/* harmony import */ var ngx_owl_carousel__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ngx-owl-carousel */ "./node_modules/ngx-owl-carousel/index.js");
+/* harmony import */ var ngx_owl_carousel__WEBPACK_IMPORTED_MODULE_37___default = /*#__PURE__*/__webpack_require__.n(ngx_owl_carousel__WEBPACK_IMPORTED_MODULE_37__);
+/* harmony import */ var ngx_carousel__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ngx-carousel */ "./node_modules/ngx-carousel/index.js");
+/* harmony import */ var hammerjs__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! hammerjs */ "./node_modules/hammerjs/hammer.js");
+/* harmony import */ var hammerjs__WEBPACK_IMPORTED_MODULE_39___default = /*#__PURE__*/__webpack_require__.n(hammerjs__WEBPACK_IMPORTED_MODULE_39__);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _pipes_safehtml_pipe__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! ../pipes/safehtml.pipe */ "./src/app/pipes/safehtml.pipe.ts");
+/* harmony import */ var _pipes_safecss_pipe__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! ../pipes/safecss.pipe */ "./src/app/pipes/safecss.pipe.ts");
+/* harmony import */ var _components_client_proserv_client_proserv_component__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! ./components/client-proserv/client-proserv.component */ "./src/app/cards/components/client-proserv/client-proserv.component.ts");
+/* harmony import */ var _components_workus_workus_component__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! ./components/workus/workus.component */ "./src/app/cards/components/workus/workus.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -617,8 +621,8 @@ var CardsModule = /** @class */ (function () {
     CardsModule = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
             declarations: [
-                _pipes_safehtml_pipe__WEBPACK_IMPORTED_MODULE_39__["SafeHtmlPipe"],
-                _pipes_safecss_pipe__WEBPACK_IMPORTED_MODULE_40__["SafeCssPipe"],
+                _pipes_safehtml_pipe__WEBPACK_IMPORTED_MODULE_41__["SafeHtmlPipe"],
+                _pipes_safecss_pipe__WEBPACK_IMPORTED_MODULE_42__["SafeCssPipe"],
                 _components_carousel_item_carousel_item_component__WEBPACK_IMPORTED_MODULE_4__["CarouselItemComponent"],
                 _components_carousel_indicators_carousel_indicators_component__WEBPACK_IMPORTED_MODULE_5__["CarouselIndicatorsComponent"],
                 _components_carousel_controls_carousel_controls_component__WEBPACK_IMPORTED_MODULE_10__["CarouselControlsComponent"],
@@ -628,7 +632,7 @@ var CardsModule = /** @class */ (function () {
                 _components_alliances_alliances_component__WEBPACK_IMPORTED_MODULE_9__["AlliancesComponent"],
                 _components_workwithus_workwithus_component__WEBPACK_IMPORTED_MODULE_11__["WorkWithUsComponent"],
                 _components_workwithus_proserv_workwithus_proserv_component__WEBPACK_IMPORTED_MODULE_12__["WorkWithUsProServComponent"],
-                _components_workus_workus_component__WEBPACK_IMPORTED_MODULE_42__["WorkusComponent"],
+                _components_workus_workus_component__WEBPACK_IMPORTED_MODULE_44__["WorkusComponent"],
                 _components_banner_banner_component__WEBPACK_IMPORTED_MODULE_13__["BannerComponent"],
                 _components_titles_titles_component__WEBPACK_IMPORTED_MODULE_14__["TitleComponent"],
                 _components_tabs_tabs_component__WEBPACK_IMPORTED_MODULE_15__["TabsComponent"],
@@ -641,12 +645,14 @@ var CardsModule = /** @class */ (function () {
                 _components_card_img_text_card_img_text_component__WEBPACK_IMPORTED_MODULE_22__["CardImgTextComponent"],
                 _components_blog_blog_component__WEBPACK_IMPORTED_MODULE_23__["BlogComponent"],
                 _components_client_project_imedical_client_project_imedical_component__WEBPACK_IMPORTED_MODULE_25__["ClientProjectImedicalComponent"],
-                _components_client_proserv_client_proserv_component__WEBPACK_IMPORTED_MODULE_41__["ClientProServComponent"],
+                _components_client_proserv_client_proserv_component__WEBPACK_IMPORTED_MODULE_43__["ClientProServComponent"],
                 _components_message_message_component__WEBPACK_IMPORTED_MODULE_27__["MessageComponent"],
                 _components_whybitsamericas_whybitsamericas_component__WEBPACK_IMPORTED_MODULE_26__["WhybitsamericasComponent"],
                 _components_knowus_knowus_component__WEBPACK_IMPORTED_MODULE_28__["KnowusComponent"],
                 _components_team_team_component__WEBPACK_IMPORTED_MODULE_29__["TeamComponent"],
-                _components_achievements_achievements_component__WEBPACK_IMPORTED_MODULE_30__["AchievementsComponent"]
+                _components_achievements_achievements_component__WEBPACK_IMPORTED_MODULE_30__["AchievementsComponent"],
+                _components_testimonies_testimonies_component__WEBPACK_IMPORTED_MODULE_31__["TestimoniesComponent"],
+                _components_tecnologies_projectservice_tecnologies_projectservice_component__WEBPACK_IMPORTED_MODULE_32__["TecnologiesProjectserviceComponent"]
             ],
             exports: [
                 _components_carousel_item_carousel_item_component__WEBPACK_IMPORTED_MODULE_4__["CarouselItemComponent"],
@@ -656,7 +662,7 @@ var CardsModule = /** @class */ (function () {
                 _components_tecnologies_tecnologies_component__WEBPACK_IMPORTED_MODULE_6__["TecnologiesComponent"],
                 _components_porque_bits_porque_bits_component__WEBPACK_IMPORTED_MODULE_7__["PorqueBitsComponent"],
                 _components_alliances_alliances_component__WEBPACK_IMPORTED_MODULE_9__["AlliancesComponent"],
-                _components_workus_workus_component__WEBPACK_IMPORTED_MODULE_42__["WorkusComponent"],
+                _components_workus_workus_component__WEBPACK_IMPORTED_MODULE_44__["WorkusComponent"],
                 _components_workwithus_workwithus_component__WEBPACK_IMPORTED_MODULE_11__["WorkWithUsComponent"],
                 _components_workwithus_proserv_workwithus_proserv_component__WEBPACK_IMPORTED_MODULE_12__["WorkWithUsProServComponent"],
                 _components_banner_banner_component__WEBPACK_IMPORTED_MODULE_13__["BannerComponent"],
@@ -671,25 +677,27 @@ var CardsModule = /** @class */ (function () {
                 _components_card_img_text_card_img_text_component__WEBPACK_IMPORTED_MODULE_22__["CardImgTextComponent"],
                 _components_blog_blog_component__WEBPACK_IMPORTED_MODULE_23__["BlogComponent"],
                 _components_client_project_imedical_client_project_imedical_component__WEBPACK_IMPORTED_MODULE_25__["ClientProjectImedicalComponent"],
-                _components_client_proserv_client_proserv_component__WEBPACK_IMPORTED_MODULE_41__["ClientProServComponent"],
+                _components_client_proserv_client_proserv_component__WEBPACK_IMPORTED_MODULE_43__["ClientProServComponent"],
                 _components_whybitsamericas_whybitsamericas_component__WEBPACK_IMPORTED_MODULE_26__["WhybitsamericasComponent"],
                 _components_knowus_knowus_component__WEBPACK_IMPORTED_MODULE_28__["KnowusComponent"],
                 _components_team_team_component__WEBPACK_IMPORTED_MODULE_29__["TeamComponent"],
-                _components_achievements_achievements_component__WEBPACK_IMPORTED_MODULE_30__["AchievementsComponent"]
+                _components_achievements_achievements_component__WEBPACK_IMPORTED_MODULE_30__["AchievementsComponent"],
+                _components_testimonies_testimonies_component__WEBPACK_IMPORTED_MODULE_31__["TestimoniesComponent"],
+                _components_tecnologies_projectservice_tecnologies_projectservice_component__WEBPACK_IMPORTED_MODULE_32__["TecnologiesProjectserviceComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["BrowserModule"],
                 _node_modules_angular_common__WEBPACK_IMPORTED_MODULE_3__["CommonModule"],
                 _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_0__["NgbModule"],
-                _angular_router__WEBPACK_IMPORTED_MODULE_32__["RouterModule"],
-                _adf_adf_module__WEBPACK_IMPORTED_MODULE_33__["AdfModule"],
-                ngx_slick__WEBPACK_IMPORTED_MODULE_34__["SlickModule"].forRoot(),
-                ngx_owl_carousel__WEBPACK_IMPORTED_MODULE_35__["OwlModule"],
-                ngx_carousel__WEBPACK_IMPORTED_MODULE_36__["NgxCarouselModule"],
+                _angular_router__WEBPACK_IMPORTED_MODULE_34__["RouterModule"],
+                _adf_adf_module__WEBPACK_IMPORTED_MODULE_35__["AdfModule"],
+                ngx_slick__WEBPACK_IMPORTED_MODULE_36__["SlickModule"].forRoot(),
+                ngx_owl_carousel__WEBPACK_IMPORTED_MODULE_37__["OwlModule"],
+                ngx_carousel__WEBPACK_IMPORTED_MODULE_38__["NgxCarouselModule"],
                 _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_24__["BrowserAnimationsModule"],
-                _angular_forms__WEBPACK_IMPORTED_MODULE_38__["FormsModule"]
+                _angular_forms__WEBPACK_IMPORTED_MODULE_40__["FormsModule"]
             ],
-            providers: [_services_cards_node_service__WEBPACK_IMPORTED_MODULE_31__["NodeService"]]
+            providers: [_services_cards_node_service__WEBPACK_IMPORTED_MODULE_33__["NodeService"]]
         })
     ], CardsModule);
     return CardsModule;
@@ -953,7 +961,7 @@ module.exports = "<section class=\"page-header\">\n    <div class=\"title\">\n  
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".page-header {\n  height: 352px;\n  overflow: hidden; }\n  .page-header .title {\n    width: 100%;\n    color: #FFFFFF;\n    position: absolute;\n    margin-top: 178px;\n    text-align: center; }\n  .page-header .title h1 {\n      text-transform: uppercase;\n      position: absolute;\n      width: 100%;\n      margin-left: 50%;\n      font-size: 36px;\n      -webkit-transform: translateX(-50%);\n              transform: translateX(-50%); }\n  @media (min-width: 1025px) {\n        .page-header .title h1 {\n          font-size: 50px; } }\n  @media (min-width: 668px) and (max-width: 1024px) {\n        .page-header .title h1 {\n          font-size: 50px; } }\n  .page-header picture img {\n    width: 100%; }\n  .page-header::before {\n  content: \"\";\n  background-color: #000000;\n  opacity: 0.3;\n  height: 352px;\n  width: 100%;\n  position: absolute; }\n  #descrip-banner p {\n  color: #002b49cc;\n  font-family: Open Sans Codensed;\n  margin-right: 180px;\n  margin-left: 200px;\n  margin-top: 30px;\n  font-size: 20px; }\n  @media (min-width: 1025px) {\n    #descrip-banner p {\n      margin-right: 0;\n      margin-left: 0; } }\n  @media (max-width: 667px) {\n    #descrip-banner p {\n      margin-right: 0;\n      margin-left: 0; } }\n"
+module.exports = ".page-header {\n  height: 352px;\n  overflow: hidden; }\n  .page-header .title {\n    width: 100%;\n    color: #FFFFFF;\n    position: absolute;\n    margin-top: 178px;\n    text-align: center; }\n  .page-header .title h1 {\n      text-transform: uppercase;\n      position: absolute;\n      width: 100%;\n      margin-left: 50%;\n      font-size: 36px;\n      -webkit-transform: translateX(-50%);\n              transform: translateX(-50%); }\n  @media (min-width: 1025px) {\n        .page-header .title h1 {\n          font-size: 50px; } }\n  @media (min-width: 668px) and (max-width: 1024px) {\n        .page-header .title h1 {\n          font-size: 50px; } }\n  .page-header picture img {\n    width: 100%; }\n  .page-header::before {\n  content: \"\";\n  background-color: #000000;\n  opacity: 0.3;\n  height: 352px;\n  width: 100%;\n  position: absolute; }\n  #descrip-banner p {\n  color: #002b49cc;\n  font-family: Open Sans Codensed;\n  margin-top: 30px;\n  font-size: 20px;\n  overflow-wrap: break-word; }\n  @media (min-width: 1025px) {\n    #descrip-banner p {\n      margin: auto;\n      max-width: 1000px;\n      margin-top: 30px; } }\n  @media (max-width: 667px) {\n    #descrip-banner p {\n      margin-right: 0;\n      margin-left: 0; } }\n"
 
 /***/ }),
 
@@ -2287,7 +2295,7 @@ var FooterContactComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ng-container>\n  <section id=\"footer-block-newsletter\">\n    <div class=\"newsletter-info\">\n      <h6>{{ footerData.title | uppercase }}</h6>\n      <p [innerHTML]=\"footerData.subtitle\"></p>\n      <button data-toggle=\"modal\" data-target=\"#newsletterModal\">\n        {{ footerData.button}}\n        <i class=\"fas fa-paper-plane\"></i>\n      </button>\n      <!-- Modal -->\n      <div class=\"modal fade\" id=\"newsletterModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\"\n        aria-hidden=\"true\">\n        <div class=\"modal-dialog\" role=\"document\">\n          <div class=\"modal-content\">\n            <div class=\"modal-header\">\n              <h5 class=\"modal-title\" id=\"exampleModalLabel\">{{ titleNewsletter }}</h5>\n              <p class=\"description-modal\">{{ descriptionNewsletter }}</p>\n              <button type=\"button\" class=\"close button-modal\" data-dismiss=\"modal\" aria-label=\"Close\">\n                <span aria-hidden=\"true\">&times;</span>\n              </button>\n            </div>\n            <div class=\"modal-body\">\n              <form action=\"\">\n                <div class=\"col-md-12 item\">\n                  <label class=\"label-modal\" for=\"exampleInputNombre\">{{ nameInput }}*</label>\n                  <input class=\"input-modal\" type=\"text\" id=\"nombre\" placeholder=\"{{ nameInputPlaceholder }}\" name=\"nombre\">\n                  <div *ngIf=\"false\" class=\"alert alert-danger\" role=\"alert\">\n                    Campo obligatorio o invalido\n                  </div>\n                </div>\n                <div class=\"col-md-12 item\">\n                  <label class=\"label-modal\" for=\"exampleInputNombre\">{{ lastNameInput }}</label>\n                  <input class=\"input-modal\" type=\"text\" id=\"apellido\" placeholder=\"{{ lastNameInputPlaceholder }}\"\n                    name=\"apellido\">\n                  <div *ngIf=\"false\" class=\"alert alert-danger\" role=\"alert\">\n                    Campo obligatorio o invalido\n                  </div>\n                </div>\n                <div class=\"col-md-12 item\">\n                  <label class=\"label-modal\" for=\"exampleInputEmail1\">{{ emailInput }}*</label>\n                  <input class=\"input-modal\" type=\"email\" id=\"exampleInputEmail1\" aria-describedby=\"emailHelp\"\n                    placeholder=\"{{ emailInputPlaceholder }}\" name=\"correo_electronico\" pattern=\"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\">\n                  <div *ngIf=\"false\" class=\"alert alert-danger\" role=\"alert\">\n                    Campo obligatorio o invalido\n                  </div>\n                </div>\n              </form>\n            </div>\n            <div class=\"modal-footer\">\n              <div class=\"form-group\" class=\"terminos_grupo\">\n                <input class=\"check-modal-terms\" type=\"checkbox\" checked=\"checked\" id=\"terms-of-service\" name=\"terms_of_service\"\n                  value=\"false\" required>\n                <label class=\"label-modal-terms\" for=\"terms-of-service\">He leído y acepto los <a class=\"link-modal-terms\"\n                    role=\"button\" href=\"{{ linkTerms }}\">{{ labelTerms }}</a></label>\n                <i href=\"#\" class=\"fas fa-info-circle icon-tooltip\" (mouseover)=\"showModalOnHover($event)\" (mouseleave)=\"hideModalWithoutHover($event)\"></i>\n                <div class=\"tooltip-modal\" (mouseover)=\"showModalOnHover($event)\" (mouseleave)=\"hideModalWithoutHover($event)\"\n                  [hidden]=\"!showTooltip\" [innerHTML]=\"bodyTermsTooltip\">\n                </div>\n              </div>\n              <button type=\"button\" class=\"save-modal-button\">{{ buttonSendNewsletter }}</button>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </section>\n</ng-container>"
+module.exports = "<ng-container>\n  <section id=\"footer-block-newsletter\">\n    <div class=\"newsletter-info\">\n      <h6 *ngIf=\"footerData.title\">{{ footerData.title | uppercase }}</h6>\n      <p [innerHTML]=\"footerData.subtitle\"></p>\n      <button data-toggle=\"modal\" data-target=\"#newsletterModal\">\n        {{ footerData.button}}\n        <i class=\"fas fa-paper-plane\"></i>\n      </button>\n      <!-- Modal -->\n      <div class=\"modal fade\" id=\"newsletterModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\"\n        aria-hidden=\"true\">\n        <div class=\"modal-dialog\" role=\"document\">\n          <div class=\"modal-content\">\n            <div class=\"modal-header\">\n              <h5 class=\"modal-title\" id=\"exampleModalLabel\">{{ titleNewsletter }}</h5>\n              <p class=\"description-modal\">{{ descriptionNewsletter }}</p>\n              <button type=\"button\" class=\"close button-modal\" data-dismiss=\"modal\" aria-label=\"Close\">\n                <span aria-hidden=\"true\">&times;</span>\n              </button>\n            </div>\n            <div class=\"modal-body\">\n              <form action=\"\">\n                <div class=\"col-md-12 item\">\n                  <label class=\"label-modal\" for=\"exampleInputNombre-nw\">{{ nameInput }}*</label>\n                  <input class=\"input-modal\" type=\"text\" id=\"nombree\" placeholder=\"{{ nameInputPlaceholder }}\" name=\"nombre\">\n                  <div *ngIf=\"false\" class=\"alert alert-danger\" role=\"alert\">\n                    Campo obligatorio o invalido\n                  </div>\n                </div>\n                <div class=\"col-md-12 item\">\n                  <label class=\"label-modal\" for=\"exampleInputNombr-nw\">{{ lastNameInput }}</label>\n                  <input class=\"input-modal\" type=\"text\" id=\"apellido\" placeholder=\"{{ lastNameInputPlaceholder }}\"\n                    name=\"apellido\">\n                  <div *ngIf=\"false\" class=\"alert alert-danger\" role=\"alert\">\n                    Campo obligatorio o invalido\n                  </div>\n                </div>\n                <div class=\"col-md-12 item\">\n                  <label class=\"label-modal\" for=\"exampleInputEmail1-nw\">{{ emailInput }}*</label>\n                  <input class=\"input-modal\" type=\"email\" id=\"exampleInputEmail1\" aria-describedby=\"emailHelp\"\n                    placeholder=\"{{ emailInputPlaceholder }}\" name=\"correo_electronicoo\" pattern=\"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\">\n                  <div *ngIf=\"false\" class=\"alert alert-danger\" role=\"alert\">\n                    Campo obligatorio o invalido\n                  </div>\n                </div>\n              </form>\n            </div>\n            <div class=\"modal-footer\">\n              <div class=\"form-group\" class=\"terminos_grupo\">\n                <input class=\"check-modal-terms\" type=\"checkbox\" checked=\"checked\" id=\"terms-of-service\" name=\"terms_of_service\"\n                  value=\"false\" required>\n                <label class=\"label-modal-terms\" for=\"terms-of-service-nw\">He leído y acepto los <a class=\"link-modal-terms\"\n                    role=\"button\" href=\"{{ linkTerms }}\">{{ labelTerms }}</a></label>\n                <a data-trigger=\"focus\" role=\"button\" data-toggle=\"popover\" data-placement=\"top\" href=\"#\">\n                  <i class=\"fas fa-info-circle icon-tooltip\"></i>\n                </a>                \n              </div>\n            </div>\n            <button type=\"button\" class=\"save-modal-button\">{{ buttonSendNewsletter }}</button>\n          </div>\n        </div>\n      </div>\n    </div>\n\n  </section>\n</ng-container>\n<div id='popover-title'>{{titleTermsTooltip}}</div>\n<div id='popover-content' [innerHTML]='bodyTermsTooltip'></div>"
 
 /***/ }),
 
@@ -2298,7 +2306,7 @@ module.exports = "<ng-container>\n  <section id=\"footer-block-newsletter\">\n  
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "@charset \"UTF-8\";\n#footer-block-newsletter {\n  margin: 20px 0 20px 0;\n  border-right: 1px solid rgba(255, 255, 255, 0.3); }\n#footer-block-newsletter .newsletter-info h6 {\n    color: white;\n    font-family: Open Sans;\n    font-size: 12px; }\n#footer-block-newsletter .newsletter-info p {\n    color: rgba(255, 255, 255, 0.7);\n    font-family: Open Sans Light;\n    font-size: 11px; }\n#footer-block-newsletter .newsletter-info button {\n    cursor: pointer;\n    margin: 8px 0 0 0;\n    width: 160px;\n    height: 34px;\n    text-align: left;\n    color: white;\n    font-family: Open Sans Light;\n    font-size: 11px;\n    background: rgba(255, 255, 255, 0.2);\n    border: none; }\n#footer-block-newsletter .newsletter-info button .fa-paper-plane {\n      padding-left: 60px; }\n#footer-block-newsletter .newsletter-info button:hover {\n      background: rgba(255, 255, 255, 0.5); }\n#footer-block-newsletter .modal .modal-content {\n    border: 2px solid #a6cf24;\n    width: auto;\n    height: auto; }\n#footer-block-newsletter .modal .modal-content .modal-header {\n      position: relative;\n      flex-direction: column;\n      justify-content: center;\n      align-items: center;\n      padding: 67px 35px 40px 35px;\n      border: none; }\n@media (max-width: 768px) {\n        #footer-block-newsletter .modal .modal-content .modal-header {\n          padding: 67px 35px 14px 35px; } }\n#footer-block-newsletter .modal .modal-content .modal-header .modal-title {\n        color: #022944;\n        font-family: Open Sans light;\n        font-size: 29px;\n        margin-bottom: 15px;\n        text-align: center; }\n@media (max-width: 768px) {\n          #footer-block-newsletter .modal .modal-content .modal-header .modal-title {\n            font-size: 25px; } }\n#footer-block-newsletter .modal .modal-content .modal-header .description-modal {\n        color: #022944;\n        font-family: Open Sans light;\n        font-size: 16px;\n        text-align: center;\n        padding: 0 20px; }\n@media (max-width: 768px) {\n          #footer-block-newsletter .modal .modal-content .modal-header .description-modal {\n            font-size: 10px; } }\n#footer-block-newsletter .modal .modal-content .modal-header .button-modal {\n        width: auto;\n        height: auto;\n        position: absolute;\n        top: 0;\n        right: 10px;\n        color: #a6cf24; }\n#footer-block-newsletter .modal .modal-content .modal-header .button-modal span {\n          font-size: 40px; }\n#footer-block-newsletter .modal .modal-content .modal-body {\n      border: none; }\n#footer-block-newsletter .modal .modal-content .modal-body form .item {\n        margin-bottom: 25px; }\n#footer-block-newsletter .modal .modal-content .modal-body form .label-modal {\n        font-family: Open Sans Codensed;\n        font-size: 18px;\n        color: #a6cf24;\n        display: block;\n        margin-bottom: 10px;\n        text-align: left; }\n@media (max-width: 768px) {\n          #footer-block-newsletter .modal .modal-content .modal-body form .label-modal {\n            font-size: 15px; } }\n#footer-block-newsletter .modal .modal-content .modal-body form .input-modal {\n        border-top: none;\n        border-right: none;\n        border-left: none;\n        display: block;\n        width: 100%;\n        font-family: Open Sans light; }\n#footer-block-newsletter .modal .modal-content .modal-body form .input-modal::-webkit-input-placeholder {\n          color: #93a4aa; }\n#footer-block-newsletter .modal .modal-content .modal-body form .input-modal:-ms-input-placeholder {\n          color: #93a4aa; }\n#footer-block-newsletter .modal .modal-content .modal-body form .input-modal::-ms-input-placeholder {\n          color: #93a4aa; }\n#footer-block-newsletter .modal .modal-content .modal-body form .input-modal::placeholder {\n          color: #93a4aa; }\n#footer-block-newsletter .modal .modal-content .modal-body form .input-modal:focus {\n          outline: none; }\n@media (max-width: 768px) {\n          #footer-block-newsletter .modal .modal-content .modal-body form .input-modal {\n            font-size: 15px; } }\n#footer-block-newsletter .modal .modal-content .modal-footer {\n      border: none;\n      flex-direction: column;\n      justify-content: center;\n      padding: 1.5rem; }\n#footer-block-newsletter .modal .modal-content .modal-footer .terminos_grupo {\n        text-align: center;\n        display: flex;\n        justify-content: center;\n        align-items: center;\n        color: #93a4aa;\n        /* OFF */\n        /* ON */ }\n#footer-block-newsletter .modal .modal-content .modal-footer .terminos_grupo .check-modal-terms {\n          background: transparent;\n          border: 1px solid #a6cf24; }\n#footer-block-newsletter .modal .modal-content .modal-footer .terminos_grupo [type=\"checkbox\"] {\n          position: absolute;\n          left: -9999px; }\n#footer-block-newsletter .modal .modal-content .modal-footer .terminos_grupo [type=\"checkbox\"] + label:after {\n          content: '';\n          position: absolute; }\n#footer-block-newsletter .modal .modal-content .modal-footer .terminos_grupo [type=\"checkbox\"] + label.label-modal-terms {\n          font-family: Open Sans light;\n          font-size: 17px;\n          display: block;\n          position: relative;\n          padding-left: 26px;\n          cursor: pointer;\n          line-height: 36px;\n          color: rgba(0, 43, 73, 0.8);\n          transition: color .3s; }\n@media (max-width: 768px) {\n            #footer-block-newsletter .modal .modal-content .modal-footer .terminos_grupo [type=\"checkbox\"] + label.label-modal-terms {\n              font-size: 10px; } }\n#footer-block-newsletter .modal .modal-content .modal-footer .terminos_grupo [type=\"checkbox\"] + label a.link-modal-terms {\n          text-decoration: none;\n          color: #a6cf24; }\n#footer-block-newsletter .modal .modal-content .modal-footer .terminos_grupo [type=\"checkbox\"] + label:after {\n          width: 30px;\n          height: 30px;\n          transition: all .2s;\n          top: 0;\n          left: 0; }\n#footer-block-newsletter .modal .modal-content .modal-footer .terminos_grupo [type=\"checkbox\"]:not(:checked) + label:after {\n          background: url(\"/assets/images/check2_off.png\") left center no-repeat; }\n#footer-block-newsletter .modal .modal-content .modal-footer .terminos_grupo [type=\"checkbox\"]:checked + label:after {\n          background: url(\"/assets/images/check2.png\") left center no-repeat; }\n#footer-block-newsletter .modal .modal-content .modal-footer .terminos_grupo .tooltip-modal {\n          width: 440px;\n          height: 400px;\n          padding: 50px 20px 20px 20px;\n          border-radius: 5px;\n          box-shadow: 2px 2px 10px 2px #888888;\n          background: white;\n          position: absolute;\n          bottom: 110px;\n          color: #002b49;\n          overflow: scroll; }\n@media (max-width: 768px) {\n            #footer-block-newsletter .modal .modal-content .modal-footer .terminos_grupo .tooltip-modal {\n              width: auto;\n              height: 400px;\n              right: 20px;\n              left: 20px; } }\n#footer-block-newsletter .modal .modal-content .modal-footer .terminos_grupo .tooltip-modal::after {\n            content: 'AUTORIZACIÓN ONLINE';\n            text-align: center;\n            font-size: 12px;\n            width: 100%;\n            height: 30px;\n            background-color: #e5e9ec;\n            position: absolute;\n            top: 0;\n            left: 0;\n            padding-top: 5px; }\n#footer-block-newsletter .modal .modal-content .modal-footer .save-modal-button {\n        background: #a6cf24;\n        color: white;\n        text-align: center;\n        width: 99px;\n        height: 40px;\n        font-size: 17px; }\n@media (max-width: 768px) {\n          #footer-block-newsletter .modal .modal-content .modal-footer .save-modal-button {\n            width: 89px;\n            height: 30px;\n            font-size: 10px; } }\n#footer-block-newsletter .modal .modal-content .modal-footer .fa-info-circle {\n        margin: 0px 5px 8px 8px; }\n@media only screen and (max-width: 769px) {\n  #footer-block-newsletter {\n    margin: 30px 0 30px 0;\n    text-align: center;\n    border-right: 0px; } }\n@media only screen and (min-width: 769px) and (max-width: 1025px) {\n  #footer-block-newsletter .newsletter-info button {\n    width: 120px;\n    height: 25px;\n    margin: 3px 0 0 0; }\n    #footer-block-newsletter .newsletter-info button .fa-paper-plane {\n      padding-left: 30px; } }\n:host /deep/ .tooltip {\n  -webkit-transform: translate3d(8px, 130px, 0px) !important;\n          transform: translate3d(8px, 130px, 0px) !important; }\n:host /deep/ .tooltip-inner {\n  background: #e4e4e4;\n  max-width: 496px;\n  width: 480px;\n  min-height: 400px;\n  height: 400px;\n  overflow: scroll; }\n:host /deep/ .arrow {\n  display: none; }\n:host /deep/ .tooltip-modal h3 {\n  font-family: Open Sans Codensed;\n  font-size: 18px;\n  text-align: justify; }\n:host /deep/ .tooltip-modal h4 {\n  font-family: Open Sans Codensed;\n  font-size: 20px;\n  text-align: justify; }\n:host /deep/ .tooltip-modal p {\n  font-family: Open Sans Codensed;\n  font-size: 12px;\n  text-align: justify; }\n"
+module.exports = "@charset \"UTF-8\";\n#footer-block-newsletter {\n  margin: 20px 0 20px 0;\n  border-right: 1px solid rgba(255, 255, 255, 0.3); }\n#footer-block-newsletter .newsletter-info h6 {\n    color: white;\n    font-family: Open Sans;\n    font-size: 12px; }\n#footer-block-newsletter .newsletter-info p {\n    color: rgba(255, 255, 255, 0.7);\n    font-family: Open Sans Light;\n    font-size: 11px; }\n#footer-block-newsletter .newsletter-info button {\n    cursor: pointer;\n    margin: 8px 0 0 0;\n    width: 160px;\n    height: 34px;\n    text-align: left;\n    color: white;\n    font-family: Open Sans Light;\n    font-size: 11px;\n    background: rgba(255, 255, 255, 0.2);\n    border: none; }\n#footer-block-newsletter .newsletter-info button .fa-paper-plane {\n      padding-left: 60px; }\n#footer-block-newsletter .newsletter-info button:hover {\n      background: rgba(255, 255, 255, 0.5); }\n#footer-block-newsletter .modal .modal-content {\n    border: 2px solid #a6cf24;\n    width: auto;\n    height: auto; }\n#footer-block-newsletter .modal .modal-content .modal-header {\n      position: relative;\n      flex-direction: column;\n      justify-content: center;\n      align-items: center;\n      padding: 67px 35px 40px 35px;\n      border: none; }\n@media (max-width: 768px) {\n        #footer-block-newsletter .modal .modal-content .modal-header {\n          padding: 67px 35px 14px 35px; } }\n#footer-block-newsletter .modal .modal-content .modal-header .modal-title {\n        color: #022944;\n        font-family: Open Sans light;\n        font-size: 29px;\n        margin-bottom: 15px;\n        text-align: center; }\n@media (max-width: 768px) {\n          #footer-block-newsletter .modal .modal-content .modal-header .modal-title {\n            font-size: 25px; } }\n#footer-block-newsletter .modal .modal-content .modal-header .description-modal {\n        color: #022944;\n        font-family: Open Sans light;\n        font-size: 16px;\n        text-align: center;\n        padding: 0 20px; }\n@media (max-width: 768px) {\n          #footer-block-newsletter .modal .modal-content .modal-header .description-modal {\n            font-size: 10px; } }\n#footer-block-newsletter .modal .modal-content .modal-header .button-modal {\n        width: auto;\n        height: auto;\n        position: absolute;\n        top: 0;\n        right: 10px;\n        color: #a6cf24; }\n#footer-block-newsletter .modal .modal-content .modal-header .button-modal span {\n          font-size: 40px; }\n#footer-block-newsletter .modal .modal-content .modal-body {\n      border: none; }\n#footer-block-newsletter .modal .modal-content .modal-body form .item {\n        margin-bottom: 25px; }\n#footer-block-newsletter .modal .modal-content .modal-body form .label-modal {\n        font-family: Open Sans Codensed;\n        font-size: 18px;\n        color: #a6cf24;\n        display: block;\n        margin-bottom: 10px;\n        text-align: left; }\n@media (max-width: 768px) {\n          #footer-block-newsletter .modal .modal-content .modal-body form .label-modal {\n            font-size: 15px; } }\n#footer-block-newsletter .modal .modal-content .modal-body form .input-modal {\n        border-top: none;\n        border-right: none;\n        border-left: none;\n        display: block;\n        width: 100%;\n        font-family: Open Sans light; }\n#footer-block-newsletter .modal .modal-content .modal-body form .input-modal::-webkit-input-placeholder {\n          color: #93a4aa; }\n#footer-block-newsletter .modal .modal-content .modal-body form .input-modal:-ms-input-placeholder {\n          color: #93a4aa; }\n#footer-block-newsletter .modal .modal-content .modal-body form .input-modal::-ms-input-placeholder {\n          color: #93a4aa; }\n#footer-block-newsletter .modal .modal-content .modal-body form .input-modal::placeholder {\n          color: #93a4aa; }\n#footer-block-newsletter .modal .modal-content .modal-body form .input-modal:focus {\n          outline: none; }\n@media (max-width: 768px) {\n          #footer-block-newsletter .modal .modal-content .modal-body form .input-modal {\n            font-size: 15px; } }\n#footer-block-newsletter .modal .modal-content .modal-footer {\n      border: none;\n      flex-direction: column;\n      justify-content: center;\n      padding: 1.5rem; }\n#footer-block-newsletter .modal .modal-content .modal-footer .terminos_grupo {\n        text-align: center;\n        display: flex;\n        justify-content: center;\n        align-items: center;\n        color: #93a4aa;\n        /* OFF */\n        /* ON */ }\n#footer-block-newsletter .modal .modal-content .modal-footer .terminos_grupo .check-modal-terms {\n          background: transparent;\n          border: 1px solid #a6cf24; }\n#footer-block-newsletter .modal .modal-content .modal-footer .terminos_grupo [type=\"checkbox\"] {\n          position: absolute;\n          left: -9999px; }\n#footer-block-newsletter .modal .modal-content .modal-footer .terminos_grupo [type=\"checkbox\"] + label:after {\n          content: '';\n          position: absolute; }\n#footer-block-newsletter .modal .modal-content .modal-footer .terminos_grupo [type=\"checkbox\"] + label.label-modal-terms {\n          font-family: Open Sans light;\n          font-size: 17px;\n          display: block;\n          position: relative;\n          padding-left: 26px;\n          cursor: pointer;\n          line-height: 36px;\n          color: rgba(0, 43, 73, 0.8);\n          transition: color .3s; }\n@media (max-width: 768px) {\n            #footer-block-newsletter .modal .modal-content .modal-footer .terminos_grupo [type=\"checkbox\"] + label.label-modal-terms {\n              font-size: 10px; } }\n#footer-block-newsletter .modal .modal-content .modal-footer .terminos_grupo [type=\"checkbox\"] + label a.link-modal-terms {\n          text-decoration: none;\n          color: #a6cf24; }\n#footer-block-newsletter .modal .modal-content .modal-footer .terminos_grupo [type=\"checkbox\"] + label:after {\n          width: 30px;\n          height: 30px;\n          transition: all .2s;\n          top: 0;\n          left: 0; }\n#footer-block-newsletter .modal .modal-content .modal-footer .terminos_grupo [type=\"checkbox\"]:not(:checked) + label:after {\n          background: url(\"/assets/images/check2_off.png\") left center no-repeat; }\n#footer-block-newsletter .modal .modal-content .modal-footer .terminos_grupo [type=\"checkbox\"]:checked + label:after {\n          background: url(\"/assets/images/check2.png\") left center no-repeat; }\n#footer-block-newsletter .modal .modal-content .modal-footer .terminos_grupo .tooltip-modal {\n          width: 440px;\n          height: 400px;\n          padding: 50px 20px 20px 20px;\n          border-radius: 5px;\n          box-shadow: 2px 2px 10px 2px #888888;\n          background: white;\n          position: absolute;\n          bottom: 110px;\n          color: #002b49;\n          overflow: scroll; }\n@media (max-width: 768px) {\n            #footer-block-newsletter .modal .modal-content .modal-footer .terminos_grupo .tooltip-modal {\n              width: auto;\n              height: 400px;\n              right: 20px;\n              left: 20px; } }\n#footer-block-newsletter .modal .modal-content .modal-footer .terminos_grupo .tooltip-modal::after {\n            content: 'AUTORIZACIÓN ONLINE';\n            text-align: center;\n            font-size: 12px;\n            width: 100%;\n            height: 30px;\n            background-color: #e5e9ec;\n            position: absolute;\n            top: 0;\n            left: 0;\n            padding-top: 5px; }\n#footer-block-newsletter .modal .modal-content .modal-footer .save-modal-button {\n        background: #a6cf24;\n        color: white;\n        text-align: center;\n        width: 99px;\n        height: 40px;\n        font-size: 17px; }\n@media (max-width: 768px) {\n          #footer-block-newsletter .modal .modal-content .modal-footer .save-modal-button {\n            width: 89px;\n            height: 30px;\n            font-size: 10px; } }\n#footer-block-newsletter .modal .modal-content .modal-footer .fa-info-circle {\n        margin: 0px 5px 8px 8px;\n        color: #93a4aa; }\n@media only screen and (max-width: 769px) {\n  #footer-block-newsletter {\n    margin: 30px 0 30px 0;\n    text-align: center;\n    border-right: 0px; } }\n@media only screen and (min-width: 769px) and (max-width: 1025px) {\n  #footer-block-newsletter .newsletter-info button {\n    width: 120px;\n    height: 25px;\n    margin: 3px 0 0 0; }\n    #footer-block-newsletter .newsletter-info button .fa-paper-plane {\n      padding-left: 30px; } }\n:host /deep/ .tooltip {\n  -webkit-transform: translate3d(8px, 130px, 0px) !important;\n          transform: translate3d(8px, 130px, 0px) !important; }\n:host /deep/ .tooltip-inner {\n  background: #e4e4e4;\n  max-width: 496px;\n  width: 480px;\n  min-height: 400px;\n  height: 400px;\n  overflow: scroll; }\n:host /deep/ .arrow {\n  display: none; }\n:host /deep/ .tooltip-modal h3 {\n  font-family: Open Sans Codensed;\n  font-size: 18px;\n  text-align: justify; }\n:host /deep/ .tooltip-modal h4 {\n  font-family: Open Sans Codensed;\n  font-size: 20px;\n  text-align: justify; }\n:host /deep/ .tooltip-modal p {\n  font-family: Open Sans Codensed;\n  font-size: 12px;\n  text-align: justify; }\n#popover-title,\n#popover-content {\n  display: none; }\n"
 
 /***/ }),
 
@@ -2329,8 +2337,27 @@ var FooterNewsletterComponent = /** @class */ (function () {
     function FooterNewsletterComponent(_cardService, newsletter) {
         this._cardService = _cardService;
         this.newsletter = newsletter;
+        this.footerData = {
+            title: '',
+            subtitle: '',
+            button: ''
+        };
     }
     FooterNewsletterComponent.prototype.ngOnInit = function () {
+        this.getPopoverService();
+        $(function () {
+            $('[data-toggle="popover"]').popover({
+                html: true,
+                title: function () {
+                    return $('#popover-title').html();
+                },
+                content: function () {
+                    return document.getElementById('popover-content').innerHTML;
+                }
+            }).click(function (e) {
+                e.preventDefault();
+            });
+        });
         this.getIndicatorsSliderItems();
         this.getModalCard();
     };
@@ -2399,18 +2426,12 @@ var FooterNewsletterComponent = /** @class */ (function () {
             }
         });
     };
-    FooterNewsletterComponent.prototype.getNewsLetterTooltip = function () {
+    FooterNewsletterComponent.prototype.getPopoverService = function () {
         var _this = this;
-        return this.newsletter.getCustomContentBasicPage('c00ea48d-1ce3-4bba-b65e-d57daf71cf4a').subscribe(function (items) {
-            _this.titleTermsTooltip = items.title;
-            _this.bodyTermsTooltip = items.body;
+        this.newsletter.getCustomContentBasicPage('c00ea48d-1ce3-4bba-b65e-d57daf71cf4a').subscribe(function (params) {
+            _this.titleTermsTooltip = params.title;
+            _this.bodyTermsTooltip = params.body;
         });
-    };
-    FooterNewsletterComponent.prototype.showModalOnHover = function () {
-        this.showTooltip = true;
-    };
-    FooterNewsletterComponent.prototype.hideModalWithoutHover = function () {
-        this.showTooltip = false;
     };
     FooterNewsletterComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -2838,7 +2859,7 @@ var PorqueBitsComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<section id=\"title-gallery\">\n    <div class=\"title\">\n        <h1> {{ title }} </h1>\n    </div>\n</section>\n<section id=\"gallery-images\">\n    <div class=\"tz-gallery\">\n        <div class=\"row\">\n            <div class=\"col-sm-6 col-md-4\" *ngFor=\"let ps of servicesProduct\">\n                <div class=\"thumbnai\">\n                    <div class=\"background\">\n                        <img class=\"images lightbox\" [src]=\"ps.short_image[0].url\" alt=\"{{ps.short_image[0].alt}}\">\n                    </div>\n                    <div class=\"box-title\">\n                        <span class=\"titlepr\">{{ ps.label }}</span>\n                        <div class=\"box-text\">\n                            <span class=\"text\" [innerHTML]=\"ps.description\"></span>\n                        </div>\n                    </div>\n                    <div class=\"box-info\">\n                        <div class=\"box-botton\">\n                            <a class=\"botton_products\" [routerLink]=\"[ps.type, ps.nid]\">Ver Mas</a>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</section>\n<section id=\"bottons-services\">\n    <div class=\"totalbottons\">\n        <div class=\"bottons\">\n            <a class=\"bottonleft\" routerLink=\"buttons[0].link\">{{ buttons[0].label }}</a>\n            <a class=\"bottonrigth\" routerLink=\"buttons[1].link\">{{ buttons[1].label }} </a>\n        </div>\n    </div>\n</section>"
+module.exports = "<section id=\"title-gallery\">\n    <div class=\"title\">\n        <h1> {{ title }} </h1>\n    </div>\n</section>\n<section id=\"gallery-images\">\n    <div class=\"tz-gallery\">\n        <div class=\"row\">\n            <div class=\"col-sm-6 col-md-4\" *ngFor=\"let ps of servicesProduct\">\n                <div class=\"thumbnai\">\n                    <div class=\"background\">\n                        <img class=\"images lightbox\" [src]=\"ps.short_image[0].url\" alt=\"{{ps.short_image[0].alt}}\">\n                    </div>\n                    <div class=\"box-title\">\n                        <span class=\"titlepr\">{{ ps.label }}</span>\n                        <div class=\"box-text\">\n                            <span class=\"text\" [innerHTML]=\"ps.description\"></span>\n                        </div>\n                    </div>\n                    <div class=\"box-info\">\n                        <div class=\"box-botton\">\n                            <a class=\"botton_products\" [routerLink]=\"[ps.type, ps.nid]\">Ver Mas</a>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</section>\n<section id=\"bottons-services\">\n    <div class=\"totalbottons\">\n        <div class=\"bottons\">\n            <a class=\"bottonleft\" [routerLink]=\"buttonL.link\">{{ buttonL.label }}</a>\n            <a class=\"bottonrigth\" [routerLink]=\"buttonR.link\">{{ buttonR.label }} </a>\n        </div>\n    </div>\n</section>"
 
 /***/ }),
 
@@ -2880,7 +2901,14 @@ var ProductServicesComponent = /** @class */ (function () {
     function ProductServicesComponent(_cardService) {
         this._cardService = _cardService;
         this.servicesProduct = [];
-        this.buttons = [];
+        this.buttonL = {
+            link: 'string',
+            label: ''
+        };
+        this.buttonR = {
+            link: '',
+            label: ''
+        };
     }
     ProductServicesComponent.prototype.ngOnInit = function () {
         this.getProductsAndServicesItems();
@@ -2896,10 +2924,8 @@ var ProductServicesComponent = /** @class */ (function () {
                     _this.servicesProduct[index].nid = _this.servicesProduct[index].nid.replace('_', '-');
                 }
             }
-            for (var _i = 0, _a = items.body; _i < _a.length; _i++) {
-                var link = _a[_i];
-                _this.buttons.push(link.data);
-            }
+            _this.buttonL = items.body[0].data;
+            _this.buttonR = items.body[1].data;
         });
     };
     ProductServicesComponent = __decorate([
@@ -3341,7 +3367,7 @@ var TabsComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<section id=\"kw-title\">\n  <h2 [id]=\"datosMenu.id\">{{ title }}</h2>\n  <p [innerHTML]=\"subtitle\"></p>\n</section>\n\n<div class=\"contenedor\">\n  <ngx-carousel [inputs]=\"carocarouselTile\" (carouselLoad)=\"carouselTileLoad($event)\" *ngIf=\"CarouselControlArray\">\n    <ngx-tile NgxCarouselItem *ngFor=\"let main of CarouselControlArray; let i = index\">\n      <a href=\"\" class=\"url-link\">\n        <div class=\"container-img\">\n          <img class=\"d-block img-fluid img-float mx-auto\" [src]=\"main.field_imagen.url\" [alt]=\"main.field_imagen.alt\" />\n        </div>\n        <div class=\"info\">\n          <h4 class=\"name-cargo\">{{main.field_cargo}}</h4>\n          <h3 class=\"main-title\">{{main.title}}</h3>\n          <h5 class=\"correo\">{{main.field_correo_electronico}}</h5>\n          <span class=\"in\">in</span>\n        </div>\n      </a>\n    </ngx-tile>\n    <button NgxCarouselPrev class='leftRs'>&lt;</button>\n    <button NgxCarouselNext class='rightRs'>&gt;</button>\n  </ngx-carousel>\n</div>"
+module.exports = "<section id=\"kw-title\">\n  <h2 [id]=\"datosMenu.id\">{{ title }}</h2>\n  <p [innerHTML]=\"subtitle\"></p>\n</section>\n\n<div class=\"contenedor\">\n  <ngx-carousel [inputs]=\"carocarouselTile\" (carouselLoad)=\"carouselTileLoad($event)\" *ngIf=\"CarouselControlArray\">\n    <ngx-tile NgxCarouselItem *ngFor=\"let main of CarouselControlArray; let i = index\">\n      <a href=\"\" class=\"url-link\">\n        <div class=\"container-img\">\n          <img class=\"d-block img-fluid img-float mx-auto\" [src]=\"main.field_imagen?.url\" [alt]=\"main.field_imagen?.alt\" />\n        </div>\n        <div class=\"info\">\n          <h4 class=\"name-cargo\">{{main?.field_cargo}}</h4>\n          <h3 class=\"main-title\">{{main?.title}}</h3>\n          <h5 class=\"correo\">{{main?.field_correo_electronico}}</h5>\n          <span class=\"in\">in</span>\n        </div>\n      </a>\n    </ngx-tile>\n    <button NgxCarouselPrev class='leftRs'>&lt;</button>\n    <button NgxCarouselNext class='rightRs'>&gt;</button>\n  </ngx-carousel>\n</div>"
 
 /***/ }),
 
@@ -3352,7 +3378,7 @@ module.exports = "<section id=\"kw-title\">\n  <h2 [id]=\"datosMenu.id\">{{ titl
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "#kw-title h2 {\n  margin-left: 3%;\n  font-size: 40px;\n  color: #002b49;\n  text-align: center;\n  margin-top: 64px; }\n  @media (max-width: 667px) {\n    #kw-title h2 {\n      font-size: 28px;\n      margin-left: 0; } }\n  #kw-title p {\n  color: #002b49cc;\n  font-family: Open Sans Codensed;\n  margin-right: 180px;\n  margin-left: 200px;\n  margin-top: 10px;\n  font-size: 20px;\n  text-align: center; }\n  @media (min-width: 1025px) {\n    #kw-title p {\n      margin-right: 0;\n      margin-left: 0; } }\n  @media (max-width: 667px) {\n    #kw-title p {\n      margin-right: 20px;\n      margin-left: 0; } }\n  .contenedor {\n  width: 80%;\n  margin: 0 auto; }\n  .item {\n  width: 405%; }\n  @media (min-width: 668px) and (max-width: 1024px) {\n    .item {\n      width: 200%; } }\n  @media (min-width: 1025px) {\n    .item {\n      width: 100%; } }\n  .url-link {\n  width: 100%;\n  padding-left: 4%;\n  padding-right: 4%;\n  margin-top: 1%;\n  text-decoration: none; }\n  @media (min-width: 1025px) {\n    .url-link {\n      padding-left: 5%;\n      padding-right: 5%; } }\n  .url-link .container-img {\n    height: 123px;\n    position: relative; }\n  @media (min-width: 668px) and (max-width: 1024px) {\n      .url-link .container-img {\n        padding-left: 0%;\n        padding-right: 0%; } }\n  @media (min-width: 1025px) {\n      .url-link .container-img {\n        padding-left: 10%;\n        padding-right: 10%; } }\n  .url-link .container-img .img-float {\n      position: absolute;\n      bottom: 0;\n      left: 0;\n      right: 0;\n      border-radius: 50%; }\n  .url-link .info {\n    width: 100%;\n    color: #002b49;\n    text-align: center; }\n  .url-link .info::before {\n      content: '';\n      background: linear-gradient(-90deg, rgba(255, 255, 255, 0), #b8d950, rgba(255, 255, 255, 0));\n      height: 1px;\n      right: 0%;\n      left: 5%;\n      position: absolute; }\n  @media (min-width: 668px) and (max-width: 1024px) {\n        .url-link .info::before {\n          display: none; } }\n  @media (min-width: 1025px) {\n        .url-link .info::before {\n          display: none; } }\n  @media (min-width: 668px) and (max-width: 1024px) {\n      .url-link .info {\n        height: 250px; } }\n  .url-link .info .line {\n      visibility: hidden; }\n  @media (min-width: 668px) and (max-width: 1024px) {\n        .url-link .info .line {\n          visibility: visible;\n          background: linear-gradient(-90deg, rgba(255, 255, 255, 0), #b8d950, rgba(255, 255, 255, 0));\n          height: 1px;\n          width: 83%;\n          position: relative;\n          top: 17px; } }\n  @media (min-width: 1025px) {\n        .url-link .info .line {\n          visibility: visible;\n          background: linear-gradient(-90deg, rgba(255, 255, 255, 0), #b8d950, rgba(255, 255, 255, 0));\n          height: 1px;\n          width: 83%;\n          position: relative;\n          top: 17px; } }\n  .url-link .info .name-cargo {\n      padding-top: 14%;\n      font-size: 20px;\n      font-family: 'Open Sans';\n      font-weight: 300; }\n  @media (min-width: 1025px) {\n        .url-link .info .name-cargo {\n          padding-top: 14%; } }\n  .url-link .info .main-title {\n      margin-top: 4%;\n      font-size: 20px;\n      font-family: 'Open Sans Codensed';\n      font-weight: 300; }\n  .url-link .info .correo {\n      width: 100%;\n      margin-top: 5.2%;\n      padding-left: 27%;\n      padding-right: 26%;\n      font-size: 14px;\n      font-family: 'Open Sans';\n      font-weight: 300; }\n  @media (min-width: 1025px) {\n        .url-link .info .correo {\n          padding-left: 12%;\n          padding-right: 12%;\n          width: 100%; } }\n  @media (max-width: 667px) {\n        .url-link .info .correo {\n          padding: 0; } }\n  .url-link .info .in {\n      font-size: 14px;\n      margin-top: 6%;\n      font-family: 'Open Sans';\n      font-weight: 900;\n      color: #a6cf24; }\n  @media (min-width: 1025px) {\n        .url-link .info .in {\n          margin-top: 2%; } }\n  #main-title {\n  color: #002b49;\n  text-align: center;\n  margin-top: 64px; }\n  @media (min-width: 1025px) {\n    #main-title {\n      margin-top: 80px; } }\n  @media (min-width: 668px) and (max-width: 1024px) {\n    #main-title {\n      margin-top: 80px; } }\n  #main-title h2 {\n    margin-left: 3%;\n    font-size: 30px;\n    -webkit-transform: scaleY(1.2);\n            transform: scaleY(1.2); }\n  @media (min-width: 1025px) {\n      #main-title h2 {\n        margin-left: 0;\n        font-size: 40px;\n        width: 100%; } }\n  @media (min-width: 668px) and (max-width: 1024px) {\n      #main-title h2 {\n        margin-left: 0;\n        font-size: 40px;\n        width: 100%; } }\n  #titles {\n  color: #002b49;\n  text-align: center;\n  margin-top: 60px; }\n  @media (min-width: 1025px) {\n    #titles {\n      margin-top: 80px; } }\n  @media (min-width: 668px) and (max-width: 1024px) {\n    #titles {\n      margin-top: 80px; } }\n  #titles h3 {\n    margin-left: 3%;\n    font-size: 16px; }\n  @media (min-width: 1025px) {\n      #titles h3 {\n        margin-left: 0;\n        font-size: 20px;\n        width: 100%; } }\n  @media (min-width: 668px) and (max-width: 1024px) {\n      #titles h3 {\n        margin-left: 0;\n        font-size: 20px;\n        width: 100%; } }\n  h1 {\n  min-height: 200px;\n  background-color: #ccc;\n  text-align: center;\n  line-height: 200px; }\n  .leftRs {\n  position: absolute;\n  margin: auto;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  border: none;\n  background: transparent;\n  background-image: url(/assets/icon/left-arrow.svg);\n  background-size: 37px;\n  height: 0;\n  width: 28px;\n  overflow: hidden;\n  padding-top: 37px;\n  cursor: pointer; }\n  .rightRs {\n  position: absolute;\n  margin: auto;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  border: none;\n  background: transparent;\n  background-image: url(/assets/icon/right-arrow.svg);\n  background-size: 37px;\n  height: 0;\n  width: 28px;\n  overflow: hidden;\n  padding-top: 37px;\n  cursor: pointer; }\n  .rightRs:focus,\n.leftRs:focus {\n  outline: none; }\n  :host ::ng-deep .tile {\n  box-shadow: none !important; }\n"
+module.exports = "#kw-title h2 {\n  margin-left: 3%;\n  font-size: 40px;\n  color: #002b49;\n  text-align: center;\n  margin-top: 40px; }\n  @media (max-width: 667px) {\n    #kw-title h2 {\n      font-size: 28px;\n      margin-left: 0; } }\n  #kw-title p {\n  color: #002b49cc;\n  font-family: Open Sans Codensed;\n  margin-right: 180px;\n  margin-left: 200px;\n  margin-top: 10px;\n  font-size: 20px;\n  text-align: center; }\n  @media (min-width: 1025px) {\n    #kw-title p {\n      margin-right: 0;\n      margin-left: 0; } }\n  @media (max-width: 667px) {\n    #kw-title p {\n      margin-right: 20px;\n      margin-left: 0; } }\n  .contenedor {\n  width: 80%;\n  margin: 0 auto; }\n  .item {\n  width: 405%; }\n  @media (min-width: 668px) and (max-width: 1024px) {\n    .item {\n      width: 200%; } }\n  @media (min-width: 1025px) {\n    .item {\n      width: 100%; } }\n  .url-link {\n  width: 100%;\n  padding-left: 4%;\n  padding-right: 4%;\n  margin-top: 1%;\n  text-decoration: none; }\n  @media (min-width: 1025px) {\n    .url-link {\n      padding-left: 5%;\n      padding-right: 5%; } }\n  .url-link .container-img {\n    height: 123px;\n    position: relative; }\n  @media (min-width: 668px) and (max-width: 1024px) {\n      .url-link .container-img {\n        padding-left: 0%;\n        padding-right: 0%; } }\n  @media (min-width: 1025px) {\n      .url-link .container-img {\n        padding-left: 10%;\n        padding-right: 10%; } }\n  .url-link .container-img .img-float {\n      position: absolute;\n      bottom: 0;\n      left: 0;\n      right: 0;\n      border-radius: 50%; }\n  .url-link .info {\n    width: 100%;\n    color: #002b49;\n    text-align: center; }\n  .url-link .info::before {\n      content: '';\n      background: linear-gradient(-90deg, rgba(255, 255, 255, 0), #b8d950, rgba(255, 255, 255, 0));\n      height: 1px;\n      right: 0%;\n      left: 5%;\n      position: absolute; }\n  @media (min-width: 668px) and (max-width: 1024px) {\n        .url-link .info::before {\n          display: none; } }\n  @media (min-width: 1025px) {\n        .url-link .info::before {\n          display: none; } }\n  @media (min-width: 668px) and (max-width: 1024px) {\n      .url-link .info {\n        height: 250px; } }\n  .url-link .info .line {\n      visibility: hidden; }\n  @media (min-width: 668px) and (max-width: 1024px) {\n        .url-link .info .line {\n          visibility: visible;\n          background: linear-gradient(-90deg, rgba(255, 255, 255, 0), #b8d950, rgba(255, 255, 255, 0));\n          height: 1px;\n          width: 83%;\n          position: relative;\n          top: 17px; } }\n  @media (min-width: 1025px) {\n        .url-link .info .line {\n          visibility: visible;\n          background: linear-gradient(-90deg, rgba(255, 255, 255, 0), #b8d950, rgba(255, 255, 255, 0));\n          height: 1px;\n          width: 83%;\n          position: relative;\n          top: 17px; } }\n  .url-link .info .name-cargo {\n      padding-top: 14%;\n      font-size: 20px;\n      font-family: 'Open Sans';\n      font-weight: 300; }\n  @media (min-width: 1025px) {\n        .url-link .info .name-cargo {\n          padding-top: 14%; } }\n  .url-link .info .main-title {\n      margin-top: 4%;\n      font-size: 20px;\n      font-family: 'Open Sans Codensed';\n      font-weight: 300; }\n  .url-link .info .correo {\n      width: 100%;\n      margin-top: 5.2%;\n      padding-left: 27%;\n      padding-right: 26%;\n      font-size: 14px;\n      font-family: 'Open Sans';\n      font-weight: 300; }\n  @media (min-width: 1025px) {\n        .url-link .info .correo {\n          padding-left: 12%;\n          padding-right: 12%;\n          width: 100%; } }\n  @media (max-width: 667px) {\n        .url-link .info .correo {\n          padding: 0; } }\n  .url-link .info .in {\n      font-size: 14px;\n      margin-top: 6%;\n      font-family: 'Open Sans';\n      font-weight: 900;\n      color: #a6cf24; }\n  @media (min-width: 1025px) {\n        .url-link .info .in {\n          margin-top: 2%; } }\n  #main-title {\n  color: #002b49;\n  text-align: center;\n  margin-top: 64px; }\n  @media (min-width: 1025px) {\n    #main-title {\n      margin-top: 80px; } }\n  @media (min-width: 668px) and (max-width: 1024px) {\n    #main-title {\n      margin-top: 80px; } }\n  #main-title h2 {\n    margin-left: 3%;\n    font-size: 30px;\n    -webkit-transform: scaleY(1.2);\n            transform: scaleY(1.2); }\n  @media (min-width: 1025px) {\n      #main-title h2 {\n        margin-left: 0;\n        font-size: 40px;\n        width: 100%; } }\n  @media (min-width: 668px) and (max-width: 1024px) {\n      #main-title h2 {\n        margin-left: 0;\n        font-size: 40px;\n        width: 100%; } }\n  #titles {\n  color: #002b49;\n  text-align: center;\n  margin-top: 60px; }\n  @media (min-width: 1025px) {\n    #titles {\n      margin-top: 80px; } }\n  @media (min-width: 668px) and (max-width: 1024px) {\n    #titles {\n      margin-top: 80px; } }\n  #titles h3 {\n    margin-left: 3%;\n    font-size: 16px; }\n  @media (min-width: 1025px) {\n      #titles h3 {\n        margin-left: 0;\n        font-size: 20px;\n        width: 100%; } }\n  @media (min-width: 668px) and (max-width: 1024px) {\n      #titles h3 {\n        margin-left: 0;\n        font-size: 20px;\n        width: 100%; } }\n  h1 {\n  min-height: 200px;\n  background-color: #ccc;\n  text-align: center;\n  line-height: 200px; }\n  .leftRs {\n  position: absolute;\n  margin: auto;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  border: none;\n  background: transparent;\n  background-image: url(/assets/icon/left-arrow.svg);\n  background-size: 37px;\n  height: 0;\n  width: 28px;\n  overflow: hidden;\n  padding-top: 37px;\n  cursor: pointer; }\n  .rightRs {\n  position: absolute;\n  margin: auto;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  border: none;\n  background: transparent;\n  background-image: url(/assets/icon/right-arrow.svg);\n  background-size: 37px;\n  height: 0;\n  width: 28px;\n  overflow: hidden;\n  padding-top: 37px;\n  cursor: pointer; }\n  .rightRs:focus,\n.leftRs:focus {\n  outline: none; }\n  :host ::ng-deep .tile {\n  box-shadow: none !important; }\n"
 
 /***/ }),
 
@@ -3448,6 +3474,100 @@ var TeamComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [src_app_services_cards_v1_card_services__WEBPACK_IMPORTED_MODULE_1__["CustomCardService"]])
     ], TeamComponent);
     return TeamComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/cards/components/tecnologies-projectservice/tecnologies-projectservice.component.html":
+/*!*******************************************************************************************************!*\
+  !*** ./src/app/cards/components/tecnologies-projectservice/tecnologies-projectservice.component.html ***!
+  \*******************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<section id=\"title\">\n  <h2 [id]=\"datosMenu.id\">{{ title }}</h2>\n  <p [innerHTML]=\"subtitle\"></p>\n</section>\n<section class=\"content\"> \n  <div class=\"content-img\" style=\"display: flex; flex-wrap: wrap; justify-content:center\">    \n      <div class=\"img-fluid\" [ngStyle]=\"{'background-image':'url(' + data.field_tech_color_image?.url + ')'}\"\n      *ngFor=\"let data of CarouselControlArray; let i = index\">\n      </div>    \n  </div>\n</section>"
+
+/***/ }),
+
+/***/ "./src/app/cards/components/tecnologies-projectservice/tecnologies-projectservice.component.scss":
+/*!*******************************************************************************************************!*\
+  !*** ./src/app/cards/components/tecnologies-projectservice/tecnologies-projectservice.component.scss ***!
+  \*******************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "#title h2 {\n  margin-left: 3%;\n  font-size: 40px;\n  color: #002b49;\n  text-align: center;\n  margin-top: 40px; }\n  @media (max-width: 667px) {\n    #title h2 {\n      font-size: 28px;\n      margin-left: 0; } }\n  #title p {\n  color: #002b49cc;\n  font-family: Open Sans Codensed;\n  margin-right: 180px;\n  margin-left: 200px;\n  margin-top: 10px;\n  font-size: 20px;\n  text-align: center; }\n  @media (min-width: 1025px) {\n    #title p {\n      margin-right: 0;\n      margin-left: 0; } }\n  @media (max-width: 667px) {\n    #title p {\n      margin-right: 20px;\n      margin-left: 0; } }\n  .content-img {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: center; }\n  .content-img .img-fluid {\n    width: 200px;\n    height: 140px;\n    background-repeat: no-repeat;\n    background-position: center;\n    background-size: contain;\n    margin: 10px 20px; }\n  @media (max-width: 500px) {\n      .content-img .img-fluid {\n        width: 100px;\n        height: 90px; } }\n"
+
+/***/ }),
+
+/***/ "./src/app/cards/components/tecnologies-projectservice/tecnologies-projectservice.component.ts":
+/*!*****************************************************************************************************!*\
+  !*** ./src/app/cards/components/tecnologies-projectservice/tecnologies-projectservice.component.ts ***!
+  \*****************************************************************************************************/
+/*! exports provided: TecnologiesProjectserviceComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TecnologiesProjectserviceComponent", function() { return TecnologiesProjectserviceComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_app_services_cards_v1_card_services__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/services/cards/v1-card.services */ "./src/app/services/cards/v1-card.services.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var TecnologiesProjectserviceComponent = /** @class */ (function () {
+    function TecnologiesProjectserviceComponent(https) {
+        this.https = https;
+        this.propagar = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+        this.CarouselControlArray = [];
+    }
+    TecnologiesProjectserviceComponent.prototype.ngOnInit = function () {
+        while (this.type.indexOf('-') > -1) {
+            this.type = this.type.replace('-', '_');
+        }
+        this.datosMenu = {
+            label: 'TECNOLOGIA',
+            id: 'a11',
+            url: '/imedical'
+        };
+        this.propagar.emit(this.datosMenu);
+        this.getTecnoInformationService();
+    };
+    TecnologiesProjectserviceComponent.prototype.getTecnoInformationService = function () {
+        var _this = this;
+        this.https.getCustomCardInformationType('expertsinimedicalcard', this.type).subscribe(function (items) {
+            _this.title = items.header[0].data.title;
+            _this.subtitle = items.header[1].data.sub_title;
+            _this.CarouselControlArray = items.data;
+        });
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"])(),
+        __metadata("design:type", Object)
+    ], TecnologiesProjectserviceComponent.prototype, "propagar", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", String)
+    ], TecnologiesProjectserviceComponent.prototype, "type", void 0);
+    TecnologiesProjectserviceComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-tecnologies-projectservice',
+            template: __webpack_require__(/*! ./tecnologies-projectservice.component.html */ "./src/app/cards/components/tecnologies-projectservice/tecnologies-projectservice.component.html"),
+            styles: [__webpack_require__(/*! ./tecnologies-projectservice.component.scss */ "./src/app/cards/components/tecnologies-projectservice/tecnologies-projectservice.component.scss")]
+        }),
+        __metadata("design:paramtypes", [src_app_services_cards_v1_card_services__WEBPACK_IMPORTED_MODULE_1__["CustomCardService"]])
+    ], TecnologiesProjectserviceComponent);
+    return TecnologiesProjectserviceComponent;
 }());
 
 
@@ -3563,6 +3683,7 @@ var TecnologiesComponent = /** @class */ (function () {
             _this.background = items.body[0].data.back_movil[0].url;
             _this.arrayLogos = items.data;
             _this.customArrayImages(_this.arrayLogos);
+            console.log(_this.arrayLogosCustom);
             /*this.createSlick();*/
         });
     };
@@ -3600,6 +3721,93 @@ var TecnologiesComponent = /** @class */ (function () {
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"]])
     ], TecnologiesComponent);
     return TecnologiesComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/cards/components/testimonies/testimonies.component.html":
+/*!*************************************************************************!*\
+  !*** ./src/app/cards/components/testimonies/testimonies.component.html ***!
+  \*************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<section id=\"testimonies-main-title\">\n    <h1 [id]=\"datosMenu.id\" class=\"testimonies-general-title\" >{{ testimoniesTitle }}</h1>\n    <p class=\"testimonies-general-subtitle\" >{{ testimoniesSubTitle }}</p>\n</section>\n<div id=\"testimonies-carousel\">\n  <ngb-carousel *ngIf=\"testimoniesData\">\n      <ng-template ngbSlide *ngFor=\"let item of testimoniesData\">\n        <div class=\"container\"></div>\n        <div class=\"carousel-caption\">\n          <p class=\"testimonies-text testimonies-description\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro, repellat quia ipsam rerum eius modi iure tempore minus et in nihil nemo voluptatibus hic, asperiores ullam, reprehenderit culpa sapiente inventore!</p>\n          <h3 class=\"testimonies-text testimonies-name\">{{ item.title }}</h3>\n          <h3 class=\"testimonies-text testimonies-company\">COMPANY NAME</h3>\n        </div>\n      </ng-template>\n  </ngb-carousel>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/cards/components/testimonies/testimonies.component.scss":
+/*!*************************************************************************!*\
+  !*** ./src/app/cards/components/testimonies/testimonies.component.scss ***!
+  \*************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "#testimonies-main-title {\n  text-align: center;\n  width: 100%;\n  padding: 50px 0 0px 0;\n  color: #002b49; }\n  #testimonies-main-title .testimonies-general-title {\n    font-family: Open Sans Codensed Light;\n    font-size: 40px; }\n  #testimonies-main-title .testimonies-general-subtitle {\n    font-family: Open Sans Codensed Light;\n    font-size: 20px; }\n  #testimonies-carousel .container {\n  width: 100%;\n  height: 200px;\n  background-color: white; }\n  #testimonies-carousel .carousel-caption {\n  padding-top: 0;\n  padding-bottom: 50px; }\n  #testimonies-carousel .carousel-caption .testimonies-text {\n    font-family: Open Sans Light;\n    color: #002b49; }\n  #testimonies-carousel .carousel-caption .testimonies-description {\n    font-size: 16px; }\n  #testimonies-carousel .carousel-caption .testimonies-name {\n    font-size: 17px; }\n  #testimonies-carousel .carousel-caption .testimonies-company {\n    font-family: Open Sans Codensed Light;\n    font-size: 20px; }\n  :host /deep/ .carousel-control-next,\n:host /deep/ .carousel-control-prev {\n  visibility: hidden; }\n  :host /deep/ .carousel-indicators li {\n  width: 15px;\n  height: 15px;\n  margin: 0 5px;\n  border-radius: 50%;\n  background-color: #ededed; }\n  :host /deep/ .carousel-indicators li.active {\n    background-color: #a6cf24; }\n"
+
+/***/ }),
+
+/***/ "./src/app/cards/components/testimonies/testimonies.component.ts":
+/*!***********************************************************************!*\
+  !*** ./src/app/cards/components/testimonies/testimonies.component.ts ***!
+  \***********************************************************************/
+/*! exports provided: TestimoniesComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TestimoniesComponent", function() { return TestimoniesComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_cards_v1_card_services__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../../services/cards/v1-card.services */ "./src/app/services/cards/v1-card.services.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var TestimoniesComponent = /** @class */ (function () {
+    function TestimoniesComponent(testimonies) {
+        this.testimonies = testimonies;
+        this.propagar = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+    }
+    TestimoniesComponent.prototype.ngOnInit = function () {
+        this.datosMenu = {
+            label: 'TESTIMONIES',
+            id: 'a12',
+            url: '/imedical'
+        };
+        this.propagar.emit(this.datosMenu);
+        this.getTestimoniesInfo();
+    };
+    TestimoniesComponent.prototype.getTestimoniesInfo = function () {
+        var _this = this;
+        return this.testimonies.getCustomCardInformation('testimoniesbitsamericas').subscribe(function (items) {
+            console.log(items);
+            _this.testimoniesTitle = items.header[0].data.title;
+            _this.testimoniesSubTitle = items.header[1].data.sub_title;
+            _this.testimoniesData = items.data;
+        });
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"])(),
+        __metadata("design:type", Object)
+    ], TestimoniesComponent.prototype, "propagar", void 0);
+    TestimoniesComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-testimonies',
+            template: __webpack_require__(/*! ./testimonies.component.html */ "./src/app/cards/components/testimonies/testimonies.component.html"),
+            styles: [__webpack_require__(/*! ./testimonies.component.scss */ "./src/app/cards/components/testimonies/testimonies.component.scss")]
+        }),
+        __metadata("design:paramtypes", [_services_cards_v1_card_services__WEBPACK_IMPORTED_MODULE_1__["CustomCardService"]])
+    ], TestimoniesComponent);
+    return TestimoniesComponent;
 }());
 
 
@@ -5279,7 +5487,7 @@ var PoliticsComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-banner [titulo]=\"type\" imgFondo=\"/assets/images/imedicalweb.png\"></app-banner>\n<div class=\"my-5\">\n    <div class=\"container\">\n        <app-client-project-imedical (propagar)=\"onMenu($event)\"></app-client-project-imedical>\n    </div>\n    <hr>\n    <app-menu-template [menuList]=\"listMenu\"></app-menu-template>\n    <app-slider></app-slider>\n    <div class=\"container\">\n        <app-separator [iconCustom]=\"'icon-historymedical'\"></app-separator>\n        <div class=\"row\">\n            <div class=\"col-md-12 mb-5\">\n                <h1 class=\"condensed text-center\">{{ tituloModulos }}</h1>\n                <p class=\"text-center\" [innerHTML]=\"descripcionModulos\"></p>\n            </div>\n            <div class=\"col-md-4\" *ngFor=\"let blurbItem of blurbArray\">\n                <app-blurb [blurb]=\"blurbItem\" (propagar)=\"onMenu($event)\" [type]=\"type\"></app-blurb>\n            </div>\n        </div>\n        <app-separator [iconCustom]=\"'icon-historymedical'\"></app-separator>\n        <app-card-img-text [orientacion]=\"'IT'\" (propagar)=\"onMenu($event)\" [type]=\"type\"></app-card-img-text>\n        <app-separator [iconCustom]=\"'icon-historymedical'\"></app-separator>\n        <app-achievements (propagar)=\"onMenu($event)\" [type]=\"type\"></app-achievements>\n        <app-separator [iconCustom]=\"'icon-historymedical'\"></app-separator>\n        <app-tecnologies (propagar)=\"onMenu($event)\"></app-tecnologies>\n        <app-separator [iconCustom]=\"'icon-historymedical'\"></app-separator>\n        <app-team (propagar)=\"onMenu($event)\" [type]=\"type\"></app-team>\n        <app-separator [iconCustom]=\"'icon-historymedical'\"></app-separator>\n        <app-card-img-text [orientacion]=\"'TI'\" (propagar)=\"onMenu($event)\" [type]=\"type\"></app-card-img-text>\n        <app-separator [iconCustom]=\"'icon-historymedical'\"></app-separator>\n        <app-client-proserv (propagar)=\"onMenu($event)\" [type]=\"type\"></app-client-proserv>\n        <app-separator [iconCustom]=\"'icon-historymedical'\"></app-separator>\n        <app-video-information [link]=\"'www.eliseupnorcum.cedu.co'\" (propagar)=\"onMenu($event)\" [type]=\"type\"></app-video-information>\n        <app-separator [iconCustom]=\"'icon-historymedical'\"></app-separator>\n    </div>\n    <app-workwithus (propagar)=\"onMenu($event)\" [type]=\"type\"></app-workwithus>\n</div>"
+module.exports = "<app-banner [titulo]=\"type\" imgFondo=\"/assets/images/imedicalweb.png\"></app-banner>\n<div class=\"my-5\">\n    <div class=\"container\">\n        <app-client-project-imedical (propagar)=\"onMenu($event)\"></app-client-project-imedical>\n    </div>\n    <hr>\n    <app-menu-template [menuList]=\"listMenu\"></app-menu-template>\n    <app-slider></app-slider>\n    <div class=\"container\">\n        <app-separator [iconCustom]=\"'icon-historymedical'\"></app-separator>\n        <div class=\"row\">\n            <div class=\"col-md-12 mb-5\">\n                <h1 class=\"condensed text-center\">{{ tituloModulos }}</h1>\n                <p class=\"text-center\" [innerHTML]=\"descripcionModulos\"></p>\n            </div>\n            <div class=\"col-md-4\" *ngFor=\"let blurbItem of blurbArray\">\n                <app-blurb [blurb]=\"blurbItem\" (propagar)=\"onMenu($event)\" [type]=\"type\"></app-blurb>\n            </div>\n        </div>\n        <app-separator [iconCustom]=\"'icon-historymedical'\"></app-separator>\n        <app-card-img-text [orientacion]=\"'IT'\" (propagar)=\"onMenu($event)\" [type]=\"type\"></app-card-img-text>\n        <app-separator [iconCustom]=\"'icon-historymedical'\"></app-separator>\n        <app-tecnologies-projectservice (propagar)=\"onMenu($event)\" [type]=\"type\"></app-tecnologies-projectservice>\n        <app-separator [iconCustom]=\"'icon-historymedical'\"></app-separator>\n        <app-achievements (propagar)=\"onMenu($event)\" [type]=\"type\"></app-achievements>\n        <app-separator [iconCustom]=\"'icon-historymedical'\"></app-separator>\n        <app-testimonies (propagar)=\"onMenu($event)\"></app-testimonies>\n        <app-separator [iconCustom]=\"'icon-historymedical'\"></app-separator>\n        <!-- <app-tecnologies (propagar)=\"onMenu($event)\"></app-tecnologies>\n        <app-separator [iconCustom]=\"'icon-historymedical'\"></app-separator> -->\n        <app-team (propagar)=\"onMenu($event)\" [type]=\"type\"></app-team>\n        <app-separator [iconCustom]=\"'icon-historymedical'\"></app-separator>\n        <app-card-img-text [orientacion]=\"'TI'\" (propagar)=\"onMenu($event)\" [type]=\"type\"></app-card-img-text>\n        <app-separator [iconCustom]=\"'icon-historymedical'\"></app-separator>\n        <app-client-proserv (propagar)=\"onMenu($event)\" [type]=\"type\"></app-client-proserv>\n        <app-separator [iconCustom]=\"'icon-historymedical'\"></app-separator>\n        <app-video-information [link]=\"'www.eliseupnorcum.cedu.co'\" (propagar)=\"onMenu($event)\" [type]=\"type\"></app-video-information>\n        <app-separator [iconCustom]=\"'icon-historymedical'\"></app-separator>\n    </div>\n    <app-workwithus (propagar)=\"onMenu($event)\" [type]=\"type\"></app-workwithus>\n</div>"
 
 /***/ }),
 
