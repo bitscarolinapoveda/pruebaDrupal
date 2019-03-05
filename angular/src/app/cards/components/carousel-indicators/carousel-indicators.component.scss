@@ -87,11 +87,17 @@
     bottom: 150px;
     justify-content: center;
     margin: 0 0 0 0;
+    @media (max-height:484px) {
+      bottom: 110px;
+    }
   } 
   #carousel-container {
     .carousel-caption {
       text-align: center;
-      top: 32%;
+      top: 35%;
+      @media (max-width: 400px) {
+        top: 25%;
+      }
       padding: 0 50px 0 50px;
   
       .carousel-title {

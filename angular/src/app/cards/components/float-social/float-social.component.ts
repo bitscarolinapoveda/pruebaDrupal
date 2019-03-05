@@ -31,12 +31,6 @@ export class FloatSocialComponent implements OnInit {
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
-    // const allDocument = document.documentElement;
-    // if (allDocument.clientHeight + Math.round(allDocument.scrollTop) === allDocument.scrollHeight) {
-    //   this.hide = false;
-    // } else {
-    //   this.hide = true;
-    // }
     if ($(window).height() + $(document).scrollTop() === $(document).height()) {
       this.hide = false;
     } else {
