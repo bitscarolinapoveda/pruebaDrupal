@@ -58,6 +58,15 @@ class ServiceProductBits extends ConfigEntityBase implements ServiceProductBitsI
   public $short_image;
   public $large_image;
   public $type;
+  public $modules;
+  public $left_media;
+  public $technologies;
+  public $testimonies;
+  public $achievements;
+  public $team;
+  public $right_media;
+  public $video;
+  public $clients;
 
   public function getValueJson($field, $defaultValue = "") {
     if ($field == "id") {
@@ -80,6 +89,33 @@ class ServiceProductBits extends ConfigEntityBase implements ServiceProductBitsI
     }
     elseif ($field == "type") {
       return $this->type;
+    }
+    elseif ($field == "modules") {
+      return $this->modules;
+    }
+    elseif ($field == "left_media") {
+      return $this->left_media;
+    }
+    elseif ($field == "technologies") {
+      return $this->technologies;
+    }
+    elseif ($field == "testimonies") {
+      return $this->testimonies;
+    }
+    elseif ($field == "achievements") {
+      return $this->achievements;
+    }
+    elseif ($field == "team") {
+      return $this->team;
+    }
+    elseif ($field == "right_media") {
+      return $this->right_media;
+    }
+    elseif ($field == "video") {
+      return $this->video;
+    }
+    elseif ($field == "clients") {
+      return $this->clients;
     }
     return $defaultValue;
   }
