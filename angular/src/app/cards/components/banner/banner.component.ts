@@ -20,6 +20,7 @@ export class BannerComponent implements OnInit {
         private banner: CustomCardService,
     ) {
         this.uuid = '';
+        this.bannerDescrip = '';
     }
 
     ngOnInit() {
@@ -43,6 +44,9 @@ export class BannerComponent implements OnInit {
         this.banner.getCustomContentBasicPage(this.uuid).subscribe(params => {
             this.bannerTitle = params.title;
             this.bannerDescrip = params.body;
+            if (this.bannerDescrip === null) {
+                this.bannerDescrip = '';
+            }
         });
     }
 }
