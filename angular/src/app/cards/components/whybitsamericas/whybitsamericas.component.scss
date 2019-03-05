@@ -34,7 +34,10 @@
         margin-bottom: 15px;
         .why-img {
           height: 89px;
-          border-right: 1px solid #a6cf24;;
+          border-right: 1px solid #a6cf24;
+          img {
+            height: 89px;
+          }
         }
         .why-title {
           display: flex;
