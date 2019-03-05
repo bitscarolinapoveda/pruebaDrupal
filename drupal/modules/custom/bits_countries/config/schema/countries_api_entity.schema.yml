@@ -1,0 +1,15 @@
+bits_countries.countries_api_entity.*:
+  type: config_entity
+  label: 'Countries api entity config'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Label'
+    uuid:
+      type: string
+    url:
+      type: string
+      label: 'Dirección'

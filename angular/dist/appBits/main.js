@@ -457,7 +457,7 @@ var AppModule = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
             declarations: [
                 _app_component__WEBPACK_IMPORTED_MODULE_11__["AppComponent"],
-                _work_us_work_us_component__WEBPACK_IMPORTED_MODULE_15__["WorkUsComponent"]
+                _work_us_work_us_component__WEBPACK_IMPORTED_MODULE_15__["WorkUsComponent"],
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -540,27 +540,41 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_blog_blog_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./components/blog/blog.component */ "./src/app/cards/components/blog/blog.component.ts");
 /* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
 /* harmony import */ var _components_client_project_imedical_client_project_imedical_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./components/client-project-imedical/client-project-imedical.component */ "./src/app/cards/components/client-project-imedical/client-project-imedical.component.ts");
-/* harmony import */ var _services_cards_node_service__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ../services/cards/node.service */ "./src/app/services/cards/node.service.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _adf_adf_module__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ../@adf/adf.module */ "./src/app/@adf/adf.module.ts");
-/* harmony import */ var ngx_slick__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ngx-slick */ "./node_modules/ngx-slick/ngx-slick.umd.js");
-/* harmony import */ var ngx_slick__WEBPACK_IMPORTED_MODULE_29___default = /*#__PURE__*/__webpack_require__.n(ngx_slick__WEBPACK_IMPORTED_MODULE_29__);
-/* harmony import */ var ngx_owl_carousel__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ngx-owl-carousel */ "./node_modules/ngx-owl-carousel/index.js");
-/* harmony import */ var ngx_owl_carousel__WEBPACK_IMPORTED_MODULE_30___default = /*#__PURE__*/__webpack_require__.n(ngx_owl_carousel__WEBPACK_IMPORTED_MODULE_30__);
-/* harmony import */ var ngx_carousel__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ngx-carousel */ "./node_modules/ngx-carousel/index.js");
-/* harmony import */ var hammerjs__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! hammerjs */ "./node_modules/hammerjs/hammer.js");
-/* harmony import */ var hammerjs__WEBPACK_IMPORTED_MODULE_32___default = /*#__PURE__*/__webpack_require__.n(hammerjs__WEBPACK_IMPORTED_MODULE_32__);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
-/* harmony import */ var _pipes_safehtml_pipe__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ../pipes/safehtml.pipe */ "./src/app/pipes/safehtml.pipe.ts");
-/* harmony import */ var _pipes_safecss_pipe__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ../pipes/safecss.pipe */ "./src/app/pipes/safecss.pipe.ts");
-/* harmony import */ var _components_client_proserv_client_proserv_component__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./components/client-proserv/client-proserv.component */ "./src/app/cards/components/client-proserv/client-proserv.component.ts");
-/* harmony import */ var _components_workus_workus_component__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./components/workus/workus.component */ "./src/app/cards/components/workus/workus.component.ts");
+/* harmony import */ var _components_whybitsamericas_whybitsamericas_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./components/whybitsamericas/whybitsamericas.component */ "./src/app/cards/components/whybitsamericas/whybitsamericas.component.ts");
+/* harmony import */ var _components_message_message_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./components/message/message.component */ "./src/app/cards/components/message/message.component.ts");
+/* harmony import */ var _components_knowus_knowus_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./components/knowus/knowus.component */ "./src/app/cards/components/knowus/knowus.component.ts");
+/* harmony import */ var _components_team_team_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./components/team/team.component */ "./src/app/cards/components/team/team.component.ts");
+/* harmony import */ var _components_achievements_achievements_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./components/achievements/achievements.component */ "./src/app/cards/components/achievements/achievements.component.ts");
+/* harmony import */ var _components_testimonies_testimonies_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./components/testimonies/testimonies.component */ "./src/app/cards/components/testimonies/testimonies.component.ts");
+/* harmony import */ var _components_tecnologies_projectservice_tecnologies_projectservice_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./components/tecnologies-projectservice/tecnologies-projectservice.component */ "./src/app/cards/components/tecnologies-projectservice/tecnologies-projectservice.component.ts");
+/* harmony import */ var _services_cards_node_service__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ../services/cards/node.service */ "./src/app/services/cards/node.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _adf_adf_module__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ../@adf/adf.module */ "./src/app/@adf/adf.module.ts");
+/* harmony import */ var ngx_slick__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ngx-slick */ "./node_modules/ngx-slick/ngx-slick.umd.js");
+/* harmony import */ var ngx_slick__WEBPACK_IMPORTED_MODULE_36___default = /*#__PURE__*/__webpack_require__.n(ngx_slick__WEBPACK_IMPORTED_MODULE_36__);
+/* harmony import */ var ngx_owl_carousel__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ngx-owl-carousel */ "./node_modules/ngx-owl-carousel/index.js");
+/* harmony import */ var ngx_owl_carousel__WEBPACK_IMPORTED_MODULE_37___default = /*#__PURE__*/__webpack_require__.n(ngx_owl_carousel__WEBPACK_IMPORTED_MODULE_37__);
+/* harmony import */ var ngx_carousel__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ngx-carousel */ "./node_modules/ngx-carousel/index.js");
+/* harmony import */ var hammerjs__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! hammerjs */ "./node_modules/hammerjs/hammer.js");
+/* harmony import */ var hammerjs__WEBPACK_IMPORTED_MODULE_39___default = /*#__PURE__*/__webpack_require__.n(hammerjs__WEBPACK_IMPORTED_MODULE_39__);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _pipes_safehtml_pipe__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! ../pipes/safehtml.pipe */ "./src/app/pipes/safehtml.pipe.ts");
+/* harmony import */ var _pipes_safecss_pipe__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! ../pipes/safecss.pipe */ "./src/app/pipes/safecss.pipe.ts");
+/* harmony import */ var _components_client_proserv_client_proserv_component__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! ./components/client-proserv/client-proserv.component */ "./src/app/cards/components/client-proserv/client-proserv.component.ts");
+/* harmony import */ var _components_workus_workus_component__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! ./components/workus/workus.component */ "./src/app/cards/components/workus/workus.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
+
+
+
+
+
 
 
 
@@ -607,8 +621,8 @@ var CardsModule = /** @class */ (function () {
     CardsModule = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
             declarations: [
-                _pipes_safehtml_pipe__WEBPACK_IMPORTED_MODULE_34__["SafeHtmlPipe"],
-                _pipes_safecss_pipe__WEBPACK_IMPORTED_MODULE_35__["SafeCssPipe"],
+                _pipes_safehtml_pipe__WEBPACK_IMPORTED_MODULE_41__["SafeHtmlPipe"],
+                _pipes_safecss_pipe__WEBPACK_IMPORTED_MODULE_42__["SafeCssPipe"],
                 _components_carousel_item_carousel_item_component__WEBPACK_IMPORTED_MODULE_4__["CarouselItemComponent"],
                 _components_carousel_indicators_carousel_indicators_component__WEBPACK_IMPORTED_MODULE_5__["CarouselIndicatorsComponent"],
                 _components_carousel_controls_carousel_controls_component__WEBPACK_IMPORTED_MODULE_10__["CarouselControlsComponent"],
@@ -618,7 +632,7 @@ var CardsModule = /** @class */ (function () {
                 _components_alliances_alliances_component__WEBPACK_IMPORTED_MODULE_9__["AlliancesComponent"],
                 _components_workwithus_workwithus_component__WEBPACK_IMPORTED_MODULE_11__["WorkWithUsComponent"],
                 _components_workwithus_proserv_workwithus_proserv_component__WEBPACK_IMPORTED_MODULE_12__["WorkWithUsProServComponent"],
-                _components_workus_workus_component__WEBPACK_IMPORTED_MODULE_37__["WorkusComponent"],
+                _components_workus_workus_component__WEBPACK_IMPORTED_MODULE_44__["WorkusComponent"],
                 _components_banner_banner_component__WEBPACK_IMPORTED_MODULE_13__["BannerComponent"],
                 _components_titles_titles_component__WEBPACK_IMPORTED_MODULE_14__["TitleComponent"],
                 _components_tabs_tabs_component__WEBPACK_IMPORTED_MODULE_15__["TabsComponent"],
@@ -631,7 +645,14 @@ var CardsModule = /** @class */ (function () {
                 _components_card_img_text_card_img_text_component__WEBPACK_IMPORTED_MODULE_22__["CardImgTextComponent"],
                 _components_blog_blog_component__WEBPACK_IMPORTED_MODULE_23__["BlogComponent"],
                 _components_client_project_imedical_client_project_imedical_component__WEBPACK_IMPORTED_MODULE_25__["ClientProjectImedicalComponent"],
-                _components_client_proserv_client_proserv_component__WEBPACK_IMPORTED_MODULE_36__["ClientProServComponent"]
+                _components_client_proserv_client_proserv_component__WEBPACK_IMPORTED_MODULE_43__["ClientProServComponent"],
+                _components_message_message_component__WEBPACK_IMPORTED_MODULE_27__["MessageComponent"],
+                _components_whybitsamericas_whybitsamericas_component__WEBPACK_IMPORTED_MODULE_26__["WhybitsamericasComponent"],
+                _components_knowus_knowus_component__WEBPACK_IMPORTED_MODULE_28__["KnowusComponent"],
+                _components_team_team_component__WEBPACK_IMPORTED_MODULE_29__["TeamComponent"],
+                _components_achievements_achievements_component__WEBPACK_IMPORTED_MODULE_30__["AchievementsComponent"],
+                _components_testimonies_testimonies_component__WEBPACK_IMPORTED_MODULE_31__["TestimoniesComponent"],
+                _components_tecnologies_projectservice_tecnologies_projectservice_component__WEBPACK_IMPORTED_MODULE_32__["TecnologiesProjectserviceComponent"]
             ],
             exports: [
                 _components_carousel_item_carousel_item_component__WEBPACK_IMPORTED_MODULE_4__["CarouselItemComponent"],
@@ -641,7 +662,7 @@ var CardsModule = /** @class */ (function () {
                 _components_tecnologies_tecnologies_component__WEBPACK_IMPORTED_MODULE_6__["TecnologiesComponent"],
                 _components_porque_bits_porque_bits_component__WEBPACK_IMPORTED_MODULE_7__["PorqueBitsComponent"],
                 _components_alliances_alliances_component__WEBPACK_IMPORTED_MODULE_9__["AlliancesComponent"],
-                _components_workus_workus_component__WEBPACK_IMPORTED_MODULE_37__["WorkusComponent"],
+                _components_workus_workus_component__WEBPACK_IMPORTED_MODULE_44__["WorkusComponent"],
                 _components_workwithus_workwithus_component__WEBPACK_IMPORTED_MODULE_11__["WorkWithUsComponent"],
                 _components_workwithus_proserv_workwithus_proserv_component__WEBPACK_IMPORTED_MODULE_12__["WorkWithUsProServComponent"],
                 _components_banner_banner_component__WEBPACK_IMPORTED_MODULE_13__["BannerComponent"],
@@ -656,13 +677,124 @@ var CardsModule = /** @class */ (function () {
                 _components_card_img_text_card_img_text_component__WEBPACK_IMPORTED_MODULE_22__["CardImgTextComponent"],
                 _components_blog_blog_component__WEBPACK_IMPORTED_MODULE_23__["BlogComponent"],
                 _components_client_project_imedical_client_project_imedical_component__WEBPACK_IMPORTED_MODULE_25__["ClientProjectImedicalComponent"],
-                _components_client_proserv_client_proserv_component__WEBPACK_IMPORTED_MODULE_36__["ClientProServComponent"]
+                _components_client_proserv_client_proserv_component__WEBPACK_IMPORTED_MODULE_43__["ClientProServComponent"],
+                _components_whybitsamericas_whybitsamericas_component__WEBPACK_IMPORTED_MODULE_26__["WhybitsamericasComponent"],
+                _components_knowus_knowus_component__WEBPACK_IMPORTED_MODULE_28__["KnowusComponent"],
+                _components_team_team_component__WEBPACK_IMPORTED_MODULE_29__["TeamComponent"],
+                _components_achievements_achievements_component__WEBPACK_IMPORTED_MODULE_30__["AchievementsComponent"],
+                _components_testimonies_testimonies_component__WEBPACK_IMPORTED_MODULE_31__["TestimoniesComponent"],
+                _components_tecnologies_projectservice_tecnologies_projectservice_component__WEBPACK_IMPORTED_MODULE_32__["TecnologiesProjectserviceComponent"]
             ],
-            imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["BrowserModule"], _node_modules_angular_common__WEBPACK_IMPORTED_MODULE_3__["CommonModule"], _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_0__["NgbModule"], _angular_router__WEBPACK_IMPORTED_MODULE_27__["RouterModule"], _adf_adf_module__WEBPACK_IMPORTED_MODULE_28__["AdfModule"], ngx_slick__WEBPACK_IMPORTED_MODULE_29__["SlickModule"].forRoot(), ngx_owl_carousel__WEBPACK_IMPORTED_MODULE_30__["OwlModule"], ngx_carousel__WEBPACK_IMPORTED_MODULE_31__["NgxCarouselModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_24__["BrowserAnimationsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_33__["FormsModule"]],
-            providers: [_services_cards_node_service__WEBPACK_IMPORTED_MODULE_26__["NodeService"]]
+            imports: [
+                _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["BrowserModule"],
+                _node_modules_angular_common__WEBPACK_IMPORTED_MODULE_3__["CommonModule"],
+                _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_0__["NgbModule"],
+                _angular_router__WEBPACK_IMPORTED_MODULE_34__["RouterModule"],
+                _adf_adf_module__WEBPACK_IMPORTED_MODULE_35__["AdfModule"],
+                ngx_slick__WEBPACK_IMPORTED_MODULE_36__["SlickModule"].forRoot(),
+                ngx_owl_carousel__WEBPACK_IMPORTED_MODULE_37__["OwlModule"],
+                ngx_carousel__WEBPACK_IMPORTED_MODULE_38__["NgxCarouselModule"],
+                _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_24__["BrowserAnimationsModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_40__["FormsModule"]
+            ],
+            providers: [_services_cards_node_service__WEBPACK_IMPORTED_MODULE_33__["NodeService"]]
         })
     ], CardsModule);
     return CardsModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/cards/components/achievements/achievements.component.html":
+/*!***************************************************************************!*\
+  !*** ./src/app/cards/components/achievements/achievements.component.html ***!
+  \***************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<section id=\"title\">\n  <h2 [id]=\"datosMenu.id\">{{ title }}</h2>\n  <p [innerHTML]=\"subtitle\"></p>\n</section>\n\n<section class=\"content\">\n  <div class=\"images-content\">\n    <ul class=\"row first images col-md-12\">\n      <li *ngFor=\"let data of list; let i = index\" class=\"col-md-4\">\n        <div class=\"col-md-12\">\n          <img [src]=\"data.field_imagen.url\" [alt]=\"data.field_imagen.alt\" class=\"col-md-6\" />\n          <label class=\"col-md-6\">\n            <span class=\"plus\" *ngIf=\"data.field_icono == 'up'\">↑</span>\n            <span class=\"plus\" *ngIf=\"data.field_icono == 'more'\">+</span> \n            <span class=\"plus\" *ngIf=\"data.field_icono == 'down'\">↓</span>  <span>{{ data.field_cantidad_all }}</span>\n            <p>{{ data.title }}</p>\n          </label>\n        </div>\n      </li>\n    </ul>\n  </div>\n</section>\n"
+
+/***/ }),
+
+/***/ "./src/app/cards/components/achievements/achievements.component.scss":
+/*!***************************************************************************!*\
+  !*** ./src/app/cards/components/achievements/achievements.component.scss ***!
+  \***************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "#title h2 {\n  margin-left: 3%;\n  font-size: 40px;\n  text-transform: uppercase;\n  color: #002b49;\n  text-align: center;\n  margin-top: 40px; }\n  @media (max-width: 667px) {\n    #title h2 {\n      font-size: 30px;\n      margin-left: 0; } }\n  #title p {\n  color: #002b49cc;\n  font-family: Open Sans Codensed;\n  margin-right: 180px;\n  margin-left: 200px;\n  margin-top: 10px;\n  font-size: 20px;\n  text-align: center; }\n  @media (min-width: 1025px) {\n    #title p {\n      margin-right: 0;\n      margin-left: 0; } }\n  @media (max-width: 667px) {\n    #title p {\n      margin-right: 20px;\n      margin-left: 0; } }\n  .content {\n  width: 90%;\n  margin-top: 20px; }\n  @media (max-width: 667px) {\n    .content ul {\n      padding: 0; } }\n  .content .images-content .images {\n    margin-left: 0;\n    margin-right: 0; }\n  @media (min-width: 1025px) {\n      .content .images-content .images {\n        margin-left: 9%; } }\n  .content .images-content .images li {\n      list-style: none;\n      margin-top: 17px; }\n  @media (max-width: 667px) {\n        .content .images-content .images li {\n          margin-bottom: 35px; } }\n  .content .images-content .images li img {\n        float: left;\n        margin-top: 20px; }\n  @media (min-width: 1025px) {\n          .content .images-content .images li img {\n            position: relative; } }\n  @media (max-width: 667px) {\n          .content .images-content .images li img {\n            width: 50%;\n            position: relative; } }\n  .content .images-content .images li label {\n        font-family: 'Open Sans light';\n        color: #002b49;\n        font-weight: 500;\n        padding-left: 0 !important;\n        padding-right: 0 !important;\n        text-align: left; }\n  .content .images-content .images li label span.plus {\n          color: #a6cf24;\n          font-size: 40px; }\n  .content .images-content .images li label span {\n          font-size: 30px; }\n  .content .images-content .images li label p {\n          font-weight: 300; }\n  @media (min-width: 1025px) {\n          .content .images-content .images li label {\n            position: absolute; } }\n  @media (max-width: 667px) {\n          .content .images-content .images li label {\n            position: absolute;\n            width: 50%; } }\n"
+
+/***/ }),
+
+/***/ "./src/app/cards/components/achievements/achievements.component.ts":
+/*!*************************************************************************!*\
+  !*** ./src/app/cards/components/achievements/achievements.component.ts ***!
+  \*************************************************************************/
+/*! exports provided: AchievementsComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AchievementsComponent", function() { return AchievementsComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_app_services_cards_v1_card_services__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/services/cards/v1-card.services */ "./src/app/services/cards/v1-card.services.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var AchievementsComponent = /** @class */ (function () {
+    function AchievementsComponent(_service) {
+        this._service = _service;
+        this.propagar = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+        this.list = [];
+    }
+    AchievementsComponent.prototype.ngOnInit = function () {
+        while (this.type.indexOf('-') > -1) {
+            this.type = this.type.replace('-', '_');
+        }
+        this.datosMenu = {
+            label: 'LOGROS',
+            id: 'a10',
+            url: '/imedical'
+        };
+        this.propagar.emit(this.datosMenu);
+        this.getAchievementData();
+    };
+    AchievementsComponent.prototype.getAchievementData = function () {
+        var _this = this;
+        this._service.getCustomCardInformationType('achievementsbitsamericas', this.type).subscribe(function (items) {
+            _this.title = items.header[0].data.title;
+            _this.subtitle = items.header[1].data.sub_title;
+            _this.list = items.data;
+        });
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"])(),
+        __metadata("design:type", Object)
+    ], AchievementsComponent.prototype, "propagar", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", String)
+    ], AchievementsComponent.prototype, "type", void 0);
+    AchievementsComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-achievements',
+            template: __webpack_require__(/*! ./achievements.component.html */ "./src/app/cards/components/achievements/achievements.component.html"),
+            styles: [__webpack_require__(/*! ./achievements.component.scss */ "./src/app/cards/components/achievements/achievements.component.scss")]
+        }),
+        __metadata("design:paramtypes", [src_app_services_cards_v1_card_services__WEBPACK_IMPORTED_MODULE_1__["CustomCardService"]])
+    ], AchievementsComponent);
+    return AchievementsComponent;
 }());
 
 
@@ -829,7 +961,7 @@ module.exports = "<section class=\"page-header\">\n    <div class=\"title\">\n  
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".page-header {\n  height: 352px;\n  overflow: hidden; }\n  .page-header .title {\n    width: 100%;\n    color: #FFFFFF;\n    position: absolute;\n    margin-top: 178px;\n    text-align: center; }\n  .page-header .title h1 {\n      text-transform: uppercase;\n      position: absolute;\n      width: 100%;\n      margin-left: 50%;\n      font-size: 36px;\n      -webkit-transform: translateX(-50%);\n              transform: translateX(-50%); }\n  @media (min-width: 1025px) {\n        .page-header .title h1 {\n          font-size: 50px; } }\n  @media (min-width: 668px) and (max-width: 1024px) {\n        .page-header .title h1 {\n          font-size: 50px; } }\n  .page-header picture img {\n    width: 100%; }\n  .page-header::before {\n  content: \"\";\n  background-color: #000000;\n  opacity: 0.3;\n  height: 352px;\n  width: 100%;\n  position: absolute; }\n  #descrip-banner p {\n  color: #002b49cc;\n  font-family: Open Sans Codensed;\n  margin-right: 180px;\n  margin-left: 200px;\n  margin-top: 30px;\n  font-size: 20px; }\n"
+module.exports = ".page-header {\n  height: 352px;\n  overflow: hidden; }\n  .page-header .title {\n    width: 100%;\n    color: #FFFFFF;\n    position: absolute;\n    margin-top: 178px;\n    text-align: center; }\n  .page-header .title h1 {\n      text-transform: uppercase;\n      position: absolute;\n      width: 100%;\n      margin-left: 50%;\n      font-size: 36px;\n      -webkit-transform: translateX(-50%);\n              transform: translateX(-50%); }\n  @media (min-width: 1025px) {\n        .page-header .title h1 {\n          font-size: 50px; } }\n  @media (min-width: 668px) and (max-width: 1024px) {\n        .page-header .title h1 {\n          font-size: 50px; } }\n  .page-header picture img {\n    width: 100%; }\n  .page-header::before {\n  content: \"\";\n  background-color: #000000;\n  opacity: 0.3;\n  height: 352px;\n  width: 100%;\n  position: absolute; }\n  #descrip-banner p {\n  color: #002b49cc;\n  font-family: Open Sans Codensed;\n  margin-top: 30px;\n  font-size: 20px;\n  overflow-wrap: break-word; }\n  @media (min-width: 1025px) {\n    #descrip-banner p {\n      margin: auto;\n      max-width: 1000px;\n      margin-top: 30px; } }\n  @media (max-width: 667px) {\n    #descrip-banner p {\n      margin-right: 0;\n      margin-left: 0; } }\n"
 
 /***/ }),
 
@@ -1318,7 +1450,7 @@ var CarouselControlsComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<section id=\"carousel-container\">\n    <ngb-carousel *ngIf=\"carousel\" (window:resize)=\"onResize()\">\n        <ng-template class=\"prueba\" ngbSlide *ngFor=\"let item of carousel\">\n            <img class=\"carousel-main-image\" [src]=\"item.field_image\" alt=\"Random first slide\" [ngStyle]=\"{'height': height}\">\n            <div class=\"carousel-caption\">\n            <h3 class=\"carousel-title\">{{ item.title }}</h3>\n            <p class=\"carousel-subtitle\">{{ item.field_tags }}</p>\n            </div>\n        </ng-template>\n    </ngb-carousel>\n    <div class=\"col section-button-explorar\" (click)=\"slideDown()\">       \n        <div class=\"row button-explorar\">\n            <h6 class=\"anchor\">EXPLORAR</h6>\n        </div>\n        <div class=\"row button-explorar\">\n            <img class=\"down-arrow-slider\" src=\"../assets/images/DownArrow.svg\" alt=\"DownArrow\">\n        </div>\n    </div>\n</section>"
+module.exports = "<section id=\"carousel-container\">\n    <ngb-carousel *ngIf=\"carousel.length > 0\" (window:resize)=\"onResize()\">\n        <ng-template class=\"prueba\" ngbSlide *ngFor=\"let item of carousel\">\n            <img class=\"carousel-main-image\" [src]=\"item['field_image']['url']\" alt=\"Random first slide\" [ngStyle]=\"{'height': height}\">\n            <div class=\"carousel-caption\">\n            <h3 class=\"carousel-title\">{{ item.title }}</h3>\n            <p class=\"carousel-subtitle\">{{ item.field_subtitle }}</p>\n            </div>\n        </ng-template>\n    </ngb-carousel>\n    <div class=\"col section-button-explorar\" (click)=\"slideDown()\">       \n        <div class=\"row button-explorar\">\n            <h6 class=\"anchor\">EXPLORAR</h6>\n        </div>\n        <div class=\"row button-explorar\">\n            <img class=\"down-arrow-slider\" src=\"../assets/images/DownArrow.svg\" alt=\"DownArrow\">\n        </div>\n    </div>\n</section>"
 
 /***/ }),
 
@@ -1343,10 +1475,10 @@ module.exports = ":host /deep/ .carousel-control-next,\n:host /deep/ .carousel-c
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CarouselIndicatorsComponent", function() { return CarouselIndicatorsComponent; });
-/* harmony import */ var _services_cards_content_type_services__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../services/cards/content-type.services */ "./src/app/services/cards/content-type.services.ts");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _services_cards_v1_card_services__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../services/cards/v1-card.services */ "./src/app/services/cards/v1-card.services.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1360,10 +1492,10 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 var CarouselIndicatorsComponent = /** @class */ (function () {
-    function CarouselIndicatorsComponent(indicatorsSliderCarouselItems) {
-        this.indicatorsSliderCarouselItems = indicatorsSliderCarouselItems;
+    function CarouselIndicatorsComponent(_cardService) {
+        this._cardService = _cardService;
         this.medius = '550px';
-        this.carouselArray = [];
+        this.carousel = [];
         this.height = (window.innerHeight) + 'px';
     }
     CarouselIndicatorsComponent.prototype.ngOnInit = function () {
@@ -1371,8 +1503,8 @@ var CarouselIndicatorsComponent = /** @class */ (function () {
     };
     CarouselIndicatorsComponent.prototype.getIndicatorsSliderItems = function () {
         var _this = this;
-        return this.indicatorsSliderCarouselItems.getContentTypeItems('articles').subscribe(function (items) {
-            _this.carousel = items;
+        this._cardService.getCustomCardInformation('slidercard').subscribe(function (items) {
+            _this.carousel = items.data;
         });
     };
     CarouselIndicatorsComponent.prototype.onResize = function () {
@@ -1380,18 +1512,18 @@ var CarouselIndicatorsComponent = /** @class */ (function () {
     };
     CarouselIndicatorsComponent.prototype.slideDown = function () {
         var navBarHeight = document.querySelector('.navbar-expand-lg').clientHeight;
-        jquery__WEBPACK_IMPORTED_MODULE_2__('html, body').animate({
+        jquery__WEBPACK_IMPORTED_MODULE_1__('html, body').animate({
             scrollTop: window.innerHeight - navBarHeight
         }, 2000);
         return false;
     };
     CarouselIndicatorsComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-carousel-indicators',
             template: __webpack_require__(/*! ./carousel-indicators.component.html */ "./src/app/cards/components/carousel-indicators/carousel-indicators.component.html"),
             styles: [__webpack_require__(/*! ./carousel-indicators.component.scss */ "./src/app/cards/components/carousel-indicators/carousel-indicators.component.scss")]
         }),
-        __metadata("design:paramtypes", [_services_cards_content_type_services__WEBPACK_IMPORTED_MODULE_0__["ContentType"]])
+        __metadata("design:paramtypes", [_services_cards_v1_card_services__WEBPACK_IMPORTED_MODULE_2__["CustomCardService"]])
     ], CarouselIndicatorsComponent);
     return CarouselIndicatorsComponent;
 }());
@@ -1517,7 +1649,7 @@ var CarouselItem2Component = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"carousel-item window-complete\" *ngFor=\"let car of carouselsArray\">\n    <picture>\n        <source srcset=\"assets/images/movil.jpg\" media=\"(max-width:{{medius}})\">\n\n        <img class=\"d-block w-100 \" [src]=\" car.field_image \" alt=\"desarrollo de software \">\n\n        <div class=\"carousel-caption d-md-block text-slider \">\n            <h1 class=\"title-slider \"> {{car.title}} </h1>\n            <p class=\"description-slider \">{{car.field_tags}}</p>\n        </div>\n    </picture>\n</div>"
+module.exports = "<div class=\"carousel-item window-complete\" *ngFor=\"let car of carouselArray\">\n    <picture>\n        <source srcset=\"assets/images/movil.jpg\" media=\"(max-width:{{medius}})\">\n\n        <img class=\"d-block w-100 \" [src]=\" car.field_image.url \" alt=\"desarrollo de software \">\n\n        <div class=\"carousel-caption d-md-block text-slider \">\n            <h1 class=\"title-slider \"> {{car.title}} </h1>\n            <p class=\"description-slider \">{{car.field_subtitle}}</p>\n        </div>\n    </picture>\n</div>"
 
 /***/ }),
 
@@ -1542,8 +1674,8 @@ module.exports = ".window-complete {\n  height: auto; }\n  .window-complete .tex
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CarouselItemComponent", function() { return CarouselItemComponent; });
-/* harmony import */ var _services_cards_content_type_services__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../../../services/cards/content-type.services */ "./src/app/services/cards/content-type.services.ts");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_cards_v1_card_services__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../services/cards/v1-card.services */ "./src/app/services/cards/v1-card.services.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1553,32 +1685,31 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+// import { ContentType } from './../../../services/cards/content-type.services';
 
 
 var CarouselItemComponent = /** @class */ (function () {
-    function CarouselItemComponent(sliderCarouselItems) {
-        this.sliderCarouselItems = sliderCarouselItems;
-        this.carouselsArray = [];
+    function CarouselItemComponent(_cardService) {
+        this._cardService = _cardService;
         this.medius = '550px';
+        this.carouselArray = [];
     }
     CarouselItemComponent.prototype.ngOnInit = function () {
         this.getCarouselsItems();
     };
     CarouselItemComponent.prototype.getCarouselsItems = function () {
         var _this = this;
-        return this.sliderCarouselItems.getContentTypeItems('articles').subscribe(function (items) {
-            _this.carouselsArray = Object.keys(items).map(function (key) {
-                return items[key];
-            });
+        return this._cardService.getCustomCardInformation('slidercard').subscribe(function (items) {
+            _this.carouselArray = items.data;
         });
     };
     CarouselItemComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-carousel-item',
             template: __webpack_require__(/*! ./carousel-item.component.html */ "./src/app/cards/components/carousel-item/carousel-item.component.html"),
             styles: [__webpack_require__(/*! ./carousel-item.component.scss */ "./src/app/cards/components/carousel-item/carousel-item.component.scss")]
         }),
-        __metadata("design:paramtypes", [_services_cards_content_type_services__WEBPACK_IMPORTED_MODULE_0__["ContentType"]])
+        __metadata("design:paramtypes", [_services_cards_v1_card_services__WEBPACK_IMPORTED_MODULE_1__["CustomCardService"]])
     ], CarouselItemComponent);
     return CarouselItemComponent;
 }());
@@ -2164,7 +2295,7 @@ var FooterContactComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ng-container>\n  <section id=\"footer-block-newsletter\">\n    <div class=\"newsletter-info\">\n      <h6>NEWSLETTER</h6>\n      <p>Reciba nuestras ultimas noticias</p>\n      <button>\n          Subscribirse\n          <i class=\"fas fa-paper-plane\"></i>\n      </button>\n    </div>\n  </section>\n</ng-container>\n"
+module.exports = "<ng-container>\n  <section id=\"footer-block-newsletter\">\n    <div class=\"newsletter-info\">\n      <h6 *ngIf=\"footerData.title\">{{ footerData.title | uppercase }}</h6>\n      <p [innerHTML]=\"footerData.subtitle\"></p>\n      <button data-toggle=\"modal\" data-target=\"#newsletterModal\">\n        {{ footerData.button}}\n        <i class=\"fas fa-paper-plane\"></i>\n      </button>\n      <!-- Modal -->\n      <div class=\"modal fade\" id=\"newsletterModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\"\n        aria-hidden=\"true\">\n        <div class=\"modal-dialog\" role=\"document\">\n          <div class=\"modal-content\">\n            <div class=\"modal-header\">\n              <h5 class=\"modal-title\" id=\"exampleModalLabel\">{{ titleNewsletter }}</h5>\n              <p class=\"description-modal\">{{ descriptionNewsletter }}</p>\n              <button type=\"button\" class=\"close button-modal\" data-dismiss=\"modal\" aria-label=\"Close\">\n                <span aria-hidden=\"true\">&times;</span>\n              </button>\n            </div>\n            <div class=\"modal-body\">\n              <form action=\"\">\n                <div class=\"col-md-12 item\">\n                  <label class=\"label-modal\" for=\"exampleInputNombre-nw\">{{ nameInput }}*</label>\n                  <input class=\"input-modal\" type=\"text\" id=\"nombree\" placeholder=\"{{ nameInputPlaceholder }}\" name=\"nombre\">\n                  <div *ngIf=\"false\" class=\"alert alert-danger\" role=\"alert\">\n                    Campo obligatorio o invalido\n                  </div>\n                </div>\n                <div class=\"col-md-12 item\">\n                  <label class=\"label-modal\" for=\"exampleInputNombr-nw\">{{ lastNameInput }}</label>\n                  <input class=\"input-modal\" type=\"text\" id=\"apellido\" placeholder=\"{{ lastNameInputPlaceholder }}\"\n                    name=\"apellido\">\n                  <div *ngIf=\"false\" class=\"alert alert-danger\" role=\"alert\">\n                    Campo obligatorio o invalido\n                  </div>\n                </div>\n                <div class=\"col-md-12 item\">\n                  <label class=\"label-modal\" for=\"exampleInputEmail1-nw\">{{ emailInput }}*</label>\n                  <input class=\"input-modal\" type=\"email\" id=\"exampleInputEmail1\" aria-describedby=\"emailHelp\"\n                    placeholder=\"{{ emailInputPlaceholder }}\" name=\"correo_electronicoo\" pattern=\"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\">\n                  <div *ngIf=\"false\" class=\"alert alert-danger\" role=\"alert\">\n                    Campo obligatorio o invalido\n                  </div>\n                </div>\n              </form>\n            </div>\n            <div class=\"modal-footer\">\n              <div class=\"form-group\" class=\"terminos_grupo\">\n                <input class=\"check-modal-terms\" type=\"checkbox\" checked=\"checked\" id=\"terms-of-service\" name=\"terms_of_service\"\n                  value=\"false\" required>\n                <label class=\"label-modal-terms\" for=\"terms-of-service-nw\">He leído y acepto los <a class=\"link-modal-terms\"\n                    role=\"button\" href=\"{{ linkTerms }}\">{{ labelTerms }}</a></label>\n                <a data-trigger=\"focus\" role=\"button\" data-toggle=\"popover\" data-placement=\"top\" href=\"#\">\n                  <i class=\"fas fa-info-circle icon-tooltip\"></i>\n                </a>                \n              </div>\n            </div>\n            <button type=\"button\" class=\"save-modal-button\">{{ buttonSendNewsletter }}</button>\n          </div>\n        </div>\n      </div>\n    </div>\n\n  </section>\n</ng-container>\n<div id='popover-title'>{{titleTermsTooltip}}</div>\n<div id='popover-content' [innerHTML]='bodyTermsTooltip'></div>"
 
 /***/ }),
 
@@ -2175,7 +2306,7 @@ module.exports = "<ng-container>\n  <section id=\"footer-block-newsletter\">\n  
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "#footer-block-newsletter {\n  margin: 20px 0 20px 0;\n  border-right: 1px solid rgba(255, 255, 255, 0.3); }\n  #footer-block-newsletter .newsletter-info h6 {\n    color: white;\n    font-family: Open Sans;\n    font-size: 12px; }\n  #footer-block-newsletter .newsletter-info p {\n    color: rgba(255, 255, 255, 0.7);\n    font-family: Open Sans Light;\n    font-size: 11px; }\n  #footer-block-newsletter .newsletter-info button {\n    cursor: pointer;\n    margin: 8px 0 0 0;\n    width: 160px;\n    height: 34px;\n    text-align: left;\n    color: white;\n    font-family: Open Sans Light;\n    font-size: 11px;\n    background: rgba(255, 255, 255, 0.2);\n    border: none; }\n  #footer-block-newsletter .newsletter-info button .fa-paper-plane {\n      padding-left: 60px; }\n  #footer-block-newsletter .newsletter-info button:hover {\n      background: rgba(255, 255, 255, 0.5); }\n  @media only screen and (max-width: 769px) {\n  #footer-block-newsletter {\n    margin: 30px 0 30px 0;\n    text-align: center;\n    border-right: 0px; } }\n  @media only screen and (min-width: 769px) and (max-width: 1025px) {\n  #footer-block-newsletter .newsletter-info button {\n    width: 120px;\n    height: 25px;\n    margin: 3px 0 0 0; }\n    #footer-block-newsletter .newsletter-info button .fa-paper-plane {\n      padding-left: 30px; } }\n"
+module.exports = "@charset \"UTF-8\";\n#footer-block-newsletter {\n  margin: 20px 0 20px 0;\n  border-right: 1px solid rgba(255, 255, 255, 0.3); }\n#footer-block-newsletter .newsletter-info h6 {\n    color: white;\n    font-family: Open Sans;\n    font-size: 12px; }\n#footer-block-newsletter .newsletter-info p {\n    color: rgba(255, 255, 255, 0.7);\n    font-family: Open Sans Light;\n    font-size: 11px; }\n#footer-block-newsletter .newsletter-info button {\n    cursor: pointer;\n    margin: 8px 0 0 0;\n    width: 160px;\n    height: 34px;\n    text-align: left;\n    color: white;\n    font-family: Open Sans Light;\n    font-size: 11px;\n    background: rgba(255, 255, 255, 0.2);\n    border: none; }\n#footer-block-newsletter .newsletter-info button .fa-paper-plane {\n      padding-left: 60px; }\n#footer-block-newsletter .newsletter-info button:hover {\n      background: rgba(255, 255, 255, 0.5); }\n#footer-block-newsletter .modal .modal-content {\n    border: 2px solid #a6cf24;\n    width: auto;\n    height: auto; }\n#footer-block-newsletter .modal .modal-content .modal-header {\n      position: relative;\n      flex-direction: column;\n      justify-content: center;\n      align-items: center;\n      padding: 67px 35px 40px 35px;\n      border: none; }\n@media (max-width: 768px) {\n        #footer-block-newsletter .modal .modal-content .modal-header {\n          padding: 67px 35px 14px 35px; } }\n#footer-block-newsletter .modal .modal-content .modal-header .modal-title {\n        color: #022944;\n        font-family: Open Sans light;\n        font-size: 29px;\n        margin-bottom: 15px;\n        text-align: center; }\n@media (max-width: 768px) {\n          #footer-block-newsletter .modal .modal-content .modal-header .modal-title {\n            font-size: 25px; } }\n#footer-block-newsletter .modal .modal-content .modal-header .description-modal {\n        color: #022944;\n        font-family: Open Sans light;\n        font-size: 16px;\n        text-align: center;\n        padding: 0 20px; }\n@media (max-width: 768px) {\n          #footer-block-newsletter .modal .modal-content .modal-header .description-modal {\n            font-size: 10px; } }\n#footer-block-newsletter .modal .modal-content .modal-header .button-modal {\n        width: auto;\n        height: auto;\n        position: absolute;\n        top: 0;\n        right: 10px;\n        color: #a6cf24; }\n#footer-block-newsletter .modal .modal-content .modal-header .button-modal span {\n          font-size: 40px; }\n#footer-block-newsletter .modal .modal-content .modal-body {\n      border: none; }\n#footer-block-newsletter .modal .modal-content .modal-body form .item {\n        margin-bottom: 25px; }\n#footer-block-newsletter .modal .modal-content .modal-body form .label-modal {\n        font-family: Open Sans Codensed;\n        font-size: 18px;\n        color: #a6cf24;\n        display: block;\n        margin-bottom: 10px;\n        text-align: left; }\n@media (max-width: 768px) {\n          #footer-block-newsletter .modal .modal-content .modal-body form .label-modal {\n            font-size: 15px; } }\n#footer-block-newsletter .modal .modal-content .modal-body form .input-modal {\n        border-top: none;\n        border-right: none;\n        border-left: none;\n        display: block;\n        width: 100%;\n        font-family: Open Sans light; }\n#footer-block-newsletter .modal .modal-content .modal-body form .input-modal::-webkit-input-placeholder {\n          color: #93a4aa; }\n#footer-block-newsletter .modal .modal-content .modal-body form .input-modal:-ms-input-placeholder {\n          color: #93a4aa; }\n#footer-block-newsletter .modal .modal-content .modal-body form .input-modal::-ms-input-placeholder {\n          color: #93a4aa; }\n#footer-block-newsletter .modal .modal-content .modal-body form .input-modal::placeholder {\n          color: #93a4aa; }\n#footer-block-newsletter .modal .modal-content .modal-body form .input-modal:focus {\n          outline: none; }\n@media (max-width: 768px) {\n          #footer-block-newsletter .modal .modal-content .modal-body form .input-modal {\n            font-size: 15px; } }\n#footer-block-newsletter .modal .modal-content .modal-footer {\n      border: none;\n      flex-direction: column;\n      justify-content: center;\n      padding: 1.5rem; }\n#footer-block-newsletter .modal .modal-content .modal-footer .terminos_grupo {\n        text-align: center;\n        display: flex;\n        justify-content: center;\n        align-items: center;\n        color: #93a4aa;\n        /* OFF */\n        /* ON */ }\n#footer-block-newsletter .modal .modal-content .modal-footer .terminos_grupo .check-modal-terms {\n          background: transparent;\n          border: 1px solid #a6cf24; }\n#footer-block-newsletter .modal .modal-content .modal-footer .terminos_grupo [type=\"checkbox\"] {\n          position: absolute;\n          left: -9999px; }\n#footer-block-newsletter .modal .modal-content .modal-footer .terminos_grupo [type=\"checkbox\"] + label:after {\n          content: '';\n          position: absolute; }\n#footer-block-newsletter .modal .modal-content .modal-footer .terminos_grupo [type=\"checkbox\"] + label.label-modal-terms {\n          font-family: Open Sans light;\n          font-size: 17px;\n          display: block;\n          position: relative;\n          padding-left: 26px;\n          cursor: pointer;\n          line-height: 36px;\n          color: rgba(0, 43, 73, 0.8);\n          transition: color .3s; }\n@media (max-width: 768px) {\n            #footer-block-newsletter .modal .modal-content .modal-footer .terminos_grupo [type=\"checkbox\"] + label.label-modal-terms {\n              font-size: 10px; } }\n#footer-block-newsletter .modal .modal-content .modal-footer .terminos_grupo [type=\"checkbox\"] + label a.link-modal-terms {\n          text-decoration: none;\n          color: #a6cf24; }\n#footer-block-newsletter .modal .modal-content .modal-footer .terminos_grupo [type=\"checkbox\"] + label:after {\n          width: 30px;\n          height: 30px;\n          transition: all .2s;\n          top: 0;\n          left: 0; }\n#footer-block-newsletter .modal .modal-content .modal-footer .terminos_grupo [type=\"checkbox\"]:not(:checked) + label:after {\n          background: url(\"/assets/images/check2_off.png\") left center no-repeat; }\n#footer-block-newsletter .modal .modal-content .modal-footer .terminos_grupo [type=\"checkbox\"]:checked + label:after {\n          background: url(\"/assets/images/check2.png\") left center no-repeat; }\n#footer-block-newsletter .modal .modal-content .modal-footer .terminos_grupo .tooltip-modal {\n          width: 440px;\n          height: 400px;\n          padding: 50px 20px 20px 20px;\n          border-radius: 5px;\n          box-shadow: 2px 2px 10px 2px #888888;\n          background: white;\n          position: absolute;\n          bottom: 110px;\n          color: #002b49;\n          overflow: scroll; }\n@media (max-width: 768px) {\n            #footer-block-newsletter .modal .modal-content .modal-footer .terminos_grupo .tooltip-modal {\n              width: auto;\n              height: 400px;\n              right: 20px;\n              left: 20px; } }\n#footer-block-newsletter .modal .modal-content .modal-footer .terminos_grupo .tooltip-modal::after {\n            content: 'AUTORIZACIÓN ONLINE';\n            text-align: center;\n            font-size: 12px;\n            width: 100%;\n            height: 30px;\n            background-color: #e5e9ec;\n            position: absolute;\n            top: 0;\n            left: 0;\n            padding-top: 5px; }\n#footer-block-newsletter .modal .modal-content .modal-footer .save-modal-button {\n        background: #a6cf24;\n        color: white;\n        text-align: center;\n        width: 99px;\n        height: 40px;\n        font-size: 17px; }\n@media (max-width: 768px) {\n          #footer-block-newsletter .modal .modal-content .modal-footer .save-modal-button {\n            width: 89px;\n            height: 30px;\n            font-size: 10px; } }\n#footer-block-newsletter .modal .modal-content .modal-footer .fa-info-circle {\n        margin: 0px 5px 8px 8px;\n        color: #93a4aa; }\n@media only screen and (max-width: 769px) {\n  #footer-block-newsletter {\n    margin: 30px 0 30px 0;\n    text-align: center;\n    border-right: 0px; } }\n@media only screen and (min-width: 769px) and (max-width: 1025px) {\n  #footer-block-newsletter .newsletter-info button {\n    width: 120px;\n    height: 25px;\n    margin: 3px 0 0 0; }\n    #footer-block-newsletter .newsletter-info button .fa-paper-plane {\n      padding-left: 30px; } }\n:host /deep/ .tooltip {\n  -webkit-transform: translate3d(8px, 130px, 0px) !important;\n          transform: translate3d(8px, 130px, 0px) !important; }\n:host /deep/ .tooltip-inner {\n  background: #e4e4e4;\n  max-width: 496px;\n  width: 480px;\n  min-height: 400px;\n  height: 400px;\n  overflow: scroll; }\n:host /deep/ .arrow {\n  display: none; }\n:host /deep/ .tooltip-modal h3 {\n  font-family: Open Sans Codensed;\n  font-size: 18px;\n  text-align: justify; }\n:host /deep/ .tooltip-modal h4 {\n  font-family: Open Sans Codensed;\n  font-size: 20px;\n  text-align: justify; }\n:host /deep/ .tooltip-modal p {\n  font-family: Open Sans Codensed;\n  font-size: 12px;\n  text-align: justify; }\n#popover-title,\n#popover-content {\n  display: none; }\n"
 
 /***/ }),
 
@@ -2190,6 +2321,7 @@ module.exports = "#footer-block-newsletter {\n  margin: 20px 0 20px 0;\n  border
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FooterNewsletterComponent", function() { return FooterNewsletterComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_cards_v1_card_services__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../../../services/cards/v1-card.services */ "./src/app/services/cards/v1-card.services.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2200,10 +2332,106 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var FooterNewsletterComponent = /** @class */ (function () {
-    function FooterNewsletterComponent() {
+    function FooterNewsletterComponent(_cardService, newsletter) {
+        this._cardService = _cardService;
+        this.newsletter = newsletter;
+        this.footerData = {
+            title: '',
+            subtitle: '',
+            button: ''
+        };
     }
     FooterNewsletterComponent.prototype.ngOnInit = function () {
+        this.getPopoverService();
+        $(function () {
+            $('[data-toggle="popover"]').popover({
+                html: true,
+                title: function () {
+                    return $('#popover-title').html();
+                },
+                content: function () {
+                    return document.getElementById('popover-content').innerHTML;
+                }
+            }).click(function (e) {
+                e.preventDefault();
+            });
+        });
+        this.getIndicatorsSliderItems();
+        this.getModalCard();
+    };
+    FooterNewsletterComponent.prototype.getIndicatorsSliderItems = function () {
+        var _this = this;
+        this._cardService.getCustomCardInformation('newslettercard_2').subscribe(function (items) {
+            var title, subtitle, button;
+            for (var _i = 0, _a = items.header; _i < _a.length; _i++) {
+                var attr = _a[_i];
+                var obj = attr.data;
+                if (obj['title']) {
+                    title = obj.title;
+                }
+                else if (obj['subtitle'])
+                    subtitle = obj.subtitle;
+            }
+            for (var _b = 0, _c = items.body; _b < _c.length; _b++) {
+                var attr = _c[_b];
+                var obj = attr.data;
+                if (obj['button']) {
+                    button = obj.button;
+                }
+            }
+            _this.footerData = {
+                title: title,
+                subtitle: subtitle,
+                button: button,
+            };
+        });
+    };
+    FooterNewsletterComponent.prototype.getModalCard = function () {
+        var _this = this;
+        this._cardService.getCustomCardInformation('newslettermodalcard').subscribe(function (items) {
+            _this.titleNewsletter = items.header[0].data.title;
+            _this.descriptionNewsletter = items.header[1].data.subtitle;
+            for (var _i = 0, _a = items.body; _i < _a.length; _i++) {
+                var attr = _a[_i];
+                var obj = attr.data;
+                if (obj['name']) {
+                    _this.nameInput = obj.name;
+                }
+                else if (obj['name_description']) {
+                    _this.nameInputPlaceholder = obj.name_description;
+                }
+                else if (obj['last_name']) {
+                    _this.lastNameInput = obj.last_name;
+                }
+                else if (obj['last_name_description']) {
+                    _this.lastNameInputPlaceholder = obj.last_name_description;
+                }
+                else if (obj['email']) {
+                    _this.emailInput = obj.email;
+                }
+                else if (obj['email_description']) {
+                    _this.emailInputPlaceholder = obj.email_description;
+                }
+                else if (obj['link']) {
+                    _this.linkTerms = obj.link;
+                }
+                else if (obj['label']) {
+                    _this.labelTerms = obj.label;
+                }
+                else if (obj['button']) {
+                    _this.buttonSendNewsletter = obj.button;
+                }
+            }
+        });
+    };
+    FooterNewsletterComponent.prototype.getPopoverService = function () {
+        var _this = this;
+        this.newsletter.getCustomContentBasicPage('c00ea48d-1ce3-4bba-b65e-d57daf71cf4a').subscribe(function (params) {
+            _this.titleTermsTooltip = params.title;
+            _this.bodyTermsTooltip = params.body;
+        });
     };
     FooterNewsletterComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -2211,7 +2439,8 @@ var FooterNewsletterComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./footer-newsletter.component.html */ "./src/app/cards/components/footer/footer-newsletter/footer-newsletter.component.html"),
             styles: [__webpack_require__(/*! ./footer-newsletter.component.scss */ "./src/app/cards/components/footer/footer-newsletter/footer-newsletter.component.scss")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [_services_cards_v1_card_services__WEBPACK_IMPORTED_MODULE_1__["CustomCardService"],
+            _services_cards_v1_card_services__WEBPACK_IMPORTED_MODULE_1__["CustomCardService"]])
     ], FooterNewsletterComponent);
     return FooterNewsletterComponent;
 }());
@@ -2294,6 +2523,82 @@ var GeneratorOfLinksComponent = /** @class */ (function () {
             _services_cards_v1_card_services__WEBPACK_IMPORTED_MODULE_2__["CustomCardService"]])
     ], GeneratorOfLinksComponent);
     return GeneratorOfLinksComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/cards/components/knowus/knowus.component.html":
+/*!***************************************************************!*\
+  !*** ./src/app/cards/components/knowus/knowus.component.html ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<section id=\"kw-title\">\n  <h2>{{ title }}</h2>\n  <p [innerHTML]=\"subtitle\"></p>\n</section>\n\n<section class=\"Knowus\">\n  <div class=\"images-knowus\">\n    <ul class=\"row first images col-md-12\">\n      <li *ngFor=\"let kw of list; let i = index\" class=\"col-md-4\">\n        <div class=\"col-md-12\">\n          <img [src]=\"kw.field_imagen.url\" [alt]=\"kw.field_imagen.alt\" class=\"col-md-6\" />\n          <label class=\"col-md-6\">\n            <span class=\"plus\">+</span> <span>{{ kw.field_cantidad }}</span>\n            <p>{{ kw.title }}</p>\n          </label>\n        </div>\n      </li>\n    </ul>\n  </div>\n</section>"
+
+/***/ }),
+
+/***/ "./src/app/cards/components/knowus/knowus.component.scss":
+/*!***************************************************************!*\
+  !*** ./src/app/cards/components/knowus/knowus.component.scss ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "#kw-title h2 {\n  margin-left: 3%;\n  font-size: 40px;\n  text-transform: uppercase;\n  color: #002b49;\n  text-align: center;\n  margin-top: 64px; }\n  @media (max-width: 667px) {\n    #kw-title h2 {\n      font-size: 30px;\n      margin-left: 0; } }\n  #kw-title p {\n  color: #002b49cc;\n  font-family: Open Sans Codensed;\n  margin-right: 180px;\n  margin-left: 200px;\n  margin-top: 10px;\n  font-size: 20px;\n  text-align: center; }\n  @media (min-width: 1025px) {\n    #kw-title p {\n      margin-right: 0;\n      margin-left: 0; } }\n  @media (max-width: 667px) {\n    #kw-title p {\n      margin-right: 20px;\n      margin-left: 0; } }\n  .Knowus {\n  width: 90%;\n  margin-top: 20px; }\n  @media (max-width: 667px) {\n    .Knowus ul {\n      padding: 0; } }\n  .Knowus .images-knowus .images {\n    margin-left: 0;\n    margin-right: 0; }\n  @media (min-width: 1025px) {\n      .Knowus .images-knowus .images {\n        margin-left: 9%; } }\n  .Knowus .images-knowus .images li {\n      list-style: none;\n      margin-top: 17px; }\n  @media (max-width: 667px) {\n        .Knowus .images-knowus .images li {\n          margin-bottom: 35px; } }\n  .Knowus .images-knowus .images li img {\n        width: 50%;\n        float: left; }\n  @media (min-width: 1025px) {\n          .Knowus .images-knowus .images li img {\n            position: relative; } }\n  @media (max-width: 667px) {\n          .Knowus .images-knowus .images li img {\n            width: 50%;\n            position: relative; } }\n  .Knowus .images-knowus .images li label {\n        font-family: 'Open Sans light';\n        color: #002b49;\n        font-weight: 700;\n        padding-left: 0 !important;\n        padding-right: 0 !important;\n        text-align: left; }\n  .Knowus .images-knowus .images li label span.plus {\n          color: #a6cf24;\n          font-size: 40px; }\n  .Knowus .images-knowus .images li label span {\n          font-size: 40px; }\n  @media (max-width: 667px) {\n            .Knowus .images-knowus .images li label span {\n              font-size: 30px; } }\n  .Knowus .images-knowus .images li label p {\n          font-weight: 300; }\n  @media (min-width: 1025px) {\n          .Knowus .images-knowus .images li label {\n            position: absolute; } }\n  @media (max-width: 667px) {\n          .Knowus .images-knowus .images li label {\n            position: absolute;\n            width: 70%;\n            top: -20px; } }\n"
+
+/***/ }),
+
+/***/ "./src/app/cards/components/knowus/knowus.component.ts":
+/*!*************************************************************!*\
+  !*** ./src/app/cards/components/knowus/knowus.component.ts ***!
+  \*************************************************************/
+/*! exports provided: KnowusComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "KnowusComponent", function() { return KnowusComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_app_services_cards_v1_card_services__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/services/cards/v1-card.services */ "./src/app/services/cards/v1-card.services.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var KnowusComponent = /** @class */ (function () {
+    function KnowusComponent(_service) {
+        this._service = _service;
+        this.list = [];
+    }
+    KnowusComponent.prototype.ngOnInit = function () {
+        this.getKnowusData();
+    };
+    KnowusComponent.prototype.getKnowusData = function () {
+        var _this = this;
+        this._service.getCustomCardInformation('knowusbitsamericas').subscribe(function (items) {
+            _this.title = items.header[0].data.title;
+            _this.subtitle = items.header[1].data.sub_title;
+            _this.list = items.data;
+        });
+    };
+    KnowusComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-knowus',
+            template: __webpack_require__(/*! ./knowus.component.html */ "./src/app/cards/components/knowus/knowus.component.html"),
+            styles: [__webpack_require__(/*! ./knowus.component.scss */ "./src/app/cards/components/knowus/knowus.component.scss")]
+        }),
+        __metadata("design:paramtypes", [src_app_services_cards_v1_card_services__WEBPACK_IMPORTED_MODULE_1__["CustomCardService"]])
+    ], KnowusComponent);
+    return KnowusComponent;
 }());
 
 
@@ -2385,6 +2690,74 @@ var MenuTemplateComponent = /** @class */ (function () {
             _services_cards_v1_card_services__WEBPACK_IMPORTED_MODULE_1__["CustomCardService"]])
     ], MenuTemplateComponent);
     return MenuTemplateComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/cards/components/message/message.component.html":
+/*!*****************************************************************!*\
+  !*** ./src/app/cards/components/message/message.component.html ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<ul *ngIf=\"dataMessage.length > 0\">\n  <li *ngFor=\"let data of dataMessage\">\n    <div *ngIf=\"data.visible == true\" ngClass={{data.status}}>\n      <i ngClass={{data.status}}></i>\n      <p>{{ data.message}}</p>\n    </div>\n  </li>\n</ul>"
+
+/***/ }),
+
+/***/ "./src/app/cards/components/message/message.component.scss":
+/*!*****************************************************************!*\
+  !*** ./src/app/cards/components/message/message.component.scss ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "ul {\n  padding: 25px;\n  margin-bottom: 0; }\n  ul li {\n    list-style: none;\n    margin-top: 5px;\n    margin-bottom: 5px; }\n  ul li .error {\n      background-color: #efcfd2;\n      color: #721c24;\n      padding: 5px; }\n  ul li .success {\n      background-color: #e7efcd;\n      padding: 10px;\n      color: #002b49;\n      padding-left: 20px; }\n  ul li i.error {\n      background-image: url(\"data:image/svg+xml,%3C%3Fxml version%3D%221.0%22 encoding%3D%22UTF-8%22%3F%3E%3C!-- Created with Inkscape (http%3A%2F%2Fwww.inkscape.org%2F) --%3E%3Csvg width%3D%226.6477mm%22 height%3D%2213.295mm%22 version%3D%221.1%22 viewBox%3D%220 0 6.6477 13.295%22 xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 xmlns%3Acc%3D%22http%3A%2F%2Fcreativecommons.org%2Fns%23%22 xmlns%3Adc%3D%22http%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%22 xmlns%3Ardf%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%22%3E %3Cmetadata%3E  %3Crdf%3ARDF%3E   %3Ccc%3AWork rdf%3Aabout%3D%22%22%3E    %3Cdc%3Aformat%3Eimage%2Fsvg%2Bxml%3C%2Fdc%3Aformat%3E    %3Cdc%3Atype rdf%3Aresource%3D%22http%3A%2F%2Fpurl.org%2Fdc%2Fdcmitype%2FStillImage%22%2F%3E    %3Cdc%3Atitle%2F%3E   %3C%2Fcc%3AWork%3E  %3C%2Frdf%3ARDF%3E %3C%2Fmetadata%3E %3Cg transform%3D%22translate(168.12 -65.379)%22%3E  %3Ccircle transform%3D%22rotate(-45)%22 cx%3D%22-165.11%22 cy%3D%22-67.95%22 r%3D%223.3238%22 fill%3D%22%23b2dd54%22%2F%3E  %3Cpath d%3D%22m-163.13 67.355-2.157 2.1574-1.005-1.0062-0.456 0.4564 1.005 1.0057 0.456 0.4556 0.456-0.4556 2.157-2.1572z%22 fill%3D%22%23fff%22%2F%3E  %3Ccircle transform%3D%22rotate(-45)%22 cx%3D%22-169.81%22 cy%3D%22-63.249%22 r%3D%223.3238%22 fill%3D%22%23dd5454%22%2F%3E  %3Cpath d%3D%22m-163.72 73.814-1.0784 1.0784-1.0769-1.0771-0.45587 0.45588 1.0768 1.0769-1.0784 1.079 0.45588 0.45588 1.079-1.0784 1.0795 1.0795 0.45587-0.45588-1.0795-1.0795 1.0784-1.0784z%22 fill%3D%22%23fff%22%2F%3E %3C%2Fg%3E%3C%2Fsvg%3E\");\n      background-repeat: no-repeat;\n      background-size: cover;\n      width: 30px;\n      height: 30px;\n      display: inline-block;\n      background-position-y: -30px;\n      position: absolute; }\n  ul li i.success {\n      background-image: url(\"data:image/svg+xml,%3C%3Fxml version%3D%221.0%22 encoding%3D%22UTF-8%22%3F%3E%3C!-- Created with Inkscape (http%3A%2F%2Fwww.inkscape.org%2F) --%3E%3Csvg width%3D%226.6477mm%22 height%3D%2213.295mm%22 version%3D%221.1%22 viewBox%3D%220 0 6.6477 13.295%22 xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 xmlns%3Acc%3D%22http%3A%2F%2Fcreativecommons.org%2Fns%23%22 xmlns%3Adc%3D%22http%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%22 xmlns%3Ardf%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%22%3E %3Cmetadata%3E  %3Crdf%3ARDF%3E   %3Ccc%3AWork rdf%3Aabout%3D%22%22%3E    %3Cdc%3Aformat%3Eimage%2Fsvg%2Bxml%3C%2Fdc%3Aformat%3E    %3Cdc%3Atype rdf%3Aresource%3D%22http%3A%2F%2Fpurl.org%2Fdc%2Fdcmitype%2FStillImage%22%2F%3E    %3Cdc%3Atitle%2F%3E   %3C%2Fcc%3AWork%3E  %3C%2Frdf%3ARDF%3E %3C%2Fmetadata%3E %3Cg transform%3D%22translate(168.12 -65.379)%22%3E  %3Ccircle transform%3D%22rotate(-45)%22 cx%3D%22-165.11%22 cy%3D%22-67.95%22 r%3D%223.3238%22 fill%3D%22%23b2dd54%22%2F%3E  %3Cpath d%3D%22m-163.13 67.355-2.157 2.1574-1.005-1.0062-0.456 0.4564 1.005 1.0057 0.456 0.4556 0.456-0.4556 2.157-2.1572z%22 fill%3D%22%23fff%22%2F%3E  %3Ccircle transform%3D%22rotate(-45)%22 cx%3D%22-169.81%22 cy%3D%22-63.249%22 r%3D%223.3238%22 fill%3D%22%23dd5454%22%2F%3E  %3Cpath d%3D%22m-163.72 73.814-1.0784 1.0784-1.0769-1.0771-0.45587 0.45588 1.0768 1.0769-1.0784 1.079 0.45588 0.45588 1.079-1.0784 1.0795 1.0795 0.45587-0.45588-1.0795-1.0795 1.0784-1.0784z%22 fill%3D%22%23fff%22%2F%3E %3C%2Fg%3E%3C%2Fsvg%3E\");\n      background-repeat: no-repeat;\n      background-size: cover;\n      width: 30px;\n      height: 30px;\n      display: inline-block;\n      position: absolute; }\n  ul li p {\n      display: inline-block;\n      margin-left: 40px;\n      margin-bottom: 10px; }\n"
+
+/***/ }),
+
+/***/ "./src/app/cards/components/message/message.component.ts":
+/*!***************************************************************!*\
+  !*** ./src/app/cards/components/message/message.component.ts ***!
+  \***************************************************************/
+/*! exports provided: MessageComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MessageComponent", function() { return MessageComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var MessageComponent = /** @class */ (function () {
+    function MessageComponent() {
+        this.dataMessage = [];
+    }
+    MessageComponent.prototype.ngOnInit = function () {
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", Array)
+    ], MessageComponent.prototype, "dataMessage", void 0);
+    MessageComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-message',
+            template: __webpack_require__(/*! ./message.component.html */ "./src/app/cards/components/message/message.component.html"),
+            styles: [__webpack_require__(/*! ./message.component.scss */ "./src/app/cards/components/message/message.component.scss")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], MessageComponent);
+    return MessageComponent;
 }());
 
 
@@ -2486,7 +2859,7 @@ var PorqueBitsComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<section id=\"title-gallery\">\n    <div class=\"title\">\n        <h1> {{ title }} </h1>\n    </div>\n</section>\n<section id=\"gallery-images\">\n    <div class=\"tz-gallery\">\n        <div class=\"row\">\n            <div class=\"col-sm-6 col-md-4\" *ngFor=\"let ps of servicesProduct\">\n                <div class=\"thumbnai\">\n                    <div class=\"background\">\n                        <img class=\"images lightbox\" [src]=\"ps.short_image[0].url\" alt=\"{{ps.short_image[0].alt}}\">\n                    </div>\n                    <div class=\"box-title\">\n                        <span class=\"titlepr\">{{ ps.label }}</span>\n                        <div class=\"box-text\">\n                            <span class=\"text\" [innerHTML]=\"ps.description\"></span>\n                        </div>\n                    </div>\n                    <div class=\"box-info\">\n                        <div class=\"box-botton\">\n                            <a class=\"botton_products\" [routerLink]=\"[ps.type, ps.nid]\">Ver Mas</a>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</section>\n<section id=\"bottons-services\">\n    <div class=\"totalbottons\">\n        <div class=\"bottons\">\n            <a class=\"bottonleft\" routerLink=\"/products\">VER PRODUCTOS </a>\n            <a class=\"bottonrigth\" routerLink=\"/services\">VER SERVICIOS </a>\n        </div>\n    </div>\n</section>"
+module.exports = "<section id=\"title-gallery\">\n    <div class=\"title\">\n        <h1> {{ title }} </h1>\n    </div>\n</section>\n<section id=\"gallery-images\">\n    <div class=\"tz-gallery\">\n        <div class=\"row\">\n            <div class=\"col-sm-6 col-md-4\" *ngFor=\"let ps of servicesProduct\">\n                <div class=\"thumbnai\">\n                    <div class=\"background\">\n                        <img class=\"images lightbox\" [src]=\"ps.short_image[0].url\" alt=\"{{ps.short_image[0].alt}}\">\n                    </div>\n                    <div class=\"box-title\">\n                        <span class=\"titlepr\">{{ ps.label }}</span>\n                        <div class=\"box-text\">\n                            <span class=\"text\" [innerHTML]=\"ps.description\"></span>\n                        </div>\n                    </div>\n                    <div class=\"box-info\">\n                        <div class=\"box-botton\">\n                            <a class=\"botton_products\" [routerLink]=\"[ps.type, ps.nid]\">Ver Mas</a>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</section>\n<section id=\"bottons-services\">\n    <div class=\"totalbottons\">\n        <div class=\"bottons\">\n            <a class=\"bottonleft\" [routerLink]=\"buttonL.link\">{{ buttonL.label }}</a>\n            <a class=\"bottonrigth\" [routerLink]=\"buttonR.link\">{{ buttonR.label }} </a>\n        </div>\n    </div>\n</section>"
 
 /***/ }),
 
@@ -2497,7 +2870,7 @@ module.exports = "<section id=\"title-gallery\">\n    <div class=\"title\">\n   
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "#title-gallery {\n  margin-top: 14%; }\n  @media (min-width: 668px) and (max-width: 1024px) {\n    #title-gallery {\n      margin-top: 7%; } }\n  @media (min-width: 1025px) {\n    #title-gallery {\n      margin-top: 4%; } }\n  #title-gallery .title {\n    background: #f7f9f9;\n    height: 160px;\n    padding-top: 11%; }\n  @media (min-width: 668px) and (max-width: 1024px) {\n      #title-gallery .title {\n        padding-top: 7%; } }\n  @media (min-width: 1025px) {\n      #title-gallery .title {\n        height: 171px;\n        padding-top: 3.5%; } }\n  #title-gallery .title h1 {\n      width: 97%;\n      padding-left: 8%;\n      padding-right: 4%;\n      margin-bottom: 0%;\n      text-align: center;\n      text-transform: uppercase;\n      color: #002b49; }\n  @media (min-width: 1025px) {\n        #title-gallery .title h1 {\n          width: 100%;\n          padding-left: 0%;\n          padding-right: 0%; } }\n  #gallery-images {\n  height: 1116px;\n  overflow: hidden; }\n  @media (min-width: 668px) and (max-width: 1024px) {\n    #gallery-images {\n      height: auto; } }\n  @media (min-width: 1025px) {\n    #gallery-images {\n      height: 906px; } }\n  #gallery-images .block-title {\n    height: 142px;\n    width: 100%;\n    background: #f7f9f9; }\n  @media (min-width: 1025px) {\n      #gallery-images .block-title {\n        height: 185px; } }\n  #gallery-images .block-title h2 {\n      text-align: center;\n      text-transform: uppercase;\n      font-weight: 200;\n      font-size: 40px;\n      margin: 0%;\n      z-index: 100;\n      color: #002b49;\n      padding: 0%;\n      padding-top: 11%;\n      padding-top: 81px;\n      padding-bottom: 61px; }\n  @media (min-width: 1025px) {\n        #gallery-images .block-title h2 {\n          margin: initial;\n          padding-top: 81px; } }\n  #gallery-images .container {\n    width: 100%;\n    position: relative;\n    height: 690px;\n    padding-left: 0%;\n    padding-left: 0%; }\n  @media (min-width: 1025px) {\n      #gallery-images .container {\n        height: 895px;\n        padding: 0%; } }\n  #gallery-images .gallery-container h1 {\n    text-align: center;\n    margin-top: 70px;\n    font-weight: bold;\n    color: #58595a; }\n  #gallery-images .tz-gallery {\n    height: auto; }\n  #gallery-images .tz-gallery .row {\n      width: 100%;\n      height: 50%;\n      margin: 0%; }\n  #gallery-images .tz-gallery .row .col-md-4 {\n        height: 372px;\n        padding: 0%;\n        /*  @include breakpoint(phone) {\n                    &:nth-child(1n+4) {\n                        display: none;\n                    }\n                }*/ }\n  @media (min-width: 1025px) {\n          #gallery-images .tz-gallery .row .col-md-4 {\n            height: 453px; } }\n  #gallery-images .tz-gallery .thumbnail:hover {\n    -webkit-transform: translateY(-10px) scale(1.02);\n            transform: translateY(-10px) scale(1.02); }\n  #gallery-images .tz-gallery .caption {\n    padding: 26px 30px;\n    text-align: center; }\n  #gallery-images .tz-gallery .caption h3 {\n    font-size: 14px;\n    font-weight: bold;\n    margin-top: 0; }\n  #gallery-images .tz-gallery .caption p {\n    font-size: 12px;\n    color: #7b7d7d;\n    margin: 0; }\n  #gallery-images .baguetteBox-button {\n    background-color: transparent; }\n  #gallery-images .tz-gallery .thumbnai {\n    width: 100%;\n    height: 100%;\n    padding: 0;\n    border: none;\n    overflow: hidden;\n    position: relative;\n    background-color: transparent;\n    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.06); }\n  #gallery-images .tz-gallery .thumbnai .lightbox {\n      height: 100%;\n      width: 100%; }\n  #gallery-images .tz-gallery .thumbnai .background {\n      height: 100%;\n      display: flex; }\n  @media (min-width: 1025px) {\n        #gallery-images .tz-gallery .thumbnai .background {\n          background: rgba(0, 88, 146, 0.3); } }\n  #gallery-images .tz-gallery .thumbnai .background .images {\n        width: 100%;\n        height: 100%;\n        -webkit-filter: brightness(85%);\n                filter: brightness(85%);\n        width: 100%;\n        height: 100%;\n        z-index: -1; }\n  #gallery-images .tz-gallery .thumbnai .box-info {\n      height: 100%;\n      width: 100%;\n      background-color: rgba(0, 43, 73, 0.62);\n      position: absolute;\n      bottom: 0%;\n      padding-right: 14%;\n      padding-left: 14%; }\n  @media (min-width: 1025px) {\n        #gallery-images .tz-gallery .thumbnai .box-info {\n          transition: all ease 0.89s;\n          visibility: hidden;\n          top: 100%; } }\n  #gallery-images .tz-gallery .thumbnai .box-info .box-botton {\n        position: relative;\n        display: flex;\n        justify-content: center;\n        top: 77%; }\n  @media (min-width: 1025px) {\n          #gallery-images .tz-gallery .thumbnai .box-info .box-botton {\n            top: 81%; } }\n  #gallery-images .tz-gallery .thumbnai .box-info .box-botton .botton_products {\n          display: flex;\n          border: none;\n          padding-top: 2.5%;\n          padding-bottom: 2.5%;\n          text-transform: uppercase;\n          text-align: center;\n          color: #8ECE17;\n          text-decoration: none;\n          visibility: hidden;\n          font-family: 'Open Sans';\n          justify-content: center; }\n  @media (min-width: 668px) and (max-width: 1024px) {\n            #gallery-images .tz-gallery .thumbnai .box-info .box-botton .botton_products {\n              left: 0%;\n              width: 100%;\n              padding-left: 19%;\n              margin-left: auto;\n              margin-right: auto;\n              justify-content: center; } }\n  #gallery-images .tz-gallery .thumbnai .box-info .box-botton .botton_products::after {\n            content: '';\n            position: relative;\n            right: 9%;\n            width: 100%;\n            top: 0px;\n            margin-right: auto;\n            margin-left: auto;\n            padding-left: 27%;\n            padding-right: 27%;\n            padding-top: 29%;\n            background-image: url(\"/assets/icon/mas.svg\");\n            background-position: center;\n            background-repeat: no-repeat;\n            background-size: 35px;\n            visibility: visible; }\n  @media (min-width: 668px) and (max-width: 1024px) {\n              #gallery-images .tz-gallery .thumbnai .box-info .box-botton .botton_products::after {\n                padding-left: 20%;\n                padding-right: 20%;\n                padding-top: 8%;\n                right: 31%; } }\n  @media (min-width: 1025px) {\n            #gallery-images .tz-gallery .thumbnai .box-info .box-botton .botton_products {\n              display: block;\n              width: 55%;\n              padding-left: 0%;\n              padding-right: 0%;\n              padding-top: 3.5%;\n              padding-bottom: 3.5%;\n              border: solid 1px #8ECE17;\n              border-radius: 3%;\n              color: #8ECE17;\n              font-size: 20px;\n              visibility: visible; }\n              #gallery-images .tz-gallery .thumbnai .box-info .box-botton .botton_products::after {\n                content: '';\n                visibility: hidden;\n                padding-right: initial;\n                padding-left: initial; } }\n  #gallery-images .tz-gallery .thumbnai .box-title {\n      position: relative;\n      bottom: 92%;\n      padding-left: 9%;\n      padding-right: 9%;\n      text-align: center;\n      z-index: 10; }\n  @media (min-width: 1025px) {\n        #gallery-images .tz-gallery .thumbnai .box-title {\n          float: right;\n          clear: both;\n          bottom: 62.5%;\n          padding-left: 25%;\n          padding-right: 25%;\n          transition: all ease 0.8s; } }\n  #gallery-images .tz-gallery .thumbnai .box-title .titlepr {\n        color: #ffffff;\n        position: relative;\n        top: 56%;\n        line-height: 46px;\n        font-weight: 300;\n        height: auto;\n        font-size: 31px;\n        font-family: 'Open Sans Codensed'; }\n  @media (min-width: 1025px) {\n          #gallery-images .tz-gallery .thumbnai .box-title .titlepr {\n            font-size: 36px; } }\n  #gallery-images .tz-gallery .thumbnai .box-title .titlepr:after {\n        content: '';\n        position: relative;\n        display: block;\n        width: 100%;\n        height: 1.2px;\n        left: 0%;\n        bottom: -14px;\n        transition: all .3s ease-in-out;\n        -webkit-transform: scaleX(0.3);\n                transform: scaleX(0.3);\n        background: #8ECE17; }\n  @media (min-width: 1025px) {\n          #gallery-images .tz-gallery .thumbnai .box-title .titlepr:after {\n            top: 134%; } }\n  #gallery-images .tz-gallery .thumbnai .box-title .box-text {\n        position: relative;\n        padding-top: 10%;\n        padding-left: 4%;\n        padding-right: 5%; }\n  @media (min-width: 1025px) {\n          #gallery-images .tz-gallery .thumbnai .box-title .box-text {\n            top: 365px;\n            transition: all ease 1s;\n            width: 140%;\n            right: 20%;\n            padding: 10% 0%; } }\n  #gallery-images .tz-gallery .thumbnai .box-title .box-text .text {\n          display: block;\n          text-align: center;\n          height: auto;\n          color: #ffffff;\n          font-size: 15px;\n          font-family: 'Open Sans light'; }\n  @media (min-width: 1025px) {\n            #gallery-images .tz-gallery .thumbnai .box-title .box-text .text {\n              font-size: 18px;\n              top: 26%;\n              height: auto;\n              line-height: 1.4; } }\n  @media (min-width: 1025px) {\n    #gallery-images .tz-gallery .thumbnai:hover .box-info {\n      -webkit-transform: translateY(-100%);\n              transform: translateY(-100%);\n      background: rgba(0, 43, 73, 0.62);\n      visibility: initial; }\n    #gallery-images .tz-gallery .thumbnai:hover .box-title {\n      bottom: 86%;\n      z-index: 100; } }\n  @media (min-width: 1025px) and (min-width: 1025px) {\n    #gallery-images .tz-gallery .thumbnai:hover .box-title {\n      bottom: 93%; } }\n  @media (min-width: 1025px) {\n      #gallery-images .tz-gallery .thumbnai:hover .box-title .box-text {\n        top: 14px;\n        -webkit-transform: translateY(-6%);\n                transform: translateY(-6%); }\n      #gallery-images .tz-gallery .thumbnai:hover .box-title .titlepr:after {\n        transform: scaleX(0.8);\n        -webkit-transform: scaleX(0.8); } }\n  #bottons-services .totalbottons {\n  position: relative;\n  top: 50%;\n  width: 100%;\n  background: #f7f9f9;\n  height: 141px; }\n  @media (min-width: 1025px) {\n    #bottons-services .totalbottons {\n      top: initial; } }\n  #bottons-services .totalbottons .bottons {\n    display: flex;\n    padding-top: 10%;\n    width: 91%;\n    justify-content: center; }\n  @media (min-width: 668px) and (max-width: 1024px) {\n      #bottons-services .totalbottons .bottons {\n        padding-bottom: 0%;\n        padding-top: 6%; } }\n  @media (min-width: 1025px) {\n      #bottons-services .totalbottons .bottons {\n        padding-top: 40px;\n        padding-bottom: initial; } }\n  #bottons-services .totalbottons .bottons .bottonleft,\n    #bottons-services .totalbottons .bottons .bottonrigth {\n      display: flex;\n      width: 27%;\n      text-align: center;\n      border: solid 1px rgba(142, 206, 23, 0.7);\n      padding: 2% 1.5%;\n      position: relative;\n      text-decoration: none;\n      color: #ffffff;\n      background: rgba(142, 206, 23, 0.7);\n      font-size: 14px;\n      font-family: 'Open Sans';\n      text-transform: uppercase;\n      justify-content: center;\n      align-items: center; }\n  @media (min-width: 668px) and (max-width: 1024px) {\n        #bottons-services .totalbottons .bottons .bottonleft,\n        #bottons-services .totalbottons .bottons .bottonrigth {\n          width: 14%;\n          padding-top: 1%;\n          padding-bottom: 1%; } }\n  @media (min-width: 1025px) {\n        #bottons-services .totalbottons .bottons .bottonleft,\n        #bottons-services .totalbottons .bottons .bottonrigth {\n          font-size: 18px;\n          width: 16%;\n          padding: 1%; } }\n  #bottons-services .totalbottons .bottons .bottonrigth {\n      left: 8%; }\n  #bottons-services .totalbottons .bottons .bottonleft:hover {\n      border: solid 1px #8ECE17;\n      background: #8ECE17; }\n  #bottons-services .totalbottons .bottons .bottonrigth:hover {\n      border: solid 1px #8ECE17;\n      background: #8ECE17; }\n"
+module.exports = "#title-gallery {\n  margin-top: 14%; }\n  @media (min-width: 668px) and (max-width: 1024px) {\n    #title-gallery {\n      margin-top: 7%; } }\n  @media (min-width: 1025px) {\n    #title-gallery {\n      margin-top: 4%; } }\n  #title-gallery .title {\n    background: #f7f9f9;\n    height: 160px;\n    padding-top: 11%; }\n  @media (min-width: 668px) and (max-width: 1024px) {\n      #title-gallery .title {\n        padding-top: 7%; } }\n  @media (min-width: 1025px) {\n      #title-gallery .title {\n        height: 171px;\n        padding-top: 3.5%; } }\n  #title-gallery .title h1 {\n      width: 97%;\n      padding-left: 8%;\n      padding-right: 4%;\n      margin-bottom: 0%;\n      text-align: center;\n      text-transform: uppercase;\n      color: #002b49; }\n  @media (min-width: 1025px) {\n        #title-gallery .title h1 {\n          width: 100%;\n          padding-left: 0%;\n          padding-right: 0%; } }\n  #gallery-images {\n  height: 1116px;\n  overflow: hidden; }\n  @media (min-width: 668px) and (max-width: 1024px) {\n    #gallery-images {\n      height: auto; } }\n  @media (min-width: 1025px) {\n    #gallery-images {\n      height: 906px; } }\n  #gallery-images .block-title {\n    height: 142px;\n    width: 100%;\n    background: #f7f9f9; }\n  @media (min-width: 1025px) {\n      #gallery-images .block-title {\n        height: 185px; } }\n  #gallery-images .block-title h2 {\n      text-align: center;\n      text-transform: uppercase;\n      font-weight: 200;\n      font-size: 40px;\n      margin: 0%;\n      z-index: 100;\n      color: #002b49;\n      padding: 0%;\n      padding-top: 11%;\n      padding-top: 81px;\n      padding-bottom: 61px; }\n  @media (min-width: 1025px) {\n        #gallery-images .block-title h2 {\n          margin: initial;\n          padding-top: 81px; } }\n  #gallery-images .container {\n    width: 100%;\n    position: relative;\n    height: 690px;\n    padding-left: 0%;\n    padding-left: 0%; }\n  @media (min-width: 1025px) {\n      #gallery-images .container {\n        height: 895px;\n        padding: 0%; } }\n  #gallery-images .gallery-container h1 {\n    text-align: center;\n    margin-top: 70px;\n    font-weight: bold;\n    color: #58595a; }\n  #gallery-images .tz-gallery {\n    height: auto; }\n  #gallery-images .tz-gallery .row {\n      width: 100%;\n      height: 50%;\n      margin: 0%; }\n  #gallery-images .tz-gallery .row .col-md-4 {\n        height: 372px;\n        padding: 0%;\n        /*  @include breakpoint(phone) {\n                    &:nth-child(1n+4) {\n                        display: none;\n                    }\n                }*/ }\n  @media (min-width: 1025px) {\n          #gallery-images .tz-gallery .row .col-md-4 {\n            height: 453px; } }\n  #gallery-images .tz-gallery .thumbnail:hover {\n    -webkit-transform: translateY(-10px) scale(1.02);\n            transform: translateY(-10px) scale(1.02); }\n  #gallery-images .tz-gallery .caption {\n    padding: 26px 30px;\n    text-align: center; }\n  #gallery-images .tz-gallery .caption h3 {\n    font-size: 14px;\n    font-weight: bold;\n    margin-top: 0; }\n  #gallery-images .tz-gallery .caption p {\n    font-size: 12px;\n    color: #7b7d7d;\n    margin: 0; }\n  #gallery-images .baguetteBox-button {\n    background-color: transparent; }\n  #gallery-images .tz-gallery .thumbnai {\n    width: 100%;\n    height: 100%;\n    padding: 0;\n    border: none;\n    overflow: hidden;\n    position: relative;\n    background-color: transparent;\n    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.06); }\n  #gallery-images .tz-gallery .thumbnai .lightbox {\n      height: 100%;\n      width: 100%; }\n  #gallery-images .tz-gallery .thumbnai .background {\n      height: 100%;\n      display: flex; }\n  @media (min-width: 1025px) {\n        #gallery-images .tz-gallery .thumbnai .background {\n          background: rgba(0, 88, 146, 0.3); } }\n  #gallery-images .tz-gallery .thumbnai .background .images {\n        width: 100%;\n        height: 100%;\n        -webkit-filter: brightness(85%);\n                filter: brightness(85%);\n        width: 100%;\n        height: 100%;\n        z-index: -1; }\n  #gallery-images .tz-gallery .thumbnai .box-info {\n      height: 100%;\n      width: 100%;\n      background-color: rgba(0, 43, 73, 0.62);\n      position: absolute;\n      bottom: 0%;\n      padding-right: 14%;\n      padding-left: 14%; }\n  @media (min-width: 1025px) {\n        #gallery-images .tz-gallery .thumbnai .box-info {\n          transition: all ease 0.89s;\n          visibility: hidden;\n          top: 100%; } }\n  #gallery-images .tz-gallery .thumbnai .box-info .box-botton {\n        position: relative;\n        display: flex;\n        justify-content: center;\n        top: 77%; }\n  @media (min-width: 1025px) {\n          #gallery-images .tz-gallery .thumbnai .box-info .box-botton {\n            top: 81%; } }\n  #gallery-images .tz-gallery .thumbnai .box-info .box-botton .botton_products {\n          display: flex;\n          border: none;\n          padding-top: 2.5%;\n          padding-bottom: 2.5%;\n          text-transform: uppercase;\n          text-align: center;\n          color: #8ECE17;\n          text-decoration: none;\n          visibility: hidden;\n          font-family: 'Open Sans';\n          justify-content: center; }\n  @media (min-width: 668px) and (max-width: 1024px) {\n            #gallery-images .tz-gallery .thumbnai .box-info .box-botton .botton_products {\n              left: 0%;\n              width: 100%;\n              padding-left: 19%;\n              margin-left: auto;\n              margin-right: auto;\n              justify-content: center; } }\n  #gallery-images .tz-gallery .thumbnai .box-info .box-botton .botton_products::after {\n            content: '';\n            position: relative;\n            right: 9%;\n            width: 100%;\n            top: 0px;\n            margin-right: auto;\n            margin-left: auto;\n            padding-left: 27%;\n            padding-right: 27%;\n            padding-top: 29%;\n            background-image: url(\"/assets/icon/mas.svg\");\n            background-position: center;\n            background-repeat: no-repeat;\n            background-size: 35px;\n            visibility: visible; }\n  @media (min-width: 668px) and (max-width: 1024px) {\n              #gallery-images .tz-gallery .thumbnai .box-info .box-botton .botton_products::after {\n                padding-left: 20%;\n                padding-right: 20%;\n                padding-top: 8%;\n                right: 31%; } }\n  @media (min-width: 1025px) {\n            #gallery-images .tz-gallery .thumbnai .box-info .box-botton .botton_products {\n              display: block;\n              width: 55%;\n              padding-left: 0%;\n              padding-right: 0%;\n              padding-top: 3.5%;\n              padding-bottom: 3.5%;\n              border: solid 1px #8ECE17;\n              border-radius: 3%;\n              color: #8ECE17;\n              font-size: 20px;\n              visibility: visible; }\n              #gallery-images .tz-gallery .thumbnai .box-info .box-botton .botton_products::after {\n                content: '';\n                visibility: hidden;\n                padding-right: initial;\n                padding-left: initial; } }\n  #gallery-images .tz-gallery .thumbnai .box-title {\n      position: relative;\n      bottom: 92%;\n      padding-left: 9%;\n      padding-right: 9%;\n      text-align: center;\n      z-index: 10; }\n  @media (min-width: 1025px) {\n        #gallery-images .tz-gallery .thumbnai .box-title {\n          clear: both;\n          bottom: 62.5%;\n          padding-left: 25%;\n          padding-right: 25%;\n          transition: all ease 0.8s; } }\n  #gallery-images .tz-gallery .thumbnai .box-title .titlepr {\n        color: #ffffff;\n        position: relative;\n        top: 56%;\n        line-height: 46px;\n        font-weight: 300;\n        height: auto;\n        font-size: 31px;\n        font-family: 'Open Sans Codensed'; }\n  @media (min-width: 1025px) {\n          #gallery-images .tz-gallery .thumbnai .box-title .titlepr {\n            font-size: 36px; } }\n  #gallery-images .tz-gallery .thumbnai .box-title .titlepr:after {\n        content: '';\n        position: relative;\n        display: block;\n        width: 100%;\n        height: 1.2px;\n        left: 0%;\n        bottom: -14px;\n        transition: all .3s ease-in-out;\n        -webkit-transform: scaleX(0.3);\n                transform: scaleX(0.3);\n        background: #8ECE17; }\n  @media (min-width: 1025px) {\n          #gallery-images .tz-gallery .thumbnai .box-title .titlepr:after {\n            top: 134%; } }\n  #gallery-images .tz-gallery .thumbnai .box-title .box-text {\n        position: relative;\n        padding-top: 10%;\n        padding-left: 4%;\n        padding-right: 5%; }\n  @media (min-width: 1025px) {\n          #gallery-images .tz-gallery .thumbnai .box-title .box-text {\n            top: 365px;\n            transition: all ease 1s;\n            width: 140%;\n            right: 20%;\n            padding: 10% 0%; } }\n  #gallery-images .tz-gallery .thumbnai .box-title .box-text .text {\n          display: block;\n          text-align: center;\n          height: auto;\n          color: #ffffff;\n          font-size: 15px;\n          font-family: 'Open Sans light'; }\n  @media (min-width: 1025px) {\n            #gallery-images .tz-gallery .thumbnai .box-title .box-text .text {\n              font-size: 18px;\n              top: 26%;\n              height: auto;\n              line-height: 1.4; } }\n  @media (min-width: 1025px) {\n    #gallery-images .tz-gallery .thumbnai:hover .box-info {\n      -webkit-transform: translateY(-100%);\n              transform: translateY(-100%);\n      background: rgba(0, 43, 73, 0.62);\n      visibility: initial; }\n    #gallery-images .tz-gallery .thumbnai:hover .box-title {\n      bottom: 86%;\n      z-index: 100; } }\n  @media (min-width: 1025px) and (min-width: 1025px) {\n    #gallery-images .tz-gallery .thumbnai:hover .box-title {\n      bottom: 93%; } }\n  @media (min-width: 1025px) {\n      #gallery-images .tz-gallery .thumbnai:hover .box-title .box-text {\n        top: 14px;\n        -webkit-transform: translateY(-6%);\n                transform: translateY(-6%); }\n      #gallery-images .tz-gallery .thumbnai:hover .box-title .titlepr:after {\n        transform: scaleX(0.8);\n        -webkit-transform: scaleX(0.8); } }\n  #bottons-services .totalbottons {\n  position: relative;\n  top: 50%;\n  width: 100%;\n  background: #f7f9f9;\n  height: 141px; }\n  @media (min-width: 1025px) {\n    #bottons-services .totalbottons {\n      top: initial; } }\n  #bottons-services .totalbottons .bottons {\n    display: flex;\n    padding-top: 10%;\n    width: 91%;\n    justify-content: center; }\n  @media (min-width: 668px) and (max-width: 1024px) {\n      #bottons-services .totalbottons .bottons {\n        padding-bottom: 0%;\n        padding-top: 6%; } }\n  @media (min-width: 1025px) {\n      #bottons-services .totalbottons .bottons {\n        padding-top: 40px;\n        padding-bottom: initial; } }\n  #bottons-services .totalbottons .bottons .bottonleft,\n    #bottons-services .totalbottons .bottons .bottonrigth {\n      display: flex;\n      width: 27%;\n      text-align: center;\n      border: solid 1px rgba(142, 206, 23, 0.7);\n      padding: 2% 1.5%;\n      position: relative;\n      text-decoration: none;\n      color: #ffffff;\n      background: rgba(142, 206, 23, 0.7);\n      font-size: 14px;\n      font-family: 'Open Sans';\n      text-transform: uppercase;\n      justify-content: center;\n      align-items: center; }\n  @media (min-width: 668px) and (max-width: 1024px) {\n        #bottons-services .totalbottons .bottons .bottonleft,\n        #bottons-services .totalbottons .bottons .bottonrigth {\n          width: 14%;\n          padding-top: 1%;\n          padding-bottom: 1%; } }\n  @media (min-width: 1025px) {\n        #bottons-services .totalbottons .bottons .bottonleft,\n        #bottons-services .totalbottons .bottons .bottonrigth {\n          font-size: 18px;\n          width: 16%;\n          padding: 1%; } }\n  #bottons-services .totalbottons .bottons .bottonrigth {\n      left: 8%; }\n  #bottons-services .totalbottons .bottons .bottonleft:hover {\n      border: solid 1px #8ECE17;\n      background: #8ECE17; }\n  #bottons-services .totalbottons .bottons .bottonrigth:hover {\n      border: solid 1px #8ECE17;\n      background: #8ECE17; }\n"
 
 /***/ }),
 
@@ -2528,6 +2901,14 @@ var ProductServicesComponent = /** @class */ (function () {
     function ProductServicesComponent(_cardService) {
         this._cardService = _cardService;
         this.servicesProduct = [];
+        this.buttonL = {
+            link: 'string',
+            label: ''
+        };
+        this.buttonR = {
+            link: '',
+            label: ''
+        };
     }
     ProductServicesComponent.prototype.ngOnInit = function () {
         this.getProductsAndServicesItems();
@@ -2543,6 +2924,8 @@ var ProductServicesComponent = /** @class */ (function () {
                     _this.servicesProduct[index].nid = _this.servicesProduct[index].nid.replace('_', '-');
                 }
             }
+            _this.buttonL = items.body[0].data;
+            _this.buttonR = items.body[1].data;
         });
     };
     ProductServicesComponent = __decorate([
@@ -2632,7 +3015,7 @@ var SeparatorComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row fondoSlide\" [ngStyle]=\"{'background-image':'url('+ slide.bkgSrcSlide +')'}\">\n    <div class=\"container\">\n        <div class=\"row\">\n            <div class=\"col-md-7\">\n                <div class=\"mx-4 px-3 pt-7 pb-3 black-trans\">\n                    <h1 class=\"text-light\">{{ slide.titleSlide | uppercase }}</h1>\n                    <h2 class=\"condensed text-green\">{{ slide.subtitleSlide | uppercase}}</h2>\n                    <p class=\"text-light\">{{ slide.descriptionSlide }}</p>\n                    <ul>\n                        <li *ngFor=\"let item of slide.listTextSlide\" class=\"d-flex\">\n                            <i class=\"fas fa-check fa-sm green mr-2\"></i>\n                            <p class=\"text-light\">{{ item }}</p>\n                        </li>\n                    </ul>\n                </div>\n            </div>\n            <div class=\"col-md-5\">\n                <div class=\"pt-3\">\n                    <img [src]=\"slide.imgSrcSlide\" [alt]=\"slide.titleSlide\" width=\"400\" height=\"400\" class=\"d-block m-auto img-fluid\">\n                </div>\n            </div>\n        </div>\n    </div>\n</div>"
+module.exports = "<div class=\"row fondoSlide\" [ngStyle]=\"{'background-image':'url('+ slide.bkgSrcSlide +')'}\">\n    <div class=\"container\">\n        <div class=\"row\">\n            <div class=\"col-md-7\">\n                <div class=\"mx-4 px-3 pt-7 pb-3 black-trans\">\n                    <h1 class=\"text-light\">{{ slide.titleSlide | uppercase }}</h1>\n                    <h2 class=\"condensed text-green\">{{ slide.subtitleSlide | uppercase}}</h2>\n                    <div class=\"text-light\" [innerHTML]=\"slide.descriptionSlide\"></div>\n                </div>\n            </div>\n            <div class=\"col-md-5\">\n                <div class=\"pt-3\">\n                    <img [src]=\"slide.imgSrcSlide\" [alt]=\"slide.titleSlide\" width=\"400\" height=\"400\" class=\"d-block m-auto img-fluid\">\n                </div>\n            </div>\n        </div>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -2658,7 +3041,6 @@ module.exports = "h1, h2, p {\n  font-family: 'Open Sans light'; }\n\n.imgFondoS
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SlideComponent", function() { return SlideComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var src_app_services_cards_v1_card_services__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/services/cards/v1-card.services */ "./src/app/services/cards/v1-card.services.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2669,18 +3051,8 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
-
 var SlideComponent = /** @class */ (function () {
-    function SlideComponent(_http) {
-        this._http = _http;
-        this.slide = {
-            titleSlide: "Título de la diapositiva",
-            subtitleSlide: "Subtitulo de diapositiva",
-            descriptionSlide: "Reprehenderit cupidatat pariatur qui amet dolore id minim eu qui ipsum qui.",
-            listTextSlide: ['Caracteristica #1', 'Caracteristica #2', 'Caracteristica #3'],
-            imgSrcSlide: "/assets/images/phone-mockup.png",
-            bkgSrcSlide: "/assets/images/fondo-hospital.jpg"
-        };
+    function SlideComponent() {
     }
     SlideComponent.prototype.ngOnInit = function () {
         //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
@@ -2696,7 +3068,7 @@ var SlideComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./slide.component.html */ "./src/app/cards/components/slide/slide.component.html"),
             styles: [__webpack_require__(/*! ./slide.component.scss */ "./src/app/cards/components/slide/slide.component.scss")]
         }),
-        __metadata("design:paramtypes", [src_app_services_cards_v1_card_services__WEBPACK_IMPORTED_MODULE_1__["CustomCardService"]])
+        __metadata("design:paramtypes", [])
     ], SlideComponent);
     return SlideComponent;
 }());
@@ -2712,7 +3084,7 @@ var SlideComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ngb-carousel>\n    <ng-template ngbSlide *ngFor=\"let item of sliderArray\">\n        <app-slide [slide]=\"item\"></app-slide>\n    </ng-template>\n</ngb-carousel>"
+module.exports = "<ngb-carousel *ngIf=\"sliderArray.length > 0\">\n    <ng-template ngbSlide *ngFor=\"let item of sliderArray\">\n        <app-slide [slide]=\"item\"></app-slide>\n    </ng-template>\n</ngb-carousel>"
 
 /***/ }),
 
@@ -2751,13 +3123,33 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 var SliderComponent = /** @class */ (function () {
-    function SliderComponent(_http) {
-        this._http = _http;
-        this.sliderArray = this._http.getSliderData();
+    function SliderComponent(_cardService) {
+        this._cardService = _cardService;
+        this.sliderArray = [];
     }
     SliderComponent.prototype.ngOnInit = function () {
-        //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-        //Add 'implements OnInit' to the class.
+        this.getSliderItems();
+    };
+    SliderComponent.prototype.getSliderItems = function () {
+        var _this = this;
+        this._cardService.getCustomCardInformation('sliderbackmediarightcard').subscribe(function (items) {
+            var sliders = [];
+            for (var _i = 0, _a = items.data; _i < _a.length; _i++) {
+                var item = _a[_i];
+                var slide = void 0;
+                debugger;
+                slide = {
+                    titleSlide: item.title,
+                    subtitleSlide: item.field_subtitle,
+                    descriptionSlide: item.field_large_description,
+                    listTextSlide: [],
+                    imgSrcSlide: item.field_right_image.url,
+                    bkgSrcSlide: item.field_background_image.url,
+                };
+                sliders.push(slide);
+            }
+            _this.sliderArray = sliders;
+        });
     };
     SliderComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -2781,7 +3173,7 @@ var SliderComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"tab\">\n\t<div class=\"contactenos\">\n\t\t<button class=\"active\" (click)=\"toogleHidden()\">\n            Comenzar un proyecto\n        </button>\n\t</div>\n\t<div class=\"trabaje\">\n\t\t<button (click)=\"toogleHidden()\">Trabaja con nosotros</button>\n\t</div>\n</div>\n<br/><br/>\n<div class=\"container\" [hidden]=\"hidden\">\n\t<div class=\"row\">\n\t\t<form id=\"formulario_contacto\" #userForm = \"ngForm\" (ngSubmit)=\"onSubmit(userForm.value)\" class=\"col-md-12\">\n\t\t\t<div class=\"form-group\" [ngClass]=\"aplicaCssErro(nombre)\" class=\"col-md-12\">\n\t\t\t\t<div class=\"col-md-6 item\" >\n\t\t\t\t\t<label for=\"exampleInputNombre\">Nombre</label>\n\t\t\t\t\t<input type=\"text\" class=\"form-control\" id=\"nombre\" placeholder=\"Nombre\" name=\"nombre\" ngModel required #nombre=\"ngModel\">\n\t\t\t\t\t<div *ngIf=\"nombre.invalid && nombre.touched\" class=\"alert alert-danger\" role=\"alert\">\n\t\t\t\t\t\tCampo obligatorio o invalido\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-md-6 item\">\n\t\t\t\t\t<label for=\"exampleInputOrg\">Organización</label>\n\t\t\t\t\t<input type=\"text\" class=\"form-control\" id=\"organizacion\" placeholder=\"Organización\" name=\"organizacion\" ngModel #organizacion=\"ngModel\">\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"form-group\" class=\"col-md-12\">\n\t\t\t\t<div class=\"col-md-6 item\">\n\t\t\t\t\t<label for=\"exampleInputEmail1\">Email address</label>\n                    <input type=\"email\" class=\"form-control\" id=\"exampleInputEmail1\" aria-describedby=\"emailHelp\" placeholder=\"Escriba su email\" name=\"correo_electronico\" ngModel\n                    pattern=\"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\" #correo_electronico=\"ngModel\">\n\t\t\t\t\t<div *ngIf=\"correo_electronico.invalid && correo_electronico.touched\" class=\"alert alert-danger\" role=\"alert\">\n\t\t\t\t\t\tCampo obligatorio o invalido\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-md-6 item\">\n\t\t\t\t\t<label for=\"exampleInputTel\">Telefono</label>\n\t\t\t\t\t<input type=\"tel\" class=\"form-control\" id=\"org\" placeholder=\"Escriba su telefono\" name=\"telefono\" ngModel\n\t\t\t\t\tpattern=\"^(\\([0-9]{3}\\)|[0-9]{3})[0-9]{3}[0-9]{4}$\" #telefono=\"ngModel\">\n\t\t\t\t\t<div *ngIf=\"telefono.invalid && telefono.touched\" class=\"alert alert-danger\" role=\"alert\">\n\t\t\t\t\t\tCampo obligatorio o invalido\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"form-group\" class=\"col-md-12\">\n\t\t\t\t<div class=\"col-md-6 item\">\n\t\t\t\t\t<label for=\"pais\">Pais</label>\n\t\t\t\t\t<select type=\"select\" class=\"form-control\" id=\"pais\" placeholder=\"Seleccione su pais\" name=\"pais\" ngModel></select>\n\t\t\t\t</div >\n\t\t\t\t<div class=\"col-md-6 item\">\n\t\t\t\t\t<label for=\"ciudad\">Ciudad</label>\n\t\t\t\t\t<select type=\"select\" class=\"form-control\" id=\"ciudad\" placeholder=\"Seleccione su ciudad\" name=\"ciudad\" ngModel></select>\n\t\t\t \t</div>\n\t\t\t</div>\n\t\t\t<div class=\"col-md-12\">\n\t\t\t\t<div class=\"col-md-6 item\">\n\t\t\t\t\t<label for=\"producto\">Producto de interés</label>\n\t\t\t\t\t<select type=\"select\" class=\"form-control\" id=\"producto\" placeholder=\"Seleccione un producto\" name=\"Producto\" ngModel></select>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-md-6 item\">\n\t\t\t\t\t<label for=\"servicio\">Servicio de interés</label>\n\t\t\t\t\t<select type=\"select\" class=\"form-control\" id=\"servicio\" placeholder=\"Seleccione un servicio\" name=\"Servicio\" ngModel></select>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"form-group\" class=\"col-md-12 comentario\" >\n\t\t\t\t<label for=\"exampleInputComm\">Comentarios</label>\n\t\t\t\t\t<textarea class=\"form-control\" id=\"comentario\" placeholder=\"Escriba sus comentarios\" name=\"comentario\" ngModel #comentario=\"ngModel\"></textarea>\n\t\t\t\t\t<div *ngIf=\"comentario.invalid && comentario.touched\" class=\"alert alert-danger\" role=\"alert\">\n\t\t\t\t\t\tCampo obligatorio o invalido\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"form-group\" class=\"col-md-12 terminos_grupo\">\n\t\t\t\t\t<input type=\"checkbox\" checked=\"checked\" id=\"terms-of-service\" name=\"terms_of_service\"  value=\"false\" ngModel required>\n\t\t\t\t\t<label ng-reflect-ng-class=\"\" for=\"terms-of-service\">He leído y acepto los <a role=\"button\" href=\"#terms\">términos y condiciones</a></label>\n\t\t\t\t</div>\n\t\t\t\t<button type=\"submit\" class=\"btn btn-primary\">Enviar</button>\n\t\t\t\t<div class=\"obligatorios col-md-12\"> <span>*</span>Datos Obligatorios</div>\n\t\t</form>\n\t</div>\n</div>\n<app-workus [hidden]=\"!hidden\" ></app-workus>\n"
+module.exports = "<div class=\"tab\">\n\t<div class=\"contactenos\">\n\t\t<button class=\"active\" (click)=\"toogleHidden()\">\n\t\t\t{{this.title_a}}\n\t\t</button>\n\t</div>\n\t<div class=\"trabaje\">\n\t\t<button (click)=\"toogleHidden()\">\n\t\t\t{{this.title_b}}\n\t\t</button>\n\t</div>\n</div>\n<br /><br />\n<div class=\"container\" [hidden]=\"hidden\">\n\n\t<div class=\"row\">\n\t\t<form id=\"formulario_contacto\" #userForm=\"ngForm\" (ngSubmit)=\"onSubmit(userForm.value)\" class=\"col-md-12\" name=\"formulario_contacto\">\n\t\t\t<app-message [dataMessage]=\"dataMessage\"></app-message>\n\t\t\t<div class=\"form-group\" [ngClass]=\"aplicaCssErro(nombre)\" class=\"col-md-12\">\n\t\t\t\t<div class=\"col-md-6 item\">\n\t\t\t\t\t<label for=\"exampleInputNombre\">Nombre</label>\n\t\t\t\t\t<input type=\"text\" class=\"form-control\" id=\"nombre\" placeholder=\"Nombre\" name=\"nombre\" ngModel required #nombre=\"ngModel\">\n\t\t\t\t\t<div *ngIf=\"nombre.invalid && nombre.touched\" class=\"alert alert-danger\" role=\"alert\">\n\t\t\t\t\t\tCampo obligatorio o invalido\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-md-6 item\">\n\t\t\t\t\t<label for=\"exampleInputOrg\">Organización</label>\n\t\t\t\t\t<input type=\"text\" class=\"form-control\" id=\"organizacion\" placeholder=\"Organización\" name=\"organizacion\" ngModel\n\t\t\t\t\t #organizacion=\"ngModel\">\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"form-group\" class=\"col-md-12\">\n\t\t\t\t<div class=\"col-md-6 item\">\n\t\t\t\t\t<label for=\"exampleInputEmail1\">Email address</label>\n\t\t\t\t\t<input type=\"email\" class=\"form-control\" id=\"exampleInputEmail1\" aria-describedby=\"emailHelp\" placeholder=\"Escriba su email\"\n\t\t\t\t\t name=\"correo_electronico\" ngModel pattern=\"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\"\n\t\t\t\t\t #correo_electronico=\"ngModel\">\n\t\t\t\t\t<div *ngIf=\"correo_electronico.invalid && correo_electronico.touched\" class=\"alert alert-danger\" role=\"alert\">\n\t\t\t\t\t\tCampo obligatorio o invalido\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-md-6 item\">\n\t\t\t\t\t<label for=\"exampleInputTel\">Telefono</label>\n\t\t\t\t\t<input type=\"tel\" class=\"form-control\" id=\"org\" placeholder=\"Escriba su telefono\" name=\"telefono\" ngModel pattern=\"^(\\([0-9]{3}\\)|[0-9]{3})[0-9]{3}[0-9]{4}$\"\n\t\t\t\t\t #telefono=\"ngModel\">\n\t\t\t\t\t<div *ngIf=\"telefono.invalid && telefono.touched\" class=\"alert alert-danger\" role=\"alert\">\n\t\t\t\t\t\tCampo obligatorio o invalido\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"form-group\" class=\"col-md-12\">\n\t\t\t\t<div class=\"col-md-6 item\">\n\t\t\t\t\t<label for=\"pais\">Pais</label>\n\t\t\t\t\t<select type=\"select\" class=\"form-control\" id=\"pais\" placeholder=\"Seleccione su pais\" name=\"pais\" ngModel></select>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-md-6 item\">\n\t\t\t\t\t<label for=\"ciudad\">Ciudad</label>\n\t\t\t\t\t<select type=\"select\" class=\"form-control\" id=\"ciudad\" placeholder=\"Seleccione su ciudad\" name=\"ciudad\" ngModel></select>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"col-md-12\">\n\t\t\t\t<div class=\"col-md-6 item\">\n\t\t\t\t\t<label for=\"producto\">Producto de interés</label>\n\t\t\t\t\t<select type=\"select\" class=\"form-control\" id=\"producto\" placeholder=\"Seleccione un producto\" name=\"Producto\"\n\t\t\t\t\t ngModel></select>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-md-6 item\">\n\t\t\t\t\t<label for=\"servicio\">Servicio de interés</label>\n\t\t\t\t\t<select type=\"select\" class=\"form-control\" id=\"servicio\" placeholder=\"Seleccione un servicio\" name=\"Servicio\"\n\t\t\t\t\t ngModel></select>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"form-group\" class=\"col-md-12 comentario\">\n\t\t\t\t<label for=\"exampleInputComm\">Comentarios</label>\n\t\t\t\t<textarea class=\"form-control\" id=\"comentario\" placeholder=\"Escriba sus comentarios\" name=\"comentario\" ngModel\n\t\t\t\t #comentario=\"ngModel\"></textarea>\n\t\t\t\t<div *ngIf=\"comentario.invalid && comentario.touched\" class=\"alert alert-danger\" role=\"alert\">\n\t\t\t\t\tCampo obligatorio o invalido\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"form-group\" class=\"col-md-12 terminos_grupo\">\n\t\t\t\t<input type=\"checkbox\" checked=\"checked\" id=\"terms-of-service\" name=\"terms_of_service\" value=\"false\" ngModel\n\t\t\t\t required>\n\t\t\t\t<label ng-reflect-ng-class=\"\" for=\"terms-of-service\">He leído y acepto los\n\t\t\t\t\t<a data-trigger=\"focus\" role=\"button\" data-toggle=\"popover\" data-placement=\"top\" href=\"#\">\n\t\t\t\t\t\ttérminos y condiciones\n\t\t\t\t\t</a>\n\t\t\t\t</label>\n\t\t\t</div>\n\t\t\t<button type=\"submit\" class=\"btn btn-primary\">Enviar</button>\n\t\t\t<div class=\"obligatorios col-md-12\"> <span>*</span>Datos Obligatorios</div>\n\t\t</form>\n\t</div>\n</div>\n<app-workus [hidden]=\"!hidden\"></app-workus>\n<div id='popover-title'>{{titulo}}</div>\n<div id='popover-content' [innerHTML]='list'></div>"
 
 /***/ }),
 
@@ -2792,7 +3184,7 @@ module.exports = "<div class=\"tab\">\n\t<div class=\"contactenos\">\n\t\t<butto
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "*, *::before, *::after {\n  box-sizing: border-box; }\n\n.item {\n  display: inline-block; }\n\nlabel {\n  color: #c0dc74;\n  margin-top: 20px;\n  margin-bottom: -1px;\n  font-weight: 100;\n  font-family: 'Open Sans light'; }\n\ninput, select {\n  width: 100%;\n  padding: 4px 2px;\n  outline: none;\n  border: none;\n  border-bottom: 1px solid #b2c6cd;\n  color: #002b49;\n  border-radius: 0px;\n  font-family: 'Open Sans light'; }\n\ninput.ng-invalid.ng-touched {\n  border: solid 1px red; }\n\nselect {\n  background: #f8f8f8;\n  font-family: 'Open Sans light'; }\n\ninput::-webkit-input-placeholder {\n  /* Chrome/Opera/Safari */\n  color: #808080; }\n\ninput::-moz-placeholder {\n  /* Firefox 19+ */\n  color: #808080; }\n\ninput:-ms-input-placeholder {\n  /* IE 10+ */\n  color: #808080; }\n\ninput:-moz-placeholder {\n  /* Firefox 18- */\n  color: #808080; }\n\n.comentario {\n  width: 98%;\n  margin: 0 auto; }\n\n@media screen and (max-width: 480px) {\n    .comentario {\n      width: 91%; } }\n\n.comentario textarea {\n    min-height: 40px;\n    border-radius: 0px;\n    border: 1px solid #b2c6cd;\n    padding: 10px 20px;\n    font-family: 'Open Sans light'; }\n\n.terminos_grupo {\n  position: relative;\n  max-width: 380px;\n  margin: 40px auto;\n  text-align: center;\n  /* OFF */\n  /* ON */ }\n\n.terminos_grupo [type=\"checkbox\"] {\n    position: absolute;\n    left: -9999px; }\n\n.terminos_grupo [type=\"checkbox\"] + label:after {\n    content: '';\n    position: absolute; }\n\n.terminos_grupo [type=\"checkbox\"] + label {\n    display: block;\n    position: relative;\n    padding-left: 26px;\n    cursor: pointer;\n    line-height: 36px;\n    font-size: 1rem;\n    color: rgba(0, 43, 73, 0.8);\n    transition: color .3s; }\n\n.terminos_grupo [type=\"checkbox\"] + label a {\n    color: #91b520; }\n\n.terminos_grupo [type=\"checkbox\"] + label:after {\n    width: 30px;\n    height: 30px;\n    transition: all .2s;\n    top: 0;\n    left: 0; }\n\n.terminos_grupo [type=\"checkbox\"]:not(:checked) + label:after {\n    background: url(\"/assets/images/check2_off.png\") left center no-repeat; }\n\n.terminos_grupo [type=\"checkbox\"]:checked + label:after {\n    background: url(\"/assets/images/check2.png\") left center no-repeat; }\n\n.btn-primary {\n  border-radius: 0px;\n  background: #91b520;\n  padding: 13px 37px;\n  background-color: #a6cf24 !important;\n  border: none;\n  margin: 0 auto;\n  display: block;\n  font-family: 'Open Sans light'; }\n\n.obligatorios {\n  text-align: center;\n  margin-top: 20px;\n  color: #6d747f;\n  font-family: 'Open Sans light'; }\n\n.obligatorios span {\n    color: #91b520; }\n\n.tab {\n  background: #e5e9ec;\n  height: 140px;\n  margin-top: 40px; }\n\n.tab .contactenos {\n    height: 140px;\n    padding-left: 11.8%;\n    display: inline-block;\n    position: relative;\n    width: 50%; }\n\n.tab .contactenos button {\n      display: block;\n      width: 84%;\n      height: 100%;\n      position: absolute;\n      top: 0px;\n      right: 0px;\n      background: url(/assets/images/contactus1-newproject.svg) no-repeat center 25px;\n      background-size: 10%;\n      padding-top: 8.5%;\n      border: none;\n      font-size: 22px;\n      font-family: 'Open Sans light';\n      color: #2e516a;\n      cursor: pointer; }\n\n@media (min-width: 1367px) {\n        .tab .contactenos button {\n          background-size: 8%; } }\n\n.tab .contactenos button:active, .tab .contactenos button.active {\n      background: url(/assets/images/contactus1-newproject-white.svg) no-repeat center 25px, #30506c;\n      background-size: 10%;\n      color: #fff;\n      outline: 0px auto -webkit-focus-ring-color; }\n\n@media (min-width: 1367px) {\n        .tab .contactenos button:active, .tab .contactenos button.active {\n          background-size: 8%; } }\n\n.tab .contactenos button.active::before {\n      content: '';\n      position: absolute;\n      border-width: 30px 65px 0;\n      border-style: solid;\n      border-color: #2e516a transparent transparent;\n      top: 97%;\n      margin-left: 37px; }\n\n.tab .contactenos button::after {\n      content: '';\n      position: absolute;\n      height: 75px;\n      width: 1px;\n      margin-top: -7%;\n      left: 0%;\n      background-color: #95a7b3; }\n\n.tab .contactenos button.active::after {\n      display: none; }\n\n@media screen and (max-width: 480px) {\n      .tab .contactenos button, .tab .contactenos button.active {\n        width: 100%;\n        font-size: 15px;\n        padding-top: 46px;\n        background-size: 33%; }\n      .tab .contactenos button.active::before {\n        top: 96%;\n        left: 29%;\n        -webkit-transform: translate(-50%, -50%);\n                transform: translate(-50%, -50%); }\n      .tab .contactenos button::after {\n        display: none; } }\n\n@media (max-width: 768px) and (min-width: 600px) {\n      .tab .contactenos button.active::before {\n        top: 90%; } }\n\n.tab .trabaje {\n    height: 140px;\n    padding-right: 11.8%;\n    display: inline-block;\n    position: relative;\n    width: 50%; }\n\n.tab .trabaje button {\n      display: block;\n      width: 84%;\n      height: 100%;\n      position: absolute;\n      top: 0px;\n      left: 0px;\n      background: none;\n      padding-top: 8.5%;\n      background: url(/assets/images/contactus2-joinus.svg) no-repeat center 25px;\n      background-size: 10%;\n      border: none;\n      font-size: 22px;\n      font-family: 'Open Sans light';\n      color: #2e516a;\n      cursor: pointer; }\n\n@media (min-width: 1367px) {\n        .tab .trabaje button {\n          background-size: 8%; } }\n\n.tab .trabaje button:active, .tab .trabaje button.active {\n      background: url(/assets/images/contactus2-joinus-white.svg) no-repeat center 25px, #30506c;\n      background-size: 10%;\n      color: #fff;\n      outline: 0px auto -webkit-focus-ring-color; }\n\n@media (min-width: 1367px) {\n        .tab .trabaje button:active, .tab .trabaje button.active {\n          background-size: 8%; } }\n\n.tab .trabaje button.active::before {\n      content: '';\n      position: absolute;\n      border-width: 30px 65px 0;\n      border-style: solid;\n      border-color: #2e516a transparent transparent;\n      top: 97%;\n      margin-left: 37px; }\n\n.tab .trabaje button::after {\n      content: '';\n      position: absolute;\n      height: 75px;\n      width: 1px;\n      margin-top: -7%;\n      right: 0%;\n      background-color: #95a7b3; }\n\n.tab .trabaje button.active::after {\n      display: none; }\n\n@media screen and (max-width: 480px) {\n      .tab .trabaje button, .tab .trabaje button.active {\n        width: 100%;\n        font-size: 15px;\n        padding-top: 46px;\n        background-size: 33%; }\n      .tab .trabaje button.active::before {\n        top: 96%;\n        left: 29%;\n        -webkit-transform: translate(-50%, -50%);\n                transform: translate(-50%, -50%); }\n      .tab .trabaje button::after {\n        display: none; } }\n\n@media (max-width: 768px) and (min-width: 600px) {\n      .tab .trabaje button.active::before {\n        top: 90%; } }\n\n#msj-modal {\n  background: #30506cab;\n  width: 100vw;\n  height: 100vh; }\n\n#msj-modal .content-modal {\n    display: table;\n    position: relative;\n    margin-top: 25%;\n    width: 50%;\n    margin-left: 25%;\n    padding: 20px;\n    background: #fff;\n    border-radius: 10px;\n    border: solid #91b520 1px; }\n\n#msj-modal .content-modal p {\n      text-align: center; }\n"
+module.exports = "*,\n*::before,\n*::after {\n  box-sizing: border-box; }\n\n.item {\n  display: inline-block; }\n\nlabel {\n  color: #c0dc74;\n  margin-top: 20px;\n  margin-bottom: -1px;\n  font-weight: 100;\n  font-family: 'Open Sans light'; }\n\ninput,\nselect {\n  width: 100%;\n  padding: 4px 2px;\n  outline: none;\n  border: none;\n  border-bottom: 1px solid #b2c6cd;\n  color: #002b49;\n  border-radius: 0px;\n  font-family: 'Open Sans light'; }\n\ninput.ng-invalid.ng-touched {\n  border: solid 1px red; }\n\ninput::-webkit-input-placeholder {\n  /* Chrome/Opera/Safari */\n  color: #808080; }\n\ninput::-moz-placeholder {\n  /* Firefox 19+ */\n  color: #808080; }\n\ninput:-ms-input-placeholder {\n  /* IE 10+ */\n  color: #808080; }\n\ninput:-moz-placeholder {\n  /* Firefox 18- */\n  color: #808080; }\n\n.comentario {\n  width: 98%;\n  margin: 0 auto; }\n\n@media screen and (max-width: 480px) {\n    .comentario {\n      width: 91%; } }\n\n.comentario textarea {\n    min-height: 40px;\n    border-radius: 0px;\n    border: 1px solid #b2c6cd;\n    padding: 10px 20px;\n    font-family: 'Open Sans light'; }\n\n.terminos_grupo {\n  position: relative;\n  max-width: 380px;\n  margin: 40px auto;\n  text-align: center;\n  /* OFF */\n  /* ON */ }\n\n.terminos_grupo [type=\"checkbox\"] {\n    position: absolute;\n    left: -9999px; }\n\n.terminos_grupo [type=\"checkbox\"] + label:after {\n    content: '';\n    position: absolute; }\n\n.terminos_grupo [type=\"checkbox\"] + label {\n    display: block;\n    position: relative;\n    padding-left: 26px;\n    cursor: pointer;\n    line-height: 36px;\n    font-size: 1rem;\n    color: rgba(0, 43, 73, 0.8);\n    transition: color .3s; }\n\n.terminos_grupo [type=\"checkbox\"] + label a {\n    color: #91b520; }\n\n.terminos_grupo [type=\"checkbox\"] + label:after {\n    width: 30px;\n    height: 30px;\n    transition: all .2s;\n    top: 0;\n    left: 0; }\n\n.terminos_grupo [type=\"checkbox\"]:not(:checked) + label:after {\n    background: url(\"/assets/images/check2_off.png\") left center no-repeat; }\n\n.terminos_grupo [type=\"checkbox\"]:checked + label:after {\n    background: url(\"/assets/images/check2.png\") left center no-repeat; }\n\nselect {\n  background: #f8f8f8;\n  font-family: 'Open Sans light'; }\n\ninput::-webkit-input-placeholder {\n  /* Chrome/Opera/Safari */\n  color: #808080; }\n\ninput::-moz-placeholder {\n  /* Firefox 19+ */\n  color: #808080; }\n\ninput:-ms-input-placeholder {\n  /* IE 10+ */\n  color: #808080; }\n\ninput:-moz-placeholder {\n  /* Firefox 18- */\n  color: #808080; }\n\n.comentario {\n  width: 98%;\n  margin: 0 auto; }\n\n@media screen and (max-width: 480px) {\n    .comentario {\n      width: 91%; } }\n\n.comentario textarea {\n    min-height: 40px;\n    border-radius: 0px;\n    border: 1px solid #b2c6cd;\n    padding: 10px 20px;\n    font-family: 'Open Sans light'; }\n\n.terminos_grupo {\n  position: relative;\n  max-width: 380px;\n  margin: 40px auto;\n  text-align: center;\n  /* OFF */\n  /* ON */ }\n\n.terminos_grupo [type=\"checkbox\"] {\n    position: absolute;\n    left: -9999px; }\n\n.terminos_grupo [type=\"checkbox\"] + label:after {\n    content: '';\n    position: absolute; }\n\n.terminos_grupo [type=\"checkbox\"] + label {\n    display: block;\n    position: relative;\n    padding-left: 26px;\n    cursor: pointer;\n    line-height: 36px;\n    font-size: 1rem;\n    color: rgba(0, 43, 73, 0.8);\n    transition: color .3s; }\n\n.terminos_grupo [type=\"checkbox\"] + label a {\n    color: #91b520; }\n\n.terminos_grupo [type=\"checkbox\"] + label:after {\n    width: 30px;\n    height: 30px;\n    transition: all .2s;\n    top: 0;\n    left: 0; }\n\n.terminos_grupo [type=\"checkbox\"]:not(:checked) + label:after {\n    background: url(\"/assets/images/check2_off.png\") left center no-repeat; }\n\n.terminos_grupo [type=\"checkbox\"]:checked + label:after {\n    background: url(\"/assets/images/check2.png\") left center no-repeat; }\n\n.btn-primary {\n  border-radius: 0px;\n  background: #91b520;\n  padding: 13px 37px;\n  background-color: #a6cf24 !important;\n  border: none;\n  margin: 0 auto;\n  display: block;\n  font-family: 'Open Sans light'; }\n\n.obligatorios {\n  text-align: center;\n  margin-top: 20px;\n  color: #6d747f;\n  font-family: 'Open Sans light'; }\n\n.obligatorios span {\n    color: #91b520; }\n\n.tab {\n  background: #e5e9ec;\n  height: 140px;\n  margin-top: 40px; }\n\n.tab .contactenos {\n    height: 140px;\n    padding-left: 11.8%;\n    display: inline-block;\n    position: relative;\n    width: 50%; }\n\n.tab .contactenos button {\n      display: block;\n      width: 84%;\n      height: 100%;\n      position: absolute;\n      top: 0px;\n      right: 0px;\n      background: url(/assets/images/contactus1-newproject.svg) no-repeat center 25px;\n      background-size: 10%;\n      padding-top: 8.5%;\n      border: none;\n      font-size: 22px;\n      font-family: 'Open Sans light';\n      color: #2e516a;\n      cursor: pointer; }\n\n@media (min-width: 1367px) {\n        .tab .contactenos button {\n          background-size: 8%; } }\n\n.tab .contactenos button:active,\n    .tab .contactenos button.active {\n      background: url(/assets/images/contactus1-newproject-white.svg) no-repeat center 25px, #30506c;\n      background-size: 10%;\n      color: #fff;\n      outline: 0px auto -webkit-focus-ring-color; }\n\n@media (min-width: 1367px) {\n        .tab .contactenos button:active,\n        .tab .contactenos button.active {\n          background-size: 8%; } }\n\n.tab .contactenos button.active::before {\n      content: '';\n      position: absolute;\n      border-width: 30px 65px 0;\n      border-style: solid;\n      border-color: #2e516a transparent transparent;\n      top: 97%;\n      margin-left: 37px; }\n\n.tab .contactenos button::after {\n      content: '';\n      position: absolute;\n      height: 75px;\n      width: 1px;\n      margin-top: -7%;\n      left: 0%;\n      background-color: #95a7b3; }\n\n.tab .contactenos button.active::after {\n      display: none; }\n\n@media screen and (max-width: 480px) {\n      .tab .contactenos button,\n      .tab .contactenos button.active {\n        width: 100%;\n        font-size: 15px;\n        padding-top: 46px;\n        background-size: 33%; }\n      .tab .contactenos button.active::before {\n        top: 96%;\n        left: 29%;\n        -webkit-transform: translate(-50%, -50%);\n                transform: translate(-50%, -50%); }\n      .tab .contactenos button::after {\n        display: none; } }\n\n@media (max-width: 768px) and (min-width: 600px) {\n      .tab .contactenos button.active::before {\n        top: 90%; } }\n\n.tab .trabaje {\n    height: 140px;\n    padding-right: 11.8%;\n    display: inline-block;\n    position: relative;\n    width: 50%; }\n\n.tab .trabaje button {\n      display: block;\n      width: 84%;\n      height: 100%;\n      position: absolute;\n      top: 0px;\n      left: 0px;\n      background: none;\n      padding-top: 8.5%;\n      background: url(/assets/images/contactus2-joinus.svg) no-repeat center 25px;\n      background-size: 10%;\n      border: none;\n      font-size: 22px;\n      font-family: 'Open Sans light';\n      color: #2e516a;\n      cursor: pointer; }\n\n@media (min-width: 1367px) {\n        .tab .trabaje button {\n          background-size: 8%; } }\n\n.tab .trabaje button:active,\n    .tab .trabaje button.active {\n      background: url(/assets/images/contactus2-joinus-white.svg) no-repeat center 25px, #30506c;\n      background-size: 10%;\n      color: #fff;\n      outline: 0px auto -webkit-focus-ring-color; }\n\n@media (min-width: 1367px) {\n        .tab .trabaje button:active,\n        .tab .trabaje button.active {\n          background-size: 8%; } }\n\n.tab .trabaje button.active::before {\n      content: '';\n      position: absolute;\n      border-width: 30px 65px 0;\n      border-style: solid;\n      border-color: #2e516a transparent transparent;\n      top: 97%;\n      margin-left: 37px; }\n\n.tab .trabaje button::after {\n      content: '';\n      position: absolute;\n      height: 75px;\n      width: 1px;\n      margin-top: -7%;\n      right: 0%;\n      background-color: #95a7b3; }\n\n.tab .trabaje button.active::after {\n      display: none; }\n\n@media screen and (max-width: 480px) {\n      .tab .trabaje button,\n      .tab .trabaje button.active {\n        width: 100%;\n        font-size: 15px;\n        padding-top: 46px;\n        background-size: 33%; }\n      .tab .trabaje button.active::before {\n        top: 96%;\n        left: 29%;\n        -webkit-transform: translate(-50%, -50%);\n                transform: translate(-50%, -50%); }\n      .tab .trabaje button::after {\n        display: none; } }\n\n@media (max-width: 768px) and (min-width: 600px) {\n      .tab .trabaje button.active::before {\n        top: 90%; } }\n\n#msj-modal {\n  background: #30506cab;\n  width: 100vw;\n  height: 100vh; }\n\n#msj-modal .content-modal {\n    display: table;\n    position: relative;\n    margin-top: 25%;\n    width: 50%;\n    margin-left: 25%;\n    padding: 20px;\n    background: #fff;\n    border-radius: 10px;\n    border: solid #91b520 1px; }\n\n#msj-modal .content-modal p {\n      text-align: center; }\n\n#popover-title,\n#popover-content {\n  display: none; }\n"
 
 /***/ }),
 
@@ -2806,9 +3198,10 @@ module.exports = "*, *::before, *::after {\n  box-sizing: border-box; }\n\n.item
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TabsComponent", function() { return TabsComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var rxjs_add_operator_map__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs/add/operator/map */ "./node_modules/rxjs-compat/_esm5/add/operator/map.js");
-/* harmony import */ var _services_http_http_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../services/http/http.service */ "./src/app/services/http/http.service.ts");
+/* harmony import */ var src_app_services_cards_v1_card_services__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/services/cards/v1-card.services */ "./src/app/services/cards/v1-card.services.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var rxjs_add_operator_map__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/add/operator/map */ "./node_modules/rxjs-compat/_esm5/add/operator/map.js");
+/* harmony import */ var _services_http_http_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../services/http/http.service */ "./src/app/services/http/http.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2821,47 +3214,99 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var TabsComponent = /** @class */ (function () {
-    function TabsComponent(_http) {
+    function TabsComponent(_http, _service) {
         this._http = _http;
+        this._service = _service;
         this.hidden = false;
         this.usuario = {
             nombre: null,
             email: null
         };
+        this.dataMessage = [];
+        this.list = [];
     }
     TabsComponent.prototype.toogleHidden = function () {
+        this.dataMessage = [];
         this.hidden = !this.hidden;
     };
     TabsComponent.prototype.onSubmit = function (formulario) {
+        var _this = this;
+        this.dataMessage = [];
         console.log(formulario);
         formulario['webform_id'] = 'contact_us';
-        $("#formulario_contacto")[0].reset();
-        $("#msj-modal").show();
-        $(".close").click(function () {
-            $("#msj-modal").hide();
-        });
+        $('#formulario_contacto')[0].reset();
+        /* $('#msj-modal').show();
+        $('.close').click(function () {
+          $('#msj-modal').hide();
+        }); */
         this._http.post('webform_rest/submit?_format=json', formulario, {
             'Content-Type': 'application/json',
             'X-CSRF-Token': this._token
         })
             .subscribe(function (datos) {
-            console.log(datos);
-            formulario.form.reset();
+            _this.ubicar();
+            if (datos.error) {
+                for (var key in datos.error) {
+                    _this.dataMessage.push({
+                        visible: true,
+                        status: 'error',
+                        message: datos.error[key]
+                    });
+                }
+            }
+            else if (datos.sid) {
+                _this.dataMessage.push({
+                    visible: true,
+                    status: 'success',
+                    message: 'Respuesta satisfactoria'
+                });
+            }
+            // formulario.form.reset();
         });
     };
     TabsComponent.prototype.ngOnInit = function () {
         var _this = this;
+        this.getTabsData();
         this._http.get('rest/session/token', {}, { responseType: 'text' }).subscribe(function (response) {
             _this._token = response;
         });
-        $(".trabaje").on('click', function () {
-            $(".trabaje button").toggleClass("active");
-            $(".contactenos button").toggleClass("active");
+        $('.trabaje').on('click', function () {
+            $('.trabaje button').toggleClass('active');
+            $('.contactenos button').toggleClass('active');
         });
-        $(".contactenos").on('click', function () {
-            $(".trabaje button").toggleClass("active");
-            $(".contactenos button").toggleClass("active");
+        $('.contactenos').on('click', function () {
+            $('.trabaje button').toggleClass('active');
+            $('.contactenos button').toggleClass('active');
+        });
+        this.getPopoverService();
+        $(function () {
+            $('[data-toggle="popover"]').popover({
+                html: true,
+                title: function () {
+                    return $('#popover-title').html();
+                },
+                content: function () {
+                    return document.getElementById('popover-content').innerHTML;
+                }
+            }).click(function (e) {
+                e.preventDefault();
+            });
+        });
+    };
+    TabsComponent.prototype.getTabsData = function () {
+        var _this = this;
+        this._service.getCustomCardInformation('howcanwehelpyoucard').subscribe(function (items) {
+            _this.title_a = items.body[0].data.text_form_left;
+            _this.title_b = items.body[2].data.text_form_right;
+        });
+    };
+    TabsComponent.prototype.getPopoverService = function () {
+        var _this = this;
+        this._service.getCustomContentBasicPage('c00ea48d-1ce3-4bba-b65e-d57daf71cf4a').subscribe(function (params) {
+            _this.titulo = params.title;
+            _this.list = params.body;
         });
     };
     TabsComponent.prototype.verificaValidTouched = function (campo) {
@@ -2873,13 +3318,20 @@ var TabsComponent = /** @class */ (function () {
             'has-feedback': this.verificaValidTouched(campo)
         };
     };
+    TabsComponent.prototype.ubicar = function () {
+        var x = document.querySelector('.tab');
+        console.log(x);
+        if (x) {
+            x.scrollIntoView({ block: 'start', inline: 'start', behavior: 'smooth' });
+        }
+    };
     TabsComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-tabs',
             template: __webpack_require__(/*! ./tabs.component.html */ "./src/app/cards/components/tabs/tabs.component.html"),
             styles: [__webpack_require__(/*! ./tabs.component.scss */ "./src/app/cards/components/tabs/tabs.component.scss")]
         }),
-        __metadata("design:paramtypes", [_services_http_http_service__WEBPACK_IMPORTED_MODULE_2__["HttpService"]])
+        __metadata("design:paramtypes", [_services_http_http_service__WEBPACK_IMPORTED_MODULE_3__["HttpService"], src_app_services_cards_v1_card_services__WEBPACK_IMPORTED_MODULE_0__["CustomCardService"]])
     ], TabsComponent);
     return TabsComponent;
 }());
@@ -2904,6 +3356,220 @@ var TabsComponent = /** @class */ (function () {
 //     alticon:string;
 //     contenido:string;
 // }
+
+
+/***/ }),
+
+/***/ "./src/app/cards/components/team/team.component.html":
+/*!***********************************************************!*\
+  !*** ./src/app/cards/components/team/team.component.html ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<section id=\"kw-title\">\n  <h2 [id]=\"datosMenu.id\">{{ title }}</h2>\n  <p [innerHTML]=\"subtitle\"></p>\n</section>\n\n<div class=\"contenedor\">\n  <ngx-carousel [inputs]=\"carocarouselTile\" (carouselLoad)=\"carouselTileLoad($event)\" *ngIf=\"CarouselControlArray\">\n    <ngx-tile NgxCarouselItem *ngFor=\"let main of CarouselControlArray; let i = index\">\n      <a href=\"\" class=\"url-link\">\n        <div class=\"container-img\">\n          <img class=\"d-block img-fluid img-float mx-auto\" [src]=\"main.field_imagen?.url\" [alt]=\"main.field_imagen?.alt\" />\n        </div>\n        <div class=\"info\">\n          <h4 class=\"name-cargo\">{{main?.field_cargo}}</h4>\n          <h3 class=\"main-title\">{{main?.title}}</h3>\n          <h5 class=\"correo\">{{main?.field_correo_electronico}}</h5>\n          <span class=\"in\">in</span>\n        </div>\n      </a>\n    </ngx-tile>\n    <button NgxCarouselPrev class='leftRs'>&lt;</button>\n    <button NgxCarouselNext class='rightRs'>&gt;</button>\n  </ngx-carousel>\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/cards/components/team/team.component.scss":
+/*!***********************************************************!*\
+  !*** ./src/app/cards/components/team/team.component.scss ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "#kw-title h2 {\n  margin-left: 3%;\n  font-size: 40px;\n  color: #002b49;\n  text-align: center;\n  margin-top: 40px; }\n  @media (max-width: 667px) {\n    #kw-title h2 {\n      font-size: 28px;\n      margin-left: 0; } }\n  #kw-title p {\n  color: #002b49cc;\n  font-family: Open Sans Codensed;\n  margin-right: 180px;\n  margin-left: 200px;\n  margin-top: 10px;\n  font-size: 20px;\n  text-align: center; }\n  @media (min-width: 1025px) {\n    #kw-title p {\n      margin-right: 0;\n      margin-left: 0; } }\n  @media (max-width: 667px) {\n    #kw-title p {\n      margin-right: 20px;\n      margin-left: 0; } }\n  .contenedor {\n  width: 80%;\n  margin: 0 auto; }\n  .item {\n  width: 405%; }\n  @media (min-width: 668px) and (max-width: 1024px) {\n    .item {\n      width: 200%; } }\n  @media (min-width: 1025px) {\n    .item {\n      width: 100%; } }\n  .url-link {\n  width: 100%;\n  padding-left: 4%;\n  padding-right: 4%;\n  margin-top: 1%;\n  text-decoration: none; }\n  @media (min-width: 1025px) {\n    .url-link {\n      padding-left: 5%;\n      padding-right: 5%; } }\n  .url-link .container-img {\n    height: 123px;\n    position: relative; }\n  @media (min-width: 668px) and (max-width: 1024px) {\n      .url-link .container-img {\n        padding-left: 0%;\n        padding-right: 0%; } }\n  @media (min-width: 1025px) {\n      .url-link .container-img {\n        padding-left: 10%;\n        padding-right: 10%; } }\n  .url-link .container-img .img-float {\n      position: absolute;\n      bottom: 0;\n      left: 0;\n      right: 0;\n      border-radius: 50%; }\n  .url-link .info {\n    width: 100%;\n    color: #002b49;\n    text-align: center; }\n  .url-link .info::before {\n      content: '';\n      background: linear-gradient(-90deg, rgba(255, 255, 255, 0), #b8d950, rgba(255, 255, 255, 0));\n      height: 1px;\n      right: 0%;\n      left: 5%;\n      position: absolute; }\n  @media (min-width: 668px) and (max-width: 1024px) {\n        .url-link .info::before {\n          display: none; } }\n  @media (min-width: 1025px) {\n        .url-link .info::before {\n          display: none; } }\n  @media (min-width: 668px) and (max-width: 1024px) {\n      .url-link .info {\n        height: 250px; } }\n  .url-link .info .line {\n      visibility: hidden; }\n  @media (min-width: 668px) and (max-width: 1024px) {\n        .url-link .info .line {\n          visibility: visible;\n          background: linear-gradient(-90deg, rgba(255, 255, 255, 0), #b8d950, rgba(255, 255, 255, 0));\n          height: 1px;\n          width: 83%;\n          position: relative;\n          top: 17px; } }\n  @media (min-width: 1025px) {\n        .url-link .info .line {\n          visibility: visible;\n          background: linear-gradient(-90deg, rgba(255, 255, 255, 0), #b8d950, rgba(255, 255, 255, 0));\n          height: 1px;\n          width: 83%;\n          position: relative;\n          top: 17px; } }\n  .url-link .info .name-cargo {\n      padding-top: 14%;\n      font-size: 20px;\n      font-family: 'Open Sans';\n      font-weight: 300; }\n  @media (min-width: 1025px) {\n        .url-link .info .name-cargo {\n          padding-top: 14%; } }\n  .url-link .info .main-title {\n      margin-top: 4%;\n      font-size: 20px;\n      font-family: 'Open Sans Codensed';\n      font-weight: 300; }\n  .url-link .info .correo {\n      width: 100%;\n      margin-top: 5.2%;\n      padding-left: 27%;\n      padding-right: 26%;\n      font-size: 14px;\n      font-family: 'Open Sans';\n      font-weight: 300; }\n  @media (min-width: 1025px) {\n        .url-link .info .correo {\n          padding-left: 12%;\n          padding-right: 12%;\n          width: 100%; } }\n  @media (max-width: 667px) {\n        .url-link .info .correo {\n          padding: 0; } }\n  .url-link .info .in {\n      font-size: 14px;\n      margin-top: 6%;\n      font-family: 'Open Sans';\n      font-weight: 900;\n      color: #a6cf24; }\n  @media (min-width: 1025px) {\n        .url-link .info .in {\n          margin-top: 2%; } }\n  #main-title {\n  color: #002b49;\n  text-align: center;\n  margin-top: 64px; }\n  @media (min-width: 1025px) {\n    #main-title {\n      margin-top: 80px; } }\n  @media (min-width: 668px) and (max-width: 1024px) {\n    #main-title {\n      margin-top: 80px; } }\n  #main-title h2 {\n    margin-left: 3%;\n    font-size: 30px;\n    -webkit-transform: scaleY(1.2);\n            transform: scaleY(1.2); }\n  @media (min-width: 1025px) {\n      #main-title h2 {\n        margin-left: 0;\n        font-size: 40px;\n        width: 100%; } }\n  @media (min-width: 668px) and (max-width: 1024px) {\n      #main-title h2 {\n        margin-left: 0;\n        font-size: 40px;\n        width: 100%; } }\n  #titles {\n  color: #002b49;\n  text-align: center;\n  margin-top: 60px; }\n  @media (min-width: 1025px) {\n    #titles {\n      margin-top: 80px; } }\n  @media (min-width: 668px) and (max-width: 1024px) {\n    #titles {\n      margin-top: 80px; } }\n  #titles h3 {\n    margin-left: 3%;\n    font-size: 16px; }\n  @media (min-width: 1025px) {\n      #titles h3 {\n        margin-left: 0;\n        font-size: 20px;\n        width: 100%; } }\n  @media (min-width: 668px) and (max-width: 1024px) {\n      #titles h3 {\n        margin-left: 0;\n        font-size: 20px;\n        width: 100%; } }\n  h1 {\n  min-height: 200px;\n  background-color: #ccc;\n  text-align: center;\n  line-height: 200px; }\n  .leftRs {\n  position: absolute;\n  margin: auto;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  border: none;\n  background: transparent;\n  background-image: url(/assets/icon/left-arrow.svg);\n  background-size: 37px;\n  height: 0;\n  width: 28px;\n  overflow: hidden;\n  padding-top: 37px;\n  cursor: pointer; }\n  .rightRs {\n  position: absolute;\n  margin: auto;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  border: none;\n  background: transparent;\n  background-image: url(/assets/icon/right-arrow.svg);\n  background-size: 37px;\n  height: 0;\n  width: 28px;\n  overflow: hidden;\n  padding-top: 37px;\n  cursor: pointer; }\n  .rightRs:focus,\n.leftRs:focus {\n  outline: none; }\n  :host ::ng-deep .tile {\n  box-shadow: none !important; }\n"
+
+/***/ }),
+
+/***/ "./src/app/cards/components/team/team.component.ts":
+/*!*********************************************************!*\
+  !*** ./src/app/cards/components/team/team.component.ts ***!
+  \*********************************************************/
+/*! exports provided: TeamComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TeamComponent", function() { return TeamComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_app_services_cards_v1_card_services__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/services/cards/v1-card.services */ "./src/app/services/cards/v1-card.services.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var TeamComponent = /** @class */ (function () {
+    function TeamComponent(https) {
+        this.https = https;
+        this.propagar = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+        this.CarouselControlArray = [];
+        this.caroseltitle = [];
+        this.CarouselControlArray = [];
+    }
+    TeamComponent.prototype.ngOnInit = function () {
+        while (this.type.indexOf('-') > -1) {
+            this.type = this.type.replace('-', '_');
+        }
+        this.datosMenu = {
+            label: 'TEAMS',
+            id: 'a9',
+            url: '/imedical'
+        };
+        this.propagar.emit(this.datosMenu);
+        this.getTeamInformationService();
+        this.CarouselControlArray = [0, 1, 2, 3];
+        this.carocarouselTile = {
+            grid: { xs: 1, sm: 2, md: 4, lg: 4, all: 0 },
+            slide: 1,
+            speed: 400,
+            animation: 'lazy',
+            point: {
+                visible: false,
+                pointStyles: "\n          .ngxcarouselPoint {\n            list-style-type: none;\n            text-align: center;\n            padding: 12px;\n            margin: 0;\n            white-space: nowrap;\n            overflow: auto;\n            box-sizing: border-box;\n          }\n          .ngxcarouselPoint li {\n            display: inline-block;\n            border-radius: 50%;\n            border: 2px solid rgba(0, 0, 0, 0.55);\n            padding: 4px;\n            margin: 0 3px;\n            transition-timing-function: cubic-bezier(.17, .67, .83, .67);\n            transition: .4s;\n          }\n          .ngxcarouselPoint li.active {\n              background: #6b6b6b;\n              transform: scale(1.2);\n          }\n        "
+            },
+            load: 4,
+            touch: true,
+            easing: 'ease',
+            loop: true,
+        };
+    };
+    TeamComponent.prototype.carouselTileLoad = function (evt) {
+        var len = this.CarouselControlArray.length;
+        if (len <= 4) {
+            for (var i = len; i < len + 0; i++) {
+                this.CarouselControlArray.push(i);
+            }
+        }
+    };
+    TeamComponent.prototype.getTeamInformationService = function () {
+        var _this = this;
+        this.https.getCustomCardInformationType('teambitsamericas', this.type).subscribe(function (items) {
+            _this.title = items.header[0].data.title;
+            _this.subtitle = items.header[1].data.sub_title;
+            _this.CarouselControlArray = items.data;
+            _this.CarouselControlArray = Object.keys(items.data).map(function (key) { return items.data[key]; });
+        });
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"])(),
+        __metadata("design:type", Object)
+    ], TeamComponent.prototype, "propagar", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", String)
+    ], TeamComponent.prototype, "type", void 0);
+    TeamComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-team',
+            template: __webpack_require__(/*! ./team.component.html */ "./src/app/cards/components/team/team.component.html"),
+            styles: [__webpack_require__(/*! ./team.component.scss */ "./src/app/cards/components/team/team.component.scss")]
+        }),
+        __metadata("design:paramtypes", [src_app_services_cards_v1_card_services__WEBPACK_IMPORTED_MODULE_1__["CustomCardService"]])
+    ], TeamComponent);
+    return TeamComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/cards/components/tecnologies-projectservice/tecnologies-projectservice.component.html":
+/*!*******************************************************************************************************!*\
+  !*** ./src/app/cards/components/tecnologies-projectservice/tecnologies-projectservice.component.html ***!
+  \*******************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<section id=\"title\">\n  <h2 [id]=\"datosMenu.id\">{{ title }}</h2>\n  <p [innerHTML]=\"subtitle\"></p>\n</section>\n<section class=\"content\"> \n  <div class=\"content-img\" style=\"display: flex; flex-wrap: wrap; justify-content:center\">    \n      <div class=\"img-fluid\" [ngStyle]=\"{'background-image':'url(' + data.field_tech_color_image?.url + ')'}\"\n      *ngFor=\"let data of CarouselControlArray; let i = index\">\n      </div>    \n  </div>\n</section>"
+
+/***/ }),
+
+/***/ "./src/app/cards/components/tecnologies-projectservice/tecnologies-projectservice.component.scss":
+/*!*******************************************************************************************************!*\
+  !*** ./src/app/cards/components/tecnologies-projectservice/tecnologies-projectservice.component.scss ***!
+  \*******************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "#title h2 {\n  margin-left: 3%;\n  font-size: 40px;\n  color: #002b49;\n  text-align: center;\n  margin-top: 40px; }\n  @media (max-width: 667px) {\n    #title h2 {\n      font-size: 28px;\n      margin-left: 0; } }\n  #title p {\n  color: #002b49cc;\n  font-family: Open Sans Codensed;\n  margin-right: 180px;\n  margin-left: 200px;\n  margin-top: 10px;\n  font-size: 20px;\n  text-align: center; }\n  @media (min-width: 1025px) {\n    #title p {\n      margin-right: 0;\n      margin-left: 0; } }\n  @media (max-width: 667px) {\n    #title p {\n      margin-right: 20px;\n      margin-left: 0; } }\n  .content-img {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: center; }\n  .content-img .img-fluid {\n    width: 200px;\n    height: 140px;\n    background-repeat: no-repeat;\n    background-position: center;\n    background-size: contain;\n    margin: 10px 20px; }\n  @media (max-width: 500px) {\n      .content-img .img-fluid {\n        width: 100px;\n        height: 90px; } }\n"
+
+/***/ }),
+
+/***/ "./src/app/cards/components/tecnologies-projectservice/tecnologies-projectservice.component.ts":
+/*!*****************************************************************************************************!*\
+  !*** ./src/app/cards/components/tecnologies-projectservice/tecnologies-projectservice.component.ts ***!
+  \*****************************************************************************************************/
+/*! exports provided: TecnologiesProjectserviceComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TecnologiesProjectserviceComponent", function() { return TecnologiesProjectserviceComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_app_services_cards_v1_card_services__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/services/cards/v1-card.services */ "./src/app/services/cards/v1-card.services.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var TecnologiesProjectserviceComponent = /** @class */ (function () {
+    function TecnologiesProjectserviceComponent(https) {
+        this.https = https;
+        this.propagar = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+        this.CarouselControlArray = [];
+    }
+    TecnologiesProjectserviceComponent.prototype.ngOnInit = function () {
+        while (this.type.indexOf('-') > -1) {
+            this.type = this.type.replace('-', '_');
+        }
+        this.datosMenu = {
+            label: 'TECNOLOGIA',
+            id: 'a11',
+            url: '/imedical'
+        };
+        this.propagar.emit(this.datosMenu);
+        this.getTecnoInformationService();
+    };
+    TecnologiesProjectserviceComponent.prototype.getTecnoInformationService = function () {
+        var _this = this;
+        this.https.getCustomCardInformationType('expertsinimedicalcard', this.type).subscribe(function (items) {
+            _this.title = items.header[0].data.title;
+            _this.subtitle = items.header[1].data.sub_title;
+            _this.CarouselControlArray = items.data;
+        });
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"])(),
+        __metadata("design:type", Object)
+    ], TecnologiesProjectserviceComponent.prototype, "propagar", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", String)
+    ], TecnologiesProjectserviceComponent.prototype, "type", void 0);
+    TecnologiesProjectserviceComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-tecnologies-projectservice',
+            template: __webpack_require__(/*! ./tecnologies-projectservice.component.html */ "./src/app/cards/components/tecnologies-projectservice/tecnologies-projectservice.component.html"),
+            styles: [__webpack_require__(/*! ./tecnologies-projectservice.component.scss */ "./src/app/cards/components/tecnologies-projectservice/tecnologies-projectservice.component.scss")]
+        }),
+        __metadata("design:paramtypes", [src_app_services_cards_v1_card_services__WEBPACK_IMPORTED_MODULE_1__["CustomCardService"]])
+    ], TecnologiesProjectserviceComponent);
+    return TecnologiesProjectserviceComponent;
+}());
+
 
 
 /***/ }),
@@ -3017,6 +3683,7 @@ var TecnologiesComponent = /** @class */ (function () {
             _this.background = items.body[0].data.back_movil[0].url;
             _this.arrayLogos = items.data;
             _this.customArrayImages(_this.arrayLogos);
+            console.log(_this.arrayLogosCustom);
             /*this.createSlick();*/
         });
     };
@@ -3054,6 +3721,93 @@ var TecnologiesComponent = /** @class */ (function () {
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"]])
     ], TecnologiesComponent);
     return TecnologiesComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/cards/components/testimonies/testimonies.component.html":
+/*!*************************************************************************!*\
+  !*** ./src/app/cards/components/testimonies/testimonies.component.html ***!
+  \*************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<section id=\"testimonies-main-title\">\n    <h1 [id]=\"datosMenu.id\" class=\"testimonies-general-title\" >{{ testimoniesTitle }}</h1>\n    <p class=\"testimonies-general-subtitle\" >{{ testimoniesSubTitle }}</p>\n</section>\n<div id=\"testimonies-carousel\">\n  <ngb-carousel *ngIf=\"testimoniesData\">\n      <ng-template ngbSlide *ngFor=\"let item of testimoniesData\">\n        <div class=\"container\"></div>\n        <div class=\"carousel-caption\">\n          <p class=\"testimonies-text testimonies-description\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro, repellat quia ipsam rerum eius modi iure tempore minus et in nihil nemo voluptatibus hic, asperiores ullam, reprehenderit culpa sapiente inventore!</p>\n          <h3 class=\"testimonies-text testimonies-name\">{{ item.title }}</h3>\n          <h3 class=\"testimonies-text testimonies-company\">COMPANY NAME</h3>\n        </div>\n      </ng-template>\n  </ngb-carousel>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/cards/components/testimonies/testimonies.component.scss":
+/*!*************************************************************************!*\
+  !*** ./src/app/cards/components/testimonies/testimonies.component.scss ***!
+  \*************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "#testimonies-main-title {\n  text-align: center;\n  width: 100%;\n  padding: 50px 0 0px 0;\n  color: #002b49; }\n  #testimonies-main-title .testimonies-general-title {\n    font-family: Open Sans Codensed Light;\n    font-size: 40px; }\n  #testimonies-main-title .testimonies-general-subtitle {\n    font-family: Open Sans Codensed Light;\n    font-size: 20px; }\n  #testimonies-carousel .container {\n  width: 100%;\n  height: 200px;\n  background-color: white; }\n  #testimonies-carousel .carousel-caption {\n  padding-top: 0;\n  padding-bottom: 50px; }\n  #testimonies-carousel .carousel-caption .testimonies-text {\n    font-family: Open Sans Light;\n    color: #002b49; }\n  #testimonies-carousel .carousel-caption .testimonies-description {\n    font-size: 16px; }\n  #testimonies-carousel .carousel-caption .testimonies-name {\n    font-size: 17px; }\n  #testimonies-carousel .carousel-caption .testimonies-company {\n    font-family: Open Sans Codensed Light;\n    font-size: 20px; }\n  :host /deep/ .carousel-control-next,\n:host /deep/ .carousel-control-prev {\n  visibility: hidden; }\n  :host /deep/ .carousel-indicators li {\n  width: 15px;\n  height: 15px;\n  margin: 0 5px;\n  border-radius: 50%;\n  background-color: #ededed; }\n  :host /deep/ .carousel-indicators li.active {\n    background-color: #a6cf24; }\n"
+
+/***/ }),
+
+/***/ "./src/app/cards/components/testimonies/testimonies.component.ts":
+/*!***********************************************************************!*\
+  !*** ./src/app/cards/components/testimonies/testimonies.component.ts ***!
+  \***********************************************************************/
+/*! exports provided: TestimoniesComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TestimoniesComponent", function() { return TestimoniesComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_cards_v1_card_services__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../../services/cards/v1-card.services */ "./src/app/services/cards/v1-card.services.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var TestimoniesComponent = /** @class */ (function () {
+    function TestimoniesComponent(testimonies) {
+        this.testimonies = testimonies;
+        this.propagar = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+    }
+    TestimoniesComponent.prototype.ngOnInit = function () {
+        this.datosMenu = {
+            label: 'TESTIMONIES',
+            id: 'a12',
+            url: '/imedical'
+        };
+        this.propagar.emit(this.datosMenu);
+        this.getTestimoniesInfo();
+    };
+    TestimoniesComponent.prototype.getTestimoniesInfo = function () {
+        var _this = this;
+        return this.testimonies.getCustomCardInformation('testimoniesbitsamericas').subscribe(function (items) {
+            console.log(items);
+            _this.testimoniesTitle = items.header[0].data.title;
+            _this.testimoniesSubTitle = items.header[1].data.sub_title;
+            _this.testimoniesData = items.data;
+        });
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"])(),
+        __metadata("design:type", Object)
+    ], TestimoniesComponent.prototype, "propagar", void 0);
+    TestimoniesComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-testimonies',
+            template: __webpack_require__(/*! ./testimonies.component.html */ "./src/app/cards/components/testimonies/testimonies.component.html"),
+            styles: [__webpack_require__(/*! ./testimonies.component.scss */ "./src/app/cards/components/testimonies/testimonies.component.scss")]
+        }),
+        __metadata("design:paramtypes", [_services_cards_v1_card_services__WEBPACK_IMPORTED_MODULE_1__["CustomCardService"]])
+    ], TestimoniesComponent);
+    return TestimoniesComponent;
 }());
 
 
@@ -3115,7 +3869,8 @@ var TitleComponent = /** @class */ (function () {
     };
     TitleComponent.prototype.getTitiles = function () {
         var _this = this;
-        this.title.getCustomCardInformation('contact_title').subscribe(function (items) {
+        // this.title.getCustomCardInformation('contact_title').subscribe(items => {
+        this.title.getCustomCardInformation('howcanwehelpyoucard').subscribe(function (items) {
             _this.titleArray = items.header[0].data.title;
         });
     };
@@ -3243,6 +3998,81 @@ var VideoInformationComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/cards/components/whybitsamericas/whybitsamericas.component.html":
+/*!*********************************************************************************!*\
+  !*** ./src/app/cards/components/whybitsamericas/whybitsamericas.component.html ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<section id=\"main-title\">\n    <h1 class=\"why-general-title\" >{{ whyTitle }}</h1>\n    <p class=\"why-general-subtitle\" >{{ whySubTitle }}</p>\n</section>\n\n<section class=\"WhyBits\">\n    <div class=\"images-whybits\">\n        <ul class=\"row why-boxes\">\n            <li class=\"why-list\" *ngFor=\"let why of whyData; let i = index\">\n              <div class=\"row why-img-and-title-box\">\n                <div class=\"col-5 why-img\">\n                  <img [src]=\"why.field_imagen?.url\" [alt]=\"why.field_imagen?.alt\" />\n                </div>\n                <div class=\"col-7 why-title\">\n                  <h3>{{ why?.title }}</h3>\n                </div>\n              </div>\n              <div class=\"row why-description-box\">\n                <div class=\"col-12 why-description\">\n                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In a quas, quidem vitae at aspernatur cum quibusdam excepturi quasi ab? Vitae magnam quae, officiis aliquam eum veniam similique illo reprehenderit.</p>\n                </div>\n              </div>\n            </li>\n        </ul>\n    </div>\n</section>"
+
+/***/ }),
+
+/***/ "./src/app/cards/components/whybitsamericas/whybitsamericas.component.scss":
+/*!*********************************************************************************!*\
+  !*** ./src/app/cards/components/whybitsamericas/whybitsamericas.component.scss ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "#main-title {\n  text-align: center;\n  width: 100%;\n  padding: 50px 0;\n  color: #002b49; }\n  #main-title .why-general-title {\n    font-family: Open Sans Codensed Light;\n    font-size: 40px; }\n  #main-title .why-general-subtitle {\n    font-family: Open Sans Codensed Light;\n    font-size: 20px; }\n  .WhyBits {\n  display: flex;\n  justify-content: center;\n  align-items: center; }\n  .WhyBits .images-whybits {\n    padding: 0; }\n  .WhyBits .images-whybits .why-boxes {\n      justify-content: center;\n      align-items: center;\n      padding: 0;\n      max-width: 966px; }\n  .WhyBits .images-whybits .why-list {\n      list-style: none;\n      max-width: 282px;\n      text-align: justify;\n      margin: 0 20px;\n      color: #002b49; }\n  .WhyBits .images-whybits .why-list .why-img-and-title-box {\n        margin-bottom: 15px; }\n  .WhyBits .images-whybits .why-list .why-img-and-title-box .why-img {\n          height: 89px;\n          border-right: 1px solid #a6cf24; }\n  .WhyBits .images-whybits .why-list .why-img-and-title-box .why-title {\n          display: flex;\n          align-items: flex-end; }\n  .WhyBits .images-whybits .why-list .why-img-and-title-box .why-title h3 {\n            font-family: Open Sans Codensed Light;\n            font-size: 24px; }\n  .WhyBits .images-whybits .why-list .why-description-box .why-description p {\n        font-family: Open Sans light;\n        font-size: 14px; }\n"
+
+/***/ }),
+
+/***/ "./src/app/cards/components/whybitsamericas/whybitsamericas.component.ts":
+/*!*******************************************************************************!*\
+  !*** ./src/app/cards/components/whybitsamericas/whybitsamericas.component.ts ***!
+  \*******************************************************************************/
+/*! exports provided: WhybitsamericasComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WhybitsamericasComponent", function() { return WhybitsamericasComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_cards_v1_card_services__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../../services/cards/v1-card.services */ "./src/app/services/cards/v1-card.services.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var WhybitsamericasComponent = /** @class */ (function () {
+    function WhybitsamericasComponent(whyBits) {
+        this.whyBits = whyBits;
+    }
+    WhybitsamericasComponent.prototype.ngOnInit = function () {
+        this.getWhybitsInfo();
+    };
+    WhybitsamericasComponent.prototype.getWhybitsInfo = function () {
+        var _this = this;
+        return this.whyBits.getCustomCardInformation('whybitsamericas').subscribe(function (items) {
+            _this.whyTitle = items.header[0].data.title;
+            _this.whySubTitle = items.header[1].data.sub_title;
+            _this.whyData = items.data;
+        });
+    };
+    WhybitsamericasComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-whybitsamericas',
+            template: __webpack_require__(/*! ./whybitsamericas.component.html */ "./src/app/cards/components/whybitsamericas/whybitsamericas.component.html"),
+            styles: [__webpack_require__(/*! ./whybitsamericas.component.scss */ "./src/app/cards/components/whybitsamericas/whybitsamericas.component.scss")]
+        }),
+        __metadata("design:paramtypes", [_services_cards_v1_card_services__WEBPACK_IMPORTED_MODULE_1__["CustomCardService"]])
+    ], WhybitsamericasComponent);
+    return WhybitsamericasComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/cards/components/workus/workus.component.html":
 /*!***************************************************************!*\
   !*** ./src/app/cards/components/workus/workus.component.html ***!
@@ -3250,7 +4080,7 @@ var VideoInformationComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n<div class=\"container\">\n  <div class=\"row\">\n    <form id=\"formulario_contacto\" #userForm = \"ngForm\" (ngSubmit)=\"onSubmit(userForm.value)\" class=\"col-md-12\">\n        <div class=\"form-group\" [ngClass]=\"aplicaCssErro(nombre)\" class=\"col-md-12\">\n            <div class=\"col-md-6 item\" >\n                <label for=\"exampleInputNombre\">Nombre</label>\n                <input type=\"text\" class=\"form-control\" id=\"nombre\" placeholder=\"Nombre\" name=\"nombre\" ngModel required #nombre=\"ngModel\">\n                <div *ngIf=\"nombre.invalid && nombre.touched\" class=\"alert alert-danger\" role=\"alert\">Campo obligatorio o invalido</div>\n            </div>\n            <div class=\"col-md-6 item\">\n                <label for=\"exampleInputEmail1\">Email address</label>\n                <input type=\"email\" class=\"form-control\" id=\"exampleInputEmail1\" aria-describedby=\"emailHelp\" placeholder=\"Escriba su email\" name=\"correo_electronico\" ngModel\n                        pattern=\"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\"\n                        #correo_electronico=\"ngModel\">\n                <div *ngIf=\"correo_electronico.invalid && correo_electronico.touched\" class=\"alert alert-danger\" role=\"alert\">Campo obligatorio o invalido</div>\n            </div>\n        </div>\n        <div class=\"form-group\" class=\"col-md-12\">\n            <div class=\"col-md-6 item\">\n                <label for=\"exampleInputTel\">Telefono</label>\n                <input type=\"tel\" class=\"form-control\" id=\"org\" placeholder=\"Escriba su telefono\" name=\"telefono\" ngModel\n                        pattern=\"^(\\([0-9]{3}\\)|[0-9]{3})[0-9]{3}[0-9]{4}$\" #telefono=\"ngModel\">\n                <div *ngIf=\"telefono.invalid && telefono.touched\" class=\"alert alert-danger\" role=\"alert\">Campo obligatorio o invalido</div>\n            </div>\n            <div class=\"col-md-6 item\">\n                <label for=\"exampleInputOrg\">Hoja de vida</label>\n                <input type=\"file\" class=\"form-control hoja-v\" id=\"hojav\" placeholder=\"Hoja de vida\" name=\"hoja_de_vida\" ngModel #hojadevida=\"ngModel\">\n            </div>\n        </div>\n        <div class=\"form-group\" class=\"col-md-12\">\n            <div class=\"col-md-6 item\">\n                <label for=\"exampleInputPais\">Pais</label>\n                <select type=\"select\" class=\"form-control\" id=\"Pais\" placeholder=\"Seleccione su pais\" name=\"pais\" ngModel> </select>\n            </div >\n            <div class=\"col-md-6 item\">\n                <label for=\"exampleInputPais\">Ciudad</label>\n                <select type=\"select\" class=\"form-control\" id=\"ciudad\" placeholder=\"Seleccione su ciudad\" name=\"ciudad\" ngModel> </select>\n              </div >\n        </div>\n        <div class=\"col-md-12\">\n            <div class=\"col-md-6 item\">\n              <label for=\"exampleInputPais\">Sitio web personal</label>\n              <input type=\"text\" class=\"form-control\" id=\"web\" placeholder=\"Su sitio web\" name=\"sitio_web\" ngModel #sitio_web=\"ngModel\" pattern=\"https?://.+\">\n              <div *ngIf=\"sitio_web.invalid && sitio_web.touched\" class=\"alert alert-danger\" role=\"alert\">Campo obligatorio o invalido</div>\n            </div >\n            <div class=\"col-md-6 item\">\n              <label for=\"exampleInputPais\">Linkedin</label>\n              <input type=\"text\" class=\"form-control\" id=\"linkedin\" placeholder=\"Su perfil\" name=\"linkedin\" ngModel #linkedin=\"ngModel\" pattern=\"https?://.+\">\n              <div *ngIf=\"linkedin.invalid && linkedin.touched\" class=\"alert alert-danger\" role=\"alert\">Campo obligatorio o invalido</div>\n            </div >\n        </div>\n        <div class=\"form-group\" class=\"col-md-12 comentario\" >\n            <label for=\"exampleInputComm\">Comentarios</label>\n            <textarea class=\"form-control\" id=\"comentario\" placeholder=\"Escriba sus comentarios\" name=\"comentario\" ngModel #comentario=\"ngModel\"></textarea>\n            <div *ngIf=\"comentario.invalid && comentario.touched\" class=\"alert alert-danger\" role=\"alert\">Campo obligatorio o invalido</div>\n        </div>\n        <div class=\"form-group\" class=\"col-md-12 terminos_grupo\">\n            <input type=\"checkbox\" id=\"terminos\" name=\"terms_of_service\"  value=\"false\" required ngModel><label ng-reflect-ng-class=\"\" for=\"terminos\">He leído y acepto los términos y condiciones</label>\n        </div>\n        <button type=\"submit\" class=\"btn btn-primary\" >Enviar</button>\n        <div class=\"obligatorios col-md-12\"> <span>*</span>Datos Obligatorios</div>\n    </form>\n    <div id=\"msj-modal\" class=\"modal\" role=\"dialog\">\n      <div class=\"content-modal\">\n        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\n          <span aria-hidden=\"true\">&times;</span>\n        </button>\n        <p>Gracias por registrar su información</p>\n      </div>\n    </div>\n  </div>\n</div>\n\n\n\n"
+module.exports = "<div class=\"container\">\n  <app-message [dataMessage]=\"dataMessage\"></app-message>\n  <div class=\"row\">\n    <form id=\"formulario_contacto\" #userForm=\"ngForm\" (ngSubmit)=\"onSubmit(userForm.value)\" class=\"col-md-12\" name=\"formulario_contacto\">\n      <div class=\"form-group\" [ngClass]=\"aplicaCssErro(nombre)\" class=\"col-md-12\">\n        <div class=\"col-md-6 item\">\n          <label for=\"exampleInputNombre\">Nombre</label>\n          <input type=\"text\" class=\"form-control\" id=\"nombre\" placeholder=\"Nombre\" name=\"nombre\" ngModel required\n            #nombre=\"ngModel\">\n          <div *ngIf=\"nombre.invalid && nombre.touched\" class=\"alert alert-danger\" role=\"alert\">Campo obligatorio o\n            invalido</div>\n        </div>\n        <div class=\"col-md-6 item\">\n          <label for=\"exampleInputEmail1\">Email address</label>\n          <input type=\"email\" class=\"form-control\" id=\"exampleInputEmail1\" aria-describedby=\"emailHelp\" placeholder=\"Escriba su email\"\n            name=\"correo_electronico\" ngModel pattern=\"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\"\n            #correo_electronico=\"ngModel\">\n          <div *ngIf=\"correo_electronico.invalid && correo_electronico.touched\" class=\"alert alert-danger\" role=\"alert\">Campo\n            obligatorio o invalido</div>\n        </div>\n      </div>\n      <div class=\"form-group\" class=\"col-md-12\">\n        <div class=\"col-md-6 item\">\n          <label for=\"exampleInputTel\">Telefono</label>\n          <input type=\"tel\" class=\"form-control\" id=\"org\" placeholder=\"Escriba su telefono\" name=\"telefono\" ngModel\n            pattern=\"^(\\([0-9]{3}\\)|[0-9]{3})[0-9]{3}[0-9]{4}$\" #telefono=\"ngModel\">\n          <div *ngIf=\"telefono.invalid && telefono.touched\" class=\"alert alert-danger\" role=\"alert\">Campo obligatorio o\n            invalido</div>\n        </div>\n        <div class=\"col-md-6 item\">\n          <label for=\"exampleInputOrg\">Hoja de vida</label>\n          <input type=\"file\" class=\"form-control hoja-v\" id=\"hojav\" placeholder=\"Hoja de vida\" name=\"hoja_de_vida\"\n            ngModel #hojadevida=\"ngModel\">\n        </div>\n      </div>\n      <div class=\"form-group\" class=\"col-md-12\">\n        <div class=\"col-md-6 item\">\n          <label for=\"exampleInputPais\">Pais</label>\n          <select type=\"select\" class=\"form-control\" id=\"Pais\" placeholder=\"Seleccione su pais\" name=\"pais\" ngModel>\n          </select>\n        </div>\n        <div class=\"col-md-6 item\">\n          <label for=\"exampleInputPais\">Ciudad</label>\n          <select type=\"select\" class=\"form-control\" id=\"ciudad\" placeholder=\"Seleccione su ciudad\" name=\"ciudad\"\n            ngModel> </select>\n        </div>\n      </div>\n      <div class=\"col-md-12\">\n        <div class=\"col-md-6 item\">\n          <label for=\"exampleInputPais\">Sitio web personal</label>\n          <input type=\"text\" class=\"form-control\" id=\"web\" placeholder=\"Su sitio web\" name=\"sitio_web\" ngModel\n            #sitio_web=\"ngModel\" pattern=\"https?://.+\">\n          <div *ngIf=\"sitio_web.invalid && sitio_web.touched\" class=\"alert alert-danger\" role=\"alert\">Campo obligatorio\n            o invalido</div>\n        </div>\n        <div class=\"col-md-6 item\">\n          <label for=\"exampleInputPais\">Linkedin</label>\n          <input type=\"text\" class=\"form-control\" id=\"linkedin\" placeholder=\"Su perfil\" name=\"linkedin\" ngModel\n            #linkedin=\"ngModel\" pattern=\"https?://.+\">\n          <div *ngIf=\"linkedin.invalid && linkedin.touched\" class=\"alert alert-danger\" role=\"alert\">Campo obligatorio o\n            invalido</div>\n        </div>\n      </div>\n      <div class=\"form-group\" class=\"col-md-12 comentario\">\n        <label for=\"exampleInputComm\">Comentarios</label>\n        <textarea class=\"form-control\" id=\"comentario\" placeholder=\"Escriba sus comentarios\" name=\"comentario\" ngModel\n          #comentario=\"ngModel\"></textarea>\n        <div *ngIf=\"comentario.invalid && comentario.touched\" class=\"alert alert-danger\" role=\"alert\">Campo obligatorio\n          o invalido</div>\n      </div>\n      <div class=\"form-group\" class=\"col-md-12 terminos_grupo\">\n        <input type=\"checkbox\" id=\"terminos\" name=\"terms_of_service\" value=\"false\" required ngModel>\n        <label ng-reflect-ng-class=\"\" for=\"terms-of-service\">He leído y acepto los\n          <a data-trigger=\"focus\" role=\"button\" data-toggle=\"popover\" data-placement=\"top\" href=\"#\">\n            términos y condiciones\n          </a>\n        </label>\n      </div>\n      <button type=\"submit\" class=\"btn btn-primary\">Enviar</button>\n      <div class=\"obligatorios col-md-12\"> <span>*</span>Datos Obligatorios</div>\n    </form>\n    <div id=\"msj-modal\" class=\"modal\" role=\"dialog\">\n      <div class=\"content-modal\">\n        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\n          <span aria-hidden=\"true\">&times;</span>\n        </button>\n        <p>Gracias por registrar su información</p>\n      </div>\n    </div>\n  </div>\n</div>\n<div id='popover-title'>{{titulo}}</div>\n<div id='popover-content' [innerHTML]='list'></div>"
 
 /***/ }),
 
@@ -3261,7 +4091,7 @@ module.exports = "\n<div class=\"container\">\n  <div class=\"row\">\n    <form 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "*, *::before, *::after {\n  box-sizing: border-box; }\n\n.item {\n  display: inline-block; }\n\nlabel {\n  color: #c0dc74;\n  margin-top: 20px;\n  margin-bottom: -1px;\n  font-weight: 100;\n  font-family: 'Open Sans light'; }\n\ninput, select {\n  width: 100%;\n  padding: 4px 2px;\n  outline: none;\n  border: none;\n  border-bottom: 1px solid #b2c6cd;\n  color: #002b49;\n  border-radius: 0px;\n  font-family: 'Open Sans light'; }\n\ninput.ng-invalid.ng-touched {\n  border: solid 1px red; }\n\nselect {\n  background: #f8f8f8;\n  font-family: 'Open Sans light'; }\n\ninput::-webkit-input-placeholder {\n  /* Chrome/Opera/Safari */\n  color: #808080; }\n\ninput::-moz-placeholder {\n  /* Firefox 19+ */\n  color: #808080; }\n\ninput:-ms-input-placeholder {\n  /* IE 10+ */\n  color: #808080; }\n\ninput:-moz-placeholder {\n  /* Firefox 18- */\n  color: #808080; }\n\n.comentario {\n  width: 98%;\n  margin: 0 auto; }\n\n@media screen and (max-width: 480px) {\n    .comentario {\n      width: 91%; } }\n\n.comentario textarea {\n    min-height: 40px;\n    border-radius: 0px;\n    border: 1px solid #b2c6cd;\n    padding: 10px 20px;\n    font-family: 'Open Sans light'; }\n\n.terminos_grupo {\n  position: relative;\n  max-width: 380px;\n  margin: 40px auto;\n  text-align: center;\n  /* OFF */\n  /* ON */ }\n\n.terminos_grupo [type=\"checkbox\"] {\n    position: absolute;\n    left: -9999px; }\n\n.terminos_grupo [type=\"checkbox\"] + label:after {\n    content: '';\n    position: absolute; }\n\n.terminos_grupo [type=\"checkbox\"] + label {\n    display: block;\n    position: relative;\n    padding-left: 26px;\n    cursor: pointer;\n    line-height: 36px;\n    font-size: 1rem;\n    color: rgba(0, 43, 73, 0.8);\n    transition: color .3s; }\n\n.terminos_grupo [type=\"checkbox\"] + label a {\n    color: #91b520; }\n\n.terminos_grupo [type=\"checkbox\"] + label:after {\n    width: 30px;\n    height: 30px;\n    transition: all .2s;\n    top: 0;\n    left: 0; }\n\n.terminos_grupo [type=\"checkbox\"]:not(:checked) + label:after {\n    background: url(\"/assets/images/check2_off.png\") left center no-repeat; }\n\n.terminos_grupo [type=\"checkbox\"]:checked + label:after {\n    background: url(\"/assets/images/check2.png\") left center no-repeat; }\n\n.btn-primary {\n  border-radius: 0px;\n  background: #91b520;\n  padding: 13px 37px;\n  background-color: #a6cf24 !important;\n  border: none;\n  margin: 0 auto;\n  display: block;\n  font-family: 'Open Sans light'; }\n\n.obligatorios {\n  text-align: center;\n  margin-top: 20px;\n  color: #6d747f;\n  font-family: 'Open Sans light'; }\n\n.obligatorios span {\n    color: #91b520; }\n\n.hoja-v {\n  color: transparent; }\n\n.hoja-v::-webkit-file-upload-button {\n  visibility: hidden; }\n\n.hoja-v::before {\n  content: '';\n  color: black;\n  display: inline-block;\n  background: url(/assets/images/adjunto.png);\n  background-size: contain;\n  outline: none;\n  white-space: nowrap;\n  -webkit-user-select: none;\n  cursor: pointer;\n  text-shadow: 1px 1px #fff;\n  font-weight: 700;\n  font-size: 10pt;\n  height: 40px;\n  width: 40px;\n  position: absolute;\n  right: 15px;\n  top: 39px; }\n\n.hoja-v:hover::before {\n  border-color: black; }\n\n.hoja-v:active {\n  outline: 0; }\n\n.hoja-v:active::before {\n  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9); }\n\n#msj-modal {\n  background: #30506cab;\n  width: 100vw;\n  height: 100vh; }\n\n#msj-modal .content-modal {\n    display: table;\n    position: relative;\n    margin-top: 25%;\n    width: 50%;\n    margin-left: 25%;\n    padding: 20px;\n    background: #fff;\n    border-radius: 10px;\n    border: solid #91b520 1px; }\n\n#msj-modal .content-modal p {\n      text-align: center; }\n"
+module.exports = "*,\n*::before,\n*::after {\n  box-sizing: border-box; }\n\n.item {\n  display: inline-block; }\n\nlabel {\n  color: #c0dc74;\n  margin-top: 20px;\n  margin-bottom: -1px;\n  font-weight: 100;\n  font-family: 'Open Sans light'; }\n\ninput,\nselect {\n  width: 100%;\n  padding: 4px 2px;\n  outline: none;\n  border: none;\n  border-bottom: 1px solid #b2c6cd;\n  color: #002b49;\n  border-radius: 0px;\n  font-family: 'Open Sans light'; }\n\ninput.ng-invalid.ng-touched {\n  border: solid 1px red; }\n\nselect {\n  background: #f8f8f8;\n  font-family: 'Open Sans light'; }\n\ninput::-webkit-input-placeholder {\n  /* Chrome/Opera/Safari */\n  color: #808080; }\n\ninput::-moz-placeholder {\n  /* Firefox 19+ */\n  color: #808080; }\n\ninput:-ms-input-placeholder {\n  /* IE 10+ */\n  color: #808080; }\n\ninput:-moz-placeholder {\n  /* Firefox 18- */\n  color: #808080; }\n\n.comentario {\n  width: 98%;\n  margin: 0 auto; }\n\n@media screen and (max-width: 480px) {\n    .comentario {\n      width: 91%; } }\n\n.comentario textarea {\n    min-height: 40px;\n    border-radius: 0px;\n    border: 1px solid #b2c6cd;\n    padding: 10px 20px;\n    font-family: 'Open Sans light'; }\n\n.terminos_grupo {\n  position: relative;\n  max-width: 380px;\n  margin: 40px auto;\n  text-align: center;\n  /* OFF */\n  /* ON */ }\n\n.terminos_grupo [type=\"checkbox\"] {\n    position: absolute;\n    left: -9999px; }\n\n.terminos_grupo [type=\"checkbox\"] + label:after {\n    content: '';\n    position: absolute; }\n\n.terminos_grupo [type=\"checkbox\"] + label {\n    display: block;\n    position: relative;\n    padding-left: 26px;\n    cursor: pointer;\n    line-height: 36px;\n    font-size: 1rem;\n    color: rgba(0, 43, 73, 0.8);\n    transition: color .3s; }\n\n.terminos_grupo [type=\"checkbox\"] + label a {\n    color: #91b520; }\n\n.terminos_grupo [type=\"checkbox\"] + label:after {\n    width: 30px;\n    height: 30px;\n    transition: all .2s;\n    top: 0;\n    left: 0; }\n\n.terminos_grupo [type=\"checkbox\"]:not(:checked) + label:after {\n    background: url(\"/assets/images/check2_off.png\") left center no-repeat; }\n\n.terminos_grupo [type=\"checkbox\"]:checked + label:after {\n    background: url(\"/assets/images/check2.png\") left center no-repeat; }\n\n.btn-primary {\n  border-radius: 0px;\n  background: #91b520;\n  padding: 13px 37px;\n  background-color: #a6cf24 !important;\n  border: none;\n  margin: 0 auto;\n  display: block;\n  font-family: 'Open Sans light'; }\n\n.obligatorios {\n  text-align: center;\n  margin-top: 20px;\n  color: #6d747f;\n  font-family: 'Open Sans light'; }\n\n.obligatorios span {\n    color: #91b520; }\n\n.hoja-v {\n  color: transparent; }\n\n.hoja-v::-webkit-file-upload-button {\n  visibility: hidden; }\n\n.hoja-v::before {\n  content: '';\n  color: black;\n  display: inline-block;\n  background: url(/assets/images/adjunto.png);\n  background-size: contain;\n  outline: none;\n  white-space: nowrap;\n  -webkit-user-select: none;\n  cursor: pointer;\n  text-shadow: 1px 1px #fff;\n  font-weight: 700;\n  font-size: 10pt;\n  height: 40px;\n  width: 40px;\n  position: absolute;\n  right: 15px;\n  top: 39px; }\n\n.hoja-v:hover::before {\n  border-color: black; }\n\n.hoja-v:active {\n  outline: 0; }\n\n.hoja-v:active::before {\n  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9); }\n\n#msj-modal {\n  background: #30506cab;\n  width: 100vw;\n  height: 100vh; }\n\n#msj-modal .content-modal {\n    display: table;\n    position: relative;\n    margin-top: 25%;\n    width: 50%;\n    margin-left: 25%;\n    padding: 20px;\n    background: #fff;\n    border-radius: 10px;\n    border: solid #91b520 1px; }\n\n#msj-modal .content-modal p {\n      text-align: center; }\n\n#popover-title,\n#popover-content {\n  display: none; }\n"
 
 /***/ }),
 
@@ -3278,6 +4108,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var rxjs_add_operator_map__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs/add/operator/map */ "./node_modules/rxjs-compat/_esm5/add/operator/map.js");
 /* harmony import */ var _services_http_http_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../services/http/http.service */ "./src/app/services/http/http.service.ts");
+/* harmony import */ var src_app_services_cards_v1_card_services__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/cards/v1-card.services */ "./src/app/services/cards/v1-card.services.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3290,29 +4121,51 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var WorkusComponent = /** @class */ (function () {
-    function WorkusComponent(_http) {
+    function WorkusComponent(_http, _service) {
         this._http = _http;
+        this._service = _service;
         this.hidden = false;
         this.usuario = {
             nombre: null,
             email: null
         };
+        this.dataMessage = [];
+        this.list = [];
     }
     WorkusComponent.prototype.onSubmit = function (formulario) {
+        var _this = this;
+        this.dataMessage = [];
         console.log(formulario);
         formulario['webform_id'] = 'work_with_us';
         jQuery('#formulario_contacto')[0].reset();
-        jQuery('#msj-modal').show();
+        /* jQuery('#msj-modal').show();
         jQuery('.close').click(function () {
-            jQuery('#msj-modal').hide();
-        });
+          jQuery('#msj-modal').hide();
+        }); */
         this._http.post('webform_rest/submit?_format=json', formulario, {
             'Content-Type': 'application/json',
             'X-CSRF-Token': this._token
         })
             .subscribe(function (datos) {
-            console.log(datos);
+            _this.ubicar();
+            if (datos.error) {
+                for (var key in datos.error) {
+                    _this.dataMessage.push({
+                        visible: true,
+                        status: 'error',
+                        message: datos.error[key]
+                    });
+                }
+            }
+            else if (datos.sid) {
+                _this.dataMessage.push({
+                    visible: true,
+                    status: 'success',
+                    message: 'Respuesta satisfactoria'
+                });
+            }
             // formulario.form.reset();
         });
     };
@@ -3321,9 +4174,30 @@ var WorkusComponent = /** @class */ (function () {
         this._http.get('rest/session/token', {}, { responseType: 'text' }).subscribe(function (response) {
             _this._token = response;
         });
+        this.getPopoverService();
+        $(function () {
+            $('[data-toggle="popover"]').popover({
+                html: true,
+                title: function () {
+                    return $('#popover-title').html();
+                },
+                content: function () {
+                    return document.getElementById('#popover-content').innerHTML;
+                }
+            }).click(function (e) {
+                e.preventDefault();
+            });
+        });
     };
     WorkusComponent.prototype.verificaValidTouched = function (campo) {
         return !campo.valid && campo.touched;
+    };
+    WorkusComponent.prototype.getPopoverService = function () {
+        var _this = this;
+        this._service.getCustomContentBasicPage('c00ea48d-1ce3-4bba-b65e-d57daf71cf4a').subscribe(function (params) {
+            _this.titulo = params.title;
+            _this.list = params.body;
+        });
     };
     WorkusComponent.prototype.aplicaCssErro = function (campo) {
         return {
@@ -3331,13 +4205,20 @@ var WorkusComponent = /** @class */ (function () {
             'has-feedback': this.verificaValidTouched(campo)
         };
     };
+    WorkusComponent.prototype.ubicar = function () {
+        var x = document.querySelector('.tab');
+        console.log(x);
+        if (x) {
+            x.scrollIntoView({ block: 'start', inline: 'start', behavior: 'smooth' });
+        }
+    };
     WorkusComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-workus',
             template: __webpack_require__(/*! ./workus.component.html */ "./src/app/cards/components/workus/workus.component.html"),
             styles: [__webpack_require__(/*! ./workus.component.scss */ "./src/app/cards/components/workus/workus.component.scss")]
         }),
-        __metadata("design:paramtypes", [_services_http_http_service__WEBPACK_IMPORTED_MODULE_2__["HttpService"]])
+        __metadata("design:paramtypes", [_services_http_http_service__WEBPACK_IMPORTED_MODULE_2__["HttpService"], src_app_services_cards_v1_card_services__WEBPACK_IMPORTED_MODULE_3__["CustomCardService"]])
     ], WorkusComponent);
     return WorkusComponent;
 }());
@@ -4037,7 +4918,7 @@ var LayoutModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-banner imgFondo=\"/assets/images/cabezerainternaweb.png\" uuid=\"e58b3214-c259-4bd2-b6ba-2f81c9ba86b4\"></app-banner>\n<app-carousel-controls></app-carousel-controls>\n<app-alliances></app-alliances>\n<app-workwithus-proserv></app-workwithus-proserv>\n"
+module.exports = "<app-banner imgFondo=\"/assets/images/cabezerainternaweb.png\" uuid=\"e58b3214-c259-4bd2-b6ba-2f81c9ba86b4\"></app-banner>\n<app-whybitsamericas></app-whybitsamericas>\n<app-carousel-controls></app-carousel-controls>\n<app-alliances></app-alliances>\n<app-knowus></app-knowus>\n<app-workwithus-proserv></app-workwithus-proserv>\n"
 
 /***/ }),
 
@@ -4606,7 +5487,7 @@ var PoliticsComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-banner [titulo]=\"type\" imgFondo=\"/assets/images/imedicalweb.png\"></app-banner>\n<div class=\"my-5\">\n    <div class=\"container\">\n        <app-client-project-imedical (propagar)=\"onMenu($event)\"></app-client-project-imedical>\n    </div>\n    <hr>\n    <app-menu-template [menuList]=\"listMenu\"></app-menu-template>\n    <app-slider></app-slider>\n    <div class=\"container\">\n        <app-separator [iconCustom]=\"'icon-historymedical'\"></app-separator>\n        <div class=\"row\">\n            <div class=\"col-md-12 mb-5\">\n                <h1 class=\"condensed text-center\">{{ tituloModulos }}</h1>\n                <p class=\"text-center\" [innerHTML]=\"descripcionModulos\"></p>\n            </div>\n            <div class=\"col-md-4\" *ngFor=\"let blurbItem of blurbArray\">\n                <app-blurb [blurb]=\"blurbItem\" (propagar)=\"onMenu($event)\" [type]=\"type\"></app-blurb>\n            </div>\n        </div>\n        <app-separator [iconCustom]=\"'icon-historymedical'\"></app-separator>\n        <app-card-img-text [orientacion]=\"'IT'\" (propagar)=\"onMenu($event)\" [type]=\"type\"></app-card-img-text>\n        <app-separator [iconCustom]=\"'icon-historymedical'\"></app-separator>\n        <app-tecnologies (propagar)=\"onMenu($event)\"></app-tecnologies>\n        <app-separator [iconCustom]=\"'icon-historymedical'\"></app-separator>\n        <app-card-img-text [orientacion]=\"'TI'\" (propagar)=\"onMenu($event)\" [type]=\"type\"></app-card-img-text>\n        <app-separator [iconCustom]=\"'icon-historymedical'\"></app-separator>\n        <app-client-proserv (propagar)=\"onMenu($event)\" [type]=\"type\"></app-client-proserv>\n        <app-separator [iconCustom]=\"'icon-historymedical'\"></app-separator>\n        <app-video-information [link]=\"'www.eliseupnorcum.cedu.co'\" (propagar)=\"onMenu($event)\" [type]=\"type\"></app-video-information>\n        <app-separator [iconCustom]=\"'icon-historymedical'\"></app-separator>\n    </div>\n    <app-workwithus (propagar)=\"onMenu($event)\" [type]=\"type\"></app-workwithus>\n</div>"
+module.exports = "<app-banner [titulo]=\"type\" imgFondo=\"/assets/images/imedicalweb.png\"></app-banner>\n<div class=\"my-5\">\n    <div class=\"container\">\n        <app-client-project-imedical (propagar)=\"onMenu($event)\"></app-client-project-imedical>\n    </div>\n    <hr>\n    <app-menu-template [menuList]=\"listMenu\"></app-menu-template>\n    <app-slider></app-slider>\n    <div class=\"container\">\n        <app-separator [iconCustom]=\"'icon-historymedical'\"></app-separator>\n        <div class=\"row\">\n            <div class=\"col-md-12 mb-5\">\n                <h1 class=\"condensed text-center\">{{ tituloModulos }}</h1>\n                <p class=\"text-center\" [innerHTML]=\"descripcionModulos\"></p>\n            </div>\n            <div class=\"col-md-4\" *ngFor=\"let blurbItem of blurbArray\">\n                <app-blurb [blurb]=\"blurbItem\" (propagar)=\"onMenu($event)\" [type]=\"type\"></app-blurb>\n            </div>\n        </div>\n        <app-separator [iconCustom]=\"'icon-historymedical'\"></app-separator>\n        <app-card-img-text [orientacion]=\"'IT'\" (propagar)=\"onMenu($event)\" [type]=\"type\"></app-card-img-text>\n        <app-separator [iconCustom]=\"'icon-historymedical'\"></app-separator>\n        <app-tecnologies-projectservice (propagar)=\"onMenu($event)\" [type]=\"type\"></app-tecnologies-projectservice>\n        <app-separator [iconCustom]=\"'icon-historymedical'\"></app-separator>\n        <app-achievements (propagar)=\"onMenu($event)\" [type]=\"type\"></app-achievements>\n        <app-separator [iconCustom]=\"'icon-historymedical'\"></app-separator>\n        <app-testimonies (propagar)=\"onMenu($event)\"></app-testimonies>\n        <app-separator [iconCustom]=\"'icon-historymedical'\"></app-separator>\n        <!-- <app-tecnologies (propagar)=\"onMenu($event)\"></app-tecnologies>\n        <app-separator [iconCustom]=\"'icon-historymedical'\"></app-separator> -->\n        <app-team (propagar)=\"onMenu($event)\" [type]=\"type\"></app-team>\n        <app-separator [iconCustom]=\"'icon-historymedical'\"></app-separator>\n        <app-card-img-text [orientacion]=\"'TI'\" (propagar)=\"onMenu($event)\" [type]=\"type\"></app-card-img-text>\n        <app-separator [iconCustom]=\"'icon-historymedical'\"></app-separator>\n        <app-client-proserv (propagar)=\"onMenu($event)\" [type]=\"type\"></app-client-proserv>\n        <app-separator [iconCustom]=\"'icon-historymedical'\"></app-separator>\n        <app-video-information [link]=\"'www.eliseupnorcum.cedu.co'\" (propagar)=\"onMenu($event)\" [type]=\"type\"></app-video-information>\n        <app-separator [iconCustom]=\"'icon-historymedical'\"></app-separator>\n    </div>\n    <app-workwithus (propagar)=\"onMenu($event)\" [type]=\"type\"></app-workwithus>\n</div>"
 
 /***/ }),
 
@@ -4695,7 +5576,6 @@ var ProductsOrServicesComponent = /** @class */ (function () {
         if (cont === 0) {
             this.listMenu.push(listMenu);
         }
-        console.log(this.listMenu);
     };
     ProductsOrServicesComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -4719,7 +5599,7 @@ var ProductsOrServicesComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-banner imgFondo=\"\"></app-banner>\n<app-title></app-title>\nPágina principal de Productos..."
+module.exports = "<app-banner imgFondo=\"\" uuid=\"bc5dfea3-e1cb-4e97-8d7b-db359a613d28\"></app-banner>\n<app-title></app-title>\nPágina principal de Productos..."
 
 /***/ }),
 
@@ -4843,7 +5723,7 @@ var ProjectsComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-banner imgFondo=\"\"></app-banner>\n<app-title></app-title>\nPágina principal de Servicios..."
+module.exports = "<app-banner imgFondo=\"\" uuid=\"116fa45b-1b72-407e-89af-8c3fb33193e2\"></app-banner>\n<app-title></app-title>\nPágina principal de Servicios..."
 
 /***/ }),
 

@@ -1,0 +1,26 @@
+<section id="main-title">
+    <h1 class="why-general-title" >{{ whyTitle }}</h1>
+    <p class="why-general-subtitle" >{{ whySubTitle }}</p>
+</section>
+
+<section class="WhyBits">
+    <div class="images-whybits">
+        <ul class="row why-boxes">
+            <li class="why-list" *ngFor="let why of whyData; let i = index">
+              <div class="row why-img-and-title-box">
+                <div class="col-5 why-img">
+                  <img [src]="why.field_imagen?.url" [alt]="why.field_imagen?.alt" />
+                </div>
+                <div class="col-7 why-title">
+                  <h3>{{ why?.title }}</h3>
+                </div>
+              </div>
+              <div class="row why-description-box">
+                <div class="col-12 why-description">
+                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In a quas, quidem vitae at aspernatur cum quibusdam excepturi quasi ab? Vitae magnam quae, officiis aliquam eum veniam similique illo reprehenderit.</p>
+                </div>
+              </div>
+            </li>
+        </ul>
+    </div>
+</section>

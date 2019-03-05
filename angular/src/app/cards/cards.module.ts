@@ -25,10 +25,13 @@ import { CardImgTextComponent } from './components/card-img-text/card-img-text.c
 import { BlogComponent } from './components/blog/blog.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ClientProjectImedicalComponent } from './components/client-project-imedical/client-project-imedical.component';
+import { WhybitsamericasComponent } from './components/whybitsamericas/whybitsamericas.component';
+
 import { MessageComponent } from './components/message/message.component';
 import { KnowusComponent } from './components/knowus/knowus.component';
 import { TeamComponent } from './components/team/team.component';
 import { AchievementsComponent } from './components/achievements/achievements.component';
+import { TestimoniesComponent } from './components/testimonies/testimonies.component';
 import { TecnologiesProjectserviceComponent } from './components/tecnologies-projectservice/tecnologies-projectservice.component';
 import { HistoryComponent } from './components/history/history.component';
 
@@ -77,11 +80,13 @@ import { WorkusComponent } from './components/workus/workus.component';
     ClientProjectImedicalComponent,
     ClientProServComponent,
     MessageComponent,
+    WhybitsamericasComponent,
     KnowusComponent,
     TeamComponent,
     AchievementsComponent,
     TecnologiesProjectserviceComponent,
-    HistoryComponent
+    HistoryComponent,
+    TestimoniesComponent
   ],
   exports: [
     CarouselItemComponent,
@@ -107,11 +112,13 @@ import { WorkusComponent } from './components/workus/workus.component';
     BlogComponent,
     ClientProjectImedicalComponent,
     ClientProServComponent,
+    WhybitsamericasComponent,
     KnowusComponent,
     TeamComponent,
     AchievementsComponent,
     TecnologiesProjectserviceComponent,
-    HistoryComponent
+    HistoryComponent,
+    TestimoniesComponent
   ],
   imports: [
     BrowserModule,
