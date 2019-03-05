@@ -91,34 +91,59 @@ class ServiceProductBits extends ConfigEntityBase implements ServiceProductBitsI
       return $this->type;
     }
     elseif ($field == "modules") {
-      return $this->modules;
+      return $this->loadMultiplesDataWithLabel($this->modules);
     }
     elseif ($field == "left_media") {
-      return $this->left_media;
+      return $this->loadDataWithLabel($this->left_media);
     }
     elseif ($field == "technologies") {
-      return $this->technologies;
+      return $this->loadMultiplesDataWithLabel($this->technologies);
     }
     elseif ($field == "testimonies") {
-      return $this->testimonies;
+      return $this->loadMultiplesDataWithLabel($this->testimonies);
     }
     elseif ($field == "achievements") {
-      return $this->achievements;
+      return $this->loadMultiplesDataWithLabel($this->achievements);
     }
     elseif ($field == "team") {
-      return $this->team;
+      return $this->loadMultiplesDataWithLabel($this->team);
     }
     elseif ($field == "right_media") {
-      return $this->right_media;
+      return $this->loadDataWithLabel($this->right_media);
     }
     elseif ($field == "video") {
-      return $this->video;
+      return $this->loadDataWithLabel($this->video);
     }
     elseif ($field == "clients") {
-      return $this->clients;
+      return $this->loadMultiplesDataWithLabel($this->clients);
     }
     return $defaultValue;
   }
+
+  private function loadMultiplesDataWithLabel($ourentities) {
+    $result = [];
+    foreach ($ourentities as $key => $value) {
+      $nid = $value['target_id'];
+      $result[] = $this->loadDataWithLabel($nid);
+    }
+    return $result;
+  }
+
+  private function loadDataWithLabel($nid) {
+    $node = \Drupal::entityTypeManager()->getStorage('node')->load($nid);
+    if ($node) {
+      return [
+        'id' => $nid,
+        'label' => $node->label()
+      ];
+    }
+    return [
+      'id' => is_null($nid) ? '' : $nid,
+      'label' => ''
+    ];
+  }
+
+
 
   private function loadImagesData($images) {
     $data = [];
