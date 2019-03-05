@@ -1,0 +1,5 @@
+name: 'bits_countries'
+type: module
+description: 'Manage countries and cities information'
+core: 8.x
+package: 'Custom'

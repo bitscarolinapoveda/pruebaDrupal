@@ -172,7 +172,9 @@ class CardBase extends BlockBase {
     }
     $bnCargoDesdeAjax = FALSE;
     if (!empty((string) $ourFormState->getTriggeringElement()['#value'])) {
-      $bnCargoDesdeAjax = TRUE;
+      if (strpos((string) $ourFormState->getTriggeringElement()['#name'], 'settings_files_table_fields_imag') !== false) {
+        $bnCargoDesdeAjax = TRUE;
+      }
     }
 
     if ($bnCargoDesdeAjax) {

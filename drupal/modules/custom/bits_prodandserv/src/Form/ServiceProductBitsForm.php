@@ -72,6 +72,176 @@ class ServiceProductBitsForm extends EntityForm {
       '#upload_location' => 'public://images/serviceproduct/',
     ];
 
+
+    $modules = [];
+    $ourModules = $service_product_bits->get('modules');
+    if ($ourModules && is_array($ourModules)) {
+      foreach ($ourModules as $key => $value) {
+        $modules[] = $nodes = \Drupal::entityTypeManager()->getStorage('node')->load($value['target_id']);
+      }
+    }
+    $form['modules'] = [
+      '#title' => t('Modules'),
+      '#type' => 'entity_autocomplete',
+      '#tags' => TRUE,
+      '#target_type' => 'node',
+      '#default_value' => $modules,
+      '#selection_settings' => [
+        'target_bundles' => ['module_information'],
+      ],
+    ];
+
+
+    $leftMedia = '';
+    $ourLeftMedia = $service_product_bits->get('left_media');
+    if ($ourLeftMedia) {
+        $leftMedia = $nodes = \Drupal::entityTypeManager()->getStorage('node')->load($ourLeftMedia);
+    }
+    $form['left_media'] = [
+      '#title' => t('LeftMedia'),
+      '#type' => 'entity_autocomplete',
+      '#target_type' => 'node',
+      '#selection_handler' => 'default',
+      '#default_value' => $leftMedia,
+      '#selection_settings' => [
+        'target_bundles' => ['imedical_media'],
+      ],
+    ];
+
+
+    $technologies = [];
+    $ourTechnologies = $service_product_bits->get('technologies');
+    if ($ourTechnologies && is_array($ourTechnologies)) {
+      foreach ($ourTechnologies as $key => $value) {
+        $technologies[] = $nodes = \Drupal::entityTypeManager()->getStorage('node')->load($value['target_id']);
+      }
+    }
+    $form['technologies'] = [
+      '#title' => t('Technologies'),
+      '#type' => 'entity_autocomplete',
+      '#tags' => TRUE,
+      '#target_type' => 'node',
+      '#selection_handler' => 'default',
+      '#default_value' => $technologies,
+      '#selection_settings' => [
+        'target_bundles' => ['technologies'],
+      ]
+    ];
+
+
+    $testimonies = [];
+    $ourTestimonies = $service_product_bits->get('testimonies');
+    if ($ourTestimonies && is_array($ourTestimonies)) {
+      foreach ($ourTestimonies as $key => $value) {
+        $testimonies[] = $nodes = \Drupal::entityTypeManager()->getStorage('node')->load($value['target_id']);
+      }
+    }
+    $form['testimonies'] = [
+      '#title' => t('Testimonies'),
+      '#type' => 'entity_autocomplete',
+      '#tags' => TRUE,
+      '#target_type' => 'node',
+      '#selection_handler' => 'default',
+      '#default_value' => $testimonies,
+      '#selection_settings' =>  [
+        'target_bundles' => ['lo_que_dice_el_cliente'],
+      ]
+    ];
+
+
+    $achievements = [];
+    $ourAchievements = $service_product_bits->get('achievements');
+    if ($ourAchievements && is_array($ourAchievements)) {
+      foreach ($ourAchievements as $key => $value) {
+        $achievements[] = $nodes = \Drupal::entityTypeManager()->getStorage('node')->load($value['target_id']);
+      }
+    }
+    $form['achievements'] = [
+      '#title' => t('Achievements'),
+      '#type' => 'entity_autocomplete',
+      '#tags' => TRUE,
+      '#target_type' => 'node',
+      '#selection_handler' => 'default',
+      '#default_value' => $achievements,
+      '#selection_settings' => [
+        'target_bundles' => ['logros'],
+      ]
+    ];
+
+
+    $team = [];
+    $ourTeam = $service_product_bits->get('team');
+    if ($ourTeam && is_array($ourTeam)) {
+      foreach ($ourTeam as $key => $value) {
+        $team[] = $nodes = \Drupal::entityTypeManager()->getStorage('node')->load($value['target_id']);
+      }
+    }
+    $form['team'] = [
+      '#title' => t('Team'),
+      '#type' => 'entity_autocomplete',
+      '#tags' => TRUE,
+      '#target_type' => 'node',
+      '#selection_handler' => 'default',
+      '#default_value' => $team,
+      '#selection_settings' => [
+        'target_bundles' => ['equipo_de_trabajo'],
+      ]
+    ];
+
+
+    $rightMedia = '';
+    $ourRightMedia = $service_product_bits->get('right_media');
+    if ($ourRightMedia) {
+      $rightMedia = $nodes = \Drupal::entityTypeManager()->getStorage('node')->load($ourRightMedia);
+    }
+    $form['right_media'] = [
+      '#title' => t('RightMedia'),
+      '#type' => 'entity_autocomplete',
+      '#target_type' => 'node',
+      '#selection_handler' => 'default',
+      '#default_value' => $rightMedia,
+      '#selection_settings' => [
+        'target_bundles' => ['imedical_media'],
+      ]
+    ];
+
+
+    $video = '';
+    $ourVideo = $service_product_bits->get('video');
+    if ($ourVideo) {
+      $video = $nodes = \Drupal::entityTypeManager()->getStorage('node')->load($ourVideo);
+    }
+    $form['video'] = [
+      '#title' => t('Video'),
+      '#type' => 'entity_autocomplete',
+      '#target_type' => 'node',
+      '#selection_handler' => 'default',
+      '#default_value' => $video,
+      '#selection_settings' => [
+        'target_bundles' => ['video_plus_information'],
+      ]
+    ];
+
+
+    $clients = [];
+    $ourClients = $service_product_bits->get('clients');
+    if ($ourClients && is_array($ourClients)) {
+      foreach ($ourClients as $key => $value) {
+        $clients[] = $nodes = \Drupal::entityTypeManager()->getStorage('node')->load($value['target_id']);
+      }
+    }
+    $form['clients'] = [
+      '#title' => t('Clients'),
+      '#type' => 'entity_autocomplete',
+      '#tags' => TRUE,
+      '#target_type' => 'node',
+      '#selection_handler' => 'default',
+      '#default_value' => $clients,
+      '#selection_settings' => [
+        'target_bundles' => ['clients'],
+      ]
+    ];
+
     return $form;
   }
   /**

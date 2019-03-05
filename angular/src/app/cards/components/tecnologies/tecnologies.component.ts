@@ -123,6 +123,7 @@ export class TecnologiesComponent implements OnInit {
       this.background = items.body[0].data.back_movil[0].url;
       this.arrayLogos = items.data;
       this.customArrayImages(this.arrayLogos);
+      console.log(this.arrayLogosCustom);
       /*this.createSlick();*/
     });
   }

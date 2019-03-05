@@ -1,0 +1,56 @@
+#testimonies-main-title {
+    text-align: center;
+    width: 100%;
+    padding: 50px 0 0px 0;
+    color: #002b49;
+    .testimonies-general-title {
+      font-family: Open Sans Codensed Light;
+      font-size: 40px;
+    }
+    .testimonies-general-subtitle {
+      font-family: Open Sans Codensed Light;
+      font-size: 20px;
+    }
+  }
+#testimonies-carousel {
+  .container {
+      width:100%; 
+      height:200px; 
+      background-color: white;
+  }
+  .carousel-caption {
+    padding-top: 0;
+    padding-bottom: 50px;
+    .testimonies-text {
+        font-family: Open Sans Light;
+        color: #002b49;
+    }
+    .testimonies-description {
+      font-size: 16px;
+    }
+    .testimonies-name {
+        font-size: 17px;
+    }
+    .testimonies-company {
+      font-family: Open Sans Codensed Light;
+      font-size: 20px;
+    }
+  }
+}
+:host /deep/ .carousel-control-next, 
+:host /deep/.carousel-control-prev {
+  visibility: hidden;
+}
+:host /deep/ .carousel-indicators li {
+  width: 15px;
+  height: 15px;
+  margin: 0 5px;
+  border-radius: 50%; 
+  background-color: #ededed;
+  &.active {
+    background-color: #a6cf24;
+  }
+}
+:host /deep/ .carousel.slide {
+  outline: none;
+}
