@@ -30,6 +30,7 @@ import { KnowusComponent } from './components/knowus/knowus.component';
 import { TeamComponent } from './components/team/team.component';
 import { AchievementsComponent } from './components/achievements/achievements.component';
 import { TecnologiesProjectserviceComponent } from './components/tecnologies-projectservice/tecnologies-projectservice.component';
+import { HistoryComponent } from './components/history/history.component';
 
 // Servicios
 import { NodeService } from '../services/cards/node.service';
@@ -46,6 +47,7 @@ import { SafeHtmlPipe } from '../pipes/safehtml.pipe';
 import { SafeCssPipe } from '../pipes/safecss.pipe';
 import { ClientProServComponent } from './components/client-proserv/client-proserv.component';
 import { WorkusComponent } from './components/workus/workus.component';
+
 
 @NgModule({
   declarations: [
@@ -78,7 +80,8 @@ import { WorkusComponent } from './components/workus/workus.component';
     KnowusComponent,
     TeamComponent,
     AchievementsComponent,
-    TecnologiesProjectserviceComponent
+    TecnologiesProjectserviceComponent,
+    HistoryComponent
   ],
   exports: [
     CarouselItemComponent,
@@ -107,7 +110,8 @@ import { WorkusComponent } from './components/workus/workus.component';
     KnowusComponent,
     TeamComponent,
     AchievementsComponent,
-    TecnologiesProjectserviceComponent
+    TecnologiesProjectserviceComponent,
+    HistoryComponent
   ],
   imports: [
     BrowserModule,
