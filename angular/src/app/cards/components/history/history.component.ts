@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ViewEncapsulation } from '@angular/core';
 
+declare var TL: any;
+declare var window: any;
+
 @Component({
   selector: 'app-history',
   templateUrl: './history.component.html',
