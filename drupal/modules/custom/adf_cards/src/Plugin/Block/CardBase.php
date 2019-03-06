@@ -84,7 +84,6 @@ class CardBase extends BlockBase {
    */
   public function blockForm($form, FormStateInterface $form_state) {
     $keys = array_keys($this->configuration);
-    $count_keys = 0;
     // Se recorre las claves creadas en la configuración para crear el formulario.
     foreach ($keys as $key) {
       if (isset($this->configuration[$key]['table_fields']) && count($this->configuration[$key]['table_fields']) > 0) {
@@ -152,7 +151,7 @@ class CardBase extends BlockBase {
       $fromAjax = $form_state->get('from_ajax');
 
       // We have to ensure that there is at least one name field.
-      if ($fromAjax === null) {
+      if ($fromAjax === NULL) {
         $fromAjax = $form_state->set('from_ajax', FALSE);
       }
 
