@@ -19,8 +19,7 @@ use Drupal\Core\Url;
  *  admin_label = @Translation("Card base"),
  * )
  */
-class CardBase extends BlockBase
-{
+class CardBase extends BlockBase {
 
   protected $uuid;
   protected $key_config = [
@@ -76,8 +75,7 @@ class CardBase extends BlockBase
   /**
    * {@inheritdoc}
    */
-  public function defaultConfiguration()
-  {
+  public function defaultConfiguration() {
     return parent::defaultConfiguration();
   }
 
@@ -90,12 +88,11 @@ class CardBase extends BlockBase
     // Se recorre las claves creadas en la configuración para crear el formulario.
     foreach ($keys as $key) {
       if (isset($this->configuration[$key]['table_fields']) && count($this->configuration[$key]['table_fields']) > 0) {
-        $open = $count_keys == 0;
         $form[$key] = [
           '#type' => 'details',
           '#title' => $this->t($this->key_config[$key]['title']),
           '#description' => $this->t($this->key_config[$key]['description']),
-          '#open' => $open,
+          '#open' => TRUE,
         ];
 
         $form[$key]['table_fields'] = [
