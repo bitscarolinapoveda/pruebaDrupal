@@ -2,10 +2,9 @@
 
 namespace Drupal\bits_countries\Entity;
 
+use Drupal\Core\Entity\ContentEntityBase;
 use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
-use Drupal\Core\Entity\RevisionableContentEntityBase;
-use Drupal\Core\Entity\RevisionableInterface;
 use Drupal\Core\Entity\EntityChangedTrait;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\user\UserInterface;
@@ -66,7 +65,7 @@ use Drupal\user\UserInterface;
  *   field_ui_base_route = "country_entity.settings"
  * )
  */
-class CountryEntity extends RevisionableContentEntityBase implements CountryEntityInterface {
+class CountryEntity extends ContentEntityBase implements CountryEntityInterface {
 
   use EntityChangedTrait;
 
@@ -86,13 +85,6 @@ class CountryEntity extends RevisionableContentEntityBase implements CountryEnti
   protected function urlRouteParameters($rel) {
     $uri_route_parameters = parent::urlRouteParameters($rel);
 
-    if ($rel === 'revision_revert' && $this instanceof RevisionableInterface) {
-      $uri_route_parameters[$this->getEntityTypeId() . '_revision'] = $this->getRevisionId();
-    }
-    elseif ($rel === 'revision_delete' && $this instanceof RevisionableInterface) {
-      $uri_route_parameters[$this->getEntityTypeId() . '_revision'] = $this->getRevisionId();
-    }
-
     return $uri_route_parameters;
   }
 
@@ -109,12 +101,6 @@ class CountryEntity extends RevisionableContentEntityBase implements CountryEnti
       if (!$translation->getOwner()) {
         $translation->setOwnerId(0);
       }
-    }
-
-    // If no revision author has been set explicitly, make the country_entity owner the
-    // revision author.
-    if (!$this->getRevisionUser()) {
-      $this->setRevisionUserId($this->getOwnerId());
     }
   }
 
@@ -233,7 +219,6 @@ class CountryEntity extends RevisionableContentEntityBase implements CountryEnti
     $fields['user_id'] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(t('Authored by'))
       ->setDescription(t('The user ID of author of the Country entity entity.'))
-      ->setRevisionable(TRUE)
       ->setSetting('target_type', 'user')
       ->setSetting('handler', 'default')
       ->setTranslatable(TRUE)
@@ -258,7 +243,6 @@ class CountryEntity extends RevisionableContentEntityBase implements CountryEnti
     $fields['name'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Name'))
       ->setDescription(t('The name of the Country entity entity.'))
-      ->setRevisionable(TRUE)
       ->setSettings([
         'max_length' => 50,
         'text_processing' => 0,
@@ -280,7 +264,6 @@ class CountryEntity extends RevisionableContentEntityBase implements CountryEnti
     $fields['label_name'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Label name'))
       ->setDescription(t('The label name to show of the Country entity.'))
-      ->setRevisionable(TRUE)
       ->setSettings([
         'max_length' => 50,
         'text_processing' => 0,
@@ -302,7 +285,6 @@ class CountryEntity extends RevisionableContentEntityBase implements CountryEnti
     $fields['iso_code'] = BaseFieldDefinition::create('string')
       ->setLabel(t('ISO Code'))
       ->setDescription(t('The ISO code of the Country entity.'))
-      ->setRevisionable(TRUE)
       ->setSettings([
         'max_length' => 50,
         'text_processing' => 0,
@@ -324,7 +306,6 @@ class CountryEntity extends RevisionableContentEntityBase implements CountryEnti
     $fields['status'] = BaseFieldDefinition::create('boolean')
       ->setLabel(t('Publishing status'))
       ->setDescription(t('A boolean indicating whether the Country entity is published.'))
-      ->setRevisionable(TRUE)
       ->setDefaultValue(TRUE)
       ->setDisplayOptions('form', [
         'type' => 'boolean_checkbox',
@@ -343,7 +324,6 @@ class CountryEntity extends RevisionableContentEntityBase implements CountryEnti
       ->setLabel(t('Revision translation affected'))
       ->setDescription(t('Indicates if the last edit of a translation belongs to current revision.'))
       ->setReadOnly(TRUE)
-      ->setRevisionable(TRUE)
       ->setTranslatable(TRUE);
 
     return $fields;

@@ -12,7 +12,7 @@ use Drupal\user\EntityOwnerInterface;
  *
  * @ingroup bits_countries
  */
-interface CountryEntityInterface extends ContentEntityInterface, RevisionLogInterface, EntityChangedInterface, EntityOwnerInterface {
+interface CountryEntityInterface extends ContentEntityInterface, EntityChangedInterface, EntityOwnerInterface {
 
   // Add get/set methods for your configuration properties here.
 
@@ -94,43 +94,5 @@ interface CountryEntityInterface extends ContentEntityInterface, RevisionLogInte
    *   The called Country entity entity.
    */
   public function setPublished($published);
-
-  /**
-   * Gets the Country entity revision creation timestamp.
-   *
-   * @return int
-   *   The UNIX timestamp of when this revision was created.
-   */
-  public function getRevisionCreationTime();
-
-  /**
-   * Sets the Country entity revision creation timestamp.
-   *
-   * @param int $timestamp
-   *   The UNIX timestamp of when this revision was created.
-   *
-   * @return \Drupal\bits_countries\Entity\CountryEntityInterface
-   *   The called Country entity entity.
-   */
-  public function setRevisionCreationTime($timestamp);
-
-  /**
-   * Gets the Country entity revision author.
-   *
-   * @return \Drupal\user\UserInterface
-   *   The user entity for the revision author.
-   */
-  public function getRevisionUser();
-
-  /**
-   * Sets the Country entity revision author.
-   *
-   * @param int $uid
-   *   The user ID of the revision author.
-   *
-   * @return \Drupal\bits_countries\Entity\CountryEntityInterface
-   *   The called Country entity entity.
-   */
-  public function setRevisionUserId($uid);
 
 }

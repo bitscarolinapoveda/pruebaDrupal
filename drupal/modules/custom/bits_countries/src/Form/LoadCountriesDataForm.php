@@ -97,22 +97,22 @@ class LoadCountriesDataForm extends ConfigFormBase {
       $entity->save();
     }
     /// Cities
-    $data = file_get_contents($form_state->getValue('cities_file'));
-    $array_rows = explode("\r",$data);
-    $CC_FIPS = array_search("CC_FIPS",explode("\t",$array_rows[0]));
-    $FULL_NAME_ND = array_search("FULL_NAME_ND",explode("\t",$array_rows[0]));
-
-    for($i = 1; $i<count($array_rows); $i++) {
-      $row = explode("\t",$array_rows[$i] );
-      $entity = CountryEntity::create(
-        [
-          "name" => $row[$FULL_NAME_ND],
-          "label_name" => $row[$FULL_NAME_ND],
-          "country_code" => $row[$CC_FIPS],
-        ]
-      );
-      $entity->save();
-    }
+//    $data = file_get_contents($form_state->getValue('cities_file'));
+//    $array_rows = explode("\r",$data);
+//    $CC_FIPS = array_search("CC_FIPS",explode("\t",$array_rows[0]));
+//    $FULL_NAME_ND = array_search("FULL_NAME_ND",explode("\t",$array_rows[0]));
+//
+//    for($i = 1; $i<count($array_rows); $i++) {
+//      $row = explode("\t",$array_rows[$i] );
+//      $entity = CountryEntity::create(
+//        [
+//          "name" => $row[$FULL_NAME_ND],
+//          "label_name" => $row[$FULL_NAME_ND],
+//          "country_code" => $row[$CC_FIPS],
+//        ]
+//      );
+//      $entity->save();
+//    }
 
   }
 

@@ -18,16 +18,6 @@ view published country entity entities:
 view unpublished country entity entities:
   title: 'View unpublished Country entity entities'
 
-view all country entity revisions:
-  title: 'View all Country entity revisions'
-
-revert all country entity revisions:
-  title: 'Revert all Country entity revisions'
-  description: 'Role requires permission <em>view Country entity revisions</em> and <em>edit rights</em> for country entity entities in question or <em>administer country entity entities</em>.'
-
-delete all country entity revisions:
-  title: 'Delete all revisions'
-  description: 'Role requires permission to <em>view Country entity revisions</em> and <em>delete rights</em> for country entity entities in question or <em>administer country entity entities</em>.'
 add city entity entities:
   title: 'Create new City entity entities'
 
