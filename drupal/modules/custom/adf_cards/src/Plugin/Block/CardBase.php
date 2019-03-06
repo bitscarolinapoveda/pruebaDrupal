@@ -87,6 +87,7 @@ class CardBase extends BlockBase
   public function blockForm($form, FormStateInterface $form_state) {
     $keys = array_keys($this->configuration);
     $count_keys = 0;
+    // Se recorre las claves creadas en la configuración para crear el formulario.
     foreach ($keys as $key) {
       if (isset($this->configuration[$key]['table_fields']) && count($this->configuration[$key]['table_fields']) > 0) {
         $open = $count_keys == 0;
@@ -128,10 +129,10 @@ class CardBase extends BlockBase
     if (get_class($form_state) == 'Drupal\Core\Form\SubformState') {
       $ourFormState = $form_state->getCompleteFormState();
     }
-    $bnCargoDesdeAjax = false;
+    $bnCargoDesdeAjax = FALSE;
     if (!empty((string)$ourFormState->getTriggeringElement()['#value'])) {
-      if (strpos((string)$ourFormState->getTriggeringElement()['#name'], 'settings_files_table_fields_imag') !== false) {
-        $bnCargoDesdeAjax = true;
+      if (strpos((string)$ourFormState->getTriggeringElement()['#name'], 'settings_files_table_fields_imag') !== FALSE) {
+        $bnCargoDesdeAjax = TRUE;
       }
     }
 
@@ -155,14 +156,14 @@ class CardBase extends BlockBase
 
       // We have to ensure that there is at least one name field.
       if ($fromAjax === null) {
-        $fromAjax = $form_state->set('from_ajax', false);
+        $fromAjax = $form_state->set('from_ajax', FALSE);
       }
 
       // Details containers replace D7's collapsible field sets.
       $form['entity'] = [
         '#type' => 'details',
         '#title' => 'Elementos a mostrar',
-        '#open' => true,
+        '#open' => TRUE,
         '#prefix' => '<div id="entity-content">',
         '#suffix' => '</div>'
       ];
@@ -267,7 +268,7 @@ class CardBase extends BlockBase
       $optionsViewMode = [];
 
       foreach ($resultsViewModes as $result) {
-        if (strpos($result, $condition) !== false) {
+        if (strpos($result, $condition) !== FALSE) {
           $formatResult = substr($result, strlen($condition) + 1);
           $optionsViewMode[$formatResult] = $this->t(ucwords($formatResult));
         }
@@ -470,9 +471,9 @@ class CardBase extends BlockBase
       if ($entity['type'] == 'managed_file') {
         $form[$key]['table_fields'][$id]['input']['#upload_location'] = 'public://cards';
         if (isset($entity['max_length']) && $entity['max_length'] == 1) {
-          $form[$key]['table_fields'][$id]['input']['#multiple'] = false;
+          $form[$key]['table_fields'][$id]['input']['#multiple'] = FALSE;
         } else {
-          $form[$key]['table_fields'][$id]['input']['#multiple'] = true;
+          $form[$key]['table_fields'][$id]['input']['#multiple'] = TRUE;
         }
         if (isset($entity['upload_validators'])) {
           $form[$key]['table_fields'][$id]['input']['#upload_validators'] = $entity['upload_validators'];
