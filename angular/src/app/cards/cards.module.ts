@@ -44,6 +44,7 @@ import { OwlModule } from 'ngx-owl-carousel';
 import { NgxCarouselModule } from 'ngx-carousel';
 import 'hammerjs';
 import { FormsModule } from '@angular/forms';
+import { SelectModule } from 'ng2-select';
 
 // Pipes
 import { SafeHtmlPipe } from '../pipes/safehtml.pipe';
@@ -130,7 +131,8 @@ import { WorkusComponent } from './components/workus/workus.component';
     OwlModule,
     NgxCarouselModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    SelectModule
   ],
   providers: [NodeService]
 })

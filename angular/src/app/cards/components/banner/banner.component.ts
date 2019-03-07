@@ -24,11 +24,7 @@ export class BannerComponent implements OnInit {
     }
 
     ngOnInit() {
-        if (this.imgFondo !== '') {
-            this.bannerBackground = this.imgFondo;
-        } else {
-            this.bannerBackground = '/assets/images/cabezerainternaweb.png';
-        }
+        
 
         if (this.uuid === undefined || this.uuid === '') {
             while (this.titulo.indexOf('-') > -1) {
@@ -46,6 +42,11 @@ export class BannerComponent implements OnInit {
             this.bannerDescrip = params.body;
             if (this.bannerDescrip === null) {
                 this.bannerDescrip = '';
+            }
+            if (this.imgFondo !== '') {
+                this.bannerBackground = this.imgFondo;
+            } else {
+                this.bannerBackground = params.field_image.url;
             }
         });
     }
