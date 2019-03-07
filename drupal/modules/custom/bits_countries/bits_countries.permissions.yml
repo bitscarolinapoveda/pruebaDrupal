@@ -1,0 +1,39 @@
+add country entity entities:
+  title: 'Create new Country entity entities'
+
+administer country entity entities:
+  title: 'Administer Country entity entities'
+  description: 'Allow to access the administration form to configure Country entity entities.'
+  restrict access: true
+
+delete country entity entities:
+  title: 'Delete Country entity entities'
+
+edit country entity entities:
+  title: 'Edit Country entity entities'
+
+view published country entity entities:
+  title: 'View published Country entity entities'
+
+view unpublished country entity entities:
+  title: 'View unpublished Country entity entities'
+
+add city entity entities:
+  title: 'Create new City entity entities'
+
+administer city entity entities:
+  title: 'Administer City entity entities'
+  description: 'Allow to access the administration form to configure City entity entities.'
+  restrict access: true
+
+delete city entity entities:
+  title: 'Delete City entity entities'
+
+edit city entity entities:
+  title: 'Edit City entity entities'
+
+view published city entity entities:
+  title: 'View published City entity entities'
+
+view unpublished city entity entities:
+  title: 'View unpublished City entity entities'

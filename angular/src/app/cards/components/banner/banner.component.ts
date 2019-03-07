@@ -20,14 +20,11 @@ export class BannerComponent implements OnInit {
         private banner: CustomCardService,
     ) {
         this.uuid = '';
+        this.bannerDescrip = '';
     }
 
     ngOnInit() {
-        if (this.imgFondo !== '') {
-            this.bannerBackground = this.imgFondo;
-        } else {
-            this.bannerBackground = '/assets/images/cabezerainternaweb.png';
-        }
+        
 
         if (this.uuid === undefined || this.uuid === '') {
             while (this.titulo.indexOf('-') > -1) {
@@ -43,6 +40,14 @@ export class BannerComponent implements OnInit {
         this.banner.getCustomContentBasicPage(this.uuid).subscribe(params => {
             this.bannerTitle = params.title;
             this.bannerDescrip = params.body;
+            if (this.bannerDescrip === null) {
+                this.bannerDescrip = '';
+            }
+            if (this.imgFondo !== '') {
+                this.bannerBackground = this.imgFondo;
+            } else {
+                this.bannerBackground = params.field_image.url;
+            }
         });
     }
 }

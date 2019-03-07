@@ -8,7 +8,8 @@
         <h1>{{ titleL | uppercase }}</h1>
         <hr class="green">
         <p class="text-justify" [innerHTML]="cil.field_des"></p>
-        <a [href]="cil.field_link_imedical_media" class="green">{{ cil.field_link_imedical_media }}</a>
+        <a [href]="cil.field_link_imedical_media.uri?.internal" class="green">
+            {{ cil.field_link_imedical_media.title }}</a>
     </div>
 </div>
 
@@ -18,7 +19,8 @@
         <h1>{{ titleR | uppercase }}</h1>
         <hr class="green">
         <p class="text-justify" [innerHTML]="cir.field_des"></p>
-        <a [href]="cir.field_link_imedical_media" class="green">{{ cir.field_link_imedical_media }}</a>
+        <a [href]="cir.field_link_imedical_media.uri?.internal" class="green">
+            {{ cir.field_link_imedical_media.title }}</a>
     </div>
     <div class="col-md-4 p-0" *ngFor="let cir of cardImgR" >
         <img [src]="cir.field_imagen_media_product.url" alt="{{cir.field_imagen_media_product.alt}}"

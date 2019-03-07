@@ -33,6 +33,7 @@ import { TeamComponent } from './components/team/team.component';
 import { AchievementsComponent } from './components/achievements/achievements.component';
 import { TestimoniesComponent } from './components/testimonies/testimonies.component';
 import { TecnologiesProjectserviceComponent } from './components/tecnologies-projectservice/tecnologies-projectservice.component';
+import { HistoryComponent } from './components/history/history.component';
 
 // Servicios
 import { NodeService } from '../services/cards/node.service';
@@ -43,12 +44,14 @@ import { OwlModule } from 'ngx-owl-carousel';
 import { NgxCarouselModule } from 'ngx-carousel';
 import 'hammerjs';
 import { FormsModule } from '@angular/forms';
+import { SelectModule } from 'ng2-select';
 
 // Pipes
 import { SafeHtmlPipe } from '../pipes/safehtml.pipe';
 import { SafeCssPipe } from '../pipes/safecss.pipe';
 import { ClientProServComponent } from './components/client-proserv/client-proserv.component';
 import { WorkusComponent } from './components/workus/workus.component';
+
 
 @NgModule({
   declarations: [
@@ -82,8 +85,9 @@ import { WorkusComponent } from './components/workus/workus.component';
     KnowusComponent,
     TeamComponent,
     AchievementsComponent,
-    TestimoniesComponent,
-    TecnologiesProjectserviceComponent
+    TecnologiesProjectserviceComponent,
+    HistoryComponent,
+    TestimoniesComponent
   ],
   exports: [
     CarouselItemComponent,
@@ -113,8 +117,9 @@ import { WorkusComponent } from './components/workus/workus.component';
     KnowusComponent,
     TeamComponent,
     AchievementsComponent,
-    TestimoniesComponent,
-    TecnologiesProjectserviceComponent
+    TecnologiesProjectserviceComponent,
+    HistoryComponent,
+    TestimoniesComponent
   ],
   imports: [
     BrowserModule,
@@ -126,7 +131,8 @@ import { WorkusComponent } from './components/workus/workus.component';
     OwlModule,
     NgxCarouselModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    SelectModule
   ],
   providers: [NodeService]
 })
