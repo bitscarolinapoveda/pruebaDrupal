@@ -38,6 +38,8 @@ export class TabsComponent implements OnInit {
   bandPais: Array<string>;
   listPais: Array<string>;
   pais: any;
+  product: any;
+  service: any;
 
   private value: any = {};
   private _disabledV: string;
@@ -211,22 +213,58 @@ export class TabsComponent implements OnInit {
     this.disabled = this._disabledV === '1';
   }
 
-  public selected(value: any): void {
-    this.pais = value;
+  public selectedPais(value: any): void {
+    this.pais = value.text;
     console.log('Selected value is: ', value);
-    this.removed(this.pais);
   }
 
-  public removed(value: any): void {
+  public removedPais(value: any): void {
+    this.pais = '';
     console.log('Removed value is: ', value);
   }
 
-  public typed(value: any): void {
+  public typedPais(value: any): void {
     console.log('New search input: ', value);
   }
 
-  public refreshValue(value: any): void {
-    this.value = value;
+  public refreshValuePais(value: any): void {
+    this.pais = value.text;
+  }
+
+  public selectedProduct(value: any): void {
+    this.product = value.text;
+    console.log('Selected value is: ', value);
+  }
+
+  public removedProduct(value: any): void {
+    this.product = '';
+    console.log('Removed value is: ', value);
+  }
+
+  public typedProduct(value: any): void {
+    console.log('New search input: ', value);
+  }
+
+  public refreshValueProduct(value: any): void {
+    this.product = value.text;
+  }
+
+  public selectedService(value: any): void {
+    this.service = value.text;
+    console.log('Selected value is: ', value);
+  }
+
+  public removedService(value: any): void {
+    this.service = '';
+    console.log('Removed value is: ', value);
+  }
+
+  public typedService(value: any): void {
+    console.log('New search input: ', value);
+  }
+
+  public refreshValueService(value: any): void {
+    this.service = value.text;
   }
 
 }
