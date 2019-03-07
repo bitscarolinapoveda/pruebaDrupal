@@ -565,10 +565,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var hammerjs__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! hammerjs */ "./node_modules/hammerjs/hammer.js");
 /* harmony import */ var hammerjs__WEBPACK_IMPORTED_MODULE_40___default = /*#__PURE__*/__webpack_require__.n(hammerjs__WEBPACK_IMPORTED_MODULE_40__);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
-/* harmony import */ var _pipes_safehtml_pipe__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! ../pipes/safehtml.pipe */ "./src/app/pipes/safehtml.pipe.ts");
-/* harmony import */ var _pipes_safecss_pipe__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! ../pipes/safecss.pipe */ "./src/app/pipes/safecss.pipe.ts");
-/* harmony import */ var _components_client_proserv_client_proserv_component__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! ./components/client-proserv/client-proserv.component */ "./src/app/cards/components/client-proserv/client-proserv.component.ts");
-/* harmony import */ var _components_workus_workus_component__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(/*! ./components/workus/workus.component */ "./src/app/cards/components/workus/workus.component.ts");
+/* harmony import */ var ng2_select__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! ng2-select */ "./node_modules/ng2-select/index.js");
+/* harmony import */ var ng2_select__WEBPACK_IMPORTED_MODULE_42___default = /*#__PURE__*/__webpack_require__.n(ng2_select__WEBPACK_IMPORTED_MODULE_42__);
+/* harmony import */ var _pipes_safehtml_pipe__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! ../pipes/safehtml.pipe */ "./src/app/pipes/safehtml.pipe.ts");
+/* harmony import */ var _pipes_safecss_pipe__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! ../pipes/safecss.pipe */ "./src/app/pipes/safecss.pipe.ts");
+/* harmony import */ var _components_client_proserv_client_proserv_component__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(/*! ./components/client-proserv/client-proserv.component */ "./src/app/cards/components/client-proserv/client-proserv.component.ts");
+/* harmony import */ var _components_workus_workus_component__WEBPACK_IMPORTED_MODULE_46__ = __webpack_require__(/*! ./components/workus/workus.component */ "./src/app/cards/components/workus/workus.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -618,6 +620,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
 // Pipes
 
 
@@ -629,8 +632,8 @@ var CardsModule = /** @class */ (function () {
     CardsModule = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
             declarations: [
-                _pipes_safehtml_pipe__WEBPACK_IMPORTED_MODULE_42__["SafeHtmlPipe"],
-                _pipes_safecss_pipe__WEBPACK_IMPORTED_MODULE_43__["SafeCssPipe"],
+                _pipes_safehtml_pipe__WEBPACK_IMPORTED_MODULE_43__["SafeHtmlPipe"],
+                _pipes_safecss_pipe__WEBPACK_IMPORTED_MODULE_44__["SafeCssPipe"],
                 _components_carousel_item_carousel_item_component__WEBPACK_IMPORTED_MODULE_4__["CarouselItemComponent"],
                 _components_carousel_indicators_carousel_indicators_component__WEBPACK_IMPORTED_MODULE_5__["CarouselIndicatorsComponent"],
                 _components_carousel_controls_carousel_controls_component__WEBPACK_IMPORTED_MODULE_10__["CarouselControlsComponent"],
@@ -640,7 +643,7 @@ var CardsModule = /** @class */ (function () {
                 _components_alliances_alliances_component__WEBPACK_IMPORTED_MODULE_9__["AlliancesComponent"],
                 _components_workwithus_workwithus_component__WEBPACK_IMPORTED_MODULE_11__["WorkWithUsComponent"],
                 _components_workwithus_proserv_workwithus_proserv_component__WEBPACK_IMPORTED_MODULE_12__["WorkWithUsProServComponent"],
-                _components_workus_workus_component__WEBPACK_IMPORTED_MODULE_45__["WorkusComponent"],
+                _components_workus_workus_component__WEBPACK_IMPORTED_MODULE_46__["WorkusComponent"],
                 _components_banner_banner_component__WEBPACK_IMPORTED_MODULE_13__["BannerComponent"],
                 _components_titles_titles_component__WEBPACK_IMPORTED_MODULE_14__["TitleComponent"],
                 _components_tabs_tabs_component__WEBPACK_IMPORTED_MODULE_15__["TabsComponent"],
@@ -653,7 +656,7 @@ var CardsModule = /** @class */ (function () {
                 _components_card_img_text_card_img_text_component__WEBPACK_IMPORTED_MODULE_22__["CardImgTextComponent"],
                 _components_blog_blog_component__WEBPACK_IMPORTED_MODULE_23__["BlogComponent"],
                 _components_client_project_imedical_client_project_imedical_component__WEBPACK_IMPORTED_MODULE_25__["ClientProjectImedicalComponent"],
-                _components_client_proserv_client_proserv_component__WEBPACK_IMPORTED_MODULE_44__["ClientProServComponent"],
+                _components_client_proserv_client_proserv_component__WEBPACK_IMPORTED_MODULE_45__["ClientProServComponent"],
                 _components_message_message_component__WEBPACK_IMPORTED_MODULE_27__["MessageComponent"],
                 _components_whybitsamericas_whybitsamericas_component__WEBPACK_IMPORTED_MODULE_26__["WhybitsamericasComponent"],
                 _components_knowus_knowus_component__WEBPACK_IMPORTED_MODULE_28__["KnowusComponent"],
@@ -671,7 +674,7 @@ var CardsModule = /** @class */ (function () {
                 _components_tecnologies_tecnologies_component__WEBPACK_IMPORTED_MODULE_6__["TecnologiesComponent"],
                 _components_porque_bits_porque_bits_component__WEBPACK_IMPORTED_MODULE_7__["PorqueBitsComponent"],
                 _components_alliances_alliances_component__WEBPACK_IMPORTED_MODULE_9__["AlliancesComponent"],
-                _components_workus_workus_component__WEBPACK_IMPORTED_MODULE_45__["WorkusComponent"],
+                _components_workus_workus_component__WEBPACK_IMPORTED_MODULE_46__["WorkusComponent"],
                 _components_workwithus_workwithus_component__WEBPACK_IMPORTED_MODULE_11__["WorkWithUsComponent"],
                 _components_workwithus_proserv_workwithus_proserv_component__WEBPACK_IMPORTED_MODULE_12__["WorkWithUsProServComponent"],
                 _components_banner_banner_component__WEBPACK_IMPORTED_MODULE_13__["BannerComponent"],
@@ -686,7 +689,7 @@ var CardsModule = /** @class */ (function () {
                 _components_card_img_text_card_img_text_component__WEBPACK_IMPORTED_MODULE_22__["CardImgTextComponent"],
                 _components_blog_blog_component__WEBPACK_IMPORTED_MODULE_23__["BlogComponent"],
                 _components_client_project_imedical_client_project_imedical_component__WEBPACK_IMPORTED_MODULE_25__["ClientProjectImedicalComponent"],
-                _components_client_proserv_client_proserv_component__WEBPACK_IMPORTED_MODULE_44__["ClientProServComponent"],
+                _components_client_proserv_client_proserv_component__WEBPACK_IMPORTED_MODULE_45__["ClientProServComponent"],
                 _components_whybitsamericas_whybitsamericas_component__WEBPACK_IMPORTED_MODULE_26__["WhybitsamericasComponent"],
                 _components_knowus_knowus_component__WEBPACK_IMPORTED_MODULE_28__["KnowusComponent"],
                 _components_team_team_component__WEBPACK_IMPORTED_MODULE_29__["TeamComponent"],
@@ -705,7 +708,8 @@ var CardsModule = /** @class */ (function () {
                 ngx_owl_carousel__WEBPACK_IMPORTED_MODULE_38__["OwlModule"],
                 ngx_carousel__WEBPACK_IMPORTED_MODULE_39__["NgxCarouselModule"],
                 _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_24__["BrowserAnimationsModule"],
-                _angular_forms__WEBPACK_IMPORTED_MODULE_41__["FormsModule"]
+                _angular_forms__WEBPACK_IMPORTED_MODULE_41__["FormsModule"],
+                ng2_select__WEBPACK_IMPORTED_MODULE_42__["SelectModule"]
             ],
             providers: [_services_cards_node_service__WEBPACK_IMPORTED_MODULE_34__["NodeService"]]
         })
@@ -960,7 +964,7 @@ var AlliancesComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<section class=\"page-header\">\n    <div class=\"title\">\n        <h1> {{ bannerTitle }} </h1>\n    </div>\n    <ng-container>\n        <picture>\n            <source media=\"(max-width:{{medius}})\" [srcset]=\"bannerBackground\">\n            <img [src]=\"bannerBackground\" alt=\"Contactenos\">\n        </picture>\n    </ng-container>\n</section>\n<div class=\"col-md-12\" id=\"descrip-banner\">\n    <p [innerHTML]=\"bannerDescrip\"></p>\n</div>"
+module.exports = "<section class=\"page-header\">\n    <div class=\"title\">\n        <h1> {{ bannerTitle }} </h1>\n    </div>\n    <ng-container>\n        <picture>\n            <source media=\"(max-width:{{medius}})\" [srcset]=\"bannerBackground\">\n            <img [src]=\"bannerBackground\" alt=\"Contactenos\">\n        </picture>\n    </ng-container>\n</section>\n<div id=\"descrip-banner\">\n    <p [innerHTML]=\"bannerDescrip\"></p>\n</div>"
 
 /***/ }),
 
@@ -971,7 +975,7 @@ module.exports = "<section class=\"page-header\">\n    <div class=\"title\">\n  
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".page-header {\n  height: 352px;\n  overflow: hidden; }\n  .page-header .title {\n    width: 100%;\n    color: #FFFFFF;\n    position: absolute;\n    margin-top: 178px;\n    text-align: center; }\n  .page-header .title h1 {\n      text-transform: uppercase;\n      position: absolute;\n      width: 100%;\n      margin-left: 50%;\n      font-size: 36px;\n      -webkit-transform: translateX(-50%);\n              transform: translateX(-50%); }\n  @media (min-width: 1025px) {\n        .page-header .title h1 {\n          font-size: 50px; } }\n  @media (min-width: 668px) and (max-width: 1024px) {\n        .page-header .title h1 {\n          font-size: 50px; } }\n  .page-header picture img {\n    width: 100%; }\n  .page-header::before {\n  content: \"\";\n  background-color: #000000;\n  opacity: 0.3;\n  height: 352px;\n  width: 100%;\n  position: absolute; }\n  #descrip-banner p {\n  color: #002b49cc;\n  font-family: Open Sans Codensed;\n  margin-top: 30px;\n  font-size: 20px;\n  overflow-wrap: break-word; }\n  @media (min-width: 1025px) {\n    #descrip-banner p {\n      margin: auto;\n      max-width: 1000px;\n      margin-top: 30px; } }\n  @media (max-width: 667px) {\n    #descrip-banner p {\n      margin-right: 0;\n      margin-left: 0; } }\n"
+module.exports = ".page-header {\n  height: 352px;\n  overflow: hidden; }\n  .page-header .title {\n    width: 100%;\n    color: #FFFFFF;\n    position: absolute;\n    margin-top: 178px;\n    text-align: center; }\n  .page-header .title h1 {\n      text-transform: uppercase;\n      position: absolute;\n      width: 100%;\n      margin-left: 50%;\n      font-size: 36px;\n      -webkit-transform: translateX(-50%);\n              transform: translateX(-50%); }\n  @media (min-width: 1025px) {\n        .page-header .title h1 {\n          font-size: 50px; } }\n  @media (min-width: 668px) and (max-width: 1024px) {\n        .page-header .title h1 {\n          font-size: 50px; } }\n  .page-header picture img {\n    width: 100%; }\n  .page-header::before {\n  content: \"\";\n  background-color: #000000;\n  opacity: 0.3;\n  height: 352px;\n  width: 100%;\n  position: absolute; }\n  #descrip-banner p {\n  color: #002b49cc;\n  font-family: Open Sans Codensed;\n  margin-top: 30px;\n  font-size: 20px;\n  overflow-wrap: break-word; }\n  @media (min-width: 1025px) {\n    #descrip-banner p {\n      margin: auto;\n      max-width: 800px;\n      margin-top: 30px;\n      text-align: center; } }\n  @media (max-width: 667px) {\n    #descrip-banner p {\n      margin-right: 0;\n      margin-left: 0; } }\n"
 
 /***/ }),
 
@@ -1010,12 +1014,6 @@ var BannerComponent = /** @class */ (function () {
         this.bannerDescrip = '';
     }
     BannerComponent.prototype.ngOnInit = function () {
-        if (this.imgFondo !== '') {
-            this.bannerBackground = this.imgFondo;
-        }
-        else {
-            this.bannerBackground = '/assets/images/cabezerainternaweb.png';
-        }
         if (this.uuid === undefined || this.uuid === '') {
             while (this.titulo.indexOf('-') > -1) {
                 this.titulo = this.titulo.replace('-', ' ');
@@ -1033,6 +1031,12 @@ var BannerComponent = /** @class */ (function () {
             _this.bannerDescrip = params.body;
             if (_this.bannerDescrip === null) {
                 _this.bannerDescrip = '';
+            }
+            if (_this.imgFondo !== '') {
+                _this.bannerBackground = _this.imgFondo;
+            }
+            else {
+                _this.bannerBackground = params.field_image.url;
             }
         });
     };
@@ -3319,7 +3323,7 @@ var SliderComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"tab\">\n\t<div class=\"contactenos\">\n\t\t<button class=\"active\" (click)=\"toogleHidden()\">\n\t\t\t{{this.title_a}}\n\t\t</button>\n\t</div>\n\t<div class=\"trabaje\">\n\t\t<button (click)=\"toogleHidden()\">\n\t\t\t{{this.title_b}}\n\t\t</button>\n\t</div>\n</div>\n<br /><br />\n<div class=\"container\" [hidden]=\"hidden\">\n\n\t<div class=\"row\">\n\t\t<form id=\"formulario_contacto\" #userForm=\"ngForm\" (ngSubmit)=\"onSubmit(userForm.value)\" class=\"col-md-12\" name=\"formulario_contacto\">\n\t\t\t<app-message [dataMessage]=\"dataMessage\"></app-message>\n\t\t\t<div class=\"form-group\" [ngClass]=\"aplicaCssErro(nombre)\" class=\"col-md-12\">\n\t\t\t\t<div class=\"col-md-6 item\">\n\t\t\t\t\t<label for=\"exampleInputNombre\">Nombre</label>\n\t\t\t\t\t<input type=\"text\" class=\"form-control\" id=\"nombre\" placeholder=\"Nombre\" name=\"nombre\" ngModel required #nombre=\"ngModel\">\n\t\t\t\t\t<div *ngIf=\"nombre.invalid && nombre.touched\" class=\"alert alert-danger\" role=\"alert\">\n\t\t\t\t\t\tCampo obligatorio o invalido\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-md-6 item\">\n\t\t\t\t\t<label for=\"exampleInputOrg\">Organización</label>\n\t\t\t\t\t<input type=\"text\" class=\"form-control\" id=\"organizacion\" placeholder=\"Organización\" name=\"organizacion\" ngModel\n\t\t\t\t\t #organizacion=\"ngModel\">\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"form-group\" class=\"col-md-12\">\n\t\t\t\t<div class=\"col-md-6 item\">\n\t\t\t\t\t<label for=\"exampleInputEmail1\">Email address</label>\n\t\t\t\t\t<input type=\"email\" class=\"form-control\" id=\"exampleInputEmail1\" aria-describedby=\"emailHelp\" placeholder=\"Escriba su email\"\n\t\t\t\t\t name=\"correo_electronico\" ngModel pattern=\"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\"\n\t\t\t\t\t #correo_electronico=\"ngModel\">\n\t\t\t\t\t<div *ngIf=\"correo_electronico.invalid && correo_electronico.touched\" class=\"alert alert-danger\" role=\"alert\">\n\t\t\t\t\t\tCampo obligatorio o invalido\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-md-6 item\">\n\t\t\t\t\t<label for=\"exampleInputTel\">Telefono</label>\n\t\t\t\t\t<input type=\"tel\" class=\"form-control\" id=\"org\" placeholder=\"Escriba su telefono\" name=\"telefono\" ngModel pattern=\"^(\\([0-9]{3}\\)|[0-9]{3})[0-9]{3}[0-9]{4}$\"\n\t\t\t\t\t #telefono=\"ngModel\">\n\t\t\t\t\t<div *ngIf=\"telefono.invalid && telefono.touched\" class=\"alert alert-danger\" role=\"alert\">\n\t\t\t\t\t\tCampo obligatorio o invalido\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"form-group\" class=\"col-md-12\">\n\t\t\t\t<div class=\"col-md-6 item\">\n\t\t\t\t\t<label for=\"pais\">Pais</label>\n\t\t\t\t\t<select type=\"select\" class=\"form-control\" id=\"pais\" placeholder=\"Seleccione su pais\" name=\"pais\" ngModel></select>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-md-6 item\">\n\t\t\t\t\t<label for=\"ciudad\">Ciudad</label>\n\t\t\t\t\t<select type=\"select\" class=\"form-control\" id=\"ciudad\" placeholder=\"Seleccione su ciudad\" name=\"ciudad\" ngModel></select>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"col-md-12\">\n\t\t\t\t<div class=\"col-md-6 item\">\n\t\t\t\t\t<label for=\"producto\">Producto de interés</label>\n\t\t\t\t\t<select type=\"select\" class=\"form-control\" id=\"producto\" placeholder=\"Seleccione un producto\" name=\"Producto\"\n\t\t\t\t\t ngModel></select>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-md-6 item\">\n\t\t\t\t\t<label for=\"servicio\">Servicio de interés</label>\n\t\t\t\t\t<select type=\"select\" class=\"form-control\" id=\"servicio\" placeholder=\"Seleccione un servicio\" name=\"Servicio\"\n\t\t\t\t\t ngModel></select>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"form-group\" class=\"col-md-12 comentario\">\n\t\t\t\t<label for=\"exampleInputComm\">Comentarios</label>\n\t\t\t\t<textarea class=\"form-control\" id=\"comentario\" placeholder=\"Escriba sus comentarios\" name=\"comentario\" ngModel\n\t\t\t\t #comentario=\"ngModel\"></textarea>\n\t\t\t\t<div *ngIf=\"comentario.invalid && comentario.touched\" class=\"alert alert-danger\" role=\"alert\">\n\t\t\t\t\tCampo obligatorio o invalido\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"form-group\" class=\"col-md-12 terminos_grupo\">\n\t\t\t\t<input type=\"checkbox\" checked=\"checked\" id=\"terms-of-service\" name=\"terms_of_service\" value=\"false\" ngModel\n\t\t\t\t required>\n\t\t\t\t<label ng-reflect-ng-class=\"\" for=\"terms-of-service\">He leído y acepto los\n\t\t\t\t\t<a data-trigger=\"focus\" role=\"button\" data-toggle=\"popover\" data-placement=\"top\" href=\"#\">\n\t\t\t\t\t\ttérminos y condiciones\n\t\t\t\t\t</a>\n\t\t\t\t</label>\n\t\t\t</div>\n\t\t\t<button type=\"submit\" class=\"btn btn-primary\">Enviar</button>\n\t\t\t<div class=\"obligatorios col-md-12\"> <span>*</span>Datos Obligatorios</div>\n\t\t</form>\n\t</div>\n</div>\n<app-workus [hidden]=\"!hidden\"></app-workus>\n<div id='popover-title'>{{titulo}}</div>\n<div id='popover-content' [innerHTML]='list'></div>"
+module.exports = "<div class=\"tab\">\n\t<div class=\"contactenos\">\n\t\t<button class=\"active\" (click)=\"toogleHidden()\">\n\t\t\t{{this.title_a}}\n\t\t</button>\n\t</div>\n\t<div class=\"trabaje\">\n\t\t<button (click)=\"toogleHidden()\">\n\t\t\t{{this.title_b}}\n\t\t</button>\n\t</div>\n</div>\n<br /><br />\n<div class=\"container\" [hidden]=\"hidden\">\n\t<div class=\"row\">\n\t\t<form id=\"formulario_contacto\" #userForm=\"ngForm\" (ngSubmit)=\"onSubmit(userForm.value)\" class=\"col-md-12\" name=\"formulario_contacto\">\n\t\t\t<app-message [dataMessage]=\"dataMessage\"></app-message>\t\t\t\n\n\t\t\t<div class=\"form-group\" [ngClass]=\"aplicaCssErro(nombre)\" class=\"col-md-12\">\n\t\t\t\t<div class=\"col-md-6 item\">\n\t\t\t\t\t<label for=\"exampleInputNombre\">Nombre</label>\n\t\t\t\t\t<input type=\"text\" class=\"form-control\" id=\"nombre\" placeholder=\"Nombre\" name=\"nombre\" ngModel required #nombre=\"ngModel\">\n\t\t\t\t\t<div *ngIf=\"nombre.invalid && nombre.touched\" class=\"alert alert-danger\" role=\"alert\">\n\t\t\t\t\t\tCampo obligatorio o invalido\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-md-6 item\">\n\t\t\t\t\t<label for=\"exampleInputOrg\">Organización</label>\n\t\t\t\t\t<input type=\"text\" class=\"form-control\" id=\"organizacion\" placeholder=\"Organización\" name=\"organizacion\" ngModel\n\t\t\t\t\t #organizacion=\"ngModel\">\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"form-group\" class=\"col-md-12\">\n\t\t\t\t<div class=\"col-md-6 item\">\n\t\t\t\t\t<label for=\"exampleInputEmail1\">Email address</label>\n\t\t\t\t\t<input type=\"email\" class=\"form-control\" id=\"exampleInputEmail1\" aria-describedby=\"emailHelp\" placeholder=\"Escriba su email\"\n\t\t\t\t\t name=\"correo_electronico\" ngModel pattern=\"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\"\n\t\t\t\t\t #correo_electronico=\"ngModel\">\n\t\t\t\t\t<div *ngIf=\"correo_electronico.invalid && correo_electronico.touched\" class=\"alert alert-danger\" role=\"alert\">\n\t\t\t\t\t\tCampo obligatorio o invalido\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-md-6 item\">\n\t\t\t\t\t<label for=\"exampleInputTel\">Telefono</label>\n\t\t\t\t\t<input type=\"tel\" class=\"form-control\" id=\"org\" placeholder=\"Escriba su telefono\" name=\"telefono\" ngModel pattern=\"^(\\([0-9]{3}\\)|[0-9]{3})[0-9]{3}[0-9]{4}$\"\n\t\t\t\t\t #telefono=\"ngModel\">\n\t\t\t\t\t<div *ngIf=\"telefono.invalid && telefono.touched\" class=\"alert alert-danger\" role=\"alert\">\n\t\t\t\t\t\tCampo obligatorio o invalido\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"form-group\" class=\"col-md-12\">\n\t\t\t\t<div class=\"col-md-6 item\">\n\t\t\t\t\t<label for=\"pais\">Pais</label>\t\t\t\t\t\n\t\t\t\t\t<ng-select class=\"select-autocomplete\" id=\"pais\" name=\"pais\" placeholder=\"Seleccione su pais\" [allowClear]=\"true\" [items]=\"listPais\" [disabled]=\"disabled\" (data)=\"refreshValue($event)\" (selected)=\"selected($event)\"\n\t\t\t\t\t (removed)=\"removed($event)\" (typed)=\"typed($event)\">\n\t\t\t\t\t</ng-select>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-md-6 item\">\n\t\t\t\t\t<label for=\"ciudad\">Ciudad</label>\n\t\t\t\t\t<input type=\"text\" class=\"form-control\" id=\"ciudad\" placeholder=\"Ciudad\" name=\"ciudad\" ngModel #ciudad=\"ngModel\">\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"col-md-12\">\n\t\t\t\t<div class=\"col-md-6 item\">\n\t\t\t\t\t<label for=\"producto\">Producto de interés</label>\n\t\t\t\t\t<ng-select class=\"select-autocomplete\" id=\"productos_de_interes\" name=\"productos_de_interes\" placeholder=\"Seleccione un producto\"\n\t\t\t\t\t [allowClear]=\"true\" [items]=\"listProduct\" [disabled]=\"disabled\" (data)=\"refreshValue($event)\" (selected)=\"selected($event)\"\n\t\t\t\t\t (removed)=\"removed($event)\" (typed)=\"typed($event)\">\n\t\t\t\t\t</ng-select>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-md-6 item\">\n\t\t\t\t\t<label for=\"servicio\">Servicio de interés</label>\n\t\t\t\t\t<ng-select class=\"select-autocomplete\" id=\"servicios_de_interes\" name=\"servicios_de_interes\" placeholder=\"Seleccione un servicio\"\n\t\t\t\t\t [allowClear]=\"true\" [items]=\"listService\" [disabled]=\"disabled\" (data)=\"refreshValue($event)\" (selected)=\"selected($event)\"\n\t\t\t\t\t (removed)=\"removed($event)\" (typed)=\"typed($event)\">\n\t\t\t\t\t</ng-select>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"form-group\" class=\"col-md-12 comentario\">\n\t\t\t\t<label for=\"exampleInputComm\">Comentarios</label>\n\t\t\t\t<textarea class=\"form-control\" id=\"comentario\" placeholder=\"Escriba sus comentarios\" name=\"comentario\" ngModel\n\t\t\t\t #comentario=\"ngModel\"></textarea>\n\t\t\t\t<div *ngIf=\"comentario.invalid && comentario.touched\" class=\"alert alert-danger\" role=\"alert\">\n\t\t\t\t\tCampo obligatorio o invalido\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"form-group\" class=\"col-md-12 terminos_grupo\">\n\t\t\t\t<input type=\"checkbox\" checked=\"checked\" id=\"terms-of-service\" name=\"terms_of_service\" value=\"false\" ngModel\n\t\t\t\t required>\n\t\t\t\t<label ng-reflect-ng-class=\"\" for=\"terms-of-service\">He leído y acepto los\n\t\t\t\t\t<a data-trigger=\"focus\" role=\"button\" data-toggle=\"popover\" data-placement=\"top\" href=\"#\">\n\t\t\t\t\t\ttérminos y condiciones\n\t\t\t\t\t</a>\n\t\t\t\t</label>\n\t\t\t</div>\n\t\t\t<button type=\"submit\" class=\"btn btn-primary\">Enviar</button>\n\t\t\t<div class=\"obligatorios col-md-12\"> <span>*</span>Datos Obligatorios</div>\n\t\t</form>\n\t</div>\n</div>\n<app-workus [hidden]=\"!hidden\"></app-workus>\n<div id='popover-title'>{{titulo}}</div>\n<div id='popover-content' [innerHTML]='list'></div>"
 
 /***/ }),
 
@@ -3330,7 +3334,7 @@ module.exports = "<div class=\"tab\">\n\t<div class=\"contactenos\">\n\t\t<butto
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "*,\n*::before,\n*::after {\n  box-sizing: border-box; }\n\n.item {\n  display: inline-block; }\n\nlabel {\n  color: #c0dc74;\n  margin-top: 20px;\n  margin-bottom: -1px;\n  font-weight: 100;\n  font-family: 'Open Sans light'; }\n\ninput,\nselect {\n  width: 100%;\n  padding: 4px 2px;\n  outline: none;\n  border: none;\n  border-bottom: 1px solid #b2c6cd;\n  color: #002b49;\n  border-radius: 0px;\n  font-family: 'Open Sans light'; }\n\ninput.ng-invalid.ng-touched {\n  border: solid 1px red; }\n\ninput::-webkit-input-placeholder {\n  /* Chrome/Opera/Safari */\n  color: #808080; }\n\ninput::-moz-placeholder {\n  /* Firefox 19+ */\n  color: #808080; }\n\ninput:-ms-input-placeholder {\n  /* IE 10+ */\n  color: #808080; }\n\ninput:-moz-placeholder {\n  /* Firefox 18- */\n  color: #808080; }\n\n.comentario {\n  width: 98%;\n  margin: 0 auto; }\n\n@media screen and (max-width: 480px) {\n    .comentario {\n      width: 91%; } }\n\n.comentario textarea {\n    min-height: 40px;\n    border-radius: 0px;\n    border: 1px solid #b2c6cd;\n    padding: 10px 20px;\n    font-family: 'Open Sans light'; }\n\n.terminos_grupo {\n  position: relative;\n  max-width: 380px;\n  margin: 40px auto;\n  text-align: center;\n  /* OFF */\n  /* ON */ }\n\n.terminos_grupo [type=\"checkbox\"] {\n    position: absolute;\n    left: -9999px; }\n\n.terminos_grupo [type=\"checkbox\"] + label:after {\n    content: '';\n    position: absolute; }\n\n.terminos_grupo [type=\"checkbox\"] + label {\n    display: block;\n    position: relative;\n    padding-left: 26px;\n    cursor: pointer;\n    line-height: 36px;\n    font-size: 1rem;\n    color: rgba(0, 43, 73, 0.8);\n    transition: color .3s; }\n\n.terminos_grupo [type=\"checkbox\"] + label a {\n    color: #91b520; }\n\n.terminos_grupo [type=\"checkbox\"] + label:after {\n    width: 30px;\n    height: 30px;\n    transition: all .2s;\n    top: 0;\n    left: 0; }\n\n.terminos_grupo [type=\"checkbox\"]:not(:checked) + label:after {\n    background: url(\"/assets/images/check2_off.png\") left center no-repeat; }\n\n.terminos_grupo [type=\"checkbox\"]:checked + label:after {\n    background: url(\"/assets/images/check2.png\") left center no-repeat; }\n\nselect {\n  background: #f8f8f8;\n  font-family: 'Open Sans light'; }\n\ninput::-webkit-input-placeholder {\n  /* Chrome/Opera/Safari */\n  color: #808080; }\n\ninput::-moz-placeholder {\n  /* Firefox 19+ */\n  color: #808080; }\n\ninput:-ms-input-placeholder {\n  /* IE 10+ */\n  color: #808080; }\n\ninput:-moz-placeholder {\n  /* Firefox 18- */\n  color: #808080; }\n\n.comentario {\n  width: 98%;\n  margin: 0 auto; }\n\n@media screen and (max-width: 480px) {\n    .comentario {\n      width: 91%; } }\n\n.comentario textarea {\n    min-height: 40px;\n    border-radius: 0px;\n    border: 1px solid #b2c6cd;\n    padding: 10px 20px;\n    font-family: 'Open Sans light'; }\n\n.terminos_grupo {\n  position: relative;\n  max-width: 380px;\n  margin: 40px auto;\n  text-align: center;\n  /* OFF */\n  /* ON */ }\n\n.terminos_grupo [type=\"checkbox\"] {\n    position: absolute;\n    left: -9999px; }\n\n.terminos_grupo [type=\"checkbox\"] + label:after {\n    content: '';\n    position: absolute; }\n\n.terminos_grupo [type=\"checkbox\"] + label {\n    display: block;\n    position: relative;\n    padding-left: 26px;\n    cursor: pointer;\n    line-height: 36px;\n    font-size: 1rem;\n    color: rgba(0, 43, 73, 0.8);\n    transition: color .3s; }\n\n.terminos_grupo [type=\"checkbox\"] + label a {\n    color: #91b520; }\n\n.terminos_grupo [type=\"checkbox\"] + label:after {\n    width: 30px;\n    height: 30px;\n    transition: all .2s;\n    top: 0;\n    left: 0; }\n\n.terminos_grupo [type=\"checkbox\"]:not(:checked) + label:after {\n    background: url(\"/assets/images/check2_off.png\") left center no-repeat; }\n\n.terminos_grupo [type=\"checkbox\"]:checked + label:after {\n    background: url(\"/assets/images/check2.png\") left center no-repeat; }\n\n.btn-primary {\n  border-radius: 0px;\n  background: #91b520;\n  padding: 13px 37px;\n  background-color: #a6cf24 !important;\n  border: none;\n  margin: 0 auto;\n  display: block;\n  font-family: 'Open Sans light'; }\n\n.obligatorios {\n  text-align: center;\n  margin-top: 20px;\n  color: #6d747f;\n  font-family: 'Open Sans light'; }\n\n.obligatorios span {\n    color: #91b520; }\n\n.tab {\n  background: #e5e9ec;\n  height: 140px;\n  margin-top: 40px; }\n\n.tab .contactenos {\n    height: 140px;\n    padding-left: 11.8%;\n    display: inline-block;\n    position: relative;\n    width: 50%; }\n\n.tab .contactenos button {\n      display: block;\n      width: 84%;\n      height: 100%;\n      position: absolute;\n      top: 0px;\n      right: 0px;\n      background: url(/assets/images/contactus1-newproject.svg) no-repeat center 25px;\n      background-size: 10%;\n      padding-top: 8.5%;\n      border: none;\n      font-size: 22px;\n      font-family: 'Open Sans light';\n      color: #2e516a;\n      cursor: pointer; }\n\n@media (min-width: 1367px) {\n        .tab .contactenos button {\n          background-size: 8%; } }\n\n.tab .contactenos button:active,\n    .tab .contactenos button.active {\n      background: url(/assets/images/contactus1-newproject-white.svg) no-repeat center 25px, #30506c;\n      background-size: 10%;\n      color: #fff;\n      outline: 0px auto -webkit-focus-ring-color; }\n\n@media (min-width: 1367px) {\n        .tab .contactenos button:active,\n        .tab .contactenos button.active {\n          background-size: 8%; } }\n\n.tab .contactenos button.active::before {\n      content: '';\n      position: absolute;\n      border-width: 30px 65px 0;\n      border-style: solid;\n      border-color: #2e516a transparent transparent;\n      top: 97%;\n      margin-left: 37px; }\n\n.tab .contactenos button::after {\n      content: '';\n      position: absolute;\n      height: 75px;\n      width: 1px;\n      margin-top: -7%;\n      left: 0%;\n      background-color: #95a7b3; }\n\n.tab .contactenos button.active::after {\n      display: none; }\n\n@media screen and (max-width: 480px) {\n      .tab .contactenos button,\n      .tab .contactenos button.active {\n        width: 100%;\n        font-size: 15px;\n        padding-top: 46px;\n        background-size: 33%; }\n      .tab .contactenos button.active::before {\n        top: 96%;\n        left: 29%;\n        -webkit-transform: translate(-50%, -50%);\n                transform: translate(-50%, -50%); }\n      .tab .contactenos button::after {\n        display: none; } }\n\n@media (max-width: 768px) and (min-width: 600px) {\n      .tab .contactenos button.active::before {\n        top: 90%; } }\n\n.tab .trabaje {\n    height: 140px;\n    padding-right: 11.8%;\n    display: inline-block;\n    position: relative;\n    width: 50%; }\n\n.tab .trabaje button {\n      display: block;\n      width: 84%;\n      height: 100%;\n      position: absolute;\n      top: 0px;\n      left: 0px;\n      background: none;\n      padding-top: 8.5%;\n      background: url(/assets/images/contactus2-joinus.svg) no-repeat center 25px;\n      background-size: 10%;\n      border: none;\n      font-size: 22px;\n      font-family: 'Open Sans light';\n      color: #2e516a;\n      cursor: pointer; }\n\n@media (min-width: 1367px) {\n        .tab .trabaje button {\n          background-size: 8%; } }\n\n.tab .trabaje button:active,\n    .tab .trabaje button.active {\n      background: url(/assets/images/contactus2-joinus-white.svg) no-repeat center 25px, #30506c;\n      background-size: 10%;\n      color: #fff;\n      outline: 0px auto -webkit-focus-ring-color; }\n\n@media (min-width: 1367px) {\n        .tab .trabaje button:active,\n        .tab .trabaje button.active {\n          background-size: 8%; } }\n\n.tab .trabaje button.active::before {\n      content: '';\n      position: absolute;\n      border-width: 30px 65px 0;\n      border-style: solid;\n      border-color: #2e516a transparent transparent;\n      top: 97%;\n      margin-left: 37px; }\n\n.tab .trabaje button::after {\n      content: '';\n      position: absolute;\n      height: 75px;\n      width: 1px;\n      margin-top: -7%;\n      right: 0%;\n      background-color: #95a7b3; }\n\n.tab .trabaje button.active::after {\n      display: none; }\n\n@media screen and (max-width: 480px) {\n      .tab .trabaje button,\n      .tab .trabaje button.active {\n        width: 100%;\n        font-size: 15px;\n        padding-top: 46px;\n        background-size: 33%; }\n      .tab .trabaje button.active::before {\n        top: 96%;\n        left: 29%;\n        -webkit-transform: translate(-50%, -50%);\n                transform: translate(-50%, -50%); }\n      .tab .trabaje button::after {\n        display: none; } }\n\n@media (max-width: 768px) and (min-width: 600px) {\n      .tab .trabaje button.active::before {\n        top: 90%; } }\n\n#msj-modal {\n  background: #30506cab;\n  width: 100vw;\n  height: 100vh; }\n\n#msj-modal .content-modal {\n    display: table;\n    position: relative;\n    margin-top: 25%;\n    width: 50%;\n    margin-left: 25%;\n    padding: 20px;\n    background: #fff;\n    border-radius: 10px;\n    border: solid #91b520 1px; }\n\n#msj-modal .content-modal p {\n      text-align: center; }\n\n#popover-title,\n#popover-content {\n  display: none; }\n"
+module.exports = "*,\n*::before,\n*::after {\n  box-sizing: border-box; }\n\n.item {\n  display: inline-block; }\n\nlabel {\n  color: #c0dc74;\n  margin-top: 20px;\n  margin-bottom: -1px;\n  font-weight: 100;\n  font-family: 'Open Sans light'; }\n\ninput,\nselect {\n  width: 100%;\n  padding: 4px 2px;\n  outline: none;\n  border: none;\n  border-bottom: 1px solid #b2c6cd;\n  color: #002b49;\n  border-radius: 0px;\n  font-family: 'Open Sans light'; }\n\ninput.ng-invalid.ng-touched {\n  border: solid 1px red; }\n\ninput::-webkit-input-placeholder {\n  /* Chrome/Opera/Safari */\n  color: #808080; }\n\ninput::-moz-placeholder {\n  /* Firefox 19+ */\n  color: #808080; }\n\ninput:-ms-input-placeholder {\n  /* IE 10+ */\n  color: #808080; }\n\ninput:-moz-placeholder {\n  /* Firefox 18- */\n  color: #808080; }\n\n.comentario {\n  width: 98%;\n  margin: 0 auto; }\n\n@media screen and (max-width: 480px) {\n    .comentario {\n      width: 91%; } }\n\n.comentario textarea {\n    min-height: 40px;\n    border-radius: 0px;\n    border: 1px solid #b2c6cd;\n    padding: 10px 20px;\n    font-family: 'Open Sans light'; }\n\n.terminos_grupo {\n  position: relative;\n  max-width: 380px;\n  margin: 40px auto;\n  text-align: center;\n  /* OFF */\n  /* ON */ }\n\n.terminos_grupo [type=\"checkbox\"] {\n    position: absolute;\n    left: -9999px; }\n\n.terminos_grupo [type=\"checkbox\"] + label:after {\n    content: '';\n    position: absolute; }\n\n.terminos_grupo [type=\"checkbox\"] + label {\n    display: block;\n    position: relative;\n    padding-left: 26px;\n    cursor: pointer;\n    line-height: 36px;\n    font-size: 1rem;\n    color: rgba(0, 43, 73, 0.8);\n    transition: color .3s; }\n\n.terminos_grupo [type=\"checkbox\"] + label a {\n    color: #91b520; }\n\n.terminos_grupo [type=\"checkbox\"] + label:after {\n    width: 30px;\n    height: 30px;\n    transition: all .2s;\n    top: 0;\n    left: 0; }\n\n.terminos_grupo [type=\"checkbox\"]:not(:checked) + label:after {\n    background: url(\"/assets/images/check2_off.png\") left center no-repeat; }\n\n.terminos_grupo [type=\"checkbox\"]:checked + label:after {\n    background: url(\"/assets/images/check2.png\") left center no-repeat; }\n\nselect {\n  background: #f8f8f8;\n  font-family: 'Open Sans light'; }\n\ninput::-webkit-input-placeholder {\n  /* Chrome/Opera/Safari */\n  color: #808080; }\n\ninput::-moz-placeholder {\n  /* Firefox 19+ */\n  color: #808080; }\n\ninput:-ms-input-placeholder {\n  /* IE 10+ */\n  color: #808080; }\n\ninput:-moz-placeholder {\n  /* Firefox 18- */\n  color: #808080; }\n\n.comentario {\n  width: 98%;\n  margin: 0 auto; }\n\n@media screen and (max-width: 480px) {\n    .comentario {\n      width: 91%; } }\n\n.comentario textarea {\n    min-height: 40px;\n    border-radius: 0px;\n    border: 1px solid #b2c6cd;\n    padding: 10px 20px;\n    font-family: 'Open Sans light'; }\n\n.terminos_grupo {\n  position: relative;\n  max-width: 380px;\n  margin: 40px auto;\n  text-align: center;\n  /* OFF */\n  /* ON */ }\n\n.terminos_grupo [type=\"checkbox\"] {\n    position: absolute;\n    left: -9999px; }\n\n.terminos_grupo [type=\"checkbox\"] + label:after {\n    content: '';\n    position: absolute; }\n\n.terminos_grupo [type=\"checkbox\"] + label {\n    display: block;\n    position: relative;\n    padding-left: 26px;\n    cursor: pointer;\n    line-height: 36px;\n    font-size: 1rem;\n    color: rgba(0, 43, 73, 0.8);\n    transition: color .3s; }\n\n.terminos_grupo [type=\"checkbox\"] + label a {\n    color: #91b520; }\n\n.terminos_grupo [type=\"checkbox\"] + label:after {\n    width: 30px;\n    height: 30px;\n    transition: all .2s;\n    top: 0;\n    left: 0; }\n\n.terminos_grupo [type=\"checkbox\"]:not(:checked) + label:after {\n    background: url(\"/assets/images/check2_off.png\") left center no-repeat; }\n\n.terminos_grupo [type=\"checkbox\"]:checked + label:after {\n    background: url(\"/assets/images/check2.png\") left center no-repeat; }\n\n.btn-primary {\n  border-radius: 0px;\n  background: #91b520;\n  padding: 13px 37px;\n  background-color: #a6cf24 !important;\n  border: none;\n  margin: 0 auto;\n  display: block;\n  font-family: 'Open Sans light'; }\n\n.obligatorios {\n  text-align: center;\n  margin-top: 20px;\n  color: #6d747f;\n  font-family: 'Open Sans light'; }\n\n.obligatorios span {\n    color: #91b520; }\n\n.tab {\n  background: #e5e9ec;\n  height: 140px;\n  margin-top: 40px; }\n\n.tab .contactenos {\n    height: 140px;\n    padding-left: 11.8%;\n    display: inline-block;\n    position: relative;\n    width: 50%; }\n\n.tab .contactenos button {\n      display: block;\n      width: 84%;\n      height: 100%;\n      position: absolute;\n      top: 0px;\n      right: 0px;\n      background: url(/assets/images/contactus1-newproject.svg) no-repeat center 25px;\n      background-size: 10%;\n      padding-top: 8.5%;\n      border: none;\n      font-size: 22px;\n      font-family: 'Open Sans light';\n      color: #2e516a;\n      cursor: pointer; }\n\n@media (min-width: 1367px) {\n        .tab .contactenos button {\n          background-size: 8%; } }\n\n.tab .contactenos button:active,\n    .tab .contactenos button.active {\n      background: url(/assets/images/contactus1-newproject-white.svg) no-repeat center 25px, #30506c;\n      background-size: 10%;\n      color: #fff;\n      outline: 0px auto -webkit-focus-ring-color; }\n\n@media (min-width: 1367px) {\n        .tab .contactenos button:active,\n        .tab .contactenos button.active {\n          background-size: 8%; } }\n\n.tab .contactenos button.active::before {\n      content: '';\n      position: absolute;\n      border-width: 30px 65px 0;\n      border-style: solid;\n      border-color: #2e516a transparent transparent;\n      top: 97%;\n      margin-left: 37px; }\n\n.tab .contactenos button::after {\n      content: '';\n      position: absolute;\n      height: 75px;\n      width: 1px;\n      margin-top: -7%;\n      left: 0%;\n      background-color: #95a7b3; }\n\n.tab .contactenos button.active::after {\n      display: none; }\n\n@media screen and (max-width: 480px) {\n      .tab .contactenos button,\n      .tab .contactenos button.active {\n        width: 100%;\n        font-size: 15px;\n        padding-top: 46px;\n        background-size: 33%; }\n      .tab .contactenos button.active::before {\n        top: 96%;\n        left: 29%;\n        -webkit-transform: translate(-50%, -50%);\n                transform: translate(-50%, -50%); }\n      .tab .contactenos button::after {\n        display: none; } }\n\n@media (max-width: 768px) and (min-width: 600px) {\n      .tab .contactenos button.active::before {\n        top: 90%; } }\n\n.tab .trabaje {\n    height: 140px;\n    padding-right: 11.8%;\n    display: inline-block;\n    position: relative;\n    width: 50%; }\n\n.tab .trabaje button {\n      display: block;\n      width: 84%;\n      height: 100%;\n      position: absolute;\n      top: 0px;\n      left: 0px;\n      background: none;\n      padding-top: 8.5%;\n      background: url(/assets/images/contactus2-joinus.svg) no-repeat center 25px;\n      background-size: 10%;\n      border: none;\n      font-size: 22px;\n      font-family: 'Open Sans light';\n      color: #2e516a;\n      cursor: pointer; }\n\n@media (min-width: 1367px) {\n        .tab .trabaje button {\n          background-size: 8%; } }\n\n.tab .trabaje button:active,\n    .tab .trabaje button.active {\n      background: url(/assets/images/contactus2-joinus-white.svg) no-repeat center 25px, #30506c;\n      background-size: 10%;\n      color: #fff;\n      outline: 0px auto -webkit-focus-ring-color; }\n\n@media (min-width: 1367px) {\n        .tab .trabaje button:active,\n        .tab .trabaje button.active {\n          background-size: 8%; } }\n\n.tab .trabaje button.active::before {\n      content: '';\n      position: absolute;\n      border-width: 30px 65px 0;\n      border-style: solid;\n      border-color: #2e516a transparent transparent;\n      top: 97%;\n      margin-left: 37px; }\n\n.tab .trabaje button::after {\n      content: '';\n      position: absolute;\n      height: 75px;\n      width: 1px;\n      margin-top: -7%;\n      right: 0%;\n      background-color: #95a7b3; }\n\n.tab .trabaje button.active::after {\n      display: none; }\n\n@media screen and (max-width: 480px) {\n      .tab .trabaje button,\n      .tab .trabaje button.active {\n        width: 100%;\n        font-size: 15px;\n        padding-top: 46px;\n        background-size: 33%; }\n      .tab .trabaje button.active::before {\n        top: 96%;\n        left: 29%;\n        -webkit-transform: translate(-50%, -50%);\n                transform: translate(-50%, -50%); }\n      .tab .trabaje button::after {\n        display: none; } }\n\n@media (max-width: 768px) and (min-width: 600px) {\n      .tab .trabaje button.active::before {\n        top: 90%; } }\n\n#msj-modal {\n  background: #30506cab;\n  width: 100vw;\n  height: 100vh; }\n\n#msj-modal .content-modal {\n    display: table;\n    position: relative;\n    margin-top: 25%;\n    width: 50%;\n    margin-left: 25%;\n    padding: 20px;\n    background: #fff;\n    border-radius: 10px;\n    border: solid #91b520 1px; }\n\n#msj-modal .content-modal p {\n      text-align: center; }\n\n#popover-title,\n#popover-content {\n  display: none; }\n\n/deep/ .select-autocomplete .btn-default {\n  color: #333;\n  background-color: #fff;\n  border-color: #ccc; }\n\n/deep/ .select-autocomplete .btn-secondary {\n  background-color: #fff; }\n\n/deep/ .select-autocomplete .ui-select-choices {\n  display: block; }\n\n/deep/ .select-autocomplete .pull-right {\n  float: right !important; }\n\n/deep/ .select-autocomplete .ui-select-toggle {\n  width: 100%;\n  padding: 4px 2px;\n  outline: none;\n  border: none;\n  border-bottom: 1px solid #b2c6cd;\n  color: #002b49;\n  border-radius: 0px;\n  background: #f8f8f8; }\n\n/deep/ .select-autocomplete .ui-select-match {\n  font-family: 'Open Sans light'; }\n"
 
 /***/ }),
 
@@ -3348,6 +3352,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var rxjs_add_operator_map__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/add/operator/map */ "./node_modules/rxjs-compat/_esm5/add/operator/map.js");
 /* harmony import */ var _services_http_http_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../services/http/http.service */ "./src/app/services/http/http.service.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3361,17 +3366,28 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var TabsComponent = /** @class */ (function () {
-    function TabsComponent(_http, _service) {
+    function TabsComponent(_http, _service, http_pais) {
         this._http = _http;
         this._service = _service;
+        this.http_pais = http_pais;
         this.hidden = false;
         this.usuario = {
             nombre: null,
             email: null
         };
+        this.value = {};
         this.dataMessage = [];
         this.list = [];
+        this.bandProduct = [];
+        this.listProduct = [];
+        this.bandService = [];
+        this.listService = [];
+        this.bandPais = [];
+        this.listPais = [];
+        this._disabledV = '0';
+        this.disabled = false;
     }
     TabsComponent.prototype.toogleHidden = function () {
         this.dataMessage = [];
@@ -3427,6 +3443,8 @@ var TabsComponent = /** @class */ (function () {
             $('.contactenos button').toggleClass('active');
         });
         this.getPopoverService();
+        this.getDatosForm();
+        this.getPaises();
         $(function () {
             $('[data-toggle="popover"]').popover({
                 html: true,
@@ -3471,13 +3489,63 @@ var TabsComponent = /** @class */ (function () {
             x.scrollIntoView({ block: 'start', inline: 'start', behavior: 'smooth' });
         }
     };
+    TabsComponent.prototype.getDatosForm = function () {
+        var _this = this;
+        this._service.getCustomCardInformation('allproductsandservicescard').subscribe(function (params) {
+            for (var index = 0; index < params.data.length; index++) {
+                if (params.data[index].type === 'product') {
+                    _this.bandProduct.push(params.data[index].label);
+                }
+                else if (params.data[index].type === 'service') {
+                    _this.bandService.push(params.data[index].label);
+                }
+            }
+            _this.listProduct = _this.bandProduct;
+            _this.listService = _this.bandService;
+        });
+    };
+    TabsComponent.prototype.getPaises = function () {
+        var _this = this;
+        this.http_pais.get('https://restcountries.eu/rest/v2/all').subscribe(function (params) {
+            for (var index = 0; index < params.length; index++) {
+                _this.bandPais.push(params[index].name);
+            }
+            _this.listPais = _this.bandPais;
+        });
+    };
+    Object.defineProperty(TabsComponent.prototype, "disabledV", {
+        // Metodos del select
+        get: function () {
+            return this._disabledV;
+        },
+        set: function (value) {
+            this._disabledV = value;
+            this.disabled = this._disabledV === '1';
+        },
+        enumerable: true,
+        configurable: true
+    });
+    TabsComponent.prototype.selected = function (value) {
+        this.pais = value;
+        console.log('Selected value is: ', value);
+        this.removed(this.pais);
+    };
+    TabsComponent.prototype.removed = function (value) {
+        console.log('Removed value is: ', value);
+    };
+    TabsComponent.prototype.typed = function (value) {
+        console.log('New search input: ', value);
+    };
+    TabsComponent.prototype.refreshValue = function (value) {
+        this.value = value;
+    };
     TabsComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-tabs',
             template: __webpack_require__(/*! ./tabs.component.html */ "./src/app/cards/components/tabs/tabs.component.html"),
             styles: [__webpack_require__(/*! ./tabs.component.scss */ "./src/app/cards/components/tabs/tabs.component.scss")]
         }),
-        __metadata("design:paramtypes", [_services_http_http_service__WEBPACK_IMPORTED_MODULE_3__["HttpService"], src_app_services_cards_v1_card_services__WEBPACK_IMPORTED_MODULE_0__["CustomCardService"]])
+        __metadata("design:paramtypes", [_services_http_http_service__WEBPACK_IMPORTED_MODULE_3__["HttpService"], src_app_services_cards_v1_card_services__WEBPACK_IMPORTED_MODULE_0__["CustomCardService"], _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClient"]])
     ], TabsComponent);
     return TabsComponent;
 }());
@@ -5064,7 +5132,7 @@ var LayoutModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-banner imgFondo=\"/assets/images/cabezerainternaweb.png\" uuid=\"e58b3214-c259-4bd2-b6ba-2f81c9ba86b4\"></app-banner>\n<app-whybitsamericas></app-whybitsamericas>\n<app-carousel-controls></app-carousel-controls>\n<app-alliances></app-alliances>\n<app-history></app-history>\n<app-knowus></app-knowus>\n<app-workwithus-proserv></app-workwithus-proserv>"
+module.exports = "<app-banner imgFondo=\"\" uuid=\"e58b3214-c259-4bd2-b6ba-2f81c9ba86b4\"></app-banner>\n<app-whybitsamericas></app-whybitsamericas>\n<app-carousel-controls></app-carousel-controls>\n<app-alliances></app-alliances>\n<app-history></app-history>\n<app-knowus></app-knowus>\n<app-workwithus-proserv></app-workwithus-proserv>"
 
 /***/ }),
 
