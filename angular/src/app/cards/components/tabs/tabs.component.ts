@@ -1,6 +1,6 @@
 import { CustomCardService } from 'src/app/services/cards/v1-card.services';
 import { ContactUsComponent } from 'src/app/main/pages/contact-us/contact-us.component';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import 'rxjs/add/operator/map';
 import { HttpService } from '../../../services/http/http.service';
 import { DataMessage } from '../message/message.component';
@@ -8,6 +8,7 @@ import { pureObjectDef } from '@angular/core/src/view';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { analyzeAndValidateNgModules } from '@angular/compiler';
+import { SelectComponent } from 'ng2-select';
 
 declare var jQuery: any;
 declare var $: any;
@@ -19,6 +20,9 @@ declare var $: any;
 })
 
 export class TabsComponent implements OnInit {
+  @ViewChild('paisTB') public ngSelectP: SelectComponent;
+  @ViewChild('serviceTB') public ngSelectS: SelectComponent;
+  @ViewChild('productTB') public ngSelectPR: SelectComponent;
   hidden = false;
   private _token: string;
   usuario: any = {
@@ -41,6 +45,7 @@ export class TabsComponent implements OnInit {
   product: any;
   service: any;
   objService: any;
+  sele: boolean;
 
   private value: any = {};
   private _disabledV: string;
@@ -60,6 +65,7 @@ export class TabsComponent implements OnInit {
     this.pais = '';
     this.product = '';
     this.service = '';
+    this.sele = false;
   }
 
   toogleHidden() {
@@ -68,10 +74,6 @@ export class TabsComponent implements OnInit {
   }
 
   onSubmit(formulario) {
-
-    this.pais = '';
-    this.product = '';
-    this.service = '';
 
     this.dataMessage = [];
     console.log(formulario);
@@ -102,6 +104,15 @@ export class TabsComponent implements OnInit {
           }
 
         } else if (datos.sid) {
+
+          this.ngSelectP.active = [];
+          this.ngSelectS.active = [];
+          this.ngSelectPR.active = [];
+
+          this.pais = '';
+          this.product = '';
+          this.service = '';
+
           this.dataMessage.push(
             {
               visible: true,
@@ -180,8 +191,7 @@ export class TabsComponent implements OnInit {
   }
 
   ubicar() {
-    const x = document.querySelector('.tab');
-    console.log(x);
+    const x = document.querySelector('.tab');    
     if (x) {
       x.scrollIntoView({ block: 'start', inline: 'start', behavior: 'smooth' });
     }
@@ -224,16 +234,13 @@ export class TabsComponent implements OnInit {
 
   public selectedPais(value: any): void {
     this.pais = value.text;
-    console.log('Selected value is: ', value);
   }
 
   public removedPais(value: any): void {
     this.pais = '';
-    console.log('Removed value is: ', value);
   }
 
   public typedPais(value: any): void {
-    console.log('New search input: ', value);
   }
 
   public refreshValuePais(value: any): void {
@@ -242,16 +249,13 @@ export class TabsComponent implements OnInit {
 
   public selectedProduct(value: any): void {
     this.product = value.text;
-    console.log('Selected value is: ', value);
   }
 
   public removedProduct(value: any): void {
     this.product = '';
-    console.log('Removed value is: ', value);
   }
 
   public typedProduct(value: any): void {
-    console.log('New search input: ', value);
   }
 
   public refreshValueProduct(value: any): void {
@@ -260,16 +264,13 @@ export class TabsComponent implements OnInit {
 
   public selectedService(value: any): void {
     this.service = value.text;
-    console.log('Selected value is: ', value);
   }
 
   public removedService(value: any): void {
     this.service = '';
-    console.log('Removed value is: ', value);
   }
 
   public typedService(value: any): void {
-    console.log('New search input: ', value);
   }
 
   public refreshValueService(value: any): void {
