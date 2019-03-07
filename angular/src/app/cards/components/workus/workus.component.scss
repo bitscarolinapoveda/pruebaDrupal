@@ -216,6 +216,45 @@ input:-moz-placeholder {
 }
 
 #popover-title,
-#popover-content {
+#popover-content,
+.ocultar {
   display: none;
+}
+
+/deep/ {
+  .select-autocomplete {
+    .btn-default {
+      color: #333;
+      background-color: #fff;
+      border-color: #ccc;
+    }
+
+    .btn-secondary {
+      background-color: #fff;
+    }
+
+    .ui-select-choices {
+      display: block;
+    }
+
+    .pull-right {
+      float: right !important;
+    }
+
+    .ui-select-toggle {
+      width: 100%;
+      padding: 4px 2px;
+      outline: none;
+      border: none;
+      border-bottom: 1px solid #b2c6cd;
+      color: #002b49;
+      border-radius: 0px;
+      background: #f8f8f8;
+    }
+
+    .ui-select-match {
+      font-family: 'Open Sans light';
+    }
+
+  }
 }
