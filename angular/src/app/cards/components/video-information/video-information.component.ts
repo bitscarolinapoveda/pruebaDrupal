@@ -45,7 +45,7 @@ export class VideoInformationComponent implements OnInit {
         this.https.getCustomCardInformationType('videoplusinformation', this.type).subscribe(items => {
             this.titleSection = items.data[0].title;
             this.descriptionSection = items.data[0].body;
-            this.videoURL = items.data[0].field_url_video.split(',')[0];
+            this.videoURL = items.data[0].field_url_video[0].uri;
             if (this.videoURL.includes('watch?v=')) {
                 this.videoURLSanitizer = this.sanitizer
                     .bypassSecurityTrustResourceUrl(`${this.videoURL.split('watch?v=')[0]}embed/${this.videoURL.split('watch?v=')[1]}`);
