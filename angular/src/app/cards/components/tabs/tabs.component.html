@@ -14,7 +14,7 @@
 <div class="container" [hidden]="hidden">
 	<div class="row">
 		<form id="formulario_contacto" #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)" class="col-md-12" name="formulario_contacto">
-			<app-message [dataMessage]="dataMessage"></app-message>			
+			<app-message [dataMessage]="dataMessage"></app-message>
 
 			<div class="form-group" [ngClass]="aplicaCssErro(nombre)" class="col-md-12">
 				<div class="col-md-6 item">
@@ -51,9 +51,10 @@
 			</div>
 			<div class="form-group" class="col-md-12">
 				<div class="col-md-6 item">
-					<label for="pais">Pais</label>					
-					<ng-select class="select-autocomplete" id="pais" name="pais" placeholder="Seleccione su pais" [allowClear]="true" [items]="listPais" [disabled]="disabled" 
-					(data)="refreshValuePais($event)" (selected)="selectedPais($event)"
+					<label for="pais">Pais</label>
+					<ng-select class="select-autocomplete" id="pais" name="pais" placeholder="Seleccione su pais" [allowClear]="true"
+					 [items]="listPais" [disabled]="disabled" (data)="refreshValuePais($event)" 
+					 (selected)="selectedPais($event)"
 					 (removed)="removedPais($event)" (typed)="typedPais($event)">
 					</ng-select>
 					<input type="text" class="form-control ocultar" id="pais" name="pais" [ngModel]="pais">
@@ -75,8 +76,7 @@
 				<div class="col-md-6 item">
 					<label for="servicio">Servicio de interés</label>
 					<ng-select class="select-autocomplete" id="servicios_de_interes" name="servicios_de_interes" placeholder="Seleccione un servicio"
-					 [allowClear]="true" [items]="listService" [disabled]="disabled" 
-					 (data)="refreshValueService($event)" (selected)="selectedService($event)"
+					 [allowClear]="true" [items]="listService" [disabled]="disabled" (data)="refreshValueService($event)" (selected)="selectedService($event)"
 					 (removed)="removedService($event)" (typed)="typedService($event)">
 					</ng-select>
 					<input type="text" class="form-control ocultar" id="servicios_de_interes" name="servicios_de_interes" [ngModel]="service">

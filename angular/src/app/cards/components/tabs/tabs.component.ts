@@ -40,6 +40,7 @@ export class TabsComponent implements OnInit {
   pais: any;
   product: any;
   service: any;
+  objService: any;
 
   private value: any = {};
   private _disabledV: string;
@@ -56,6 +57,9 @@ export class TabsComponent implements OnInit {
     this.listPais = [];
     this._disabledV = '0';
     this.disabled = false;
+    this.pais = '';
+    this.product = '';
+    this.service = '';
   }
 
   toogleHidden() {
@@ -64,6 +68,11 @@ export class TabsComponent implements OnInit {
   }
 
   onSubmit(formulario) {
+
+    this.pais = '';
+    this.product = '';
+    this.service = '';
+
     this.dataMessage = [];
     console.log(formulario);
     formulario['webform_id'] = 'contact_us';
