@@ -1,10 +1,11 @@
 import { Http } from '@angular/http';
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ViewChild } from '@angular/core';
 import 'rxjs/add/operator/map';
 import { HttpService } from '../../../services/http/http.service';
 import { DataMessage } from '../message/message.component';
 import { CustomCardService } from 'src/app/services/cards/v1-card.services';
 import { HttpClient } from '@angular/common/http';
+import { SelectComponent } from 'ng2-select';
 
 declare var jQuery: any;
 declare var $: any;
@@ -15,6 +16,7 @@ declare var $: any;
   styleUrls: ['./workus.component.scss']
 })
 export class WorkusComponent implements OnInit {
+  @ViewChild('paisWU') public ngSelectW: SelectComponent;
 
   hidden = false;
   private _token: string;
@@ -34,8 +36,6 @@ export class WorkusComponent implements OnInit {
   private disabled: boolean;
 
   onSubmit(formulario) {
-
-    this.pais = '';
 
     this.dataMessage = [];
     console.log(formulario);
@@ -65,6 +65,10 @@ export class WorkusComponent implements OnInit {
             );
           }
         } else if (datos.sid) {
+
+          this.ngSelectW.active = [];
+          this.pais = '';
+
           this.dataMessage.push(
             {
               visible: true,

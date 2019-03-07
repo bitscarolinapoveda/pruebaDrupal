@@ -1,6 +1,6 @@
 import { CustomCardService } from 'src/app/services/cards/v1-card.services';
 import { ContactUsComponent } from 'src/app/main/pages/contact-us/contact-us.component';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import 'rxjs/add/operator/map';
 import { HttpService } from '../../../services/http/http.service';
 import { DataMessage } from '../message/message.component';
@@ -8,6 +8,7 @@ import { pureObjectDef } from '@angular/core/src/view';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { analyzeAndValidateNgModules } from '@angular/compiler';
+import { SelectComponent } from 'ng2-select';
 
 declare var jQuery: any;
 declare var $: any;
@@ -19,6 +20,9 @@ declare var $: any;
 })
 
 export class TabsComponent implements OnInit {
+  @ViewChild('paisTB') public ngSelectP: SelectComponent;
+  @ViewChild('serviceTB') public ngSelectS: SelectComponent;
+  @ViewChild('productTB') public ngSelectPR: SelectComponent;
   hidden = false;
   private _token: string;
   usuario: any = {
@@ -41,6 +45,7 @@ export class TabsComponent implements OnInit {
   product: any;
   service: any;
   objService: any;
+  sele: boolean;
 
   private value: any = {};
   private _disabledV: string;
@@ -60,6 +65,7 @@ export class TabsComponent implements OnInit {
     this.pais = '';
     this.product = '';
     this.service = '';
+    this.sele = false;
   }
 
   toogleHidden() {
@@ -68,10 +74,6 @@ export class TabsComponent implements OnInit {
   }
 
   onSubmit(formulario) {
-
-    this.pais = '';
-    this.product = '';
-    this.service = '';
 
     this.dataMessage = [];
     console.log(formulario);
@@ -102,6 +104,15 @@ export class TabsComponent implements OnInit {
           }
 
         } else if (datos.sid) {
+
+          this.ngSelectP.active = [];
+          this.ngSelectS.active = [];
+          this.ngSelectPR.active = [];
+
+          this.pais = '';
+          this.product = '';
+          this.service = '';
+
           this.dataMessage.push(
             {
               visible: true,

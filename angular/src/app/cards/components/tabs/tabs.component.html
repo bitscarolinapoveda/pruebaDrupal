@@ -52,8 +52,7 @@
 			<div class="form-group" class="col-md-12">
 				<div class="col-md-6 item">
 					<label for="pais">Pais</label>
-					<ng-select class="select-autocomplete" id="pais" name="pais" placeholder="Seleccione su pais" [allowClear]="true"
-					 [items]="listPais" [disabled]="disabled" (data)="refreshValuePais($event)" 
+					<ng-select #paisTB class="select-autocomplete" id="pais" name="pais" placeholder="Seleccione su pais" [allowClear]="true" [items]="listPais" [disabled]="disabled" (data)="refreshValuePais($event)"
 					 (selected)="selectedPais($event)"
 					 (removed)="removedPais($event)" (typed)="typedPais($event)">
 					</ng-select>
@@ -67,7 +66,7 @@
 			<div class="col-md-12">
 				<div class="col-md-6 item">
 					<label for="producto">Producto de interés</label>
-					<ng-select class="select-autocomplete" id="productos_de_interes" name="productos_de_interes" placeholder="Seleccione un producto"
+					<ng-select #productTB class="select-autocomplete" id="productos_de_interes" name="productos_de_interes" placeholder="Seleccione un producto"
 					 [allowClear]="true" [items]="listProduct" [disabled]="disabled" (data)="refreshValueProduct($event)" (selected)="selectedProduct($event)"
 					 (removed)="removedProduct($event)" (typed)="typedProduct($event)">
 					</ng-select>
@@ -75,7 +74,7 @@
 				</div>
 				<div class="col-md-6 item">
 					<label for="servicio">Servicio de interés</label>
-					<ng-select class="select-autocomplete" id="servicios_de_interes" name="servicios_de_interes" placeholder="Seleccione un servicio"
+					<ng-select #serviceTB class="select-autocomplete" id="servicios_de_interes" name="servicios_de_interes" placeholder="Seleccione un servicio"
 					 [allowClear]="true" [items]="listService" [disabled]="disabled" (data)="refreshValueService($event)" (selected)="selectedService($event)"
 					 (removed)="removedService($event)" (typed)="typedService($event)">
 					</ng-select>

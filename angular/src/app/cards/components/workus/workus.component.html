@@ -36,7 +36,7 @@
       <div class="form-group" class="col-md-12">
         <div class="col-md-6 item">
           <label for="exampleInputPais">Pais</label>
-          <ng-select class="select-autocomplete" id="pais" name="pais" placeholder="Seleccione su pais" [allowClear]="true"
+          <ng-select #paisWU class="select-autocomplete" id="pais" name="pais" placeholder="Seleccione su pais" [allowClear]="true"
             [items]="listPais" [disabled]="disabled" (data)="refreshValuePais($event)" (selected)="selectedPais($event)"
             (removed)="removedPais($event)" (typed)="typedPais($event)">
           </ng-select>
