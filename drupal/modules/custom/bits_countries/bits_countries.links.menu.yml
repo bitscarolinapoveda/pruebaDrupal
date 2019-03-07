@@ -7,3 +7,38 @@ entity.countries_api_entity.collection:
   parent: system.admin_structure
   weight: 99
 
+
+# Country entity menu items definition
+entity.country_entity.collection:
+  title: 'Country entity list'
+  route_name: entity.country_entity.collection
+  description: 'List Country entity entities'
+  parent: system.admin_structure
+  weight: 100
+
+country_entity.admin.structure.settings:
+  title: 'Country entity settings'
+  description: 'Configure Country entity entities'
+  route_name: country_entity.settings
+  parent: system.admin_structure
+bits_countries.load_countries_data_form:
+  title: 'Load countries data form'
+  route_name: bits_countries.load_countries_data_form
+  description: 'Form to load countries and cities data'
+  parent: system.admin_config_system
+  weight: 99
+
+
+# City entity menu items definition
+entity.city_entity.collection:
+  title: 'City entity list'
+  route_name: entity.city_entity.collection
+  description: 'List City entity entities'
+  parent: system.admin_structure
+  weight: 100
+
+city_entity.admin.structure.settings:
+  title: 'City entity settings'
+  description: 'Configure City entity entities'
+  route_name: city_entity.settings
+  parent: system.admin_structure
