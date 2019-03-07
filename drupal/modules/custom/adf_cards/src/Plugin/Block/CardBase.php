@@ -22,8 +22,27 @@ use Drupal\Core\Url;
 class CardBase extends BlockBase {
 
   protected $uuid;
-
-
+  protected $key_config = [
+    'header' => [
+      'title' => 'Header',
+      'description' => 'Parámetros parte superior',
+    ],
+    'body' => [
+      'title' => 'Body',
+      'description' => 'Parámetros parte inferior',
+    ],
+    'files' => [
+      'title' => 'Files',
+      'description' => 'Parámetros para subir archivos',
+    ],
+    'table_headers' => [
+      'Field',
+      'Input',
+      'Show',
+      'Weight',
+      '',
+      ],
+  ];
 
   /**
    * Class constructor.
@@ -64,102 +83,38 @@ class CardBase extends BlockBase {
    * {@inheritdoc}
    */
   public function blockForm($form, FormStateInterface $form_state) {
+    $keys = array_keys($this->configuration);
+    // Se recorre las claves creadas en la configuración para crear el formulario.
+    foreach ($keys as $key) {
+      if (isset($this->configuration[$key]['table_fields']) && count($this->configuration[$key]['table_fields']) > 0) {
+        $form[$key] = [
+          '#type' => 'details',
+          '#title' => $this->t($this->key_config[$key]['title']),
+          '#description' => $this->t($this->key_config[$key]['description']),
+          '#open' => TRUE,
+        ];
 
-    $form['header'] = [
-      '#type' => 'details',
-      '#title' => $this->t('Header'),
-      '#description' => $this->t('Parámetros parte superior'),
-      '#open' => TRUE,
-    ];
+        $form[$key]['table_fields'] = [
+          '#type' => 'table',
+          '#header' => $this->key_config['table_headers'],
+          '#empty' => $this->t('There are no items yet. Add an item.'),
+          '#tabledrag' => [
+            [
+              'action' => 'order',
+              'relationship' => 'sibling',
+              'group' => 'fields-order-weight',
+            ],
+          ],
+        ];
 
-    $form['header']['table_fields'] = [
-      '#type' => 'table',
-      '#header' => [
-        $this->t('Field'),
-        $this->t('Input'),
-        $this->t('Show'),
-        $this->t('Weight'),
-        '',
-      ],
-      '#empty' => $this->t('There are no items yet. Add an item.'),
-      '#tabledrag' => [
-        [
-          'action' => 'order',
-          'relationship' => 'sibling',
-          'group' => 'fields-order-weight',
-        ],
-      ],
-    ];
+        $table_fields = $this->configuration[$key]['table_fields'];
+        $this->_uaSort($table_fields);
 
-    $table_fields = $this->configuration['header']['table_fields'];
-    $this->_uaSort($table_fields);
+        $form = $this->generateTable($key, $table_fields, $form);
 
-    $form = $this->generateTable('header', $table_fields, $form);
-
-    unset($table_fields);
-
-    $form['body'] = [
-      '#type' => 'details',
-      '#title' => $this->t('Body'),
-      '#description' => $this->t('Parámetros parte inferior'),
-      '#open' => FALSE,
-    ];
-
-    $form['body']['table_fields'] = [
-      '#type' => 'table',
-      '#header' => [
-        $this->t('Field'),
-        $this->t('Input'),
-        $this->t('Show'),
-        $this->t('Weight'),
-        '',
-      ],
-      '#empty' => $this->t('There are no items yet. Add an item.'),
-      '#tabledrag' => [
-        [
-          'action' => 'order',
-          'relationship' => 'sibling',
-          'group' => 'fields-order-weight',
-        ],
-      ],
-    ];
-
-    if(isset($this->configuration['body']) && isset($this->configuration['body']['table_fields'])) {
-      $table_fields = $this->configuration['body']['table_fields'];
-      $this->_uaSort($table_fields);
-
-      $form = $this->generateTable('body', $table_fields, $form);
-      $form['body']['#open'] = TRUE;
-
-      unset($table_fields);
+        unset($table_fields);
+      }
     }
-
-    $form['files'] = [
-      '#type' => 'details',
-      '#title' => $this->t('Files'),
-      '#description' => $this->t('Parámetros para subir archivos'),
-      '#open' => TRUE,
-    ];
-
-    $form['files']['table_fields'] = [
-      '#type' => 'table',
-      '#header' => [
-        $this->t('Field'),
-        $this->t('Input'),
-        $this->t('Show'),
-        $this->t('Weight'),
-        '',
-      ],
-      '#empty' => $this->t('There are no items yet. Add an item.'),
-      '#tabledrag' => [
-        [
-          'action' => 'order',
-          'relationship' => 'sibling',
-          'group' => 'fields-order-weight',
-        ],
-      ],
-    ];
-
 
     $entityName = 'node';
     $entityType = '';
@@ -171,15 +126,17 @@ class CardBase extends BlockBase {
       $ourFormState = $form_state->getCompleteFormState();
     }
     $bnCargoDesdeAjax = FALSE;
-    if (!empty((string) $ourFormState->getTriggeringElement()['#value'])) {
-      $bnCargoDesdeAjax = TRUE;
+    if (!empty((string)$ourFormState->getTriggeringElement()['#value'])) {
+      if (strpos((string)$ourFormState->getTriggeringElement()['#name'], 'settings_files_table_fields_imag') !== FALSE) {
+        $bnCargoDesdeAjax = TRUE;
+      }
     }
 
     if ($bnCargoDesdeAjax) {
-      $entityName = $ourFormState->getValue(['settings','entity','name']);
-      $entityType = $ourFormState->getValue(['settings','entity','type']);
-      $entityLimit = $ourFormState->getValue(['settings','entity','limit']);
-      $entityOffset = $ourFormState->getValue(['settings','entity','offset']);
+      $entityName = $ourFormState->getValue(['settings', 'entity', 'name']);
+      $entityType = $ourFormState->getValue(['settings', 'entity', 'type']);
+      $entityLimit = $ourFormState->getValue(['settings', 'entity', 'limit']);
+      $entityOffset = $ourFormState->getValue(['settings', 'entity', 'offset']);
     }
 
     if (isset($this->configuration['entity'])) {
@@ -261,7 +218,7 @@ class CardBase extends BlockBase {
       if (isset($this->configuration['entity']['limit'])) {
         //  Si no carga desde ajax carga la configuración
         if (!$bnCargoDesdeAjax) {
-          $entityLimit = (int) $this->configuration['entity']['limit'];
+          $entityLimit = (int)$this->configuration['entity']['limit'];
         }
       }
       $form['entity']['limit'] = [
@@ -280,7 +237,7 @@ class CardBase extends BlockBase {
       if (isset($this->configuration['entity']['offset'])) {
         //  Si no carga desde ajax carga la configuración
         if (!$bnCargoDesdeAjax) {
-          $entityOffset = (int) $this->configuration['entity']['offset'];
+          $entityOffset = (int)$this->configuration['entity']['offset'];
         }
       }
       $form['entity']['offset'] = [
@@ -297,8 +254,8 @@ class CardBase extends BlockBase {
 
       // Modo de presentación del contenido.
       $queryViewModes = \Drupal::entityTypeManager()
-                        ->getStorage('entity_view_display')
-                        ->getQuery();
+        ->getStorage('entity_view_display')
+        ->getQuery();
 
       $resultsViewModes = $queryViewModes->execute();
 
@@ -307,7 +264,7 @@ class CardBase extends BlockBase {
       $optionsViewMode = [];
 
       foreach ($resultsViewModes as $result) {
-        if (strpos ($result, $condition) !== FALSE) {
+        if (strpos($result, $condition) !== FALSE) {
           $formatResult = substr($result, strlen($condition) + 1);
           $optionsViewMode[$formatResult] = $this->t(ucwords($formatResult));
         }
@@ -319,14 +276,13 @@ class CardBase extends BlockBase {
         '#description' => $this->t('Seleccionar el modo de presentación del contenido.'),
         '#title' => $this->t('Modo de presentación'),
         '#default_value' => isset($this->configuration['entity']['default_view_mode'])
-                            ? $this->configuration['entity']['default_view_mode']
-                            : '',
+          ? $this->configuration['entity']['default_view_mode']
+          : '',
       ];
 
       if ($entityType !== "") {
         $url_add = Url::fromRoute('node.add', ['node_type' => $entityType], ['attributes' => ['target' => '_blank']]);
-      }
-      else {
+      } else {
         $url_add = Url::fromRoute('entity.' . $entityName . '.add_form', [], ['attributes' => ['target' => '_blank']]);
       }
 
@@ -353,12 +309,12 @@ class CardBase extends BlockBase {
       ];
 
       $query = \Drupal::entityQuery($entityName);
-        $query->condition('status', 1);
-        if ($entityType) {
-          $query->condition('type', $entityType);
-        }
-        $query->range($entityOffset, $entityLimit + $entityOffset);
-        $entityIds = $query->execute();
+      $query->condition('status', 1);
+      if ($entityType) {
+        $query->condition('type', $entityType);
+      }
+      $query->range($entityOffset, $entityLimit + $entityOffset);
+      $entityIds = $query->execute();
 
       $form['entity']['table-row'] = [
         '#type' => 'table',
@@ -393,13 +349,12 @@ class CardBase extends BlockBase {
         }
         $weight = 1;
         if (isset($this->configuration['entity']['weight'][$id])) {
-          $weight = (int) $this->configuration['entity']['weight'][$id];
+          $weight = (int)$this->configuration['entity']['weight'][$id];
         }
 
         if ($entityType !== "") {
           $url_edit = Url::fromRoute('entity.node.edit_form', ['node' => $id], ['attributes' => ['target' => '_blank']]);
-        }
-        else {
+        } else {
           $url_edit = Url::fromRoute('entity.' . $entityName . '.edit_form', ['service_product_bits' => $entityId], ['attributes' => ['target' => '_blank']]);
         }
 
@@ -443,10 +398,6 @@ class CardBase extends BlockBase {
     foreach ($arRowForWeight as $rowForWeight) {
       $form['entity']['table-row'][$rowForWeight] = $arRows[$rowForWeight];
     }
-
-    $table_fields = $this->configuration['files']['table_fields'] ?? [];
-    $this->_uaSort($table_fields);
-    $form = $this->generateTable('files', $table_fields, $form);
 
     return $form;
   }
@@ -501,8 +452,7 @@ class CardBase extends BlockBase {
           '#default_value' => $entity['input']['label'],
           '#size' => 40,
         ];
-      }
-      else {
+      } else {
         $form[$key]['table_fields'][$id]['input'] = [
           '#type' => $entity['type'],
           '#default_value' => $entity['input'],
@@ -516,13 +466,12 @@ class CardBase extends BlockBase {
 
       if ($entity['type'] == 'managed_file') {
         $form[$key]['table_fields'][$id]['input']['#upload_location'] = 'public://cards';
-        if(isset($entity['max_length']) && $entity['max_length'] == 1){
+        if (isset($entity['max_length']) && $entity['max_length'] == 1) {
           $form[$key]['table_fields'][$id]['input']['#multiple'] = FALSE;
-        }
-        else {
+        } else {
           $form[$key]['table_fields'][$id]['input']['#multiple'] = TRUE;
         }
-        if(isset($entity['upload_validators'])){
+        if (isset($entity['upload_validators'])) {
           $form[$key]['table_fields'][$id]['input']['#upload_validators'] = $entity['upload_validators'];
         }
       }
@@ -653,7 +602,7 @@ class CardBase extends BlockBase {
   public function getRenderData($input) {
     $data = [];
 
-    foreach ((array)  $input['table_fields'] as $item) {
+    foreach ((array)$input['table_fields'] as $item) {
       $element = [];
       switch ($item['type']) {
         case 'managed_file':
@@ -734,10 +683,8 @@ class CardBase extends BlockBase {
         'Drupal\Component\Utility\SortArray',
         'sortByWeightElement',
       ]);
-    }
-    elseif ($array === '') {
+    } elseif ($array === '') {
       $array = [];
     }
   }
-
 }

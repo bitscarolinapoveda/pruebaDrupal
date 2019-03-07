@@ -48,10 +48,21 @@
 #descrip-banner {
     p {
         color: #002b49cc;
-        font-family: Open Sans Codensed;
-        margin-right: 180px;
-        margin-left: 200px;
+        font-family: Open Sans Codensed;        
         margin-top: 30px;
         font-size: 20px;
+        overflow-wrap: break-word;
+
+        @include breakpoint (desktop) {
+            margin: auto;
+            max-width: 800px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        @include breakpoint (phone) {
+            margin-right: 0;
+            margin-left: 0;
+        }
     }    
 }

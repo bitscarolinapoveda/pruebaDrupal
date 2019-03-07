@@ -25,7 +25,15 @@ import { CardImgTextComponent } from './components/card-img-text/card-img-text.c
 import { BlogComponent } from './components/blog/blog.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ClientProjectImedicalComponent } from './components/client-project-imedical/client-project-imedical.component';
+import { WhybitsamericasComponent } from './components/whybitsamericas/whybitsamericas.component';
 
+import { MessageComponent } from './components/message/message.component';
+import { KnowusComponent } from './components/knowus/knowus.component';
+import { TeamComponent } from './components/team/team.component';
+import { AchievementsComponent } from './components/achievements/achievements.component';
+import { TestimoniesComponent } from './components/testimonies/testimonies.component';
+import { TecnologiesProjectserviceComponent } from './components/tecnologies-projectservice/tecnologies-projectservice.component';
+import { HistoryComponent } from './components/history/history.component';
 
 // Servicios
 import { NodeService } from '../services/cards/node.service';
@@ -35,15 +43,15 @@ import { SlickModule } from 'ngx-slick';
 import { OwlModule } from 'ngx-owl-carousel';
 import { NgxCarouselModule } from 'ngx-carousel';
 import 'hammerjs';
-import { FormsModule }   from '@angular/forms';
-
+import { FormsModule } from '@angular/forms';
+import { SelectModule } from 'ng2-select';
 
 // Pipes
 import { SafeHtmlPipe } from '../pipes/safehtml.pipe';
 import { SafeCssPipe } from '../pipes/safecss.pipe';
 import { ClientProServComponent } from './components/client-proserv/client-proserv.component';
 import { WorkusComponent } from './components/workus/workus.component';
-import { MessageComponent } from './components/message/message.component';
+
 
 @NgModule({
   declarations: [
@@ -72,7 +80,14 @@ import { MessageComponent } from './components/message/message.component';
     BlogComponent,
     ClientProjectImedicalComponent,
     ClientProServComponent,
-    MessageComponent
+    MessageComponent,
+    WhybitsamericasComponent,
+    KnowusComponent,
+    TeamComponent,
+    AchievementsComponent,
+    TecnologiesProjectserviceComponent,
+    HistoryComponent,
+    TestimoniesComponent
   ],
   exports: [
     CarouselItemComponent,
@@ -97,9 +112,28 @@ import { MessageComponent } from './components/message/message.component';
     CardImgTextComponent,
     BlogComponent,
     ClientProjectImedicalComponent,
-    ClientProServComponent
+    ClientProServComponent,
+    WhybitsamericasComponent,
+    KnowusComponent,
+    TeamComponent,
+    AchievementsComponent,
+    TecnologiesProjectserviceComponent,
+    HistoryComponent,
+    TestimoniesComponent
   ],
-  imports: [BrowserModule, CommonModule, NgbModule, RouterModule, AdfModule,  SlickModule.forRoot(), OwlModule, NgxCarouselModule, BrowserAnimationsModule, FormsModule ],
+  imports: [
+    BrowserModule,
+    CommonModule,
+    NgbModule,
+    RouterModule,
+    AdfModule,
+    SlickModule.forRoot(),
+    OwlModule,
+    NgxCarouselModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    SelectModule
+  ],
   providers: [NodeService]
 })
 export class CardsModule { }

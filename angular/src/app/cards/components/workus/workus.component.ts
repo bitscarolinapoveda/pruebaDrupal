@@ -4,6 +4,7 @@ import 'rxjs/add/operator/map';
 import { HttpService } from '../../../services/http/http.service';
 import { DataMessage } from '../message/message.component';
 import { CustomCardService } from 'src/app/services/cards/v1-card.services';
+import { HttpClient } from '@angular/common/http';
 
 declare var jQuery: any;
 declare var $: any;
@@ -24,9 +25,18 @@ export class WorkusComponent implements OnInit {
   dataMessage: DataMessage[];
   titulo: string;
   list: any[];
+  bandPais: Array<string>;
+  listPais: Array<string>;
+  pais: any;
 
+  private value: any = {};
+  private _disabledV: string;
+  private disabled: boolean;
 
   onSubmit(formulario) {
+
+    this.pais = '';
+
     this.dataMessage = [];
     console.log(formulario);
     formulario['webform_id'] = 'work_with_us';
@@ -43,6 +53,7 @@ export class WorkusComponent implements OnInit {
       'X-CSRF-Token': this._token
     })
       .subscribe(datos => {
+        this.ubicar();
         if (datos.error) {
           for (var key in datos.error) {
             this.dataMessage.push(
@@ -66,16 +77,24 @@ export class WorkusComponent implements OnInit {
       });
 
   }
-  constructor(private _http: HttpService, private _service: CustomCardService) {
+  constructor(private _http: HttpService, private _service: CustomCardService, private http_pais: HttpClient) {
     this.dataMessage = [];
     this.list = [];
+    this.bandPais = [];
+    this.listPais = [];
+    this._disabledV = '0';
+    this.disabled = false;
+    this.pais = '';
   }
 
   ngOnInit() {
     this._http.get('rest/session/token', {}, { responseType: 'text' }).subscribe((response) => {
       this._token = response;
     });
+
     this.getPopoverService();
+
+    this.getPaises();
 
     $(function () {
       $('[data-toggle="popover"]').popover(
@@ -111,5 +130,51 @@ export class WorkusComponent implements OnInit {
       'has-error': this.verificaValidTouched(campo),
       'has-feedback': this.verificaValidTouched(campo)
     };
+  }
+
+  ubicar() {
+    const x = document.querySelector('.tab');
+    console.log(x);
+    if (x) {
+      x.scrollIntoView({ block: 'start', inline: 'start', behavior: 'smooth' });
+    }
+  }
+
+  getPaises() {
+    this.http_pais.get<any[]>('https://restcountries.eu/rest/v2/all').subscribe(params => {
+      for (let index = 0; index < params.length; index++) {
+        this.bandPais.push(params[index].name);
+      }
+      this.listPais = this.bandPais;
+    });
+  }
+
+
+  // Metodos del select
+  private get disabledV(): string {
+    return this._disabledV;
+  }
+
+  private set disabledV(value: string) {
+    this._disabledV = value;
+    this.disabled = this._disabledV === '1';
+  }
+
+  public selectedPais(value: any): void {
+    this.pais = value.text;
+    console.log('Selected value is: ', value);
+  }
+
+  public removedPais(value: any): void {
+    this.pais = '';
+    console.log('Removed value is: ', value);
+  }
+
+  public typedPais(value: any): void {
+    console.log('New search input: ', value);
+  }
+
+  public refreshValuePais(value: any): void {
+    this.pais = value.text;
   }
 }

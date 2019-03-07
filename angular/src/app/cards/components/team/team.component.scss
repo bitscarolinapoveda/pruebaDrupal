@@ -1,0 +1,303 @@
+@import './src/assets/scss/mixin.scss';
+
+#kw-title {
+    h2 {
+        margin-left: 3%;
+        font-size: 40px;
+        color: #002b49;
+        text-align: center;
+        margin-top: 40px;
+
+        @include breakpoint (phone) {      
+            font-size: 28px;     
+            margin-left: 0;
+        }
+    }
+
+    p {
+        color: #002b49cc;
+        font-family: Open Sans Codensed;
+        margin-right: 180px;
+        margin-left: 200px;
+        margin-top: 10px;
+        font-size: 20px;
+        text-align: center;
+
+        @include breakpoint (desktop) {
+            margin-right: 0;
+            margin-left: 0;
+        }
+
+        @include breakpoint (phone) {
+            margin-right: 20px;
+            margin-left: 0;
+        }
+    }
+}
+
+.contenedor {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.item {
+    width: 405%;
+
+    @include breakpoint (tablet) {
+        width: 200%;
+    }
+
+    @include breakpoint (desktop) {
+        width: 100%;
+    }
+}
+
+.url-link {
+    width: 100%;
+    padding-left: 4%;
+    padding-right: 4%;
+    margin-top: 1%;
+    text-decoration: none;
+
+    @include breakpoint (desktop) {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .container-img {
+        height: 123px;
+        position: relative;
+
+        @include breakpoint (tablet) {
+            padding-left: 0%;
+            padding-right: 0%;
+        }
+
+        @include breakpoint (desktop) {
+            padding-left: 10%;
+            padding-right: 10%;
+        }
+
+        .img-float {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            border-radius: 50%;
+        }
+    }
+
+    .info {
+        width: 100%;
+        color: #002b49;
+        text-align: center;
+
+        &::before {
+            content: '';
+            background: linear-gradient(-90deg, rgba(255, 255, 255, 0), #b8d950, rgba(255, 255, 255, 0));
+            height: 1px;
+            right: 0%;
+            left: 5%;
+            position: absolute;
+
+            @include breakpoint (tablet) {
+                display: none;
+            }
+
+            @include breakpoint (desktop) {
+                display: none;
+            }
+        }
+
+        @include breakpoint (tablet) {
+            height: 250px;
+        }
+
+        .line {
+            visibility: hidden;
+
+            @include breakpoint (tablet) {
+                visibility: visible;
+                background: linear-gradient(-90deg, rgba(255, 255, 255, 0), #b8d950, rgba(255, 255, 255, 0));
+                height: 1px;
+                width: 83%;
+                position: relative;
+                top: 17px;
+            }
+
+            @include breakpoint (desktop) {
+                visibility: visible;
+                background: linear-gradient(-90deg, rgba(255, 255, 255, 0), #b8d950, rgba(255, 255, 255, 0));
+                height: 1px;
+                width: 83%;
+                position: relative;
+                top: 17px;
+            }
+        }
+
+        .name-cargo {
+            padding-top: 14%;
+            font-size: 20px;
+            font-family: 'Open Sans';
+            font-weight: 300;
+
+            @include breakpoint (desktop) {
+                padding-top: 14%;
+            }
+        }
+
+        .main-title {
+            margin-top: 4%;
+            font-size: 20px;
+            font-family: 'Open Sans Codensed';
+            font-weight: 300;
+            // text-transform: uppercase;
+        }
+
+        .correo {
+            width: 100%;
+            margin-top: 5.2%;
+            padding-left: 27%;
+            padding-right: 26%;
+            font-size: 14px;
+            font-family: 'Open Sans';
+            font-weight: 300;
+
+            @include breakpoint (desktop) {
+                padding-left: 12%;
+                padding-right: 12%;
+                width: 100%;
+            }
+
+            @include breakpoint (phone) {
+                padding: 0;
+            }
+        }
+
+        .in {
+            font-size: 14px;
+            margin-top: 6%;
+            font-family: 'Open Sans';
+            font-weight: 900;
+            color: #a6cf24;
+
+            @include breakpoint (desktop) {
+                margin-top: 2%;
+            }
+        }
+    }
+}
+
+#main-title {
+    color: #002b49;
+    text-align: center;
+    margin-top: 64px;
+
+    @include breakpoint(desktop) {
+        margin-top: 80px;
+    }
+
+    @include breakpoint(tablet) {
+        margin-top: 80px;
+    }
+
+    h2 {
+        margin-left: 3%;
+        font-size: 30px;
+        transform: scaleY(1.2);
+
+        @include breakpoint(desktop) {
+            margin-left: 0;
+            font-size: 40px;
+            width: 100%;
+        }
+
+        @include breakpoint(tablet) {
+            margin-left: 0;
+            font-size: 40px;
+            width: 100%;
+        }
+    }
+}
+
+#titles {
+    color: #002b49;
+    text-align: center;
+    margin-top: 60px;
+
+    @include breakpoint(desktop) {
+        margin-top: 80px;
+    }
+
+    @include breakpoint(tablet) {
+        margin-top: 80px;
+    }
+
+    h3 {
+        margin-left: 3%;
+        font-size: 16px;
+
+        @include breakpoint(desktop) {
+            margin-left: 0;
+            font-size: 20px;
+            width: 100%;
+        }
+
+        @include breakpoint(tablet) {
+            margin-left: 0;
+            font-size: 20px;
+            width: 100%;
+        }
+    }
+}
+
+
+h1 {
+    min-height: 200px;
+    background-color: #ccc;
+    text-align: center;
+    line-height: 200px;
+}
+
+.leftRs {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    border: none;
+    background: transparent;
+    background-image: url(/assets/icon/left-arrow.svg);
+    background-size: 37px;
+    height: 0;
+    width: 28px;
+    overflow: hidden;
+    padding-top: 37px;
+    cursor: pointer;
+}
+
+.rightRs {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    border: none;
+    background: transparent;
+    background-image: url(/assets/icon/right-arrow.svg);
+    background-size: 37px;
+    height: 0;
+    width: 28px;
+    overflow: hidden;
+    padding-top: 37px;
+    cursor: pointer;
+}
+
+.rightRs:focus,
+.leftRs:focus {
+    outline: none;
+}
+
+:host ::ng-deep .tile {
+    box-shadow: none !important;
+}

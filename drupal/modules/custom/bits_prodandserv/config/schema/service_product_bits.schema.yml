@@ -22,3 +22,30 @@ bits_prodandserv.service_product_bits.*:
     type:
       type: string
       label: 'Service or Product'
+    clients:
+      type: sequence
+      label: 'Clients'
+    modules:
+        type: sequence
+        label: 'Modules'
+    left_media:
+        type: sequence
+        label: 'Left Media'
+    technologies:
+        type: sequence
+        label: 'Technologies'
+    testimonies:
+        type: sequence
+        label: 'Testimonies'
+    achievements:
+        type: sequence
+        label: 'Achievements'
+    team:
+        type: sequence
+        label: 'Team'
+    right_media:
+        type: sequence
+        label: 'Right Media'
+    video:
+        type: sequence
+        label: 'Video'

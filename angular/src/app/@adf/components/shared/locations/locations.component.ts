@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../../../../services/http/http.service';
 import { CustomCardService } from 'src/app/services/cards/v1-card.services';
+declare var $: any;
 
 @Component({
   selector: 'app-locations',
@@ -10,7 +11,13 @@ import { CustomCardService } from 'src/app/services/cards/v1-card.services';
 export class LocationsComponent implements OnInit {
   public items = [];
   public title: string;
-  public imageIcon = '/assets/icon/iconBitsLocationMarker.svg';
+  public imageIcon = {
+    url: '/assets/icon/iconBitsLocationMarker.svg',
+    scaledSize: {
+      width: 40,
+      height: 66
+    }
+  };
   public closeOthers = true;
   public infoWindowOpen = true;
   public locations_data: any;
@@ -114,8 +121,8 @@ export class LocationsComponent implements OnInit {
     this.titleCity = ubicacion.title;
     this.addressCity = ubicacion.field_address;
     this.telephoneCity = ubicacion.field_telephone;
-    for (let i = 0; i < this.locations_data.length ; i++) {
-      document.getElementById( i + '').style.backgroundColor = '#f2f4f6';
+    for (let i = 0; i < this.locations_data.length; i++) {
+      document.getElementById(i + '').style.backgroundColor = '#f2f4f6';
     }
     document.getElementById(index + '').style.backgroundColor = '#d9dfe4';
   }
