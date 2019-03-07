@@ -138,7 +138,6 @@ export class WorkusComponent implements OnInit {
 
   ubicar() {
     const x = document.querySelector('.tab');
-    console.log(x);
     if (x) {
       x.scrollIntoView({ block: 'start', inline: 'start', behavior: 'smooth' });
     }
@@ -166,16 +165,13 @@ export class WorkusComponent implements OnInit {
 
   public selectedPais(value: any): void {
     this.pais = value.text;
-    console.log('Selected value is: ', value);
   }
 
   public removedPais(value: any): void {
     this.pais = '';
-    console.log('Removed value is: ', value);
   }
 
   public typedPais(value: any): void {
-    console.log('New search input: ', value);
   }
 
   public refreshValuePais(value: any): void {

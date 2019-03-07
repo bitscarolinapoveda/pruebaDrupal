@@ -191,8 +191,7 @@ export class TabsComponent implements OnInit {
   }
 
   ubicar() {
-    const x = document.querySelector('.tab');
-    console.log(x);
+    const x = document.querySelector('.tab');    
     if (x) {
       x.scrollIntoView({ block: 'start', inline: 'start', behavior: 'smooth' });
     }
@@ -235,16 +234,13 @@ export class TabsComponent implements OnInit {
 
   public selectedPais(value: any): void {
     this.pais = value.text;
-    console.log('Selected value is: ', value);
   }
 
   public removedPais(value: any): void {
     this.pais = '';
-    console.log('Removed value is: ', value);
   }
 
   public typedPais(value: any): void {
-    console.log('New search input: ', value);
   }
 
   public refreshValuePais(value: any): void {
@@ -253,16 +249,13 @@ export class TabsComponent implements OnInit {
 
   public selectedProduct(value: any): void {
     this.product = value.text;
-    console.log('Selected value is: ', value);
   }
 
   public removedProduct(value: any): void {
     this.product = '';
-    console.log('Removed value is: ', value);
   }
 
   public typedProduct(value: any): void {
-    console.log('New search input: ', value);
   }
 
   public refreshValueProduct(value: any): void {
@@ -271,16 +264,13 @@ export class TabsComponent implements OnInit {
 
   public selectedService(value: any): void {
     this.service = value.text;
-    console.log('Selected value is: ', value);
   }
 
   public removedService(value: any): void {
     this.service = '';
-    console.log('Removed value is: ', value);
   }
 
   public typedService(value: any): void {
-    console.log('New search input: ', value);
   }
 
   public refreshValueService(value: any): void {
