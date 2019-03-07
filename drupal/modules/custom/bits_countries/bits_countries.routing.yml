@@ -9,3 +9,11 @@ bits_countries.load_countries_data_form:
   options:
     _admin_route: TRUE
 
+bits_countries.menu:
+  path: '/admin/structure/bits_countries'
+  defaults:
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+    _title: 'Countries admin'
+  requirements:
+    _permission: 'access administration pages'
+
