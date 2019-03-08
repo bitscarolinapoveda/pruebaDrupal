@@ -71,8 +71,8 @@
           o invalido</div>
       </div>
       <div class="form-group" class="col-md-12 terminos_grupo">
-        <input type="checkbox" id="terminos" name="terms_of_service" value="false" required ngModel>
-        <label ng-reflect-ng-class="" for="terms-of-service">He leído y acepto los
+        <input type="checkbox" [checked]="checked" id="terms_of_serviceWS" name="terms_of_serviceWS" value="false" required ngModel>
+        <label ng-reflect-ng-class="" for="terms_of_serviceWS">He leído y acepto los
           <a data-trigger="focus" role="button" data-toggle="popover" data-placement="top" href="#">
             términos y condiciones
           </a>

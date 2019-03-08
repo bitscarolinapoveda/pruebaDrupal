@@ -44,8 +44,8 @@ export class TabsComponent implements OnInit {
   pais: any;
   product: any;
   service: any;
-  objService: any;
-  sele: boolean;
+  descrip_form: string;
+  checked: boolean;
 
   private value: any = {};
   private _disabledV: string;
@@ -65,7 +65,7 @@ export class TabsComponent implements OnInit {
     this.pais = '';
     this.product = '';
     this.service = '';
-    this.sele = false;
+    this.checked = false;
   }
 
   toogleHidden() {
@@ -144,6 +144,8 @@ export class TabsComponent implements OnInit {
 
     this.getPopoverService();
 
+    this.getForm();
+
     this.getDatosForm();
 
     this.getPaises();
@@ -191,12 +193,17 @@ export class TabsComponent implements OnInit {
   }
 
   ubicar() {
-    const x = document.querySelector('.tab');    
+    const x = document.querySelector('.tab');
     if (x) {
       x.scrollIntoView({ block: 'start', inline: 'start', behavior: 'smooth' });
     }
   }
 
+  getForm() {
+    this._service.getCustomForm('work_with_us').subscribe(params => {
+      this.descrip_form = params.markup['#markup'];
+    });
+  }
   getDatosForm() {
     this._service.getCustomCardInformation('allproductsandservicescard').subscribe(params => {
       for (let index = 0; index < params.data.length; index++) {
