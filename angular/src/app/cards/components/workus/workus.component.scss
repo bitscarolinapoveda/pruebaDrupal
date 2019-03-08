@@ -151,9 +151,9 @@ input:-moz-placeholder {
   }
 }
 
-.hoja-v {
+/* .hoja-v {
   color: transparent;
-}
+} */
 
 .hoja-v::-webkit-file-upload-button {
   visibility: hidden;
@@ -222,39 +222,46 @@ input:-moz-placeholder {
 }
 
 /deep/ {
-  .select-autocomplete {
-    .btn-default {
-      color: #333;
-      background-color: #fff;
-      border-color: #ccc;
-    }
+  #formulario_contacto {
+    .select-autocomplete {
+      .btn-default {
+        color: #333;
+        background-color: #fff;
+        border-color: #ccc;
+      }
 
-    .btn-secondary {
-      background-color: #fff;
-    }
+      .btn-secondary {
+        background-color: #fff;
+      }
 
-    .ui-select-choices {
-      display: block;
-    }
+      .ui-select-choices {
+        display: block;
+      }
 
-    .pull-right {
-      float: right !important;
-    }
+      .pull-right {
+        float: right !important;
+      }
 
-    .ui-select-toggle {
-      width: 100%;
-      padding: 4px 2px;
-      outline: none;
-      border: none;
-      border-bottom: 1px solid #b2c6cd;
-      color: #002b49;
-      border-radius: 0px;
-      background: #f8f8f8;
-    }
+      .ui-select-toggle {
+        width: 100%;
+        padding: 4px 2px;
+        outline: none;
+        border: none;
+        border-bottom: 1px solid #b2c6cd;
+        color: #002b49;
+        border-radius: 0px;
+        background: #f8f8f8;
+      }
 
-    .ui-select-match {
-      font-family: 'Open Sans light';
-    }
+      .ui-select-match {
+        font-family: 'Open Sans light';
+      }
 
+      .ui-select-container {
+        width: 100% !important;
+      }
+
+    }
   }
+
 }

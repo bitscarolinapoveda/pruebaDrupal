@@ -43,7 +43,7 @@ import { SlickModule } from 'ngx-slick';
 import { OwlModule } from 'ngx-owl-carousel';
 import { NgxCarouselModule } from 'ngx-carousel';
 import 'hammerjs';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,  ReactiveFormsModule } from '@angular/forms';
 import { SelectModule } from 'ng2-select';
 
 // Pipes
@@ -135,7 +135,8 @@ import { WorkusComponent } from './components/workus/workus.component';
     NgxCarouselModule,
     BrowserAnimationsModule,
     FormsModule,
-    SelectModule
+    SelectModule,
+    ReactiveFormsModule
   ],
   providers: [NodeService]
 })
