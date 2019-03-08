@@ -2,6 +2,8 @@
 
 namespace Drupal\bits_newsletter\Plugin\rest\resource;
 
+use Drupal\bits_newsletter\Entity\NewsletterEntity;
+use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Session\AccountProxyInterface;
 use Drupal\rest\ModifiedResourceResponse;
 use Drupal\rest\Plugin\ResourceBase;
@@ -17,7 +19,8 @@ use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
  *   id = "newsletter_entity_rest_resource",
  *   label = @Translation("Newsletter entity rest resource"),
  *   uri_paths = {
- *     "canonical" = "/v1/newsletterentity/export"
+ *     "canonical" = "/v1/newsletterentity/export",
+ *     "https://www.drupal.org/link-relations/create" = "/v1/newsletterentity/export"
  *   }
  * )
  */
@@ -84,15 +87,25 @@ class NewsletterEntityRestResource extends ResourceBase {
    * @throws \Symfony\Component\HttpKernel\Exception\HttpException
    *   Throws exception expected.
    */
-  public function post( $entity) {
+  public function post(array $entity) {
 
     // You must to implement the logic of your REST Resource here.
     // Use current user after pass authentication to validate access.
     if (!$this->currentUser->hasPermission('access content')) {
       throw new AccessDeniedHttpException();
     }
+    $message = NewsletterEntity::create([
+      // And other fields required...
+      'name' => $entity['name'],
+      'last_name' => $entity['last_name'],
+      'email' => $entity['email'],
+    ]);
+    $message->save();
 
-    return new ModifiedResourceResponse($entity, 200);
+    return new ModifiedResourceResponse(["id" =>$message->id()], 200);
   }
 
+  public function get() {
+    return new ResourceResponse([]);
+  }
 }

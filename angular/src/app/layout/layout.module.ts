@@ -11,11 +11,14 @@ import { FooterNewsletterComponent } from '../cards/components/footer/footer-new
 import { GeneratorOfLinksComponent } from '../cards/components/generator-of-links/generator-of-links.component';
 import { FooterBlockComponent } from '../cards/components/footer/footer-block/footer-block';
 import { RouterModule } from '@angular/router';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   declarations: [
     ItemMenuComponent,
