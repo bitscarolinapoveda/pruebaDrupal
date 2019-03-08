@@ -1,0 +1,148 @@
+@import './src/assets/scss/mixin.scss';
+
+.conteiner-1 {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 70px 65px 40px;
+}
+
+.conteiner-2 {
+    max-width: 900px;
+    position: relative;
+    margin: 0 auto;
+
+    .div-left-side {
+        background: #e2e2e2;
+        background: -moz-linear-gradient(left, #e2e2e2 0%, #a6cf24 100%);
+        background: -webkit-linear-gradient(left, #e2e2e2 0%, #a6cf24 100%);
+        background: linear-gradient(to right, #e2e2e2 0%, #a6cf24 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e2e2e2', endColorstr='#135670', GradientType=1);
+        width: 42%;
+        height: 2px;
+        position: absolute;
+        left: 0;
+        margin-left: -30px;
+
+        @media (max-width: 500px) {
+            background: #a6cf24;
+            width: 120%;
+        }
+    }
+
+    .divIconSeparator {
+        display: block;
+        position: absolute;
+        width: 150px;
+        left: 45%;
+        margin-left: -30px;
+        margin-top: -20px;
+        text-align: center;
+
+        @media (max-width: 500px) {
+            left: 0;
+            margin-left: 0;
+            margin-top: 10px;
+        }
+    }
+
+    .div-right-side {
+        background: #a6cf24;
+        background: -moz-linear-gradient(left, #a6cf24 0%, #e2e2e2 99%);
+        background: -webkit-linear-gradient(left, #a6cf24 0%, #e2e2e2 99%);
+        background: linear-gradient(to right, #a6cf24 0%, #e2e2e2 99%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#135670', endColorstr='#e2e2e2', GradientType=1);
+        width: 42%;
+        height: 2px;
+        display: block;
+        position: absolute;
+        right: 0;
+        margin-right: -30px;
+
+        @media (max-width: 500px) {
+            display: none;
+        }
+    }
+}
+
+.ocultar {
+    display: none;
+}
+
+/deep/ {
+    .select-autocomplete {
+        .btn-default {
+            color: #333;
+            background-color: #fff;
+            border-color: #ccc;
+        }
+
+        .btn-secondary {
+            background-color: #fff;
+        }
+
+        .ui-select-choices {
+            display: block;
+        }
+
+        .pull-right {
+            float: right !important;
+        }
+
+        .ui-select-toggle {
+            width: 100%;
+            padding: 4px 2px;
+            outline: none;
+            border: none;
+            border-bottom: 1px solid #b2c6cd;
+            color: #002b49;
+            border-radius: 0px;
+            background: #f8f8f8;
+        }
+
+        .ui-select-match {
+            font-family: 'Open Sans light';
+        }
+
+        .ui-select-container {
+            width: 130%;
+        }
+    }
+}
+
+.container {
+    @include breakpoint (desktop) {
+        margin-left: 320px;
+    }
+
+    .items {
+        margin-top: 10px;
+        margin-left: 40px;
+        margin-right: 30px;
+
+        label {
+            color: #a6cf24;
+        }
+    }
+
+    .button-all {
+        padding-top: 45px;
+
+        @media (max-width: 500px) {
+            padding-top: 10px;
+        }
+
+        .margin-button {
+            margin-left: 30px !important;
+        }
+    }
+}
+
+.icon-actu {
+    background-image: url('../../../../assets/icon/IconoActualizar.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    position: absolute;
+}

@@ -208,7 +208,6 @@ export class TabsComponent implements OnInit {
     this._service.getCustomCardInformation('allproductsandservicescard').subscribe(params => {
       for (let index = 0; index < params.data.length; index++) {
         if (params.data[index].type === 'product') {
-
           this.bandProduct.push(params.data[index].label);
         } else if (params.data[index].type === 'service') {
           this.bandService.push(params.data[index].label);

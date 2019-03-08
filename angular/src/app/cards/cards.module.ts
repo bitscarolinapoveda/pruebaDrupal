@@ -26,7 +26,6 @@ import { BlogComponent } from './components/blog/blog.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ClientProjectImedicalComponent } from './components/client-project-imedical/client-project-imedical.component';
 import { WhybitsamericasComponent } from './components/whybitsamericas/whybitsamericas.component';
-
 import { MessageComponent } from './components/message/message.component';
 import { KnowusComponent } from './components/knowus/knowus.component';
 import { TeamComponent } from './components/team/team.component';
@@ -34,6 +33,7 @@ import { AchievementsComponent } from './components/achievements/achievements.co
 import { TestimoniesComponent } from './components/testimonies/testimonies.component';
 import { TecnologiesProjectserviceComponent } from './components/tecnologies-projectservice/tecnologies-projectservice.component';
 import { HistoryComponent } from './components/history/history.component';
+import { FilterComponent } from './components/filter/filter.component';
 
 // Servicios
 import { NodeService } from '../services/cards/node.service';
@@ -51,6 +51,7 @@ import { SafeHtmlPipe } from '../pipes/safehtml.pipe';
 import { SafeCssPipe } from '../pipes/safecss.pipe';
 import { ClientProServComponent } from './components/client-proserv/client-proserv.component';
 import { WorkusComponent } from './components/workus/workus.component';
+
 
 
 @NgModule({
@@ -87,7 +88,8 @@ import { WorkusComponent } from './components/workus/workus.component';
     AchievementsComponent,
     TecnologiesProjectserviceComponent,
     HistoryComponent,
-    TestimoniesComponent
+    TestimoniesComponent,
+    FilterComponent
   ],
   exports: [
     CarouselItemComponent,
@@ -119,7 +121,8 @@ import { WorkusComponent } from './components/workus/workus.component';
     AchievementsComponent,
     TecnologiesProjectserviceComponent,
     HistoryComponent,
-    TestimoniesComponent
+    TestimoniesComponent,
+    FilterComponent
   ],
   imports: [
     BrowserModule,
