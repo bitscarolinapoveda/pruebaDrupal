@@ -11,7 +11,7 @@ export class TestimoniesComponent implements OnInit {
 
   public testimoniesTitle;
   public testimoniesSubTitle;
-  public testimoniesData; 
+  public testimoniesData;
 
   @Output() propagar = new EventEmitter<DataMenu>();
   datosMenu: DataMenu;
@@ -29,11 +29,10 @@ export class TestimoniesComponent implements OnInit {
       url: '/imedical'
     };
     this.propagar.emit(this.datosMenu);
-    this.getTestimoniesInfo ();
+    this.getTestimoniesInfo();
   }
-  getTestimoniesInfo () {
+  getTestimoniesInfo() {
     return this.testimonies.getCustomCardInformation('testimoniesbitsamericas').subscribe(items => {
-      console.log(items);
       this.testimoniesTitle = items.header[0].data.title;
       this.testimoniesSubTitle = items.header[1].data.sub_title;
       this.testimoniesData = items.data;
