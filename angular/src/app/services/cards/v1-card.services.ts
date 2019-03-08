@@ -32,6 +32,11 @@ export class CustomCardService {
     private http: HttpService
   ) { }
 
+  getCustomForm(idForm) {
+    const url = `webform_rest/${idForm}/elements`;
+    return this.http.get(url);
+  }
+
   getCustomCardInformation(idblock) {
     const url = `v1/card/config/${idblock}/export?_format=json`;
     return this.http.get(url);
