@@ -35,6 +35,8 @@ export class WorkusComponent implements OnInit {
   private _disabledV: string;
   private disabled: boolean;
 
+  checked: boolean;
+
   onSubmit(formulario) {
 
     this.dataMessage = [];
@@ -89,6 +91,7 @@ export class WorkusComponent implements OnInit {
     this._disabledV = '0';
     this.disabled = false;
     this.pais = '';
+    this.checked = false;
   }
 
   ngOnInit() {

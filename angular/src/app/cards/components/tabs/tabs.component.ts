@@ -45,6 +45,7 @@ export class TabsComponent implements OnInit {
   product: any;
   service: any;
   descrip_form: string;
+  checked: boolean;
 
   private value: any = {};
   private _disabledV: string;
@@ -64,6 +65,7 @@ export class TabsComponent implements OnInit {
     this.pais = '';
     this.product = '';
     this.service = '';
+    this.checked = false;
   }
 
   toogleHidden() {
