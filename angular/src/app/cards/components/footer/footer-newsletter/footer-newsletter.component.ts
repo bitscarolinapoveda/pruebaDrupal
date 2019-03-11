@@ -2,7 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import { NewsLetter } from './newsletterModel';
 import { CustomCardService } from './../../../../services/cards/v1-card.services';
 import {HttpService} from "../../../../services/http/http.service";
-import {DataMessage} from "../../message/message.component";
+import {DataMessage} from "../../../../message/components/message/message.component";
 
 declare var $: any;
 
@@ -136,7 +136,6 @@ export class FooterNewsletterComponent implements OnInit {
         'last_name': this.last_name_value,
         'email': this.email_value,
       };
-      debugger;
       this._http.post('v1/newsletterentity/export?_format=json', data, {
           'Content-Type': 'application/json',
           'X-CSRF-Token': this._token
@@ -154,12 +153,11 @@ export class FooterNewsletterComponent implements OnInit {
                   }
 
               } else if (datos.id) {
-                  debugger;
                   this.dataMessage.push(
                       {
                           visible: true,
                           status: 'success',
-                          message: 'Respuesta satisfactoria'
+                          message: 'Registro satisfactorio'
                       }
                   );
               }

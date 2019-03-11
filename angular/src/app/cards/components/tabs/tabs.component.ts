@@ -3,12 +3,12 @@ import { ContactUsComponent } from 'src/app/main/pages/contact-us/contact-us.com
 import { Component, OnInit, ViewChild } from '@angular/core';
 import 'rxjs/add/operator/map';
 import { HttpService } from '../../../services/http/http.service';
-import { DataMessage } from '../message/message.component';
 import { pureObjectDef } from '@angular/core/src/view';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { analyzeAndValidateNgModules } from '@angular/compiler';
 import { SelectComponent } from 'ng2-select';
+import {DataMessage} from "../../../message/components/message/message.component";
 
 declare var jQuery: any;
 declare var $: any;
@@ -76,7 +76,6 @@ export class TabsComponent implements OnInit {
   onSubmit(formulario) {
 
     this.dataMessage = [];
-    console.log(formulario);
     formulario['webform_id'] = 'contact_us';
     $('#formulario_contacto')[0].reset();
 

@@ -1,5 +1,5 @@
 <ng-container>
-  <section id="footer-block-newsletter">
+    <section id="footer-block-newsletter">
     <div class="newsletter-info">
       <h6 *ngIf="footerData.title">{{ footerData.title | uppercase }}</h6>
       <p [innerHTML]="footerData.subtitle"></p>
@@ -21,6 +21,7 @@
             </div>
             <div class="modal-body">
               <form action="">
+                <app-message [dataMessage]="dataMessage"></app-message>
                 <div class="col-md-12 item">
                   <label class="label-modal" for="exampleInputNombre-nw">{{ nameInput }}*</label>
                   <input class="input-modal" ngModel type="text" id="nombree" placeholder="{{ nameInputPlaceholder }}"

@@ -12,6 +12,7 @@ import { GeneratorOfLinksComponent } from '../cards/components/generator-of-link
 import { FooterBlockComponent } from '../cards/components/footer/footer-block/footer-block';
 import { RouterModule } from '@angular/router';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {MessageModule} from "../message/message.module";
 
 @NgModule({
   imports: [
@@ -19,6 +20,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
+    MessageModule,
   ],
   declarations: [
     ItemMenuComponent,
