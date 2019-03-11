@@ -1,11 +1,12 @@
 import { Http } from '@angular/http';
-import { Component, OnInit, Output, EventEmitter, ViewChild } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 import 'rxjs/add/operator/map';
 import { HttpService } from '../../../services/http/http.service';
 import { DataMessage } from '../message/message.component';
 import { CustomCardService } from 'src/app/services/cards/v1-card.services';
 import { HttpClient } from '@angular/common/http';
 import { SelectComponent } from 'ng2-select';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 declare var jQuery: any;
 declare var $: any;
@@ -17,6 +18,7 @@ declare var $: any;
 })
 export class WorkusComponent implements OnInit {
   @ViewChild('paisWU') public ngSelectW: SelectComponent;
+  @ViewChild('fileInput') hojavWS: ElementRef;
 
   hidden = false;
   private _token: string;
@@ -30,6 +32,7 @@ export class WorkusComponent implements OnInit {
   bandPais: Array<string>;
   listPais: Array<string>;
   pais: any;
+  hojaWU: any;
 
   private value: any = {};
   private _disabledV: string;
@@ -37,7 +40,12 @@ export class WorkusComponent implements OnInit {
 
   checked: boolean;
 
+  form: FormGroup;
+  file: any;
+
   onSubmit(formulario) {
+
+    formulario['archivo_adjunto'] = this.file;
 
     this.dataMessage = [];
     console.log(formulario);
@@ -83,7 +91,7 @@ export class WorkusComponent implements OnInit {
       });
 
   }
-  constructor(private _http: HttpService, private _service: CustomCardService, private http_pais: HttpClient) {
+  constructor(private _http: HttpService, private _service: CustomCardService, private http_pais: HttpClient, private fb: FormBuilder) {
     this.dataMessage = [];
     this.list = [];
     this.bandPais = [];
@@ -92,6 +100,11 @@ export class WorkusComponent implements OnInit {
     this.disabled = false;
     this.pais = '';
     this.checked = false;
+    this.form = this.fb.group({
+      hojav: null
+    });
+    this.file = '';
+    this.hojaWU = '';
   }
 
   ngOnInit() {
@@ -119,6 +132,14 @@ export class WorkusComponent implements OnInit {
         e.preventDefault();
       });
     });
+  }
+
+  onFileChange(event) {
+    if (event.target.files.length > 0) {
+      this.file = event.target.files[0];
+      this.form.get('hojav').setValue(this.file);
+      this.hojaWU = this.file.name;
+    }
   }
 
   verificaValidTouched(campo) {
@@ -154,7 +175,6 @@ export class WorkusComponent implements OnInit {
       this.listPais = this.bandPais;
     });
   }
-
 
   // Metodos del select
   private get disabledV(): string {
