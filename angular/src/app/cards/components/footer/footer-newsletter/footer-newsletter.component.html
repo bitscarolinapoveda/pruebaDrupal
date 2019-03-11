@@ -23,7 +23,8 @@
               <form action="">
                 <div class="col-md-12 item">
                   <label class="label-modal" for="exampleInputNombre-nw">{{ nameInput }}*</label>
-                  <input class="input-modal" type="text" id="nombree" placeholder="{{ nameInputPlaceholder }}" name="nombre">
+                  <input class="input-modal" ngModel type="text" id="nombree" placeholder="{{ nameInputPlaceholder }}"
+                    name="nombre" [(ngModel)]="name_value">
                   <div *ngIf="false" class="alert alert-danger" role="alert">
                     Campo obligatorio o invalido
                   </div>
@@ -31,7 +32,7 @@
                 <div class="col-md-12 item">
                   <label class="label-modal" for="exampleInputNombr-nw">{{ lastNameInput }}</label>
                   <input class="input-modal" type="text" id="apellido" placeholder="{{ lastNameInputPlaceholder }}"
-                    name="apellido">
+                    name="apellido" [(ngModel)]="last_name_value">
                   <div *ngIf="false" class="alert alert-danger" role="alert">
                     Campo obligatorio o invalido
                   </div>
@@ -39,7 +40,8 @@
                 <div class="col-md-12 item">
                   <label class="label-modal" for="exampleInputEmail1-nw">{{ emailInput }}*</label>
                   <input class="input-modal" type="email" id="exampleInputEmail1" aria-describedby="emailHelp"
-                    placeholder="{{ emailInputPlaceholder }}" name="correo_electronicoo" pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?">
+                    placeholder="{{ emailInputPlaceholder }}" name="correo_electronico" pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
+                    [(ngModel)]="email_value">
                   <div *ngIf="false" class="alert alert-danger" role="alert">
                     Campo obligatorio o invalido
                   </div>
@@ -56,13 +58,12 @@
                   <i class="fas fa-info-circle icon-tooltip"></i>
                 </a>
               </div>
-              <button type="button" class="save-modal-button">{{ buttonSendNewsletter }}</button>
+              <button type="button" class="save-modal-button" (click)="clickOnSubmit()">{{ buttonSendNewsletter }}</button>
             </div>
           </div>
         </div>
       </div>
     </div>
-
   </section>
 </ng-container>
 <div id='popover-title'>{{titleTermsTooltip}}</div>

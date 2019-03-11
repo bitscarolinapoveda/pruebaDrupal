@@ -1,0 +1,19 @@
+add newsletter entity entities:
+  title: 'Create new Newsletter entity entities'
+
+administer newsletter entity entities:
+  title: 'Administer Newsletter entity entities'
+  description: 'Allow to access the administration form to configure Newsletter entity entities.'
+  restrict access: true
+
+delete newsletter entity entities:
+  title: 'Delete Newsletter entity entities'
+
+edit newsletter entity entities:
+  title: 'Edit Newsletter entity entities'
+
+view published newsletter entity entities:
+  title: 'View published Newsletter entity entities'
+
+view unpublished newsletter entity entities:
+  title: 'View unpublished Newsletter entity entities'
