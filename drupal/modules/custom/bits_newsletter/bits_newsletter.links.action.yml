@@ -1,0 +1,5 @@
+entity.newsletter_entity.add_form:
+  route_name: entity.newsletter_entity.add_form
+  title: 'Add Newsletter entity'
+  appears_on:
+    - entity.newsletter_entity.collection

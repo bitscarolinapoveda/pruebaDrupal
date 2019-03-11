@@ -1,0 +1,15 @@
+# Content entities menu items definition
+newsletter.menu_link:
+  title: 'Newsletter'
+  route_name: bits_newsletter.menu
+  description: 'Newsletter menu'
+  parent: system.admin_structure
+  weight: 100
+
+
+entity.newsletter_entity.collection:
+  title: 'Newsletter entity list'
+  route_name: entity.newsletter_entity.collection
+  description: 'List Newsletter entity entities'
+  parent: newsletter.menu_link
+  weight: 100
