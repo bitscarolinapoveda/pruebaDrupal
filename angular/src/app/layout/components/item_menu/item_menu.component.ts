@@ -17,6 +17,10 @@ export class ItemMenuComponent implements OnInit{
     public desktop;
     public mobile;
 
+    row: any;
+    col: any;
+    image: any;
+
     ngOnInit() {
         this.onResize();
     }

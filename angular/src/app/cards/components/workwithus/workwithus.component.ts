@@ -10,10 +10,10 @@ import { DataMenu } from '../menu-template/menu-template.component';
   styleUrls: ['./workwithus.scss']
 })
 export class WorkWithUsComponent implements OnInit {
-  workWithUsTitle: string;
-  workWithUsSubtitle: string;
+  workWithUsTitle: any;
+  workWithUsSubtitle: any;
   url: string;
-  workWithUsButton: string;
+  workWithUsButton: any;
   workWithUsThirdText: string;
   body: string;
   @Output() propagar = new EventEmitter<DataMenu>();

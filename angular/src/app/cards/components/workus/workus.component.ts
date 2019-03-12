@@ -34,9 +34,9 @@ export class WorkusComponent implements OnInit {
   pais: any;
   hojaWU: any;
 
-  private value: any = {};
-  private _disabledV: string;
-  private disabled: boolean;
+  value: any = {};
+  _disabledV: string;
+  disabled: boolean;
 
   checked: boolean;
 
@@ -48,7 +48,6 @@ export class WorkusComponent implements OnInit {
     formulario['archivo_adjunto'] = this.file;
 
     this.dataMessage = [];
-    console.log(formulario);
     formulario['webform_id'] = 'work_with_us';
 
     jQuery('#formulario_contacto')[0].reset();

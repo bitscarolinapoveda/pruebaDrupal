@@ -9,10 +9,10 @@ import { CustomCardService } from '../../../services/cards/v1-card.services';
   styleUrls: ['./workwithus-proserv.scss']
 })
 export class WorkWithUsProServComponent implements OnInit {
-  workWithUsTitle: string;
-  workWithUsSubtitle: string;
+  workWithUsTitle: any;
+  workWithUsSubtitle: any;
   url: string;
-  workWithUsButton: string;
+  workWithUsButton: any;
   workWithUsThirdText: string;
   body: string;
 

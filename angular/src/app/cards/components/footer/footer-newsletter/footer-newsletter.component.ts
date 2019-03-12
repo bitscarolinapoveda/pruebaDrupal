@@ -1,8 +1,8 @@
-import {Component, Input, OnInit} from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { NewsLetter } from './newsletterModel';
 import { CustomCardService } from './../../../../services/cards/v1-card.services';
-import {HttpService} from "../../../../services/http/http.service";
-import {DataMessage} from "../../message/message.component";
+import { HttpService } from "../../../../services/http/http.service";
+import { DataMessage } from "../../message/message.component";
 
 declare var $: any;
 
@@ -13,8 +13,8 @@ declare var $: any;
 })
 
 export class FooterNewsletterComponent implements OnInit {
-    dataMessage: DataMessage[];
-    footerData: NewsLetter;
+  dataMessage: DataMessage[];
+  footerData: NewsLetter;
   public titleTermsTooltip;
   public bodyTermsTooltip;
   public showTooltip;
@@ -47,10 +47,10 @@ export class FooterNewsletterComponent implements OnInit {
   }
 
   ngOnInit() {
-      this.dataMessage = [];
-      this._http.get('rest/session/token', {}, { responseType: 'text' }).subscribe((response) => {
-          this._token = response;
-      });
+    this.dataMessage = [];
+    this._http.get('rest/session/token', {}, { responseType: 'text' }).subscribe((response) => {
+      this._token = response;
+    });
     this.getPopoverService();
 
     $(function () {
@@ -131,39 +131,37 @@ export class FooterNewsletterComponent implements OnInit {
     });
   }
   clickOnSubmit() {
-      let data = {
-        'name' : this.name_value,
-        'last_name': this.last_name_value,
-        'email': this.email_value,
-      };
-      debugger;
-      this._http.post('v1/newsletterentity/export?_format=json', data, {
-          'Content-Type': 'application/json',
-          'X-CSRF-Token': this._token
-      })
-          .subscribe(datos => {
-              if (datos.error) {
-                  for (let key in datos.error) {
-                      this.dataMessage.push(
-                          {
-                              visible: true,
-                              status: 'error',
-                              message: datos.error[key]
-                          }
-                      );
-                  }
-
-              } else if (datos.id) {
-                  debugger;
-                  this.dataMessage.push(
-                      {
-                          visible: true,
-                          status: 'success',
-                          message: 'Respuesta satisfactoria'
-                      }
-                  );
+    let data = {
+      'name': this.name_value,
+      'last_name': this.last_name_value,
+      'email': this.email_value,
+    };
+    this._http.post('v1/newsletterentity/export?_format=json', data, {
+      'Content-Type': 'application/json',
+      'X-CSRF-Token': this._token
+    })
+      .subscribe(datos => {
+        if (datos.error) {
+          for (let key in datos.error) {
+            this.dataMessage.push(
+              {
+                visible: true,
+                status: 'error',
+                message: datos.error[key]
               }
-          });
+            );
+          }
+
+        } else if (datos.id) {
+          this.dataMessage.push(
+            {
+              visible: true,
+              status: 'success',
+              message: 'Respuesta satisfactoria'
+            }
+          );
+        }
+      });
 
   }
 
