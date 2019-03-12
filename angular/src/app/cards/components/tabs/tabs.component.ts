@@ -47,9 +47,9 @@ export class TabsComponent implements OnInit {
   descrip_form: string;
   checked: boolean;
 
-  private value: any = {};
-  private _disabledV: string;
-  private disabled: boolean;
+  value: any = {};
+  _disabledV: string;
+  disabled: boolean;
 
   constructor(private _http: HttpService, private _service: CustomCardService, private http_pais: HttpClient) {
     this.dataMessage = [];

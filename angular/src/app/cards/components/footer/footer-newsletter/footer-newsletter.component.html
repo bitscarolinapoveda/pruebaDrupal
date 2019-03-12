@@ -25,7 +25,7 @@
                 <div class="col-md-12 item">
                   <label class="label-modal" for="exampleInputNombre-nw">{{ nameInput }}*</label>
                   <input class="input-modal" ngModel type="text" id="nombree" placeholder="{{ nameInputPlaceholder }}"
-                         name="nombre" [(ngModel)]="name_value">
+                    name="nombre" [(ngModel)]="name_value">
                   <div *ngIf="false" class="alert alert-danger" role="alert">
                     Campo obligatorio o invalido
                   </div>
@@ -40,12 +40,9 @@
                 </div>
                 <div class="col-md-12 item">
                   <label class="label-modal" for="exampleInputEmail1-nw">{{ emailInput }}*</label>
-                  <input class="input-modal" type="email"  id="exampleInputEmail1" aria-describedby="emailHelp"
-                    placeholder="{{ emailInputPlaceholder }}"
-                         name="correo_electronico"
-                         pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
-                         [(ngModel)]="email_value"
-                  >
+                  <input class="input-modal" type="email" id="exampleInputEmail1" aria-describedby="emailHelp"
+                    placeholder="{{ emailInputPlaceholder }}" name="correo_electronico" pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
+                    [(ngModel)]="email_value">
                   <div *ngIf="false" class="alert alert-danger" role="alert">
                     Campo obligatorio o invalido
                   </div>
@@ -60,15 +57,14 @@
                     role="button" href="{{ linkTerms }}">{{ labelTerms }}</a></label>
                 <a data-trigger="focus" role="button" data-toggle="popover" data-placement="top" href="#">
                   <i class="fas fa-info-circle icon-tooltip"></i>
-                </a>                
+                </a>
               </div>
+              <button type="button" class="save-modal-button" (click)="clickOnSubmit()">{{ buttonSendNewsletter }}</button>
             </div>
-            <button type="button" class="save-modal-button" (click)="clickOnSubmit()">{{ buttonSendNewsletter }}</button>
           </div>
         </div>
       </div>
     </div>
-
   </section>
 </ng-container>
 <div id='popover-title'>{{titleTermsTooltip}}</div>

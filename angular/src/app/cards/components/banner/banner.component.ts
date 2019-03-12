@@ -21,14 +21,17 @@ export class BannerComponent implements OnInit {
     ) {
         this.uuid = '';
         this.bannerDescrip = '';
+        this.titulo = '';
     }
 
     ngOnInit() {
-        
+
 
         if (this.uuid === undefined || this.uuid === '') {
-            while (this.titulo.indexOf('-') > -1) {
-                this.titulo = this.titulo.replace('-', ' ');
+            if (this.titulo !== '') {
+                while (this.titulo.indexOf('-') > -1) {
+                    this.titulo = this.titulo.replace('-', ' ');
+                }
             }
             this.bannerTitle = this.titulo;
         } else {

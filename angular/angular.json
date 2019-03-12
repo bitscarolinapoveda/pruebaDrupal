@@ -48,10 +48,11 @@
                             "outputHashing": "all",
                             "sourceMap": false,
                             "extractCss": true,
-                            "namedChunks": false,
+                            "namedChunks": false,                    
                             "aot": true,
                             "extractLicenses": true,
-                            "vendorChunk": false,
+                            "vendorChunk": true,
+                            "commonChunk": true,
                             "buildOptimizer": true
                         },
                         "local": {

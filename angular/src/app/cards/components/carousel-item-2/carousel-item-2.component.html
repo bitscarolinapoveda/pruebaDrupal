@@ -20,7 +20,8 @@
   </ngx-carousel>
 </div>
 <div class="contenedor-mobile" >
-    <ngx-carousel [inputs]="carocarouselTile" (carouselLoad)="carouselTileLoad($event)" (window:resize)="onResize(screen)">
+    <!-- (window:resize)="onResize(screen)" -->
+    <ngx-carousel [inputs]="carocarouselTile" (carouselLoad)="carouselTileLoad($event)" >
         <ngx-tile NgxCarouselItem *ngFor="let items of arrayBox; let i = index">
             <div class="image-client-carousel-mobile" *ngFor="let icons of items" [ngStyle]="{'background-image':'url(' + icons?.field_image?.url + ')'}"></div>
         </ngx-tile>

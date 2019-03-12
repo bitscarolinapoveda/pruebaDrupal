@@ -9,7 +9,7 @@ import { CustomCardService } from '../../../../services/cards/v1-card.services';
 })
 export class FooterBrandComponent implements OnInit {
   imageLogo: string;
-  nameBrand: string;
+  nameBrand: any;
 
   constructor(private router: ActivatedRoute,
     private footerBrand: CustomCardService) {
