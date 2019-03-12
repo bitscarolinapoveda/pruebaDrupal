@@ -2,11 +2,11 @@ import { Http } from '@angular/http';
 import { Component, OnInit, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 import 'rxjs/add/operator/map';
 import { HttpService } from '../../../services/http/http.service';
-import { DataMessage } from '../message/message.component';
 import { CustomCardService } from 'src/app/services/cards/v1-card.services';
 import { HttpClient } from '@angular/common/http';
 import { SelectComponent } from 'ng2-select';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import {DataMessage} from "../../../message/components/message/message.component";
 
 declare var jQuery: any;
 declare var $: any;

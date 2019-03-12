@@ -2,7 +2,8 @@ import { Component, Input, OnInit } from '@angular/core';
 import { NewsLetter } from './newsletterModel';
 import { CustomCardService } from './../../../../services/cards/v1-card.services';
 import { HttpService } from "../../../../services/http/http.service";
-import { DataMessage } from "../../message/message.component";
+import { DataMessage } from "../../../../message/components/message/message.component";
+import { NotificationService } from "../../../../services/shared/notification.service";
 
 declare var $: any;
 
@@ -32,17 +33,20 @@ export class FooterNewsletterComponent implements OnInit {
   name_value: string;
   last_name_value: string;
   email_value: string;
+  message_success: string;
+  message_error: string;
   private _token: string;
 
   constructor(
     private _cardService: CustomCardService,
     private newsletter: CustomCardService,
     private _http: HttpService,
+    protected _notificationService: NotificationService
   ) {
     this.footerData = {
       title: '',
       subtitle: '',
-      button: ''
+      button: '',
     };
   }
 
@@ -73,7 +77,7 @@ export class FooterNewsletterComponent implements OnInit {
   }
   getIndicatorsSliderItems() {
     this._cardService.getCustomCardInformation('newslettercard_2').subscribe(items => {
-      let title, subtitle, button;
+      let title, subtitle, button, message_error, message_success;
       for (let attr of items.header) {
         let obj = attr.data;
         if (obj['title']) {
@@ -119,6 +123,12 @@ export class FooterNewsletterComponent implements OnInit {
         } else if (obj['button']) {
           this.buttonSendNewsletter = obj.button;
         }
+        else if (obj['message_success']) {
+          this.message_success = obj.message_success;
+        }
+        else if (obj['message_error']) {
+          this.message_error = obj.message_error;
+        }
       }
 
     });
@@ -143,26 +153,27 @@ export class FooterNewsletterComponent implements OnInit {
       .subscribe(datos => {
         if (datos.error) {
           for (let key in datos.error) {
+            let message = {
+              visible: true,
+              status: 'error',
+              message: this.message_error
+            };
             this.dataMessage.push(
-              {
-                visible: true,
-                status: 'error',
-                message: datos.error[key]
-              }
+              message
             );
           }
 
         } else if (datos.id) {
-          this.dataMessage.push(
-            {
-              visible: true,
-              status: 'success',
-              message: 'Respuesta satisfactoria'
-            }
-          );
+          let message = {
+            visible: true,
+            status: 'success',
+            message: this.message_success,
+          };
+          this._notificationService.success(message.message);
+          $('#newsletterModal').modal('hide');
+          $('#footernewsletter-form')[0].reset();
         }
       });
-
   }
 
 }
