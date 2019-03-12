@@ -19,13 +19,13 @@ export class NotificationService {
     if (typeof errorParam === 'string') {
       this.toastr.error( errorParam, 'Error' , this.toastOptions);
     } else {
-      const error_c = this.convertObjectError(errorParam);
-      this.toastr.error( error_c.message, error_c.label , this.toastOptions);
+      // const error_c = this.convertObjectError(errorParam);
+      this.toastr.error( errorParam['message'], 'Error' , this.toastOptions);
     }
   }
 
   public success(messageParam: string) {
-    this.toastr.error( messageParam, 'Success' , this.toastOptions);
+    this.toastr.success( messageParam, 'Success' , this.toastOptions);
   }
 
   public warnig(messageParam: string) {

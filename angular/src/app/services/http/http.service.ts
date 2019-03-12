@@ -7,6 +7,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/throw';
 import { Subject } from 'rxjs';
 import { catchError, map, share } from 'rxjs/operators';
+import { throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -102,7 +103,7 @@ export class HttpService extends BaseService {
       message: error.message
     };
     this._notificationService.error(errorParam);
-    return Observable.throw(err);
+    return throwError(err);
   }
 
   /***

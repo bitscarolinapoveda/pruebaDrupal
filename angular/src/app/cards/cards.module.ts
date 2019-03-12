@@ -2,6 +2,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '../../../node_modules/@angular/common';
+import {MessageModule} from "../message/message.module";
 
 import { CarouselItemComponent } from './components/carousel-item/carousel-item.component';
 import { CarouselIndicatorsComponent } from './components/carousel-indicators/carousel-indicators.component';
@@ -26,7 +27,6 @@ import { BlogComponent } from './components/blog/blog.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ClientProjectImedicalComponent } from './components/client-project-imedical/client-project-imedical.component';
 import { WhybitsamericasComponent } from './components/whybitsamericas/whybitsamericas.component';
-import { MessageComponent } from './components/message/message.component';
 import { KnowusComponent } from './components/knowus/knowus.component';
 import { TeamComponent } from './components/team/team.component';
 import { AchievementsComponent } from './components/achievements/achievements.component';
@@ -81,7 +81,6 @@ import { WorkusComponent } from './components/workus/workus.component';
     BlogComponent,
     ClientProjectImedicalComponent,
     ClientProServComponent,
-    MessageComponent,
     WhybitsamericasComponent,
     KnowusComponent,
     TeamComponent,
@@ -136,7 +135,8 @@ import { WorkusComponent } from './components/workus/workus.component';
     BrowserAnimationsModule,
     FormsModule,
     SelectModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MessageModule,
   ],
   providers: [NodeService]
 })
