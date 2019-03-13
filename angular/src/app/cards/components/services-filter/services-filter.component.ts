@@ -1,0 +1,121 @@
+import { CustomCardService } from '../../../services/cards/v1-card.services';
+import { Component, OnInit } from '@angular/core';
+
+declare var Muuri: any;
+declare var $: any;
+
+@Component({
+  selector: 'app-services-filter',
+  templateUrl: './services-filter.component.html',
+  styleUrls: ['./services-filter.component.scss']
+})
+
+export class ServicesFilterComponent implements OnInit {
+
+  public gridInfo;
+
+  constructor(
+    private servicesInfo : CustomCardService,
+  ) { }
+  ngOnInit() {
+    this.getInfoServices();
+    this.onResize();
+  }
+  onResize() {
+    var size = window.innerWidth;
+    if (size < 767) {
+      this.doSome();
+    } else {
+      var heightOfBox = ((window.innerWidth)/3) + 'px';
+      $('.muuri-item').css('height', heightOfBox);
+      var heightOfBoxLarge = (((window.innerWidth)/3)*2) + 'px';
+      $('.item.box-5').css('height', heightOfBoxLarge);
+    }
+  }
+  getInfoServices() {
+    return this.servicesInfo.getCustomCardInformation('allproductsandservicescard').subscribe(items => {
+      this.gridInfo = items.data;
+    });
+  }
+  doSome() {
+    var size = window.innerWidth;
+    if ( size < 767) {
+      var grid = new Muuri('.grid', {
+        dragEnabled: true,
+        layout: {
+          fillGaps: true
+        }
+      });
+    } else {
+      var grid = new Muuri('.grid', {
+        dragEnabled: false,
+        items: '.item',
+        layout: function(items, containerWidth, containerHeight) { // custom strict horizontal left-to-right order
+          if (!items.length) return layout;
+          var layout = {
+              slots: {},
+              height: 0,
+              setHeight: true
+          };
+          // in this case, container width (1000px) always divisible by item width (200px)
+          var colCount = 3;
+          var numRow = (items.length / colCount).toString()
+          var rowCount = 1 + parseInt(numRow, 10);
+          // save calculated slots in 2D array
+          var slotDimensions = array2D(rowCount);
+          var newSlot, topSlot, leftSlot, slotRow, slotCol;
+          items.forEach(function(item, index) {
+            newSlot = {
+                left: 0, 
+                top: 0, 
+                height: item._height, 
+                width: item._width
+            };
+            slotCol = index % colCount;
+            var numRow2 = (index / colCount).toString();
+            slotRow = parseInt(numRow2, 10);
+            if (topRowExists(slotRow))
+            { // add slot to row below
+              topSlot = slotDimensions[slotRow-1][slotCol];
+              if (index === 10 || index === 17) {
+                newSlot.top = topSlot.top + topSlot.height + 640;   
+              } else if (index === 20) {
+                newSlot.top = topSlot.top + topSlot.height - 640;
+              } else {
+                newSlot.top = topSlot.top + topSlot.height;
+              } 
+            }
+            if (leftColExists(slotCol))
+            { // add slot to rightward col
+              leftSlot = slotDimensions[slotRow][slotCol-1];
+              if (index === 8 || index === 17 || index === 20) {
+                newSlot.left = (leftSlot.left + leftSlot.width) - 640;
+              } else {
+                newSlot.left = leftSlot.left + leftSlot.width;
+              }
+            }
+            slotDimensions[slotRow][slotCol] = newSlot;
+            layout.slots[item._id] = newSlot;
+            layout.height = Math.max(layout.height, newSlot.top + newSlot.height);
+          });
+        return layout;
+        } 
+      });
+    }
+    function leftColExists(slotCol) {
+      if (slotCol-1 == -1) return false;
+      return true;
+    }
+    function topRowExists(slotRow) {
+      if (slotRow-1 == -1) return false;
+      return true;
+    }
+    function array2D(rows) {
+      var array = [];
+      for (var i = 0; i < rows; i++) {
+          array[i] = [];
+      }
+      return array;
+    }
+  }
+}

@@ -26,10 +26,11 @@ import { ToastrModule } from 'ngx-toastr';
 import { NotificationService } from './services/shared/notification.service';
 import { WorkUsComponent } from './work-us/work-us.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
-    WorkUsComponent,
+    WorkUsComponent
   ],
   imports: [
     BrowserModule,

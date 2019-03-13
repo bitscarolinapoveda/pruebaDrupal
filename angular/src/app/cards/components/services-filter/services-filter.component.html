@@ -1,0 +1,10 @@
+<div class="grid" (window:resize)="onResize()">
+  <div class="item box-{{i}}" *ngFor="let gridBox of gridInfo; let i = index; let $last = last" [isLast]='$last' (appOrganizeGridMuuri)="doSome()">
+    <div class="dark-layout"></div>
+    <div class="item-content"></div>
+    <div class="info-content">
+      <i class="fas fa-database"></i>
+      <h1 class="text-grid">{{gridBox.label}}</h1>
+    </div>
+  </div>
+</div>
