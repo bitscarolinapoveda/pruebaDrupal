@@ -24,13 +24,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // Notificaciones
 import { ToastrModule } from 'ngx-toastr';
 import { NotificationService } from './services/shared/notification.service';
-import { WorkUsComponent } from './work-us/work-us.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    WorkUsComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
