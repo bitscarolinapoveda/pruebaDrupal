@@ -1,7 +1,11 @@
 $spacer: 1rem;
-h1, h2, p{
+
+h1,
+h2,
+p {
     font-family: 'Open Sans light';
 }
+
 .imgFondoSlide {
     position: absolute;
 }
@@ -27,13 +31,17 @@ h1, h2, p{
 .pt-7 {
     padding-top: $spacer * 4.5;
 }
-.black-trans{
+
+.black-trans {
     background: #00000073;
 }
-h1.text-light{
-    color: #94b1cc!important;
+
+h1.text-light {
+    color: #94b1cc !important;
 }
-.green, .text-green{
+
+.green,
+.text-green {
     color: #91b520;
-  
+
 }

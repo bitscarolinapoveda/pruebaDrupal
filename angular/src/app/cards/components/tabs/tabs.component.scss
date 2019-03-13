@@ -1,43 +1,5 @@
 @import './src/assets/scss/mixin.scss';
 
-// .nav {
-//     background-color: #d9e0e4;
-//     @include mediaquery(max_480) {
-//         display: block;
-//     }
-//     li {
-//         margin: 0px 10px;
-//         padding: 10px;
-//         h3 {
-//             color: #002b49;
-//         }
-//         &.active {
-//             background-color: #002b49;
-//             h3 {
-//                 color: white;
-//             }
-//             &:after {
-//                 width: 0;
-//                 height: 0;
-//                 border-left: 15px solid transparent;
-//                 border-right: 15px solid transparent;
-//                 border-top: 15px solid #002b49;
-//                 content: " ";
-//                 position: absolute;
-//                 bottom: 20px;
-//                 @include mediaquery(max_736) {
-//                     bottom: 50px;
-//                 }
-//                 @include mediaquery(max_480) {
-//                     display: none;
-//                 }
-//             }
-//         }
-//         a {
-//             text-decoration: none;
-//         }
-//     }
-// }
 *,
 *::before,
 *::after {
@@ -282,8 +244,6 @@ input:-moz-placeholder {
   }
 }
 
-//tabs
-
 .tab {
   background: #e5e9ec;
   height: 140px;
@@ -484,7 +444,7 @@ input:-moz-placeholder {
   .descrip-form {
     margin: auto;
     color: #002b49cc;
-    font-family: Open Sans light;
+    font-family: 'Open Sans light';
     font-size: 30px;
   }
 }
