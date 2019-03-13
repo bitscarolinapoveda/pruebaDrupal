@@ -1,10 +1,16 @@
 <div class="grid" (window:resize)="onResize()">
-  <div class="item box-{{i}}" *ngFor="let gridBox of gridInfo; let i = index; let $last = last" [isLast]='$last' (appOrganizeGridMuuri)="doSome()">
+  <div class="item box-{{i}}" *ngFor="let gridBox of gridInfo; let i = index; let $last = last" [isLast]='$last' 
+       (appOrganizeGridMuuri)="organizeGrid()" (mouseover)=showDescription($event,i) (mouseleave)=showDescription($event,i)>
     <div class="dark-layout"></div>
     <div class="item-content"></div>
-    <div class="info-content">
+    <div class="info-content info-{{i}}">
       <i class="fas fa-database"></i>
       <h1 class="text-grid">{{gridBox.label}}</h1>
+    </div>
+    <div class="complete-info-grid hover-info-{{i}}">
+      <h1 class="text-grid">{{gridBox.label}}</h1>
+      <p class="description">{{gridBox.description}}</p>
+      <a href="/home" class="plus-icon"></a>
     </div>
   </div>
 </div>

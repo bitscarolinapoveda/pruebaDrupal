@@ -21,10 +21,15 @@ export class ServicesFilterComponent implements OnInit {
     this.getInfoServices();
     this.onResize();
   }
+  getInfoServices() {
+    return this.servicesInfo.getCustomCardInformation('allproductsandservicescard').subscribe(items => {
+      this.gridInfo = items.data;
+    });
+  }
   onResize() {
     var size = window.innerWidth;
     if (size < 767) {
-      this.doSome();
+      this.organizeGrid();
     } else {
       var heightOfBox = ((window.innerWidth)/3) + 'px';
       $('.muuri-item').css('height', heightOfBox);
@@ -32,12 +37,24 @@ export class ServicesFilterComponent implements OnInit {
       $('.item.box-5').css('height', heightOfBoxLarge);
     }
   }
-  getInfoServices() {
-    return this.servicesInfo.getCustomCardInformation('allproductsandservicescard').subscribe(items => {
-      this.gridInfo = items.data;
-    });
+  showDescription (eve,i) {
+    if (eve.type === 'mouseover') {
+      $('.hover-info-'+i).css({
+        'visibility': 'visible',
+      });
+      $('.info-'+i).css({
+        'visibility': 'hidden',
+      });
+    } else if (eve.type === 'mouseleave') {
+      $('.info-'+i).css({
+        'visibility': 'visible',
+      });
+      $('.hover-info-'+i).css({
+        'visibility': 'hidden',
+      });
+    }
   }
-  doSome() {
+  organizeGrid() {
     var size = window.innerWidth;
     if ( size < 767) {
       var grid = new Muuri('.grid', {
