@@ -122,7 +122,7 @@ class ServiceProductBits extends ConfigEntityBase implements ServiceProductBitsI
 
   private function loadMultiplesDataWithLabel($ourentities) {
     $result = [];
-    foreach ($ourentities as $key => $value) {
+    foreach ((array) $ourentities as $key => $value) {
       $nid = $value['target_id'];
       $result[] = $this->loadDataWithLabel($nid);
     }
@@ -130,17 +130,20 @@ class ServiceProductBits extends ConfigEntityBase implements ServiceProductBitsI
   }
 
   private function loadDataWithLabel($nid) {
-    $node = \Drupal::entityTypeManager()->getStorage('node')->load($nid);
-    if ($node) {
+    if($nid){
+      $node = \Drupal::entityTypeManager()->getStorage('node')->load($nid);
+      if ($node) {
+        return [
+          'id' => $nid,
+          'label' => $node->label()
+        ];
+      }
+    }else{
       return [
-        'id' => $nid,
-        'label' => $node->label()
+        'id' => is_null($nid) ? '' : $nid,
+        'label' => ''
       ];
     }
-    return [
-      'id' => is_null($nid) ? '' : $nid,
-      'label' => ''
-    ];
   }
 
 
