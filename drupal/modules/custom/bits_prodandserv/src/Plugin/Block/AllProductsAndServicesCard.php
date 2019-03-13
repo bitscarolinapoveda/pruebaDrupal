@@ -21,6 +21,7 @@ class AllProductsAndServicesCard extends CardBase {
     return [
       'entity' => [
         'name' => 'service_product_bits',
+        'type' => '',
         'limit' => 1000,
       ],
       'others' => [],

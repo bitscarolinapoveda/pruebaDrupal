@@ -69,7 +69,8 @@ class BitsCardsOutputJsonCard {
       }
       //  Si no es una entidad de contenido intenta como de configuración
       else {
-        $fields = get_object_vars(array_shift(array_values($nodes)));
+        $nodes_values = array_values($nodes); // se separo function para evitar error "only variables should be passed by reference"
+        $fields = get_object_vars(array_shift($nodes_values));
         $isContentEntity = false;
       }
 
@@ -80,7 +81,11 @@ class BitsCardsOutputJsonCard {
         else {
           // Se muestra el campo, siempre que no esté oculto
           // en el tipo de presentación.
-          if ($field['label'] != 'hidden') {
+          if (isset($field['label'])) { // valida si esta configurado el label
+            if ($field['label'] != 'hidden') {
+              $otherData[] = $name;
+            }
+          }elseif( is_string($field) || is_array($field) ){ // se agrego validacion si es un array o un string
             $otherData[] = $name;
           }
         }
@@ -173,7 +178,7 @@ class BitsCardsOutputJsonCard {
   public function getRenderData($input, $inputType, $idCard) {
     $data = [];
 
-    if ($input[$inputType]['table_fields'] != '') {
+    if (!empty($input[$inputType]['table_fields'])) { // !empty permite evaluar si existe y no esta vacio
       foreach ($input[$inputType]['table_fields'] as $item) {
         $element = [];
         switch ($item['type']) {
@@ -259,7 +264,7 @@ class BitsCardsOutputJsonCard {
       }
     }
 
-    if ($input[$inputType]['steps'] != "") {
+    if (!empty($input[$inputType]['steps'])) { // !empty permite evaluar si existe y no esta vacio
       foreach ($input[$inputType]['steps'] as $key => $itemOther) {
         $elements = [];
 
