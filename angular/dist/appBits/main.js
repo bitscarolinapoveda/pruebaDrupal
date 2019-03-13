@@ -427,7 +427,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
 /* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
 /* harmony import */ var _services_shared_notification_service__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./services/shared/notification.service */ "./src/app/services/shared/notification.service.ts");
-/* harmony import */ var _work_us_work_us_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./work-us/work-us.component */ "./src/app/work-us/work-us.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -455,15 +454,13 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 // Notificaciones
 
 
-
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
             declarations: [
-                _app_component__WEBPACK_IMPORTED_MODULE_11__["AppComponent"],
-                _work_us_work_us_component__WEBPACK_IMPORTED_MODULE_15__["WorkUsComponent"],
+                _app_component__WEBPACK_IMPORTED_MODULE_11__["AppComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -524,59 +521,61 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
 /* harmony import */ var _node_modules_angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/@angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var _components_carousel_item_carousel_item_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/carousel-item/carousel-item.component */ "./src/app/cards/components/carousel-item/carousel-item.component.ts");
-/* harmony import */ var _components_carousel_indicators_carousel_indicators_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/carousel-indicators/carousel-indicators.component */ "./src/app/cards/components/carousel-indicators/carousel-indicators.component.ts");
-/* harmony import */ var _components_tecnologies_tecnologies_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/tecnologies/tecnologies.component */ "./src/app/cards/components/tecnologies/tecnologies.component.ts");
-/* harmony import */ var _components_porque_bits_porque_bits_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/porque-bits/porque-bits.component */ "./src/app/cards/components/porque-bits/porque-bits.component.ts");
-/* harmony import */ var _components_carousel_item_2_carousel_item_2_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/carousel-item-2/carousel-item-2.component */ "./src/app/cards/components/carousel-item-2/carousel-item-2.component.ts");
-/* harmony import */ var _components_alliances_alliances_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/alliances/alliances.component */ "./src/app/cards/components/alliances/alliances.component.ts");
-/* harmony import */ var _components_carousel_controls_carousel_controls_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/carousel-controls/carousel-controls.component */ "./src/app/cards/components/carousel-controls/carousel-controls.component.ts");
-/* harmony import */ var _components_workwithus_workwithus_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/workwithus/workwithus.component */ "./src/app/cards/components/workwithus/workwithus.component.ts");
-/* harmony import */ var _components_workwithus_proserv_workwithus_proserv_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/workwithus-proserv/workwithus-proserv.component */ "./src/app/cards/components/workwithus-proserv/workwithus-proserv.component.ts");
-/* harmony import */ var _components_banner_banner_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/banner/banner.component */ "./src/app/cards/components/banner/banner.component.ts");
-/* harmony import */ var _components_titles_titles_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/titles/titles.component */ "./src/app/cards/components/titles/titles.component.ts");
-/* harmony import */ var _components_tabs_tabs_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/tabs/tabs.component */ "./src/app/cards/components/tabs/tabs.component.ts");
-/* harmony import */ var _components_video_information_video_information_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/video-information/video-information.component */ "./src/app/cards/components/video-information/video-information.component.ts");
-/* harmony import */ var _components_separator_separator_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/separator/separator.component */ "./src/app/cards/components/separator/separator.component.ts");
-/* harmony import */ var _components_menu_template_menu_template_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./components/menu-template/menu-template.component */ "./src/app/cards/components/menu-template/menu-template.component.ts");
-/* harmony import */ var _components_slide_slide_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./components/slide/slide.component */ "./src/app/cards/components/slide/slide.component.ts");
-/* harmony import */ var _components_slider_slider_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./components/slider/slider.component */ "./src/app/cards/components/slider/slider.component.ts");
-/* harmony import */ var _components_blurb_blurb_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./components/blurb/blurb.component */ "./src/app/cards/components/blurb/blurb.component.ts");
-/* harmony import */ var _components_card_img_text_card_img_text_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./components/card-img-text/card-img-text.component */ "./src/app/cards/components/card-img-text/card-img-text.component.ts");
-/* harmony import */ var _components_blog_blog_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./components/blog/blog.component */ "./src/app/cards/components/blog/blog.component.ts");
-/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
-/* harmony import */ var _components_client_project_imedical_client_project_imedical_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./components/client-project-imedical/client-project-imedical.component */ "./src/app/cards/components/client-project-imedical/client-project-imedical.component.ts");
-/* harmony import */ var _components_whybitsamericas_whybitsamericas_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./components/whybitsamericas/whybitsamericas.component */ "./src/app/cards/components/whybitsamericas/whybitsamericas.component.ts");
-/* harmony import */ var _components_message_message_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./components/message/message.component */ "./src/app/cards/components/message/message.component.ts");
+/* harmony import */ var _message_message_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../message/message.module */ "./src/app/message/message.module.ts");
+/* harmony import */ var _components_carousel_item_carousel_item_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/carousel-item/carousel-item.component */ "./src/app/cards/components/carousel-item/carousel-item.component.ts");
+/* harmony import */ var _components_carousel_indicators_carousel_indicators_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/carousel-indicators/carousel-indicators.component */ "./src/app/cards/components/carousel-indicators/carousel-indicators.component.ts");
+/* harmony import */ var _components_tecnologies_tecnologies_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/tecnologies/tecnologies.component */ "./src/app/cards/components/tecnologies/tecnologies.component.ts");
+/* harmony import */ var _components_porque_bits_porque_bits_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/porque-bits/porque-bits.component */ "./src/app/cards/components/porque-bits/porque-bits.component.ts");
+/* harmony import */ var _components_carousel_item_2_carousel_item_2_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/carousel-item-2/carousel-item-2.component */ "./src/app/cards/components/carousel-item-2/carousel-item-2.component.ts");
+/* harmony import */ var _components_alliances_alliances_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/alliances/alliances.component */ "./src/app/cards/components/alliances/alliances.component.ts");
+/* harmony import */ var _components_carousel_controls_carousel_controls_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/carousel-controls/carousel-controls.component */ "./src/app/cards/components/carousel-controls/carousel-controls.component.ts");
+/* harmony import */ var _components_workwithus_workwithus_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/workwithus/workwithus.component */ "./src/app/cards/components/workwithus/workwithus.component.ts");
+/* harmony import */ var _components_workwithus_proserv_workwithus_proserv_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/workwithus-proserv/workwithus-proserv.component */ "./src/app/cards/components/workwithus-proserv/workwithus-proserv.component.ts");
+/* harmony import */ var _components_banner_banner_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/banner/banner.component */ "./src/app/cards/components/banner/banner.component.ts");
+/* harmony import */ var _components_titles_titles_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/titles/titles.component */ "./src/app/cards/components/titles/titles.component.ts");
+/* harmony import */ var _components_tabs_tabs_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/tabs/tabs.component */ "./src/app/cards/components/tabs/tabs.component.ts");
+/* harmony import */ var _components_video_information_video_information_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/video-information/video-information.component */ "./src/app/cards/components/video-information/video-information.component.ts");
+/* harmony import */ var _components_separator_separator_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./components/separator/separator.component */ "./src/app/cards/components/separator/separator.component.ts");
+/* harmony import */ var _components_menu_template_menu_template_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./components/menu-template/menu-template.component */ "./src/app/cards/components/menu-template/menu-template.component.ts");
+/* harmony import */ var _components_slide_slide_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./components/slide/slide.component */ "./src/app/cards/components/slide/slide.component.ts");
+/* harmony import */ var _components_slider_slider_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./components/slider/slider.component */ "./src/app/cards/components/slider/slider.component.ts");
+/* harmony import */ var _components_blurb_blurb_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./components/blurb/blurb.component */ "./src/app/cards/components/blurb/blurb.component.ts");
+/* harmony import */ var _components_card_img_text_card_img_text_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./components/card-img-text/card-img-text.component */ "./src/app/cards/components/card-img-text/card-img-text.component.ts");
+/* harmony import */ var _components_blog_blog_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./components/blog/blog.component */ "./src/app/cards/components/blog/blog.component.ts");
+/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
+/* harmony import */ var _components_client_project_imedical_client_project_imedical_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./components/client-project-imedical/client-project-imedical.component */ "./src/app/cards/components/client-project-imedical/client-project-imedical.component.ts");
+/* harmony import */ var _components_whybitsamericas_whybitsamericas_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./components/whybitsamericas/whybitsamericas.component */ "./src/app/cards/components/whybitsamericas/whybitsamericas.component.ts");
 /* harmony import */ var _components_knowus_knowus_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./components/knowus/knowus.component */ "./src/app/cards/components/knowus/knowus.component.ts");
 /* harmony import */ var _components_team_team_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./components/team/team.component */ "./src/app/cards/components/team/team.component.ts");
 /* harmony import */ var _components_achievements_achievements_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./components/achievements/achievements.component */ "./src/app/cards/components/achievements/achievements.component.ts");
 /* harmony import */ var _components_testimonies_testimonies_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./components/testimonies/testimonies.component */ "./src/app/cards/components/testimonies/testimonies.component.ts");
 /* harmony import */ var _components_tecnologies_projectservice_tecnologies_projectservice_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./components/tecnologies-projectservice/tecnologies-projectservice.component */ "./src/app/cards/components/tecnologies-projectservice/tecnologies-projectservice.component.ts");
 /* harmony import */ var _components_history_history_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./components/history/history.component */ "./src/app/cards/components/history/history.component.ts");
-/* harmony import */ var _services_cards_node_service__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ../services/cards/node.service */ "./src/app/services/cards/node.service.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _adf_adf_module__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ../@adf/adf.module */ "./src/app/@adf/adf.module.ts");
-/* harmony import */ var ngx_slick__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ngx-slick */ "./node_modules/ngx-slick/ngx-slick.umd.js");
-/* harmony import */ var ngx_slick__WEBPACK_IMPORTED_MODULE_37___default = /*#__PURE__*/__webpack_require__.n(ngx_slick__WEBPACK_IMPORTED_MODULE_37__);
-/* harmony import */ var ngx_owl_carousel__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ngx-owl-carousel */ "./node_modules/ngx-owl-carousel/index.js");
-/* harmony import */ var ngx_owl_carousel__WEBPACK_IMPORTED_MODULE_38___default = /*#__PURE__*/__webpack_require__.n(ngx_owl_carousel__WEBPACK_IMPORTED_MODULE_38__);
-/* harmony import */ var ngx_carousel__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ngx-carousel */ "./node_modules/ngx-carousel/index.js");
-/* harmony import */ var hammerjs__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! hammerjs */ "./node_modules/hammerjs/hammer.js");
-/* harmony import */ var hammerjs__WEBPACK_IMPORTED_MODULE_40___default = /*#__PURE__*/__webpack_require__.n(hammerjs__WEBPACK_IMPORTED_MODULE_40__);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
-/* harmony import */ var ng2_select__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! ng2-select */ "./node_modules/ng2-select/index.js");
-/* harmony import */ var ng2_select__WEBPACK_IMPORTED_MODULE_42___default = /*#__PURE__*/__webpack_require__.n(ng2_select__WEBPACK_IMPORTED_MODULE_42__);
-/* harmony import */ var _pipes_safehtml_pipe__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! ../pipes/safehtml.pipe */ "./src/app/pipes/safehtml.pipe.ts");
-/* harmony import */ var _pipes_safecss_pipe__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! ../pipes/safecss.pipe */ "./src/app/pipes/safecss.pipe.ts");
-/* harmony import */ var _components_client_proserv_client_proserv_component__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(/*! ./components/client-proserv/client-proserv.component */ "./src/app/cards/components/client-proserv/client-proserv.component.ts");
-/* harmony import */ var _components_workus_workus_component__WEBPACK_IMPORTED_MODULE_46__ = __webpack_require__(/*! ./components/workus/workus.component */ "./src/app/cards/components/workus/workus.component.ts");
+/* harmony import */ var _components_filter_filter_component__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./components/filter/filter.component */ "./src/app/cards/components/filter/filter.component.ts");
+/* harmony import */ var _services_cards_node_service__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ../services/cards/node.service */ "./src/app/services/cards/node.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _adf_adf_module__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ../@adf/adf.module */ "./src/app/@adf/adf.module.ts");
+/* harmony import */ var ngx_slick__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ngx-slick */ "./node_modules/ngx-slick/ngx-slick.umd.js");
+/* harmony import */ var ngx_slick__WEBPACK_IMPORTED_MODULE_38___default = /*#__PURE__*/__webpack_require__.n(ngx_slick__WEBPACK_IMPORTED_MODULE_38__);
+/* harmony import */ var ngx_owl_carousel__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ngx-owl-carousel */ "./node_modules/ngx-owl-carousel/index.js");
+/* harmony import */ var ngx_owl_carousel__WEBPACK_IMPORTED_MODULE_39___default = /*#__PURE__*/__webpack_require__.n(ngx_owl_carousel__WEBPACK_IMPORTED_MODULE_39__);
+/* harmony import */ var ngx_carousel__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ngx-carousel */ "./node_modules/ngx-carousel/index.js");
+/* harmony import */ var hammerjs__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! hammerjs */ "./node_modules/hammerjs/hammer.js");
+/* harmony import */ var hammerjs__WEBPACK_IMPORTED_MODULE_41___default = /*#__PURE__*/__webpack_require__.n(hammerjs__WEBPACK_IMPORTED_MODULE_41__);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var ng2_select__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! ng2-select */ "./node_modules/ng2-select/index.js");
+/* harmony import */ var ng2_select__WEBPACK_IMPORTED_MODULE_43___default = /*#__PURE__*/__webpack_require__.n(ng2_select__WEBPACK_IMPORTED_MODULE_43__);
+/* harmony import */ var _pipes_safehtml_pipe__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! ../pipes/safehtml.pipe */ "./src/app/pipes/safehtml.pipe.ts");
+/* harmony import */ var _pipes_safecss_pipe__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(/*! ../pipes/safecss.pipe */ "./src/app/pipes/safecss.pipe.ts");
+/* harmony import */ var _components_client_proserv_client_proserv_component__WEBPACK_IMPORTED_MODULE_46__ = __webpack_require__(/*! ./components/client-proserv/client-proserv.component */ "./src/app/cards/components/client-proserv/client-proserv.component.ts");
+/* harmony import */ var _components_workus_workus_component__WEBPACK_IMPORTED_MODULE_47__ = __webpack_require__(/*! ./components/workus/workus.component */ "./src/app/cards/components/workus/workus.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -632,86 +631,89 @@ var CardsModule = /** @class */ (function () {
     CardsModule = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
             declarations: [
-                _pipes_safehtml_pipe__WEBPACK_IMPORTED_MODULE_43__["SafeHtmlPipe"],
-                _pipes_safecss_pipe__WEBPACK_IMPORTED_MODULE_44__["SafeCssPipe"],
-                _components_carousel_item_carousel_item_component__WEBPACK_IMPORTED_MODULE_4__["CarouselItemComponent"],
-                _components_carousel_indicators_carousel_indicators_component__WEBPACK_IMPORTED_MODULE_5__["CarouselIndicatorsComponent"],
-                _components_carousel_controls_carousel_controls_component__WEBPACK_IMPORTED_MODULE_10__["CarouselControlsComponent"],
-                _components_carousel_item_2_carousel_item_2_component__WEBPACK_IMPORTED_MODULE_8__["CarouselItem2Component"],
-                _components_tecnologies_tecnologies_component__WEBPACK_IMPORTED_MODULE_6__["TecnologiesComponent"],
-                _components_porque_bits_porque_bits_component__WEBPACK_IMPORTED_MODULE_7__["PorqueBitsComponent"],
-                _components_alliances_alliances_component__WEBPACK_IMPORTED_MODULE_9__["AlliancesComponent"],
-                _components_workwithus_workwithus_component__WEBPACK_IMPORTED_MODULE_11__["WorkWithUsComponent"],
-                _components_workwithus_proserv_workwithus_proserv_component__WEBPACK_IMPORTED_MODULE_12__["WorkWithUsProServComponent"],
-                _components_workus_workus_component__WEBPACK_IMPORTED_MODULE_46__["WorkusComponent"],
-                _components_banner_banner_component__WEBPACK_IMPORTED_MODULE_13__["BannerComponent"],
-                _components_titles_titles_component__WEBPACK_IMPORTED_MODULE_14__["TitleComponent"],
-                _components_tabs_tabs_component__WEBPACK_IMPORTED_MODULE_15__["TabsComponent"],
-                _components_video_information_video_information_component__WEBPACK_IMPORTED_MODULE_16__["VideoInformationComponent"],
-                _components_separator_separator_component__WEBPACK_IMPORTED_MODULE_17__["SeparatorComponent"],
-                _components_menu_template_menu_template_component__WEBPACK_IMPORTED_MODULE_18__["MenuTemplateComponent"],
-                _components_slide_slide_component__WEBPACK_IMPORTED_MODULE_19__["SlideComponent"],
-                _components_slider_slider_component__WEBPACK_IMPORTED_MODULE_20__["SliderComponent"],
-                _components_blurb_blurb_component__WEBPACK_IMPORTED_MODULE_21__["BlurbComponent"],
-                _components_card_img_text_card_img_text_component__WEBPACK_IMPORTED_MODULE_22__["CardImgTextComponent"],
-                _components_blog_blog_component__WEBPACK_IMPORTED_MODULE_23__["BlogComponent"],
-                _components_client_project_imedical_client_project_imedical_component__WEBPACK_IMPORTED_MODULE_25__["ClientProjectImedicalComponent"],
-                _components_client_proserv_client_proserv_component__WEBPACK_IMPORTED_MODULE_45__["ClientProServComponent"],
-                _components_message_message_component__WEBPACK_IMPORTED_MODULE_27__["MessageComponent"],
-                _components_whybitsamericas_whybitsamericas_component__WEBPACK_IMPORTED_MODULE_26__["WhybitsamericasComponent"],
+                _pipes_safehtml_pipe__WEBPACK_IMPORTED_MODULE_44__["SafeHtmlPipe"],
+                _pipes_safecss_pipe__WEBPACK_IMPORTED_MODULE_45__["SafeCssPipe"],
+                _components_carousel_item_carousel_item_component__WEBPACK_IMPORTED_MODULE_5__["CarouselItemComponent"],
+                _components_carousel_indicators_carousel_indicators_component__WEBPACK_IMPORTED_MODULE_6__["CarouselIndicatorsComponent"],
+                _components_carousel_controls_carousel_controls_component__WEBPACK_IMPORTED_MODULE_11__["CarouselControlsComponent"],
+                _components_carousel_item_2_carousel_item_2_component__WEBPACK_IMPORTED_MODULE_9__["CarouselItem2Component"],
+                _components_tecnologies_tecnologies_component__WEBPACK_IMPORTED_MODULE_7__["TecnologiesComponent"],
+                _components_porque_bits_porque_bits_component__WEBPACK_IMPORTED_MODULE_8__["PorqueBitsComponent"],
+                _components_alliances_alliances_component__WEBPACK_IMPORTED_MODULE_10__["AlliancesComponent"],
+                _components_workwithus_workwithus_component__WEBPACK_IMPORTED_MODULE_12__["WorkWithUsComponent"],
+                _components_workwithus_proserv_workwithus_proserv_component__WEBPACK_IMPORTED_MODULE_13__["WorkWithUsProServComponent"],
+                _components_workus_workus_component__WEBPACK_IMPORTED_MODULE_47__["WorkusComponent"],
+                _components_banner_banner_component__WEBPACK_IMPORTED_MODULE_14__["BannerComponent"],
+                _components_titles_titles_component__WEBPACK_IMPORTED_MODULE_15__["TitleComponent"],
+                _components_tabs_tabs_component__WEBPACK_IMPORTED_MODULE_16__["TabsComponent"],
+                _components_video_information_video_information_component__WEBPACK_IMPORTED_MODULE_17__["VideoInformationComponent"],
+                _components_separator_separator_component__WEBPACK_IMPORTED_MODULE_18__["SeparatorComponent"],
+                _components_menu_template_menu_template_component__WEBPACK_IMPORTED_MODULE_19__["MenuTemplateComponent"],
+                _components_slide_slide_component__WEBPACK_IMPORTED_MODULE_20__["SlideComponent"],
+                _components_slider_slider_component__WEBPACK_IMPORTED_MODULE_21__["SliderComponent"],
+                _components_blurb_blurb_component__WEBPACK_IMPORTED_MODULE_22__["BlurbComponent"],
+                _components_card_img_text_card_img_text_component__WEBPACK_IMPORTED_MODULE_23__["CardImgTextComponent"],
+                _components_blog_blog_component__WEBPACK_IMPORTED_MODULE_24__["BlogComponent"],
+                _components_client_project_imedical_client_project_imedical_component__WEBPACK_IMPORTED_MODULE_26__["ClientProjectImedicalComponent"],
+                _components_client_proserv_client_proserv_component__WEBPACK_IMPORTED_MODULE_46__["ClientProServComponent"],
+                _components_whybitsamericas_whybitsamericas_component__WEBPACK_IMPORTED_MODULE_27__["WhybitsamericasComponent"],
                 _components_knowus_knowus_component__WEBPACK_IMPORTED_MODULE_28__["KnowusComponent"],
                 _components_team_team_component__WEBPACK_IMPORTED_MODULE_29__["TeamComponent"],
                 _components_achievements_achievements_component__WEBPACK_IMPORTED_MODULE_30__["AchievementsComponent"],
                 _components_tecnologies_projectservice_tecnologies_projectservice_component__WEBPACK_IMPORTED_MODULE_32__["TecnologiesProjectserviceComponent"],
                 _components_history_history_component__WEBPACK_IMPORTED_MODULE_33__["HistoryComponent"],
-                _components_testimonies_testimonies_component__WEBPACK_IMPORTED_MODULE_31__["TestimoniesComponent"]
+                _components_testimonies_testimonies_component__WEBPACK_IMPORTED_MODULE_31__["TestimoniesComponent"],
+                _components_filter_filter_component__WEBPACK_IMPORTED_MODULE_34__["FilterComponent"]
             ],
             exports: [
-                _components_carousel_item_carousel_item_component__WEBPACK_IMPORTED_MODULE_4__["CarouselItemComponent"],
-                _components_carousel_indicators_carousel_indicators_component__WEBPACK_IMPORTED_MODULE_5__["CarouselIndicatorsComponent"],
-                _components_carousel_controls_carousel_controls_component__WEBPACK_IMPORTED_MODULE_10__["CarouselControlsComponent"],
-                _components_carousel_item_2_carousel_item_2_component__WEBPACK_IMPORTED_MODULE_8__["CarouselItem2Component"],
-                _components_tecnologies_tecnologies_component__WEBPACK_IMPORTED_MODULE_6__["TecnologiesComponent"],
-                _components_porque_bits_porque_bits_component__WEBPACK_IMPORTED_MODULE_7__["PorqueBitsComponent"],
-                _components_alliances_alliances_component__WEBPACK_IMPORTED_MODULE_9__["AlliancesComponent"],
-                _components_workus_workus_component__WEBPACK_IMPORTED_MODULE_46__["WorkusComponent"],
-                _components_workwithus_workwithus_component__WEBPACK_IMPORTED_MODULE_11__["WorkWithUsComponent"],
-                _components_workwithus_proserv_workwithus_proserv_component__WEBPACK_IMPORTED_MODULE_12__["WorkWithUsProServComponent"],
-                _components_banner_banner_component__WEBPACK_IMPORTED_MODULE_13__["BannerComponent"],
-                _components_titles_titles_component__WEBPACK_IMPORTED_MODULE_14__["TitleComponent"],
-                _components_tabs_tabs_component__WEBPACK_IMPORTED_MODULE_15__["TabsComponent"],
-                _components_video_information_video_information_component__WEBPACK_IMPORTED_MODULE_16__["VideoInformationComponent"],
-                _components_separator_separator_component__WEBPACK_IMPORTED_MODULE_17__["SeparatorComponent"],
-                _components_menu_template_menu_template_component__WEBPACK_IMPORTED_MODULE_18__["MenuTemplateComponent"],
-                _components_slide_slide_component__WEBPACK_IMPORTED_MODULE_19__["SlideComponent"],
-                _components_slider_slider_component__WEBPACK_IMPORTED_MODULE_20__["SliderComponent"],
-                _components_blurb_blurb_component__WEBPACK_IMPORTED_MODULE_21__["BlurbComponent"],
-                _components_card_img_text_card_img_text_component__WEBPACK_IMPORTED_MODULE_22__["CardImgTextComponent"],
-                _components_blog_blog_component__WEBPACK_IMPORTED_MODULE_23__["BlogComponent"],
-                _components_client_project_imedical_client_project_imedical_component__WEBPACK_IMPORTED_MODULE_25__["ClientProjectImedicalComponent"],
-                _components_client_proserv_client_proserv_component__WEBPACK_IMPORTED_MODULE_45__["ClientProServComponent"],
-                _components_whybitsamericas_whybitsamericas_component__WEBPACK_IMPORTED_MODULE_26__["WhybitsamericasComponent"],
+                _components_carousel_item_carousel_item_component__WEBPACK_IMPORTED_MODULE_5__["CarouselItemComponent"],
+                _components_carousel_indicators_carousel_indicators_component__WEBPACK_IMPORTED_MODULE_6__["CarouselIndicatorsComponent"],
+                _components_carousel_controls_carousel_controls_component__WEBPACK_IMPORTED_MODULE_11__["CarouselControlsComponent"],
+                _components_carousel_item_2_carousel_item_2_component__WEBPACK_IMPORTED_MODULE_9__["CarouselItem2Component"],
+                _components_tecnologies_tecnologies_component__WEBPACK_IMPORTED_MODULE_7__["TecnologiesComponent"],
+                _components_porque_bits_porque_bits_component__WEBPACK_IMPORTED_MODULE_8__["PorqueBitsComponent"],
+                _components_alliances_alliances_component__WEBPACK_IMPORTED_MODULE_10__["AlliancesComponent"],
+                _components_workus_workus_component__WEBPACK_IMPORTED_MODULE_47__["WorkusComponent"],
+                _components_workwithus_workwithus_component__WEBPACK_IMPORTED_MODULE_12__["WorkWithUsComponent"],
+                _components_workwithus_proserv_workwithus_proserv_component__WEBPACK_IMPORTED_MODULE_13__["WorkWithUsProServComponent"],
+                _components_banner_banner_component__WEBPACK_IMPORTED_MODULE_14__["BannerComponent"],
+                _components_titles_titles_component__WEBPACK_IMPORTED_MODULE_15__["TitleComponent"],
+                _components_tabs_tabs_component__WEBPACK_IMPORTED_MODULE_16__["TabsComponent"],
+                _components_video_information_video_information_component__WEBPACK_IMPORTED_MODULE_17__["VideoInformationComponent"],
+                _components_separator_separator_component__WEBPACK_IMPORTED_MODULE_18__["SeparatorComponent"],
+                _components_menu_template_menu_template_component__WEBPACK_IMPORTED_MODULE_19__["MenuTemplateComponent"],
+                _components_slide_slide_component__WEBPACK_IMPORTED_MODULE_20__["SlideComponent"],
+                _components_slider_slider_component__WEBPACK_IMPORTED_MODULE_21__["SliderComponent"],
+                _components_blurb_blurb_component__WEBPACK_IMPORTED_MODULE_22__["BlurbComponent"],
+                _components_card_img_text_card_img_text_component__WEBPACK_IMPORTED_MODULE_23__["CardImgTextComponent"],
+                _components_blog_blog_component__WEBPACK_IMPORTED_MODULE_24__["BlogComponent"],
+                _components_client_project_imedical_client_project_imedical_component__WEBPACK_IMPORTED_MODULE_26__["ClientProjectImedicalComponent"],
+                _components_client_proserv_client_proserv_component__WEBPACK_IMPORTED_MODULE_46__["ClientProServComponent"],
+                _components_whybitsamericas_whybitsamericas_component__WEBPACK_IMPORTED_MODULE_27__["WhybitsamericasComponent"],
                 _components_knowus_knowus_component__WEBPACK_IMPORTED_MODULE_28__["KnowusComponent"],
                 _components_team_team_component__WEBPACK_IMPORTED_MODULE_29__["TeamComponent"],
                 _components_achievements_achievements_component__WEBPACK_IMPORTED_MODULE_30__["AchievementsComponent"],
                 _components_tecnologies_projectservice_tecnologies_projectservice_component__WEBPACK_IMPORTED_MODULE_32__["TecnologiesProjectserviceComponent"],
                 _components_history_history_component__WEBPACK_IMPORTED_MODULE_33__["HistoryComponent"],
-                _components_testimonies_testimonies_component__WEBPACK_IMPORTED_MODULE_31__["TestimoniesComponent"]
+                _components_testimonies_testimonies_component__WEBPACK_IMPORTED_MODULE_31__["TestimoniesComponent"],
+                _components_filter_filter_component__WEBPACK_IMPORTED_MODULE_34__["FilterComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["BrowserModule"],
                 _node_modules_angular_common__WEBPACK_IMPORTED_MODULE_3__["CommonModule"],
                 _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_0__["NgbModule"],
-                _angular_router__WEBPACK_IMPORTED_MODULE_35__["RouterModule"],
-                _adf_adf_module__WEBPACK_IMPORTED_MODULE_36__["AdfModule"],
-                ngx_slick__WEBPACK_IMPORTED_MODULE_37__["SlickModule"].forRoot(),
-                ngx_owl_carousel__WEBPACK_IMPORTED_MODULE_38__["OwlModule"],
-                ngx_carousel__WEBPACK_IMPORTED_MODULE_39__["NgxCarouselModule"],
-                _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_24__["BrowserAnimationsModule"],
-                _angular_forms__WEBPACK_IMPORTED_MODULE_41__["FormsModule"],
-                ng2_select__WEBPACK_IMPORTED_MODULE_42__["SelectModule"]
+                _angular_router__WEBPACK_IMPORTED_MODULE_36__["RouterModule"],
+                _adf_adf_module__WEBPACK_IMPORTED_MODULE_37__["AdfModule"],
+                ngx_slick__WEBPACK_IMPORTED_MODULE_38__["SlickModule"].forRoot(),
+                ngx_owl_carousel__WEBPACK_IMPORTED_MODULE_39__["OwlModule"],
+                ngx_carousel__WEBPACK_IMPORTED_MODULE_40__["NgxCarouselModule"],
+                _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_25__["BrowserAnimationsModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_42__["FormsModule"],
+                ng2_select__WEBPACK_IMPORTED_MODULE_43__["SelectModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_42__["ReactiveFormsModule"],
+                _message_message_module__WEBPACK_IMPORTED_MODULE_4__["MessageModule"],
             ],
-            providers: [_services_cards_node_service__WEBPACK_IMPORTED_MODULE_34__["NodeService"]]
+            providers: [_services_cards_node_service__WEBPACK_IMPORTED_MODULE_35__["NodeService"]]
         })
     ], CardsModule);
     return CardsModule;
@@ -1012,11 +1014,14 @@ var BannerComponent = /** @class */ (function () {
         this.medius = '550px';
         this.uuid = '';
         this.bannerDescrip = '';
+        this.titulo = '';
     }
     BannerComponent.prototype.ngOnInit = function () {
         if (this.uuid === undefined || this.uuid === '') {
-            while (this.titulo.indexOf('-') > -1) {
-                this.titulo = this.titulo.replace('-', ' ');
+            if (this.titulo !== '') {
+                while (this.titulo.indexOf('-') > -1) {
+                    this.titulo = this.titulo.replace('-', ' ');
+                }
             }
             this.bannerTitle = this.titulo;
         }
@@ -1557,7 +1562,7 @@ var CarouselIndicatorsComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<section id=\"main-title\">\n    <h2>{{ titleClients }}</h2>\n</section>\n\n<div class=\"contenedor\" >\n    <ngx-carousel\n    [inputs]=\"carocarouselTile\"\n    (carouselLoad)=\"carouselTileLoad($event)\">\n\n          <ngx-tile NgxCarouselItem *ngFor=\"let ourC of clients; let i = index\">\n            <a href=\"#\" class=\"url-carousel\" >\n                <div class=\"container-img col-md-3 \">\n                    <img class=\"d-block img-fluid img-float  mx-auto\" src=\"{{ ourC.field_image?.url }}\" alt=\"{{ ourC.field_image?.alt }}\">\n                </div>\n                <div class=\"info-carousel\">\n                    <h3 class=\"title\">{{ ourC.title }}</h3>\n                    <p class=\"text-description\">{{ ourC.field_description }}</p>\n                </div>\n            </a>\n\n          </ngx-tile>\n\n        <button NgxCarouselPrev class='leftRs'>&lt;</button>\n        <button NgxCarouselNext class='rightRs'>&gt;</button>\n  </ngx-carousel>\n\n</div>"
+module.exports = "<section id=\"main-title\">\n    <h2>{{ titleClients }}</h2>\n</section>\n\n<div class=\"contenedor\" >\n    <ngx-carousel [inputs]=\"carocarouselTile\" (carouselLoad)=\"carouselTileLoad($event)\">\n        <ngx-tile NgxCarouselItem *ngFor=\"let ourC of clientsDesktop; let i = index\">\n            <a href=\"#\" class=\"url-carousel\" >\n                <div class=\"container-img col-md-3 \">\n                    <img class=\"d-block img-fluid img-float  mx-auto\" src=\"{{ ourC.field_image?.url }}\" alt=\"{{ ourC.field_image?.alt }}\">\n                </div>\n                <div class=\"info-carousel\">\n                    <h3 class=\"title\">{{ ourC.title }}</h3>\n                    <p class=\"text-description\">{{ ourC.field_description }}</p>\n                </div>\n            </a>\n        </ngx-tile>\n        <button NgxCarouselPrev class='leftRs'>&lt;</button>\n        <button NgxCarouselNext class='rightRs'>&gt;</button>\n  </ngx-carousel>\n</div>\n<div class=\"contenedor-mobile\" >\n    <!-- (window:resize)=\"onResize(screen)\" -->\n    <ngx-carousel [inputs]=\"carocarouselTile\" (carouselLoad)=\"carouselTileLoad($event)\" >\n        <ngx-tile NgxCarouselItem *ngFor=\"let items of arrayBox; let i = index\">\n            <div class=\"image-client-carousel-mobile\" *ngFor=\"let icons of items\" [ngStyle]=\"{'background-image':'url(' + icons?.field_image?.url + ')'}\"></div>\n        </ngx-tile>\n        <button NgxCarouselPrev class='leftRs'>&lt;</button>\n        <button NgxCarouselNext class='rightRs'>&gt;</button>\n    </ngx-carousel>\n</div>"
 
 /***/ }),
 
@@ -1568,7 +1573,7 @@ module.exports = "<section id=\"main-title\">\n    <h2>{{ titleClients }}</h2>\n
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".contenedor {\n  width: 80%;\n  margin: 0 auto; }\n\n.item {\n  height: 100%;\n  align-items: center;\n  justify-content: center;\n  position: relative; }\n\n@media (min-width: 668px) and (max-width: 1024px) {\n    .item {\n      height: initial;\n      width: 68%;\n      left: initial; } }\n\n@media (min-width: 1025px) {\n    .item {\n      height: initial;\n      width: 92.5%;\n      left: initial; } }\n\n.tile {\n  float: left;\n  box-shadow: none !important;\n  position: relative; }\n\n@media (min-width: 1025px) {\n    .tile {\n      left: 0%;\n      padding-left: 0%;\n      justify-content: center; } }\n\n.url-carousel {\n  width: 132px; }\n\n@media (min-width: 668px) and (max-width: 1024px) {\n    .url-carousel {\n      width: 285px; } }\n\n@media (min-width: 1025px) {\n    .url-carousel {\n      width: 230px;\n      padding-left: 2%;\n      padding-right: 2%;\n      text-decoration: none;\n      overflow: hidden;\n      height: 253px;\n      display: block; }\n      .url-carousel:hover .container-img {\n        -webkit-transform: translateY(-122%);\n                transform: translateY(-122%); }\n      .url-carousel:hover .info-carousel {\n        -webkit-transform: translateY(-110%);\n                transform: translateY(-110%); } }\n\n.url-carousel .container-img {\n    width: 30%;\n    height: 30%;\n    position: relative;\n    display: -webkit-inline-box;\n    margin-left: 11%;\n    margin-right: auto;\n    margin-top: 5%;\n    display: inline-table;\n    max-width: 100%;\n    align-items: center; }\n\n@media (min-width: 1025px) {\n      .url-carousel .container-img {\n        display: flex;\n        height: 235px;\n        width: 100%;\n        margin-bottom: 14%;\n        margin-top: 0%;\n        padding-left: 20px;\n        padding-right: 20px;\n        width: 80%;\n        transition: all ease 0.8s; } }\n\n@media (min-width: 668px) and (max-width: 1024px) {\n      .url-carousel .container-img {\n        display: flex;\n        width: 100%;\n        padding: 22%;\n        align-items: center;\n        height: 100px;\n        margin-left: 36%; } }\n\n.url-carousel .container-img .img-fluid {\n      height: 100%;\n      width: 100%; }\n\n@media (min-width: 668px) and (max-width: 1024px) {\n        .url-carousel .container-img .img-fluid {\n          height: auto;\n          width: auto; } }\n\n@media (min-width: 1025px) {\n        .url-carousel .container-img .img-fluid {\n          height: auto;\n          width: auto; } }\n\n.url-carousel .info-carousel {\n    display: none; }\n\n@media (min-width: 1025px) {\n      .url-carousel .info-carousel {\n        position: absolute;\n        display: table;\n        width: 100%;\n        height: 222px;\n        transition: all ease 0.8s; }\n        .url-carousel .info-carousel::before {\n          content: '';\n          background: linear-gradient(-90deg, rgba(255, 255, 255, 0), #005892, rgba(255, 255, 255, 0));\n          display: block;\n          position: absolute;\n          height: 1px;\n          width: 100%; }\n        .url-carousel .info-carousel::after {\n          content: '';\n          background: linear-gradient(-90deg, rgba(255, 255, 255, 0), #005892, rgba(255, 255, 255, 0));\n          display: block;\n          position: absolute;\n          top: 100%;\n          height: 1px;\n          width: 100%; } }\n\n.url-carousel .info-carousel .title {\n      text-align: center;\n      text-transform: uppercase;\n      width: 100%;\n      padding-top: 12%;\n      font-size: 24px;\n      color: #acd233;\n      padding-left: 16%;\n      padding-right: 18%;\n      font-family: 'Open Sans Condensed';\n      font-weight: 300; }\n\n.url-carousel .info-carousel .text-description {\n      text-align: center;\n      width: 100%;\n      padding-top: 2%;\n      font-size: 14px;\n      color: #002b49;\n      font-family: 'Open Sans';\n      font-weight: 300; }\n\n.icon-left {\n  position: relative;\n  top: 5%;\n  background-image: url(/assets/icon/left-arrow.svg);\n  background-size: 37px;\n  height: 27px;\n  width: 24px; }\n\n@media (min-width: 668px) and (max-width: 1024px) {\n    .icon-left {\n      left: 37%; } }\n\n@media (min-width: 1025px) {\n    .icon-left {\n      height: 34px; } }\n\n.icon-right {\n  position: relative;\n  top: 5%;\n  background-image: url(/assets/icon/right-arrow.svg);\n  background-size: 37px;\n  height: 27px;\n  width: 24px; }\n\n@media (min-width: 668px) and (max-width: 1024px) {\n    .icon-right {\n      right: 40%; } }\n\n@media (min-width: 1025px) {\n    .icon-right {\n      height: 34px; } }\n\n#main-title {\n  color: #002b49;\n  text-align: center;\n  margin-top: 64px; }\n\n@media (min-width: 1025px) {\n    #main-title {\n      margin-top: 80px; } }\n\n@media (min-width: 668px) and (max-width: 1024px) {\n    #main-title {\n      margin-top: 80px; } }\n\n#main-title h2 {\n    margin-left: 3%;\n    font-size: 30px;\n    -webkit-transform: scaleY(1.2);\n            transform: scaleY(1.2); }\n\n@media (min-width: 1025px) {\n      #main-title h2 {\n        margin-left: 0;\n        font-size: 40px;\n        width: 100%; } }\n\n@media (min-width: 668px) and (max-width: 1024px) {\n      #main-title h2 {\n        margin-left: 0;\n        font-size: 40px;\n        width: 100%; } }\n\n#titles {\n  color: #002b49;\n  text-align: center;\n  margin-top: 60px; }\n\n@media (min-width: 1025px) {\n    #titles {\n      margin-top: 80px; } }\n\n@media (min-width: 668px) and (max-width: 1024px) {\n    #titles {\n      margin-top: 80px; } }\n\n#titles h3 {\n    margin-left: 3%;\n    font-size: 16px; }\n\n@media (min-width: 1025px) {\n      #titles h3 {\n        margin-left: 0;\n        font-size: 20px;\n        width: 100%; } }\n\n@media (min-width: 668px) and (max-width: 1024px) {\n      #titles h3 {\n        margin-left: 0;\n        font-size: 20px;\n        width: 100%; } }\n\nh1 {\n  min-height: 200px;\n  background-color: #ccc;\n  text-align: center;\n  line-height: 200px; }\n\n.leftRs {\n  position: absolute;\n  margin: auto;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  border: none;\n  background: transparent;\n  background-image: url(/assets/icon/left-arrow.svg);\n  background-size: 37px;\n  height: 0;\n  width: 28px;\n  overflow: hidden;\n  padding-top: 37px;\n  cursor: pointer; }\n\n.rightRs {\n  position: absolute;\n  margin: auto;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  border: none;\n  background: transparent;\n  background-image: url(/assets/icon/right-arrow.svg);\n  background-size: 37px;\n  height: 0;\n  width: 28px;\n  overflow: hidden;\n  padding-top: 37px;\n  cursor: pointer; }\n\n.rightRs:focus, .leftRs:focus {\n  outline: none; }\n\n.tile {\n  box-shadow: 0 2px 5px 0 rgba(255, 255, 255, 0), 0 2px 10px 0 rgba(255, 255, 255, 0); }\n\n@media screen and (max-width: 480px) {\n  .url-carousel {\n    width: 100%;\n    margin: 0 auto;\n    display: block;\n    text-align: center; }\n  .container-img {\n    margin-left: 0px !important; } }\n\n:host ::ng-deep .tile {\n  box-shadow: none !important; }\n"
+module.exports = ":host /deep/ .ngxcarousel-inner {\n  margin: 30px 0 10px 0; }\n  @media (min-width: 1100px) {\n    :host /deep/ .ngxcarousel-inner {\n      height: 280px; } }\n  .contenedor {\n  width: 80%;\n  margin: 0 auto;\n  display: block; }\n  @media (max-width: 767px) {\n    .contenedor {\n      display: none; } }\n  .item {\n  height: 100%;\n  align-items: center;\n  justify-content: center;\n  position: relative; }\n  @media (min-width: 668px) and (max-width: 1024px) {\n    .item {\n      height: initial;\n      width: 68%;\n      left: initial; } }\n  @media (min-width: 1025px) {\n    .item {\n      height: initial;\n      width: 92.5%;\n      left: initial; } }\n  .tile {\n  float: left;\n  box-shadow: none !important;\n  position: relative; }\n  @media (min-width: 1025px) {\n    .tile {\n      left: 0%;\n      padding-left: 0%;\n      justify-content: center; } }\n  .url-carousel {\n  width: 132px; }\n  @media (min-width: 668px) and (max-width: 1024px) {\n    .url-carousel {\n      width: 285px; } }\n  @media (min-width: 1025px) {\n    .url-carousel {\n      width: 230px;\n      padding-left: 2%;\n      padding-right: 2%;\n      text-decoration: none;\n      overflow: hidden;\n      height: 253px;\n      display: block; }\n      .url-carousel:hover .container-img {\n        -webkit-transform: translateY(-122%);\n                transform: translateY(-122%); }\n      .url-carousel:hover .info-carousel {\n        -webkit-transform: translateY(-110%);\n                transform: translateY(-110%); } }\n  .url-carousel .container-img {\n    width: 30%;\n    height: 30%;\n    position: relative;\n    display: -webkit-inline-box;\n    margin-left: 11%;\n    margin-right: auto;\n    margin-top: 5%;\n    display: inline-table;\n    max-width: 100%;\n    align-items: center; }\n  @media (max-width: 769px) {\n      .url-carousel .container-img {\n        margin-left: 0; } }\n  @media (min-width: 1025px) {\n      .url-carousel .container-img {\n        display: flex;\n        height: 235px;\n        width: 100%;\n        margin-bottom: 14%;\n        margin-top: 0%;\n        padding-left: 20px;\n        padding-right: 20px;\n        width: 80%;\n        transition: all ease 0.8s; } }\n  @media (min-width: 668px) and (max-width: 1024px) {\n      .url-carousel .container-img {\n        display: flex;\n        width: 100%;\n        padding: 22%;\n        align-items: center;\n        height: 100px;\n        margin-left: 0; } }\n  .url-carousel .container-img .img-fluid {\n      height: 100%;\n      width: 100%; }\n  @media (min-width: 668px) and (max-width: 1024px) {\n        .url-carousel .container-img .img-fluid {\n          height: auto;\n          width: auto; } }\n  @media (min-width: 1025px) {\n        .url-carousel .container-img .img-fluid {\n          height: auto;\n          width: auto; } }\n  .url-carousel .info-carousel {\n    display: none; }\n  @media (min-width: 1025px) {\n      .url-carousel .info-carousel {\n        position: absolute;\n        display: table;\n        width: 100%;\n        height: 222px;\n        transition: all ease 0.8s; }\n        .url-carousel .info-carousel::before {\n          content: '';\n          background: linear-gradient(-90deg, rgba(255, 255, 255, 0), #005892, rgba(255, 255, 255, 0));\n          display: block;\n          position: absolute;\n          height: 1px;\n          width: 100%; }\n        .url-carousel .info-carousel::after {\n          content: '';\n          background: linear-gradient(-90deg, rgba(255, 255, 255, 0), #005892, rgba(255, 255, 255, 0));\n          display: block;\n          position: absolute;\n          top: 100%;\n          height: 1px;\n          width: 100%; } }\n  .url-carousel .info-carousel .title {\n      text-align: center;\n      text-transform: uppercase;\n      width: 100%;\n      padding-top: 12%;\n      font-size: 24px;\n      color: #acd233;\n      padding-left: 16%;\n      padding-right: 18%;\n      font-family: 'Open Sans Condensed';\n      font-weight: 300; }\n  .url-carousel .info-carousel .text-description {\n      text-align: center;\n      width: 100%;\n      padding-top: 2%;\n      font-size: 14px;\n      color: #002b49;\n      font-family: 'Open Sans';\n      font-weight: 300; }\n  .icon-left {\n  position: relative;\n  top: 5%;\n  background-image: url(/assets/icon/left-arrow.svg);\n  background-size: 37px;\n  height: 27px;\n  width: 24px; }\n  @media (min-width: 668px) and (max-width: 1024px) {\n    .icon-left {\n      left: 37%; } }\n  @media (min-width: 1025px) {\n    .icon-left {\n      height: 34px; } }\n  .icon-right {\n  position: relative;\n  top: 5%;\n  background-image: url(/assets/icon/right-arrow.svg);\n  background-size: 37px;\n  height: 27px;\n  width: 24px; }\n  @media (min-width: 668px) and (max-width: 1024px) {\n    .icon-right {\n      right: 40%; } }\n  @media (min-width: 1025px) {\n    .icon-right {\n      height: 34px; } }\n  #main-title {\n  color: #002b49;\n  text-align: center;\n  margin-top: 64px; }\n  @media (min-width: 1025px) {\n    #main-title {\n      margin-top: 80px; } }\n  @media (min-width: 668px) and (max-width: 1024px) {\n    #main-title {\n      margin-top: 80px; } }\n  #main-title h2 {\n    margin-left: 3%;\n    font-size: 30px;\n    -webkit-transform: scaleY(1.2);\n            transform: scaleY(1.2); }\n  @media (min-width: 1025px) {\n      #main-title h2 {\n        margin-left: 0;\n        font-size: 40px;\n        width: 100%; } }\n  @media (min-width: 668px) and (max-width: 1024px) {\n      #main-title h2 {\n        margin-left: 0;\n        font-size: 40px;\n        width: 100%; } }\n  #titles {\n  color: #002b49;\n  text-align: center;\n  margin-top: 60px; }\n  @media (min-width: 1025px) {\n    #titles {\n      margin-top: 80px; } }\n  @media (min-width: 668px) and (max-width: 1024px) {\n    #titles {\n      margin-top: 80px; } }\n  #titles h3 {\n    margin-left: 3%;\n    font-size: 16px; }\n  @media (min-width: 1025px) {\n      #titles h3 {\n        margin-left: 0;\n        font-size: 20px;\n        width: 100%; } }\n  @media (min-width: 668px) and (max-width: 1024px) {\n      #titles h3 {\n        margin-left: 0;\n        font-size: 20px;\n        width: 100%; } }\n  h1 {\n  min-height: 200px;\n  background-color: #ccc;\n  text-align: center;\n  line-height: 200px; }\n  .leftRs {\n  position: absolute;\n  margin: auto;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  border: none;\n  background: transparent;\n  background-image: url(/assets/icon/left-arrow.svg);\n  background-size: 37px;\n  height: 0;\n  width: 28px;\n  overflow: hidden;\n  padding-top: 37px;\n  cursor: pointer; }\n  @media (max-width: 767px) {\n    .leftRs {\n      margin-left: 10px; } }\n  .rightRs {\n  position: absolute;\n  margin: auto;\n  top: 0;\n  bottom: 0;\n  right: 0;\n  border: none;\n  background: transparent;\n  background-image: url(/assets/icon/right-arrow.svg);\n  background-size: 37px;\n  height: 0;\n  width: 28px;\n  overflow: hidden;\n  padding-top: 37px;\n  cursor: pointer; }\n  @media (max-width: 767px) {\n    .rightRs {\n      margin-right: 10px; } }\n  .rightRs:focus, .leftRs:focus {\n  outline: none; }\n  .tile {\n  box-shadow: 0 2px 5px 0 rgba(255, 255, 255, 0), 0 2px 10px 0 rgba(255, 255, 255, 0); }\n  @media screen and (max-width: 480px) {\n  .url-carousel {\n    width: 100%;\n    margin: 0 auto;\n    display: block;\n    text-align: center; }\n  .container-img {\n    margin-left: 0px !important; } }\n  :host ::ng-deep .tile {\n  box-shadow: none !important;\n  margin: 10px 0 50px 0; }\n  @media (max-width: 767px) {\n    :host ::ng-deep .tile {\n      display: flex;\n      flex-direction: row;\n      flex-wrap: wrap;\n      justify-content: center;\n      align-items: center;\n      margin: 10px 0 40px 0; } }\n  .contenedor-mobile {\n  display: none; }\n  @media (max-width: 767px) {\n    .contenedor-mobile {\n      display: block; } }\n  .contenedor-mobile .image-client-carousel-mobile {\n    width: 100px;\n    height: 90px;\n    background-repeat: no-repeat;\n    background-position: center;\n    background-size: contain;\n    margin: 10px 20px; }\n"
 
 /***/ }),
 
@@ -1598,6 +1603,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 var CarouselItem2Component = /** @class */ (function () {
     function CarouselItem2Component(_cardService) {
         this._cardService = _cardService;
+        this.arrayBox = [];
         this.propagar = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
         this.clients = [];
     }
@@ -1633,12 +1639,32 @@ var CarouselItem2Component = /** @class */ (function () {
             }
         }
     };
+    CarouselItem2Component.prototype.organizeInfoForCarousel = function (clientsInfo) {
+        var number = clientsInfo.length / 4;
+        if (clientsInfo.length % 4 === 0) {
+            var numberOfBoxes = parseInt(number.toString(), 10);
+        }
+        else {
+            var numberOfBoxes = 1 + parseInt(number.toString(), 10);
+        }
+        for (var i = 0; i < numberOfBoxes; i++) {
+            this.arrayBox[i] = [];
+        }
+        for (var i = 0; i < this.arrayBox.length; i++) {
+            for (var j = 0; j < 4; j++) {
+                this.arrayBox[i].push(clientsInfo[0]);
+                clientsInfo.shift();
+            }
+        }
+    };
     CarouselItem2Component.prototype.getOurClientsItems = function () {
         var _this = this;
         this._cardService.getCustomCardInformation('clientscard').subscribe(function (items) {
             _this.clients = items.data;
             _this.titleClients = items.header[0].data.title;
             _this.clients = Object.keys(items.data).map(function (key) { return items.data[key]; });
+            _this.clientsDesktop = Object.keys(items.data).map(function (key) { return items.data[key]; });
+            _this.organizeInfoForCarousel(_this.clients);
         });
     };
     __decorate([
@@ -1952,6 +1978,155 @@ var ClientProServComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/cards/components/filter/filter.component.html":
+/*!***************************************************************!*\
+  !*** ./src/app/cards/components/filter/filter.component.html ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"conteiner-1\">\n    <div class=\"conteiner-2\">\n        <div class=\"div-left-side\"></div>\n        <div class=\"divIconSeparator\">\n            <label>{{title}}</label>\n        </div>\n        <div class=\"div-right-side\"></div>\n    </div>\n</div>\n<div class=\"container\">\n    <div class=\"row\">\n        <div class=\"items\" *ngIf=\"datos[0] != undefined ||datos[1] != undefined\">\n            <label for=\"client\">{{datos[0]?.data.client}}</label>\n            <ng-select #clientF class=\"select-autocomplete\" id=\"client\" name=\"client\" [placeholder]=\"datos[1].data.client_placeholder\"\n                [allowClear]=\"true\" [items]=\"listClient\" [disabled]=\"disabled\" (data)=\"refreshValueClient($event)\"\n                (selected)=\"selectedClient($event)\" (removed)=\"removedClient($event)\" (typed)=\"typedClient($event)\">\n            </ng-select>\n            <input type=\"text\" class=\"ocultar\" id=\"client\" name=\"client\" [ngModel]=\"clientSelected\">\n        </div>\n        <div class=\"items\" *ngIf=\"datos[2] != undefined ||datos[3] != undefined\">\n            <label for=\"sector\">{{datos[2].data.sector}}</label>\n            <ng-select #sectorF class=\"select-autocomplete\" id=\"sector\" name=\"sector\" [placeholder]=\"datos[3].data.sector_placeholder\"\n                [allowClear]=\"true\" [items]=\"listSector\" [disabled]=\"disabled\" (data)=\"refreshValueSector($event)\"\n                (selected)=\"selectedSector($event)\" (removed)=\"removedSector($event)\" (typed)=\"typedSector($event)\">\n            </ng-select>\n            <input type=\"text\" class=\"ocultar\" id=\"sector\" name=\"sector\" [ngModel]=\"sectorSelected\">\n        </div>\n        <div class=\"items\" *ngIf=\"datos[4] != undefined ||datos[5] != undefined\">\n            <label for=\"tecnology\">{{datos[4].data.tecnology}}</label>\n            <ng-select #tecnologyF class=\"select-autocomplete\" id=\"category\" name=\"category\" [placeholder]=\"datos[5].data.tecnology_placeholder\"\n                [allowClear]=\"true\" [items]=\"listTecnology\" [disabled]=\"disabled\" (data)=\"refreshValueTecnology($event)\"\n                (selected)=\"selectedTecnology($event)\" (removed)=\"removedTecnology($event)\" (typed)=\"typedTecnology($event)\">\n            </ng-select>\n            <input type=\"text\" class=\"ocultar\" id=\"tecnology\" name=\"tecnology\" [ngModel]=\"tecnologySelected\">\n        </div>\n        <div class=\"items\" *ngIf=\"datos[6] != undefined || datos[7] != undefined\">\n            <label for=\"theme\">{{datos[6].data.theme}}</label>\n            <ng-select #themeF class=\"select-autocomplete\" id=\"theme\" name=\"theme\" [placeholder]=\"datos[7].data.theme_placeholder\"\n                [allowClear]=\"true\" [items]=\"listTheme\" [disabled]=\"disabled\" (data)=\"refreshValueTheme($event)\"\n                (selected)=\"selectedTheme($event)\" (removed)=\"removedTheme($event)\" (typed)=\"typedTheme($event)\">\n            </ng-select>\n            <input type=\"text\" class=\"ocultar\" id=\"theme\" name=\"theme\" [ngModel]=\"themeSelected\">\n        </div>\n        <div class=\"items button-all\" *ngIf=\"datos[8] != undefined\"><i ngClass=\"icon-actu\"></i><label class=\"margin-button\">{{datos[8].data.button}}</label>\n        </div>\n    </div>\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/cards/components/filter/filter.component.scss":
+/*!***************************************************************!*\
+  !*** ./src/app/cards/components/filter/filter.component.scss ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".conteiner-1 {\n  width: 100%;\n  box-sizing: border-box;\n  padding: 70px 65px 40px; }\n\n/deep/ .conteiner-2 {\n  max-width: 900px;\n  position: relative;\n  margin: 0 auto; }\n\n/deep/ .conteiner-2 .div-left-side {\n    background: #e2e2e2;\n    background: linear-gradient(to right, #e2e2e2 0%, #a6cf24 100%);\n    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e2e2e2', endColorstr='#135670', GradientType=1);\n    width: 42%;\n    height: 2px;\n    position: absolute;\n    left: 0;\n    margin-left: -30px; }\n\n@media (max-width: 500px) {\n      /deep/ .conteiner-2 .div-left-side {\n        background: #a6cf24;\n        width: 120%; } }\n\n/deep/ .conteiner-2 .divIconSeparator {\n    display: block;\n    position: absolute;\n    width: 150px;\n    left: 45%;\n    margin-left: -30px;\n    margin-top: -20px;\n    text-align: center; }\n\n@media (max-width: 500px) {\n      /deep/ .conteiner-2 .divIconSeparator {\n        left: 0;\n        margin-left: 0;\n        margin-top: 10px; } }\n\n/deep/ .conteiner-2 .div-right-side {\n    background: #a6cf24;\n    background: linear-gradient(to right, #a6cf24 0%, #e2e2e2 99%);\n    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#135670', endColorstr='#e2e2e2', GradientType=1);\n    width: 42%;\n    height: 2px;\n    display: block;\n    position: absolute;\n    right: 0;\n    margin-right: -30px; }\n\n@media (max-width: 500px) {\n      /deep/ .conteiner-2 .div-right-side {\n        display: none; } }\n\n.ocultar {\n  display: none; }\n\n/deep/ .select-autocomplete .btn-default {\n  color: #333;\n  background-color: #fff;\n  border-color: #ccc; }\n\n/deep/ .select-autocomplete .btn-secondary {\n  background-color: #fff; }\n\n/deep/ .select-autocomplete .ui-select-choices {\n  display: block; }\n\n/deep/ .select-autocomplete .pull-right {\n  float: right !important; }\n\n/deep/ .select-autocomplete .ui-select-toggle {\n  width: 100%;\n  padding: 4px 2px;\n  outline: none;\n  border: none;\n  border-bottom: 1px solid #b2c6cd;\n  color: #002b49;\n  border-radius: 0px;\n  background: #f8f8f8; }\n\n/deep/ .select-autocomplete .ui-select-match {\n  font-family: 'Open Sans light'; }\n\n/deep/ .select-autocomplete .ui-select-container {\n  width: 130%; }\n\n@media (min-width: 1025px) {\n  .container {\n    margin-left: 320px; } }\n\n.container .items {\n  margin-top: 10px;\n  margin-left: 40px;\n  margin-right: 30px; }\n\n.container .items label {\n    color: #a6cf24; }\n\n.container .button-all {\n  padding-top: 45px; }\n\n@media (max-width: 500px) {\n    .container .button-all {\n      padding-top: 10px; } }\n\n.container .button-all .margin-button {\n    margin-left: 30px !important; }\n\n.icon-actu {\n  background-image: url(\"data:image/svg+xml,%3C%3Fxml version%3D%221.0%22 encoding%3D%22UTF-8%22%3F%3E%3C!-- Created with Inkscape (http%3A%2F%2Fwww.inkscape.org%2F) --%3E%3Csvg width%3D%226.8795mm%22 height%3D%2214.022mm%22 version%3D%221.1%22 viewBox%3D%220 0 6.8795 14.022%22 xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 xmlns%3Acc%3D%22http%3A%2F%2Fcreativecommons.org%2Fns%23%22 xmlns%3Adc%3D%22http%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%22 xmlns%3Ardf%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%22%3E %3Cmetadata%3E  %3Crdf%3ARDF%3E   %3Ccc%3AWork rdf%3Aabout%3D%22%22%3E    %3Cdc%3Aformat%3Eimage%2Fsvg%2Bxml%3C%2Fdc%3Aformat%3E    %3Cdc%3Atype rdf%3Aresource%3D%22http%3A%2F%2Fpurl.org%2Fdc%2Fdcmitype%2FStillImage%22%2F%3E    %3Cdc%3Atitle%2F%3E   %3C%2Fcc%3AWork%3E  %3C%2Frdf%3ARDF%3E %3C%2Fmetadata%3E %3Cg transform%3D%22translate(-32.09 -117.63)%22%3E  %3Cpath d%3D%22m35.117 117.63a3.0109 3.0429 0 0 0-2.777 1.829 3.0109 3.0429 0 0 0 1.024 3.698 3.0109 3.0429 0 0 0 3.791-0.259l-0.671-0.727a2.0288 2.0503 0 0 1-1.382 0.552 2.0288 2.0503 0 0 1-2.029-2.049 2.0288 2.0503 0 0 1 2.029-2.051 2.0288 2.0503 0 0 1 2.029 2.049h-0.857l1.348 1.346 0.672-0.673 0.676-0.673h-0.856a3.0109 3.0429 0 0 0-2.399-2.978 3.0109 3.0429 0 0 0-0.598-0.06z%22 fill%3D%22%23aada40%22%2F%3E  %3Cpath d%3D%22m35.117 125.57a3.0109 3.0429 0 0 0-2.777 1.829 3.0109 3.0429 0 0 0 1.024 3.698 3.0109 3.0429 0 0 0 3.791-0.259l-0.671-0.727a2.0288 2.0503 0 0 1-1.382 0.552 2.0288 2.0503 0 0 1-2.029-2.049 2.0288 2.0503 0 0 1 2.029-2.051 2.0288 2.0503 0 0 1 2.029 2.049h-0.857l0.674 0.673 0.674 0.674 0.672-0.674 0.676-0.673h-0.856a3.0109 3.0429 0 0 0-2.399-2.978 3.0109 3.0429 0 0 0-0.598-0.06z%22 fill%3D%22%2383a024%22%2F%3E %3C%2Fg%3E%3C%2Fsvg%3E\");\n  background-repeat: no-repeat;\n  background-size: cover;\n  width: 25px;\n  height: 25px;\n  display: inline-block;\n  position: absolute; }\n"
+
+/***/ }),
+
+/***/ "./src/app/cards/components/filter/filter.component.ts":
+/*!*************************************************************!*\
+  !*** ./src/app/cards/components/filter/filter.component.ts ***!
+  \*************************************************************/
+/*! exports provided: FilterComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FilterComponent", function() { return FilterComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_app_services_cards_v1_card_services__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/services/cards/v1-card.services */ "./src/app/services/cards/v1-card.services.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var FilterComponent = /** @class */ (function () {
+    function FilterComponent(_http) {
+        this._http = _http;
+        this.value = {};
+        this.title = '';
+        this.datos = [];
+        this.clientSelected = '';
+        this.bandClient = [];
+        this.listClient = [];
+        this.sectorSelected = '';
+        this.bandSector = [];
+        this.listSector = [];
+        this.tecnologySelected = '';
+        this.bandTecnology = [];
+        this.listTecnology = [];
+        this.themeSelected = '';
+        this.bandTheme = [];
+        this.listTheme = [];
+    }
+    FilterComponent.prototype.ngOnInit = function () {
+        this.getFilterService();
+    };
+    FilterComponent.prototype.getFilterService = function () {
+        var _this = this;
+        this._http.getCustomCardInformation('successcasefiltercard').subscribe(function (params) {
+            _this.title = params.header[0].data.title;
+            _this.datos = params.body;
+        });
+    };
+    Object.defineProperty(FilterComponent.prototype, "disabledV", {
+        // Metodos del select
+        get: function () {
+            return this._disabledV;
+        },
+        set: function (value) {
+            this._disabledV = value;
+            this.disabled = this._disabledV === '1';
+        },
+        enumerable: true,
+        configurable: true
+    });
+    // Client
+    FilterComponent.prototype.selectedClient = function (value) {
+        this.clientSelected = value.text;
+    };
+    FilterComponent.prototype.removedClient = function (value) {
+        this.clientSelected = '';
+    };
+    FilterComponent.prototype.typedCategory = function (value) {
+    };
+    FilterComponent.prototype.refreshValueClient = function (value) {
+        this.clientSelected = value.text;
+    };
+    // Sector
+    FilterComponent.prototype.selectedSector = function (value) {
+        this.sectorSelected = value.text;
+    };
+    FilterComponent.prototype.removedSector = function (value) {
+        this.sectorSelected = '';
+    };
+    FilterComponent.prototype.typedSector = function (value) {
+    };
+    FilterComponent.prototype.refreshValueSector = function (value) {
+        this.sectorSelected = value.text;
+    };
+    // Tecnology
+    FilterComponent.prototype.selectedTecnology = function (value) {
+        this.tecnologySelected = value.text;
+    };
+    FilterComponent.prototype.removedTecnology = function (value) {
+        this.tecnologySelected = '';
+    };
+    FilterComponent.prototype.typedTecnology = function (value) {
+    };
+    FilterComponent.prototype.refreshValueTecnology = function (value) {
+        this.tecnologySelected = value.text;
+    };
+    // Theme
+    FilterComponent.prototype.selectedTheme = function (value) {
+        this.themeSelected = value.text;
+    };
+    FilterComponent.prototype.removedTheme = function (value) {
+        this.themeSelected = '';
+    };
+    FilterComponent.prototype.typedTheme = function (value) {
+    };
+    FilterComponent.prototype.refreshValueTheme = function (value) {
+        this.themeSelected = value.text;
+    };
+    FilterComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-filter',
+            template: __webpack_require__(/*! ./filter.component.html */ "./src/app/cards/components/filter/filter.component.html"),
+            styles: [__webpack_require__(/*! ./filter.component.scss */ "./src/app/cards/components/filter/filter.component.scss")]
+        }),
+        __metadata("design:paramtypes", [src_app_services_cards_v1_card_services__WEBPACK_IMPORTED_MODULE_1__["CustomCardService"]])
+    ], FilterComponent);
+    return FilterComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/cards/components/float-social/float-social.component.html":
 /*!***************************************************************************!*\
   !*** ./src/app/cards/components/float-social/float-social.component.html ***!
@@ -2145,7 +2320,7 @@ var FooterBlockComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ng-container>\n  <section id=\"footer-block-brand\">\n    <div class=\"row row-brand-footer\">\n      <div class=\"col-12 col-brand-footer\">\n        <img class=\"img-brand-footer\" *ngIf=\"imageLogo\" [src]=\"imageLogo.url\" alt=\"BitsAmericas\">\n        <h6 class=\"title-brand\">{{ nameBrand.title }}</h6>\n      </div>\n    </div>\n  </section>\n</ng-container>\n"
+module.exports = "<ng-container>\n  <section id=\"footer-block-brand\">\n    <div class=\"row row-brand-footer\">\n      <div class=\"col-12 col-brand-footer\">\n        <img class=\"img-brand-footer\" *ngIf=\"imageLogo\" [src]=\"imageLogo.url\" alt=\"BitsAmericas\">\n        <h6 class=\"title-brand\"> {{ nameBrand.title }} </h6>\n      </div>\n    </div>\n  </section>\n</ng-container>"
 
 /***/ }),
 
@@ -2225,7 +2400,7 @@ var FooterBrandComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ng-container>\n  <section id=\"footer-block-contact\">\n    <div class=\"row row-contact-block-footer\">\n      <div class=\"col-lg-12 col-contact-footer\">\n        <div class=\"container-info-contact\">\n            <h6 class=\"title-contact\">{{ contactTitle.title }}</h6>\n            <div class=\"other-contact-info\">\n              <li class=\"li-contact-footer-mail\">\n                <a class=\"link-mail\" href=\"{{ contactMailLink.link }}\">\n                  <i class=\"fas fa-envelope\"></i> \n                  <p>{{ contactMailLink.label }}</p>\n                </a>\n              </li>\n              <li class=\"li-contact-footer-icons\" *ngFor=\"let socialIcon of contactSocialArray;\">\n                <a class=\"link-icons\" href=\"{{ socialIcon.data.url }}\">\n                  <i class=\"{{ socialIcon.data.text }} size-of-icons\"></i>\n                </a> \n              </li>\n            </div>\n        </div>\n      </div>\n    </div>\n  </section>\n</ng-container>\n"
+module.exports = "<ng-container>\n  <section id=\"footer-block-contact\">\n    <div class=\"row row-contact-block-footer\">\n      <div class=\"col-lg-12 col-contact-footer\">\n        <div class=\"container-info-contact\">\n          <h6 class=\"title-contact\"> {{ contactTitle.title }} </h6>\n          <div class=\"other-contact-info\">\n            <li class=\"li-contact-footer-mail\">\n              <a class=\"link-mail\" href=\"{{ contactMailLink.link }}\">\n                <i class=\"fas fa-envelope\"></i>\n                <p> {{ contactMailLink.label }} </p>\n              </a>\n            </li>\n            <li class=\"li-contact-footer-icons\" *ngFor=\"let socialIcon of contactSocialArray;\">\n              <a class=\"link-icons\" href=\"{{ socialIcon.data.url }}\">\n                <i class=\"{{ socialIcon.data.text }} size-of-icons\"></i>\n              </a>\n            </li>\n          </div>\n        </div>\n      </div>\n    </div>\n  </section>\n</ng-container>"
 
 /***/ }),
 
@@ -2312,7 +2487,7 @@ var FooterContactComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ng-container>\n  <section id=\"footer-block-newsletter\">\n    <div class=\"newsletter-info\">\n      <h6 *ngIf=\"footerData.title\">{{ footerData.title | uppercase }}</h6>\n      <p [innerHTML]=\"footerData.subtitle\"></p>\n      <button data-toggle=\"modal\" data-target=\"#newsletterModal\">\n        {{ footerData.button}}\n        <i class=\"fas fa-paper-plane\"></i>\n      </button>\n      <!-- Modal -->\n      <div class=\"modal fade\" id=\"newsletterModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\"\n        aria-hidden=\"true\">\n        <div class=\"modal-dialog\" role=\"document\">\n          <div class=\"modal-content\">\n            <div class=\"modal-header\">\n              <h5 class=\"modal-title\" id=\"exampleModalLabel\">{{ titleNewsletter }}</h5>\n              <p class=\"description-modal\">{{ descriptionNewsletter }}</p>\n              <button type=\"button\" class=\"close button-modal\" data-dismiss=\"modal\" aria-label=\"Close\">\n                <span aria-hidden=\"true\">&times;</span>\n              </button>\n            </div>\n            <div class=\"modal-body\">\n              <form action=\"\">\n                <div class=\"col-md-12 item\">\n                  <label class=\"label-modal\" for=\"exampleInputNombre-nw\">{{ nameInput }}*</label>\n                  <input class=\"input-modal\" type=\"text\" id=\"nombree\" placeholder=\"{{ nameInputPlaceholder }}\" name=\"nombre\">\n                  <div *ngIf=\"false\" class=\"alert alert-danger\" role=\"alert\">\n                    Campo obligatorio o invalido\n                  </div>\n                </div>\n                <div class=\"col-md-12 item\">\n                  <label class=\"label-modal\" for=\"exampleInputNombr-nw\">{{ lastNameInput }}</label>\n                  <input class=\"input-modal\" type=\"text\" id=\"apellido\" placeholder=\"{{ lastNameInputPlaceholder }}\"\n                    name=\"apellido\">\n                  <div *ngIf=\"false\" class=\"alert alert-danger\" role=\"alert\">\n                    Campo obligatorio o invalido\n                  </div>\n                </div>\n                <div class=\"col-md-12 item\">\n                  <label class=\"label-modal\" for=\"exampleInputEmail1-nw\">{{ emailInput }}*</label>\n                  <input class=\"input-modal\" type=\"email\" id=\"exampleInputEmail1\" aria-describedby=\"emailHelp\"\n                    placeholder=\"{{ emailInputPlaceholder }}\" name=\"correo_electronicoo\" pattern=\"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\">\n                  <div *ngIf=\"false\" class=\"alert alert-danger\" role=\"alert\">\n                    Campo obligatorio o invalido\n                  </div>\n                </div>\n              </form>\n            </div>\n            <div class=\"modal-footer\">\n              <div class=\"form-group\" class=\"terminos_grupo\">\n                <input class=\"check-modal-terms\" type=\"checkbox\" checked=\"checked\" id=\"terms-of-service\" name=\"terms_of_service\"\n                  value=\"false\" required>\n                <label class=\"label-modal-terms\" for=\"terms-of-service-nw\">He leído y acepto los <a class=\"link-modal-terms\"\n                    role=\"button\" href=\"{{ linkTerms }}\">{{ labelTerms }}</a></label>\n                <a data-trigger=\"focus\" role=\"button\" data-toggle=\"popover\" data-placement=\"top\" href=\"#\">\n                  <i class=\"fas fa-info-circle icon-tooltip\"></i>\n                </a>                \n              </div>\n            </div>\n            <button type=\"button\" class=\"save-modal-button\">{{ buttonSendNewsletter }}</button>\n          </div>\n        </div>\n      </div>\n    </div>\n\n  </section>\n</ng-container>\n<div id='popover-title'>{{titleTermsTooltip}}</div>\n<div id='popover-content' [innerHTML]='bodyTermsTooltip'></div>"
+module.exports = "<ng-container>\n    <section id=\"footer-block-newsletter\">\n    <div class=\"newsletter-info\">\n      <h6 *ngIf=\"footerData.title\">{{ footerData.title | uppercase }}</h6>\n      <p [innerHTML]=\"footerData.subtitle\"></p>\n      <button data-toggle=\"modal\" data-target=\"#newsletterModal\">\n        {{ footerData.button}}\n        <i class=\"fas fa-paper-plane\"></i>\n      </button>\n      <!-- Modal -->\n      <div class=\"modal fade\" id=\"newsletterModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\"\n        aria-hidden=\"true\">\n        <div class=\"modal-dialog\" role=\"document\">\n          <div class=\"modal-content\">\n            <div class=\"modal-header\">\n              <h5 class=\"modal-title\" id=\"exampleModalLabel\">{{ titleNewsletter }}</h5>\n              <p class=\"description-modal\">{{ descriptionNewsletter }}</p>\n              <button type=\"button\" class=\"close button-modal\" data-dismiss=\"modal\" aria-label=\"Close\">\n                <span aria-hidden=\"true\">&times;</span>\n              </button>\n            </div>\n            <div class=\"modal-body\">\n              <form action=\"\" id=\"footernewsletter-form\">\n                <app-message [dataMessage]=\"dataMessage\"></app-message>\n                <div class=\"col-md-12 item\">\n                  <label class=\"label-modal\" for=\"exampleInputNombre-nw\">{{ nameInput }}*</label>\n                  <input class=\"input-modal\" ngModel type=\"text\" id=\"nombree\" placeholder=\"{{ nameInputPlaceholder }}\"\n                    name=\"nombre\" [(ngModel)]=\"name_value\">\n                  <div *ngIf=\"false\" class=\"alert alert-danger\" role=\"alert\">\n                    Campo obligatorio o invalido\n                  </div>\n                </div>\n                <div class=\"col-md-12 item\">\n                  <label class=\"label-modal\" for=\"exampleInputNombr-nw\">{{ lastNameInput }}</label>\n                  <input class=\"input-modal\" type=\"text\" id=\"apellido\" placeholder=\"{{ lastNameInputPlaceholder }}\"\n                    name=\"apellido\" [(ngModel)]=\"last_name_value\">\n                  <div *ngIf=\"false\" class=\"alert alert-danger\" role=\"alert\">\n                    Campo obligatorio o invalido\n                  </div>\n                </div>\n                <div class=\"col-md-12 item\">\n                  <label class=\"label-modal\" for=\"exampleInputEmail1-nw\">{{ emailInput }}*</label>\n                  <input class=\"input-modal\" type=\"email\" id=\"exampleInputEmail1\" aria-describedby=\"emailHelp\"\n                    placeholder=\"{{ emailInputPlaceholder }}\" name=\"correo_electronico\" pattern=\"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\"\n                    [(ngModel)]=\"email_value\">\n                  <div *ngIf=\"false\" class=\"alert alert-danger\" role=\"alert\">\n                    Campo obligatorio o invalido\n                  </div>\n                </div>\n              </form>\n            </div>\n            <div class=\"modal-footer\">\n              <div class=\"form-group\" class=\"terminos_grupo\">\n                <input class=\"check-modal-terms\" type=\"checkbox\" checked=\"checked\" id=\"terms-of-service\" name=\"terms_of_service\"\n                  value=\"false\" required>\n                <label class=\"label-modal-terms\" for=\"terms-of-service-nw\">He leído y acepto los <a class=\"link-modal-terms\"\n                    role=\"button\" href=\"{{ linkTerms }}\">{{ labelTerms }}</a></label>\n                <a data-trigger=\"focus\" role=\"button\" data-toggle=\"popover\" data-placement=\"top\" href=\"#\">\n                  <i class=\"fas fa-info-circle icon-tooltip\"></i>\n                </a>\n              </div>\n              <button type=\"button\" class=\"save-modal-button\" (click)=\"clickOnSubmit()\">{{ buttonSendNewsletter }}</button>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </section>\n</ng-container>\n<div id='popover-title'>{{titleTermsTooltip}}</div>\n<div id='popover-content' [innerHTML]='bodyTermsTooltip'></div>"
 
 /***/ }),
 
@@ -2339,6 +2514,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FooterNewsletterComponent", function() { return FooterNewsletterComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _services_cards_v1_card_services__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../../../services/cards/v1-card.services */ "./src/app/services/cards/v1-card.services.ts");
+/* harmony import */ var _services_http_http_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../services/http/http.service */ "./src/app/services/http/http.service.ts");
+/* harmony import */ var _services_shared_notification_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../services/shared/notification.service */ "./src/app/services/shared/notification.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2350,17 +2527,26 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 };
 
 
+
+
 var FooterNewsletterComponent = /** @class */ (function () {
-    function FooterNewsletterComponent(_cardService, newsletter) {
+    function FooterNewsletterComponent(_cardService, newsletter, _http, _notificationService) {
         this._cardService = _cardService;
         this.newsletter = newsletter;
+        this._http = _http;
+        this._notificationService = _notificationService;
         this.footerData = {
             title: '',
             subtitle: '',
-            button: ''
+            button: '',
         };
     }
     FooterNewsletterComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.dataMessage = [];
+        this._http.get('rest/session/token', {}, { responseType: 'text' }).subscribe(function (response) {
+            _this._token = response;
+        });
         this.getPopoverService();
         $(function () {
             $('[data-toggle="popover"]').popover({
@@ -2381,7 +2567,7 @@ var FooterNewsletterComponent = /** @class */ (function () {
     FooterNewsletterComponent.prototype.getIndicatorsSliderItems = function () {
         var _this = this;
         this._cardService.getCustomCardInformation('newslettercard_2').subscribe(function (items) {
-            var title, subtitle, button;
+            var title, subtitle, button, message_error, message_success;
             for (var _i = 0, _a = items.header; _i < _a.length; _i++) {
                 var attr = _a[_i];
                 var obj = attr.data;
@@ -2440,6 +2626,12 @@ var FooterNewsletterComponent = /** @class */ (function () {
                 else if (obj['button']) {
                     _this.buttonSendNewsletter = obj.button;
                 }
+                else if (obj['message_success']) {
+                    _this.message_success = obj.message_success;
+                }
+                else if (obj['message_error']) {
+                    _this.message_error = obj.message_error;
+                }
             }
         });
     };
@@ -2450,6 +2642,40 @@ var FooterNewsletterComponent = /** @class */ (function () {
             _this.bodyTermsTooltip = params.body;
         });
     };
+    FooterNewsletterComponent.prototype.clickOnSubmit = function () {
+        var _this = this;
+        var data = {
+            'name': this.name_value,
+            'last_name': this.last_name_value,
+            'email': this.email_value,
+        };
+        this._http.post('v1/newsletterentity/export?_format=json', data, {
+            'Content-Type': 'application/json',
+            'X-CSRF-Token': this._token
+        })
+            .subscribe(function (datos) {
+            if (datos.error) {
+                for (var key in datos.error) {
+                    var message = {
+                        visible: true,
+                        status: 'error',
+                        message: _this.message_error
+                    };
+                    _this.dataMessage.push(message);
+                }
+            }
+            else if (datos.id) {
+                var message = {
+                    visible: true,
+                    status: 'success',
+                    message: _this.message_success,
+                };
+                _this._notificationService.success(message.message);
+                $('#newsletterModal').modal('hide');
+                $('#footernewsletter-form')[0].reset();
+            }
+        });
+    };
     FooterNewsletterComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-footer-newsletter',
@@ -2457,7 +2683,9 @@ var FooterNewsletterComponent = /** @class */ (function () {
             styles: [__webpack_require__(/*! ./footer-newsletter.component.scss */ "./src/app/cards/components/footer/footer-newsletter/footer-newsletter.component.scss")]
         }),
         __metadata("design:paramtypes", [_services_cards_v1_card_services__WEBPACK_IMPORTED_MODULE_1__["CustomCardService"],
-            _services_cards_v1_card_services__WEBPACK_IMPORTED_MODULE_1__["CustomCardService"]])
+            _services_cards_v1_card_services__WEBPACK_IMPORTED_MODULE_1__["CustomCardService"],
+            _services_http_http_service__WEBPACK_IMPORTED_MODULE_2__["HttpService"],
+            _services_shared_notification_service__WEBPACK_IMPORTED_MODULE_3__["NotificationService"]])
     ], FooterNewsletterComponent);
     return FooterNewsletterComponent;
 }());
@@ -2822,7 +3050,6 @@ var MenuTemplateComponent = /** @class */ (function () {
     };
     MenuTemplateComponent.prototype.ubicaciones = function (id) {
         var x = document.querySelector('#' + id);
-        console.log(x);
         if (x) {
             x.scrollIntoView({ block: 'start', inline: 'start', behavior: 'smooth' });
         }
@@ -2841,74 +3068,6 @@ var MenuTemplateComponent = /** @class */ (function () {
             _services_cards_v1_card_services__WEBPACK_IMPORTED_MODULE_1__["CustomCardService"]])
     ], MenuTemplateComponent);
     return MenuTemplateComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/cards/components/message/message.component.html":
-/*!*****************************************************************!*\
-  !*** ./src/app/cards/components/message/message.component.html ***!
-  \*****************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<ul *ngIf=\"dataMessage.length > 0\">\n  <li *ngFor=\"let data of dataMessage\">\n    <div *ngIf=\"data.visible == true\" ngClass={{data.status}}>\n      <i ngClass={{data.status}}></i>\n      <p>{{ data.message}}</p>\n    </div>\n  </li>\n</ul>"
-
-/***/ }),
-
-/***/ "./src/app/cards/components/message/message.component.scss":
-/*!*****************************************************************!*\
-  !*** ./src/app/cards/components/message/message.component.scss ***!
-  \*****************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "ul {\n  padding: 25px;\n  margin-bottom: 0; }\n  ul li {\n    list-style: none;\n    margin-top: 5px;\n    margin-bottom: 5px; }\n  ul li .error {\n      background-color: #efcfd2;\n      color: #721c24;\n      padding: 5px; }\n  ul li .success {\n      background-color: #e7efcd;\n      padding: 10px;\n      color: #002b49;\n      padding-left: 20px; }\n  ul li i.error {\n      background-image: url(\"data:image/svg+xml,%3C%3Fxml version%3D%221.0%22 encoding%3D%22UTF-8%22%3F%3E%3C!-- Created with Inkscape (http%3A%2F%2Fwww.inkscape.org%2F) --%3E%3Csvg width%3D%226.6477mm%22 height%3D%2213.295mm%22 version%3D%221.1%22 viewBox%3D%220 0 6.6477 13.295%22 xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 xmlns%3Acc%3D%22http%3A%2F%2Fcreativecommons.org%2Fns%23%22 xmlns%3Adc%3D%22http%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%22 xmlns%3Ardf%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%22%3E %3Cmetadata%3E  %3Crdf%3ARDF%3E   %3Ccc%3AWork rdf%3Aabout%3D%22%22%3E    %3Cdc%3Aformat%3Eimage%2Fsvg%2Bxml%3C%2Fdc%3Aformat%3E    %3Cdc%3Atype rdf%3Aresource%3D%22http%3A%2F%2Fpurl.org%2Fdc%2Fdcmitype%2FStillImage%22%2F%3E    %3Cdc%3Atitle%2F%3E   %3C%2Fcc%3AWork%3E  %3C%2Frdf%3ARDF%3E %3C%2Fmetadata%3E %3Cg transform%3D%22translate(168.12 -65.379)%22%3E  %3Ccircle transform%3D%22rotate(-45)%22 cx%3D%22-165.11%22 cy%3D%22-67.95%22 r%3D%223.3238%22 fill%3D%22%23b2dd54%22%2F%3E  %3Cpath d%3D%22m-163.13 67.355-2.157 2.1574-1.005-1.0062-0.456 0.4564 1.005 1.0057 0.456 0.4556 0.456-0.4556 2.157-2.1572z%22 fill%3D%22%23fff%22%2F%3E  %3Ccircle transform%3D%22rotate(-45)%22 cx%3D%22-169.81%22 cy%3D%22-63.249%22 r%3D%223.3238%22 fill%3D%22%23dd5454%22%2F%3E  %3Cpath d%3D%22m-163.72 73.814-1.0784 1.0784-1.0769-1.0771-0.45587 0.45588 1.0768 1.0769-1.0784 1.079 0.45588 0.45588 1.079-1.0784 1.0795 1.0795 0.45587-0.45588-1.0795-1.0795 1.0784-1.0784z%22 fill%3D%22%23fff%22%2F%3E %3C%2Fg%3E%3C%2Fsvg%3E\");\n      background-repeat: no-repeat;\n      background-size: cover;\n      width: 30px;\n      height: 30px;\n      display: inline-block;\n      background-position-y: -30px;\n      position: absolute; }\n  ul li i.success {\n      background-image: url(\"data:image/svg+xml,%3C%3Fxml version%3D%221.0%22 encoding%3D%22UTF-8%22%3F%3E%3C!-- Created with Inkscape (http%3A%2F%2Fwww.inkscape.org%2F) --%3E%3Csvg width%3D%226.6477mm%22 height%3D%2213.295mm%22 version%3D%221.1%22 viewBox%3D%220 0 6.6477 13.295%22 xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 xmlns%3Acc%3D%22http%3A%2F%2Fcreativecommons.org%2Fns%23%22 xmlns%3Adc%3D%22http%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%22 xmlns%3Ardf%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%22%3E %3Cmetadata%3E  %3Crdf%3ARDF%3E   %3Ccc%3AWork rdf%3Aabout%3D%22%22%3E    %3Cdc%3Aformat%3Eimage%2Fsvg%2Bxml%3C%2Fdc%3Aformat%3E    %3Cdc%3Atype rdf%3Aresource%3D%22http%3A%2F%2Fpurl.org%2Fdc%2Fdcmitype%2FStillImage%22%2F%3E    %3Cdc%3Atitle%2F%3E   %3C%2Fcc%3AWork%3E  %3C%2Frdf%3ARDF%3E %3C%2Fmetadata%3E %3Cg transform%3D%22translate(168.12 -65.379)%22%3E  %3Ccircle transform%3D%22rotate(-45)%22 cx%3D%22-165.11%22 cy%3D%22-67.95%22 r%3D%223.3238%22 fill%3D%22%23b2dd54%22%2F%3E  %3Cpath d%3D%22m-163.13 67.355-2.157 2.1574-1.005-1.0062-0.456 0.4564 1.005 1.0057 0.456 0.4556 0.456-0.4556 2.157-2.1572z%22 fill%3D%22%23fff%22%2F%3E  %3Ccircle transform%3D%22rotate(-45)%22 cx%3D%22-169.81%22 cy%3D%22-63.249%22 r%3D%223.3238%22 fill%3D%22%23dd5454%22%2F%3E  %3Cpath d%3D%22m-163.72 73.814-1.0784 1.0784-1.0769-1.0771-0.45587 0.45588 1.0768 1.0769-1.0784 1.079 0.45588 0.45588 1.079-1.0784 1.0795 1.0795 0.45587-0.45588-1.0795-1.0795 1.0784-1.0784z%22 fill%3D%22%23fff%22%2F%3E %3C%2Fg%3E%3C%2Fsvg%3E\");\n      background-repeat: no-repeat;\n      background-size: cover;\n      width: 30px;\n      height: 30px;\n      display: inline-block;\n      position: absolute; }\n  ul li p {\n      display: inline-block;\n      margin-left: 40px;\n      margin-bottom: 10px; }\n"
-
-/***/ }),
-
-/***/ "./src/app/cards/components/message/message.component.ts":
-/*!***************************************************************!*\
-  !*** ./src/app/cards/components/message/message.component.ts ***!
-  \***************************************************************/
-/*! exports provided: MessageComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MessageComponent", function() { return MessageComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var MessageComponent = /** @class */ (function () {
-    function MessageComponent() {
-        this.dataMessage = [];
-    }
-    MessageComponent.prototype.ngOnInit = function () {
-    };
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
-        __metadata("design:type", Array)
-    ], MessageComponent.prototype, "dataMessage", void 0);
-    MessageComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-message',
-            template: __webpack_require__(/*! ./message.component.html */ "./src/app/cards/components/message/message.component.html"),
-            styles: [__webpack_require__(/*! ./message.component.scss */ "./src/app/cards/components/message/message.component.scss")]
-        }),
-        __metadata("design:paramtypes", [])
-    ], MessageComponent);
-    return MessageComponent;
 }());
 
 
@@ -3323,7 +3482,7 @@ var SliderComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"tab\">\n\t<div class=\"contactenos\">\n\t\t<button class=\"active\" (click)=\"toogleHidden()\">\n\t\t\t{{this.title_a}}\n\t\t</button>\n\t</div>\n\t<div class=\"trabaje\">\n\t\t<button (click)=\"toogleHidden()\">\n\t\t\t{{this.title_b}}\n\t\t</button>\n\t</div>\n</div>\n<br /><br />\n<div class=\"container\" [hidden]=\"hidden\">\n\t<div class=\"row\">\n\t\t<form id=\"formulario_contacto\" #userForm=\"ngForm\" (ngSubmit)=\"onSubmit(userForm.value)\" class=\"col-md-12\" name=\"formulario_contacto\">\n\t\t\t<app-message [dataMessage]=\"dataMessage\"></app-message>\t\t\t\n\n\t\t\t<div class=\"form-group\" [ngClass]=\"aplicaCssErro(nombre)\" class=\"col-md-12\">\n\t\t\t\t<div class=\"col-md-6 item\">\n\t\t\t\t\t<label for=\"exampleInputNombre\">Nombre</label>\n\t\t\t\t\t<input type=\"text\" class=\"form-control\" id=\"nombre\" placeholder=\"Nombre\" name=\"nombre\" ngModel required #nombre=\"ngModel\">\n\t\t\t\t\t<div *ngIf=\"nombre.invalid && nombre.touched\" class=\"alert alert-danger\" role=\"alert\">\n\t\t\t\t\t\tCampo obligatorio o invalido\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-md-6 item\">\n\t\t\t\t\t<label for=\"exampleInputOrg\">Organización</label>\n\t\t\t\t\t<input type=\"text\" class=\"form-control\" id=\"organizacion\" placeholder=\"Organización\" name=\"organizacion\" ngModel\n\t\t\t\t\t #organizacion=\"ngModel\">\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"form-group\" class=\"col-md-12\">\n\t\t\t\t<div class=\"col-md-6 item\">\n\t\t\t\t\t<label for=\"exampleInputEmail1\">Email address</label>\n\t\t\t\t\t<input type=\"email\" class=\"form-control\" id=\"exampleInputEmail1\" aria-describedby=\"emailHelp\" placeholder=\"Escriba su email\"\n\t\t\t\t\t name=\"correo_electronico\" ngModel pattern=\"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\"\n\t\t\t\t\t #correo_electronico=\"ngModel\">\n\t\t\t\t\t<div *ngIf=\"correo_electronico.invalid && correo_electronico.touched\" class=\"alert alert-danger\" role=\"alert\">\n\t\t\t\t\t\tCampo obligatorio o invalido\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-md-6 item\">\n\t\t\t\t\t<label for=\"exampleInputTel\">Telefono</label>\n\t\t\t\t\t<input type=\"tel\" class=\"form-control\" id=\"org\" placeholder=\"Escriba su telefono\" name=\"telefono\" ngModel pattern=\"^(\\([0-9]{3}\\)|[0-9]{3})[0-9]{3}[0-9]{4}$\"\n\t\t\t\t\t #telefono=\"ngModel\">\n\t\t\t\t\t<div *ngIf=\"telefono.invalid && telefono.touched\" class=\"alert alert-danger\" role=\"alert\">\n\t\t\t\t\t\tCampo obligatorio o invalido\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"form-group\" class=\"col-md-12\">\n\t\t\t\t<div class=\"col-md-6 item\">\n\t\t\t\t\t<label for=\"pais\">Pais</label>\t\t\t\t\t\n\t\t\t\t\t<ng-select class=\"select-autocomplete\" id=\"pais\" name=\"pais\" placeholder=\"Seleccione su pais\" [allowClear]=\"true\" [items]=\"listPais\" [disabled]=\"disabled\" (data)=\"refreshValue($event)\" (selected)=\"selected($event)\"\n\t\t\t\t\t (removed)=\"removed($event)\" (typed)=\"typed($event)\">\n\t\t\t\t\t</ng-select>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-md-6 item\">\n\t\t\t\t\t<label for=\"ciudad\">Ciudad</label>\n\t\t\t\t\t<input type=\"text\" class=\"form-control\" id=\"ciudad\" placeholder=\"Ciudad\" name=\"ciudad\" ngModel #ciudad=\"ngModel\">\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"col-md-12\">\n\t\t\t\t<div class=\"col-md-6 item\">\n\t\t\t\t\t<label for=\"producto\">Producto de interés</label>\n\t\t\t\t\t<ng-select class=\"select-autocomplete\" id=\"productos_de_interes\" name=\"productos_de_interes\" placeholder=\"Seleccione un producto\"\n\t\t\t\t\t [allowClear]=\"true\" [items]=\"listProduct\" [disabled]=\"disabled\" (data)=\"refreshValue($event)\" (selected)=\"selected($event)\"\n\t\t\t\t\t (removed)=\"removed($event)\" (typed)=\"typed($event)\">\n\t\t\t\t\t</ng-select>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-md-6 item\">\n\t\t\t\t\t<label for=\"servicio\">Servicio de interés</label>\n\t\t\t\t\t<ng-select class=\"select-autocomplete\" id=\"servicios_de_interes\" name=\"servicios_de_interes\" placeholder=\"Seleccione un servicio\"\n\t\t\t\t\t [allowClear]=\"true\" [items]=\"listService\" [disabled]=\"disabled\" (data)=\"refreshValue($event)\" (selected)=\"selected($event)\"\n\t\t\t\t\t (removed)=\"removed($event)\" (typed)=\"typed($event)\">\n\t\t\t\t\t</ng-select>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"form-group\" class=\"col-md-12 comentario\">\n\t\t\t\t<label for=\"exampleInputComm\">Comentarios</label>\n\t\t\t\t<textarea class=\"form-control\" id=\"comentario\" placeholder=\"Escriba sus comentarios\" name=\"comentario\" ngModel\n\t\t\t\t #comentario=\"ngModel\"></textarea>\n\t\t\t\t<div *ngIf=\"comentario.invalid && comentario.touched\" class=\"alert alert-danger\" role=\"alert\">\n\t\t\t\t\tCampo obligatorio o invalido\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"form-group\" class=\"col-md-12 terminos_grupo\">\n\t\t\t\t<input type=\"checkbox\" checked=\"checked\" id=\"terms-of-service\" name=\"terms_of_service\" value=\"false\" ngModel\n\t\t\t\t required>\n\t\t\t\t<label ng-reflect-ng-class=\"\" for=\"terms-of-service\">He leído y acepto los\n\t\t\t\t\t<a data-trigger=\"focus\" role=\"button\" data-toggle=\"popover\" data-placement=\"top\" href=\"#\">\n\t\t\t\t\t\ttérminos y condiciones\n\t\t\t\t\t</a>\n\t\t\t\t</label>\n\t\t\t</div>\n\t\t\t<button type=\"submit\" class=\"btn btn-primary\">Enviar</button>\n\t\t\t<div class=\"obligatorios col-md-12\"> <span>*</span>Datos Obligatorios</div>\n\t\t</form>\n\t</div>\n</div>\n<app-workus [hidden]=\"!hidden\"></app-workus>\n<div id='popover-title'>{{titulo}}</div>\n<div id='popover-content' [innerHTML]='list'></div>"
+module.exports = "<div class=\"tab\">\n\t<div class=\"contactenos\">\n\t\t<button class=\"active\" (click)=\"toogleHidden()\">\n\t\t\t{{this.title_a}}\n\t\t</button>\n\t</div>\n\t<div class=\"trabaje\">\n\t\t<button (click)=\"toogleHidden()\">\n\t\t\t{{this.title_b}}\n\t\t</button>\n\t</div>\n</div>\n<br /><br />\n<div class=\"container\" [hidden]=\"hidden\">\n\t<div class=\"row\">\n\t\t<p [innerHTML]=\"descrip_form\" class=\"descrip-form\"></p>\n\t\t<form id=\"formulario_contacto\" #userForm=\"ngForm\" (ngSubmit)=\"onSubmit(userForm.value)\" class=\"col-md-12\" name=\"formulario_contacto\">\n\t\t\t<app-message [dataMessage]=\"dataMessage\"></app-message>\n\n\t\t\t<div class=\"form-group\" [ngClass]=\"aplicaCssErro(nombre)\" class=\"col-md-12\">\n\t\t\t\t<div class=\"col-md-6 item\">\n\t\t\t\t\t<label for=\"exampleInputNombre\">Nombre</label>\n\t\t\t\t\t<input type=\"text\" class=\"form-control\" id=\"nombre\" placeholder=\"Nombre\" name=\"nombre\" ngModel required #nombre=\"ngModel\">\n\t\t\t\t\t<div *ngIf=\"nombre.invalid && nombre.touched\" class=\"alert alert-danger\" role=\"alert\">\n\t\t\t\t\t\tCampo obligatorio o invalido\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-md-6 item\">\n\t\t\t\t\t<label for=\"exampleInputOrg\">Organización</label>\n\t\t\t\t\t<input type=\"text\" class=\"form-control\" id=\"organizacion\" placeholder=\"Organización\" name=\"organizacion\" ngModel\n\t\t\t\t\t #organizacion=\"ngModel\">\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"form-group\" class=\"col-md-12\">\n\t\t\t\t<div class=\"col-md-6 item\">\n\t\t\t\t\t<label for=\"exampleInputEmail1\">Email address</label>\n\t\t\t\t\t<input type=\"email\" class=\"form-control\" id=\"exampleInputEmail1\" aria-describedby=\"emailHelp\" placeholder=\"Escriba su email\"\n\t\t\t\t\t name=\"correo_electronico\" ngModel pattern=\"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\"\n\t\t\t\t\t #correo_electronico=\"ngModel\">\n\t\t\t\t\t<div *ngIf=\"correo_electronico.invalid && correo_electronico.touched\" class=\"alert alert-danger\" role=\"alert\">\n\t\t\t\t\t\tCampo obligatorio o invalido\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-md-6 item\">\n\t\t\t\t\t<label for=\"exampleInputTel\">Telefono</label>\n\t\t\t\t\t<input type=\"tel\" class=\"form-control\" id=\"org\" placeholder=\"Escriba su telefono\" name=\"telefono\" ngModel pattern=\"^(\\([0-9]{3}\\)|[0-9]{3})[0-9]{3}[0-9]{4}$\"\n\t\t\t\t\t #telefono=\"ngModel\">\n\t\t\t\t\t<div *ngIf=\"telefono.invalid && telefono.touched\" class=\"alert alert-danger\" role=\"alert\">\n\t\t\t\t\t\tCampo obligatorio o invalido\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"form-group\" class=\"col-md-12\">\n\t\t\t\t<div class=\"col-md-6 item\">\n\t\t\t\t\t<label for=\"pais\">Pais</label>\n\t\t\t\t\t<ng-select #paisTB class=\"select-autocomplete\" id=\"pais\" name=\"pais\" placeholder=\"Seleccione su pais\" [allowClear]=\"true\"\n\t\t\t\t\t [items]=\"listPais\" [disabled]=\"disabled\" (data)=\"refreshValuePais($event)\" (selected)=\"selectedPais($event)\"\n\t\t\t\t\t (removed)=\"removedPais($event)\" (typed)=\"typedPais($event)\">\n\t\t\t\t\t</ng-select>\n\t\t\t\t\t<input type=\"text\" class=\"form-control ocultar\" id=\"pais\" name=\"pais\" [ngModel]=\"pais\">\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-md-6 item\">\n\t\t\t\t\t<label for=\"ciudad\">Ciudad</label>\n\t\t\t\t\t<input type=\"text\" class=\"form-control\" id=\"ciudad\" placeholder=\"Ciudad\" name=\"ciudad\" ngModel #ciudad=\"ngModel\">\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"col-md-12\">\n\t\t\t\t<div class=\"col-md-6 item\">\n\t\t\t\t\t<label for=\"producto\">Producto de interés</label>\n\t\t\t\t\t<ng-select #productTB class=\"select-autocomplete\" id=\"productos_de_interes\" name=\"productos_de_interes\"\n\t\t\t\t\t placeholder=\"Seleccione un producto\" [allowClear]=\"true\" [items]=\"listProduct\" [disabled]=\"disabled\" (data)=\"refreshValueProduct($event)\"\n\t\t\t\t\t (selected)=\"selectedProduct($event)\" (removed)=\"removedProduct($event)\" (typed)=\"typedProduct($event)\">\n\t\t\t\t\t</ng-select>\n\t\t\t\t\t<input type=\"text\" class=\"form-control ocultar\" id=\"productos_de_interes\" name=\"productos_de_interes\" [ngModel]=\"product\">\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-md-6 item\">\n\t\t\t\t\t<label for=\"servicio\">Servicio de interés</label>\n\t\t\t\t\t<ng-select #serviceTB class=\"select-autocomplete\" id=\"servicios_de_interes\" name=\"servicios_de_interes\"\n\t\t\t\t\t placeholder=\"Seleccione un servicio\" [allowClear]=\"true\" [items]=\"listService\" [disabled]=\"disabled\" (data)=\"refreshValueService($event)\"\n\t\t\t\t\t (selected)=\"selectedService($event)\" (removed)=\"removedService($event)\" (typed)=\"typedService($event)\">\n\t\t\t\t\t</ng-select>\n\t\t\t\t\t<input type=\"text\" class=\"form-control ocultar\" id=\"servicios_de_interes\" name=\"servicios_de_interes\" [ngModel]=\"service\">\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"form-group\" class=\"col-md-12 comentario\">\n\t\t\t\t<label for=\"exampleInputComm\">Comentarios</label>\n\t\t\t\t<textarea class=\"form-control\" id=\"comentario\" placeholder=\"Escriba sus comentarios\" name=\"comentario\" ngModel\n\t\t\t\t #comentario=\"ngModel\"></textarea>\n\t\t\t\t<div *ngIf=\"comentario.invalid && comentario.touched\" class=\"alert alert-danger\" role=\"alert\">\n\t\t\t\t\tCampo obligatorio o invalido\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"form-group\" class=\"col-md-12 terminos_grupo\">\n\t\t\t\t<input type=\"checkbox\" [checked]=\"checked\" id=\"terms-of-service\" name=\"terms_of_service\" value=\"false\" ngModel\n\t\t\t\t required>\n\t\t\t\t<label ng-reflect-ng-class=\"\" for=\"terms-of-service\">He leído y acepto los\n\t\t\t\t\t<a data-trigger=\"focus\" role=\"button\" data-toggle=\"popover\" data-placement=\"top\" href=\"#\">\n\t\t\t\t\t\ttérminos y condiciones\n\t\t\t\t\t</a>\n\t\t\t\t</label>\n\t\t\t</div>\n\t\t\t<button type=\"submit\" class=\"btn btn-primary\">Enviar</button>\n\t\t\t<div class=\"obligatorios col-md-12\"> <span>*</span>Datos Obligatorios</div>\n\t\t</form>\n\t</div>\n</div>\n<app-workus [hidden]=\"!hidden\"></app-workus>\n<div id='popover-title'>{{titulo}}</div>\n<div id='popover-content' [innerHTML]='list'></div>"
 
 /***/ }),
 
@@ -3334,7 +3493,7 @@ module.exports = "<div class=\"tab\">\n\t<div class=\"contactenos\">\n\t\t<butto
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "*,\n*::before,\n*::after {\n  box-sizing: border-box; }\n\n.item {\n  display: inline-block; }\n\nlabel {\n  color: #c0dc74;\n  margin-top: 20px;\n  margin-bottom: -1px;\n  font-weight: 100;\n  font-family: 'Open Sans light'; }\n\ninput,\nselect {\n  width: 100%;\n  padding: 4px 2px;\n  outline: none;\n  border: none;\n  border-bottom: 1px solid #b2c6cd;\n  color: #002b49;\n  border-radius: 0px;\n  font-family: 'Open Sans light'; }\n\ninput.ng-invalid.ng-touched {\n  border: solid 1px red; }\n\ninput::-webkit-input-placeholder {\n  /* Chrome/Opera/Safari */\n  color: #808080; }\n\ninput::-moz-placeholder {\n  /* Firefox 19+ */\n  color: #808080; }\n\ninput:-ms-input-placeholder {\n  /* IE 10+ */\n  color: #808080; }\n\ninput:-moz-placeholder {\n  /* Firefox 18- */\n  color: #808080; }\n\n.comentario {\n  width: 98%;\n  margin: 0 auto; }\n\n@media screen and (max-width: 480px) {\n    .comentario {\n      width: 91%; } }\n\n.comentario textarea {\n    min-height: 40px;\n    border-radius: 0px;\n    border: 1px solid #b2c6cd;\n    padding: 10px 20px;\n    font-family: 'Open Sans light'; }\n\n.terminos_grupo {\n  position: relative;\n  max-width: 380px;\n  margin: 40px auto;\n  text-align: center;\n  /* OFF */\n  /* ON */ }\n\n.terminos_grupo [type=\"checkbox\"] {\n    position: absolute;\n    left: -9999px; }\n\n.terminos_grupo [type=\"checkbox\"] + label:after {\n    content: '';\n    position: absolute; }\n\n.terminos_grupo [type=\"checkbox\"] + label {\n    display: block;\n    position: relative;\n    padding-left: 26px;\n    cursor: pointer;\n    line-height: 36px;\n    font-size: 1rem;\n    color: rgba(0, 43, 73, 0.8);\n    transition: color .3s; }\n\n.terminos_grupo [type=\"checkbox\"] + label a {\n    color: #91b520; }\n\n.terminos_grupo [type=\"checkbox\"] + label:after {\n    width: 30px;\n    height: 30px;\n    transition: all .2s;\n    top: 0;\n    left: 0; }\n\n.terminos_grupo [type=\"checkbox\"]:not(:checked) + label:after {\n    background: url(\"/assets/images/check2_off.png\") left center no-repeat; }\n\n.terminos_grupo [type=\"checkbox\"]:checked + label:after {\n    background: url(\"/assets/images/check2.png\") left center no-repeat; }\n\nselect {\n  background: #f8f8f8;\n  font-family: 'Open Sans light'; }\n\ninput::-webkit-input-placeholder {\n  /* Chrome/Opera/Safari */\n  color: #808080; }\n\ninput::-moz-placeholder {\n  /* Firefox 19+ */\n  color: #808080; }\n\ninput:-ms-input-placeholder {\n  /* IE 10+ */\n  color: #808080; }\n\ninput:-moz-placeholder {\n  /* Firefox 18- */\n  color: #808080; }\n\n.comentario {\n  width: 98%;\n  margin: 0 auto; }\n\n@media screen and (max-width: 480px) {\n    .comentario {\n      width: 91%; } }\n\n.comentario textarea {\n    min-height: 40px;\n    border-radius: 0px;\n    border: 1px solid #b2c6cd;\n    padding: 10px 20px;\n    font-family: 'Open Sans light'; }\n\n.terminos_grupo {\n  position: relative;\n  max-width: 380px;\n  margin: 40px auto;\n  text-align: center;\n  /* OFF */\n  /* ON */ }\n\n.terminos_grupo [type=\"checkbox\"] {\n    position: absolute;\n    left: -9999px; }\n\n.terminos_grupo [type=\"checkbox\"] + label:after {\n    content: '';\n    position: absolute; }\n\n.terminos_grupo [type=\"checkbox\"] + label {\n    display: block;\n    position: relative;\n    padding-left: 26px;\n    cursor: pointer;\n    line-height: 36px;\n    font-size: 1rem;\n    color: rgba(0, 43, 73, 0.8);\n    transition: color .3s; }\n\n.terminos_grupo [type=\"checkbox\"] + label a {\n    color: #91b520; }\n\n.terminos_grupo [type=\"checkbox\"] + label:after {\n    width: 30px;\n    height: 30px;\n    transition: all .2s;\n    top: 0;\n    left: 0; }\n\n.terminos_grupo [type=\"checkbox\"]:not(:checked) + label:after {\n    background: url(\"/assets/images/check2_off.png\") left center no-repeat; }\n\n.terminos_grupo [type=\"checkbox\"]:checked + label:after {\n    background: url(\"/assets/images/check2.png\") left center no-repeat; }\n\n.btn-primary {\n  border-radius: 0px;\n  background: #91b520;\n  padding: 13px 37px;\n  background-color: #a6cf24 !important;\n  border: none;\n  margin: 0 auto;\n  display: block;\n  font-family: 'Open Sans light'; }\n\n.obligatorios {\n  text-align: center;\n  margin-top: 20px;\n  color: #6d747f;\n  font-family: 'Open Sans light'; }\n\n.obligatorios span {\n    color: #91b520; }\n\n.tab {\n  background: #e5e9ec;\n  height: 140px;\n  margin-top: 40px; }\n\n.tab .contactenos {\n    height: 140px;\n    padding-left: 11.8%;\n    display: inline-block;\n    position: relative;\n    width: 50%; }\n\n.tab .contactenos button {\n      display: block;\n      width: 84%;\n      height: 100%;\n      position: absolute;\n      top: 0px;\n      right: 0px;\n      background: url(/assets/images/contactus1-newproject.svg) no-repeat center 25px;\n      background-size: 10%;\n      padding-top: 8.5%;\n      border: none;\n      font-size: 22px;\n      font-family: 'Open Sans light';\n      color: #2e516a;\n      cursor: pointer; }\n\n@media (min-width: 1367px) {\n        .tab .contactenos button {\n          background-size: 8%; } }\n\n.tab .contactenos button:active,\n    .tab .contactenos button.active {\n      background: url(/assets/images/contactus1-newproject-white.svg) no-repeat center 25px, #30506c;\n      background-size: 10%;\n      color: #fff;\n      outline: 0px auto -webkit-focus-ring-color; }\n\n@media (min-width: 1367px) {\n        .tab .contactenos button:active,\n        .tab .contactenos button.active {\n          background-size: 8%; } }\n\n.tab .contactenos button.active::before {\n      content: '';\n      position: absolute;\n      border-width: 30px 65px 0;\n      border-style: solid;\n      border-color: #2e516a transparent transparent;\n      top: 97%;\n      margin-left: 37px; }\n\n.tab .contactenos button::after {\n      content: '';\n      position: absolute;\n      height: 75px;\n      width: 1px;\n      margin-top: -7%;\n      left: 0%;\n      background-color: #95a7b3; }\n\n.tab .contactenos button.active::after {\n      display: none; }\n\n@media screen and (max-width: 480px) {\n      .tab .contactenos button,\n      .tab .contactenos button.active {\n        width: 100%;\n        font-size: 15px;\n        padding-top: 46px;\n        background-size: 33%; }\n      .tab .contactenos button.active::before {\n        top: 96%;\n        left: 29%;\n        -webkit-transform: translate(-50%, -50%);\n                transform: translate(-50%, -50%); }\n      .tab .contactenos button::after {\n        display: none; } }\n\n@media (max-width: 768px) and (min-width: 600px) {\n      .tab .contactenos button.active::before {\n        top: 90%; } }\n\n.tab .trabaje {\n    height: 140px;\n    padding-right: 11.8%;\n    display: inline-block;\n    position: relative;\n    width: 50%; }\n\n.tab .trabaje button {\n      display: block;\n      width: 84%;\n      height: 100%;\n      position: absolute;\n      top: 0px;\n      left: 0px;\n      background: none;\n      padding-top: 8.5%;\n      background: url(/assets/images/contactus2-joinus.svg) no-repeat center 25px;\n      background-size: 10%;\n      border: none;\n      font-size: 22px;\n      font-family: 'Open Sans light';\n      color: #2e516a;\n      cursor: pointer; }\n\n@media (min-width: 1367px) {\n        .tab .trabaje button {\n          background-size: 8%; } }\n\n.tab .trabaje button:active,\n    .tab .trabaje button.active {\n      background: url(/assets/images/contactus2-joinus-white.svg) no-repeat center 25px, #30506c;\n      background-size: 10%;\n      color: #fff;\n      outline: 0px auto -webkit-focus-ring-color; }\n\n@media (min-width: 1367px) {\n        .tab .trabaje button:active,\n        .tab .trabaje button.active {\n          background-size: 8%; } }\n\n.tab .trabaje button.active::before {\n      content: '';\n      position: absolute;\n      border-width: 30px 65px 0;\n      border-style: solid;\n      border-color: #2e516a transparent transparent;\n      top: 97%;\n      margin-left: 37px; }\n\n.tab .trabaje button::after {\n      content: '';\n      position: absolute;\n      height: 75px;\n      width: 1px;\n      margin-top: -7%;\n      right: 0%;\n      background-color: #95a7b3; }\n\n.tab .trabaje button.active::after {\n      display: none; }\n\n@media screen and (max-width: 480px) {\n      .tab .trabaje button,\n      .tab .trabaje button.active {\n        width: 100%;\n        font-size: 15px;\n        padding-top: 46px;\n        background-size: 33%; }\n      .tab .trabaje button.active::before {\n        top: 96%;\n        left: 29%;\n        -webkit-transform: translate(-50%, -50%);\n                transform: translate(-50%, -50%); }\n      .tab .trabaje button::after {\n        display: none; } }\n\n@media (max-width: 768px) and (min-width: 600px) {\n      .tab .trabaje button.active::before {\n        top: 90%; } }\n\n#msj-modal {\n  background: #30506cab;\n  width: 100vw;\n  height: 100vh; }\n\n#msj-modal .content-modal {\n    display: table;\n    position: relative;\n    margin-top: 25%;\n    width: 50%;\n    margin-left: 25%;\n    padding: 20px;\n    background: #fff;\n    border-radius: 10px;\n    border: solid #91b520 1px; }\n\n#msj-modal .content-modal p {\n      text-align: center; }\n\n#popover-title,\n#popover-content {\n  display: none; }\n\n/deep/ .select-autocomplete .btn-default {\n  color: #333;\n  background-color: #fff;\n  border-color: #ccc; }\n\n/deep/ .select-autocomplete .btn-secondary {\n  background-color: #fff; }\n\n/deep/ .select-autocomplete .ui-select-choices {\n  display: block; }\n\n/deep/ .select-autocomplete .pull-right {\n  float: right !important; }\n\n/deep/ .select-autocomplete .ui-select-toggle {\n  width: 100%;\n  padding: 4px 2px;\n  outline: none;\n  border: none;\n  border-bottom: 1px solid #b2c6cd;\n  color: #002b49;\n  border-radius: 0px;\n  background: #f8f8f8; }\n\n/deep/ .select-autocomplete .ui-select-match {\n  font-family: 'Open Sans light'; }\n"
+module.exports = "*,\n*::before,\n*::after {\n  box-sizing: border-box; }\n\n.item {\n  display: inline-block; }\n\nlabel {\n  color: #c0dc74;\n  margin-top: 20px;\n  margin-bottom: -1px;\n  font-weight: 100;\n  font-family: 'Open Sans light'; }\n\ninput,\nselect {\n  width: 100%;\n  padding: 4px 2px;\n  outline: none;\n  border: none;\n  border-bottom: 1px solid #b2c6cd;\n  color: #002b49;\n  border-radius: 0px;\n  font-family: 'Open Sans light'; }\n\ninput.ng-invalid.ng-touched {\n  border: solid 1px red; }\n\ninput::-webkit-input-placeholder {\n  /* Chrome/Opera/Safari */\n  color: #808080; }\n\ninput::-moz-placeholder {\n  /* Firefox 19+ */\n  color: #808080; }\n\ninput:-ms-input-placeholder {\n  /* IE 10+ */\n  color: #808080; }\n\ninput:-moz-placeholder {\n  /* Firefox 18- */\n  color: #808080; }\n\n.comentario {\n  width: 98%;\n  margin: 0 auto; }\n\n@media screen and (max-width: 480px) {\n    .comentario {\n      width: 91%; } }\n\n.comentario textarea {\n    min-height: 40px;\n    border-radius: 0px;\n    border: 1px solid #b2c6cd;\n    padding: 10px 20px;\n    font-family: 'Open Sans light'; }\n\n.terminos_grupo {\n  position: relative;\n  max-width: 380px;\n  margin: 40px auto;\n  text-align: center;\n  /* OFF */\n  /* ON */ }\n\n.terminos_grupo [type=\"checkbox\"] {\n    position: absolute;\n    left: -9999px; }\n\n.terminos_grupo [type=\"checkbox\"] + label:after {\n    content: '';\n    position: absolute; }\n\n.terminos_grupo [type=\"checkbox\"] + label {\n    display: block;\n    position: relative;\n    padding-left: 26px;\n    cursor: pointer;\n    line-height: 36px;\n    font-size: 1rem;\n    color: rgba(0, 43, 73, 0.8);\n    transition: color .3s; }\n\n.terminos_grupo [type=\"checkbox\"] + label a {\n    color: #91b520; }\n\n.terminos_grupo [type=\"checkbox\"] + label:after {\n    width: 30px;\n    height: 30px;\n    transition: all .2s;\n    top: 0;\n    left: 0; }\n\n.terminos_grupo [type=\"checkbox\"]:not(:checked) + label:after {\n    background: url(\"/assets/images/check2_off.png\") left center no-repeat; }\n\n.terminos_grupo [type=\"checkbox\"]:checked + label:after {\n    background: url(\"/assets/images/check2.png\") left center no-repeat; }\n\nselect {\n  background: #f8f8f8;\n  font-family: 'Open Sans light'; }\n\ninput::-webkit-input-placeholder {\n  /* Chrome/Opera/Safari */\n  color: #808080; }\n\ninput::-moz-placeholder {\n  /* Firefox 19+ */\n  color: #808080; }\n\ninput:-ms-input-placeholder {\n  /* IE 10+ */\n  color: #808080; }\n\ninput:-moz-placeholder {\n  /* Firefox 18- */\n  color: #808080; }\n\n.comentario {\n  width: 98%;\n  margin: 0 auto; }\n\n@media screen and (max-width: 480px) {\n    .comentario {\n      width: 91%; } }\n\n.comentario textarea {\n    min-height: 40px;\n    border-radius: 0px;\n    border: 1px solid #b2c6cd;\n    padding: 10px 20px;\n    font-family: 'Open Sans light'; }\n\n.terminos_grupo {\n  position: relative;\n  max-width: 380px;\n  margin: 40px auto;\n  text-align: center;\n  /* OFF */\n  /* ON */ }\n\n.terminos_grupo [type=\"checkbox\"] {\n    position: absolute;\n    left: -9999px; }\n\n.terminos_grupo [type=\"checkbox\"] + label:after {\n    content: '';\n    position: absolute; }\n\n.terminos_grupo [type=\"checkbox\"] + label {\n    display: block;\n    position: relative;\n    padding-left: 26px;\n    cursor: pointer;\n    line-height: 36px;\n    font-size: 1rem;\n    color: rgba(0, 43, 73, 0.8);\n    transition: color .3s; }\n\n.terminos_grupo [type=\"checkbox\"] + label a {\n    color: #91b520; }\n\n.terminos_grupo [type=\"checkbox\"] + label:after {\n    width: 30px;\n    height: 30px;\n    transition: all .2s;\n    top: 0;\n    left: 0; }\n\n.terminos_grupo [type=\"checkbox\"]:not(:checked) + label:after {\n    background: url(\"/assets/images/check2_off.png\") left center no-repeat; }\n\n.terminos_grupo [type=\"checkbox\"]:checked + label:after {\n    background: url(\"/assets/images/check2.png\") left center no-repeat; }\n\n.btn-primary {\n  border-radius: 0px;\n  background: #91b520;\n  padding: 13px 37px;\n  background-color: #a6cf24 !important;\n  border: none;\n  margin: 0 auto;\n  display: block;\n  font-family: 'Open Sans light'; }\n\n.obligatorios {\n  text-align: center;\n  margin-top: 20px;\n  color: #6d747f;\n  font-family: 'Open Sans light'; }\n\n.obligatorios span {\n    color: #91b520; }\n\n.tab {\n  background: #e5e9ec;\n  height: 140px;\n  margin-top: 40px; }\n\n.tab .contactenos {\n    height: 140px;\n    padding-left: 11.8%;\n    display: inline-block;\n    position: relative;\n    width: 50%; }\n\n.tab .contactenos button {\n      display: block;\n      width: 84%;\n      height: 100%;\n      position: absolute;\n      top: 0px;\n      right: 0px;\n      background: url(/assets/images/contactus1-newproject.svg) no-repeat center 25px;\n      background-size: 10%;\n      padding-top: 8.5%;\n      border: none;\n      font-size: 22px;\n      font-family: 'Open Sans light';\n      color: #2e516a;\n      cursor: pointer; }\n\n@media (min-width: 1367px) {\n        .tab .contactenos button {\n          background-size: 8%; } }\n\n.tab .contactenos button:active,\n    .tab .contactenos button.active {\n      background: url(/assets/images/contactus1-newproject-white.svg) no-repeat center 25px, #30506c;\n      background-size: 10%;\n      color: #fff;\n      outline: 0px auto -webkit-focus-ring-color; }\n\n@media (min-width: 1367px) {\n        .tab .contactenos button:active,\n        .tab .contactenos button.active {\n          background-size: 8%; } }\n\n.tab .contactenos button.active::before {\n      content: '';\n      position: absolute;\n      border-width: 30px 65px 0;\n      border-style: solid;\n      border-color: #2e516a transparent transparent;\n      top: 97%;\n      margin-left: 37px; }\n\n.tab .contactenos button::after {\n      content: '';\n      position: absolute;\n      height: 75px;\n      width: 1px;\n      margin-top: -7%;\n      left: 0%;\n      background-color: #95a7b3; }\n\n.tab .contactenos button.active::after {\n      display: none; }\n\n@media screen and (max-width: 480px) {\n      .tab .contactenos button,\n      .tab .contactenos button.active {\n        width: 100%;\n        font-size: 15px;\n        padding-top: 46px;\n        background-size: 33%; }\n      .tab .contactenos button.active::before {\n        top: 96%;\n        left: 29%;\n        -webkit-transform: translate(-50%, -50%);\n                transform: translate(-50%, -50%); }\n      .tab .contactenos button::after {\n        display: none; } }\n\n@media (max-width: 768px) and (min-width: 600px) {\n      .tab .contactenos button.active::before {\n        top: 90%; } }\n\n.tab .trabaje {\n    height: 140px;\n    padding-right: 11.8%;\n    display: inline-block;\n    position: relative;\n    width: 50%; }\n\n.tab .trabaje button {\n      display: block;\n      width: 84%;\n      height: 100%;\n      position: absolute;\n      top: 0px;\n      left: 0px;\n      background: none;\n      padding-top: 8.5%;\n      background: url(/assets/images/contactus2-joinus.svg) no-repeat center 25px;\n      background-size: 10%;\n      border: none;\n      font-size: 22px;\n      font-family: 'Open Sans light';\n      color: #2e516a;\n      cursor: pointer; }\n\n@media (min-width: 1367px) {\n        .tab .trabaje button {\n          background-size: 8%; } }\n\n.tab .trabaje button:active,\n    .tab .trabaje button.active {\n      background: url(/assets/images/contactus2-joinus-white.svg) no-repeat center 25px, #30506c;\n      background-size: 10%;\n      color: #fff;\n      outline: 0px auto -webkit-focus-ring-color; }\n\n@media (min-width: 1367px) {\n        .tab .trabaje button:active,\n        .tab .trabaje button.active {\n          background-size: 8%; } }\n\n.tab .trabaje button.active::before {\n      content: '';\n      position: absolute;\n      border-width: 30px 65px 0;\n      border-style: solid;\n      border-color: #2e516a transparent transparent;\n      top: 97%;\n      margin-left: 37px; }\n\n.tab .trabaje button::after {\n      content: '';\n      position: absolute;\n      height: 75px;\n      width: 1px;\n      margin-top: -7%;\n      right: 0%;\n      background-color: #95a7b3; }\n\n.tab .trabaje button.active::after {\n      display: none; }\n\n@media screen and (max-width: 480px) {\n      .tab .trabaje button,\n      .tab .trabaje button.active {\n        width: 100%;\n        font-size: 15px;\n        padding-top: 46px;\n        background-size: 33%; }\n      .tab .trabaje button.active::before {\n        top: 96%;\n        left: 29%;\n        -webkit-transform: translate(-50%, -50%);\n                transform: translate(-50%, -50%); }\n      .tab .trabaje button::after {\n        display: none; } }\n\n@media (max-width: 768px) and (min-width: 600px) {\n      .tab .trabaje button.active::before {\n        top: 90%; } }\n\n.container .descrip-form {\n  margin: auto;\n  color: #002b49cc;\n  font-family: Open Sans light;\n  font-size: 30px; }\n\n#msj-modal {\n  background: #30506cab;\n  width: 100vw;\n  height: 100vh; }\n\n#msj-modal .content-modal {\n    display: table;\n    position: relative;\n    margin-top: 25%;\n    width: 50%;\n    margin-left: 25%;\n    padding: 20px;\n    background: #fff;\n    border-radius: 10px;\n    border: solid #91b520 1px; }\n\n#msj-modal .content-modal p {\n      text-align: center; }\n\n#popover-title,\n#popover-content,\n.ocultar {\n  display: none; }\n\n/deep/ #formulario_contacto .select-autocomplete .btn-default {\n  color: #333;\n  background-color: #fff;\n  border-color: #ccc; }\n\n/deep/ #formulario_contacto .select-autocomplete .btn-secondary {\n  background-color: #fff; }\n\n/deep/ #formulario_contacto .select-autocomplete .ui-select-choices {\n  display: block; }\n\n/deep/ #formulario_contacto .select-autocomplete .pull-right {\n  float: right !important; }\n\n/deep/ #formulario_contacto .select-autocomplete .ui-select-toggle {\n  width: 100%;\n  padding: 4px 2px;\n  outline: none;\n  border: none;\n  border-bottom: 1px solid #b2c6cd;\n  color: #002b49;\n  border-radius: 0px;\n  background: #f8f8f8; }\n\n/deep/ #formulario_contacto .select-autocomplete .ui-select-match {\n  font-family: 'Open Sans light'; }\n\n/deep/ #formulario_contacto .select-autocomplete .ui-select-container {\n  width: 100% !important; }\n"
 
 /***/ }),
 
@@ -3353,6 +3512,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var rxjs_add_operator_map__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/add/operator/map */ "./node_modules/rxjs-compat/_esm5/add/operator/map.js");
 /* harmony import */ var _services_http_http_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../services/http/http.service */ "./src/app/services/http/http.service.ts");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var ng2_select__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ng2-select */ "./node_modules/ng2-select/index.js");
+/* harmony import */ var ng2_select__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(ng2_select__WEBPACK_IMPORTED_MODULE_5__);
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3362,6 +3523,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -3388,6 +3550,10 @@ var TabsComponent = /** @class */ (function () {
         this.listPais = [];
         this._disabledV = '0';
         this.disabled = false;
+        this.pais = '';
+        this.product = '';
+        this.service = '';
+        this.checked = false;
     }
     TabsComponent.prototype.toogleHidden = function () {
         this.dataMessage = [];
@@ -3396,7 +3562,6 @@ var TabsComponent = /** @class */ (function () {
     TabsComponent.prototype.onSubmit = function (formulario) {
         var _this = this;
         this.dataMessage = [];
-        console.log(formulario);
         formulario['webform_id'] = 'contact_us';
         $('#formulario_contacto')[0].reset();
         /* $('#msj-modal').show();
@@ -3419,6 +3584,12 @@ var TabsComponent = /** @class */ (function () {
                 }
             }
             else if (datos.sid) {
+                _this.ngSelectP.active = [];
+                _this.ngSelectS.active = [];
+                _this.ngSelectPR.active = [];
+                _this.pais = '';
+                _this.product = '';
+                _this.service = '';
                 _this.dataMessage.push({
                     visible: true,
                     status: 'success',
@@ -3443,6 +3614,7 @@ var TabsComponent = /** @class */ (function () {
             $('.contactenos button').toggleClass('active');
         });
         this.getPopoverService();
+        this.getForm();
         this.getDatosForm();
         this.getPaises();
         $(function () {
@@ -3484,10 +3656,15 @@ var TabsComponent = /** @class */ (function () {
     };
     TabsComponent.prototype.ubicar = function () {
         var x = document.querySelector('.tab');
-        console.log(x);
         if (x) {
             x.scrollIntoView({ block: 'start', inline: 'start', behavior: 'smooth' });
         }
+    };
+    TabsComponent.prototype.getForm = function () {
+        var _this = this;
+        this._service.getCustomForm('work_with_us').subscribe(function (params) {
+            _this.descrip_form = params.markup['#markup'];
+        });
     };
     TabsComponent.prototype.getDatosForm = function () {
         var _this = this;
@@ -3525,20 +3702,51 @@ var TabsComponent = /** @class */ (function () {
         enumerable: true,
         configurable: true
     });
-    TabsComponent.prototype.selected = function (value) {
-        this.pais = value;
-        console.log('Selected value is: ', value);
-        this.removed(this.pais);
+    TabsComponent.prototype.selectedPais = function (value) {
+        this.pais = value.text;
     };
-    TabsComponent.prototype.removed = function (value) {
-        console.log('Removed value is: ', value);
+    TabsComponent.prototype.removedPais = function (value) {
+        this.pais = '';
     };
-    TabsComponent.prototype.typed = function (value) {
-        console.log('New search input: ', value);
+    TabsComponent.prototype.typedPais = function (value) {
     };
-    TabsComponent.prototype.refreshValue = function (value) {
-        this.value = value;
+    TabsComponent.prototype.refreshValuePais = function (value) {
+        this.pais = value.text;
     };
+    TabsComponent.prototype.selectedProduct = function (value) {
+        this.product = value.text;
+    };
+    TabsComponent.prototype.removedProduct = function (value) {
+        this.product = '';
+    };
+    TabsComponent.prototype.typedProduct = function (value) {
+    };
+    TabsComponent.prototype.refreshValueProduct = function (value) {
+        this.product = value.text;
+    };
+    TabsComponent.prototype.selectedService = function (value) {
+        this.service = value.text;
+    };
+    TabsComponent.prototype.removedService = function (value) {
+        this.service = '';
+    };
+    TabsComponent.prototype.typedService = function (value) {
+    };
+    TabsComponent.prototype.refreshValueService = function (value) {
+        this.service = value.text;
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('paisTB'),
+        __metadata("design:type", ng2_select__WEBPACK_IMPORTED_MODULE_5__["SelectComponent"])
+    ], TabsComponent.prototype, "ngSelectP", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('serviceTB'),
+        __metadata("design:type", ng2_select__WEBPACK_IMPORTED_MODULE_5__["SelectComponent"])
+    ], TabsComponent.prototype, "ngSelectS", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('productTB'),
+        __metadata("design:type", ng2_select__WEBPACK_IMPORTED_MODULE_5__["SelectComponent"])
+    ], TabsComponent.prototype, "ngSelectPR", void 0);
     TabsComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-tabs',
@@ -3897,8 +4105,6 @@ var TecnologiesComponent = /** @class */ (function () {
             _this.background = items.body[0].data.back_movil[0].url;
             _this.arrayLogos = items.data;
             _this.customArrayImages(_this.arrayLogos);
-            console.log(_this.arrayLogosCustom);
-            /*this.createSlick();*/
         });
     };
     __decorate([
@@ -3948,7 +4154,7 @@ var TecnologiesComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<section id=\"testimonies-main-title\">\n    <h1 [id]=\"datosMenu.id\" class=\"testimonies-general-title\" >{{ testimoniesTitle }}</h1>\n    <p class=\"testimonies-general-subtitle\" >{{ testimoniesSubTitle }}</p>\n</section>\n<div id=\"testimonies-carousel\">\n  <ngb-carousel *ngIf=\"testimoniesData\">\n      <ng-template ngbSlide *ngFor=\"let item of testimoniesData\">\n        <div class=\"container\"></div>\n        <div class=\"carousel-caption\">\n          <p class=\"testimonies-text testimonies-description\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro, repellat quia ipsam rerum eius modi iure tempore minus et in nihil nemo voluptatibus hic, asperiores ullam, reprehenderit culpa sapiente inventore!</p>\n          <h3 class=\"testimonies-text testimonies-name\">{{ item.title }}</h3>\n          <h3 class=\"testimonies-text testimonies-company\">COMPANY NAME</h3>\n        </div>\n      </ng-template>\n  </ngb-carousel>\n</div>\n"
+module.exports = "<section id=\"testimonies-main-title\">\n  <h1 [id]=\"datosMenu.id\" class=\"testimonies-general-title\">{{ testimoniesTitle }}</h1>\n  <p class=\"testimonies-general-subtitle\">{{ testimoniesSubTitle }}</p>\n</section>\n<div id=\"testimonies-carousel\">\n  <ngb-carousel *ngIf=\"testimoniesData\">\n    <ng-template ngbSlide *ngFor=\"let item of testimoniesData\">\n      <div class=\"container\"></div>\n      <div class=\"carousel-caption\">\n        <p class=\"testimonies-text testimonies-description\" [innerHTML]=\"item.body\"></p>\n        <h3 class=\"testimonies-text testimonies-name\">{{item.title}}</h3>\n        <h3 class=\"testimonies-text testimonies-company\">{{item.field_nombre_compania}}</h3>\n      </div>\n    </ng-template>\n  </ngb-carousel>\n</div>"
 
 /***/ }),
 
@@ -3959,7 +4165,7 @@ module.exports = "<section id=\"testimonies-main-title\">\n    <h1 [id]=\"datosM
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "#testimonies-main-title {\n  text-align: center;\n  width: 100%;\n  padding: 50px 0 0px 0;\n  color: #002b49; }\n  #testimonies-main-title .testimonies-general-title {\n    font-family: Open Sans Codensed Light;\n    font-size: 40px; }\n  #testimonies-main-title .testimonies-general-subtitle {\n    font-family: Open Sans Codensed Light;\n    font-size: 20px; }\n  #testimonies-carousel .container {\n  width: 100%;\n  height: 200px;\n  background-color: white; }\n  #testimonies-carousel .carousel-caption {\n  padding-top: 0;\n  padding-bottom: 50px; }\n  #testimonies-carousel .carousel-caption .testimonies-text {\n    font-family: Open Sans Light;\n    color: #002b49; }\n  #testimonies-carousel .carousel-caption .testimonies-description {\n    font-size: 16px; }\n  #testimonies-carousel .carousel-caption .testimonies-name {\n    font-size: 17px; }\n  #testimonies-carousel .carousel-caption .testimonies-company {\n    font-family: Open Sans Codensed Light;\n    font-size: 20px; }\n  :host /deep/ .carousel-control-next,\n:host /deep/ .carousel-control-prev {\n  visibility: hidden; }\n  :host /deep/ .carousel-indicators li {\n  width: 15px;\n  height: 15px;\n  margin: 0 5px;\n  border-radius: 50%;\n  background-color: #ededed; }\n  :host /deep/ .carousel-indicators li.active {\n    background-color: #a6cf24; }\n  :host /deep/ .carousel.slide {\n  outline: none; }\n"
+module.exports = "#testimonies-main-title {\n  text-align: center;\n  width: 100%;\n  padding: 50px 0 0px 0;\n  color: #002b49; }\n  #testimonies-main-title .testimonies-general-title {\n    font-family: Open Sans Codensed Light;\n    font-size: 40px; }\n  #testimonies-main-title .testimonies-general-subtitle {\n    font-family: Open Sans Codensed Light;\n    font-size: 20px; }\n  #testimonies-carousel .container {\n  width: 100%;\n  height: 275px;\n  background-color: white; }\n  #testimonies-carousel .carousel-caption {\n  padding-top: 0;\n  padding-bottom: 50px; }\n  #testimonies-carousel .carousel-caption .testimonies-text {\n    font-family: Open Sans Light;\n    color: #002b49; }\n  #testimonies-carousel .carousel-caption .testimonies-description {\n    font-size: 16px; }\n  #testimonies-carousel .carousel-caption .testimonies-name {\n    font-size: 17px; }\n  #testimonies-carousel .carousel-caption .testimonies-company {\n    font-family: Open Sans Codensed Light;\n    font-size: 20px; }\n  :host /deep/ .carousel-control-next,\n:host /deep/ .carousel-control-prev {\n  visibility: hidden; }\n  :host /deep/ .carousel-indicators li {\n  width: 15px;\n  height: 15px;\n  margin: 0 5px;\n  border-radius: 50%;\n  background-color: #ededed; }\n  :host /deep/ .carousel-indicators li.active {\n    background-color: #a6cf24; }\n  :host /deep/ .carousel.slide {\n  outline: none; }\n"
 
 /***/ }),
 
@@ -4003,7 +4209,6 @@ var TestimoniesComponent = /** @class */ (function () {
     TestimoniesComponent.prototype.getTestimoniesInfo = function () {
         var _this = this;
         return this.testimonies.getCustomCardInformation('testimoniesbitsamericas').subscribe(function (items) {
-            console.log(items);
             _this.testimoniesTitle = items.header[0].data.title;
             _this.testimoniesSubTitle = items.header[1].data.sub_title;
             _this.testimoniesData = items.data;
@@ -4219,7 +4424,7 @@ var VideoInformationComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<section id=\"main-title\">\n    <h1 class=\"why-general-title\" >{{ whyTitle }}</h1>\n    <p class=\"why-general-subtitle\" >{{ whySubTitle }}</p>\n</section>\n\n<section class=\"WhyBits\">\n    <div class=\"images-whybits\">\n        <ul class=\"row why-boxes\">\n            <li class=\"why-list\" *ngFor=\"let why of whyData; let i = index\">\n              <div class=\"row why-img-and-title-box\">\n                <div class=\"col-5 why-img\">\n                  <img [src]=\"why.field_imagen?.url\" [alt]=\"why.field_imagen?.alt\" />\n                </div>\n                <div class=\"col-7 why-title\">\n                  <h3>{{ why?.title }}</h3>\n                </div>\n              </div>\n              <div class=\"row why-description-box\">\n                <div class=\"col-12 why-description\">\n                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In a quas, quidem vitae at aspernatur cum quibusdam excepturi quasi ab? Vitae magnam quae, officiis aliquam eum veniam similique illo reprehenderit.</p>\n                </div>\n              </div>\n            </li>\n        </ul>\n    </div>\n</section>"
+module.exports = "<section id=\"main-title\">\n  <h1 class=\"why-general-title\">{{ whyTitle }}</h1>\n  <p class=\"why-general-subtitle\">{{ whySubTitle }}</p>\n</section>\n\n<section class=\"WhyBits\">\n  <div class=\"images-whybits\">\n    <ul class=\"row why-boxes\">\n      <li class=\"why-list\" *ngFor=\"let why of whyData; let i = index\">\n        <div class=\"row why-img-and-title-box\">\n          <div class=\"col-5 why-img\">\n            <img [src]=\"why.field_imagen?.url\" [alt]=\"why.field_imagen?.alt\" />\n          </div>\n          <div class=\"col-7 why-title\">\n            <h3>{{ why?.title }}</h3>\n          </div>\n        </div>\n        <div class=\"row why-description-box\">\n          <div class=\"col-12 why-description\">\n            <p [innerHTML]=\"why.body\"></p>           \n          </div>\n        </div>\n      </li>\n    </ul>\n  </div>\n</section>"
 
 /***/ }),
 
@@ -4294,7 +4499,7 @@ var WhybitsamericasComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n  <app-message [dataMessage]=\"dataMessage\"></app-message>\n  <div class=\"row\">\n    <form id=\"formulario_contacto\" #userForm=\"ngForm\" (ngSubmit)=\"onSubmit(userForm.value)\" class=\"col-md-12\" name=\"formulario_contacto\">\n      <div class=\"form-group\" [ngClass]=\"aplicaCssErro(nombre)\" class=\"col-md-12\">\n        <div class=\"col-md-6 item\">\n          <label for=\"exampleInputNombre\">Nombre</label>\n          <input type=\"text\" class=\"form-control\" id=\"nombre\" placeholder=\"Nombre\" name=\"nombre\" ngModel required\n            #nombre=\"ngModel\">\n          <div *ngIf=\"nombre.invalid && nombre.touched\" class=\"alert alert-danger\" role=\"alert\">Campo obligatorio o\n            invalido</div>\n        </div>\n        <div class=\"col-md-6 item\">\n          <label for=\"exampleInputEmail1\">Email address</label>\n          <input type=\"email\" class=\"form-control\" id=\"exampleInputEmail1\" aria-describedby=\"emailHelp\" placeholder=\"Escriba su email\"\n            name=\"correo_electronico\" ngModel pattern=\"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\"\n            #correo_electronico=\"ngModel\">\n          <div *ngIf=\"correo_electronico.invalid && correo_electronico.touched\" class=\"alert alert-danger\" role=\"alert\">Campo\n            obligatorio o invalido</div>\n        </div>\n      </div>\n      <div class=\"form-group\" class=\"col-md-12\">\n        <div class=\"col-md-6 item\">\n          <label for=\"exampleInputTel\">Telefono</label>\n          <input type=\"tel\" class=\"form-control\" id=\"org\" placeholder=\"Escriba su telefono\" name=\"telefono\" ngModel\n            pattern=\"^(\\([0-9]{3}\\)|[0-9]{3})[0-9]{3}[0-9]{4}$\" #telefono=\"ngModel\">\n          <div *ngIf=\"telefono.invalid && telefono.touched\" class=\"alert alert-danger\" role=\"alert\">Campo obligatorio o\n            invalido</div>\n        </div>\n        <div class=\"col-md-6 item\">\n          <label for=\"exampleInputOrg\">Hoja de vida</label>\n          <input type=\"file\" class=\"form-control hoja-v\" id=\"hojav\" placeholder=\"Hoja de vida\" name=\"hoja_de_vida\"\n            ngModel #hojadevida=\"ngModel\">\n        </div>\n      </div>\n      <div class=\"form-group\" class=\"col-md-12\">\n        <div class=\"col-md-6 item\">\n          <label for=\"exampleInputPais\">Pais</label>\n          <select type=\"select\" class=\"form-control\" id=\"Pais\" placeholder=\"Seleccione su pais\" name=\"pais\" ngModel>\n          </select>\n        </div>\n        <div class=\"col-md-6 item\">\n          <label for=\"exampleInputPais\">Ciudad</label>\n          <select type=\"select\" class=\"form-control\" id=\"ciudad\" placeholder=\"Seleccione su ciudad\" name=\"ciudad\"\n            ngModel> </select>\n        </div>\n      </div>\n      <div class=\"col-md-12\">\n        <div class=\"col-md-6 item\">\n          <label for=\"exampleInputPais\">Sitio web personal</label>\n          <input type=\"text\" class=\"form-control\" id=\"web\" placeholder=\"Su sitio web\" name=\"sitio_web\" ngModel\n            #sitio_web=\"ngModel\" pattern=\"https?://.+\">\n          <div *ngIf=\"sitio_web.invalid && sitio_web.touched\" class=\"alert alert-danger\" role=\"alert\">Campo obligatorio\n            o invalido</div>\n        </div>\n        <div class=\"col-md-6 item\">\n          <label for=\"exampleInputPais\">Linkedin</label>\n          <input type=\"text\" class=\"form-control\" id=\"linkedin\" placeholder=\"Su perfil\" name=\"linkedin\" ngModel\n            #linkedin=\"ngModel\" pattern=\"https?://.+\">\n          <div *ngIf=\"linkedin.invalid && linkedin.touched\" class=\"alert alert-danger\" role=\"alert\">Campo obligatorio o\n            invalido</div>\n        </div>\n      </div>\n      <div class=\"form-group\" class=\"col-md-12 comentario\">\n        <label for=\"exampleInputComm\">Comentarios</label>\n        <textarea class=\"form-control\" id=\"comentario\" placeholder=\"Escriba sus comentarios\" name=\"comentario\" ngModel\n          #comentario=\"ngModel\"></textarea>\n        <div *ngIf=\"comentario.invalid && comentario.touched\" class=\"alert alert-danger\" role=\"alert\">Campo obligatorio\n          o invalido</div>\n      </div>\n      <div class=\"form-group\" class=\"col-md-12 terminos_grupo\">\n        <input type=\"checkbox\" id=\"terminos\" name=\"terms_of_service\" value=\"false\" required ngModel>\n        <label ng-reflect-ng-class=\"\" for=\"terms-of-service\">He leído y acepto los\n          <a data-trigger=\"focus\" role=\"button\" data-toggle=\"popover\" data-placement=\"top\" href=\"#\">\n            términos y condiciones\n          </a>\n        </label>\n      </div>\n      <button type=\"submit\" class=\"btn btn-primary\">Enviar</button>\n      <div class=\"obligatorios col-md-12\"> <span>*</span>Datos Obligatorios</div>\n    </form>\n    <div id=\"msj-modal\" class=\"modal\" role=\"dialog\">\n      <div class=\"content-modal\">\n        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\n          <span aria-hidden=\"true\">&times;</span>\n        </button>\n        <p>Gracias por registrar su información</p>\n      </div>\n    </div>\n  </div>\n</div>\n<div id='popover-title'>{{titulo}}</div>\n<div id='popover-content' [innerHTML]='list'></div>"
+module.exports = "<div class=\"container\">\n  <app-message [dataMessage]=\"dataMessage\"></app-message>\n  <div class=\"row\">\n    <form id=\"formulario_contacto\" #userForm=\"ngForm\" (ngSubmit)=\"onSubmit(userForm.value)\" class=\"col-md-12\"\n      name=\"formulario_contacto\">\n      <div class=\"form-group\" [ngClass]=\"aplicaCssErro(nombre)\" class=\"col-md-12\">\n        <div class=\"col-md-6 item\">\n          <label for=\"exampleInputNombre\">Nombre</label>\n          <input type=\"text\" class=\"form-control\" id=\"nombre\" placeholder=\"Nombre\" name=\"nombre\" ngModel required\n            #nombre=\"ngModel\">\n          <div *ngIf=\"nombre.invalid && nombre.touched\" class=\"alert alert-danger\" role=\"alert\">Campo obligatorio o\n            invalido</div>\n        </div>\n        <div class=\"col-md-6 item\">\n          <label for=\"exampleInputEmail1\">Email address</label>\n          <input type=\"email\" class=\"form-control\" id=\"exampleInputEmail1\" aria-describedby=\"emailHelp\" placeholder=\"Escriba su email\"\n            name=\"correo_electronico\" ngModel pattern=\"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\"\n            #correo_electronico=\"ngModel\">\n          <div *ngIf=\"correo_electronico.invalid && correo_electronico.touched\" class=\"alert alert-danger\" role=\"alert\">Campo\n            obligatorio o invalido</div>\n        </div>\n      </div>\n      <div class=\"form-group\" class=\"col-md-12\">\n        <div class=\"col-md-6 item\">\n          <label for=\"exampleInputTel\">Telefono</label>\n          <input type=\"tel\" class=\"form-control\" id=\"org\" placeholder=\"Escriba su telefono\" name=\"telefono\" ngModel\n            pattern=\"^(\\([0-9]{3}\\)|[0-9]{3})[0-9]{3}[0-9]{4}$\" #telefono=\"ngModel\">\n          <div *ngIf=\"telefono.invalid && telefono.touched\" class=\"alert alert-danger\" role=\"alert\">Campo obligatorio o\n            invalido</div>\n        </div>\n        <div class=\"col-md-6 item\">\n          <label for=\"exampleInputOrg\">Hoja de vida</label>\n          <input type=\"file\" id=\"hojav\" class=\"form-control hoja-v\" placeholder=\"Hoja de vida\" name=\"hojav\" (change)=\"onFileChange($event)\" #hojavWS>\n          <input type=\"text\" class=\"form-control ocultar\" id=\"hoja_de_vida\" name=\"hoja_de_vida\" [ngModel]=\"hojaWU\">\n        </div>\n      </div>\n      <div class=\"form-group\" class=\"col-md-12\">\n        <div class=\"col-md-6 item\">\n          <label for=\"exampleInputPais\">Pais</label>\n          <ng-select #paisWU class=\"select-autocomplete\" id=\"pais\" name=\"pais\" placeholder=\"Seleccione su pais\"\n            [allowClear]=\"true\" [items]=\"listPais\" [disabled]=\"disabled\" (data)=\"refreshValuePais($event)\" (selected)=\"selectedPais($event)\"\n            (removed)=\"removedPais($event)\" (typed)=\"typedPais($event)\">\n          </ng-select>\n          <input type=\"text\" class=\"form-control ocultar\" id=\"pais\" name=\"pais\" [ngModel]=\"pais\">\n        </div>\n        <div class=\"col-md-6 item\">\n          <label for=\"exampleInputPais\">Ciudad</label>\n          <input type=\"text\" class=\"form-control\" id=\"ciudad\" placeholder=\"Ciudad\" name=\"ciudad\" ngModel #ciudad=\"ngModel\">\n        </div>\n      </div>\n      <div class=\"col-md-12\">\n        <div class=\"col-md-6 item\">\n          <label for=\"exampleInputPais\">Sitio web personal</label>\n          <input type=\"text\" class=\"form-control\" id=\"web\" placeholder=\"Su sitio web\" name=\"sitio_web\" ngModel\n            #sitio_web=\"ngModel\" pattern=\"https?://.+\">\n          <div *ngIf=\"sitio_web.invalid && sitio_web.touched\" class=\"alert alert-danger\" role=\"alert\">Campo obligatorio\n            o invalido</div>\n        </div>\n        <div class=\"col-md-6 item\">\n          <label for=\"exampleInputPais\">Linkedin</label>\n          <input type=\"text\" class=\"form-control\" id=\"linkedin\" placeholder=\"Su perfil\" name=\"linkedin\" ngModel\n            #linkedin=\"ngModel\" pattern=\"https?://.+\">\n          <div *ngIf=\"linkedin.invalid && linkedin.touched\" class=\"alert alert-danger\" role=\"alert\">Campo obligatorio o\n            invalido</div>\n        </div>\n      </div>\n      <div class=\"form-group\" class=\"col-md-12 comentario\">\n        <label for=\"exampleInputComm\">Comentarios</label>\n        <textarea class=\"form-control\" id=\"comentario\" placeholder=\"Escriba sus comentarios\" name=\"comentario\" ngModel\n          #comentario=\"ngModel\"></textarea>\n        <div *ngIf=\"comentario.invalid && comentario.touched\" class=\"alert alert-danger\" role=\"alert\">Campo obligatorio\n          o invalido</div>\n      </div>\n      <div class=\"form-group\" class=\"col-md-12 terminos_grupo\">\n        <input type=\"checkbox\" [checked]=\"checked\" id=\"terms_of_serviceWS\" name=\"terms_of_serviceWS\" value=\"false\"\n          required ngModel>\n        <label ng-reflect-ng-class=\"\" for=\"terms_of_serviceWS\">He leído y acepto los\n          <a data-trigger=\"focus\" role=\"button\" data-toggle=\"popover\" data-placement=\"top\" href=\"#\">\n            términos y condiciones\n          </a>\n        </label>\n      </div>\n      <button type=\"submit\" class=\"btn btn-primary\">Enviar</button>\n      <div class=\"obligatorios col-md-12\"> <span>*</span>Datos Obligatorios</div>\n    </form>\n    <div id=\"msj-modal\" class=\"modal\" role=\"dialog\">\n      <div class=\"content-modal\">\n        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\n          <span aria-hidden=\"true\">&times;</span>\n        </button>\n        <p>Gracias por registrar su información</p>\n      </div>\n    </div>\n  </div>\n</div>\n<div id='popover-title'>{{titulo}}</div>\n<div id='popover-content' [innerHTML]='list'></div>"
 
 /***/ }),
 
@@ -4305,7 +4510,7 @@ module.exports = "<div class=\"container\">\n  <app-message [dataMessage]=\"data
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "*,\n*::before,\n*::after {\n  box-sizing: border-box; }\n\n.item {\n  display: inline-block; }\n\nlabel {\n  color: #c0dc74;\n  margin-top: 20px;\n  margin-bottom: -1px;\n  font-weight: 100;\n  font-family: 'Open Sans light'; }\n\ninput,\nselect {\n  width: 100%;\n  padding: 4px 2px;\n  outline: none;\n  border: none;\n  border-bottom: 1px solid #b2c6cd;\n  color: #002b49;\n  border-radius: 0px;\n  font-family: 'Open Sans light'; }\n\ninput.ng-invalid.ng-touched {\n  border: solid 1px red; }\n\nselect {\n  background: #f8f8f8;\n  font-family: 'Open Sans light'; }\n\ninput::-webkit-input-placeholder {\n  /* Chrome/Opera/Safari */\n  color: #808080; }\n\ninput::-moz-placeholder {\n  /* Firefox 19+ */\n  color: #808080; }\n\ninput:-ms-input-placeholder {\n  /* IE 10+ */\n  color: #808080; }\n\ninput:-moz-placeholder {\n  /* Firefox 18- */\n  color: #808080; }\n\n.comentario {\n  width: 98%;\n  margin: 0 auto; }\n\n@media screen and (max-width: 480px) {\n    .comentario {\n      width: 91%; } }\n\n.comentario textarea {\n    min-height: 40px;\n    border-radius: 0px;\n    border: 1px solid #b2c6cd;\n    padding: 10px 20px;\n    font-family: 'Open Sans light'; }\n\n.terminos_grupo {\n  position: relative;\n  max-width: 380px;\n  margin: 40px auto;\n  text-align: center;\n  /* OFF */\n  /* ON */ }\n\n.terminos_grupo [type=\"checkbox\"] {\n    position: absolute;\n    left: -9999px; }\n\n.terminos_grupo [type=\"checkbox\"] + label:after {\n    content: '';\n    position: absolute; }\n\n.terminos_grupo [type=\"checkbox\"] + label {\n    display: block;\n    position: relative;\n    padding-left: 26px;\n    cursor: pointer;\n    line-height: 36px;\n    font-size: 1rem;\n    color: rgba(0, 43, 73, 0.8);\n    transition: color .3s; }\n\n.terminos_grupo [type=\"checkbox\"] + label a {\n    color: #91b520; }\n\n.terminos_grupo [type=\"checkbox\"] + label:after {\n    width: 30px;\n    height: 30px;\n    transition: all .2s;\n    top: 0;\n    left: 0; }\n\n.terminos_grupo [type=\"checkbox\"]:not(:checked) + label:after {\n    background: url(\"/assets/images/check2_off.png\") left center no-repeat; }\n\n.terminos_grupo [type=\"checkbox\"]:checked + label:after {\n    background: url(\"/assets/images/check2.png\") left center no-repeat; }\n\n.btn-primary {\n  border-radius: 0px;\n  background: #91b520;\n  padding: 13px 37px;\n  background-color: #a6cf24 !important;\n  border: none;\n  margin: 0 auto;\n  display: block;\n  font-family: 'Open Sans light'; }\n\n.obligatorios {\n  text-align: center;\n  margin-top: 20px;\n  color: #6d747f;\n  font-family: 'Open Sans light'; }\n\n.obligatorios span {\n    color: #91b520; }\n\n.hoja-v {\n  color: transparent; }\n\n.hoja-v::-webkit-file-upload-button {\n  visibility: hidden; }\n\n.hoja-v::before {\n  content: '';\n  color: black;\n  display: inline-block;\n  background: url(/assets/images/adjunto.png);\n  background-size: contain;\n  outline: none;\n  white-space: nowrap;\n  -webkit-user-select: none;\n  cursor: pointer;\n  text-shadow: 1px 1px #fff;\n  font-weight: 700;\n  font-size: 10pt;\n  height: 40px;\n  width: 40px;\n  position: absolute;\n  right: 15px;\n  top: 39px; }\n\n.hoja-v:hover::before {\n  border-color: black; }\n\n.hoja-v:active {\n  outline: 0; }\n\n.hoja-v:active::before {\n  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9); }\n\n#msj-modal {\n  background: #30506cab;\n  width: 100vw;\n  height: 100vh; }\n\n#msj-modal .content-modal {\n    display: table;\n    position: relative;\n    margin-top: 25%;\n    width: 50%;\n    margin-left: 25%;\n    padding: 20px;\n    background: #fff;\n    border-radius: 10px;\n    border: solid #91b520 1px; }\n\n#msj-modal .content-modal p {\n      text-align: center; }\n\n#popover-title,\n#popover-content {\n  display: none; }\n"
+module.exports = "*,\n*::before,\n*::after {\n  box-sizing: border-box; }\n\n.item {\n  display: inline-block; }\n\nlabel {\n  color: #c0dc74;\n  margin-top: 20px;\n  margin-bottom: -1px;\n  font-weight: 100;\n  font-family: 'Open Sans light'; }\n\ninput,\nselect {\n  width: 100%;\n  padding: 4px 2px;\n  outline: none;\n  border: none;\n  border-bottom: 1px solid #b2c6cd;\n  color: #002b49;\n  border-radius: 0px;\n  font-family: 'Open Sans light'; }\n\ninput.ng-invalid.ng-touched {\n  border: solid 1px red; }\n\nselect {\n  background: #f8f8f8;\n  font-family: 'Open Sans light'; }\n\ninput::-webkit-input-placeholder {\n  /* Chrome/Opera/Safari */\n  color: #808080; }\n\ninput::-moz-placeholder {\n  /* Firefox 19+ */\n  color: #808080; }\n\ninput:-ms-input-placeholder {\n  /* IE 10+ */\n  color: #808080; }\n\ninput:-moz-placeholder {\n  /* Firefox 18- */\n  color: #808080; }\n\n.comentario {\n  width: 98%;\n  margin: 0 auto; }\n\n@media screen and (max-width: 480px) {\n    .comentario {\n      width: 91%; } }\n\n.comentario textarea {\n    min-height: 40px;\n    border-radius: 0px;\n    border: 1px solid #b2c6cd;\n    padding: 10px 20px;\n    font-family: 'Open Sans light'; }\n\n.terminos_grupo {\n  position: relative;\n  max-width: 380px;\n  margin: 40px auto;\n  text-align: center;\n  /* OFF */\n  /* ON */ }\n\n.terminos_grupo [type=\"checkbox\"] {\n    position: absolute;\n    left: -9999px; }\n\n.terminos_grupo [type=\"checkbox\"] + label:after {\n    content: '';\n    position: absolute; }\n\n.terminos_grupo [type=\"checkbox\"] + label {\n    display: block;\n    position: relative;\n    padding-left: 26px;\n    cursor: pointer;\n    line-height: 36px;\n    font-size: 1rem;\n    color: rgba(0, 43, 73, 0.8);\n    transition: color .3s; }\n\n.terminos_grupo [type=\"checkbox\"] + label a {\n    color: #91b520; }\n\n.terminos_grupo [type=\"checkbox\"] + label:after {\n    width: 30px;\n    height: 30px;\n    transition: all .2s;\n    top: 0;\n    left: 0; }\n\n.terminos_grupo [type=\"checkbox\"]:not(:checked) + label:after {\n    background: url(\"/assets/images/check2_off.png\") left center no-repeat; }\n\n.terminos_grupo [type=\"checkbox\"]:checked + label:after {\n    background: url(\"/assets/images/check2.png\") left center no-repeat; }\n\n.btn-primary {\n  border-radius: 0px;\n  background: #91b520;\n  padding: 13px 37px;\n  background-color: #a6cf24 !important;\n  border: none;\n  margin: 0 auto;\n  display: block;\n  font-family: 'Open Sans light'; }\n\n.obligatorios {\n  text-align: center;\n  margin-top: 20px;\n  color: #6d747f;\n  font-family: 'Open Sans light'; }\n\n.obligatorios span {\n    color: #91b520; }\n\n/* .hoja-v {\n  color: transparent;\n} */\n\n.hoja-v::-webkit-file-upload-button {\n  visibility: hidden; }\n\n.hoja-v::before {\n  content: '';\n  color: black;\n  display: inline-block;\n  background: url(/assets/images/adjunto.png);\n  background-size: contain;\n  outline: none;\n  white-space: nowrap;\n  -webkit-user-select: none;\n  cursor: pointer;\n  text-shadow: 1px 1px #fff;\n  font-weight: 700;\n  font-size: 10pt;\n  height: 40px;\n  width: 40px;\n  position: absolute;\n  right: 15px;\n  top: 39px; }\n\n.hoja-v:hover::before {\n  border-color: black; }\n\n.hoja-v:active {\n  outline: 0; }\n\n.hoja-v:active::before {\n  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9); }\n\n#msj-modal {\n  background: #30506cab;\n  width: 100vw;\n  height: 100vh; }\n\n#msj-modal .content-modal {\n    display: table;\n    position: relative;\n    margin-top: 25%;\n    width: 50%;\n    margin-left: 25%;\n    padding: 20px;\n    background: #fff;\n    border-radius: 10px;\n    border: solid #91b520 1px; }\n\n#msj-modal .content-modal p {\n      text-align: center; }\n\n#popover-title,\n#popover-content,\n.ocultar {\n  display: none; }\n\n/deep/ #formulario_contacto .select-autocomplete .btn-default {\n  color: #333;\n  background-color: #fff;\n  border-color: #ccc; }\n\n/deep/ #formulario_contacto .select-autocomplete .btn-secondary {\n  background-color: #fff; }\n\n/deep/ #formulario_contacto .select-autocomplete .ui-select-choices {\n  display: block; }\n\n/deep/ #formulario_contacto .select-autocomplete .pull-right {\n  float: right !important; }\n\n/deep/ #formulario_contacto .select-autocomplete .ui-select-toggle {\n  width: 100%;\n  padding: 4px 2px;\n  outline: none;\n  border: none;\n  border-bottom: 1px solid #b2c6cd;\n  color: #002b49;\n  border-radius: 0px;\n  background: #f8f8f8; }\n\n/deep/ #formulario_contacto .select-autocomplete .ui-select-match {\n  font-family: 'Open Sans light'; }\n\n/deep/ #formulario_contacto .select-autocomplete .ui-select-container {\n  width: 100% !important; }\n"
 
 /***/ }),
 
@@ -4323,6 +4528,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var rxjs_add_operator_map__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs/add/operator/map */ "./node_modules/rxjs-compat/_esm5/add/operator/map.js");
 /* harmony import */ var _services_http_http_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../services/http/http.service */ "./src/app/services/http/http.service.ts");
 /* harmony import */ var src_app_services_cards_v1_card_services__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/cards/v1-card.services */ "./src/app/services/cards/v1-card.services.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var ng2_select__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ng2-select */ "./node_modules/ng2-select/index.js");
+/* harmony import */ var ng2_select__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(ng2_select__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4336,22 +4545,39 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
+
+
 var WorkusComponent = /** @class */ (function () {
-    function WorkusComponent(_http, _service) {
+    function WorkusComponent(_http, _service, http_pais, fb) {
         this._http = _http;
         this._service = _service;
+        this.http_pais = http_pais;
+        this.fb = fb;
         this.hidden = false;
         this.usuario = {
             nombre: null,
             email: null
         };
+        this.value = {};
         this.dataMessage = [];
         this.list = [];
+        this.bandPais = [];
+        this.listPais = [];
+        this._disabledV = '0';
+        this.disabled = false;
+        this.pais = '';
+        this.checked = false;
+        this.form = this.fb.group({
+            hojav: null
+        });
+        this.file = '';
+        this.hojaWU = '';
     }
     WorkusComponent.prototype.onSubmit = function (formulario) {
         var _this = this;
+        formulario['archivo_adjunto'] = this.file;
         this.dataMessage = [];
-        console.log(formulario);
         formulario['webform_id'] = 'work_with_us';
         jQuery('#formulario_contacto')[0].reset();
         /* jQuery('#msj-modal').show();
@@ -4374,6 +4600,8 @@ var WorkusComponent = /** @class */ (function () {
                 }
             }
             else if (datos.sid) {
+                _this.ngSelectW.active = [];
+                _this.pais = '';
                 _this.dataMessage.push({
                     visible: true,
                     status: 'success',
@@ -4389,6 +4617,7 @@ var WorkusComponent = /** @class */ (function () {
             _this._token = response;
         });
         this.getPopoverService();
+        this.getPaises();
         $(function () {
             $('[data-toggle="popover"]').popover({
                 html: true,
@@ -4402,6 +4631,13 @@ var WorkusComponent = /** @class */ (function () {
                 e.preventDefault();
             });
         });
+    };
+    WorkusComponent.prototype.onFileChange = function (event) {
+        if (event.target.files.length > 0) {
+            this.file = event.target.files[0];
+            this.form.get('hojav').setValue(this.file);
+            this.hojaWU = this.file.name;
+        }
     };
     WorkusComponent.prototype.verificaValidTouched = function (campo) {
         return !campo.valid && campo.touched;
@@ -4421,18 +4657,57 @@ var WorkusComponent = /** @class */ (function () {
     };
     WorkusComponent.prototype.ubicar = function () {
         var x = document.querySelector('.tab');
-        console.log(x);
         if (x) {
             x.scrollIntoView({ block: 'start', inline: 'start', behavior: 'smooth' });
         }
     };
+    WorkusComponent.prototype.getPaises = function () {
+        var _this = this;
+        this.http_pais.get('https://restcountries.eu/rest/v2/all').subscribe(function (params) {
+            for (var index = 0; index < params.length; index++) {
+                _this.bandPais.push(params[index].name);
+            }
+            _this.listPais = _this.bandPais;
+        });
+    };
+    Object.defineProperty(WorkusComponent.prototype, "disabledV", {
+        // Metodos del select
+        get: function () {
+            return this._disabledV;
+        },
+        set: function (value) {
+            this._disabledV = value;
+            this.disabled = this._disabledV === '1';
+        },
+        enumerable: true,
+        configurable: true
+    });
+    WorkusComponent.prototype.selectedPais = function (value) {
+        this.pais = value.text;
+    };
+    WorkusComponent.prototype.removedPais = function (value) {
+        this.pais = '';
+    };
+    WorkusComponent.prototype.typedPais = function (value) {
+    };
+    WorkusComponent.prototype.refreshValuePais = function (value) {
+        this.pais = value.text;
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])('paisWU'),
+        __metadata("design:type", ng2_select__WEBPACK_IMPORTED_MODULE_5__["SelectComponent"])
+    ], WorkusComponent.prototype, "ngSelectW", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])('fileInput'),
+        __metadata("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"])
+    ], WorkusComponent.prototype, "hojavWS", void 0);
     WorkusComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-workus',
             template: __webpack_require__(/*! ./workus.component.html */ "./src/app/cards/components/workus/workus.component.html"),
             styles: [__webpack_require__(/*! ./workus.component.scss */ "./src/app/cards/components/workus/workus.component.scss")]
         }),
-        __metadata("design:paramtypes", [_services_http_http_service__WEBPACK_IMPORTED_MODULE_2__["HttpService"], src_app_services_cards_v1_card_services__WEBPACK_IMPORTED_MODULE_3__["CustomCardService"]])
+        __metadata("design:paramtypes", [_services_http_http_service__WEBPACK_IMPORTED_MODULE_2__["HttpService"], src_app_services_cards_v1_card_services__WEBPACK_IMPORTED_MODULE_3__["CustomCardService"], _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClient"], _angular_forms__WEBPACK_IMPORTED_MODULE_6__["FormBuilder"]])
     ], WorkusComponent);
     return WorkusComponent;
 }());
@@ -4511,7 +4786,7 @@ var WorkWithUsProServComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<section id=\"work-with-us\">\n  <h1>{{ workWithUsTitle.title }}</h1>\n  <p>{{ workWithUsSubtitle.subtitle }}</p>\n  <a class=\"btn btn-primary\" href=\"contact-us\">{{ workWithUsButton.title_bottom }}</a>\n  <hr>\n  <p class=\"text1\">o si lo desea</p>\n  <div [innerHTML]= workWithUsThirdText class=\"text2\"></div>\n</section>"
+module.exports = "<section id=\"work-with-us\">\n  <h1>{{ workWithUsTitle.title }} </h1>\n  <p> {{ workWithUsSubtitle.subtitle }}</p>\n  <a class=\"btn btn-primary\" href=\"contact-us\"> {{ workWithUsButton.title_bottom }} </a>\n  <hr>\n  <p class=\"text1\">o si lo desea</p>\n  <div [innerHTML]=workWithUsThirdText class=\"text2\"></div>\n</section>"
 
 /***/ }),
 
@@ -4614,7 +4889,7 @@ var WorkWithUsComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<section id=\"work-with-us\">\n  <h1>{{ workWithUsTitle.title }}</h1>\n  <p>{{ workWithUsSubtitle.title }}</p>\n  <a class=\"btn btn-primary\" href=\"contact-us\">{{ workWithUsButton.title_bottom }}</a>\n  <hr>\n  <p class=\"text1\">o si lo desea</p>\n  <div [innerHTML]= workWithUsThirdText class=\"text2\"></div>\n</section>\n"
+module.exports = "<section id=\"work-with-us\">\n  <h1> {{ workWithUsTitle.title }} </h1>\n  <p> {{ workWithUsSubtitle.title }} </p>\n  <a class=\"btn btn-primary\" href=\"contact-us\"> {{ workWithUsButton.title_bottom }} </a>\n  <hr>\n  <p class=\"text1\">o si lo desea</p>\n  <div [innerHTML]=workWithUsThirdText class=\"text2\"></div>\n</section>"
 
 /***/ }),
 
@@ -4749,7 +5024,6 @@ var HeaderComponent = /** @class */ (function () {
         $('.Botton').on('click', function () {
             count = count + 1; // Numero Impar = menu abierto ; Numero par = menu cerrado
             if (count % 2 === 0) {
-                console.log('par');
                 //PAR MENU CERRADO
                 $('html').css('overflow', 'auto');
                 if (window.scrollY === 0) {
@@ -4759,7 +5033,6 @@ var HeaderComponent = /** @class */ (function () {
                 }
             }
             else {
-                console.log('impar');
                 //IMPAR = MENU ABIERTO 
                 $('html').css('overflow', 'hidden');
                 if (window.scrollY === 0) {
@@ -4820,7 +5093,7 @@ var HeaderComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ul class=\"menu-tree-level custmulcol-{{col}} customulrow-{{row}} {{flActiveActual ? 'visible-in-mobile' : 'invisible-in-mobile'}}\" [style.backgroundImage]=\"image != undefined ? 'url(' + image + ')' : 'url(no-existe.png)'\"  (window:resize)=\"onResize()\" [ngStyle]=\"{'top': row === 2 ? heightTop : '0px'}\">\n    <ng-container *ngFor=\"let child of menus; let idx= index\" >\n        <li class=\"menu-item-child index-{{idx}} custmcol-{{col}} customrow-{{row}}\" [ngClass]=\"{'active-ul': child.showrow === true}\" >\n            <a [routerLink]=\"['/'+child.uri]\"\n               class=\"link\">\n                <span class=\"title\">{{ child.title }}</span>\n                <span class=\"description\">{{ child.description }}</span>\n            </a>\n            <ng-container *ngIf=\"child.below\">\n                <i class=\"fas fa-angle-right menu-caret\" (click)=\"activeChild(idx)\" *ngIf=\"desktop\"></i>\n                <i class=\"fas fa-caret-down menu-caret fa-caret-down-item-menu\" (click)=\"activeChild(idx)\" *ngIf=\"mobile\"></i>\n                <app-menu-item [menus]=\"child.below\" [col]=\"col\" [row]=\"row+1\" [image]='child.image' [flActiveActual]=\"getActiveChild(idx)\" (addchild)=\"activeChild($event)\" ></app-menu-item>\n            </ng-container>\n            <ng-container *ngIf=\"padre?.image\">\n                <img [src]=\"padre.image\" class=\"submenu-image\"/>\n            </ng-container>\n        </li>\n    </ng-container>\n</ul>"
+module.exports = "<ul class=\"menu-tree-level custmulcol-{{col}} customulrow-{{row}} {{flActiveActual ? 'visible-in-mobile' : 'invisible-in-mobile'}}\"\n    [style.backgroundImage]=\"image != undefined ? 'url(' + image + ')' : 'url(no-existe.png)'\" (window:resize)=\"onResize()\"\n    [ngStyle]=\"{'top': row === 2 ? heightTop : '0px'}\">\n    <ng-container *ngFor=\"let child of menus; let idx= index\">\n        <li class=\"menu-item-child index-{{idx}} custmcol-{{col}} customrow-{{row}}\" [ngClass]=\"{'active-ul': child.showrow === true}\">\n            <a [routerLink]=\"['/'+child.uri]\" class=\"link\">\n                <span class=\"title\">{{ child.title }}</span>\n                <span class=\"description\">{{ child.description }}</span>\n            </a>\n            <ng-container *ngIf=\"child.below\">\n                <i class=\"fas fa-angle-right menu-caret\" (click)=\"activeChild(idx)\" *ngIf=\"desktop\"></i>\n                <i class=\"fas fa-caret-down menu-caret fa-caret-down-item-menu\" (click)=\"activeChild(idx)\" *ngIf=\"mobile\"></i>\n                <app-menu-item [menus]=\"child.below\" [col]=\"col\" [row]=\"row+1\" [image]='child.image' [flActiveActual]=\"getActiveChild(idx)\"\n                    (addchild)=\"activeChild($event)\"></app-menu-item>\n            </ng-container>\n            <ng-container *ngIf=\"padre?.image\">\n                <img [src]=\"padre.image\" class=\"submenu-image\" />\n            </ng-container>\n        </li>\n    </ng-container>\n</ul>"
 
 /***/ }),
 
@@ -4916,7 +5189,7 @@ module.exports = "<section id=\"block-navbar\">\n    <nav class=\"navbar-expand-
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "#block-navbar .inverse-color {\n  background: #ffffff; }\n\n#block-navbar .color-white {\n  background: #ffffff; }\n\n#block-navbar nav {\n  width: 100%;\n  padding-top: 6%;\n  border-bottom: 1px solid transparent;\n  position: fixed;\n  float: left;\n  font-weight: bold;\n  background: transparent;\n  text-decoration: none;\n  z-index: 1020; }\n\n@media (min-width: 668px) and (max-width: 1024px) {\n    #block-navbar nav {\n      padding-top: 0%;\n      width: 100%;\n      position: fixed; } }\n\n@media (min-width: 1025px) {\n    #block-navbar nav {\n      float: right;\n      padding-top: 0%;\n      width: 100%;\n      position: fixed;\n      text-align: right; } }\n\n#block-navbar nav .menuToggle {\n    display: block;\n    position: relative;\n    width: 100%;\n    z-index: 1; }\n\n@media only screen and (max-width: 1080px) {\n      #block-navbar nav .menuToggle {\n        padding-top: 1%; } }\n\n@media (min-width: 668px) and (max-width: 1024px) {\n      #block-navbar nav .menuToggle {\n        top: 38px; } }\n\n#block-navbar nav .menuToggle .Botton {\n      display: block;\n      width: 22%;\n      height: auto;\n      position: absolute;\n      left: 75%;\n      cursor: pointer;\n      opacity: 0;\n      z-index: 2; }\n\n@media (min-width: 1025px) {\n        #block-navbar nav .menuToggle .Botton {\n          display: none; } }\n\n#block-navbar nav .menuToggle .Botton:checked ~ .lines {\n      opacity: 1;\n      -webkit-transform: rotate(45deg) translate(1px, 0px);\n              transform: rotate(45deg) translate(1px, 0px);\n      background: #0c7ffb; }\n\n#block-navbar nav .menuToggle .Botton:checked ~ .lines:nth-last-child(3) {\n      opacity: 0;\n      -webkit-transform: rotate(0deg) scale(0.2, 0.2);\n              transform: rotate(0deg) scale(0.2, 0.2); }\n\n#block-navbar nav .menuToggle .Botton:checked ~ .lines:nth-last-child(2) {\n      opacity: 1;\n      -webkit-transform: rotate(-45deg) translate(1px, 2px);\n              transform: rotate(-45deg) translate(1px, 2px); }\n\n#block-navbar nav .menuToggle .Botton:checked ~ .list-menu {\n      display: block;\n      -webkit-transform: none;\n              transform: none; }\n\n#block-navbar nav .menuToggle .lines {\n      display: block;\n      width: 26px;\n      height: 2.4px;\n      margin-bottom: 5px;\n      margin-left: 81%;\n      position: relative;\n      background: #ffffff;\n      border-radius: 30%;\n      z-index: 1;\n      -webkit-transform-origin: 4px 0px;\n              transform-origin: 4px 0px;\n      transition: background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease, -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);\n      transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;\n      transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease, -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1); }\n\n@media (min-width: 1025px) {\n        #block-navbar nav .menuToggle .lines {\n          display: none; } }\n\n#block-navbar nav .menuToggle .lines:first-child {\n      -webkit-transform-origin: 0% 0%;\n              transform-origin: 0% 0%; }\n\n#block-navbar nav .menuToggle .lines:nth-last-child(2) {\n      -webkit-transform-origin: 0% 100%;\n              transform-origin: 0% 100%;\n      margin-bottom: 8%; }\n\n#block-navbar nav .menuToggle ul {\n      margin-bottom: 0; }\n\n#block-navbar nav .menuToggle .list-menu {\n      padding-left: 0%;\n      width: 100%;\n      position: relative;\n      display: none;\n      -webkit-font-smoothing: antialiased;\n      -webkit-transform: translate(0, -100%);\n              transform: translate(0, -100%);\n      transition: -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);\n      transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);\n      transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1); }\n\n@media (min-width: 1025px) {\n        #block-navbar nav .menuToggle .list-menu {\n          display: flex;\n          justify-content: flex-end;\n          -webkit-transform: initial;\n                  transform: initial;\n          transition-delay: initial; } }\n\n#block-navbar nav .menuToggle .list-menu .items {\n        cursor: pointer;\n        list-style: none;\n        padding-bottom: 7%;\n        padding-top: 7%;\n        padding-left: 12%;\n        border-bottom: 1px solid #f5fafc; }\n\n@media (min-width: 1025px) {\n          #block-navbar nav .menuToggle .list-menu .items {\n            width: 9%;\n            text-align: center;\n            padding-top: 2%;\n            padding-bottom: 2%;\n            padding-left: 0%;\n            padding-right: 0%;\n            border-bottom: initial;\n            display: inline-block; } }\n\n@media (max-width: 1024px) {\n          #block-navbar nav .menuToggle .list-menu .items {\n            padding: 0px;\n            width: 100%; } }\n\n#block-navbar nav .menuToggle .list-menu .items:nth-child(1) {\n          border-top: 1px solid #cfe3ee; }\n\n@media (min-width: 668px) and (max-width: 1024px) {\n            #block-navbar nav .menuToggle .list-menu .items:nth-child(1) {\n              border-top: initial; } }\n\n@media (min-width: 1025px) {\n            #block-navbar nav .menuToggle .list-menu .items:nth-child(1) {\n              border-top: initial; } }\n\n#block-navbar nav .menuToggle .list-menu .items:hover i {\n          color: #a6cf24 !important; }\n\n#block-navbar nav .menuToggle .list-menu .items:hover .link {\n          color: #a6cf24;\n          text-decoration: none; }\n\n#block-navbar nav .menuToggle .list-menu .items .link {\n          color: #002b49;\n          width: 100%;\n          text-decoration: none;\n          text-align: left;\n          padding-right: 73%;\n          font-size: 15px;\n          font-family: 'Open Sans light';\n          font-weight: 300; }\n\n@media (max-width: 1024px) {\n            #block-navbar nav .menuToggle .list-menu .items .link {\n              display: block; } }\n\n@media (min-width: 1025px) {\n            #block-navbar nav .menuToggle .list-menu .items .link {\n              color: #ffffff;\n              padding-left: 12%;\n              padding-right: 15%;\n              padding-top: 20%; } }\n\n@media (max-width: 1024px) {\n            #block-navbar nav .menuToggle .list-menu .items .link {\n              padding: 20px;\n              width: 100%; } }\n\n#block-navbar nav .menuToggle .list-menu .items .link .arrow {\n            padding-left: 59%; }\n\n@media (min-width: 668px) and (max-width: 1024px) {\n              #block-navbar nav .menuToggle .list-menu .items .link .arrow {\n                padding-left: 6%; } }\n\n@media (min-width: 1025px) {\n              #block-navbar nav .menuToggle .list-menu .items .link .arrow {\n                padding-left: 0%;\n                padding-right: 0%;\n                padding-top: 0%; } }\n\n#block-navbar nav .menuToggle .list-menu .items .link .arrow-service {\n            padding-left: 61.2%; }\n\n@media (min-width: 668px) and (max-width: 1024px) {\n              #block-navbar nav .menuToggle .list-menu .items .link .arrow-service {\n                padding-left: 7.2%; } }\n\n@media (min-width: 1025px) {\n              #block-navbar nav .menuToggle .list-menu .items .link .arrow-service {\n                padding-left: 0%; } }\n\n@media (min-width: 1025px) {\n          #block-navbar nav .menuToggle .list-menu .items .active {\n            border-top: 4px solid #a6cf24; } }\n\n#block-navbar nav .menuToggle .list-menu .items .scroll-white {\n          color: #002b49;\n          background: white; }\n\n#block-navbar nav .menuToggle .list-menu .items .tigger-menu {\n          background: #ffffff;\n          color: #002b49; }\n\n@media (max-width: 1024px) {\n            #block-navbar nav .menuToggle .list-menu .items .tigger-menu {\n              border-bottom: 1px solid #eef6f9; } }\n\n#block-navbar nav .menuToggle .list-menu .language {\n        list-style: none; }\n\n#block-navbar nav .menuToggle /deep/ li {\n      position: relative; }\n\n#block-navbar nav .menuToggle /deep/ li .menu-caret {\n        display: block; }\n\n@media (min-width: 1025px) {\n          #block-navbar nav .menuToggle /deep/ li .menu-caret.fas.fa-caret-down {\n            font-size: 10px;\n            position: absolute;\n            right: 35px;\n            bottom: 46px;\n            color: #fff; } }\n\n@media (min-width: 1025px) and (max-width: 1281px) {\n    #block-navbar nav .menuToggle /deep/ li .menu-caret.fas.fa-caret-down {\n      right: 12px;\n      bottom: 31px; } }\n\n@media (min-width: 1025px) and (min-width: 1282px) and (max-width: 1367px) {\n    #block-navbar nav .menuToggle /deep/ li .menu-caret.fas.fa-caret-down {\n      right: 14px;\n      bottom: 34px; } }\n\n@media (min-width: 1025px) and (min-width: 1368px) and (max-width: 1441px) {\n    #block-navbar nav .menuToggle /deep/ li .menu-caret.fas.fa-caret-down {\n      right: 16px;\n      bottom: 35px; } }\n\n@media (min-width: 1025px) {\n          #block-navbar nav .menuToggle /deep/ li .menu-caret.fas.fa-angle-right {\n            color: #002b49;\n            font-size: 13px;\n            position: absolute;\n            right: 18px;\n            bottom: 18px;\n            transition: 0.5s ease all; } }\n\n@media (max-width: 1024px) {\n          #block-navbar nav .menuToggle /deep/ li .menu-caret {\n            position: absolute;\n            right: 10px;\n            top: 8px;\n            width: 45px;\n            height: 45px;\n            box-sizing: border-box;\n            padding: 15px 18px; }\n            #block-navbar nav .menuToggle /deep/ li .menu-caret.fa-caret-down-item-menu {\n              top: 2px; } }\n\n#block-navbar nav .menuToggle /deep/ .customrow-1 ul {\n      display: none; }\n\n@media (max-width: 1024px) {\n        #block-navbar nav .menuToggle /deep/ .customrow-1 ul.invisible-in-mobile {\n          display: none; } }\n\n@media (max-width: 1024px) {\n        #block-navbar nav .menuToggle /deep/ .customrow-1 ul.visible-in-mobile {\n          display: block; } }\n\n#block-navbar nav .menuToggle /deep/ li:hover > app-menu-item > ul {\n      display: block; }\n\n#block-navbar nav .menuToggle /deep/ li:hover > app-menu-item > ul li:hover i.fa-angle-right {\n        -webkit-transform: rotate(90deg);\n                transform: rotate(90deg);\n        transition: 0.5s ease all; }\n\n#block-navbar nav .menuToggle /deep/ ul.customulrow-2 {\n      list-style-type: none;\n      position: absolute;\n      padding: 0px;\n      right: 0px; }\n\n@media (min-width: 1025px) {\n        #block-navbar nav .menuToggle /deep/ ul.customulrow-2 {\n          margin-top: -2px; } }\n\n@media (max-width: 1024px) {\n        #block-navbar nav .menuToggle /deep/ ul.customulrow-2 {\n          position: relative;\n          bottom: 0; } }\n\n@media (max-width: 1080px) {\n        #block-navbar nav .menuToggle /deep/ ul.customulrow-2 > li.customrow-2 {\n          border: 1px solid #f5fafc; } }\n\n#block-navbar nav .menuToggle /deep/ ul.customulrow-2 > li.customrow-2:hover > i {\n        color: #a6cf24; }\n\n#block-navbar nav .menuToggle /deep/ ul.customulrow-2 > li.customrow-2:hover > a.link {\n        text-decoration: none;\n        color: #a6cf24; }\n\n#block-navbar nav .menuToggle /deep/ ul.customulrow-2 > li.customrow-2 > a.link {\n        border-bottom: 1px solid #cecece;\n        padding: 12px;\n        padding-left: 11px;\n        text-align: left;\n        background: #fff;\n        display: block;\n        font-family: Open Sans;\n        font-size: 15px;\n        font-weight: 400;\n        color: #002b49;\n        min-height: 38px;\n        height: 49px; }\n\n@media (min-width: 1025px) {\n          #block-navbar nav .menuToggle /deep/ ul.customulrow-2 > li.customrow-2 > a.link {\n            width: 251px; } }\n\n@media (max-width: 1024px) {\n          #block-navbar nav .menuToggle /deep/ ul.customulrow-2 > li.customrow-2 > a.link {\n            padding-left: 45px;\n            font-family: Open Sans Light;\n            border: 0;\n            border-bottom: 1px solid #eef6f9; } }\n\n#block-navbar nav .menuToggle /deep/ ul.customulrow-2 > li.customrow-2 > img {\n        display: none; }\n\n#block-navbar nav .menuToggle /deep/ ul.customulrow-3 {\n      border: 1px solid #cecece;\n      list-style-type: none;\n      padding: 0;\n      position: relative; }\n\n@media (min-width: 1025px) {\n        #block-navbar nav .menuToggle /deep/ ul.customulrow-3::before {\n          content: '';\n          display: block;\n          background-image: url(\"/assets/images/MenuLuzDiagonal.png\");\n          width: 100%;\n          height: 100%;\n          position: absolute;\n          top: 0;\n          left: 0; } }\n\n@media (min-width: 1025px) {\n        #block-navbar nav .menuToggle /deep/ ul.customulrow-3 {\n          width: 430px;\n          background: #fff;\n          top: 0;\n          background-size: cover;\n          background-position: bottom right;\n          background-repeat: no-repeat;\n          position: absolute;\n          right: 194px;\n          height: 245px;\n          left: -431px; } }\n\n@media (max-width: 1024px) {\n        #block-navbar nav .menuToggle /deep/ ul.customulrow-3 {\n          border: 0; } }\n\n@media (min-width: 1025px) {\n        #block-navbar nav .menuToggle /deep/ ul.customulrow-3 > li.customrow-3 {\n          text-align: left;\n          height: 61px;\n          width: 50%;\n          float: left; } }\n\n#block-navbar nav .menuToggle /deep/ ul.customulrow-3 > li.customrow-3 > a.link {\n        font-family: Open Sans;\n        font-size: 15px;\n        color: #002b49;\n        display: block;\n        background-color: transparent; }\n\n@media (min-width: 1025px) {\n          #block-navbar nav .menuToggle /deep/ ul.customulrow-3 > li.customrow-3 > a.link {\n            color: #333;\n            padding: 9px; } }\n\n@media (max-width: 1024px) {\n          #block-navbar nav .menuToggle /deep/ ul.customulrow-3 > li.customrow-3 > a.link {\n            padding-left: 76px;\n            padding-top: 15px;\n            font-family: Open Sans Light;\n            border: 0;\n            text-align: left;\n            background: #fff;\n            display: block;\n            font-size: 15px;\n            font-weight: 400;\n            color: #002b49;\n            min-height: 38px;\n            height: 49px;\n            border-bottom: 1px solid #eef6f9; } }\n\n@media (max-width: 1024px) {\n          #block-navbar nav .menuToggle /deep/ ul.customulrow-3 > li.customrow-3 > a.link .title {\n            color: #002b49;\n            font-size: 15px; } }\n\n#block-navbar nav .menuToggle /deep/ ul.customulrow-3 > li.customrow-3 > a.link .description {\n          display: none;\n          font-family: Open Sans Light;\n          font-size: 13px;\n          color: #002b49; }\n\n@media (min-width: 1025px) {\n            #block-navbar nav .menuToggle /deep/ ul.customulrow-3 > li.customrow-3 > a.link .description {\n              display: block; } }\n\n#block-navbar nav .menuToggle /deep/ ul.customulrow-3 > li.customrow-3 > a.link:hover {\n          text-decoration: none; }\n\n#block-navbar nav .menuToggle /deep/ ul.customulrow-3 > li.customrow-3 > a.link:hover span.title {\n            color: #a6cf26; }\n\n#block-navbar nav .menuToggle /deep/ ul.customulrow-3 > li.customrow-3 .title {\n        font-weight: normal;\n        font-size: 13px;\n        color: #333;\n        display: block; }\n\n#block-navbar nav .menuToggle /deep/ ul.customulrow-3 > li.customrow-3 .description {\n        font-weight: normal;\n        font-size: 10px;\n        color: #777;\n        display: block;\n        padding-left: 14px;\n        line-height: 15px; }\n\n#block-navbar .shadow-if-exit-scroll {\n  box-shadow: 0 2px 2px #d1d1d1; }\n\napp-navbar /deep/ .menu-item-child .a {\n  text-decoration: none; }\n\napp-navbar /deep/ .menu-item-child .menu-tree-level {\n  list-style-type: none;\n  display: none; }\n\napp-navbar /deep/ .menu-item-child .menu-has-children:hover > app-menu-item > .menu-tree-level {\n  display: block; }\n\napp-navbar /deep/ .menu-item-child .fa-angle-right {\n  color: #002b49; }\n\napp-navbar /deep/ .menu-item-child .locations-container {\n  height: 100%;\n  width: 100%; }\n"
+module.exports = "#block-navbar .inverse-color {\n  background: #ffffff; }\n\n#block-navbar .color-white {\n  background: #ffffff; }\n\n#block-navbar nav {\n  width: 100%;\n  padding-top: 6%;\n  border-bottom: 1px solid transparent;\n  position: fixed;\n  float: left;\n  font-weight: bold;\n  background: transparent;\n  text-decoration: none;\n  z-index: 1020; }\n\n@media (min-width: 668px) and (max-width: 1024px) {\n    #block-navbar nav {\n      padding-top: 0%;\n      width: 100%;\n      position: fixed; } }\n\n@media (min-width: 1025px) {\n    #block-navbar nav {\n      float: right;\n      padding-top: 0%;\n      width: 100%;\n      position: fixed;\n      text-align: right; } }\n\n#block-navbar nav .menuToggle {\n    display: block;\n    position: relative;\n    width: 100%;\n    z-index: 1; }\n\n@media only screen and (max-width: 1080px) {\n      #block-navbar nav .menuToggle {\n        padding-top: 1%; } }\n\n@media (min-width: 668px) and (max-width: 1024px) {\n      #block-navbar nav .menuToggle {\n        top: 38px; } }\n\n#block-navbar nav .menuToggle .Botton {\n      display: block;\n      width: 22%;\n      height: auto;\n      position: absolute;\n      left: 75%;\n      cursor: pointer;\n      opacity: 0;\n      z-index: 2; }\n\n@media (min-width: 1025px) {\n        #block-navbar nav .menuToggle .Botton {\n          display: none; } }\n\n#block-navbar nav .menuToggle .Botton:checked ~ .lines {\n      opacity: 1;\n      -webkit-transform: rotate(45deg) translate(1px, 0px);\n              transform: rotate(45deg) translate(1px, 0px);\n      background: #0c7ffb; }\n\n#block-navbar nav .menuToggle .Botton:checked ~ .lines:nth-last-child(3) {\n      opacity: 0;\n      -webkit-transform: rotate(0deg) scale(0.2, 0.2);\n              transform: rotate(0deg) scale(0.2, 0.2); }\n\n#block-navbar nav .menuToggle .Botton:checked ~ .lines:nth-last-child(2) {\n      opacity: 1;\n      -webkit-transform: rotate(-45deg) translate(1px, 2px);\n              transform: rotate(-45deg) translate(1px, 2px); }\n\n#block-navbar nav .menuToggle .Botton:checked ~ .list-menu {\n      display: block;\n      -webkit-transform: none;\n              transform: none; }\n\n#block-navbar nav .menuToggle .lines {\n      display: block;\n      width: 26px;\n      height: 2.4px;\n      margin-bottom: 5px;\n      margin-left: 81%;\n      position: relative;\n      background: #ffffff;\n      border-radius: 30%;\n      z-index: 1;\n      -webkit-transform-origin: 4px 0px;\n              transform-origin: 4px 0px;\n      transition: background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease, -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);\n      transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;\n      transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease, -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1); }\n\n@media (min-width: 1025px) {\n        #block-navbar nav .menuToggle .lines {\n          display: none; } }\n\n#block-navbar nav .menuToggle .lines:first-child {\n      -webkit-transform-origin: 0% 0%;\n              transform-origin: 0% 0%; }\n\n#block-navbar nav .menuToggle .lines:nth-last-child(2) {\n      -webkit-transform-origin: 0% 100%;\n              transform-origin: 0% 100%;\n      margin-bottom: 8%; }\n\n#block-navbar nav .menuToggle ul {\n      margin-bottom: 0; }\n\n#block-navbar nav .menuToggle .list-menu {\n      padding-left: 0%;\n      width: 100%;\n      position: relative;\n      display: none;\n      -webkit-font-smoothing: antialiased;\n      -webkit-transform: translate(0, -100%);\n              transform: translate(0, -100%);\n      transition: -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);\n      transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);\n      transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1); }\n\n@media (min-width: 1025px) {\n        #block-navbar nav .menuToggle .list-menu {\n          display: flex;\n          justify-content: flex-end;\n          -webkit-transform: initial;\n                  transform: initial;\n          transition-delay: initial; } }\n\n#block-navbar nav .menuToggle .list-menu .items {\n        cursor: pointer;\n        list-style: none;\n        padding-bottom: 7%;\n        padding-top: 7%;\n        padding-left: 12%;\n        border-bottom: 1px solid #f5fafc; }\n\n@media (min-width: 1025px) {\n          #block-navbar nav .menuToggle .list-menu .items {\n            width: 9%;\n            text-align: center;\n            padding-top: 2%;\n            padding-bottom: 2%;\n            padding-left: 0%;\n            padding-right: 0%;\n            border-bottom: initial;\n            display: inline-block; } }\n\n@media (max-width: 1024px) {\n          #block-navbar nav .menuToggle .list-menu .items {\n            padding: 0px;\n            width: 100%; } }\n\n#block-navbar nav .menuToggle .list-menu .items:nth-child(1) {\n          border-top: 1px solid #cfe3ee; }\n\n@media (min-width: 668px) and (max-width: 1024px) {\n            #block-navbar nav .menuToggle .list-menu .items:nth-child(1) {\n              border-top: initial; } }\n\n@media (min-width: 1025px) {\n            #block-navbar nav .menuToggle .list-menu .items:nth-child(1) {\n              border-top: initial; } }\n\n#block-navbar nav .menuToggle .list-menu .items:hover i {\n          color: #a6cf24 !important; }\n\n#block-navbar nav .menuToggle .list-menu .items:hover .link {\n          color: #a6cf24;\n          text-decoration: none; }\n\n#block-navbar nav .menuToggle .list-menu .items .link {\n          color: #002b49;\n          width: 100%;\n          text-decoration: none;\n          text-align: left;\n          padding-right: 73%;\n          font-size: 15px;\n          font-family: 'Open Sans light';\n          font-weight: 300; }\n\n@media (max-width: 1024px) {\n            #block-navbar nav .menuToggle .list-menu .items .link {\n              display: block; } }\n\n@media (min-width: 1025px) {\n            #block-navbar nav .menuToggle .list-menu .items .link {\n              color: #ffffff;\n              padding-left: 12%;\n              padding-right: 15%;\n              padding-top: 20%;\n              padding-bottom: 20%; } }\n\n@media (max-width: 1024px) {\n            #block-navbar nav .menuToggle .list-menu .items .link {\n              padding: 20px;\n              width: 100%; } }\n\n#block-navbar nav .menuToggle .list-menu .items .link .arrow {\n            padding-left: 59%; }\n\n@media (min-width: 668px) and (max-width: 1024px) {\n              #block-navbar nav .menuToggle .list-menu .items .link .arrow {\n                padding-left: 6%; } }\n\n@media (min-width: 1025px) {\n              #block-navbar nav .menuToggle .list-menu .items .link .arrow {\n                padding-left: 0%;\n                padding-right: 0%;\n                padding-top: 0%; } }\n\n#block-navbar nav .menuToggle .list-menu .items .link .arrow-service {\n            padding-left: 61.2%; }\n\n@media (min-width: 668px) and (max-width: 1024px) {\n              #block-navbar nav .menuToggle .list-menu .items .link .arrow-service {\n                padding-left: 7.2%; } }\n\n@media (min-width: 1025px) {\n              #block-navbar nav .menuToggle .list-menu .items .link .arrow-service {\n                padding-left: 0%; } }\n\n@media (min-width: 1025px) {\n          #block-navbar nav .menuToggle .list-menu .items .active {\n            border-top: 4px solid #a6cf24; } }\n\n#block-navbar nav .menuToggle .list-menu .items .scroll-white {\n          color: #002b49;\n          background: white; }\n\n#block-navbar nav .menuToggle .list-menu .items .tigger-menu {\n          background: #ffffff;\n          color: #002b49; }\n\n@media (max-width: 1024px) {\n            #block-navbar nav .menuToggle .list-menu .items .tigger-menu {\n              border-bottom: 1px solid #eef6f9; } }\n\n#block-navbar nav .menuToggle .list-menu .language {\n        list-style: none; }\n\n#block-navbar nav .menuToggle /deep/ li {\n      position: relative; }\n\n#block-navbar nav .menuToggle /deep/ li .menu-caret {\n        display: block; }\n\n@media (min-width: 1025px) {\n          #block-navbar nav .menuToggle /deep/ li .menu-caret.fas.fa-caret-down {\n            font-size: 10px;\n            position: absolute;\n            right: 35px;\n            bottom: 46px;\n            color: #fff; } }\n\n@media (min-width: 1025px) and (max-width: 1281px) {\n    #block-navbar nav .menuToggle /deep/ li .menu-caret.fas.fa-caret-down {\n      right: 12px;\n      bottom: 31px; } }\n\n@media (min-width: 1025px) and (min-width: 1282px) and (max-width: 1367px) {\n    #block-navbar nav .menuToggle /deep/ li .menu-caret.fas.fa-caret-down {\n      right: 14px;\n      bottom: 34px; } }\n\n@media (min-width: 1025px) and (min-width: 1368px) and (max-width: 1441px) {\n    #block-navbar nav .menuToggle /deep/ li .menu-caret.fas.fa-caret-down {\n      right: 16px;\n      bottom: 35px; } }\n\n@media (min-width: 1025px) {\n          #block-navbar nav .menuToggle /deep/ li .menu-caret.fas.fa-angle-right {\n            color: #002b49;\n            font-size: 13px;\n            position: absolute;\n            right: 18px;\n            bottom: 18px;\n            transition: 0.5s ease all; } }\n\n@media (max-width: 1024px) {\n          #block-navbar nav .menuToggle /deep/ li .menu-caret {\n            position: absolute;\n            right: 10px;\n            top: 8px;\n            width: 45px;\n            height: 45px;\n            box-sizing: border-box;\n            padding: 15px 18px; }\n            #block-navbar nav .menuToggle /deep/ li .menu-caret.fa-caret-down-item-menu {\n              top: 2px; } }\n\n#block-navbar nav .menuToggle /deep/ .customrow-1 ul {\n      display: none; }\n\n@media (max-width: 1024px) {\n        #block-navbar nav .menuToggle /deep/ .customrow-1 ul.invisible-in-mobile {\n          display: none; } }\n\n@media (max-width: 1024px) {\n        #block-navbar nav .menuToggle /deep/ .customrow-1 ul.visible-in-mobile {\n          display: block; } }\n\n#block-navbar nav .menuToggle /deep/ li:hover > app-menu-item > ul {\n      display: block; }\n\n#block-navbar nav .menuToggle /deep/ li:hover > app-menu-item > ul li:hover i.fa-angle-right {\n        -webkit-transform: rotate(90deg);\n                transform: rotate(90deg);\n        transition: 0.5s ease all; }\n\n#block-navbar nav .menuToggle /deep/ ul.customulrow-2 {\n      list-style-type: none;\n      position: absolute;\n      padding: 0px;\n      right: 0px; }\n\n@media (min-width: 1025px) {\n        #block-navbar nav .menuToggle /deep/ ul.customulrow-2 {\n          margin-top: -2px; } }\n\n@media (max-width: 1024px) {\n        #block-navbar nav .menuToggle /deep/ ul.customulrow-2 {\n          position: relative;\n          bottom: 0; } }\n\n@media (max-width: 1080px) {\n        #block-navbar nav .menuToggle /deep/ ul.customulrow-2 > li.customrow-2 {\n          border: 1px solid #f5fafc; } }\n\n#block-navbar nav .menuToggle /deep/ ul.customulrow-2 > li.customrow-2:hover > i {\n        color: #a6cf24; }\n\n#block-navbar nav .menuToggle /deep/ ul.customulrow-2 > li.customrow-2:hover > a.link {\n        text-decoration: none;\n        color: #a6cf24; }\n\n#block-navbar nav .menuToggle /deep/ ul.customulrow-2 > li.customrow-2 > a.link {\n        border-bottom: 1px solid #cecece;\n        padding: 12px;\n        padding-left: 11px;\n        text-align: left;\n        background: #fff;\n        display: block;\n        font-family: Open Sans;\n        font-size: 15px;\n        font-weight: 400;\n        color: #002b49;\n        min-height: 38px;\n        height: 49px; }\n\n@media (min-width: 1025px) {\n          #block-navbar nav .menuToggle /deep/ ul.customulrow-2 > li.customrow-2 > a.link {\n            width: 251px; } }\n\n@media (max-width: 1024px) {\n          #block-navbar nav .menuToggle /deep/ ul.customulrow-2 > li.customrow-2 > a.link {\n            padding-left: 45px;\n            font-family: Open Sans Light;\n            border: 0;\n            border-bottom: 1px solid #eef6f9; } }\n\n#block-navbar nav .menuToggle /deep/ ul.customulrow-2 > li.customrow-2 > img {\n        display: none; }\n\n#block-navbar nav .menuToggle /deep/ ul.customulrow-3 {\n      border: 1px solid #cecece;\n      list-style-type: none;\n      padding: 0;\n      position: relative; }\n\n@media (min-width: 1025px) {\n        #block-navbar nav .menuToggle /deep/ ul.customulrow-3::before {\n          content: '';\n          display: block;\n          background-image: url(\"/assets/images/MenuLuzDiagonal.png\");\n          width: 100%;\n          height: 100%;\n          position: absolute;\n          top: 0;\n          left: 0; } }\n\n@media (min-width: 1025px) {\n        #block-navbar nav .menuToggle /deep/ ul.customulrow-3 {\n          width: 430px;\n          background: #fff;\n          top: 0;\n          background-size: cover;\n          background-position: bottom right;\n          background-repeat: no-repeat;\n          position: absolute;\n          right: 194px;\n          height: 245px;\n          left: -431px; } }\n\n@media (max-width: 1024px) {\n        #block-navbar nav .menuToggle /deep/ ul.customulrow-3 {\n          border: 0; } }\n\n@media (min-width: 1025px) {\n        #block-navbar nav .menuToggle /deep/ ul.customulrow-3 > li.customrow-3 {\n          text-align: left;\n          height: 61px;\n          width: 50%;\n          float: left; } }\n\n#block-navbar nav .menuToggle /deep/ ul.customulrow-3 > li.customrow-3 > a.link {\n        font-family: Open Sans;\n        font-size: 15px;\n        color: #002b49;\n        display: block;\n        background-color: transparent; }\n\n@media (min-width: 1025px) {\n          #block-navbar nav .menuToggle /deep/ ul.customulrow-3 > li.customrow-3 > a.link {\n            color: #333;\n            padding: 9px; } }\n\n@media (max-width: 1024px) {\n          #block-navbar nav .menuToggle /deep/ ul.customulrow-3 > li.customrow-3 > a.link {\n            padding-left: 76px;\n            padding-top: 15px;\n            font-family: Open Sans Light;\n            border: 0;\n            text-align: left;\n            background: #fff;\n            display: block;\n            font-size: 15px;\n            font-weight: 400;\n            color: #002b49;\n            min-height: 38px;\n            height: 49px;\n            border-bottom: 1px solid #eef6f9; } }\n\n@media (max-width: 1024px) {\n          #block-navbar nav .menuToggle /deep/ ul.customulrow-3 > li.customrow-3 > a.link .title {\n            color: #002b49;\n            font-size: 15px; } }\n\n#block-navbar nav .menuToggle /deep/ ul.customulrow-3 > li.customrow-3 > a.link .description {\n          display: none;\n          font-family: Open Sans Light;\n          font-size: 13px;\n          color: #002b49; }\n\n@media (min-width: 1025px) {\n            #block-navbar nav .menuToggle /deep/ ul.customulrow-3 > li.customrow-3 > a.link .description {\n              display: block; } }\n\n#block-navbar nav .menuToggle /deep/ ul.customulrow-3 > li.customrow-3 > a.link:hover {\n          text-decoration: none; }\n\n#block-navbar nav .menuToggle /deep/ ul.customulrow-3 > li.customrow-3 > a.link:hover span.title {\n            color: #a6cf26; }\n\n#block-navbar nav .menuToggle /deep/ ul.customulrow-3 > li.customrow-3 .title {\n        font-weight: normal;\n        font-size: 13px;\n        color: #333;\n        display: block; }\n\n#block-navbar nav .menuToggle /deep/ ul.customulrow-3 > li.customrow-3 .description {\n        font-weight: normal;\n        font-size: 10px;\n        color: #777;\n        display: block;\n        padding-left: 14px;\n        line-height: 15px; }\n\n#block-navbar .shadow-if-exit-scroll {\n  box-shadow: 0 2px 2px #d1d1d1; }\n\napp-navbar /deep/ .menu-item-child .a {\n  text-decoration: none; }\n\napp-navbar /deep/ .menu-item-child .menu-tree-level {\n  list-style-type: none;\n  display: none; }\n\napp-navbar /deep/ .menu-item-child .menu-has-children:hover > app-menu-item > .menu-tree-level {\n  display: block; }\n\napp-navbar /deep/ .menu-item-child .fa-angle-right {\n  color: #002b49; }\n\napp-navbar /deep/ .menu-item-child .locations-container {\n  height: 100%;\n  width: 100%; }\n"
 
 /***/ }),
 
@@ -5074,12 +5347,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _cards_components_generator_of_links_generator_of_links_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../cards/components/generator-of-links/generator-of-links.component */ "./src/app/cards/components/generator-of-links/generator-of-links.component.ts");
 /* harmony import */ var _cards_components_footer_footer_block_footer_block__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../cards/components/footer/footer-block/footer-block */ "./src/app/cards/components/footer/footer-block/footer-block.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _message_message_module__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../message/message.module */ "./src/app/message/message.module.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -5099,7 +5376,10 @@ var LayoutModule = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
             imports: [
                 _node_modules_angular_common__WEBPACK_IMPORTED_MODULE_5__["CommonModule"],
-                _angular_router__WEBPACK_IMPORTED_MODULE_11__["RouterModule"]
+                _angular_router__WEBPACK_IMPORTED_MODULE_11__["RouterModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_12__["FormsModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_12__["ReactiveFormsModule"],
+                _message_message_module__WEBPACK_IMPORTED_MODULE_13__["MessageModule"],
             ],
             declarations: [
                 _components_item_menu_item_menu_component__WEBPACK_IMPORTED_MODULE_1__["ItemMenuComponent"],
@@ -5132,7 +5412,7 @@ var LayoutModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-banner imgFondo=\"\" uuid=\"e58b3214-c259-4bd2-b6ba-2f81c9ba86b4\"></app-banner>\n<app-whybitsamericas></app-whybitsamericas>\n<app-carousel-controls></app-carousel-controls>\n<app-alliances></app-alliances>\n<app-history></app-history>\n<app-knowus></app-knowus>\n<app-workwithus-proserv></app-workwithus-proserv>"
+module.exports = "<app-banner imgFondo=\"\" uuid=\"e58b3214-c259-4bd2-b6ba-2f81c9ba86b4\"></app-banner>\n<app-separator [iconCustom]=\"'icon-startproject'\"></app-separator>\n<app-whybitsamericas></app-whybitsamericas>\n<app-separator [iconCustom]=\"'icon-engranaje'\"></app-separator>\n<app-history></app-history>\n<app-separator [iconCustom]=\"'icon-medal'\"></app-separator>\n<app-carousel-controls></app-carousel-controls>\n<app-alliances></app-alliances>\n<app-separator [iconCustom]=\"'icon-people'\"></app-separator>\n<app-knowus></app-knowus>\n<app-separator [iconCustom]=\"'icon-people'\"></app-separator>\n<app-workwithus-proserv></app-workwithus-proserv>"
 
 /***/ }),
 
@@ -5875,7 +6155,7 @@ var ProductsComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-banner></app-banner>\n<app-title></app-title>\nPágina principal de Proyectos..."
+module.exports = "<app-banner></app-banner>\n<app-title></app-title>\n<app-filter></app-filter>\nPágina principal de Proyectos..."
 
 /***/ }),
 
@@ -5986,6 +6266,119 @@ var ServicesComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [])
     ], ServicesComponent);
     return ServicesComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/message/components/message/message.component.html":
+/*!*******************************************************************!*\
+  !*** ./src/app/message/components/message/message.component.html ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<ul *ngIf=\"dataMessage.length > 0\">\n  <li *ngFor=\"let data of dataMessage\">\n    <div *ngIf=\"data.visible == true\" ngClass={{data.status}}>\n      <i ngClass={{data.status}}></i>\n      <p>{{ data.message}}</p>\n    </div>\n  </li>\n</ul>"
+
+/***/ }),
+
+/***/ "./src/app/message/components/message/message.component.scss":
+/*!*******************************************************************!*\
+  !*** ./src/app/message/components/message/message.component.scss ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "ul {\n  padding: 25px;\n  margin-bottom: 0; }\n  ul li {\n    list-style: none;\n    margin-top: 5px;\n    margin-bottom: 5px; }\n  ul li .error {\n      background-color: #efcfd2;\n      color: #721c24;\n      padding: 5px; }\n  ul li .success {\n      background-color: #e7efcd;\n      padding: 10px;\n      color: #002b49;\n      padding-left: 20px; }\n  ul li i.error {\n      background-image: url(\"data:image/svg+xml,%3C%3Fxml version%3D%221.0%22 encoding%3D%22UTF-8%22%3F%3E%3C!-- Created with Inkscape (http%3A%2F%2Fwww.inkscape.org%2F) --%3E%3Csvg width%3D%226.6477mm%22 height%3D%2213.295mm%22 version%3D%221.1%22 viewBox%3D%220 0 6.6477 13.295%22 xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 xmlns%3Acc%3D%22http%3A%2F%2Fcreativecommons.org%2Fns%23%22 xmlns%3Adc%3D%22http%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%22 xmlns%3Ardf%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%22%3E %3Cmetadata%3E  %3Crdf%3ARDF%3E   %3Ccc%3AWork rdf%3Aabout%3D%22%22%3E    %3Cdc%3Aformat%3Eimage%2Fsvg%2Bxml%3C%2Fdc%3Aformat%3E    %3Cdc%3Atype rdf%3Aresource%3D%22http%3A%2F%2Fpurl.org%2Fdc%2Fdcmitype%2FStillImage%22%2F%3E    %3Cdc%3Atitle%2F%3E   %3C%2Fcc%3AWork%3E  %3C%2Frdf%3ARDF%3E %3C%2Fmetadata%3E %3Cg transform%3D%22translate(168.12 -65.379)%22%3E  %3Ccircle transform%3D%22rotate(-45)%22 cx%3D%22-165.11%22 cy%3D%22-67.95%22 r%3D%223.3238%22 fill%3D%22%23b2dd54%22%2F%3E  %3Cpath d%3D%22m-163.13 67.355-2.157 2.1574-1.005-1.0062-0.456 0.4564 1.005 1.0057 0.456 0.4556 0.456-0.4556 2.157-2.1572z%22 fill%3D%22%23fff%22%2F%3E  %3Ccircle transform%3D%22rotate(-45)%22 cx%3D%22-169.81%22 cy%3D%22-63.249%22 r%3D%223.3238%22 fill%3D%22%23dd5454%22%2F%3E  %3Cpath d%3D%22m-163.72 73.814-1.0784 1.0784-1.0769-1.0771-0.45587 0.45588 1.0768 1.0769-1.0784 1.079 0.45588 0.45588 1.079-1.0784 1.0795 1.0795 0.45587-0.45588-1.0795-1.0795 1.0784-1.0784z%22 fill%3D%22%23fff%22%2F%3E %3C%2Fg%3E%3C%2Fsvg%3E\");\n      background-repeat: no-repeat;\n      background-size: cover;\n      width: 30px;\n      height: 30px;\n      display: inline-block;\n      background-position-y: -30px;\n      position: absolute; }\n  ul li i.success {\n      background-image: url(\"data:image/svg+xml,%3C%3Fxml version%3D%221.0%22 encoding%3D%22UTF-8%22%3F%3E%3C!-- Created with Inkscape (http%3A%2F%2Fwww.inkscape.org%2F) --%3E%3Csvg width%3D%226.6477mm%22 height%3D%2213.295mm%22 version%3D%221.1%22 viewBox%3D%220 0 6.6477 13.295%22 xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 xmlns%3Acc%3D%22http%3A%2F%2Fcreativecommons.org%2Fns%23%22 xmlns%3Adc%3D%22http%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%22 xmlns%3Ardf%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%22%3E %3Cmetadata%3E  %3Crdf%3ARDF%3E   %3Ccc%3AWork rdf%3Aabout%3D%22%22%3E    %3Cdc%3Aformat%3Eimage%2Fsvg%2Bxml%3C%2Fdc%3Aformat%3E    %3Cdc%3Atype rdf%3Aresource%3D%22http%3A%2F%2Fpurl.org%2Fdc%2Fdcmitype%2FStillImage%22%2F%3E    %3Cdc%3Atitle%2F%3E   %3C%2Fcc%3AWork%3E  %3C%2Frdf%3ARDF%3E %3C%2Fmetadata%3E %3Cg transform%3D%22translate(168.12 -65.379)%22%3E  %3Ccircle transform%3D%22rotate(-45)%22 cx%3D%22-165.11%22 cy%3D%22-67.95%22 r%3D%223.3238%22 fill%3D%22%23b2dd54%22%2F%3E  %3Cpath d%3D%22m-163.13 67.355-2.157 2.1574-1.005-1.0062-0.456 0.4564 1.005 1.0057 0.456 0.4556 0.456-0.4556 2.157-2.1572z%22 fill%3D%22%23fff%22%2F%3E  %3Ccircle transform%3D%22rotate(-45)%22 cx%3D%22-169.81%22 cy%3D%22-63.249%22 r%3D%223.3238%22 fill%3D%22%23dd5454%22%2F%3E  %3Cpath d%3D%22m-163.72 73.814-1.0784 1.0784-1.0769-1.0771-0.45587 0.45588 1.0768 1.0769-1.0784 1.079 0.45588 0.45588 1.079-1.0784 1.0795 1.0795 0.45587-0.45588-1.0795-1.0795 1.0784-1.0784z%22 fill%3D%22%23fff%22%2F%3E %3C%2Fg%3E%3C%2Fsvg%3E\");\n      background-repeat: no-repeat;\n      background-size: cover;\n      width: 30px;\n      height: 30px;\n      display: inline-block;\n      position: absolute; }\n  ul li p {\n      display: inline-block;\n      margin-left: 40px;\n      margin-bottom: 10px; }\n"
+
+/***/ }),
+
+/***/ "./src/app/message/components/message/message.component.ts":
+/*!*****************************************************************!*\
+  !*** ./src/app/message/components/message/message.component.ts ***!
+  \*****************************************************************/
+/*! exports provided: MessageComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MessageComponent", function() { return MessageComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var MessageComponent = /** @class */ (function () {
+    function MessageComponent() {
+        this.dataMessage = [];
+    }
+    MessageComponent.prototype.ngOnInit = function () {
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", Array)
+    ], MessageComponent.prototype, "dataMessage", void 0);
+    MessageComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-message',
+            template: __webpack_require__(/*! ./message.component.html */ "./src/app/message/components/message/message.component.html"),
+            styles: [__webpack_require__(/*! ./message.component.scss */ "./src/app/message/components/message/message.component.scss")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], MessageComponent);
+    return MessageComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/message/message.module.ts":
+/*!*******************************************!*\
+  !*** ./src/app/message/message.module.ts ***!
+  \*******************************************/
+/*! exports provided: MessageModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MessageModule", function() { return MessageModule; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _components_message_message_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/message/message.component */ "./src/app/message/components/message/message.component.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var MessageModule = /** @class */ (function () {
+    function MessageModule() {
+    }
+    MessageModule = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
+            imports: [
+                _angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"]
+            ],
+            declarations: [
+                _components_message_message_component__WEBPACK_IMPORTED_MODULE_2__["MessageComponent"],
+            ],
+            exports: [
+                _components_message_message_component__WEBPACK_IMPORTED_MODULE_2__["MessageComponent"],
+            ]
+        })
+    ], MessageModule);
+    return MessageModule;
 }());
 
 
@@ -6262,14 +6655,16 @@ var CustomCardService = /** @class */ (function () {
             }
         ];
     }
+    CustomCardService.prototype.getCustomForm = function (idForm) {
+        var url = "webform_rest/" + idForm + "/elements";
+        return this.http.get(url);
+    };
     CustomCardService.prototype.getCustomCardInformation = function (idblock) {
         var url = "v1/card/config/" + idblock + "/export?_format=json";
-        console.info('restv1:', idblock);
         return this.http.get(url);
     };
     CustomCardService.prototype.getCustomCardInformationType = function (idblock, type) {
         var url = "v1/card/config/" + idblock + "/" + type + "/export?_format=json";
-        console.info('restv1:', idblock, type);
         return this.http.get(url);
     };
     CustomCardService.prototype.getCustomContentBasicPage = function (uuid) {
@@ -6313,10 +6708,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _base_base_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../base/base.service */ "./src/app/services/base/base.service.ts");
 /* harmony import */ var _shared_notification_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../shared/notification.service */ "./src/app/services/shared/notification.service.ts");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
-/* harmony import */ var rxjs_Observable__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/Observable */ "./node_modules/rxjs-compat/_esm5/Observable.js");
-/* harmony import */ var rxjs_add_observable_throw__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs/add/observable/throw */ "./node_modules/rxjs-compat/_esm5/add/observable/throw.js");
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+/* harmony import */ var rxjs_add_observable_throw__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/add/observable/throw */ "./node_modules/rxjs-compat/_esm5/add/observable/throw.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -6354,7 +6748,7 @@ var HttpService = /** @class */ (function (_super) {
         _this._out = 0;
         _this.allLoaded = false;
         _this.targetPorcentaje = 100;
-        _this.subscriber = new rxjs__WEBPACK_IMPORTED_MODULE_6__["Subject"]();
+        _this.subscriber = new rxjs__WEBPACK_IMPORTED_MODULE_5__["Subject"]();
         _this.header = new _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpHeaders"]({});
         return _this;
     }
@@ -6377,11 +6771,11 @@ var HttpService = /** @class */ (function (_super) {
             _options[key] = options[key].toString();
         }
         var _get = this._http.get(this.baseUrl + url, _options)
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_7__["map"])(function (response) {
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["map"])(function (response) {
             return response;
-        }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_7__["catchError"])(function (err) {
+        }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["catchError"])(function (err) {
             return _this.errorHandler(err);
-        }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_7__["share"])());
+        }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["share"])());
         this.addIn(_get);
         return _get;
     };
@@ -6393,11 +6787,11 @@ var HttpService = /** @class */ (function (_super) {
         }
         var _headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpHeaders"](objH);
         var _post = this._http.post(this.baseUrl + url, body, { headers: _headers })
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_7__["map"])(function (response) {
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["map"])(function (response) {
             return response;
-        }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_7__["catchError"])(function (err) {
+        }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["catchError"])(function (err) {
             return _this.errorHandler(err);
-        }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_7__["share"])());
+        }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["share"])());
         return _post;
     };
     // Para el manejo de errores se debe manejar la estructura {code,message}
@@ -6408,7 +6802,7 @@ var HttpService = /** @class */ (function (_super) {
             message: error.message
         };
         this._notificationService.error(errorParam);
-        return rxjs_Observable__WEBPACK_IMPORTED_MODULE_4__["Observable"].throw(err);
+        return Object(rxjs__WEBPACK_IMPORTED_MODULE_5__["throwError"])(err);
     };
     /***
      * Restablece los valores para iniciar una nueva carga
@@ -6582,12 +6976,12 @@ var NotificationService = /** @class */ (function () {
             this.toastr.error(errorParam, 'Error', this.toastOptions);
         }
         else {
-            var error_c = this.convertObjectError(errorParam);
-            this.toastr.error(error_c.message, error_c.label, this.toastOptions);
+            // const error_c = this.convertObjectError(errorParam);
+            this.toastr.error(errorParam['message'], 'Error', this.toastOptions);
         }
     };
     NotificationService.prototype.success = function (messageParam) {
-        this.toastr.error(messageParam, 'Success', this.toastOptions);
+        this.toastr.success(messageParam, 'Success', this.toastOptions);
     };
     NotificationService.prototype.warnig = function (messageParam) {
         this.toastr.error(messageParam, 'warning', this.toastOptions);
@@ -6600,69 +6994,6 @@ var NotificationService = /** @class */ (function () {
         __metadata("design:paramtypes", [ngx_toastr__WEBPACK_IMPORTED_MODULE_1__["ToastrService"]])
     ], NotificationService);
     return NotificationService;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/work-us/work-us.component.html":
-/*!************************************************!*\
-  !*** ./src/app/work-us/work-us.component.html ***!
-  \************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<p>\n  work-us works!\n</p>\n"
-
-/***/ }),
-
-/***/ "./src/app/work-us/work-us.component.scss":
-/*!************************************************!*\
-  !*** ./src/app/work-us/work-us.component.scss ***!
-  \************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = ""
-
-/***/ }),
-
-/***/ "./src/app/work-us/work-us.component.ts":
-/*!**********************************************!*\
-  !*** ./src/app/work-us/work-us.component.ts ***!
-  \**********************************************/
-/*! exports provided: WorkUsComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WorkUsComponent", function() { return WorkUsComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var WorkUsComponent = /** @class */ (function () {
-    function WorkUsComponent() {
-    }
-    WorkUsComponent.prototype.ngOnInit = function () {
-    };
-    WorkUsComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-work-us',
-            template: __webpack_require__(/*! ./work-us.component.html */ "./src/app/work-us/work-us.component.html"),
-            styles: [__webpack_require__(/*! ./work-us.component.scss */ "./src/app/work-us/work-us.component.scss")]
-        }),
-        __metadata("design:paramtypes", [])
-    ], WorkUsComponent);
-    return WorkUsComponent;
 }());
 
 
