@@ -1,24 +1,30 @@
 header {
     z-index: 10;
+
     .logo {
         width: 15%;
         position: fixed;
         z-index: 1022;
+
         .container-logo {
             width: 100%;
             padding-left: 40%;
             padding-top: 5%;
             position: relative;
             z-index: 100;
+
             @media (min-width: 300px) and (max-width: 1024px) {
                 padding-top: 20%;
             }
+
             .image-url {
                 width: 100%;
                 position: relative;
                 left: 28%;
+
                 img {
                     width: 90px;
+
                     @media (min-width: 1025px) {
                         width: 100%;
                         padding-left: 4%;
@@ -27,8 +33,9 @@ header {
                 }
             }
         }
-    }    
+    }
 }
+
 header .inverse-color {
     background: #ffffff;
 }

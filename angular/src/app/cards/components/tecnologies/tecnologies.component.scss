@@ -1,60 +1,69 @@
  @import './src/assets/scss/mixin.scss';
-.row-tec {
-    width: 100%;
-    margin: 0;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-image:url(/assets/images/fnd-tecnologias.jpg) !important;
-    min-height: 380px;
-    .content-trans {
-        background:#002b49c0;
-        width: 100%;
-        height: 100%;
-    }
-    .tec-slider {
-        width: 100%;
-        margin: 0 auto;
-        display: flex;
-        .item{
-            margin: 0 auto;
-        }
-        .div-slide {
-        margin: 0 auto;             
-            @include mediaquery(max_960) {}
-            .img-slide {                 
-                @include mediaquery(max_960) { }                
-            }
-            
-        }
-    }
-}
-.img-fluid {
-    width:175px; 
-    height:140px; 
-    background-repeat: no-repeat; 
-    background-position: center; 
-    background-size: contain; 
-    margin: 10px 20px;
-    @media (max-width: 500px) {
-        width:100px; 
-        height:90px; 
-    }
-}
 
-:host ::ng-deep .tile{
-   box-shadow: none !important;
-   display: flex;
-   flex-wrap: wrap;
-   justify-content: center;
-}
+ .row-tec {
+     width: 100%;
+     margin: 0;
+     background-attachment: fixed;
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-image: url(/assets/images/fnd-tecnologias.jpg) !important;
+     min-height: 380px;
 
-@media screen and (max-width:480px) {
-    .img-slide {
-       width: 70%;
-       display: block;
-       height: auto;
-       margin: 20px auto;
-    }
-}
+     .content-trans {
+         background: #002b49c0;
+         width: 100%;
+         height: 100%;
+     }
+
+     .tec-slider {
+         width: 100%;
+         margin: 0 auto;
+         display: flex;
+
+         .item {
+             margin: 0 auto;
+         }
+
+         .div-slide {
+             margin: 0 auto;
+
+             @include mediaquery(max_960) {}
+
+             .img-slide {
+                 @include mediaquery(max_960) {}
+             }
+
+         }
+     }
+ }
+
+ .img-fluid {
+     width: 175px;
+     height: 140px;
+     background-repeat: no-repeat;
+     background-position: center;
+     background-size: contain;
+     margin: 10px 20px;
+
+     @media (max-width: 500px) {
+         width: 100px;
+         height: 90px;
+     }
+ }
+
+ :host ::ng-deep .tile {
+     box-shadow: none !important;
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
+ }
+
+ @media screen and (max-width:480px) {
+     .img-slide {
+         width: 70%;
+         display: block;
+         height: auto;
+         margin: 20px auto;
+     }
+ }
