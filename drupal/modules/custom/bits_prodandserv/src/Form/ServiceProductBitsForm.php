@@ -128,6 +128,25 @@ class ServiceProductBitsForm extends EntityForm {
       ]
     ];
 
+    $our_work_list = [];
+    $ourWorks = $service_product_bits->get('nuestro_trabajo');
+    if ($ourWorks && is_array($ourWorks)) {
+      foreach ($ourWorks as $key => $value) {
+        $our_work_list[] = $nodes = \Drupal::entityTypeManager()->getStorage('node')->load($value['target_id']);
+      }
+    }
+    $form['our_work'] = [
+      '#title' => t('Our work'),
+      '#type' => 'entity_autocomplete',
+      '#tags' => TRUE,
+      '#target_type' => 'node',
+      '#selection_handler' => 'default',
+      '#default_value' => $our_work_list,
+      '#selection_settings' => [
+        'target_bundles' => ['nuestro_trabajo'],
+      ],
+    ];
+
 
     $testimonies = [];
     $ourTestimonies = $service_product_bits->get('testimonies');

@@ -61,6 +61,7 @@ class ServiceProductBits extends ConfigEntityBase implements ServiceProductBitsI
   public $modules;
   public $left_media;
   public $technologies;
+  public $our_work;
   public $testimonies;
   public $achievements;
   public $team;
@@ -98,6 +99,9 @@ class ServiceProductBits extends ConfigEntityBase implements ServiceProductBitsI
     }
     elseif ($field == "technologies") {
       return $this->loadMultiplesDataWithLabel($this->technologies);
+    }
+    elseif ($field == "$this->our_work") {
+      return $this->loadMultiplesDataWithLabel($this->our_work);
     }
     elseif ($field == "testimonies") {
       return $this->loadMultiplesDataWithLabel($this->testimonies);
