@@ -57,6 +57,7 @@ class ServiceProductBits extends ConfigEntityBase implements ServiceProductBitsI
   public $description;
   public $short_image;
   public $large_image;
+  public $white_icon;
   public $type;
   public $modules;
   public $left_media;
@@ -88,6 +89,9 @@ class ServiceProductBits extends ConfigEntityBase implements ServiceProductBitsI
     elseif ($field == "large_image") {
       return $this->loadImagesData($this->large_image);
     }
+    elseif ($field == "white_icon") {
+      return $this->loadImagesData($this->white_icon);
+    }
     elseif ($field == "type") {
       return $this->type;
     }
@@ -100,7 +104,7 @@ class ServiceProductBits extends ConfigEntityBase implements ServiceProductBitsI
     elseif ($field == "technologies") {
       return $this->loadMultiplesDataWithLabel($this->technologies);
     }
-    elseif ($field == "$this->our_work") {
+    elseif ($field == "our_work") {
       return $this->loadMultiplesDataWithLabel($this->our_work);
     }
     elseif ($field == "testimonies") {
