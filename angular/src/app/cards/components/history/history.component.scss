@@ -1,7 +1,59 @@
+@import './src/assets/scss/mixin.scss';
+
+#history-superior {
+    h2 {
+        margin-left: 3%;
+        font-size: 40px;
+        color: #002b49;
+        text-align: center;
+        margin-top: 40px;
+        text-transform: uppercase;
+
+        @include breakpoint (phone) {
+            font-size: 28px;
+            margin-left: 0;
+        }
+    }
+
+    p {
+        color: #002b49cc;
+        font-family: Open Sans Codensed;
+        margin-right: 180px;
+        margin-left: 200px;
+        margin-top: 10px;
+        font-size: 20px;
+        text-align: center;
+
+        @include breakpoint (desktop) {
+            margin-right: 0;
+            margin-left: 0;
+        }
+
+        @include breakpoint (phone) {
+            margin-right: 20px;
+            margin-left: 0;
+        }
+    }
+}
+
 #timeline {
     height: 30%;
     width: 80%;
     margin: auto;
+
+    .tl-text-content-container {
+        h2.tl-headline {
+            color: #002b49cc;
+            font-family: Open Sans light;
+            font-size: 36px;
+        }
+    }
+
+    .tl-timemarker-content {
+        .tl-timemarker-media-container {
+            display: none;
+        }
+    }
 
     #tl-aucnud {
         height: 341px;
@@ -12,6 +64,68 @@
     }
 
     .tl-storyslider {
-        height: 588px;
+        height: 423px;
+    }
+
+    .tl-media-image {
+        -webkit-box-shadow: 1px 3px 22px 0px rgba(125, 120, 125, 1);
+        -moz-box-shadow: 1px 3px 22px 0px rgba(125, 120, 125, 1);
+        box-shadow: 1px 3px 22px 0px rgba(125, 120, 125, 1);
+    }
+
+    @include breakpoint (phone) {
+        .tl-slide-content {
+            width: 256px !important;
+            padding-left: 20px !important;
+            padding-right: 20px !important;
+        }
+    }
+
+    .tl-attribution {
+        display: none;
+    }
+
+    .tl-slidenav-next .tl-slidenav-content-container .tl-slidenav-icon {
+        position: absolute;
+        margin: auto;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        border: none;
+        background: transparent;
+        background-image: url(/assets/icon/right-arrow.svg);
+        background-size: 37px;
+        height: 0;
+        width: 28px;
+        overflow: hidden;
+        padding-top: 37px;
+        cursor: pointer;
+        top: -40px;
+        margin-top: 0;
+    }
+
+    .tl-slidenav-previous .tl-slidenav-content-container .tl-slidenav-icon {
+        position: absolute;
+        margin: auto;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        border: none;
+        background: transparent;
+        background-image: url(/assets/icon/left-arrow.svg);
+        background-size: 37px;
+        height: 0;
+        width: 28px;
+        overflow: hidden;
+        padding-top: 37px;
+        cursor: pointer;
+        left: 50px;
+        top: -40px;
+        margin-top: 0;
+        left: -50px;
+
+        @include breakpoint (phone) {
+            left: 0;
+        }
     }
 }
