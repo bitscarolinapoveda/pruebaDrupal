@@ -7,6 +7,7 @@ use Drupal\node\Entity\Node;
 use Drupal\block\Entity\Block;
 use Drupal\adf_cards\Services\ExportConfigCardService;
 use Drupal\taxonomy\Entity\Term;
+use Drupal\image\Entity\ImageStyle;
 
 /**
  * Class 'BitsCardsOutputJsonCard'.
@@ -58,7 +59,7 @@ class BitsCardsOutputJsonCard {
       // Load nodes.
       $nodes = \Drupal::entityTypeManager()->getStorage($name)->loadMultiple($ids);
 
-      $queryFields = \Drupal::entityManager()
+      $queryFields = \Drupal::entityTypeManager() // se cambia entityManager por entityTypeManager esta depreciado
         ->getStorage('entity_view_display')
         ->load($name . '.' . $type . '.' . $viewMode);
 
@@ -116,9 +117,10 @@ class BitsCardsOutputJsonCard {
                 'alt' => '',
               ];
               if (0 < count($imageData)) {
-                $file = \Drupal\file\Entity\File::load($imageData[0]['target_id']);
+                $file = File::load($imageData[0]['target_id']);
+                $style_image = $fields[$field]['settings']['image_style']; //trae el estilo de imagen asociado
                 $data[$field] = [
-                  'url' => file_create_url($file->getFileUri()),
+                  'url' => ImageStyle::load($style_image)->buildUrl($file->getFileUri()), // crea la url con el estilo de imagen asociado
                   'alt' => $imageData[0]['alt'],
                 ];
               }
