@@ -7,6 +7,8 @@ use Drupal\node\Entity\Node;
 use Drupal\block\Entity\Block;
 use Drupal\adf_cards\Services\ExportConfigCardService;
 use Drupal\taxonomy\Entity\Term;
+use Drupal\rest\ResourceResponse;
+use Drupal\Core\Cache\CacheableMetadata;
 
 /**
  * Class 'BitsCardsOutputJsonCard'.
@@ -18,6 +20,7 @@ class BitsCardsOutputJsonCard {
    */
   public function get($block_id, $prodServ = '') {
     $settings = [];
+    $node_tags = [];
     $block = Block::load($block_id);
 
     if ($block) {
@@ -87,6 +90,9 @@ class BitsCardsOutputJsonCard {
       }
 
       foreach ($nodes as $node) {
+        $tag = $node->getEntityTypeId().'_list';
+        if(!in_array( $tag, $node_tags))
+        array_push($node_tags, $tag);
         if ($isContentEntity) {
           $data = [
             'nid' => $node->id(),
@@ -163,7 +169,16 @@ class BitsCardsOutputJsonCard {
       }
     }
 
-    return $response;
+    $resource = new ResourceResponse($response);
+    $tag = str_replace("_","", $block_id);
+    $tag = str_replace('-',"", $tag);
+    array_push($node_tags,$tag);
+    $resource->addCacheableDependency(CacheableMetadata::createFromRenderArray(
+      [
+        '#cache' => ['tags' => $node_tags, ],
+      ]
+    ));
+    return $resource;
 
   }
 
