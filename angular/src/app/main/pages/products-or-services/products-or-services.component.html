@@ -1,4 +1,4 @@
-<app-banner [titulo]="type" imgFondo="/assets/images/imedicalweb.png"></app-banner>
+<app-banner [titulo]="type" [imgFondo]=""></app-banner>
 <div class="my-5">
     <div class="container">
         <app-client-project-imedical (propagar)="onMenu($event)"></app-client-project-imedical>
@@ -23,11 +23,9 @@
         <app-tecnologies-projectservice (propagar)="onMenu($event)" [type]="type"></app-tecnologies-projectservice>
         <app-separator [iconCustom]="'icon-historymedical'"></app-separator>
         <app-testimonies (propagar)="onMenu($event)"></app-testimonies>
-        <app-separator [iconCustom]="'icon-historymedical'"></app-separator>        
+        <app-separator [iconCustom]="'icon-historymedical'"></app-separator>
         <app-achievements (propagar)="onMenu($event)" [type]="type"></app-achievements>
         <app-separator [iconCustom]="'icon-historymedical'"></app-separator>
-        <!-- <app-tecnologies (propagar)="onMenu($event)"></app-tecnologies>
-        <app-separator [iconCustom]="'icon-historymedical'"></app-separator> -->
         <app-team (propagar)="onMenu($event)" [type]="type"></app-team>
         <app-separator [iconCustom]="'icon-historymedical'"></app-separator>
         <app-card-img-text [orientacion]="'TI'" (propagar)="onMenu($event)" [type]="type"></app-card-img-text>

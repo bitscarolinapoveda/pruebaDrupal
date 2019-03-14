@@ -16,6 +16,7 @@ export class ProductsOrServicesComponent implements OnInit {
   public type: string;
   public nid: string;
   listMenu: DataMenu[];
+  public imagen: string;
 
   constructor(private _http: CustomCardService, private rutaActiva: ActivatedRoute, private service: HttpService) {
     this.blurbArray = [];
@@ -64,6 +65,10 @@ export class ProductsOrServicesComponent implements OnInit {
     if (cont === 0) {
       this.listMenu.push(listMenu);
     }
+  }
+
+  hacer() {
+    console.log('funcion hacer de componente');
   }
 }
 
