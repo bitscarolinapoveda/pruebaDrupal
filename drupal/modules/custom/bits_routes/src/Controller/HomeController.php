@@ -3,6 +3,7 @@
 namespace Drupal\bits_routes\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
+use Symfony\Component\HttpFoundation\Request;
 
 class HomeController extends ControllerBase {
 
@@ -27,17 +28,24 @@ class HomeController extends ControllerBase {
     ];
   }
 
-  public function serviceId() {
+  public function serviceId($name) {
     return [
       '#type' => 'markup',
-      '#markup' => 'Service id',
+      '#markup' => 'Service id ' . $name,
     ];
   }
 
-  public function projectId() {
+  public function projectId($name) {
     return [
       '#type' => 'markup',
-      '#markup' => 'Project id',
+      '#markup' => 'Project id ' . $name,
+    ];
+  }
+
+  public function productId($name) {
+    return [
+      '#type' => 'markup',
+      '#markup' => 'Project id ' . $name,
     ];
   }
 
