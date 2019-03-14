@@ -35,13 +35,6 @@ class HomeController extends ControllerBase {
     ];
   }
 
-  public function projectId($name) {
-    return [
-      '#type' => 'markup',
-      '#markup' => 'Project id ' . $name,
-    ];
-  }
-
   public function productId($name) {
     return [
       '#type' => 'markup',
