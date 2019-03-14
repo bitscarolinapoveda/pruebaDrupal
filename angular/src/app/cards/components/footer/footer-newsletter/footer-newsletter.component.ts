@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { NewsLetter } from './newsletterModel';
 import { CustomCardService } from './../../../../services/cards/v1-card.services';
+import { HttpService } from "../../../../services/http/http.service";
+import { DataMessage } from "../../../../message/components/message/message.component";
+import { NotificationService } from "../../../../services/shared/notification.service";
 
 declare var $: any;
 
@@ -11,6 +14,7 @@ declare var $: any;
 })
 
 export class FooterNewsletterComponent implements OnInit {
+  dataMessage: DataMessage[];
   footerData: NewsLetter;
   public titleTermsTooltip;
   public bodyTermsTooltip;
@@ -26,19 +30,31 @@ export class FooterNewsletterComponent implements OnInit {
   linkTerms: string;
   labelTerms: string;
   buttonSendNewsletter: string;
+  name_value: string;
+  last_name_value: string;
+  email_value: string;
+  message_success: string;
+  message_error: string;
+  private _token: string;
 
   constructor(
     private _cardService: CustomCardService,
-    private newsletter: CustomCardService
+    private newsletter: CustomCardService,
+    private _http: HttpService,
+    protected _notificationService: NotificationService
   ) {
     this.footerData = {
       title: '',
       subtitle: '',
-      button: ''
+      button: '',
     };
   }
 
   ngOnInit() {
+    this.dataMessage = [];
+    this._http.get('rest/session/token', {}, { responseType: 'text' }).subscribe((response) => {
+      this._token = response;
+    });
     this.getPopoverService();
 
     $(function () {
@@ -61,7 +77,7 @@ export class FooterNewsletterComponent implements OnInit {
   }
   getIndicatorsSliderItems() {
     this._cardService.getCustomCardInformation('newslettercard_2').subscribe(items => {
-      let title, subtitle, button;
+      let title, subtitle, button, message_error, message_success;
       for (let attr of items.header) {
         let obj = attr.data;
         if (obj['title']) {
@@ -107,6 +123,12 @@ export class FooterNewsletterComponent implements OnInit {
         } else if (obj['button']) {
           this.buttonSendNewsletter = obj.button;
         }
+        else if (obj['message_success']) {
+          this.message_success = obj.message_success;
+        }
+        else if (obj['message_error']) {
+          this.message_error = obj.message_error;
+        }
       }
 
     });
@@ -117,6 +139,41 @@ export class FooterNewsletterComponent implements OnInit {
       this.titleTermsTooltip = params.title;
       this.bodyTermsTooltip = params.body;
     });
+  }
+  clickOnSubmit() {
+    let data = {
+      'name': this.name_value,
+      'last_name': this.last_name_value,
+      'email': this.email_value,
+    };
+    this._http.post('v1/newsletterentity/export?_format=json', data, {
+      'Content-Type': 'application/json',
+      'X-CSRF-Token': this._token
+    })
+      .subscribe(datos => {
+        if (datos.error) {
+          for (let key in datos.error) {
+            let message = {
+              visible: true,
+              status: 'error',
+              message: this.message_error
+            };
+            this.dataMessage.push(
+              message
+            );
+          }
+
+        } else if (datos.id) {
+          let message = {
+            visible: true,
+            status: 'success',
+            message: this.message_success,
+          };
+          this._notificationService.success(message.message);
+          $('#newsletterModal').modal('hide');
+          $('#footernewsletter-form')[0].reset();
+        }
+      });
   }
 
 }

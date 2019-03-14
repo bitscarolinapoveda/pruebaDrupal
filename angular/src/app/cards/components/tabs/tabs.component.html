@@ -12,10 +12,11 @@
 </div>
 <br /><br />
 <div class="container" [hidden]="hidden">
-
 	<div class="row">
+		<p [innerHTML]="descrip_form" class="descrip-form"></p>
 		<form id="formulario_contacto" #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)" class="col-md-12" name="formulario_contacto">
 			<app-message [dataMessage]="dataMessage"></app-message>
+
 			<div class="form-group" [ngClass]="aplicaCssErro(nombre)" class="col-md-12">
 				<div class="col-md-6 item">
 					<label for="exampleInputNombre">Nombre</label>
@@ -52,23 +53,33 @@
 			<div class="form-group" class="col-md-12">
 				<div class="col-md-6 item">
 					<label for="pais">Pais</label>
-					<select type="select" class="form-control" id="pais" placeholder="Seleccione su pais" name="pais" ngModel></select>
+					<ng-select #paisTB class="select-autocomplete" id="pais" name="pais" placeholder="Seleccione su pais" [allowClear]="true"
+					 [items]="listPais" [disabled]="disabled" (data)="refreshValuePais($event)" (selected)="selectedPais($event)"
+					 (removed)="removedPais($event)" (typed)="typedPais($event)">
+					</ng-select>
+					<input type="text" class="form-control ocultar" id="pais" name="pais" [ngModel]="pais">
 				</div>
 				<div class="col-md-6 item">
 					<label for="ciudad">Ciudad</label>
-					<select type="select" class="form-control" id="ciudad" placeholder="Seleccione su ciudad" name="ciudad" ngModel></select>
+					<input type="text" class="form-control" id="ciudad" placeholder="Ciudad" name="ciudad" ngModel #ciudad="ngModel">
 				</div>
 			</div>
 			<div class="col-md-12">
 				<div class="col-md-6 item">
 					<label for="producto">Producto de interés</label>
-					<select type="select" class="form-control" id="producto" placeholder="Seleccione un producto" name="Producto"
-					 ngModel></select>
+					<ng-select #productTB class="select-autocomplete" id="productos_de_interes" name="productos_de_interes"
+					 placeholder="Seleccione un producto" [allowClear]="true" [items]="listProduct" [disabled]="disabled" (data)="refreshValueProduct($event)"
+					 (selected)="selectedProduct($event)" (removed)="removedProduct($event)" (typed)="typedProduct($event)">
+					</ng-select>
+					<input type="text" class="form-control ocultar" id="productos_de_interes" name="productos_de_interes" [ngModel]="product">
 				</div>
 				<div class="col-md-6 item">
 					<label for="servicio">Servicio de interés</label>
-					<select type="select" class="form-control" id="servicio" placeholder="Seleccione un servicio" name="Servicio"
-					 ngModel></select>
+					<ng-select #serviceTB class="select-autocomplete" id="servicios_de_interes" name="servicios_de_interes"
+					 placeholder="Seleccione un servicio" [allowClear]="true" [items]="listService" [disabled]="disabled" (data)="refreshValueService($event)"
+					 (selected)="selectedService($event)" (removed)="removedService($event)" (typed)="typedService($event)">
+					</ng-select>
+					<input type="text" class="form-control ocultar" id="servicios_de_interes" name="servicios_de_interes" [ngModel]="service">
 				</div>
 			</div>
 			<div class="form-group" class="col-md-12 comentario">
@@ -80,7 +91,7 @@
 				</div>
 			</div>
 			<div class="form-group" class="col-md-12 terminos_grupo">
-				<input type="checkbox" checked="checked" id="terms-of-service" name="terms_of_service" value="false" ngModel
+				<input type="checkbox" [checked]="checked" id="terms-of-service" name="terms_of_service" value="false" ngModel
 				 required>
 				<label ng-reflect-ng-class="" for="terms-of-service">He leído y acepto los
 					<a data-trigger="focus" role="button" data-toggle="popover" data-placement="top" href="#">

@@ -1,0 +1,4 @@
+services:
+  bits_countries.country_service:
+    class: Drupal\bits_countries\CountryService
+    arguments: ['@entity.manager']

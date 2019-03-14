@@ -21,11 +21,10 @@ export class SliderComponent implements OnInit {
             let sliders = [];
             for (let item of items.data) {
                 let slide: Slide;
-                debugger;
                 slide = {
                     titleSlide: item.title,
                     subtitleSlide: item.field_subtitle,
-                    descriptionSlide: item.field_large_description,
+                    descriptionSlide: item.field_des,
                     listTextSlide: [],
                     imgSrcSlide: item.field_right_image.url,
                     bkgSrcSlide: item.field_background_image.url,

@@ -1,0 +1,49 @@
+# Country entity routing definition
+country_entity.settings_tab:
+  route_name: country_entity.settings
+  title: 'Settings'
+  base_route: country_entity.settings
+
+entity.country_entity.canonical:
+  route_name: entity.country_entity.canonical
+  base_route: entity.country_entity.canonical
+  title: 'View'
+
+entity.country_entity.edit_form:
+  route_name: entity.country_entity.edit_form
+  base_route: entity.country_entity.canonical
+  title: 'Edit'
+
+entity.country_entity.version_history:
+  route_name: entity.country_entity.version_history
+  base_route: entity.country_entity.canonical
+  title: 'Revisions'
+
+entity.country_entity.delete_form:
+  route_name:  entity.country_entity.delete_form
+  base_route:  entity.country_entity.canonical
+  title: Delete
+  weight: 10
+
+# City entity routing definition
+city_entity.settings_tab:
+  route_name: city_entity.settings
+  title: 'Settings'
+  base_route: city_entity.settings
+
+entity.city_entity.canonical:
+  route_name: entity.city_entity.canonical
+  base_route: entity.city_entity.canonical
+  title: 'View'
+
+entity.city_entity.edit_form:
+  route_name: entity.city_entity.edit_form
+  base_route: entity.city_entity.canonical
+  title: 'Edit'
+
+entity.city_entity.delete_form:
+  route_name:  entity.city_entity.delete_form
+  base_route:  entity.city_entity.canonical
+  title: Delete
+  weight: 10
+

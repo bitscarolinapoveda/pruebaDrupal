@@ -2,6 +2,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '../../../node_modules/@angular/common';
+import {MessageModule} from "../message/message.module";
 
 import { CarouselItemComponent } from './components/carousel-item/carousel-item.component';
 import { CarouselIndicatorsComponent } from './components/carousel-indicators/carousel-indicators.component';
@@ -26,14 +27,13 @@ import { BlogComponent } from './components/blog/blog.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ClientProjectImedicalComponent } from './components/client-project-imedical/client-project-imedical.component';
 import { WhybitsamericasComponent } from './components/whybitsamericas/whybitsamericas.component';
-
-import { MessageComponent } from './components/message/message.component';
 import { KnowusComponent } from './components/knowus/knowus.component';
 import { TeamComponent } from './components/team/team.component';
 import { AchievementsComponent } from './components/achievements/achievements.component';
 import { TestimoniesComponent } from './components/testimonies/testimonies.component';
 import { TecnologiesProjectserviceComponent } from './components/tecnologies-projectservice/tecnologies-projectservice.component';
 import { HistoryComponent } from './components/history/history.component';
+import { FilterComponent } from './components/filter/filter.component';
 
 // Servicios
 import { NodeService } from '../services/cards/node.service';
@@ -43,13 +43,15 @@ import { SlickModule } from 'ngx-slick';
 import { OwlModule } from 'ngx-owl-carousel';
 import { NgxCarouselModule } from 'ngx-carousel';
 import 'hammerjs';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,  ReactiveFormsModule } from '@angular/forms';
+import { SelectModule } from 'ng2-select';
 
 // Pipes
 import { SafeHtmlPipe } from '../pipes/safehtml.pipe';
 import { SafeCssPipe } from '../pipes/safecss.pipe';
 import { ClientProServComponent } from './components/client-proserv/client-proserv.component';
 import { WorkusComponent } from './components/workus/workus.component';
+
 
 
 @NgModule({
@@ -79,14 +81,14 @@ import { WorkusComponent } from './components/workus/workus.component';
     BlogComponent,
     ClientProjectImedicalComponent,
     ClientProServComponent,
-    MessageComponent,
     WhybitsamericasComponent,
     KnowusComponent,
     TeamComponent,
     AchievementsComponent,
     TecnologiesProjectserviceComponent,
     HistoryComponent,
-    TestimoniesComponent
+    TestimoniesComponent,
+    FilterComponent
   ],
   exports: [
     CarouselItemComponent,
@@ -118,7 +120,8 @@ import { WorkusComponent } from './components/workus/workus.component';
     AchievementsComponent,
     TecnologiesProjectserviceComponent,
     HistoryComponent,
-    TestimoniesComponent
+    TestimoniesComponent,
+    FilterComponent
   ],
   imports: [
     BrowserModule,
@@ -130,7 +133,10 @@ import { WorkusComponent } from './components/workus/workus.component';
     OwlModule,
     NgxCarouselModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    SelectModule,
+    ReactiveFormsModule,
+    MessageModule,
   ],
   providers: [NodeService]
 })

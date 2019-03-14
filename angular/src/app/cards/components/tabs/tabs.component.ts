@@ -1,9 +1,14 @@
 import { CustomCardService } from 'src/app/services/cards/v1-card.services';
 import { ContactUsComponent } from 'src/app/main/pages/contact-us/contact-us.component';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import 'rxjs/add/operator/map';
 import { HttpService } from '../../../services/http/http.service';
-import { DataMessage } from '../message/message.component';
+import { pureObjectDef } from '@angular/core/src/view';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs/Observable';
+import { analyzeAndValidateNgModules } from '@angular/compiler';
+import { SelectComponent } from 'ng2-select';
+import {DataMessage} from "../../../message/components/message/message.component";
 
 declare var jQuery: any;
 declare var $: any;
@@ -15,6 +20,9 @@ declare var $: any;
 })
 
 export class TabsComponent implements OnInit {
+  @ViewChild('paisTB') public ngSelectP: SelectComponent;
+  @ViewChild('serviceTB') public ngSelectS: SelectComponent;
+  @ViewChild('productTB') public ngSelectPR: SelectComponent;
   hidden = false;
   private _token: string;
   usuario: any = {
@@ -27,10 +35,37 @@ export class TabsComponent implements OnInit {
   title_b: string;
   titulo: string;
   list: any[];
+  bandProduct: Array<string>;
+  listProduct: Array<string>;
+  bandService: Array<string>;
+  listService: Array<string>;
+  bandPais: Array<string>;
+  listPais: Array<string>;
+  pais: any;
+  product: any;
+  service: any;
+  descrip_form: string;
+  checked: boolean;
 
-  constructor(private _http: HttpService, private _service: CustomCardService) {
+  value: any = {};
+  _disabledV: string;
+  disabled: boolean;
+
+  constructor(private _http: HttpService, private _service: CustomCardService, private http_pais: HttpClient) {
     this.dataMessage = [];
     this.list = [];
+    this.bandProduct = [];
+    this.listProduct = [];
+    this.bandService = [];
+    this.listService = [];
+    this.bandPais = [];
+    this.listPais = [];
+    this._disabledV = '0';
+    this.disabled = false;
+    this.pais = '';
+    this.product = '';
+    this.service = '';
+    this.checked = false;
   }
 
   toogleHidden() {
@@ -39,8 +74,8 @@ export class TabsComponent implements OnInit {
   }
 
   onSubmit(formulario) {
+
     this.dataMessage = [];
-    console.log(formulario);
     formulario['webform_id'] = 'contact_us';
     $('#formulario_contacto')[0].reset();
 
@@ -68,6 +103,15 @@ export class TabsComponent implements OnInit {
           }
 
         } else if (datos.sid) {
+
+          this.ngSelectP.active = [];
+          this.ngSelectS.active = [];
+          this.ngSelectPR.active = [];
+
+          this.pais = '';
+          this.product = '';
+          this.service = '';
+
           this.dataMessage.push(
             {
               visible: true,
@@ -81,7 +125,6 @@ export class TabsComponent implements OnInit {
   }
 
   ngOnInit() {
-
 
     this.getTabsData();
 
@@ -99,6 +142,12 @@ export class TabsComponent implements OnInit {
     });
 
     this.getPopoverService();
+
+    this.getForm();
+
+    this.getDatosForm();
+
+    this.getPaises();
 
     $(function () {
       $('[data-toggle="popover"]').popover(
@@ -144,11 +193,95 @@ export class TabsComponent implements OnInit {
 
   ubicar() {
     const x = document.querySelector('.tab');
-    console.log(x);
     if (x) {
       x.scrollIntoView({ block: 'start', inline: 'start', behavior: 'smooth' });
     }
   }
+
+  getForm() {
+    this._service.getCustomForm('work_with_us').subscribe(params => {
+      this.descrip_form = params.markup['#markup'];
+    });
+  }
+  getDatosForm() {
+    this._service.getCustomCardInformation('allproductsandservicescard').subscribe(params => {
+      for (let index = 0; index < params.data.length; index++) {
+        if (params.data[index].type === 'product') {
+          this.bandProduct.push(params.data[index].label);
+        } else if (params.data[index].type === 'service') {
+          this.bandService.push(params.data[index].label);
+        }
+      }
+      this.listProduct = this.bandProduct;
+      this.listService = this.bandService;
+
+    });
+  }
+
+  getPaises() {
+    this.http_pais.get<any[]>('https://restcountries.eu/rest/v2/all').subscribe(params => {
+      for (let index = 0; index < params.length; index++) {
+        this.bandPais.push(params[index].name);
+      }
+      this.listPais = this.bandPais;
+    });
+  }
+
+  // Metodos del select
+  private get disabledV(): string {
+    return this._disabledV;
+  }
+
+  private set disabledV(value: string) {
+    this._disabledV = value;
+    this.disabled = this._disabledV === '1';
+  }
+
+  public selectedPais(value: any): void {
+    this.pais = value.text;
+  }
+
+  public removedPais(value: any): void {
+    this.pais = '';
+  }
+
+  public typedPais(value: any): void {
+  }
+
+  public refreshValuePais(value: any): void {
+    this.pais = value.text;
+  }
+
+  public selectedProduct(value: any): void {
+    this.product = value.text;
+  }
+
+  public removedProduct(value: any): void {
+    this.product = '';
+  }
+
+  public typedProduct(value: any): void {
+  }
+
+  public refreshValueProduct(value: any): void {
+    this.product = value.text;
+  }
+
+  public selectedService(value: any): void {
+    this.service = value.text;
+  }
+
+  public removedService(value: any): void {
+    this.service = '';
+  }
+
+  public typedService(value: any): void {
+  }
+
+  public refreshValueService(value: any): void {
+    this.service = value.text;
+  }
+
 }
 
 //     arrayTabs:Tab[] = [];

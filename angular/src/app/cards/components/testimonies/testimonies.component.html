@@ -1,16 +1,16 @@
 <section id="testimonies-main-title">
-    <h1 [id]="datosMenu.id" class="testimonies-general-title" >{{ testimoniesTitle }}</h1>
-    <p class="testimonies-general-subtitle" >{{ testimoniesSubTitle }}</p>
+  <h1 [id]="datosMenu.id" class="testimonies-general-title">{{ testimoniesTitle }}</h1>
+  <p class="testimonies-general-subtitle">{{ testimoniesSubTitle }}</p>
 </section>
 <div id="testimonies-carousel">
   <ngb-carousel *ngIf="testimoniesData">
-      <ng-template ngbSlide *ngFor="let item of testimoniesData">
-        <div class="container"></div>
-        <div class="carousel-caption">
-          <p class="testimonies-text testimonies-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro, repellat quia ipsam rerum eius modi iure tempore minus et in nihil nemo voluptatibus hic, asperiores ullam, reprehenderit culpa sapiente inventore!</p>
-          <h3 class="testimonies-text testimonies-name">{{ item.title }}</h3>
-          <h3 class="testimonies-text testimonies-company">COMPANY NAME</h3>
-        </div>
-      </ng-template>
+    <ng-template ngbSlide *ngFor="let item of testimoniesData">
+      <div class="container"></div>
+      <div class="carousel-caption">
+        <p class="testimonies-text testimonies-description" [innerHTML]="item.body"></p>
+        <h3 class="testimonies-text testimonies-name">{{item.title}}</h3>
+        <h3 class="testimonies-text testimonies-company">{{item.field_nombre_compania}}</h3>
+      </div>
+    </ng-template>
   </ngb-carousel>
 </div>

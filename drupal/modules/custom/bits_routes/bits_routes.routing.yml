@@ -23,7 +23,7 @@ bits_routes.products:
     _permission: 'access content'
 
 bits_routes.services:
-  path: '/services/{id}'
+  path: '/service/{id}'
   defaults:
     _controller: '\Drupal\bits_routes\Controller\HomeController::services'
     _title: 'Link services'
@@ -31,7 +31,7 @@ bits_routes.services:
     _permission: 'access content'
 
 bits_routes.products:
-  path: '/products/{id}'
+  path: '/product/{id}'
   defaults:
     _controller: '\Drupal\bits_routes\Controller\HomeController::productId'
     _title: 'Link products'

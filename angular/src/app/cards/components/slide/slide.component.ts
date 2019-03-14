@@ -6,9 +6,9 @@ import { CustomCardService, Slide } from "src/app/services/cards/v1-card.service
     templateUrl: './slide.component.html',
     styleUrls: ['./slide.component.scss']
 })
-export class SlideComponent implements OnInit{
-    
-    @Input() slide:Slide;
+export class SlideComponent implements OnInit {
+
+    @Input() slide: Slide;
 
     constructor(
     ) {

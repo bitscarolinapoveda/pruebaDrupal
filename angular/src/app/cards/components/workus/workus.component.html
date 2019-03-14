@@ -1,7 +1,8 @@
 <div class="container">
   <app-message [dataMessage]="dataMessage"></app-message>
   <div class="row">
-    <form id="formulario_contacto" #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)" class="col-md-12" name="formulario_contacto">
+    <form id="formulario_contacto" #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)" class="col-md-12"
+      name="formulario_contacto">
       <div class="form-group" [ngClass]="aplicaCssErro(nombre)" class="col-md-12">
         <div class="col-md-6 item">
           <label for="exampleInputNombre">Nombre</label>
@@ -29,20 +30,22 @@
         </div>
         <div class="col-md-6 item">
           <label for="exampleInputOrg">Hoja de vida</label>
-          <input type="file" class="form-control hoja-v" id="hojav" placeholder="Hoja de vida" name="hoja_de_vida"
-            ngModel #hojadevida="ngModel">
+          <input type="file" id="hojav" class="form-control hoja-v" placeholder="Hoja de vida" name="hojav" (change)="onFileChange($event)" #hojavWS>
+          <input type="text" class="form-control ocultar" id="hoja_de_vida" name="hoja_de_vida" [ngModel]="hojaWU">
         </div>
       </div>
       <div class="form-group" class="col-md-12">
         <div class="col-md-6 item">
           <label for="exampleInputPais">Pais</label>
-          <select type="select" class="form-control" id="Pais" placeholder="Seleccione su pais" name="pais" ngModel>
-          </select>
+          <ng-select #paisWU class="select-autocomplete" id="pais" name="pais" placeholder="Seleccione su pais"
+            [allowClear]="true" [items]="listPais" [disabled]="disabled" (data)="refreshValuePais($event)" (selected)="selectedPais($event)"
+            (removed)="removedPais($event)" (typed)="typedPais($event)">
+          </ng-select>
+          <input type="text" class="form-control ocultar" id="pais" name="pais" [ngModel]="pais">
         </div>
         <div class="col-md-6 item">
           <label for="exampleInputPais">Ciudad</label>
-          <select type="select" class="form-control" id="ciudad" placeholder="Seleccione su ciudad" name="ciudad"
-            ngModel> </select>
+          <input type="text" class="form-control" id="ciudad" placeholder="Ciudad" name="ciudad" ngModel #ciudad="ngModel">
         </div>
       </div>
       <div class="col-md-12">
@@ -69,8 +72,9 @@
           o invalido</div>
       </div>
       <div class="form-group" class="col-md-12 terminos_grupo">
-        <input type="checkbox" id="terminos" name="terms_of_service" value="false" required ngModel>
-        <label ng-reflect-ng-class="" for="terms-of-service">He leído y acepto los
+        <input type="checkbox" [checked]="checked" id="terms_of_serviceWS" name="terms_of_serviceWS" value="false"
+          required ngModel>
+        <label ng-reflect-ng-class="" for="terms_of_serviceWS">He leído y acepto los
           <a data-trigger="focus" role="button" data-toggle="popover" data-placement="top" href="#">
             términos y condiciones
           </a>

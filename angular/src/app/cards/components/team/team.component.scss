@@ -8,15 +8,15 @@
         text-align: center;
         margin-top: 40px;
 
-        @include breakpoint (phone) {      
-            font-size: 28px;     
+        @include breakpoint (phone) {
+            font-size: 28px;
             margin-left: 0;
         }
     }
 
     p {
         color: #002b49cc;
-        font-family: Open Sans Codensed;
+        font-family: 'Open Sans Codensed';
         margin-right: 180px;
         margin-left: 200px;
         margin-top: 10px;
@@ -151,7 +151,6 @@
             font-size: 20px;
             font-family: 'Open Sans Codensed';
             font-weight: 300;
-            // text-transform: uppercase;
         }
 
         .correo {

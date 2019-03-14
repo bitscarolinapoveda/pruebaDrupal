@@ -72,6 +72,13 @@ class ServiceProductBitsForm extends EntityForm {
       '#upload_location' => 'public://images/serviceproduct/',
     ];
 
+    $form['white_icon'] = [
+      '#title' => t('White icon'),
+      '#type' => 'managed_file',
+      '#description' => t('The uploaded white icon image for the Service product bits.'),
+      '#default_value' => $service_product_bits->get('white_icon'),
+      '#upload_location' => 'public://images/serviceproduct/',
+    ];
 
     $modules = [];
     $ourModules = $service_product_bits->get('modules');
@@ -126,6 +133,25 @@ class ServiceProductBitsForm extends EntityForm {
       '#selection_settings' => [
         'target_bundles' => ['technologies'],
       ]
+    ];
+
+    $our_work_list = [];
+    $ourWorks = $service_product_bits->get('our_work');
+    if ($ourWorks && is_array($ourWorks)) {
+      foreach ($ourWorks as $key => $value) {
+        $our_work_list[] = $nodes = \Drupal::entityTypeManager()->getStorage('node')->load($value['target_id']);
+      }
+    }
+    $form['our_work'] = [
+      '#title' => t('Our work'),
+      '#type' => 'entity_autocomplete',
+      '#tags' => TRUE,
+      '#target_type' => 'node',
+      '#selection_handler' => 'default',
+      '#default_value' => $our_work_list,
+      '#selection_settings' => [
+        'target_bundles' => ['nuestro_trabajo'],
+      ],
     ];
 
 
@@ -296,6 +322,11 @@ class ServiceProductBitsForm extends EntityForm {
     // Save file permanently.
     if ($fidlarge) {
       $this->setFileAsPermanent($fidlarge);
+    }
+    $fidwicon = reset($service_product_bits->white_icon);
+    // Save file permanently.
+    if ($fidwicon) {
+      $this->setFileAsPermanent($fidwicon);
     }
     $form_state->setRedirectUrl($service_product_bits->toUrl('collection'));
   }

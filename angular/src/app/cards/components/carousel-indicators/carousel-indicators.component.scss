@@ -1,42 +1,49 @@
 @import './src/assets/scss/mixin.scss';
 
-:host /deep/ .carousel-control-next, 
+:host /deep/ .carousel-control-next,
 :host /deep/.carousel-control-prev {
   width: 38px;
 }
+
 :host /deep/ .carousel-control-prev .carousel-control-prev-icon {
   background-image: url('/../assets/images/LeftArrow.svg');
   width: 41px;
   height: 77px;
 }
+
 :host /deep/ .carousel-control-next .carousel-control-next-icon {
   background-image: url('/../assets/images/rightArrow.svg');
   width: 41px;
   height: 77px;
 }
+
 :host /deep/ .carousel-indicators {
   bottom: 150px;
   justify-content: flex-end;
   margin: 0 100px 0 0;
-}  
+}
+
 :host /deep/ .carousel-indicators li {
   width: 15px;
   height: 15px;
   margin: 0 5px;
-  border-radius: 50%; 
+  border-radius: 50%;
 
   &.active {
     background-color: #a6cf24;
   }
 }
+
 #carousel-container {
   .carousel-main-image {
     @include breakpoint (desktop) {
-        width: 100%;
+      width: 100%;
     }
-    max-height: 1080px;  
+
+    max-height: 1080px;
     filter: brightness(0.5);
   }
+
   .carousel-caption {
     width: 100%;
     text-align: right;
@@ -46,17 +53,19 @@
     padding: 0 100px 0 100px;
 
     .carousel-title {
-      font-family: Open Sans light;
+      font-family: 'Open Sans light';
       font-size: 50px;
       display: block;
     }
+
     .carousel-subtitle {
-      font-family: Open Sans light;
+      font-family: 'Open Sans light';
       font-size: 28px;
       display: block;
-      padding-left: 25%; 
+      padding-left: 25%;
     }
   }
+
   .section-button-explorar {
     position: absolute;
     bottom: 35px;
@@ -64,13 +73,14 @@
 
     .button-explorar {
       justify-content: center;
-  
+
       .down-arrow-slider {
         width: 21px;
         height: 15px;
       }
+
       .anchor {
-        font-family: Open Sans Codensed;
+        font-family: 'Open Sans Codensed';
         font-size: 16px;
         color: white;
       }
@@ -78,35 +88,42 @@
   }
 }
 
-@media only screen and (max-width: 1024px ) {
-  :host /deep/ .carousel-control-next, 
+@media only screen and (max-width: 1024px) {
+
+  :host /deep/ .carousel-control-next,
   :host /deep/.carousel-control-prev {
     visibility: hidden;
   }
+
   :host /deep/ .carousel-indicators {
     bottom: 150px;
     justify-content: center;
     margin: 0 0 0 0;
-    @media (max-height:484px) {
+
+    @media (max-height: 484px) {
       bottom: 110px;
     }
-  } 
+  }
+
   #carousel-container {
     .carousel-caption {
       text-align: center;
       top: 35%;
+
       @media (max-width: 400px) {
         top: 25%;
       }
+
       padding: 0 50px 0 50px;
-  
+
       .carousel-title {
-        font-family: Open Sans light;
+        font-family: 'Open Sans light';
         font-size: 36px;
         display: block;
       }
+
       .carousel-subtitle {
-        font-family: Open Sans light;
+        font-family: 'Open Sans light';
         font-size: 18px;
         display: block;
         padding: 0;
@@ -118,5 +135,5 @@
 @media only screen and (max-width: 321px) {
   :host /deep/ .carousel-indicators {
     bottom: 95px;
-  }  
+  }
 }

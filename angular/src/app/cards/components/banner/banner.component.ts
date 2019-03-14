@@ -21,18 +21,17 @@ export class BannerComponent implements OnInit {
     ) {
         this.uuid = '';
         this.bannerDescrip = '';
+        this.titulo = '';
     }
 
     ngOnInit() {
-        if (this.imgFondo !== '') {
-            this.bannerBackground = this.imgFondo;
-        } else {
-            this.bannerBackground = '/assets/images/cabezerainternaweb.png';
-        }
+
 
         if (this.uuid === undefined || this.uuid === '') {
-            while (this.titulo.indexOf('-') > -1) {
-                this.titulo = this.titulo.replace('-', ' ');
+            if (this.titulo !== '') {
+                while (this.titulo.indexOf('-') > -1) {
+                    this.titulo = this.titulo.replace('-', ' ');
+                }
             }
             this.bannerTitle = this.titulo;
         } else {
@@ -46,6 +45,11 @@ export class BannerComponent implements OnInit {
             this.bannerDescrip = params.body;
             if (this.bannerDescrip === null) {
                 this.bannerDescrip = '';
+            }
+            if (this.imgFondo !== '') {
+                this.bannerBackground = this.imgFondo;
+            } else {
+                this.bannerBackground = params.field_image.url;
             }
         });
     }

@@ -1,36 +1,48 @@
-
 @import './src/assets/scss/mixin.scss';
 
-.contenedor{
+.contenedor {
     width: 80%;
     margin: 0 auto;
 }
-.item{ 
+
+.item {
     width: 405%;
-    @include breakpoint (tablet) { width: 200%;}
-    @include breakpoint (desktop) { width: 100%;}
+
+    @include breakpoint (tablet) {
+        width: 200%;
+    }
+
+    @include breakpoint (desktop) {
+        width: 100%;
+    }
 }
+
 .url-link {
     width: 100%;
     padding-left: 4%;
     padding-right: 4%;
     margin-top: 1%;
     text-decoration: none;
-     @include breakpoint (desktop) {
+
+    @include breakpoint (desktop) {
         padding-left: 5%;
         padding-right: 5%;
     }
+
     .container-img {
         height: 123px;
         position: relative;
+
         @include breakpoint (tablet) {
             padding-left: 0%;
             padding-right: 0%;
         }
+
         @include breakpoint (desktop) {
             padding-left: 10%;
             padding-right: 10%;
         }
+
         .img-float {
             position: absolute;
             bottom: 0;
@@ -38,10 +50,12 @@
             right: 0;
         }
     }
+
     .info {
         width: 100%;
         color: #002b49;
         text-align: center;
+
         &::before {
             content: '';
             background: linear-gradient(-90deg, rgba(255, 255, 255, 0), #b8d950, rgba(255, 255, 255, 0));
@@ -49,12 +63,23 @@
             right: 0%;
             left: 5%;
             position: absolute;
-        @include breakpoint (tablet) {display: none;}
-        @include breakpoint (desktop) {display: none;}
+
+            @include breakpoint (tablet) {
+                display: none;
+            }
+
+            @include breakpoint (desktop) {
+                display: none;
+            }
         }
-        @include breakpoint (tablet) { height: 250px;}
+
+        @include breakpoint (tablet) {
+            height: 250px;
+        }
+
         .line {
             visibility: hidden;
+
             @include breakpoint (tablet) {
                 visibility: visible;
                 background: linear-gradient(-90deg, rgba(255, 255, 255, 0), #b8d950, rgba(255, 255, 255, 0));
@@ -63,6 +88,7 @@
                 position: relative;
                 top: 17px;
             }
+
             @include breakpoint (desktop) {
                 visibility: visible;
                 background: linear-gradient(-90deg, rgba(255, 255, 255, 0), #b8d950, rgba(255, 255, 255, 0));
@@ -72,13 +98,18 @@
                 top: 17px;
             }
         }
+
         .name-organization {
             padding-top: 14%;
             font-size: 16px;
             font-family: 'Open Sans';
             font-weight: 300;
-            @include breakpoint (desktop) {padding-top: 14%;}
+
+            @include breakpoint (desktop) {
+                padding-top: 14%;
+            }
         }
+
         .main-title {
             margin-top: 4%;
             font-size: 20px;
@@ -86,6 +117,7 @@
             font-weight: 300;
             text-transform: uppercase;
         }
+
         .category {
             width: 100%;
             margin-top: 5.2%;
@@ -94,6 +126,7 @@
             font-size: 14px;
             font-family: 'Open Sans';
             font-weight: 300;
+
             @include breakpoint (desktop) {
                 padding-left: 12%;
                 padding-right: 12%;
@@ -101,12 +134,16 @@
                 height: 56px;
             }
         }
+
         .yeard {
             font-size: 14px;
             margin-top: 6%;
             font-family: 'Open Sans';
             font-weight: 300;
-            @include breakpoint (desktop) { margin-top: 2%;}
+
+            @include breakpoint (desktop) {
+                margin-top: 2%;
+            }
         }
     }
 }
@@ -115,21 +152,26 @@
     color: #002b49;
     text-align: center;
     margin-top: 64px;
+
     @include breakpoint(desktop) {
         margin-top: 80px;
     }
+
     @include breakpoint(tablet) {
         margin-top: 80px;
     }
+
     h2 {
         margin-left: 3%;
         font-size: 30px;
         transform: scaleY(1.2);
+
         @include breakpoint(desktop) {
             margin-left: 0;
             font-size: 40px;
             width: 100%;
         }
+
         @include breakpoint(tablet) {
             margin-left: 0;
             font-size: 40px;
@@ -142,20 +184,25 @@
     color: #002b49;
     text-align: center;
     margin-top: 60px;
+
     @include breakpoint(desktop) {
         margin-top: 80px;
     }
+
     @include breakpoint(tablet) {
         margin-top: 80px;
     }
+
     h3 {
         margin-left: 3%;
         font-size: 16px;
+
         @include breakpoint(desktop) {
             margin-left: 0;
             font-size: 20px;
             width: 100%;
         }
+
         @include breakpoint(tablet) {
             margin-left: 0;
             font-size: 20px;
@@ -165,13 +212,14 @@
 }
 
 
-h1{
+h1 {
     min-height: 200px;
     background-color: #ccc;
     text-align: center;
     line-height: 200px;
-  }
-  .leftRs {
+}
+
+.leftRs {
     position: absolute;
     margin: auto;
     top: 0;
@@ -186,9 +234,9 @@ h1{
     overflow: hidden;
     padding-top: 37px;
     cursor: pointer;
-  }
+}
 
-  .rightRs {
+.rightRs {
     position: absolute;
     margin: auto;
     top: 0;
@@ -203,6 +251,13 @@ h1{
     overflow: hidden;
     padding-top: 37px;
     cursor: pointer;
-  }
-.rightRs:focus, .leftRs:focus{ outline: none; } 
-:host ::ng-deep .tile{ box-shadow: none !important;}
+}
+
+.rightRs:focus,
+.leftRs:focus {
+    outline: none;
+}
+
+:host ::ng-deep .tile {
+    box-shadow: none !important;
+}

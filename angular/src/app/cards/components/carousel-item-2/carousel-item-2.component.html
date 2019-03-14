@@ -3,11 +3,8 @@
 </section>
 
 <div class="contenedor" >
-    <ngx-carousel
-    [inputs]="carocarouselTile"
-    (carouselLoad)="carouselTileLoad($event)">
-
-          <ngx-tile NgxCarouselItem *ngFor="let ourC of clients; let i = index">
+    <ngx-carousel [inputs]="carocarouselTile" (carouselLoad)="carouselTileLoad($event)">
+        <ngx-tile NgxCarouselItem *ngFor="let ourC of clientsDesktop; let i = index">
             <a href="#" class="url-carousel" >
                 <div class="container-img col-md-3 ">
                     <img class="d-block img-fluid img-float  mx-auto" src="{{ ourC.field_image?.url }}" alt="{{ ourC.field_image?.alt }}">
@@ -17,11 +14,18 @@
                     <p class="text-description">{{ ourC.field_description }}</p>
                 </div>
             </a>
-
-          </ngx-tile>
-
+        </ngx-tile>
         <button NgxCarouselPrev class='leftRs'>&lt;</button>
         <button NgxCarouselNext class='rightRs'>&gt;</button>
   </ngx-carousel>
-
+</div>
+<div class="contenedor-mobile" >
+    <!-- (window:resize)="onResize(screen)" -->
+    <ngx-carousel [inputs]="carocarouselTile" (carouselLoad)="carouselTileLoad($event)" >
+        <ngx-tile NgxCarouselItem *ngFor="let items of arrayBox; let i = index">
+            <div class="image-client-carousel-mobile" *ngFor="let icons of items" [ngStyle]="{'background-image':'url(' + icons?.field_image?.url + ')'}"></div>
+        </ngx-tile>
+        <button NgxCarouselPrev class='leftRs'>&lt;</button>
+        <button NgxCarouselNext class='rightRs'>&gt;</button>
+    </ngx-carousel>
 </div>

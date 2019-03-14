@@ -10,9 +10,9 @@ import { CustomCardService } from '../../../../services/cards/v1-card.services';
 })
 export class FooterContactComponent implements OnInit {
 
-  contactTitle: string;
+  contactTitle: any;
   contactMailLabel: string;
-  contactMailLink: string;
+  contactMailLink: any;
   contactIcon1: string;
   contactIcon2: string;
   contactIcon3: string;
@@ -23,7 +23,7 @@ export class FooterContactComponent implements OnInit {
   constructor(
     private router: ActivatedRoute,
     private footerBrand: CustomCardService
-    ) {
+  ) {
     this.contactTitle = '';
     this.contactMailLabel = '';
     this.contactMailLink = '';
@@ -41,7 +41,7 @@ export class FooterContactComponent implements OnInit {
 
   getFooterContactItems() {
 
-    this.footerBrand.getCustomCardInformation('contactcard').subscribe((items: {header, others} ) => {
+    this.footerBrand.getCustomCardInformation('contactcard').subscribe((items: { header, others }) => {
       this.contactTitle = items.header[0].data;
       this.contactMailLink = items.header[1].data;
       this.contactSocialArray = items.others;

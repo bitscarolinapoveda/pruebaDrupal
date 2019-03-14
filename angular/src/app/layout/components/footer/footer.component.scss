@@ -1,23 +1,29 @@
 @import './src/assets/scss/mixin.scss';
 
 #footer-block {
-  position: relative; 
+  position: relative;
+
   .blue-layer {
-    position: absolute; 
-    width:100%;
+    position: absolute;
+    width: 100%;
     height: 100%;
-    background: rgba(0,43, 73, 0.82);
+    background: rgba(0, 43, 73, 0.82);
   }
+
   .general-container.footer-img {
     background-image: url("/assets/images/footer.png");
     background-size: cover;
+
     @include breakpoint (phone) {
       background-position: top right;
     }
+
     .first-info-container-footer {
       margin: 0;
+
       .row-info-footer {
         margin: 0;
+
         .locations,
         .newsletters,
         .contact,
@@ -26,30 +32,37 @@
         }
       }
     }
+
     .second-info-container-footer {
       width: 100%;
+
       .second-blue-layer {
-        position: absolute; 
+        position: absolute;
         width: 100%;
         height: 47px;
         background: rgba(0, 43, 73, 0.6);
       }
+
       .row-info-footer {
         margin: 0;
         height: 47px;
         align-items: center;
+
         .list-of-footer {
           text-align: center;
+
           .items-footer {
-            font-family: Open Sans light;
+            font-family: 'Open Sans light';
             font-size: 11px;
             display: inline-block;
             text-decoration: none;
             color: white;
+
             &:hover {
               color: #d8d8dc;
             }
           }
+
           .circule {
             margin: 0 20px;
             display: inline-block;
@@ -70,20 +83,22 @@
       .first-info-container-footer {
         .row-info-footer {
           margin: 0 87px;
+
           .locations,
           .newsletters,
           .contact {
             padding: 0;
             margin: 0;
             border-right: 0px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.3); 
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
           }
+
           .iconbits {
             padding: 0;
             margin: 0;
           }
         }
       }
-    } 
-  }      
+    }
+  }
 }

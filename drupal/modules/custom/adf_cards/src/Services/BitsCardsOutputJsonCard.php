@@ -7,6 +7,7 @@ use Drupal\node\Entity\Node;
 use Drupal\block\Entity\Block;
 use Drupal\adf_cards\Services\ExportConfigCardService;
 use Drupal\taxonomy\Entity\Term;
+use Drupal\image\Entity\ImageStyle;
 use Drupal\rest\ResourceResponse;
 use Drupal\Core\Cache\CacheableMetadata;
 
@@ -61,7 +62,7 @@ class BitsCardsOutputJsonCard {
       // Load nodes.
       $nodes = \Drupal::entityTypeManager()->getStorage($name)->loadMultiple($ids);
 
-      $queryFields = \Drupal::entityManager()
+      $queryFields = \Drupal::entityTypeManager() // se cambia entityManager por entityTypeManager esta depreciado
         ->getStorage('entity_view_display')
         ->load($name . '.' . $type . '.' . $viewMode);
 
@@ -72,7 +73,8 @@ class BitsCardsOutputJsonCard {
       }
       //  Si no es una entidad de contenido intenta como de configuración
       else {
-        $fields = get_object_vars(array_shift(array_values($nodes)));
+        $nodes_values = array_values($nodes); // se separo function para evitar error "only variables should be passed by reference"
+        $fields = get_object_vars(array_shift($nodes_values));
         $isContentEntity = false;
       }
 
@@ -83,7 +85,11 @@ class BitsCardsOutputJsonCard {
         else {
           // Se muestra el campo, siempre que no esté oculto
           // en el tipo de presentación.
-          if ($field['label'] != 'hidden') {
+          if (isset($field['label'])) { // valida si esta configurado el label
+            if ($field['label'] != 'hidden') {
+              $otherData[] = $name;
+            }
+          }elseif( is_string($field) || is_array($field) ){ // se agrego validacion si es un array o un string
             $otherData[] = $name;
           }
         }
@@ -117,11 +123,19 @@ class BitsCardsOutputJsonCard {
                 'alt' => '',
               ];
               if (0 < count($imageData)) {
-                $file = \Drupal\file\Entity\File::load($imageData[0]['target_id']);
-                $data[$field] = [
-                  'url' => file_create_url($file->getFileUri()),
-                  'alt' => $imageData[0]['alt'],
-                ];
+                $file = File::load($imageData[0]['target_id']);
+                $style_image = $fields[$field]['settings']['image_style']; //trae el estilo de imagen asociado
+                if (!empty($style_image)) {
+                  $data[$field] = [
+                    'url' => ImageStyle::load($style_image)->buildUrl($file->getFileUri()), // crea la url con el estilo de imagen asociado
+                  ];
+                }
+                else {
+                  $data[$field] = [
+                    'url' => file_create_url($file->getFileUri()),
+                  ];
+                }
+                $data[$field]['alt'] = $imageData[0]['alt'];
               }
             }
             elseif ($type === 'text_with_summary') {
@@ -188,7 +202,7 @@ class BitsCardsOutputJsonCard {
   public function getRenderData($input, $inputType, $idCard) {
     $data = [];
 
-    if ($input[$inputType]['table_fields'] != '') {
+    if (!empty($input[$inputType]['table_fields'])) { // !empty permite evaluar si existe y no esta vacio
       foreach ($input[$inputType]['table_fields'] as $item) {
         $element = [];
         switch ($item['type']) {
@@ -274,7 +288,7 @@ class BitsCardsOutputJsonCard {
       }
     }
 
-    if ($input[$inputType]['steps'] != "") {
+    if (!empty($input[$inputType]['steps'])) { // !empty permite evaluar si existe y no esta vacio
       foreach ($input[$inputType]['steps'] as $key => $itemOther) {
         $elements = [];
 
