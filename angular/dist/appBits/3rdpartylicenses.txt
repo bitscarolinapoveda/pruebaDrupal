@@ -148,10 +148,6 @@ MIT
 MIT
 MIT
 
-@angular/compiler@6.1.8
-MIT
-MIT
-
 @angular/core@6.1.8
 MIT
 MIT
@@ -161,10 +157,6 @@ MIT
 MIT
 
 @angular/http@6.1.8
-MIT
-MIT
-
-@angular/platform-browser-dynamic@6.1.8
 MIT
 MIT
 
