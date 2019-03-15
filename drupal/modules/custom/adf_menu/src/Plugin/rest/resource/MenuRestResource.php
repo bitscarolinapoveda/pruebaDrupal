@@ -195,15 +195,18 @@ class MenuRestResource extends ResourceBase {
 
           $params = Url::fromUri('internal:/' . $uri)->getRouteParameters();
           $entity_type = key($params);
-          if (!empty($entity_type)) {
-            $entity = \Drupal::entityTypeManager()
-              ->getStorage($entity_type)
-              ->load($params[$entity_type]);
-            $uuid = $entity->uuid();
-          }
+            if (!empty($entity_type)) {
+              $entity = \Drupal::entityManager()
+                ->getStorage($entity_type)
+                ->load($params[$entity_type]);
+              $uuid = $entity->uuid();
+            }
         }
         catch (\UnexpectedValueException $e) {
           $absolute = $uri = '';
+        }
+        catch (\Exception $e) {
+          $absolute = $uri;
         }
       }
 
