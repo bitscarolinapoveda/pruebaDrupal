@@ -23,16 +23,20 @@ bits_routes.products:
     _permission: 'access content'
 
 bits_routes.service:
-  path: '/service/{name}'
+  path: /service/{name}
   defaults:
     _controller: '\Drupal\bits_routes\Controller\HomeController::serviceId'
+    _title: 'Service'
+    name: 'desarrollo-de-software'
   requirements:
     _permission: 'access content'
 
 bits_routes.product:
-  path: '/product/{name}'
+  path: /product/{name}
   defaults:
     _controller: '\Drupal\bits_routes\Controller\HomeController::productId'
+    _title: 'Product'
+    name: 'imedical-cloud'
   requirements:
     _permission: 'access content'
 
