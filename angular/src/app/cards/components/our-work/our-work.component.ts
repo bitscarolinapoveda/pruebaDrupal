@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { CustomCardService } from '../../../services/cards/v1-card.services';
 import { DataMenu } from '../menu-template/menu-template.component';
+import { iif } from 'rxjs';
 
 @Component({
   selector: 'app-our-work',
@@ -11,6 +12,7 @@ export class OurWorkComponent implements OnInit {
   title: string;
   subtitle: string;
   list: any[];
+  visible: boolean;
 
   @Input() type: string;
 
@@ -20,6 +22,7 @@ export class OurWorkComponent implements OnInit {
 
   constructor(private _http: CustomCardService) {
     this.list = [];
+    this.visible = false;
   }
 
   ngOnInit() {
@@ -42,6 +45,9 @@ export class OurWorkComponent implements OnInit {
       this.title = items.header[0].data.title;
       this.subtitle = items.header[1].data.sub_title;
       this.list = items.data;
+      if (this.title !== '' && this.list.length !== 0) {
+        this.visible = true;
+      }
     });
   }
 

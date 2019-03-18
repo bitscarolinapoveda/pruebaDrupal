@@ -7,8 +7,8 @@
     <app-menu-template [menuList]="listMenu"></app-menu-template>
     <app-slider></app-slider>
     <div class="container">
-        <app-separator [iconCustom]="'icon-engranaje'" *ngIf="blurbArray.length != 0  && tituloModulos != ''"></app-separator>
-        <div class="row">
+        <app-separator [iconCustom]="'icon-engranaje'" *ngIf="visible"></app-separator>
+        <div class="row" *ngIf="visible">
             <div class="col-md-12 mb-5" id="principal">
                 <h1 class="title-principal">{{ tituloModulos }}</h1>
                 <p class="descrip-principal" [innerHTML]="descripcionModulos"></p>

@@ -22,9 +22,13 @@ export class VideoInformationComponent implements OnInit {
 
     @Input() type: string;
 
+    visible: boolean;
+
     constructor(
         private https: CustomCardService,
-        private sanitizer: DomSanitizer) { }
+        private sanitizer: DomSanitizer) {
+        this.visible = false;
+    }
 
     ngOnInit() {
         while (this.type.indexOf('-') > -1) {
@@ -53,6 +57,10 @@ export class VideoInformationComponent implements OnInit {
                 this.videoURLSanitizer = this.sanitizer.bypassSecurityTrustResourceUrl(this.videoURL);
             }
             // this.link = items.data[0].link;
+
+            if (this.titleSection !== '' && this.videoURLSanitizer !== '') {
+                this.visible = true;
+            }
         }
         );
 

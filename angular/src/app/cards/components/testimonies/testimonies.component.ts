@@ -12,6 +12,7 @@ export class TestimoniesComponent implements OnInit {
   public testimoniesTitle;
   public testimoniesSubTitle;
   public testimoniesData;
+  visible: boolean;
 
   @Output() propagar = new EventEmitter<DataMenu>();
   datosMenu: DataMenu;
@@ -20,7 +21,9 @@ export class TestimoniesComponent implements OnInit {
 
   constructor(
     private testimonies: CustomCardService,
-  ) { }
+  ) {
+    this.visible = false;
+  }
 
   ngOnInit() {
     this.datosMenu = {
@@ -36,6 +39,9 @@ export class TestimoniesComponent implements OnInit {
       this.testimoniesTitle = items.header[0].data.title;
       this.testimoniesSubTitle = items.header[1].data.sub_title;
       this.testimoniesData = items.data;
+      if (this.testimoniesTitle !== '' && this.testimoniesData.length !== 0) {
+        this.visible = true;
+      }
     });
   }
 }

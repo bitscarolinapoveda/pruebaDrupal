@@ -1,15 +1,17 @@
-<app-separator [iconCustom]="'icon-engranaje'" *ngIf="titleSection != ''  && videoURLSanitizer != ''"></app-separator>
-<div class="row bg-light" [id]="datosMenu.id">
-    <div class="col-md-6 p-0">
-        <div class="embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item" [src]="videoURLSanitizer" allowfullscreen></iframe>
+<div *ngIf="visible">
+    <app-separator [iconCustom]="'icon-engranaje'"></app-separator>
+    <div class="row bg-light" [id]="datosMenu.id">
+        <div class="col-md-6 p-0">
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" [src]="videoURLSanitizer" allowfullscreen></iframe>
+            </div>
         </div>
-    </div>
-    <div class="col-md-6 my-5">
-        <h2>{{ titleSection | uppercase}}</h2>
-        <hr class="green">
-        <p [innerHTML]="descriptionSection" ></p>
-        <br>
-        <a [href]="link" class="green"><i class="fa fa-link" aria-hidden="true"></i> {{link}}</a>
+        <div class="col-md-6 my-5">
+            <h2>{{ titleSection | uppercase}}</h2>
+            <hr class="green">
+            <p [innerHTML]="descriptionSection"></p>
+            <br>
+            <a [href]="link" class="green"><i class="fa fa-link" aria-hidden="true"></i> {{link}}</a>
+        </div>
     </div>
 </div>

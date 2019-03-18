@@ -32,7 +32,10 @@ export class ClientProServComponent implements OnInit {
   principal: General;
   principal$: Observable<General>;
 
+  visible: boolean;
+
   constructor(private _cardService: CustomCardService) {
+    this.visible = false;
   }
 
   ngOnInit() {
@@ -136,6 +139,10 @@ export class ClientProServComponent implements OnInit {
               this.clients.push(list_items[index]);
             }
           }
+        }
+
+        if (this.titleClients !== '' && this.clients.length !== 0) {
+          this.visible = true;
         }
 
         console.log('lista clients', this.clients);
