@@ -7,7 +7,7 @@
     <app-menu-template [menuList]="listMenu"></app-menu-template>
     <app-slider></app-slider>
     <div class="container">
-        <app-separator [iconCustom]="'icon-historymedical'"></app-separator>
+        <app-separator [iconCustom]="'icon-engranaje'"></app-separator>
         <div class="row">
             <div class="col-md-12 mb-5">
                 <h1 class="condensed text-center">{{ tituloModulos }}</h1>
@@ -17,23 +17,24 @@
                 <app-blurb [blurb]="blurbItem" (propagar)="onMenu($event)" [type]="type"></app-blurb>
             </div>
         </div>
-        <app-separator [iconCustom]="'icon-historymedical'"></app-separator>
+        <app-separator [iconCustom]="'icon-engranaje'"></app-separator>
         <app-card-img-text [orientacion]="'IT'" (propagar)="onMenu($event)" [type]="type"></app-card-img-text>
-        <app-separator [iconCustom]="'icon-historymedical'"></app-separator>
+        <app-separator [iconCustom]="'icon-engranaje'"></app-separator>
         <app-tecnologies-projectservice (propagar)="onMenu($event)" [type]="type"></app-tecnologies-projectservice>
-        <app-separator [iconCustom]="'icon-historymedical'"></app-separator>
+        <app-separator [iconCustom]="'icon-startproject'"></app-separator>
         <app-testimonies (propagar)="onMenu($event)"></app-testimonies>
-        <app-separator [iconCustom]="'icon-historymedical'"></app-separator>
+        <app-separator [iconCustom]="'icon-medal'"></app-separator>
         <app-achievements (propagar)="onMenu($event)" [type]="type"></app-achievements>
-        <app-separator [iconCustom]="'icon-historymedical'"></app-separator>
+        <app-separator [iconCustom]="'icon-people'"></app-separator>
         <app-team (propagar)="onMenu($event)" [type]="type"></app-team>
-        <app-separator [iconCustom]="'icon-historymedical'"></app-separator>
+        <app-separator [iconCustom]="'icon-engranaje'"></app-separator>
         <app-card-img-text [orientacion]="'TI'" (propagar)="onMenu($event)" [type]="type"></app-card-img-text>
-        <app-separator [iconCustom]="'icon-historymedical'"></app-separator>        
+        <app-separator [iconCustom]="'icon-startproject'"></app-separator>
         <app-client-proserv (propagar)="onMenu($event)" [type]="type"></app-client-proserv>
-        <app-separator [iconCustom]="'icon-historymedical'"></app-separator>
+        <app-separator [iconCustom]="'icon-engranaje'"></app-separator>
         <app-video-information [link]="'www.eliseupnorcum.cedu.co'" (propagar)="onMenu($event)" [type]="type"></app-video-information>
-        <app-separator [iconCustom]="'icon-historymedical'"></app-separator>
+        <app-separator [iconCustom]="'icon-engranaje'"></app-separator>       
     </div>
+    <app-our-work (propagar)="onMenu($event)" [type]="type"></app-our-work>
     <app-workwithus (propagar)="onMenu($event)" [type]="type"></app-workwithus>
 </div>
