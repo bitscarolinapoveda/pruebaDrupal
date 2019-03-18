@@ -2,7 +2,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '../../../node_modules/@angular/common';
-import {MessageModule} from "../message/message.module";
+import { MessageModule } from '../message/message.module';
 
 import { CarouselItemComponent } from './components/carousel-item/carousel-item.component';
 import { CarouselIndicatorsComponent } from './components/carousel-indicators/carousel-indicators.component';
@@ -43,7 +43,7 @@ import { SlickModule } from 'ngx-slick';
 import { OwlModule } from 'ngx-owl-carousel';
 import { NgxCarouselModule } from 'ngx-carousel';
 import 'hammerjs';
-import { FormsModule,  ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SelectModule } from 'ng2-select';
 
 // Pipes
@@ -51,6 +51,7 @@ import { SafeHtmlPipe } from '../pipes/safehtml.pipe';
 import { SafeCssPipe } from '../pipes/safecss.pipe';
 import { ClientProServComponent } from './components/client-proserv/client-proserv.component';
 import { WorkusComponent } from './components/workus/workus.component';
+import { LoadDirective } from './components/client-proserv/load.directive';
 
 
 
@@ -88,7 +89,8 @@ import { WorkusComponent } from './components/workus/workus.component';
     TecnologiesProjectserviceComponent,
     HistoryComponent,
     TestimoniesComponent,
-    FilterComponent
+    FilterComponent,
+    LoadDirective
   ],
   exports: [
     CarouselItemComponent,
