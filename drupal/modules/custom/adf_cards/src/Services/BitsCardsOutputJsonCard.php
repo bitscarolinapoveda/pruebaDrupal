@@ -115,6 +115,10 @@ class BitsCardsOutputJsonCard {
             $tid = $node->get($field)->getValue();
             $data[$field] = $tid;
           }
+          elseif ($type === 'text_long'){
+            $text = $node->get($field)->getValue();
+            $data[$field] = $text[0]['value'];
+          }
           else {
             $data[$field] = $node->get($field)->getString();
           }
