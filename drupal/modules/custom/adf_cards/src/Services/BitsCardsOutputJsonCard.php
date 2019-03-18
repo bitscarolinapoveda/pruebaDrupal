@@ -96,9 +96,10 @@ class BitsCardsOutputJsonCard {
       }
 
       foreach ($nodes as $node) {
-        $tag = $node->getEntityTypeId().'_list';
-        if(!in_array( $tag, $node_tags))
-        array_push($node_tags, $tag);
+        $tag = $node->getEntityType()->getListCacheTags();
+
+        if(!in_array( $tag[0], $node_tags))
+        array_push($node_tags, $tag[0]);
         if ($isContentEntity) {
           $data = [
             'nid' => $node->id(),
