@@ -34,6 +34,7 @@ import { TestimoniesComponent } from './components/testimonies/testimonies.compo
 import { TecnologiesProjectserviceComponent } from './components/tecnologies-projectservice/tecnologies-projectservice.component';
 import { HistoryComponent } from './components/history/history.component';
 import { FilterComponent } from './components/filter/filter.component';
+import { OurWorkComponent } from './components/our-work/our-work.component';
 
 // Servicios
 import { NodeService } from '../services/cards/node.service';
@@ -52,6 +53,7 @@ import { SafeCssPipe } from '../pipes/safecss.pipe';
 import { ClientProServComponent } from './components/client-proserv/client-proserv.component';
 import { WorkusComponent } from './components/workus/workus.component';
 import { LoadDirective } from './components/client-proserv/load.directive';
+
 
 
 
@@ -90,7 +92,8 @@ import { LoadDirective } from './components/client-proserv/load.directive';
     HistoryComponent,
     TestimoniesComponent,
     FilterComponent,
-    LoadDirective
+    LoadDirective,
+    OurWorkComponent
   ],
   exports: [
     CarouselItemComponent,
@@ -123,7 +126,8 @@ import { LoadDirective } from './components/client-proserv/load.directive';
     TecnologiesProjectserviceComponent,
     HistoryComponent,
     TestimoniesComponent,
-    FilterComponent
+    FilterComponent,
+    OurWorkComponent
   ],
   imports: [
     BrowserModule,

@@ -1,41 +1,5 @@
 @import './src/assets/scss/mixin.scss';
 
-#title {
-    h2 {
-        margin-left: 3%;
-        font-size: 40px;
-        text-transform: uppercase;
-        color: #002b49;
-        text-align: center;
-        margin-top: 40px;
-
-        @include breakpoint (phone) { 
-            font-size: 30px;          
-            margin-left: 0;
-        }
-    }
-
-    p {
-        color: #002b49cc;
-        font-family: 'Open Sans Codensed';
-        margin-right: 180px;
-        margin-left: 200px;
-        margin-top: 10px;
-        font-size: 20px;
-        text-align: center;
-
-        @include breakpoint (desktop) {
-            margin-right: 0;
-            margin-left: 0;
-        }
-
-        @include breakpoint (phone) {
-            margin-right: 20px;
-            margin-left: 0;
-        }
-    }
-}
-
 .content {
 
     width: 90%;
