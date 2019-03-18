@@ -4,3 +4,21 @@
  * @file
  * Contains adf_menu.module.
  */
+use Drupal\Core\Routing\RouteMatchInterface;
+
+
+/**
+ * Implements hook_help().
+ */
+function adf_menu_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the adf_menu module.
+    case 'help.page.adf_menu':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Adf_menu module for bits website') . '</p>';
+      return $output;
+
+    default:
+  }
+}

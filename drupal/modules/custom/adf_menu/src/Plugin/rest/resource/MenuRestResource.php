@@ -171,7 +171,13 @@ class MenuRestResource extends ResourceBase {
   protected function menuTreeDetails(array $adf_menuSettings, array $transformed_tree, array &$menu_tree = []) {
     $order = 0;
     foreach ($transformed_tree as $menu_item) {
+      /**
+       * @var $menu_link \Drupal\menu_link_content\Plugin\Menu\MenuLinkContent
+       */
       $menu_link = $menu_item['original_link'];
+      /**
+       * @var $url \Drupal\Core\Url
+       */
       $url = $menu_item['url'];
       $external = FALSE;
       $uuid = '';
@@ -217,9 +223,6 @@ class MenuRestResource extends ResourceBase {
       $menu_tree[$order]['description'] = $menu_link->getDescription();
       $menu_tree[$order]['uri'] = $uri;
       $menu_tree[$order]['image'] = $image;
-      if (isset($adf_menuSettings['alias']) && $adf_menuSettings['alias']) {
-        $menu_tree[$order]['alias'] = ltrim($alias, '/');
-      }
       if (isset($adf_menuSettings['external']) && $adf_menuSettings['external']) {
         $menu_tree[$order]['external'] = $external;
       }

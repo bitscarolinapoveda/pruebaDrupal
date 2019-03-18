@@ -3,7 +3,6 @@
 namespace Drupal\bits_routes\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
-use Symfony\Component\HttpFoundation\Request;
 
 class HomeController extends ControllerBase {
 
