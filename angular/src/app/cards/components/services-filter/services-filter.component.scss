@@ -1,3 +1,6 @@
+:host /deep/ .ui-select-choices {
+  display: block;
+}
 body {
   margin: 0;
   }
@@ -8,7 +11,8 @@ body {
   background-color: rgba($color: #002b49, $alpha: 0.9);
   }
   .item {
-    display: flex !important;
+    overflow: hidden;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -45,7 +49,8 @@ body {
     .text-grid {
       color:azure; 
       font-size: 26px;
-      font-family: Open Sans; 
+      font-family: Open Sans;
+      text-align: center; 
       z-index: 20;
       margin: 50px 0 0 0; 
     }
@@ -61,6 +66,7 @@ body {
   .complete-info-grid {
     visibility: hidden;
     position: absolute;
+    top: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -72,7 +78,8 @@ body {
     .text-grid {
       color:azure; 
       font-size: 26px;
-      font-family: Open Sans; 
+      font-family: Open Sans;
+      text-align: center; 
       z-index: 20;
       margin: 50px 0 70px 0; 
     }
@@ -82,7 +89,7 @@ body {
       font-family: Open Sans Light; 
       color: rgb(255, 255, 255);
       text-align: center;
-      margin: 0 68px;
+      margin: 0 10%;
     }
     .plus-icon {
       display: block;
@@ -91,7 +98,7 @@ body {
       background-image: url(/assets/icon/mas.svg);
       background-repeat: no-repeat;
       background-size: cover;
-      margin-top: 50px;
+      margin-top: 20%;
     }
   }
 }

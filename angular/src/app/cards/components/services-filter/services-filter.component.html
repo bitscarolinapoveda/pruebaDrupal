@@ -1,6 +1,12 @@
+<div class="filter">
+  <label for="client">Clientes</label>
+  <ng-select #clientF class="select-autocomplete" id="client" name="client" [placeholder]="clients"
+      [allowClear]="true" [items]="listClients" [disabled]="disabled" (data)="filter($event)">
+  </ng-select>
+</div>
 <div class="grid" (window:resize)="onResize()">
   <div class="item box-{{i}}" *ngFor="let gridBox of gridInfo; let i = index; let $last = last" [isLast]='$last' 
-       (appOrganizeGridMuuri)="organizeGrid()" (mouseover)=showDescription($event,i) (mouseleave)=showDescription($event,i)>
+    (appOrganizeGridMuuri)="organizeGrid()" (mouseover)=showDescription($event,i) (mouseleave)=showDescription($event,i)>
     <div class="dark-layout"></div>
     <div class="item-content"></div>
     <div class="info-content info-{{i}}">

@@ -1,5 +1,6 @@
 import { CustomCardService } from '../../../services/cards/v1-card.services';
 import { Component, OnInit } from '@angular/core';
+import { SelectComponent } from 'ng2-select';
 
 declare var Muuri: any;
 declare var $: any;
@@ -13,17 +14,26 @@ declare var $: any;
 export class ServicesFilterComponent implements OnInit {
 
   public gridInfo;
+  public listClients;
+  public grid;
 
   constructor(
     private servicesInfo : CustomCardService,
-  ) { }
+  ) {}
   ngOnInit() {
     this.getInfoServices();
     this.onResize();
   }
   getInfoServices() {
+    var list = [];
     return this.servicesInfo.getCustomCardInformation('allproductsandservicescard').subscribe(items => {
       this.gridInfo = items.data;
+      for (let i = 0; i < this.gridInfo.length; i++) {
+        for (let j = 0; j < this.gridInfo[i].clients.length; j++) {
+          list.push(this.gridInfo[i].clients[j].label);
+        }
+        this.listClients = list;
+      }
     });
   }
   onResize() {
@@ -41,30 +51,34 @@ export class ServicesFilterComponent implements OnInit {
     if (eve.type === 'mouseover') {
       $('.hover-info-'+i).css({
         'visibility': 'visible',
+        'top': '0',
+        'transition':'top 0.5s ease'
       });
       $('.info-'+i).css({
         'visibility': 'hidden',
-      });
+      });  
     } else if (eve.type === 'mouseleave') {
       $('.info-'+i).css({
         'visibility': 'visible',
       });
       $('.hover-info-'+i).css({
         'visibility': 'hidden',
+        'top': '100%',
+        'transition':'all 0.5s ease',
       });
     }
   }
   organizeGrid() {
     var size = window.innerWidth;
     if ( size < 767) {
-      var grid = new Muuri('.grid', {
-        dragEnabled: true,
+      this.grid = new Muuri('.grid', {
+        dragEnabled: false,
         layout: {
           fillGaps: true
         }
       });
     } else {
-      var grid = new Muuri('.grid', {
+      this.grid = new Muuri('.grid', {
         dragEnabled: false,
         items: '.item',
         layout: function(items, containerWidth, containerHeight) { // custom strict horizontal left-to-right order
@@ -134,5 +148,13 @@ export class ServicesFilterComponent implements OnInit {
       }
       return array;
     }
+    for (let i = 0; i < this.gridInfo.length; i++) {
+      for (let j = 0; j < this.gridInfo[i].clients.length; j++) {
+        $('.item.box-'+i).addClass(this.gridInfo[i].clients[j].label);
+      }
+    }
+  }
+  filter(eve) {
+    this.grid.filter('.'+eve.id);
   }
 }
