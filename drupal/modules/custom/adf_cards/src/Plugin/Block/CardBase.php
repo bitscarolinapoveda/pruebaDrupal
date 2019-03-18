@@ -3,7 +3,10 @@
 namespace Drupal\adf_cards\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
+use Drupal\Core\Entity\EntityTypeBundleInfoInterface;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Logger\LoggerChannelFactory;
+use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\file\FileUsage\FileUsageInterface;
@@ -19,7 +22,7 @@ use Drupal\Core\Url;
  *  admin_label = @Translation("Card base"),
  * )
  */
-class CardBase extends BlockBase {
+class CardBase extends BlockBase implements ContainerFactoryPluginInterface {
 
   protected $uuid;
   protected $key_config = [
@@ -43,34 +46,46 @@ class CardBase extends BlockBase {
       '',
       ],
   ];
-
-  /**
-   * Class constructor.
-   */
-  /*
-
   protected $entityTypeManager;
+  protected $entity_type_bundle_info;
+  protected $logger;
+  protected $fileUsageBackend;
 
-  protected $fileUsage;
-  public function __construct(EntityTypeManagerInterface $entity_type_manager, FileUsageInterface $file_usage) {
 
-    $this->entityTypeManager = $entity_type_manager;
-    $this->fileUsage = $file_usage;
-
+  public function __construct(array $configuration, $plugin_id, $plugin_definition,
+                              EntityTypeManagerInterface $entityTypeManager,
+                              EntityTypeBundleInfoInterface $entity_type_bundle_info = NULL,
+                              LoggerChannelFactory $logger,
+                              FileUsageInterface $fileUsageBackend
+) {
+    parent::__construct($configuration, $plugin_id, $plugin_definition);
+    $this->entityTypeManager = $entityTypeManager;
+    $this->entity_type_bundle_info = $entity_type_bundle_info;
+    $this->logger = $logger;
+    $this->fileUsageBackend = $fileUsageBackend;
   }
-  */
+
 
   /**
-   * {@inheritdoc}
+   * @param \Symfony\Component\DependencyInjection\ContainerInterface $container
+   * @param array $configuration
+   * @param string $plugin_id
+   * @param mixed $plugin_definition
+   *
+   * @return \Drupal\adf_cards\Plugin\Block\CardBase|\Drupal\Core\Plugin\ContainerFactoryPluginInterface
    */
-  /*
-  public static function create(ContainerInterface $container) {
+  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
+
     return new static(
+      $configuration,
+      $plugin_id,
+      $plugin_definition,
       $container->get('entity_type.manager'),
+      $container->get('entity_type.bundle.info'),
+      $container->get('logger.factory'),
       $container->get('file.usage')
     );
   }
-  */
 
   /**
    * {@inheritdoc}
@@ -141,7 +156,7 @@ class CardBase extends BlockBase {
 
     if (isset($this->configuration['entity'])) {
       $contentEntityTypes = [];
-      $entityTypeDefinitions = \Drupal::entityTypeManager()->getDefinitions();
+      $entityTypeDefinitions = $this->entityTypeManager->getDefinitions();
       /* @var $definition EntityTypeInterface */
       foreach ($entityTypeDefinitions as $definition) {
         $contentEntityTypes[$definition->id()] = $definition->id();
@@ -193,7 +208,7 @@ class CardBase extends BlockBase {
         }
 
         // Carga los tipos de contenido de la entidad, si esta existe
-        $typesOfEntity = \Drupal::service('entity_type.bundle.info')->getBundleInfo($entityName);
+        $typesOfEntity = $this->entity_type_bundle_info->getBundleInfo($entityName);
         $bundleEntityTypes = [];
         foreach ($typesOfEntity as $key => $value) {
           $bundleEntityTypes[$key] = $value['label'];
@@ -253,7 +268,7 @@ class CardBase extends BlockBase {
       ];
 
       // Modo de presentación del contenido.
-      $queryViewModes = \Drupal::entityTypeManager()
+      $queryViewModes = $this->entityTypeManager
         ->getStorage('entity_view_display')
         ->getQuery();
 
@@ -307,8 +322,7 @@ class CardBase extends BlockBase {
           'event' => 'click',
         ],
       ];
-
-      $query = \Drupal::entityQuery($entityName);
+      $query = $this->entityTypeManager->getStorage($entityName)->getQuery('AND');
       $query->condition('status', 1);
       if ($entityType) {
         $query->condition('type', $entityType);
@@ -339,7 +353,7 @@ class CardBase extends BlockBase {
 
       $arRowForWeight = [];
       foreach ($entityIds as $entityId) {
-        $entityStorage = \Drupal::entityManager()->getStorage($entityName);
+        $entityStorage = $this->entityTypeManager->getStorage($entityName);
         $entity = $entityStorage->load($entityId);
         $label = $entity->label();
         $id = $entity->id();
@@ -411,7 +425,7 @@ class CardBase extends BlockBase {
    */
   public function changeEntityType(array &$form, FormStateInterface $form_state) {
 
-    \Drupal::logger('casa')->notice('form ajax');
+    $this->logger->get('casa')->notice('form ajax');
     return $form['settings']['entity'];
   }
 
@@ -670,11 +684,7 @@ class CardBase extends BlockBase {
     // Save file.
     $file->save();
 
-    // Add usage file.
-    // $this->fileUsage->add($file, 'my_module', 'file', $file_id);
-    // \Drupal::service('file.usage')->add($file, 'adf_cards', 'adf_cards', 1);.
-    // $this->fileUsage->add($file, 'adf_cards', 'adf_cards', 1);.
-    \Drupal::service('file.usage')->add($file, 'adf_cards', 'adf_cards', 1);
+    $this->fileUsageBackend->add($file, 'adf_cards', 'adf_cards', 1);
   }
 
   private function _uaSort(&$array) {

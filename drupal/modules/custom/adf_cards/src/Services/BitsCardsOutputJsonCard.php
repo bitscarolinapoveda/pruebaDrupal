@@ -139,8 +139,8 @@ class BitsCardsOutputJsonCard {
             elseif ($type === 'entity_reference'){
               $tid = $node->get($field)->getValue();
               $dataDefinition = $node->get($field)->getSetting('handler');
-              foreach ($tid as $key => $value) {
-                $terms_name = '';
+              for($i = 0;$i<count($tid);$i++){
+                $value = $tid[$i];
                 if ($dataDefinition == "default:taxonomy_term") {
                   $term = Term::load($value['target_id']);
                 }
