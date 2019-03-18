@@ -27,7 +27,7 @@ export class BannerComponent implements OnInit {
     ngOnInit() {
         if (this.titulo !== '') {
             while (this.titulo.indexOf('-') > -1) {
-                this.titulo = this.titulo.replace('-', ' ');
+                this.titulo = this.titulo.replace('-', '_');
             }
         }
         if (this.titulo !== '' && (this.imgFondo === '' || this.imgFondo === undefined)) {
