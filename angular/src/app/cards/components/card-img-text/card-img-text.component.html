@@ -1,3 +1,4 @@
+<app-separator [iconCustom]="'icon-engranaje'" *ngIf="cardImgL.length != 0 || cardImgR.length != 0"></app-separator>
 <div class="row color-back" *ngIf="orientacion == 'IT'" [id]="datosMenu.id">
     <div class="col-md-4 p-0" *ngFor="let cil of cardImgL">
         <img [src]="cil.field_imagen_media_product.url" alt="{{cil.field_imagen_media_product.alt}}"

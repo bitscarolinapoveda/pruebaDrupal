@@ -87,8 +87,7 @@ body {
 
     .title-principal {
         font-size: 40px;
-        text-transform: uppercase;
-        margin-top: 40px;
+        text-transform: uppercase;       
 
         @include breakpoint (phone) {
             font-size: 30px;
@@ -97,7 +96,6 @@ body {
 
     .descrip-principal {
         font-size: 20px;
-        font-family: 'Open Sans Codensed';
-        margin-top: 10px;
+        font-family: 'Open Sans Codensed';       
     }
 }

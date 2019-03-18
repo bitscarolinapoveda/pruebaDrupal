@@ -1,5 +1,6 @@
-<section id="main-title">
-  <h2 [id]="datosMenu.id">{{ titleClients }}</h2>
+<app-separator [iconCustom]="'icon-startproject'" *ngIf="clients.length != 0  && titleClients != ''"></app-separator>
+<section id="principal">
+  <h2 [id]="datosMenu.id" class="title-principal">{{ titleClients }}</h2>
 </section>
 <!-- //Ejemplo para la directiva // appLoad [type]="type" (propagar)="directiveOut($event)" -->
 <div class="contenedor">

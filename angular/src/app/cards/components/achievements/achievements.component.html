@@ -1,6 +1,7 @@
-<section id="title">
-  <h2 [id]="datosMenu.id">{{ title }}</h2>
-  <p [innerHTML]="subtitle"></p>
+<app-separator [iconCustom]="'icon-medal'" *ngIf="list.length != 0  && title != ''"></app-separator>
+<section id="principal">
+  <h2 class="title-principal" [id]="datosMenu.id">{{ title }}</h2>
+  <p class="descrip-principal" [innerHTML]="subtitle"></p>
 </section>
 
 <section class="content">

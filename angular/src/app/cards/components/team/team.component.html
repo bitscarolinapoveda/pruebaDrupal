@@ -1,8 +1,8 @@
-<section id="kw-title">
-  <h2 [id]="datosMenu.id">{{ title }}</h2>
-  <p [innerHTML]="subtitle"></p>
+<app-separator [iconCustom]="'icon-people'" *ngIf="CarouselControlArray.length != 0  && title != ''"></app-separator>
+<section id="principal">
+  <h2 [id]="datosMenu.id" class="title-principal">{{ title }}</h2>
+  <p class="descrip-principal" [innerHTML]="subtitle"></p>
 </section>
-
 <div class="contenedor">
   <ngx-carousel [inputs]="carocarouselTile" (carouselLoad)="carouselTileLoad($event)" *ngIf="CarouselControlArray">
     <ngx-tile NgxCarouselItem *ngFor="let main of CarouselControlArray; let i = index">
