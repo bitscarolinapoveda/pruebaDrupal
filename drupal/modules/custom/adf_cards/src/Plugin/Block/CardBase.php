@@ -519,8 +519,9 @@ class CardBase extends BlockBase {
        $fileA->setPermanent();
        $fileA->save();
        */
-
-
+     $tags = str_replace("_","",$form['id']['#default_value']) ;
+     $tags = str_replace('-',"", $tags);
+    \Drupal::service('cache_tags.invalidator')->invalidateTags([$tags]);
     $this->configuration['header'] = $form_state->getValue('header');
     $this->configuration['body'] = $form_state->getValue('body');
     $this->configuration['files'] = $form_state->getValue('files');

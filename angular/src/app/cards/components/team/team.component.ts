@@ -10,6 +10,7 @@ import { NgxCarousel } from 'ngx-carousel';
 })
 export class TeamComponent implements OnInit {
   public carouselOne: NgxCarousel;
+  visible: boolean;
 
   @Output() propagar = new EventEmitter<DataMenu>();
   datosMenu: DataMenu;
@@ -22,6 +23,7 @@ export class TeamComponent implements OnInit {
 
   constructor(private https: CustomCardService) {
     this.CarouselControlArray = [];
+    this.visible = false;
   }
 
   ngOnInit() {
@@ -92,6 +94,9 @@ export class TeamComponent implements OnInit {
       this.subtitle = items.header[1].data.sub_title;
       this.CarouselControlArray = items.data;
       this.CarouselControlArray = Object.keys(items.data).map(function (key) { return items.data[key]; });
+      if (this.title !== '' && this.CarouselControlArray.length !== 0) {
+        this.visible = true;
+      }
     });
 
   }

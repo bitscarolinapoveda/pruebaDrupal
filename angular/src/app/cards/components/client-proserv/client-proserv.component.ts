@@ -34,7 +34,10 @@ export class ClientProServComponent implements OnInit, DoCheck, OnDestroy {
   principal$: Observable<General>;
   cas: any = 0;
 
+  visible: boolean;
+
   constructor(private _cardService: CustomCardService) {
+    this.visible = false;
   }
 
   ngOnInit() {
@@ -157,6 +160,13 @@ export class ClientProServComponent implements OnInit, DoCheck, OnDestroy {
         this.cas = this.cas + 1;
         console.log('lista clients_', this.clients);
 
+        if (this.clients.length !== 0) {
+          this.visible = true;
+        }
+
+        console.log('lista clients', this.clients);
+
+        
         /* if (this.clients !== undefined) {
           this.clients = Object.keys(this.clients).map(function (key) { return this.clients[key]; });
         } */

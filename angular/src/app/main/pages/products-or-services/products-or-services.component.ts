@@ -26,9 +26,12 @@ export class ProductsOrServicesComponent implements OnInit {
 
   public value: any;
 
+  visible: boolean;
+
   constructor(private _http: CustomCardService, private rutaActiva: ActivatedRoute, private service: HttpService) {
     this.blurbArray = [];
     this.listMenu = [];
+    this.visible = false;
   }
 
   ngOnInit() {
@@ -70,6 +73,9 @@ export class ProductsOrServicesComponent implements OnInit {
           blurbObject.description = blurbItem.body;
           this.blurbArray.push(blurbObject);
         }
+        if (this.tituloModulos !== '' && this.blurbArray.length !== 0) {
+          this.visible = true;
+        }
       });
   }
 
@@ -86,4 +92,3 @@ export class ProductsOrServicesComponent implements OnInit {
   }
 
 }
-

@@ -1,24 +1,26 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { CustomCardService } from 'src/app/services/cards/v1-card.services';
+import { CustomCardService } from '../../../services/cards/v1-card.services';
 import { DataMenu } from '../menu-template/menu-template.component';
+import { iif } from 'rxjs';
 
 @Component({
-  selector: 'app-achievements',
-  templateUrl: './achievements.component.html',
-  styleUrls: ['./achievements.component.scss']
+  selector: 'app-our-work',
+  templateUrl: './our-work.component.html',
+  styleUrls: ['./our-work.component.scss']
 })
-export class AchievementsComponent implements OnInit {
+export class OurWorkComponent implements OnInit {
   title: string;
   subtitle: string;
   list: any[];
   visible: boolean;
+
+  @Input() type: string;
+
   @Output() propagar = new EventEmitter<DataMenu>();
 
   datosMenu: DataMenu;
 
-  @Input() type: string;
-
-  constructor(private _service: CustomCardService) {
+  constructor(private _http: CustomCardService) {
     this.list = [];
     this.visible = false;
   }
@@ -29,17 +31,17 @@ export class AchievementsComponent implements OnInit {
     }
 
     this.datosMenu = {
-      label: 'LOGROS',
-      id: 'a10',
-      url: '/imedical'
+      label: 'NUESTRO TRABAJO',
+      id: 'a14',
+      url: '/products'
     };
 
     this.propagar.emit(this.datosMenu);
-    this.getAchievementData();
+    this.getOurWorkData();
   }
 
-  getAchievementData() {
-    this._service.getCustomCardInformationType('achievementsbitsamericas', this.type).subscribe(items => {
+  getOurWorkData() {
+    this._http.getCustomCardInformationType('ourworkbitsamericas', this.type).subscribe(items => {
       this.title = items.header[0].data.title;
       this.subtitle = items.header[1].data.sub_title;
       this.list = items.data;

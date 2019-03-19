@@ -14,7 +14,7 @@
     <div class="icon-mail">
       <ul class="row fa-ul">
         <li>
-          <a routerLink="/contact-us">
+          <a href="#contactusModal" id="openModal">
             <i class="fa-li fas fa-envelope"></i>
           </a>
         </li>
@@ -22,3 +22,66 @@
     </div>
   </section>
 </section>
+<!-- Modal -->
+<div class="modal fade" id="contactusModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Como podemos ayudarlo?</h5>
+        <p class="description-modal">Escribanos y nos pondremos en contacto con usted!</p>
+        <button type="button" class="close button-modal" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="" id="footernewsletter-form">
+          <div class="col-md-12 item">
+            <label class="label-modal" for="inputName">Nombre*</label>
+            <input class="input-modal" ngModel type="text" id="nombre" placeholder="Nombre Completo" name="nombre"
+              [(ngModel)]="name_value">
+            <div *ngIf="false" class="alert alert-danger" role="alert">
+              Campo obligatorio o invalido
+            </div>
+          </div>
+          <div class="col-md-12 item">
+            <label class="label-modal" for="inputEmail">Correo Electronico*</label>
+            <input class="input-modal" type="email" id="email" aria-describedby="emailHelp" placeholder="Su correo electronico"
+              name="correo_electronico" pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
+              [(ngModel)]="email_value">
+            <div *ngIf="false" class="alert alert-danger" role="alert">
+              Campo obligatorio o invalido
+            </div>
+          </div>
+          <div class="col-md-12 item">
+            <label class="label-modal" for="inputOrgan">Organizacion</label>
+            <input class="input-modal" type="text" id="organ" placeholder="Su organizacion" name="organ" [(ngModel)]="organ_value">
+            <div *ngIf="false" class="alert alert-danger" role="alert">
+              Campo obligatorio o invalido
+            </div>
+          </div>
+          <div class="col-md-12 item">
+            <label class="label-modal" for="inputComent">Comentario</label>
+            <textarea class="input-modal" id="comentario" placeholder="Escriba sus comentarios" name="comentario"
+              ngModel #comentario="ngModel"></textarea>
+            <div *ngIf="false" class="alert alert-danger" role="alert">
+              Campo obligatorio o invalido
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="save-modal-button" (click)="clickOnSubmit()">ENVIAR</button>
+        <div class="conteiner-1">
+          <div class="conteiner-2">
+            <div class="div-left-side"></div>
+            <div class="divIconSeparator">
+              <label>o si lo desea</label>
+            </div>
+            <div class="div-right-side"></div>
+          </div>
+        </div>
+        <label class="label-modal">Llamenos al 763271236 o escribanos a info@bitsamericas.com</label>
+      </div>
+    </div>
+  </div>
+</div>
