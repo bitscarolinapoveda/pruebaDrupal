@@ -37,7 +37,7 @@ class CountryService {
     $list = $storage->loadMultiple($nids);
     $listArray = [];
 
-    foreach ($list as  $entity) {
+    foreach ($list as $entity) {
       /* @var $entity \Drupal\bits_countries\Entity\CountryEntity */
       $listArray[] = ['iso_code' => $entity->getIsoCode(), 'label' => $entity->getLabelName()];
     }
