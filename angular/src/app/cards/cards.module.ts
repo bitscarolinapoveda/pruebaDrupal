@@ -34,6 +34,7 @@ import { TestimoniesComponent } from './components/testimonies/testimonies.compo
 import { TecnologiesProjectserviceComponent } from './components/tecnologies-projectservice/tecnologies-projectservice.component';
 import { HistoryComponent } from './components/history/history.component';
 import { FilterComponent } from './components/filter/filter.component';
+import { ServicesFilterComponent } from './components/services-filter/services-filter.component';
 import { OurWorkComponent } from './components/our-work/our-work.component';
 
 // Servicios
@@ -52,10 +53,8 @@ import { SafeHtmlPipe } from '../pipes/safehtml.pipe';
 import { SafeCssPipe } from '../pipes/safecss.pipe';
 import { ClientProServComponent } from './components/client-proserv/client-proserv.component';
 import { WorkusComponent } from './components/workus/workus.component';
+import { OrganizeGridMuuriDirective } from '../directives/organize-grid-muuri.directive';
 import { LoadDirective } from './components/client-proserv/load.directive';
-
-
-
 
 @NgModule({
   declarations: [
@@ -92,6 +91,8 @@ import { LoadDirective } from './components/client-proserv/load.directive';
     HistoryComponent,
     TestimoniesComponent,
     FilterComponent,
+    ServicesFilterComponent,
+    OrganizeGridMuuriDirective,
     LoadDirective,
     OurWorkComponent
   ],
@@ -127,6 +128,7 @@ import { LoadDirective } from './components/client-proserv/load.directive';
     HistoryComponent,
     TestimoniesComponent,
     FilterComponent,
+    ServicesFilterComponent,
     OurWorkComponent
   ],
   imports: [
