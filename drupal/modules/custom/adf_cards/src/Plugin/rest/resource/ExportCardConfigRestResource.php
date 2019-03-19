@@ -4,7 +4,6 @@ namespace Drupal\adf_cards\Plugin\rest\resource;
 
 use Drupal\Core\Session\AccountProxyInterface;
 use Drupal\rest\Plugin\ResourceBase;
-use Drupal\rest\ResourceResponse;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
@@ -85,7 +84,6 @@ class ExportCardConfigRestResource extends ResourceBase {
    */
   public function get($block_id) {
 
-    \Drupal::service('page_cache_kill_switch')->trigger();
 
     // You must to implement the logic of your REST Resource here.
     // Use current user after pass authentication to validate access.
@@ -94,9 +92,9 @@ class ExportCardConfigRestResource extends ResourceBase {
     }
 
     $service = \Drupal::service('adf_cards.get_config');
-    $config = $service->get($block_id);
+    $response = $service->get($block_id);
 
-    return new ResourceResponse($config);
+    return $response;
   }
 
 }
