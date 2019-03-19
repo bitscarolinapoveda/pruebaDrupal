@@ -11,6 +11,7 @@ export class AchievementsComponent implements OnInit {
   title: string;
   subtitle: string;
   list: any[];
+  visible: boolean;
   @Output() propagar = new EventEmitter<DataMenu>();
 
   datosMenu: DataMenu;
@@ -19,6 +20,7 @@ export class AchievementsComponent implements OnInit {
 
   constructor(private _service: CustomCardService) {
     this.list = [];
+    this.visible = false;
   }
 
   ngOnInit() {
@@ -41,6 +43,9 @@ export class AchievementsComponent implements OnInit {
       this.title = items.header[0].data.title;
       this.subtitle = items.header[1].data.sub_title;
       this.list = items.data;
+      if (this.title !== '' && this.list.length !== 0) {
+        this.visible = true;
+      }
     });
   }
 

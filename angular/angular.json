@@ -32,10 +32,10 @@
                             "node_modules/ngx-toastr/toastr.css"
                         ],
                         "scripts": [
-                            "node_modules/jquery/dist/jquery.min.js",
                             "node_modules/jquery/dist/jquery.slim.min.js",
                             "node_modules/popper.js/dist/umd/popper.min.js",
-                            "node_modules/bootstrap/dist/js/bootstrap.min.js"
+                            "node_modules/bootstrap/dist/js/bootstrap.min.js",
+                            "src/assets/timeline/js/timeline-min.js"
                         ]
                     },
                     "configurations": {
@@ -48,7 +48,7 @@
                             "outputHashing": "all",
                             "sourceMap": false,
                             "extractCss": true,
-                            "namedChunks": false,                    
+                            "namedChunks": false,
                             "aot": true,
                             "extractLicenses": true,
                             "vendorChunk": true,
@@ -91,7 +91,7 @@
                         "tsConfig": "src/tsconfig.spec.json",
                         "karmaConfig": "src/karma.conf.js",
                         "styles": [
-                            "src/styles.css"
+                            "src/styles.scss"
                         ],
                         "scripts": [],
                         "assets": [

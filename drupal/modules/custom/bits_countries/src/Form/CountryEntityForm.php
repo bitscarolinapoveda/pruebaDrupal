@@ -27,9 +27,6 @@ class CountryEntityForm extends ContentEntityForm {
         '#weight' => 10,
       ];
     }
-
-    $entity = $this->entity;
-
     return $form;
   }
 

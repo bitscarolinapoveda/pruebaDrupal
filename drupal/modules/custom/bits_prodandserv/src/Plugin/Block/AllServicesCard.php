@@ -21,6 +21,7 @@ class AllServicesCard extends CardBase {
     return [
       'entity' => [
         'name' => 'service_product_bits',
+        'type' => '', //necesario para no generar error bundleEntityTypes
         'conditions' => [
           'type' => 'service',
         ],
@@ -29,5 +30,4 @@ class AllServicesCard extends CardBase {
       'others' => [],
     ];
   }
-
 }

@@ -1,27 +1,33 @@
 @import './src/assets/scss/mixin.scss';
-#work-with-us{
+
+#work-with-us {
   display: block;
-  margin-top:65px;
+  margin-top: 65px;
   text-align: center;
   color: #002b49;
-  h1{
+
+  h1 {
     font-size: 40px;
     text-transform: none;
     transform: scaleY(1.2);
     letter-spacing: -2px;
   }
-  p{
+
+  p {
     font-size: 20px;
     margin-top: 11px;
     margin-bottom: 30px;
-    @include breakpoint (desktop){
+
+    @include breakpoint (desktop) {
       margin-bottom: 17px;
     }
-    @include breakpoint (tablet){
+
+    @include breakpoint (tablet) {
       margin-bottom: 17px;
     }
   }
-  a.btn-primary{
+
+  a.btn-primary {
     background-color: #a6cf24;
     border-color: #a6cf24;
     opacity: 0.75;
@@ -30,46 +36,55 @@
     font-size: 20px;
     height: 45px;
     margin-bottom: 12px;
-    @include breakpoint (desktop){
+
+    @include breakpoint (desktop) {
       margin-bottom: 0;
     }
-    @include breakpoint (tablet){
+
+    @include breakpoint (tablet) {
       margin-bottom: 0;
     }
   }
-  .text1{
+
+  .text1 {
     font-size: 24px;
     margin-top: 11px;
     transform: scaleY(1.2);
     background-color: #FFFFFF;
     width: 42%;
     margin-left: 29%;
-    @include breakpoint (desktop){
+
+    @include breakpoint (desktop) {
       width: 12%;
       margin-left: 44%;
     }
-    @include breakpoint (tablet){
+
+    @include breakpoint (tablet) {
       width: 17%;
       margin-left: 42%;
     }
   }
-  hr{
+
+  hr {
     background: linear-gradient(-90deg, #FFFFFF, #a6cf24, #a6cf24, #FFFFFF);
     height: 1px;
     width: 80%;
     position: absolute;
     margin-top: 31px;
     left: 10%;
-    @include breakpoint (desktop){
+
+    @include breakpoint (desktop) {
       width: 22%;
       left: 39%;
     }
-    @include breakpoint (tablet){
+
+    @include breakpoint (tablet) {
       width: 22%;
       left: 39%;
     }
   }
-  .text2{
+
+  .text2 {
     margin-bottom: 67px;
   }
 }

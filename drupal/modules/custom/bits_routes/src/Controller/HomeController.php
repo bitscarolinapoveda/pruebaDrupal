@@ -27,17 +27,17 @@ class HomeController extends ControllerBase {
     ];
   }
 
-  public function serviceId() {
+  public function serviceId($name) {
     return [
       '#type' => 'markup',
-      '#markup' => 'Service id',
+      '#markup' => 'Service id ' . $name,
     ];
   }
 
-  public function projectId() {
+  public function productId($name) {
     return [
       '#type' => 'markup',
-      '#markup' => 'Project id',
+      '#markup' => 'Project id ' . $name,
     ];
   }
 

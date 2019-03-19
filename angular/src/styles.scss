@@ -1,3 +1,5 @@
+@import './src/assets/scss/mixin.scss';
+
 @font-face {
     font-family: 'Open Sans light';
     font-style: light;
@@ -25,12 +27,14 @@
     font-weight: 400;
     src: url('./assets/fonts/Open-Sans-Codensed/OpenSansCondensed-Light.ttf');
 }
+
 @font-face {
     font-family: 'Open Sans Codensed Light';
     font-style: light;
     font-weight: 100;
     src: url('./assets/fonts/Open-Sans-Codensed/OpenSansCondensed-Light.ttf');
 }
+
 body {
 
     h1,
@@ -74,5 +78,24 @@ body {
         color: #ffffff !important;
         text-transform: uppercase;
         text-align: center;
+    }
+}
+
+#principal {
+    color: #002b49;
+    text-align: center;
+
+    .title-principal {
+        font-size: 40px;
+        text-transform: uppercase;       
+
+        @include breakpoint (phone) {
+            font-size: 30px;
+        }
+    }
+
+    .descrip-principal {
+        font-size: 20px;
+        font-family: 'Open Sans Codensed';       
     }
 }

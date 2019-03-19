@@ -16,9 +16,11 @@ export class TecnologiesProjectserviceComponent implements OnInit {
   title: string;
   subtitle: string;
   CarouselControlArray: any[];
+  visible: boolean;
 
   constructor(private https: CustomCardService) {
     this.CarouselControlArray = [];
+    this.visible = false;
   }
 
   ngOnInit() {
@@ -36,15 +38,16 @@ export class TecnologiesProjectserviceComponent implements OnInit {
     this.getTecnoInformationService();
   }
 
-
   getTecnoInformationService() {
     this.https.getCustomCardInformationType('expertsinimedicalcard', this.type).subscribe(items => {
       this.title = items.header[0].data.title;
       this.subtitle = items.header[1].data.sub_title;
       this.CarouselControlArray = items.data;
+      if (this.title !== '' && this.CarouselControlArray.length !== 0) {
+        this.visible = true;
+      }
     });
 
   }
-
 
 }

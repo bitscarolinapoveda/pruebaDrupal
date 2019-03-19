@@ -16,6 +16,9 @@ bits_prodandserv.service_product_bits.*:
     large_image:
       type: image
       label: 'Large Image'
+    white_icon:
+      type: image
+      label: 'White icon Image'
     description:
       type: text
       label: 'Description'
@@ -34,6 +37,9 @@ bits_prodandserv.service_product_bits.*:
     technologies:
         type: sequence
         label: 'Technologies'
+    our_work:
+        type: sequence
+        label: 'Our Work'
     testimonies:
         type: sequence
         label: 'Testimonies'

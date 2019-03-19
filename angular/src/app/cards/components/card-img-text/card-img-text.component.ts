@@ -12,6 +12,8 @@ export class CardImgTextComponent implements OnInit {
     public cardImgL: any[];
     public titleR: string;
     public cardImgR: any[];
+    visibleL: boolean;
+    visibleR: boolean;
 
     // Si se recibe IT : Imagen luego texto
     // Si se recibe TI : Texto luego imagen
@@ -29,6 +31,8 @@ export class CardImgTextComponent implements OnInit {
         this.orientacion = '';
         this.cardImgL = [];
         this.cardImgR = [];
+        this.visibleL = false;
+        this.visibleR = false;
     }
 
     ngOnInit() {
@@ -60,12 +64,21 @@ export class CardImgTextComponent implements OnInit {
         this._http.getCustomCardInformationType('mediaimedicalcard_2', this.type).subscribe(params => {
             this.titleL = params.header[0].data.title;
             this.cardImgL = params.data;
+            if (this.cardImgL.length !== 0) {
+                this.visibleL = true;
+            }
+            console.log('Left', this.visibleL, this.visibleR);
         });
+
     }
     getCardImgTextServiceR() {
         this._http.getCustomCardInformationType('mediaimedicalcard', this.type).subscribe(params => {
             this.titleR = params.header[0].data.title;
             this.cardImgR = params.data;
+            if (this.cardImgR.length !== 0) {
+                this.visibleR = true;
+            }
+            console.log('Rigt', this.visibleL, this.visibleR);
         });
     }
 }

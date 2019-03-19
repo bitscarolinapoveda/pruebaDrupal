@@ -2,7 +2,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '../../../node_modules/@angular/common';
-import {MessageModule} from "../message/message.module";
+import { MessageModule } from '../message/message.module';
 
 import { CarouselItemComponent } from './components/carousel-item/carousel-item.component';
 import { CarouselIndicatorsComponent } from './components/carousel-indicators/carousel-indicators.component';
@@ -35,6 +35,7 @@ import { TecnologiesProjectserviceComponent } from './components/tecnologies-pro
 import { HistoryComponent } from './components/history/history.component';
 import { FilterComponent } from './components/filter/filter.component';
 import { ServicesFilterComponent } from './components/services-filter/services-filter.component';
+import { OurWorkComponent } from './components/our-work/our-work.component';
 
 // Servicios
 import { NodeService } from '../services/cards/node.service';
@@ -44,7 +45,7 @@ import { SlickModule } from 'ngx-slick';
 import { OwlModule } from 'ngx-owl-carousel';
 import { NgxCarouselModule } from 'ngx-carousel';
 import 'hammerjs';
-import { FormsModule,  ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SelectModule } from 'ng2-select';
 
 // Pipes
@@ -53,7 +54,7 @@ import { SafeCssPipe } from '../pipes/safecss.pipe';
 import { ClientProServComponent } from './components/client-proserv/client-proserv.component';
 import { WorkusComponent } from './components/workus/workus.component';
 import { OrganizeGridMuuriDirective } from '../directives/organize-grid-muuri.directive';
-
+import { LoadDirective } from './components/client-proserv/load.directive';
 
 @NgModule({
   declarations: [
@@ -91,7 +92,9 @@ import { OrganizeGridMuuriDirective } from '../directives/organize-grid-muuri.di
     TestimoniesComponent,
     FilterComponent,
     ServicesFilterComponent,
-    OrganizeGridMuuriDirective
+    OrganizeGridMuuriDirective,
+    LoadDirective,
+    OurWorkComponent
   ],
   exports: [
     CarouselItemComponent,
@@ -125,7 +128,8 @@ import { OrganizeGridMuuriDirective } from '../directives/organize-grid-muuri.di
     HistoryComponent,
     TestimoniesComponent,
     FilterComponent,
-    ServicesFilterComponent
+    ServicesFilterComponent,
+    OurWorkComponent
   ],
   imports: [
     BrowserModule,

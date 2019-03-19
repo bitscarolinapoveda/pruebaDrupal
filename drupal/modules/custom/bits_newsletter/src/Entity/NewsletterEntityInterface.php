@@ -12,9 +12,6 @@ use Drupal\user\EntityOwnerInterface;
  * @ingroup bits_newsletter
  */
 interface NewsletterEntityInterface extends ContentEntityInterface, EntityChangedInterface, EntityOwnerInterface {
-
-  // Add get/set methods for your configuration properties here.
-
   /**
    * Gets the Newsletter entity name.
    *
@@ -33,7 +30,6 @@ interface NewsletterEntityInterface extends ContentEntityInterface, EntityChange
    *   The called Newsletter entity entity.
    */
   public function setName($name);
-  // Add get/set methods for your configuration properties here.
 
   /**
    * Gets the Newsletter entity name.
