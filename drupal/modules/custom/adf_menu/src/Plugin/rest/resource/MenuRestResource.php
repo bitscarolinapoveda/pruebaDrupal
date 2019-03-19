@@ -12,6 +12,7 @@ use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Psr\Log\LoggerInterface;
+use Drupal\file\Entity\File;
 
 /**
  * Create URL for use rest services.
@@ -141,13 +142,23 @@ class MenuRestResource extends ResourceBase {
       ];
       $tree = $menu_tree_detail->transform($tree, $manipulators);
 
-      $menu = $menu_tree_detail->build($tree);
-
-      $adf_menuSettings = \Drupal::config('adf_menu.adf_adf_menuSettings')->get('select_parameters');
-
-      $adf_menuSettings = $adf_menuSettings ? $adf_menuSettings : [];
-
-      $this->menuTreeDetails($adf_menuSettings, $menu['#items'], $this->menuDetails);
+      foreach ($tree as $key => $item) {
+        $this->menuDetails[$key] = $this->getItemDetails($item);
+        if($item->hasChildren){
+          $index = 0;
+          foreach ($item->subtree as $subitem) {
+            $this->menuDetails[$key]['below'][$index] = $this->getItemDetails($subitem);
+            if($subitem->hasChildren){
+              $index2 = 0;
+              foreach ($subitem->subtree as $subitem2) {
+                $this->menuDetails[$key]['below'][$index]['below'][$index2] = $this->getItemDetails($subitem2);
+                $index2 ++;
+              }
+            }
+            $index ++;
+          }
+        }
+      }
 
       $response = new ResourceResponse(array_values($this->menuDetails));
       $response->addCacheableDependency($this->menuDetails);
@@ -158,96 +169,40 @@ class MenuRestResource extends ResourceBase {
     throw new HttpException(t("Menu name is required parameter"));
   }
 
-  /**
-   * Generate the menu tree we can use in JSON.
-   *
-   * @param array $adf_menuSettings
-   *   Menu COnfiguration as per required parameter in response.
-   * @param array $transformed_tree
-   *   The menu tree.
-   * @param array $menu_tree
-   *   The already created items.
-   */
-  protected function menuTreeDetails(array $adf_menuSettings, array $transformed_tree, array &$menu_tree = []) {
-    $order = 0;
-    foreach ($transformed_tree as $menu_item) {
-      /**
-       * @var $menu_link \Drupal\menu_link_content\Plugin\Menu\MenuLinkContent
-       */
-      $menu_link = $menu_item['original_link'];
-      /**
-       * @var $url \Drupal\Core\Url
-       */
-      $url = $menu_item['url'];
-      $external = FALSE;
-      $uuid = '';
-      if ($url->isExternal()) {
-        $uri = $url->getUri();
-        $external = TRUE;
-        $absolute = $uri;
-      }
-      else {
-        try {
-          $uri = $url->getInternalPath();
-          $absolute = Url::fromUri('internal:/' . $uri, ['absolute' => TRUE])
-            ->toString(TRUE)
-            ->getGeneratedUrl();
 
-          $params = Url::fromUri('internal:/' . $uri)->getRouteParameters();
-          $entity_type = key($params);
-            if (!empty($entity_type)) {
-              $entity = \Drupal::entityManager()
-                ->getStorage($entity_type)
-                ->load($params[$entity_type]);
-              $uuid = $entity->uuid();
-            }
-        }
-        catch (\UnexpectedValueException $e) {
-          $absolute = $uri = '';
-        }
-        catch (\Exception $e) {
-          $absolute = $uri;
-        }
+  protected function getItemDetails($item){
+    $url = $item->link->getUrlObject();
+    $route = $item->link->getRouteName();
+    $parameters = $item->link->getRouteParameters(); // obtiene los parametetros enviados al route
+    $generator = \Drupal::urlGenerator(); //permite crear urls desde drupal
+    if($url->isRouted()){
+      try {
+        $path = '/'.$generator->getPathFromRoute($route, $parameters); //crea la url desde el route name si pertenece a drupal
+      } catch (\Throwable $th) {
+        $path = $th['message'];
       }
-
-      //Carga de la URL de imagen del menú, por defecto null
-      $opts = $menu_link->getOptions();
-      $image = null;
-      if (isset($opts['menu_icon']) && $opts['menu_icon']['fid']){
-        $fid = $opts['menu_icon']['fid'];
-        $file = \Drupal\file\Entity\File::load($fid);
-        $image = file_create_url($file->getFileUri());
-      }
-
-      $menu_tree[$order]['title'] = $menu_link->getTitle();
-      $menu_tree[$order]['description'] = $menu_link->getDescription();
-      $menu_tree[$order]['uri'] = $uri;
-      $menu_tree[$order]['image'] = $image;
-      if (isset($adf_menuSettings['external']) && $adf_menuSettings['external']) {
-        $menu_tree[$order]['external'] = $external;
-      }
-      if (isset($adf_menuSettings['absolute_url']) && $adf_menuSettings['absolute_url']) {
-        $menu_tree[$order]['absolute'] = $absolute;
-      }
-      if (isset($adf_menuSettings['weight']) && $adf_menuSettings['weight']) {
-        $menu_tree[$order]['weight'] = $menu_link->getWeight();
-      }
-      if (isset($adf_menuSettings['expanded']) && $adf_menuSettings['expanded']) {
-        $menu_tree[$order]['expanded'] = $menu_link->isExpanded();
-      }
-      if (isset($adf_menuSettings['enabled']) && $adf_menuSettings['enabled']) {
-        $menu_tree[$order]['enabled'] = $menu_link->isEnabled();
-      }
-      if (isset($adf_menuSettings['uuid']) && $adf_menuSettings['uuid']) {
-        $menu_tree[$order]['uuid'] = $uuid;
-      }
-
-      if (!empty($menu_item['below'])) {
-        $menu_tree[$order]['below'] = [];
-        $this->menuTreeDetails($adf_menuSettings, $menu_item['below'], $menu_tree[$order]['below']);
-      }
-      $order++;
     }
+    else{
+      $path = $url->toString(); //devuelve la url si no pertenece a drupal
+    }
+
+    $image = NULL;
+    $link_options = $item->link->getOptions();
+    if ($link_options['menu_icon']['fid']){
+      $fid = $link_options['menu_icon']['fid'];
+      $file = File::load($fid);
+      $image = file_create_url($file->getFileUri());
+    }
+    //$menu_item['uuid'] = $item->link->getPluginId();
+    $menu_item['title'] = $item->link->getTitle();
+    $menu_item['description'] = $item->link->getDescription();
+    $menu_item['uri'] = $path;
+    $menu_item['image'] = $image;
+    $menu_item['depth'] = $item->depth;
+    $menu_item['parameters'] = $parameters;
+    $menu_item['external'] = $url->isExternal();
+
+    return $menu_item;
   }
 
 }
