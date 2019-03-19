@@ -2,8 +2,6 @@
 
 namespace Drupal\bits_countries;
 use Drupal\Core\Entity\EntityManagerInterface;
-use Symfony\Component\HttpFoundation\Request;
-
 /**
  * Class CountryService.
  */
@@ -22,18 +20,24 @@ class CountryService {
     $this->entityManager = $entity_manager;
   }
 
+  /**
+   * @param $params
+   *
+   * @return array
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   */
   public function get($params) {
     $query = \Drupal::entityQuery('country_entity');
-//      ->condition('type', 'country_entity');
-//      ->condition('', 'country_entity');
-//    $nodes = $node_storage->loadMultiple($nids);
     if(array_key_exists("name",$params)) {
       $query->condition("name","%".$params["name"]."%","LIKE")->execute();
     }
     $nids = $query->execute();
     $list = $this->entityManager->getStorage('country_entity')->loadMultiple($nids);
     $listArray = [];
-    foreach ($list as $entity) {
+
+    foreach ($list as  $entity) {
+      /* @var $entity \Drupal\bits_countries\Entity\CountryEntity */
       $listArray[] = ['iso_code' => $entity->getIsoCode(), 'label' => $entity->getLabelName()];
     }
     return $listArray;

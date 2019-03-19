@@ -9,6 +9,6 @@ use Drupal\content_translation\ContentTranslationHandler;
  */
 class CountryEntityTranslationHandler extends ContentTranslationHandler {
 
-  // Override here the needed methods from ContentTranslationHandler.
+   /*Override here the needed methods from ContentTranslationHandler.*/
 
 }

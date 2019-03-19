@@ -13,7 +13,7 @@ use Drupal\user\EntityOwnerInterface;
  */
 interface CityEntityInterface extends ContentEntityInterface, EntityChangedInterface, EntityOwnerInterface {
 
-  // Add get/set methods for your configuration properties here.
+  /*Add get/set methods for your configuration properties here.*/
 
   /**
    * Gets the City entity countryCode.
