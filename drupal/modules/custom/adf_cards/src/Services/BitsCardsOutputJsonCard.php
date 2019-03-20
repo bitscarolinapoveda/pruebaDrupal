@@ -8,6 +8,8 @@ use Drupal\block\Entity\Block;
 use Drupal\adf_cards\Services\ExportConfigCardService;
 use Drupal\taxonomy\Entity\Term;
 use Drupal\image\Entity\ImageStyle;
+use Drupal\rest\ResourceResponse;
+use Drupal\Core\Cache\CacheableMetadata;
 
 /**
  * Class 'BitsCardsOutputJsonCard'.
@@ -19,6 +21,7 @@ class BitsCardsOutputJsonCard {
    */
   public function get($block_id, $prodServ = '') {
     $settings = [];
+    $node_tags = [];
     $block = Block::load($block_id);
 
     if ($block) {
@@ -93,6 +96,10 @@ class BitsCardsOutputJsonCard {
       }
 
       foreach ($nodes as $node) {
+        $tag = $node->getEntityType()->getListCacheTags();
+
+        if(!in_array( $tag[0], $node_tags))
+        array_push($node_tags, $tag[0]);
         if ($isContentEntity) {
           $data = [
             'nid' => $node->id(),
@@ -112,24 +119,20 @@ class BitsCardsOutputJsonCard {
 
             if ($type === 'image') {
               $imageData = $node->get($field)->getValue();
-              $data[$field] = [
-                'url' => '',
-                'alt' => '',
-              ];
-              if (0 < count($imageData)) {
-                $file = File::load($imageData[0]['target_id']);
+              foreach ((array) $imageData as $key => $value) {
+                $file = File::load($imageData[$key]['target_id']);
                 $style_image = $fields[$field]['settings']['image_style']; //trae el estilo de imagen asociado
                 if (!empty($style_image)) {
-                  $data[$field] = [
+                  $data[$field][$key] = [
                     'url' => ImageStyle::load($style_image)->buildUrl($file->getFileUri()), // crea la url con el estilo de imagen asociado
                   ];
                 }
                 else {
-                  $data[$field] = [
+                  $data[$field][$key] = [
                     'url' => file_create_url($file->getFileUri()),
                   ];
                 }
-                $data[$field]['alt'] = $imageData[0]['alt'];
+                $data[$field][$key]['alt'] = $imageData[$key]['alt'];
               }
             }
             elseif ($type === 'text_with_summary') {
@@ -159,6 +162,10 @@ class BitsCardsOutputJsonCard {
               $data[$field] = $node->get($field)->getString();
             }
           }
+          elseif ($type === 'text_long'){
+            $text = $node->get($field)->getValue();
+            $data[$field] = $text[0]['value'];
+          }
           else {
             if (method_exists($node, 'getValueJson')) {
               $value = $node->getValueJson($field, '');
@@ -177,7 +184,16 @@ class BitsCardsOutputJsonCard {
       }
     }
 
-    return $response;
+    $resource = new ResourceResponse($response);
+    $tag = str_replace("_","", $block_id);
+    $tag = str_replace('-',"", $tag);
+    array_push($node_tags,$tag);
+    $resource->addCacheableDependency(CacheableMetadata::createFromRenderArray(
+      [
+        '#cache' => ['tags' => $node_tags, ],
+      ]
+    ));
+    return $resource;
 
   }
 

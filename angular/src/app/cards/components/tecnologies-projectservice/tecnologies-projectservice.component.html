@@ -1,11 +1,13 @@
-<section id="title">
-  <h2 [id]="datosMenu.id">{{ title }}</h2>
-  <p [innerHTML]="subtitle"></p>
-</section>
-<section class="content"> 
-  <div class="content-img" style="display: flex; flex-wrap: wrap; justify-content:center">    
-      <div class="img-fluid" [ngStyle]="{'background-image':'url(' + data.field_tech_color_image?.url + ')'}"
-      *ngFor="let data of CarouselControlArray; let i = index">
-      </div>    
-  </div>
-</section>
+<div *ngIf="visible">
+  <app-separator [iconCustom]="'icon-engranaje'"></app-separator>
+  <section id="principal">
+    <h2 class="title-principal" [id]="datosMenu.id">{{ title }}</h2>
+    <p class="descrip-principal" [innerHTML]="subtitle"></p>
+  </section>
+  <section class="content">
+    <div class="content-img" style="display: flex; flex-wrap: wrap; justify-content:center">
+      <div class="img-fluid" [ngStyle]="{'background-image':'url(' + data.field_tech_color_image?.url + ')'}" *ngFor="let data of CarouselControlArray; let i = index">
+      </div>
+    </div>
+  </section>
+  <div>

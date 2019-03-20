@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { isArray } from 'util';
 import { CustomCardService } from '../../../services/cards/v1-card.services';
 
+declare var jQuery: any;
 declare var $: any;
 
 @Component({
@@ -21,12 +22,22 @@ export class FloatSocialComponent implements OnInit {
   constructor(
     private router: ActivatedRoute,
     private footerBrand2: CustomCardService
-    ) {
+  ) {
     this.socialmedia = [];
   }
 
   ngOnInit() {
     this.getFloatSocialItems();
+
+    $(function () {
+      $('#openModal').click(function (e) {
+        $('a[href$="#contactusModal"]').on('click', function () {
+          $('#contactusModal').modal('show');
+        });
+        e.preventDefault();
+      });
+    });
+
   }
 
   @HostListener('window:scroll', [])
@@ -38,8 +49,10 @@ export class FloatSocialComponent implements OnInit {
     }
   }
   getFloatSocialItems() {
-    this.footerBrand2.getCustomCardInformation('contactcard').subscribe((items: {header, others} ) => {
+    this.footerBrand2.getCustomCardInformation('contactcard').subscribe((items: { header, others }) => {
       this.socialmedia = items.others;
     });
   }
+
+
 }

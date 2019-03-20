@@ -17,6 +17,7 @@ export class BlurbComponent implements OnInit {
 
     datosMenu: DataMenu;
 
+
     constructor(
         private _http: CustomCardService
     ) {
@@ -41,4 +42,12 @@ export class BlurbComponent implements OnInit {
 
         this.propagar.emit(this.datosMenu);
     }
+
+}
+export interface General {
+    body: any;
+    data: any;
+    files: any;
+    header: any;
+    others: any;
 }

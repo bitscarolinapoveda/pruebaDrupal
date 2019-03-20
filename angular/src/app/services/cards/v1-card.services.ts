@@ -1,13 +1,18 @@
 import { Injectable } from '@angular/core';
 import { HttpService } from '../http/http.service';
 import { copyStyles } from '@angular/animations/browser/src/util';
-
+import { Observable } from 'rxjs/Observable';
+import { Subject } from 'rxjs/Subject';
+import { General } from '../../cards/components/blurb/blurb.component';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class CustomCardService {
+
+  private memory: any[] = [];
+  private memory$: Subject<General>[] = [];
 
   private sliderData: Slide[] = [
     {
@@ -30,7 +35,36 @@ export class CustomCardService {
 
   constructor(
     private http: HttpService
-  ) { }
+  ) {
+  }
+
+  getCustomInfoIM(idblock): Observable<General> {
+    if (this.memory === undefined || this.memory[idblock] === undefined) {
+      console.log('pide servicio');
+      this.memory$[idblock] = new Subject<General>();
+      this.getCustomCardInformation(idblock).subscribe(items => {
+        console.log('llego servicio');
+        this.memory[idblock] = items;
+        this.memory$[idblock].next(this.clone(this.memory[idblock]));
+        return this.memory$[idblock].asObservable();
+      });
+    } else {
+      console.log('llama variable');
+      setTimeout(() => {
+        this.memory$[idblock].next(this.clone(this.memory[idblock]));
+      },10);
+    }
+    return this.memory$[idblock].asObservable();
+  }
+
+  clone(obj) {
+    if (null == obj || 'object' != typeof obj) return obj;
+    var copy = obj.constructor();
+    for (var attr in obj) {
+      if (obj.hasOwnProperty(attr)) copy[attr] = obj[attr];
+    }
+    return copy;
+  }
 
   getCustomForm(idForm) {
     const url = `webform_rest/${idForm}/elements`;

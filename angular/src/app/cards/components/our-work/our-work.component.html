@@ -1,0 +1,27 @@
+<div *ngIf="visible">
+  <app-separator [iconCustom]="'icon-engranaje'"></app-separator>
+  <section id="principal">
+    <h2 class="title-principal" [id]="datosMenu.id">{{ title }}</h2>
+    <p class="descrip-principal" [innerHTML]="subtitle"></p>
+  </section>
+  <section id="gallery-images">
+    <div class="tz-gallery">
+      <div class="row">
+        <div class="col-sm-6 col-md-4" *ngFor="let ps of list">
+          <div class="thumbnai">
+            <div class="background">
+              <img class="images lightbox" [src]="ps.field_background_image.url" alt="{{ps.field_background_image.alt}}">
+            </div>
+            <div class="box-title">
+              <img class="images-box" [src]="ps.field_image.url" alt="{{ps.field_image.alt}}">
+              <span class="titlepr">{{ ps.title }}</span>
+              <div class="box-text">
+                <span class="text" [innerHTML]="ps.field_subtitle"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

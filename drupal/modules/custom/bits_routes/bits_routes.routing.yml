@@ -23,7 +23,7 @@ bits_routes.products:
     _permission: 'access content'
 
 bits_routes.service:
-  path: /service/{name}
+  path: /services/{name}
   defaults:
     _controller: '\Drupal\bits_routes\Controller\HomeController::serviceId'
     _title: 'Service'
@@ -32,7 +32,7 @@ bits_routes.service:
     _permission: 'access content'
 
 bits_routes.product:
-  path: /product/{name}
+  path: /products/{name}
   defaults:
     _controller: '\Drupal\bits_routes\Controller\HomeController::productId'
     _title: 'Product'
@@ -45,6 +45,15 @@ bits_routes.projects:
   defaults:
     _controller: '\Drupal\bits_routes\Controller\HomeController::projects'
     _title: 'Link projects'
+  requirements:
+    _permission: 'access content'
+
+bits_routes.project:
+  path: /projects/{name}
+  defaults:
+    _controller: '\Drupal\bits_routes\Controller\HomeController::projectId'
+    _title: 'Project'
+    name: 'Project'
   requirements:
     _permission: 'access content'
 

@@ -3,6 +3,9 @@ import { CustomCardService, Blurb } from '../../../services/cards/v1-card.servic
 import { ActivatedRoute, Params } from '@angular/router';
 import { DataMenu } from '../../../cards/components/menu-template/menu-template.component';
 import { HttpService } from '../../../services/http/http.service';
+import { getRelatedFormControls } from '@ng-dynamic-forms/core';
+import { General } from '../../../cards/components/blurb/blurb.component';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-products-or-services',
@@ -16,14 +19,32 @@ export class ProductsOrServicesComponent implements OnInit {
   public type: string;
   public nid: string;
   listMenu: DataMenu[];
+  public imagen: string;
+
+  public principal: General;
+  public principal$: Observable<General>;
+
+  public value: any;
+
+  visible: boolean;
 
   constructor(private _http: CustomCardService, private rutaActiva: ActivatedRoute, private service: HttpService) {
     this.blurbArray = [];
     this.listMenu = [];
+    this.visible = false;
   }
 
   ngOnInit() {
+
     this.type = this.rutaActiva.snapshot.params.type;
+
+    this.principal = {
+      body: [],
+      data: [{ id: '17', label: 'Deprisa' }, { id: '18', label: 'Clima' }],
+      files: [],
+      header: [],
+      others: [],
+    };
 
     this.rutaActiva.params.subscribe(
       (params: Params) => {
@@ -32,6 +53,7 @@ export class ProductsOrServicesComponent implements OnInit {
     );
 
     this.getModulesService();
+
   }
 
   getModulesService() {
@@ -51,6 +73,9 @@ export class ProductsOrServicesComponent implements OnInit {
           blurbObject.description = blurbItem.body;
           this.blurbArray.push(blurbObject);
         }
+        if (this.tituloModulos !== '' && this.blurbArray.length !== 0) {
+          this.visible = true;
+        }
       });
   }
 
@@ -65,5 +90,5 @@ export class ProductsOrServicesComponent implements OnInit {
       this.listMenu.push(listMenu);
     }
   }
-}
 
+}
