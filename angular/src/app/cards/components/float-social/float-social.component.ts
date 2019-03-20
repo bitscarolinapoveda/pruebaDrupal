@@ -2,6 +2,8 @@ import { Component, OnInit, HostListener } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { isArray } from 'util';
 import { CustomCardService } from '../../../services/cards/v1-card.services';
+import { DataMessage } from '../../../message/components/message/message.component';
+import { HttpService } from '../../../services/http/http.service';
 
 declare var jQuery: any;
 declare var $: any;
@@ -18,16 +20,73 @@ export class FloatSocialComponent implements OnInit {
   contactMailLink: string;
   socialmedia: any[];
   hide = true;
+  title_form: string;
+  descrip_form: string;
+  footer_text: string;
+  footer_contact: string;
+  dataMessage: DataMessage[];
+  private _token: string;
 
   constructor(
     private router: ActivatedRoute,
-    private footerBrand2: CustomCardService
+    private service: CustomCardService, private _http: HttpService
   ) {
     this.socialmedia = [];
+    this.dataMessage = [];
+  }
+
+  clickOnSubmit(formulario) {
+
+    this.dataMessage = [];
+    formulario['webform_id'] = 'how_can_we_help_you';
+
+    this._http.post('webform_rest/submit?_format=json', formulario, { // Hace el submit del formulario a Drupal
+      'Content-Type': 'application/json',
+      'X-CSRF-Token': this._token
+    })
+      .subscribe(datos => {
+        this.ubicar();
+        if (datos.error) {
+          for (var key in datos.error) {
+            this.dataMessage.push(
+              {
+                visible: true,
+                status: 'error',
+                message: datos.error[key]
+              }
+            );
+          }
+
+        } else if (datos.sid) {
+
+          $('#modal-form')[0].reset();
+
+          this.dataMessage.push(
+            {
+              visible: true,
+              status: 'success',
+              message: 'Respuesta satisfactoria'
+            }
+          );
+        }
+      });
+  }
+
+  ubicar() {
+    const x = document.querySelector('.modal-header');
+    if (x) {
+      x.scrollIntoView({ block: 'start', inline: 'start', behavior: 'smooth' });
+    }
   }
 
   ngOnInit() {
     this.getFloatSocialItems();
+
+    this.getModalData();
+
+    this._http.get('rest/session/token', {}, { responseType: 'text' }).subscribe((response) => {
+      this._token = response;
+    });
 
     $(function () {
       $('#openModal').click(function (e) {
@@ -49,8 +108,16 @@ export class FloatSocialComponent implements OnInit {
     }
   }
   getFloatSocialItems() {
-    this.footerBrand2.getCustomCardInformation('contactcard').subscribe((items: { header, others }) => {
+    this.service.getCustomCardInformation('contactcard').subscribe((items: { header, others }) => {
       this.socialmedia = items.others;
+    });
+  }
+  getModalData() {
+    this.service.getCustomForm('how_can_we_help_you').subscribe(params => {
+      this.title_form = params.title['#markup'];
+      this.descrip_form = params.subtitle['#markup'];
+      this.footer_text = params.top_mensaje_footer['#markup'];
+      this.footer_contact = params.botton_footer_message['#markup'];
     });
   }
 

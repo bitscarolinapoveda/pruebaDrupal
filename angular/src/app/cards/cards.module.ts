@@ -128,6 +128,8 @@ import { LoadDirective } from './components/client-proserv/load.directive';
     HistoryComponent,
     TestimoniesComponent,
     FilterComponent,
+    OurWorkComponent,
+    MessageModule,
     ServicesFilterComponent,
     OurWorkComponent
   ],

@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { analyzeAndValidateNgModules } from '@angular/compiler';
 import { SelectComponent } from 'ng2-select';
-import { DataMessage } from "../../../message/components/message/message.component";
+import { DataMessage } from '../../../message/components/message/message.component';
 
 declare var jQuery: any;
 declare var $: any;
@@ -46,6 +46,7 @@ export class TabsComponent implements OnInit {
   service: any;
   descrip_form: string;
   checked: boolean;
+  nombre: string;
 
   value: any = {};
   _disabledV: string;
@@ -74,11 +75,9 @@ export class TabsComponent implements OnInit {
   }
 
   onSubmit(formulario) {
-
+    
     this.dataMessage = [];
     formulario['webform_id'] = 'contact_us';
-    $('#formulario_contacto')[0].reset();
-
 
     /* $('#msj-modal').show();
     $('.close').click(function () {
@@ -103,6 +102,8 @@ export class TabsComponent implements OnInit {
           }
 
         } else if (datos.sid) {
+
+          $('#formulario_contacto')[0].reset();
 
           this.ngSelectP.active = [];
           this.ngSelectS.active = [];
@@ -253,9 +254,7 @@ export class TabsComponent implements OnInit {
   }
 
   public selectedProduct(value: any): void {
-    console.log(value);
     this.product = value.text;
-    console.log(this.product);
   }
 
   public removedProduct(value: any): void {

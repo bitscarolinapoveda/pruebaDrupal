@@ -1,4 +1,4 @@
-import {Component, OnInit, Output, EventEmitter, HostListener, Directive} from "@angular/core";
+import { Component, OnInit, Output, EventEmitter, HostListener, Directive } from "@angular/core";
 import { NavbarComponent } from "../navbar/navbar.component";
 declare var $: any;
 
@@ -8,7 +8,7 @@ declare var $: any;
     selector: 'app-menu-item',
     templateUrl: './item_menu.component.html'
 })
-export class ItemMenuComponent implements OnInit{
+export class ItemMenuComponent implements OnInit {
     @Output() addchild = new EventEmitter();
     menus: any[];
     flActiveChilds: any[] = [];
@@ -25,9 +25,9 @@ export class ItemMenuComponent implements OnInit{
         this.onResize();
     }
     onResize() {
-        if (window.innerWidth > 1080) {
-            this.heightTop = $('.list-menu').height() + 1 +'px';
-            this.mobile = false; 
+        if (window.innerWidth > 1025) {
+            this.heightTop = $('.list-menu').height() + 1 + 'px';
+            this.mobile = false;
             this.desktop = true;
         } else {
             this.heightTop = '0px';

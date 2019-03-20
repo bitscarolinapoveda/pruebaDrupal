@@ -6,7 +6,7 @@ import { CustomCardService } from 'src/app/services/cards/v1-card.services';
 import { HttpClient } from '@angular/common/http';
 import { SelectComponent } from 'ng2-select';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import {DataMessage} from "../../../message/components/message/message.component";
+import { DataMessage } from "../../../message/components/message/message.component";
 
 declare var jQuery: any;
 declare var $: any;
@@ -50,8 +50,6 @@ export class WorkusComponent implements OnInit {
     this.dataMessage = [];
     formulario['webform_id'] = 'work_with_us';
 
-    jQuery('#formulario_contacto')[0].reset();
-
     /* jQuery('#msj-modal').show();
     jQuery('.close').click(function () {
       jQuery('#msj-modal').hide();
@@ -74,6 +72,8 @@ export class WorkusComponent implements OnInit {
             );
           }
         } else if (datos.sid) {
+
+          jQuery('#formulario_contacto')[0].reset();
 
           this.ngSelectW.active = [];
           this.pais = '';
