@@ -46,6 +46,7 @@ export class TabsComponent implements OnInit {
   service: any;
   descrip_form: string;
   checked: boolean;
+  nombre: string;
 
   value: any = {};
   _disabledV: string;
@@ -77,8 +78,6 @@ export class TabsComponent implements OnInit {
 
     this.dataMessage = [];
     formulario['webform_id'] = 'contact_us';
-    $('#formulario_contacto')[0].reset();
-
 
     /* $('#msj-modal').show();
     $('.close').click(function () {
@@ -103,6 +102,8 @@ export class TabsComponent implements OnInit {
           }
 
         } else if (datos.sid) {
+
+          $('#formulario_contacto')[0].reset();
 
           this.ngSelectP.active = [];
           this.ngSelectS.active = [];
@@ -252,10 +253,8 @@ export class TabsComponent implements OnInit {
     this.pais = value.text;
   }
 
-  public selectedProduct(value: any): void {
-    console.log(value);
-    this.product = value.text;
-    console.log(this.product);
+  public selectedProduct(value: any): void {    
+    this.product = value.text;    
   }
 
   public removedProduct(value: any): void {
