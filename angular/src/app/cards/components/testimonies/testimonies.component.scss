@@ -1,3 +1,5 @@
+@import './src/assets/scss/mixin.scss';
+
 #testimonies-carousel {
   .container {
     width: 100%;
@@ -53,4 +55,12 @@
 
 :host /deep/ .carousel.slide {
   outline: none;
+}
+
+:host /deep/ {
+  @media (max-width: 500px) {
+    .carousel-indicators {
+      top: 460px;
+    }
+  }
 }
