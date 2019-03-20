@@ -33,7 +33,6 @@ export class ServicesFilterComponent implements OnInit {
   getInfoServices() {
     var list = [];
     return this.servicesInfo.getCustomCardInformation('allproductsandservicescard').subscribe(items => {
-
       for (let index = 0; index < items.data.length; index++) {
         if (items.data[index].type === this.type) {
           this.band.push(items.data[index]);
