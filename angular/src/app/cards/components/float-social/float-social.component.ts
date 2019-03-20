@@ -18,6 +18,7 @@ export class FloatSocialComponent implements OnInit {
   contactMailLink: string;
   socialmedia: any[];
   hide = true;
+  descrip_form: string;
 
   constructor(
     private router: ActivatedRoute,
@@ -28,6 +29,8 @@ export class FloatSocialComponent implements OnInit {
 
   ngOnInit() {
     this.getFloatSocialItems();
+
+    this.getModalData();
 
     $(function () {
       $('#openModal').click(function (e) {
@@ -51,6 +54,11 @@ export class FloatSocialComponent implements OnInit {
   getFloatSocialItems() {
     this.footerBrand2.getCustomCardInformation('contactcard').subscribe((items: { header, others }) => {
       this.socialmedia = items.others;
+    });
+  }
+  getModalData() {
+    this.footerBrand2.getCustomForm('work_with_us').subscribe(params => {
+      this.descrip_form = params.markup['#markup'];
     });
   }
 
