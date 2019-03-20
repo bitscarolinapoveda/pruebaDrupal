@@ -112,24 +112,20 @@ class BitsCardsOutputJsonCard {
 
             if ($type === 'image') {
               $imageData = $node->get($field)->getValue();
-              $data[$field] = [
-                'url' => '',
-                'alt' => '',
-              ];
-              if (0 < count($imageData)) {
-                $file = File::load($imageData[0]['target_id']);
+              foreach ((array) $imageData as $key => $value) {
+                $file = File::load($imageData[$key]['target_id']);
                 $style_image = $fields[$field]['settings']['image_style']; //trae el estilo de imagen asociado
                 if (!empty($style_image)) {
-                  $data[$field] = [
+                  $data[$field][$key] = [
                     'url' => ImageStyle::load($style_image)->buildUrl($file->getFileUri()), // crea la url con el estilo de imagen asociado
                   ];
                 }
                 else {
-                  $data[$field] = [
+                  $data[$field][$key] = [
                     'url' => file_create_url($file->getFileUri()),
                   ];
                 }
-                $data[$field]['alt'] = $imageData[0]['alt'];
+                $data[$field][$key]['alt'] = $imageData[$key]['alt'];
               }
             }
             elseif ($type === 'text_with_summary') {
