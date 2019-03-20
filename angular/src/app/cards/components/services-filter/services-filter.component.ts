@@ -16,6 +16,8 @@ export class ServicesFilterComponent implements OnInit {
   public gridInfo;
   public listClients;
   public grid;
+  public clients;
+  public disabled;
 
   constructor(
     private servicesInfo : CustomCardService,
