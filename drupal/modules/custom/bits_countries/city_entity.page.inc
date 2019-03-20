@@ -20,9 +20,6 @@ use Drupal\Core\Render\Element;
  *   - attributes: HTML attributes for the containing element.
  */
 function template_preprocess_city_entity(array &$variables) {
-  // Fetch CityEntity Entity Object.
-  $city_entity = $variables['elements']['#city_entity'];
-
   // Helpful $content variable for templates.
   foreach (Element::children($variables['elements']) as $key) {
     $variables['content'][$key] = $variables['elements'][$key];

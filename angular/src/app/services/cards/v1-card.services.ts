@@ -40,14 +40,19 @@ export class CustomCardService {
 
   getCustomInfoIM(idblock): Observable<General> {
     if (this.memory === undefined || this.memory[idblock] === undefined) {
+      console.log('pide servicio');
       this.memory$[idblock] = new Subject<General>();
       this.getCustomCardInformation(idblock).subscribe(items => {
+        console.log('llego servicio');
         this.memory[idblock] = items;
         this.memory$[idblock].next(this.clone(this.memory[idblock]));
         return this.memory$[idblock].asObservable();
       });
     } else {
-      this.memory$[idblock].next(this.clone(this.memory[idblock]));
+      console.log('llama variable');
+      setTimeout(() => {
+        this.memory$[idblock].next(this.clone(this.memory[idblock]));
+      },10);
     }
     return this.memory$[idblock].asObservable();
   }

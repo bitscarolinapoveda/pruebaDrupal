@@ -344,7 +344,7 @@ class CardBase extends BlockBase {
         $label = $entity->label();
         $id = $entity->id();
         $resume = "";
-        if ($entity->body && $entity->body->summary) {
+        if (isset($entity->body) && isset($entity->body->summary)) { // verifica si body existe
           $resume = $entity->body->summary;
         }
         $weight = 1;
@@ -519,15 +519,16 @@ class CardBase extends BlockBase {
        $fileA->setPermanent();
        $fileA->save();
        */
-
-
+     $tags = str_replace("_","",$form['id']['#default_value']) ;
+     $tags = str_replace('-',"", $tags);
+    \Drupal::service('cache_tags.invalidator')->invalidateTags([$tags]);
     $this->configuration['header'] = $form_state->getValue('header');
     $this->configuration['body'] = $form_state->getValue('body');
     $this->configuration['files'] = $form_state->getValue('files');
     $this->configuration['entity'] = $form_state->getValue('entity');
 
     $arEntityIds = $form_state->getValues()['entity']['table-row'];
-    foreach ($arEntityIds as $id => $weight) {
+    foreach ((array) $arEntityIds as $id => $weight) { // (array) se agrega para validar que sea un arreglo y evitar error foreach
       $this->configuration['entity']['weight'][$id] = $weight['weight'];
     }
 
@@ -538,7 +539,7 @@ class CardBase extends BlockBase {
     ];
 
     foreach ($filesArray as $item) {
-      foreach ($item['table_fields'] as $field) {
+      foreach ((array) $item['table_fields'] as $field) { // (array) se agrega para validar que sea un arreglo y evitar error foreach
         if ($field['type'] == 'managed_file') {
           $fid = reset($field['input']);
           // Save file permanently.

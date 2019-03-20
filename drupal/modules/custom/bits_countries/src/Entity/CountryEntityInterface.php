@@ -3,7 +3,6 @@
 namespace Drupal\bits_countries\Entity;
 
 use Drupal\Core\Entity\ContentEntityInterface;
-use Drupal\Core\Entity\RevisionLogInterface;
 use Drupal\Core\Entity\EntityChangedInterface;
 use Drupal\user\EntityOwnerInterface;
 
@@ -14,7 +13,7 @@ use Drupal\user\EntityOwnerInterface;
  */
 interface CountryEntityInterface extends ContentEntityInterface, EntityChangedInterface, EntityOwnerInterface {
 
-  // Add get/set methods for your configuration properties here.
+  /*Add get/set methods for your configuration properties here.*/
 
   /**
    * Gets the Country entity name.

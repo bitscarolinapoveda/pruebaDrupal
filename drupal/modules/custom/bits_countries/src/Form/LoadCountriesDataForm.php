@@ -58,6 +58,9 @@ class LoadCountriesDataForm extends ConfigFormBase {
     parent::validateForm($form, $form_state);
     $all_files = $this->getRequest()->files->get('files', []);
     if (!empty($all_files['countries_file'])) {
+      /**
+       * @var $file_upload \Symfony\Component\HttpFoundation\File\UploadedFile
+       */
       $file_upload = $all_files['countries_file'];
       if ($file_upload->isValid()) {
         $form_state->setValue('countries_file', $file_upload->getRealPath());
@@ -82,7 +85,6 @@ class LoadCountriesDataForm extends ConfigFormBase {
     $data = file_get_contents($form_state->getValue('countries_file'));
     $array_rows = explode("\r",$data);
     $CC_ISO = array_search("CC_ISO",explode("\t",$array_rows[0]));
-    $CC_FIPS = array_search("CC_FIPS",explode("\t",$array_rows[0]));
     $COUNTRY_NAME = array_search("COUNTRY_NAME",explode("\t",$array_rows[0]));
 
     for($i = 1; $i<count($array_rows); $i++) {
@@ -96,24 +98,6 @@ class LoadCountriesDataForm extends ConfigFormBase {
       );
       $entity->save();
     }
-    /// Cities
-//    $data = file_get_contents($form_state->getValue('cities_file'));
-//    $array_rows = explode("\r",$data);
-//    $CC_FIPS = array_search("CC_FIPS",explode("\t",$array_rows[0]));
-//    $FULL_NAME_ND = array_search("FULL_NAME_ND",explode("\t",$array_rows[0]));
-//
-//    for($i = 1; $i<count($array_rows); $i++) {
-//      $row = explode("\t",$array_rows[$i] );
-//      $entity = CountryEntity::create(
-//        [
-//          "name" => $row[$FULL_NAME_ND],
-//          "label_name" => $row[$FULL_NAME_ND],
-//          "country_code" => $row[$CC_FIPS],
-//        ]
-//      );
-//      $entity->save();
-//    }
-
   }
 
 }
