@@ -93,7 +93,7 @@
   .modal-content {
     border: 2px solid #a6cf24;
     width: auto;
-    height: auto;
+    height: auto;   
 
     .modal-header {
       position: relative;
@@ -147,6 +147,8 @@
 
     .modal-body {
       border: none;
+      padding-top: 0;
+      padding-bottom: 0;
 
       form {
         .item {
@@ -236,7 +238,7 @@
 .conteiner-1 {
   width: 100%;
   box-sizing: border-box;
-  padding: 50px 65px 30px;
+  padding: 25px 65px 10px;
 }
 
 /deep/ {
@@ -290,7 +292,7 @@
       display: block;
       position: absolute;
       right: 0;
-      margin-right: -30px;      
+      margin-right: -30px;
 
       @media (max-width: 500px) {
         margin-left: -50px;

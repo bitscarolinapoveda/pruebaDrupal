@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { analyzeAndValidateNgModules } from '@angular/compiler';
 import { SelectComponent } from 'ng2-select';
-import { DataMessage } from "../../../message/components/message/message.component";
+import { DataMessage } from '../../../message/components/message/message.component';
 
 declare var jQuery: any;
 declare var $: any;
@@ -75,7 +75,7 @@ export class TabsComponent implements OnInit {
   }
 
   onSubmit(formulario) {
-
+    
     this.dataMessage = [];
     formulario['webform_id'] = 'contact_us';
 
@@ -253,8 +253,8 @@ export class TabsComponent implements OnInit {
     this.pais = value.text;
   }
 
-  public selectedProduct(value: any): void {    
-    this.product = value.text;    
+  public selectedProduct(value: any): void {
+    this.product = value.text;
   }
 
   public removedProduct(value: any): void {
