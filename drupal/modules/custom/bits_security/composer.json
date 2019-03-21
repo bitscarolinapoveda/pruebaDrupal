@@ -1,0 +1,14 @@
+{
+  "name": "drupal/bits_security",
+  "type": "drupal-module",
+  "description": "Bits Security",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/bits_security",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/bits_security",
+    "source": "http://cgit.drupalcode.org/bits_security"
+  },
+  "require": { }
+}
