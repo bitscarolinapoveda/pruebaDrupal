@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '../../../node_modules/@angular/common';
 import { MessageModule } from '../message/message.module';
+import { RecaptchaModule } from 'ng-recaptcha';
 
 import { CarouselItemComponent } from './components/carousel-item/carousel-item.component';
 import { CarouselIndicatorsComponent } from './components/carousel-indicators/carousel-indicators.component';
@@ -131,7 +132,8 @@ import { LoadDirective } from './components/client-proserv/load.directive';
     OurWorkComponent,
     MessageModule,
     ServicesFilterComponent,
-    OurWorkComponent
+    OurWorkComponent,
+    RecaptchaModule
   ],
   imports: [
     BrowserModule,
@@ -147,6 +149,7 @@ import { LoadDirective } from './components/client-proserv/load.directive';
     SelectModule,
     ReactiveFormsModule,
     MessageModule,
+    RecaptchaModule.forRoot()
   ],
   providers: [NodeService]
 })

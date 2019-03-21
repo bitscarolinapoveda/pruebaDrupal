@@ -51,6 +51,8 @@ export class TabsComponent implements OnInit {
   value: any = {};
   _disabledV: string;
   disabled: boolean;
+  captcha_form: any;
+  valido: boolean;
 
   constructor(private _http: HttpService, private _service: CustomCardService, private http_pais: HttpClient) {
     this.dataMessage = [];
@@ -67,6 +69,7 @@ export class TabsComponent implements OnInit {
     this.product = '';
     this.service = '';
     this.checked = false;
+    this.valido = false;
   }
 
   toogleHidden() {
@@ -75,9 +78,14 @@ export class TabsComponent implements OnInit {
   }
 
   onSubmit(formulario) {
-    
+
     this.dataMessage = [];
     formulario['webform_id'] = 'contact_us';
+    formulario['captcha'] = this.captcha_form;
+    this.captcha_form = '';
+    this.valido = false;
+
+    grecaptcha.reset();
 
     /* $('#msj-modal').show();
     $('.close').click(function () {
@@ -165,6 +173,11 @@ export class TabsComponent implements OnInit {
         e.preventDefault();
       });
     });
+  }
+
+  resolved(captchaResponse: string) {
+    this.captcha_form = `${captchaResponse}`;
+    this.valido = true;
   }
 
   getTabsData() {

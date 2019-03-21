@@ -43,12 +43,20 @@ export class WorkusComponent implements OnInit {
   form: FormGroup;
   file: any;
 
+  captcha_form: any;
+  valido: boolean;
+
   onSubmit(formulario) {
 
     formulario['archivo_adjunto'] = this.file;
 
     this.dataMessage = [];
     formulario['webform_id'] = 'work_with_us';
+    formulario['captcha'] = this.captcha_form;
+    this.captcha_form = '';
+    this.valido = false;
+
+    grecaptcha.reset();
 
     /* jQuery('#msj-modal').show();
     jQuery('.close').click(function () {
@@ -104,6 +112,7 @@ export class WorkusComponent implements OnInit {
     });
     this.file = '';
     this.hojaWU = '';
+    this.valido = false;
   }
 
   ngOnInit() {
@@ -131,6 +140,11 @@ export class WorkusComponent implements OnInit {
         e.preventDefault();
       });
     });
+  }
+
+  resolved(captchaResponse: string) {
+    this.captcha_form = `${captchaResponse}`;
+    this.valido = true;
   }
 
   onFileChange(event) {
