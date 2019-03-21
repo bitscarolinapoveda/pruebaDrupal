@@ -1,0 +1,5 @@
+login_path: '/bits-user-login'
+register_path: '/bits-user-register'
+password_path: '/bits-user-password'
+logout_path: '/bits-user-logout'
+profile_path: '/bits-user-profile'
