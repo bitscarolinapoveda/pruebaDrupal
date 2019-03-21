@@ -61,7 +61,7 @@ export class ProductsOrServicesComponent implements OnInit {
       .getCustomCardInformation('moduleinformation')
       .subscribe(params => {
         this.tituloModulos = params.header[0].data.title;
-        this.descripcionModulos = params.header[1].data.title;
+        this.descripcionModulos = params.header[1].data.description;
         for (let blurbItem of params.data) {
           let blurbObject: Blurb = {
             imageSrc: '',

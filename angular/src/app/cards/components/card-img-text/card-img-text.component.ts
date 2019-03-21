@@ -67,7 +67,6 @@ export class CardImgTextComponent implements OnInit {
             if (this.cardImgL.length !== 0) {
                 this.visibleL = true;
             }
-            console.log('Left', this.visibleL, this.visibleR);
         });
 
     }
@@ -78,7 +77,6 @@ export class CardImgTextComponent implements OnInit {
             if (this.cardImgR.length !== 0) {
                 this.visibleR = true;
             }
-            console.log('Rigt', this.visibleL, this.visibleR);
         });
     }
 }
