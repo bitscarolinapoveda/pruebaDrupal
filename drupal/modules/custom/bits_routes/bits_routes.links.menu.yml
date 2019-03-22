@@ -1,0 +1,7 @@
+bits_routes.frontend_url_form:
+  title: 'Frontend url form'
+  route_name: bits_routes.frontend_url_form
+  description: 'Configuración de url de sitio de front'
+  parent: system.admin_config_system
+  weight: 99
+
