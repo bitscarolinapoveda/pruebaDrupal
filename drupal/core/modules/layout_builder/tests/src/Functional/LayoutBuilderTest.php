@@ -22,6 +22,7 @@ class LayoutBuilderTest extends BrowserTestBase {
     'layout_builder_views_test',
     'layout_test',
     'block',
+    'block_test',
     'node',
     'layout_builder_test',
   ];
@@ -90,7 +91,7 @@ class LayoutBuilderTest extends BrowserTestBase {
     // The body field is only present once.
     $assert_session->elementsCount('css', '.field--name-body', 1);
     // The extra field is only present once.
-    $this->assertTextAppearsOnce('Placeholder for the "Extra label" field');
+    $assert_session->pageTextContainsOnce('Placeholder for the "Extra label" field');
     // Save the defaults.
     $assert_session->linkExists('Save Layout');
     $this->clickLink('Save Layout');
@@ -105,7 +106,7 @@ class LayoutBuilderTest extends BrowserTestBase {
     // The body field is only present once.
     $assert_session->elementsCount('css', '.field--name-body', 1);
     // The extra field is only present once.
-    $this->assertTextAppearsOnce('Placeholder for the "Extra label" field');
+    $assert_session->pageTextContainsOnce('Placeholder for the "Extra label" field');
 
     // Add a new block.
     $assert_session->linkExists('Add Block');
@@ -236,6 +237,38 @@ class LayoutBuilderTest extends BrowserTestBase {
   }
 
   /**
+   * Test that layout builder checks entity view access.
+   */
+  public function testAccess() {
+    $assert_session = $this->assertSession();
+
+    $this->drupalLogin($this->drupalCreateUser([
+      'configure any layout',
+      'administer node display',
+    ]));
+
+    $field_ui_prefix = 'admin/structure/types/manage/bundle_with_section_field';
+    // Allow overrides for the layout.
+    $this->drupalPostForm("$field_ui_prefix/display/default", ['layout[enabled]' => TRUE], 'Save');
+    $this->drupalPostForm("$field_ui_prefix/display/default", ['layout[allow_custom]' => TRUE], 'Save');
+
+    $this->drupalLogin($this->drupalCreateUser(['configure any layout']));
+    $this->drupalGet('node/1');
+    $assert_session->pageTextContains('The first node body');
+    $assert_session->pageTextNotContains('Powered by Drupal');
+    $node = Node::load(1);
+    $node->setUnpublished();
+    $node->save();
+    $this->drupalGet('node/1');
+    $assert_session->pageTextNotContains('The first node body');
+    $assert_session->pageTextContains('Access denied');
+
+    $this->drupalGet('node/1/layout');
+    $assert_session->pageTextNotContains('The first node body');
+    $assert_session->pageTextContains('Access denied');
+  }
+
+  /**
    * Tests that a non-default view mode works as expected.
    */
   public function testNonDefaultViewMode() {
@@ -314,6 +347,11 @@ class LayoutBuilderTest extends BrowserTestBase {
     $this->drupalGet('admin/structure/menu/add');
     $page->fillField('label', 'My Menu');
     $page->fillField('id', 'myothermenu');
+    $page->pressButton('Save');
+
+    $page->clickLink('Add link');
+    $page->fillField('title[0][value]', 'My link');
+    $page->fillField('link[0][uri]', '/');
     $page->pressButton('Save');
 
     $this->drupalPostForm('admin/structure/types/manage/bundle_with_section_field/display', ['layout[enabled]' => TRUE], 'Save');
@@ -477,6 +515,23 @@ class LayoutBuilderTest extends BrowserTestBase {
   }
 
   /**
+   * Tests that extra fields work before and after enabling Layout Builder.
+   */
+  public function testExtraFields() {
+    $assert_session = $this->assertSession();
+
+    $this->drupalLogin($this->drupalCreateUser(['administer node display']));
+
+    $this->drupalGet('node');
+    $assert_session->linkExists('Read more');
+
+    $this->drupalPostForm('admin/structure/types/manage/bundle_with_section_field/display/default', ['layout[enabled]' => TRUE], 'Save');
+
+    $this->drupalGet('node');
+    $assert_session->linkExists('Read more');
+  }
+
+  /**
    * Tests that deleting a View block used in Layout Builder works.
    */
   public function testDeletedView() {
@@ -514,13 +569,88 @@ class LayoutBuilderTest extends BrowserTestBase {
   }
 
   /**
-   * Asserts that a text string only appears once on the page.
-   *
-   * @param string $needle
-   *   The string to look for.
+   * Tests that sections can provide custom attributes.
    */
-  protected function assertTextAppearsOnce($needle) {
-    $this->assertEquals(1, substr_count($this->getSession()->getPage()->getContent(), $needle), "'$needle' only appears once on the page.");
+  public function testCustomSectionAttributes() {
+    $assert_session = $this->assertSession();
+    $page = $this->getSession()->getPage();
+
+    $this->drupalLogin($this->drupalCreateUser([
+      'configure any layout',
+      'administer node display',
+    ]));
+
+    $this->drupalPostForm('admin/structure/types/manage/bundle_with_section_field/display/default', ['layout[enabled]' => TRUE], 'Save');
+    $page->clickLink('Manage layout');
+    $page->clickLink('Add Section');
+    $page->clickLink('Layout Builder Test Plugin');
+    // See \Drupal\layout_builder_test\Plugin\Layout\LayoutBuilderTestPlugin::build().
+    $assert_session->elementExists('css', '.go-birds');
+  }
+
+  /**
+   * Tests the usage of placeholders for empty blocks.
+   *
+   * @see \Drupal\Core\Block\BlockPluginInterface::getPlaceholderString()
+   * @see \Drupal\layout_builder\EventSubscriber\BlockComponentRenderArray::onBuildRender()
+   */
+  public function testBlockPlaceholder() {
+    $assert_session = $this->assertSession();
+    $page = $this->getSession()->getPage();
+
+    $this->drupalLogin($this->drupalCreateUser([
+      'configure any layout',
+      'administer node display',
+    ]));
+
+    $field_ui_prefix = 'admin/structure/types/manage/bundle_with_section_field';
+    $this->drupalPostForm("$field_ui_prefix/display/default", ['layout[enabled]' => TRUE], 'Save');
+
+    // Customize the default view mode.
+    $this->drupalGet("$field_ui_prefix/display-layout/default");
+
+    // Add a block whose content is controlled by state and is empty by default.
+    $this->clickLink('Add Block');
+    $this->clickLink('Test block caching');
+    $page->fillField('settings[label]', 'The block label');
+    $page->pressButton('Add Block');
+
+    $block_content = 'I am content';
+    $placeholder_content = 'Placeholder for the "The block label" block';
+
+    // The block placeholder is displayed and there is no content.
+    $assert_session->pageTextContains($placeholder_content);
+    $assert_session->pageTextNotContains($block_content);
+
+    // Set block content and reload the page.
+    \Drupal::state()->set('block_test.content', $block_content);
+    $this->getSession()->reload();
+
+    // The block placeholder is no longer displayed and the content is visible.
+    $assert_session->pageTextNotContains($placeholder_content);
+    $assert_session->pageTextContains($block_content);
+  }
+
+  /**
+   * Tests the Block UI when Layout Builder is installed.
+   */
+  public function testBlockUiListing() {
+    $assert_session = $this->assertSession();
+    $page = $this->getSession()->getPage();
+
+    $this->drupalLogin($this->drupalCreateUser([
+      'administer blocks',
+    ]));
+
+    $this->drupalGet('admin/structure/block');
+    $page->clickLink('Place block');
+
+    // Ensure that blocks expected to appear are available.
+    $assert_session->pageTextContains('Test HTML block');
+    $assert_session->pageTextContains('Block test');
+    // Ensure that blocks not expected to appear are not available.
+    $assert_session->pageTextNotContains('Body');
+    $assert_session->pageTextNotContains('Content fields');
   }
 
 }

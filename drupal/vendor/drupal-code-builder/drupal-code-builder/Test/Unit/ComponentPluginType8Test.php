@@ -9,6 +9,7 @@ use DrupalCodeBuilder\Test\Unit\Parsing\YamlTester;
  * Tests the Plugin Type generator class.
  *
  * @group yaml
+ * @group di
  */
 class ComponentPluginType8Test extends TestBase {
 
@@ -69,6 +70,7 @@ class ComponentPluginType8Test extends TestBase {
     $yaml_tester->assertHasProperty(['services', "plugin.manager.test_module_cat_feeder"]);
     $yaml_tester->assertPropertyHasValue(['services', "plugin.manager.test_module_cat_feeder", 'class'], 'Drupal\test_module\CatFeederManager');
     $yaml_tester->assertPropertyHasValue(['services', "plugin.manager.test_module_cat_feeder", 'parent'], "default_plugin_manager");
+    $yaml_tester->assertHasNotProperty(['services', "plugin.manager.test_module_cat_feeder", 'arguments'], "The plugin manager service has no injected arguments.");
 
     // Check the plugin manager file.
     $plugin_manager_file = $files["src/CatFeederManager.php"];
@@ -260,6 +262,8 @@ class ComponentPluginType8Test extends TestBase {
     $yaml_tester->assertHasProperty(['services', "plugin.manager.test_module_cat_feeder"]);
     $yaml_tester->assertPropertyHasValue(['services', "plugin.manager.test_module_cat_feeder", 'class'], 'Drupal\test_module\CatFeederManager');
     $yaml_tester->assertHasNotProperty(['services', "plugin.manager.test_module_cat_feeder", 'parent']);
+    $yaml_tester->assertPropertyHasValue(['services', "plugin.manager.test_module_cat_feeder", 'arguments', 0], '@cache.discovery');
+    $yaml_tester->assertPropertyHasValue(['services', "plugin.manager.test_module_cat_feeder", 'arguments', 1], '@module_handler');
 
     // Check the plugin manager file.
     $plugin_manager_file = $files["src/CatFeederManager.php"];
@@ -272,11 +276,12 @@ class ComponentPluginType8Test extends TestBase {
     $php_tester->assertClassHasProtectedProperty('defaults', 'array', [
       'class' => 'Drupal\test_module\Plugin\CatFeeder\CatFeederBase',
     ]);
+    $php_tester->assertClassHasProtectedProperty('moduleHandler', 'Drupal\Core\Extension\ModuleHandlerInterface');
+    $php_tester->assertClassHasNotProperty('cacheDiscovery');
 
     $constructor_tester = $php_tester->getMethodTester('__construct');
     // Check the __construct() method's parameters.
     $constructor_tester->assertHasParameters([
-      'namespaces' => 'Traversable',
       'cache_backend' => 'Drupal\Core\Cache\CacheBackendInterface',
       'module_handler' => 'Drupal\Core\Extension\ModuleHandlerInterface',
     ]);
