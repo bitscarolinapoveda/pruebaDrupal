@@ -21,10 +21,10 @@ const pagesRoutes: Routes = [
       { path: 'home', component: HomeComponent },
       { path: 'contact-us', component: ContactUsComponent },
       { path: 'products', component: ProductsComponent },
-      { path: 'product/:type', component: ProductsOrServicesComponent },
+      { path: 'products/:type', component: ProductsOrServicesComponent },
       { path: 'projects', component: ProjectsComponent },
       { path: 'services', component: ServicesComponent },
-      { path: 'service/:type', component: ProductsOrServicesComponent },
+      { path: 'services/:type', component: ProductsOrServicesComponent },
       { path: 'politics', component: PoliticsComponent },
       { path: 'about-us', component: AboutUsComponent },
       { path: '**', component: NoPageFoundComponent }

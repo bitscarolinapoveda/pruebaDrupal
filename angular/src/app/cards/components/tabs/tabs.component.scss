@@ -519,6 +519,13 @@ input:-moz-placeholder {
       }
 
     }
+
+    .captcha :first-child {
+      margin: auto;
+      display: block;
+      margin-bottom: 10px !important;
+    }
+
   }
 
 }

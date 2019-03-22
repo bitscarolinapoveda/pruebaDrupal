@@ -80,7 +80,9 @@
           </a>
         </label>
       </div>
-      <button type="submit" class="btn btn-primary">Enviar</button>
+      <re-captcha ngModel #captcha="ngModel" name="captcha" required class="captcha" (resolved)="resolved($event)"
+				siteKey="6LcOuyYTAAAAAHTjFuqhA52fmfJ_j5iFk5PsfXaU" ngDefaultControl></re-captcha>
+      <button type="submit" class="btn btn-primary" [disabled]="!valido">Enviar</button>
       <div class="obligatorios col-md-12"> <span>*</span>Datos Obligatorios</div>
     </form>
     <div id="msj-modal" class="modal" role="dialog">
