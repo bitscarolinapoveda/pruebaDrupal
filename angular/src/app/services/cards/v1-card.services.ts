@@ -40,21 +40,17 @@ export class CustomCardService {
 
   getCustomInfoIM(idblock): Observable<General> {
     if (this.memory === undefined || this.memory[idblock] === undefined) {
-      console.log('[Observable] 1. pide servicio "'+idblock+'"');
       this.memory$[idblock] = new Subject<General>();
       this.getCustomCardInformation(idblock).subscribe(items => {
-        console.log('[Observable] 2. llego servicio "'+idblock+'"');
         this.memory[idblock] = items;
         this.memory$[idblock].next(this.clone(this.memory[idblock]));
         return this.memory$[idblock].asObservable();
       });
     } else {
-      console.log('[Observable] 3. llama variable "'+idblock+'"');
       setTimeout(() => {
         this.memory$[idblock].next(this.clone(this.memory[idblock]));
       },1);
     }
-    console.log('[Observable] 4. Retorna el cancelar observable "'+idblock+'"');
     return this.memory$[idblock].asObservable();
   }
 
@@ -76,6 +72,23 @@ export class CustomCardService {
     console.log(`v1/card/config/${idblock}/export?_format=json`);
     const url = `v1/card/config/${idblock}/export?_format=json`;
     return this.http.get(url);
+  }
+
+  addImageField(data: any, imagesList: any) {
+    imagesList.forEach(imageName => {
+      let i;
+      for (i = 0 ; i < data.length; i++) {
+        if (data[i][imageName] == undefined) {
+          data[i][imageName] = {
+            url: '',
+            alt: ''
+          }
+        } else if (data[i][imageName][0] != undefined) {
+          data[i][imageName] = data[i][imageName][0];
+        }
+      }
+    });
+    return data;
   }
 
   getCustomCardInformationType(idblock, type) {

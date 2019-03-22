@@ -110,17 +110,10 @@ export class ClientProServComponent implements OnInit, DoCheck, OnDestroy {
     console.log('ngOnDestroy');
   }
 
-  /* Ejemplo para la directiva
-  directiveOut(dato) {
-    console.log('dato de la lista directiva', dato);
-    this.clients = dato;
-  } */
-
   datos() {
 
     this.principal$ = this._cardService.getCustomInfoIM('productsandservicescard_2');
     this.principal$.subscribe(items => {
-      console.log('[Observable] 1.1. this.principal$.subscribe', items);
       this.principal = this._cardService.clone(items);
 
       let value = 0;
@@ -137,10 +130,7 @@ export class ClientProServComponent implements OnInit, DoCheck, OnDestroy {
         this.principal.data = datos;
       }
 
-      console.log('[Observable] 1.2. lista principal', this.principal);
-
       this._cardService.getCustomInfoIM('clientscard').subscribe(itemsw => {
-        console.log('[Observable] 1.3. this._cardService.subscribe', itemsw);
         this.titleClients = itemsw.header[0].data.title;
 
         const list_items = this._cardService.clone(itemsw.data);
@@ -158,21 +148,10 @@ export class ClientProServComponent implements OnInit, DoCheck, OnDestroy {
 
         this.clients = this._cardService.clone(this.clients);
         this.cas = this.cas + 1;
-        console.log('[Observable] 1.4. lista clients_', this.clients);
 
         if (this.clients.length !== 0) {
           this.visible = true;
         }
-
-        console.log('[Observable] 1.5. lista clients', this.clients);
-
-
-        /* if (this.clients !== undefined) {
-          this.clients = Object.keys(this.clients).map(function (key) { return this.clients[key]; });
-        } */
-
-        // this.clients = Object.keys(items.data).map(function (key) { return itemsw.data[key]; });
-
       });
     });
   }
