@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-about-us',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutUsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private meta: Meta) {
+  }
 
   ngOnInit() {
+    this.meta.removeTag('name="general"');
+    this.meta.updateTag({ name: 'component', content: 'app-about-us' });
   }
 
 }

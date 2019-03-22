@@ -6,6 +6,7 @@ import { HttpService } from '../../../services/http/http.service';
 import { getRelatedFormControls } from '@ng-dynamic-forms/core';
 import { General } from '../../../cards/components/blurb/blurb.component';
 import { Observable } from 'rxjs/Observable';
+import { Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-products-or-services',
@@ -28,13 +29,17 @@ export class ProductsOrServicesComponent implements OnInit {
 
   visible: boolean;
 
-  constructor(private _http: CustomCardService, private rutaActiva: ActivatedRoute, private service: HttpService) {
+  constructor(private _http: CustomCardService, private rutaActiva: ActivatedRoute, private service: HttpService,
+    private meta: Meta) {
     this.blurbArray = [];
     this.listMenu = [];
     this.visible = false;
   }
 
   ngOnInit() {
+
+    this.meta.removeTag('name="general"');
+    this.meta.updateTag({ name: 'component', content: 'app-products-or-services' });
 
     this.type = this.rutaActiva.snapshot.params.type;
 
