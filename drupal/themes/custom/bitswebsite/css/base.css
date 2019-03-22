@@ -29,11 +29,11 @@
   to{box-shadow: inset -3px 0px 0px transparent;}
 }
 
-.site-footer {
-  background: #fff!important;
+.site-footer-notloggedorerror {
+  background: #fff;
 }
 
-body {
+body.errorandnotlogged {
   color: #fff;
   background: #fff;
 }

@@ -13,7 +13,7 @@
  * - base_path: The base URL path of the Drupal installation. Will usually be
  *   "/" unless you have installed Drupal in a sub-directory.
  * - is_front: A flag indicating if the current page is the front page.
- * - (logger_in or theme_hook_suggestions[1] == 'page__user__login'): A flag indicating if the user is registered and signed in.
+ * - (logged_in or theme_hook_suggestions[1] == 'page__user__login'): A flag indicating if the user is registered and signed in.
  * - is_admin: A flag indicating if the user has permission to access
  *   administration pages.
  *
@@ -53,7 +53,7 @@
 <div id="page-wrapper">
   <div id="page">
     <header id="header" class="header" role="banner" aria-label="{{ 'Site header'|t }}">
-      {% if (logger_in or theme_hook_suggestions[1] == 'page__user__login') %}
+      {% if (logged_in or theme_hook_suggestions[1] == 'page__user__login') %}
         <div class="section layout-container clearfix">
         {{ page.secondary_menu }}
         {{ page.header }}
@@ -62,14 +62,14 @@
       {% endif %}
     </header>
 
-    {% if page.highlighted and (logger_in or theme_hook_suggestions[1] == 'page__user__login') %}
+    {% if page.highlighted and (logged_in or theme_hook_suggestions[1] == 'page__user__login') %}
       <div class="highlighted">
         <aside class="layout-container section clearfix" role="complementary">
           {{ page.highlighted }}
         </aside>
       </div>
     {% endif %}
-    {% if page.featured_top and (logger_in or theme_hook_suggestions[1] == 'page__user__login') %}
+    {% if page.featured_top and (logged_in or theme_hook_suggestions[1] == 'page__user__login') %}
       <div class="featured-top">
         <aside class="featured-top__inner section layout-container clearfix" role="complementary">
           {{ page.featured_top }}
@@ -82,17 +82,17 @@
         <main id="content" class="column main-content" role="main">
           <section class="section">
             <a id="main-content" tabindex="-1"></a>
-            {{ page.content.bitswebsite_content }}
+            {{ page.content }}
           </section>
         </main>
-        {% if page.sidebar_first and (logger_in or theme_hook_suggestions[1] == 'page__user__login') %}
+        {% if page.sidebar_first and (logged_in or theme_hook_suggestions[1] == 'page__user__login') %}
           <div id="sidebar-first" class="column sidebar">
             <aside class="section" role="complementary">
               {{ page.sidebar_first }}
             </aside>
           </div>
         {% endif %}
-        {% if page.sidebar_second and (logger_in or theme_hook_suggestions[1] == 'page__user__login') %}
+        {% if page.sidebar_second and (logged_in or theme_hook_suggestions[1] == 'page__user__login') %}
           <div id="sidebar-second" class="column sidebar">
             <aside class="section" role="complementary">
               {{ page.sidebar_second }}
@@ -101,7 +101,7 @@
         {% endif %}
       </div>
     </div>
-    {% if (page.featured_bottom_first or page.featured_bottom_second or page.featured_bottom_third)  and (logger_in or theme_hook_suggestions[1] == 'page__user__login')%}
+    {% if (page.featured_bottom_first or page.featured_bottom_second or page.featured_bottom_third)  and (logged_in or theme_hook_suggestions[1] == 'page__user__login')%}
       <div class="featured-bottom">
         <aside class="layout-container clearfix" role="complementary">
           {{ page.featured_bottom_first }}
@@ -110,7 +110,13 @@
         </aside>
       </div>
     {% endif %}
-    <footer class="site-footer">
+    <footer
+      {% if logged_in or theme_hook_suggestions[1] == 'page__user__login' %}
+      class="site-footer"
+    {% else %}
+      class="site-footer-notloggedorerror"
+      {% endif %}
+    >
       <div class="layout-container">
         {% if page.footer_first or page.footer_second or page.footer_third or page.footer_fourth %}
           <div class="site-footer__top clearfix">
