@@ -39,7 +39,6 @@
     <css-placeholder token="{{ placeholder_token }}">
       <js-placeholder token="{{ placeholder_token }}">
         </head>
-        {{ dump(theme_hook_suggestions) }}
         {% if logged_in or theme_hook_suggestions[1] == 'page__user__login' %}
 <body{{ attributes.addClass(body_classes) }}>
         {% else %}
