@@ -73,8 +73,8 @@ export class ClientProServComponent implements OnInit, DoCheck, OnDestroy {
               white-space: nowrap;
               overflow: auto;
               box-sizing: border-box;
-            }
             .ngxcarouselPoint li {
+            }
               display: inline-block;
               border-radius: 50%;
               border: 2px solid rgba(0, 0, 0, 0.55);
@@ -120,7 +120,7 @@ export class ClientProServComponent implements OnInit, DoCheck, OnDestroy {
 
     this.principal$ = this._cardService.getCustomInfoIM('productsandservicescard_2');
     this.principal$.subscribe(items => {
-      console.log('this.principal$.subscribe', items);
+      console.log('[Observable] 1.1. this.principal$.subscribe', items);
       this.principal = this._cardService.clone(items);
 
       let value = 0;
@@ -137,10 +137,10 @@ export class ClientProServComponent implements OnInit, DoCheck, OnDestroy {
         this.principal.data = datos;
       }
 
-      console.log('lista principal', this.principal);
+      console.log('[Observable] 1.2. lista principal', this.principal);
 
       this._cardService.getCustomInfoIM('clientscard').subscribe(itemsw => {
-        console.log('this._cardService.subscribe', itemsw);
+        console.log('[Observable] 1.3. this._cardService.subscribe', itemsw);
         this.titleClients = itemsw.header[0].data.title;
 
         const list_items = this._cardService.clone(itemsw.data);
@@ -158,15 +158,15 @@ export class ClientProServComponent implements OnInit, DoCheck, OnDestroy {
 
         this.clients = this._cardService.clone(this.clients);
         this.cas = this.cas + 1;
-        console.log('lista clients_', this.clients);
+        console.log('[Observable] 1.4. lista clients_', this.clients);
 
         if (this.clients.length !== 0) {
           this.visible = true;
         }
 
-        console.log('lista clients', this.clients);
+        console.log('[Observable] 1.5. lista clients', this.clients);
 
-        
+
         /* if (this.clients !== undefined) {
           this.clients = Object.keys(this.clients).map(function (key) { return this.clients[key]; });
         } */
