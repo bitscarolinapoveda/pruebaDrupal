@@ -24,14 +24,18 @@ function bits_routes_help($route_name, RouteMatchInterface $route_match) {
 }
 
 function bits_routes_theme() {
-  $theme['home_blank_page'] = [
-    'template' => 'hello'
+  $theme['page__home'] = [
+    'template' => 'page__home',
+    'variables' => ['homeorerrorpage' => NULL],
+
   ];
   $theme['page__404'] = [
-    'template' => 'page__404'
+    'template' => 'page__404',
+    'variables' => ['homeorerrorpage' => NULL],
   ];
   $theme['page__403'] = [
-    'template' => 'page__403'
+    'template' => 'page__403',
+    'variables' => ['homeorerrorpage' => NULL],
   ];
   return $theme;
 }

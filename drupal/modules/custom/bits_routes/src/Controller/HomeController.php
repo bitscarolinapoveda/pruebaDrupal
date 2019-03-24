@@ -69,19 +69,22 @@ class HomeController extends ControllerBase {
     ];
   }
   public function blockedHome() {
-    $config = \Drupal::config('bits_routes.frontendurl');
-    $url = $config->get('url_del_sitio_frontend');
-    return new TrustedRedirectResponse($url);
+    return [
+      '#theme' => 'page__home',
+      '#homeorerrorpage' => TRUE,
+    ];
   }
 
   public function notfound404() {
     return [
       '#theme' => 'page__404',
+      '#homeorerrorpage' => TRUE,
     ];
   }
   public function forbidden403() {
     return [
-      "#theme" => 'page__403'
+      "#theme" => 'page__403',
+      '#homeorerrorpage' => TRUE,
     ];
   }
 }
