@@ -27,6 +27,7 @@ export class ServicesFilterComponent implements OnInit {
     this.band = [];
   }
   ngOnInit() {
+    this.clients = 'Filtre por Cliente';
     this.getInfoServices();
     this.onResize();
   }
@@ -39,10 +40,19 @@ export class ServicesFilterComponent implements OnInit {
         }
       }
       this.gridInfo = this.band;
+      for (let index = 0; index < this.gridInfo.length; index++) {
+        this.gridInfo[index].type = '/' + this.gridInfo[index].type;
+      }
 
       for (let i = 0; i < this.gridInfo.length; i++) {
         for (let j = 0; j < this.gridInfo[i].clients.length; j++) {
-          list.push(this.gridInfo[i].clients[j].label);
+          if (list.length === 0) {
+            list.push(this.gridInfo[i].clients[j].label);
+          } else {
+            if (list.indexOf(this.gridInfo[i].clients[j].label) === -1) {
+              list.push(this.gridInfo[i].clients[j].label);
+            }
+          }
         }
         this.listClients = list;
       }
@@ -102,7 +112,7 @@ export class ServicesFilterComponent implements OnInit {
           };
           // in this case, container width (1000px) always divisible by item width (200px)
           var colCount = 3;
-          var numRow = (items.length / colCount).toString()
+          var numRow = (items.length / colCount).toString();
           var rowCount = 1 + parseInt(numRow, 10);
           // save calculated slots in 2D array
           var slotDimensions = array2D(rowCount);
@@ -165,6 +175,15 @@ export class ServicesFilterComponent implements OnInit {
     }
   }
   filter(eve) {
-    this.grid.filter('.' + eve.id);
+    if (eve.id !== undefined) {
+      this.grid.filter('.' + eve.id);
+    }
+  }
+
+  public removedClient(value: any): void {
+    this.gridInfo = [];
+    this.band = [];
+    this.getInfoServices();
+    this.onResize();
   }
 }

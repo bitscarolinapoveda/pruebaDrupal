@@ -1,14 +1,26 @@
+<div class="conteiner-1">
+  <div class="conteiner-2">
+    <div class="div-left-side"></div>
+    <div class="divIconSeparator">
+      <label>Filtrar casos de exito</label>
+    </div>
+    <div class="div-right-side"></div>
+  </div>
+</div>
 <div class="filter">
-  <label for="client">Clientes</label>
-  <ng-select #clientF class="select-autocomplete" id="client" name="client" [placeholder]="clients"
-      [allowClear]="true" [items]="listClients" [disabled]="disabled" (data)="filter($event)">
-  </ng-select>
+  <div class="items">
+    <label for="client">Clientes</label>
+    <ng-select #clientF class="select-autocomplete" id="client" name="client" [placeholder]="clients"
+      [allowClear]="true" [items]="listClients" [disabled]="disabled" (data)="filter($event)" (removed)="removedClient($event)">
+    </ng-select>
+  </div>  
 </div>
 <div class="grid" (window:resize)="onResize()">
-  <div class="item box-{{i}}" *ngFor="let gridBox of gridInfo; let i = index; let $last = last" [isLast]='$last' 
-    (appOrganizeGridMuuri)="organizeGrid()" (mouseover)=showDescription($event,i) (mouseleave)=showDescription($event,i)>
+  <div class="item box-{{i}}" *ngFor="let gridBox of gridInfo; let i = index; let $last = last" [isLast]='$last'
+    (appOrganizeGridMuuri)="organizeGrid()" (mouseover)=showDescription($event,i)
+    (mouseleave)=showDescription($event,i)>
     <div class="dark-layout"></div>
-    <div class="item-content"></div>
+    <div class="item-content" [ngStyle]="{'background-image':'url(' + gridBox.short_image[0].url + ')'}"></div>
     <div class="info-content info-{{i}}">
       <i class="fas fa-database"></i>
       <h1 class="text-grid">{{gridBox.label}}</h1>
@@ -16,7 +28,7 @@
     <div class="complete-info-grid hover-info-{{i}}">
       <h1 class="text-grid">{{gridBox.label}}</h1>
       <p class="description">{{gridBox.description}}</p>
-      <a href="/home" class="plus-icon"></a>
+      <a [routerLink]="[gridBox.type, gridBox.nid]" href="#" class="plus-icon"></a>
     </div>
   </div>
 </div>
