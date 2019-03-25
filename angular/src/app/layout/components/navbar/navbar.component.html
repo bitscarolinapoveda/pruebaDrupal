@@ -1,20 +1,46 @@
 <section id="block-navbar">
     <nav class="navbar-expand-lg flex-column flex-md-row  menu-scroll shadow-of-nav">
         <div class="menuToggle menu-scroll ">
-            <input type="checkbox" class="Botton"/>
+            <input type="checkbox" class="Botton" />
             <span class="lines"></span>
             <span class="lines"></span>
             <span class="lines"></span>
             <ul class="list-menu">
                 <ng-container *ngFor="let nav of NavbarArray; let i= index ">
-                    <li class="items customrow-1" [class.menu-has-children]="nav.below" (mouseover)='menuOver($event)' (mouseleave)='menuOut($event)'>
-                        <a #sub [routerLink]="nav.showrow ? ['/'+nav.uri] : null" [routerLinkActive]="'active'" class="link"> 
-                            {{ nav.title }} 
+                    <li class="items customrow-1" [class.menu-has-children]="nav.below" (mouseover)='menuOver($event)'
+                        (mouseleave)='menuOut($event)'>
+                        <a #sub [routerLink]="nav.showrow ? ['/'+nav.uri] : null" [routerLinkActive]="'active'"
+                            class="link">
+                            {{ nav.title }}
                         </a>
                         <ng-container *ngIf="nav.below">
-                            <i class="fas fa-caret-down menu-caret arrow-down-change-color" (click)="activeChild(i)" ></i>
-                            <app-menu-item [padre]="nav" [menus]="nav.below" [col]="i" [row]="2" (addchild)="activeChild($event)" [flActiveActual]="getActiveChild(i)" *ngIf="nav.below"></app-menu-item>
+                            <i class="fas fa-caret-down menu-caret arrow-down-change-color"
+                                (click)="activeChild(i)"></i>
+                            <app-menu-item [padre]="nav" [menus]="nav.below" [col]="i" [row]="2"
+                                (addchild)="activeChild($event)" [flActiveActual]="getActiveChild(i)" *ngIf="nav.below">
+                            </app-menu-item>
                         </ng-container>
+                    </li>
+                </ng-container>
+            </ul>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" (mouseover)='menuOverLang($event)'
+                    (mouseleave)='menuOutLang($event)'>
+                    {{LanguageMenu[0].title}}
+                    <div class="items dropdown-menu items-phone" aria-labelledby="dropdownMenuButton"
+                        *ngFor="let nav of LanguageMenu; let i= index">
+                        <a class="dropdown-item" href="#" *ngIf="nav.active == false" >{{ nav.title }}</a>
+                    </div>
+                </button>
+            </div>
+            <ul class="list-menu list-phone">
+                <ng-container>
+                    <li class="items customrow-1 items-phone">
+                        <a class="link" *ngFor="let nav of LanguageMenu; let i= index"
+                            [ngClass]="{'active': nav.active == true}">
+                            {{ nav.title }}
+                        </a>
                     </li>
                 </ng-container>
             </ul>

@@ -107,7 +107,7 @@
                     display: none;
                 }
             }
-            
+
             .lines:first-child {
                 transform-origin: 0% 0%;
             }
@@ -123,7 +123,7 @@
 
             .list-menu {
                 padding-left: 0%;
-                width: 100%;
+                width: 95%;
                 position: relative;
                 display: none;
                 -webkit-font-smoothing: antialiased;
@@ -137,6 +137,10 @@
                     justify-content: flex-end;
                     transform: initial;
                     transition-delay: initial;
+                }
+
+                @include breakpoint (phone) {
+                    width: 100%;
                 }
 
                 .items {
@@ -268,6 +272,32 @@
                 }
             }
 
+            .list-phone {
+                li {
+                    border-bottom: none;
+                    background-color: #517bbd !important;
+
+                    .link {
+                        background-color: #517bbd !important;
+                        border: none !important;
+                        color: #ffffff !important;
+                        width: 20% !important;
+                    }
+
+                    .link.active {
+                        font-weight: 900;
+                    }
+                }
+
+                @include breakpoint (tablet) {
+                    display: none;
+                }
+
+                @include breakpoint (desktop) {
+                    display: none;
+                }
+            }
+
             /deep/ {
 
                 // Todos los li debajo del primer nivel estan con posicion relativa
@@ -345,6 +375,15 @@
                     }
                 }
 
+                .customrow-1.items-phone {
+                    display: flex;
+
+                    li a {
+                        width: 20%;
+                    }
+
+                }
+
                 //  Cuando pasa por encima de cualquier li, el deja visible a los hijos
                 li:hover>app-menu-item>ul {
                     display: block;
@@ -372,7 +411,7 @@
                     }
 
                     >li.customrow-2 {
-                        
+
                         @media (max-width: 1080px) {
                             border: 1px solid #f5fafc;
                         }
@@ -546,6 +585,34 @@
 
     .shadow-if-exit-scroll {
         box-shadow: 0 2px 2px rgb(209, 209, 209);
+    }
+
+    .dropdown {
+        position: absolute;
+        right: 0;
+        top: 20px;
+
+        button {
+            padding-left: 20px;
+            padding-right: 20px;
+            border-color: #517bbd !important;
+            background-color: #517bbd !important;
+            border-radius: 0 !important;
+        }
+
+        button:hover {
+            .dropdown-menu {
+                border-radius: 0 !important;
+            }
+        }
+
+        .dropdown-menu a:hover {
+            color: #a6cf24 !important;
+        }
+
+        @include breakpoint(phone) {
+            display: none;
+        }
     }
 }
 
