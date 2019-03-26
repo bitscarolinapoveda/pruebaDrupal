@@ -101,9 +101,9 @@ export class ClientProServComponent implements OnInit, DoCheck, OnDestroy {
   }
 
   ngDoCheck() {
-    if (this.lastclients != this.clients) {
+    if (this.lastclients !== this.clients) {
       console.log('ngDoCheck', 'lista clients', this.clients);
-      this.lastclients = this.clients
+      this.lastclients = this.clients;
     }
   }
   ngOnDestroy() {
@@ -132,7 +132,7 @@ export class ClientProServComponent implements OnInit, DoCheck, OnDestroy {
 
       this._cardService.getCustomInfoIM('clientscard').subscribe(itemsw => {
         this.titleClients = itemsw.header[0].data.title;
-
+        itemsw.data =  this._cardService.addImageField(itemsw.data, ['field_image']);
         const list_items = this._cardService.clone(itemsw.data);
 
         let lista: any[] = [];

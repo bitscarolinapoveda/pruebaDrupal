@@ -1,7 +1,7 @@
 <section id="carousel-container">
     <ngb-carousel *ngIf="carousel.length > 0" (window:resize)="onResize()">
         <ng-template class="prueba" ngbSlide *ngFor="let item of carousel">
-            <img class="carousel-main-image" [src]="item['field_image']['url']" alt="Random first slide" [ngStyle]="{'height': height}">
+            <img class="carousel-main-image" [src]="item.field_image?.url" alt="Random first slide" [ngStyle]="{'height': height}">
             <div class="carousel-caption">
             <h3 class="carousel-title">{{ item.title }}</h3>
             <p class="carousel-subtitle">{{ item.field_subtitle }}</p>

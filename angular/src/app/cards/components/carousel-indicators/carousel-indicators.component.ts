@@ -25,6 +25,7 @@ export class CarouselIndicatorsComponent implements OnInit {
   }
   getIndicatorsSliderItems()  {
     this._cardService.getCustomCardInformation('slidercard').subscribe(items => {
+      items.data = this._cardService.addImageField(items.data, ['field_image']);
       this.carousel = items.data;
     });
   }

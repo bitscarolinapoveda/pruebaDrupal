@@ -34,6 +34,8 @@ export class ServicesFilterComponent implements OnInit {
   getInfoServices() {
     var list = [];
     return this.servicesInfo.getCustomCardInformation('allproductsandservicescard').subscribe(items => {
+      items.data =  this.servicesInfo.addImageField(items.data, ['short_image']);
+      items.data =  this.servicesInfo.addImageField(items.data, ['large_image']);
       for (let index = 0; index < items.data.length; index++) {
         if (items.data[index].type === this.type) {
           this.band.push(items.data[index]);

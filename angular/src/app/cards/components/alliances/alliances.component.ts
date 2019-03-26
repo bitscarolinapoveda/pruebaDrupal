@@ -1,7 +1,7 @@
-import {CustomCardService} from './../../../services/cards/v1-card.services';
-import {Component, OnInit, HostListener, ElementRef} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
-import { animate, trigger, state, style, transition} from '@angular/animations';
+import { CustomCardService } from './../../../services/cards/v1-card.services';
+import { Component, OnInit, HostListener, ElementRef } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { animate, trigger, state, style, transition } from '@angular/animations';
 import { NgxCarousel } from 'ngx-carousel';
 
 declare var $: any;
@@ -16,7 +16,7 @@ declare var $: any;
         opacity: 1,
         transform: "translateY(0)"
       })),
-      state('hide',   style({
+      state('hide', style({
         opacity: 0,
         transform: "translateY(100%)"
       })),
@@ -26,14 +26,14 @@ declare var $: any;
   ]
 })
 export class AlliancesComponent implements OnInit {
-  allianceArrayLogos:any = [];
-  arrayLogosCustom:any[][];
-  allianceTitle:string = "";
-  allianceBackground:string = "";
+  allianceArrayLogos: any = [];
+  arrayLogosCustom: any[][];
+  allianceTitle: string = "";
+  allianceBackground: string = "";
   public carocarouselTile: NgxCarousel;
   state = 'hide'
 
-  constructor (
+  constructor(
     private alliance: CustomCardService,
     public el: ElementRef
   ) {
@@ -41,22 +41,22 @@ export class AlliancesComponent implements OnInit {
   }
 
   @HostListener('window:scroll', ['$event'])
-    checkScroll() {
-      var componentPosition = this.el.nativeElement.offsetTop
-      const scrollPosition = window.pageYOffset
-      if (scrollPosition >= componentPosition) {
-        this.state = 'hide' 
-      } else {
-        this.state = 'show' 
-      }
-
+  checkScroll() {
+    var componentPosition = this.el.nativeElement.offsetTop
+    const scrollPosition = window.pageYOffset
+    if (scrollPosition >= componentPosition) {
+      this.state = 'hide'
+    } else {
+      this.state = 'show'
     }
 
-  ngOnInit () {
+  }
+
+  ngOnInit() {
     this.getAlliance();
     this.allianceArrayLogos = [0, 1, 2, 3, 4, 5,];
     this.carocarouselTile = {
-      grid: {xs: 1, sm: 1, md: 1, lg: 1, all: 0},
+      grid: { xs: 1, sm: 1, md: 1, lg: 1, all: 0 },
       slide: 2,
       speed: 400,
       animation: 'lazy',
@@ -93,25 +93,26 @@ export class AlliancesComponent implements OnInit {
       loop: true,
     }
   }
-  customArrayImages( arrayLogosOriginal:any[] ){
-    for (let i:number = 0; i <= arrayLogosOriginal.length; i++) {
+  customArrayImages(arrayLogosOriginal: any[]) {
+    for (let i: number = 0; i <= arrayLogosOriginal.length; i++) {
       this.arrayLogosCustom[i] = [];
-      let j2:number = 0;
-      for (let j:number = 0; j < 4; j++) {
+      let j2: number = 0;
+      for (let j: number = 0; j < 4; j++) {
         if (arrayLogosOriginal.length > 0) {
           this.arrayLogosCustom[i][j] = arrayLogosOriginal[0];
           arrayLogosOriginal.shift();
         }
-      }    
+      }
     }
   }
 
-  getAlliance () {
+  getAlliance() {
     return this.alliance.getCustomCardInformation('ouralliance').subscribe(items => {
       this.allianceTitle = items.header[0].data.title;
       this.allianceBackground = items.body[0].data.back_movil[0].url;
+      items.data = this.alliance.addImageField(items.data, ['field_alliance_image']);
       this.allianceArrayLogos = items.data;
-      this.customArrayImages( this.allianceArrayLogos );
+      this.customArrayImages(this.allianceArrayLogos);
     });
   }
 }

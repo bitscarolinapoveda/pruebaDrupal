@@ -34,6 +34,7 @@ export class HistoryComponent implements OnInit {
         'events': [
         ]
       };
+      params.data = this._http.addImageField(params.data, ['field_media_url']);
       const datos = params.data;
       for (let index = 0; index < datos.length; index++) {
         const fecha_start = new Date(datos[index].field_start_date);

@@ -18,6 +18,8 @@ export class SliderComponent implements OnInit {
     }
     getSliderItems() {
         this._cardService.getCustomCardInformation('sliderbackmediarightcard').subscribe(items => {
+            items.data =  this._cardService.addImageField(items.data, ['field_background_image']);
+            items.data =  this._cardService.addImageField(items.data, ['field_right_image']);
             let sliders = [];
             for (let item of items.data) {
                 let slide: Slide;
