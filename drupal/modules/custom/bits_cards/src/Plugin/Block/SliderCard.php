@@ -36,6 +36,14 @@ class SliderCard extends CardBase {
             'show' => 1,
             'weight' => 1,
           ],
+          'transition' => [
+            'type' => 'textfield',
+            'title' => $this->t('Transition'),
+            'service_field' => 'transition',
+            'show' => 1,
+            'weight' => 1,
+            'max_length' => 50,
+          ],
         ],
       ],
       'entity' => [
