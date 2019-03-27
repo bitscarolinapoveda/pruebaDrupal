@@ -7,11 +7,18 @@
         text-transform: uppercase;
         color: #002b49;
         text-align: center;
-        margin-top: 64px;
+        margin-top: 40px;
 
         @include breakpoint (phone) {
             font-size: 30px;
             margin-left: 0;
+            margin-top: 20px;
+            margin-bottom: 20px !important;
+        }
+
+        @include breakpoint (tablet) {
+            margin-top: 20px;
+            margin-bottom: 20px !important;
         }
     }
 

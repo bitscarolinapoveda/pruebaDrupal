@@ -84,10 +84,21 @@ body {
 #principal {
     color: #002b49;
     text-align: center;
+    margin-top: 40px;
+
+    @include breakpoint (phone) {
+        margin-top: 20px;
+        margin-bottom: 20px !important;
+    }
+
+    @include breakpoint (tablet) {
+        margin-top: 20px;
+        margin-bottom: 20px !important;
+    }
 
     .title-principal {
         font-size: 40px;
-        text-transform: uppercase;       
+        text-transform: uppercase;
 
         @include breakpoint (phone) {
             font-size: 30px;
@@ -96,6 +107,6 @@ body {
 
     .descrip-principal {
         font-size: 20px;
-        font-family: 'Open Sans Codensed';       
+        font-family: 'Open Sans Codensed';
     }
 }
