@@ -1,0 +1,14 @@
+<div *ngIf="visible">
+  <app-separator [iconCustom]="'icon-camera'"></app-separator>
+  <section id="principal">
+    <h1 [id]="datosMenu.id" class="title-principal">{{ screenshotsTitle }}</h1>
+    <p class="descrip-principal" [innerHTML]="screenshotsSubTitle"></p>
+  </section>
+  <ngx-carousel [inputs]="carouselOne" (carouselLoad)="carouselTileLoad($event)" id="screenshots">
+    <ngx-tile NgxCarouselItem *ngFor="let value of CarouselControlArray">
+      <img class="" src="{{ value.url }}" alt="{{ value.alt }}">
+    </ngx-tile>    
+    <button NgxCarouselPrev class='leftRs'></button>
+    <button NgxCarouselNext class='rightRs'></button>
+  </ngx-carousel>
+</div>

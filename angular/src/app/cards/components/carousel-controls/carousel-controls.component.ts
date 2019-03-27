@@ -23,8 +23,8 @@ export class CarouselControlsComponent implements OnInit {
   constructor(
     private AchievementCarouselItems: ContentType,
     private _cardService: CustomCardService
-    ) {
-      this.CarouselControlArray = [];
+  ) {
+    this.CarouselControlArray = [];
   }
 
   ngOnInit() {
@@ -80,6 +80,7 @@ export class CarouselControlsComponent implements OnInit {
 
   getAchievementsCarouselItems() {
     return this._cardService.getCustomCardInformation('achievementscard').subscribe(items => {
+      items.data = this._cardService.addImageField(items.data, ['field_image']);
       this.CarouselControlArray = items.data;
       this.caroseltitle = items.header[0].data.title;
       this.CarouselControlArray = Object.keys(items.data).map(function (key) { return items.data[key]; });

@@ -9,7 +9,7 @@
             <div class="col-sm-6 col-md-4" *ngFor="let ps of servicesProduct">
                 <div class="thumbnai">
                     <div class="background">
-                        <img class="images lightbox" [src]="ps.short_image[0].url" alt="{{ps.short_image[0].alt}}">
+                        <img class="images lightbox" [src]="ps.short_image.url" alt="{{ps.short_image.alt}}">
                     </div>
                     <div class="box-title">
                         <span class="titlepr">{{ ps.label }}</span>

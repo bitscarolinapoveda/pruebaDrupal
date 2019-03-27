@@ -63,6 +63,7 @@ export class CardImgTextComponent implements OnInit {
     getCardImgTextServiceL() {
         this._http.getCustomCardInformationType('mediaimedicalcard_2', this.type).subscribe(params => {
             this.titleL = params.header[0].data.title;
+            params.data = this._http.addImageField(params.data, ['field_imagen_media_product']);
             this.cardImgL = params.data;
             if (this.cardImgL.length !== 0) {
                 this.visibleL = true;
@@ -73,6 +74,7 @@ export class CardImgTextComponent implements OnInit {
     getCardImgTextServiceR() {
         this._http.getCustomCardInformationType('mediaimedicalcard', this.type).subscribe(params => {
             this.titleR = params.header[0].data.title;
+            params.data = this._http.addImageField(params.data, ['field_imagen_media_product']);
             this.cardImgR = params.data;
             if (this.cardImgR.length !== 0) {
                 this.visibleR = true;

@@ -89,13 +89,13 @@ export class CarouselItem2Component implements OnInit {
       for (let i = len; i < len + 10; i++) { this.clients.push(i); }
     }
   }
-  organizeInfoForCarousel (clientsInfo) {
-    var number = clientsInfo.length/4;
+  organizeInfoForCarousel(clientsInfo) {
+    var number = clientsInfo.length / 4;
     if (clientsInfo.length % 4 === 0) {
       var numberOfBoxes = parseInt(number.toString(), 10);
     } else {
       var numberOfBoxes = 1 + parseInt(number.toString(), 10);
-    }  
+    }
     for (let i = 0; i < numberOfBoxes; i++) {
       this.arrayBox[i] = [];
     }
@@ -109,6 +109,7 @@ export class CarouselItem2Component implements OnInit {
 
   getOurClientsItems() {
     this._cardService.getCustomCardInformation('clientscard').subscribe(items => {
+      items.data = this._cardService.addImageField(items.data, ['field_imagen']);
       this.clients = items.data;
       this.titleClients = items.header[0].data.title;
       this.clients = Object.keys(items.data).map(function (key) { return items.data[key]; });

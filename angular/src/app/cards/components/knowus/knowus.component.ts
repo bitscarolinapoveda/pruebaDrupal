@@ -23,6 +23,7 @@ export class KnowusComponent implements OnInit {
     this._service.getCustomCardInformation('knowusbitsamericas').subscribe(items => {
       this.title = items.header[0].data.title;
       this.subtitle = items.header[1].data.sub_title;
+      items.data = this._service.addImageField(items.data, ['field_imagen']);
       this.list = items.data;
     });
   }

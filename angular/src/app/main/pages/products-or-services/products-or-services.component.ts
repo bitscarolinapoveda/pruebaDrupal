@@ -67,6 +67,7 @@ export class ProductsOrServicesComponent implements OnInit {
       .subscribe(params => {
         this.tituloModulos = params.header[0].data.title;
         this.descripcionModulos = params.header[1].data.description;
+        params.data = this._http.addImageField(params.data, ['field_image']);
         for (let blurbItem of params.data) {
           let blurbObject: Blurb = {
             imageSrc: '',

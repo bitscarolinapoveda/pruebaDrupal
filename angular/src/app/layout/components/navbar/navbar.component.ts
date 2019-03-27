@@ -1,6 +1,6 @@
-import {Component, OnInit, ViewEncapsulation, HostListener} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
-import {NavbarService} from '../../../services/layout/navbar.service';
+import { Component, OnInit, ViewEncapsulation, HostListener } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { NavbarService } from '../../../services/layout/navbar.service';
 
 declare var $: any;
 
@@ -14,6 +14,7 @@ export class NavbarComponent implements OnInit {
     positionChild: number = 1;
     resolution: string = 'desktop';
     flActiveChilds: any[] = [];
+    LanguageMenu: any;
 
     constructor(private router: ActivatedRoute, private navbar: NavbarService) {
         this.onResize({});
@@ -26,11 +27,11 @@ export class NavbarComponent implements OnInit {
         $(window).scroll(function () {
             if (window.scrollY > 0) {
                 $('.menu-scroll, .link').addClass('inverse-color color-scroll scroll-white');
-                $('.lines').css({background: '#002b49'});
+                $('.lines').css({ background: '#002b49' });
                 $('.shadow-of-nav').addClass('shadow-if-exit-scroll');
             } else {
                 $('.menu-scroll, .link').removeClass('inverse-color color-scroll scroll-white');
-                $('.lines').css({background: '#ffffff'});
+                $('.lines').css({ background: '#ffffff' });
                 $('.shadow-of-nav').removeClass('shadow-if-exit-scroll');
             }
             // if ($('.menu-scroll, .lines, .link').offset().top > 10) {
@@ -42,6 +43,7 @@ export class NavbarComponent implements OnInit {
             // }
         });
         this.getNavBarItems();
+        this.LanguageMenu = [{ 'title': 'ES', 'active': true }, { 'title': 'ENN', 'active': false }];
     }
 
     getNavBarItems() {
@@ -54,8 +56,8 @@ export class NavbarComponent implements OnInit {
     addIdForColToNavbar(navbarArray, posCol, posRow) {
 
         for (let i in navbarArray) {
-            navbarArray[i].posCol=posCol;
-            navbarArray[i].posRow=posRow;
+            navbarArray[i].posCol = posCol;
+            navbarArray[i].posRow = posRow;
 
             if (posRow == 1) {
                 navbarArray[i].showrow = true;
@@ -88,12 +90,11 @@ export class NavbarComponent implements OnInit {
 
     @HostListener('window:resize', ['$event'])
     onResize(event) {
-      if ($('body').width() < 1025) {
-        this.resolution = 'mobile';
-      }
-      else {
-        this.resolution = 'desktop';
-      }
+        if ($('body').width() < 1025) {
+            this.resolution = 'mobile';
+        } else {
+            this.resolution = 'desktop';
+        }
     }
     menuOver(event) {
         $('.hover-menu-dark-layout').removeClass('hide');
@@ -101,5 +102,13 @@ export class NavbarComponent implements OnInit {
     }
     menuOut($event) {
         $('.hover-menu-dark-layout').addClass('hide');
+    }
+    menuOverLang(event) {
+        $('.items-phone').removeClass('hide');
+        $('.items-phone').addClass('show');
+    }
+    menuOutLang($event) {
+        $('.items-phone').addClass('hide');
+        $('.items-phone').removeClass('show');
     }
 }

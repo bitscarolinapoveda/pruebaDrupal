@@ -78,14 +78,16 @@
 #main-title {
     color: #002b49;
     text-align: center;
-    margin-top: 64px;
+    margin-top: 40px;
 
-    @include breakpoint(desktop) {
-        margin-top: 80px;
+    @include breakpoint (phone) {
+        margin-top: 20px;
+        margin-bottom: 20px !important;
     }
 
-    @include breakpoint(tablet) {
-        margin-top: 80px;
+    @include breakpoint (tablet) {
+        margin-top: 20px;
+        margin-bottom: 20px !important;
     }
 
     h2 {

@@ -43,6 +43,7 @@ export class ClientProjectImedicalComponent implements OnInit {
 
   getClientProjectImedicalService() {
     this._http.getCustomCardInformation('imedicalclients_2').subscribe(params => {
+      params.data = this._http.addImageField(params.data, ['field_image']);
       this.titleCard = 'El Cliente';
       this.imgSrcClient = params.data[0].field_image.url;
       this.nameClient = params.data[0].field_image.alt;

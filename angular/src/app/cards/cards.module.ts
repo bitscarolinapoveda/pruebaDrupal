@@ -37,6 +37,7 @@ import { HistoryComponent } from './components/history/history.component';
 import { FilterComponent } from './components/filter/filter.component';
 import { ServicesFilterComponent } from './components/services-filter/services-filter.component';
 import { OurWorkComponent } from './components/our-work/our-work.component';
+import { ScreenshotsComponent } from './components/screenshots/screenshots.component';
 
 // Servicios
 import { NodeService } from '../services/cards/node.service';
@@ -56,6 +57,7 @@ import { ClientProServComponent } from './components/client-proserv/client-prose
 import { WorkusComponent } from './components/workus/workus.component';
 import { OrganizeGridMuuriDirective } from '../directives/organize-grid-muuri.directive';
 import { LoadDirective } from './components/client-proserv/load.directive';
+
 
 @NgModule({
   declarations: [
@@ -95,7 +97,8 @@ import { LoadDirective } from './components/client-proserv/load.directive';
     ServicesFilterComponent,
     OrganizeGridMuuriDirective,
     LoadDirective,
-    OurWorkComponent
+    OurWorkComponent,
+    ScreenshotsComponent
   ],
   exports: [
     CarouselItemComponent,
@@ -133,7 +136,8 @@ import { LoadDirective } from './components/client-proserv/load.directive';
     MessageModule,
     ServicesFilterComponent,
     OurWorkComponent,
-    RecaptchaModule
+    RecaptchaModule,
+    ScreenshotsComponent
   ],
   imports: [
     BrowserModule,

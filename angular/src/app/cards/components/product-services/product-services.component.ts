@@ -35,6 +35,8 @@ export class ProductServicesComponent implements OnInit {
 
   getProductsAndServicesItems() {
     this._cardService.getCustomCardInformation('productsandservicescard_2').subscribe(items => {
+      items.data = this._cardService.addImageField(items.data, ['short_image']);
+      items.data = this._cardService.addImageField(items.data, ['large_image']);
       this.servicesProduct = items.data;
       this.title = items.header[0].data.title;
       for (let index = 0; index < this.servicesProduct.length; index++) {

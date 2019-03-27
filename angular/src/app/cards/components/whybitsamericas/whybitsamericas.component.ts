@@ -22,6 +22,8 @@ export class WhybitsamericasComponent implements OnInit {
     return this.whyBits.getCustomCardInformation('whybitsamericas').subscribe(items => {
       this.whyTitle = items.header[0].data.title;
       this.whySubTitle = items.header[1].data.sub_title;
+      items.data = this.whyBits.addImageField(items.data, ['field_imagen']);
+      console.log(items.data);
       this.whyData = items.data;
     });
   }

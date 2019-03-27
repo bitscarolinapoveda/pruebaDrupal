@@ -2,9 +2,19 @@
 
 #work-with-us {
   display: block;
-  margin-top: 65px;
+  margin-top: 40px;
   text-align: center;
   color: #002b49;
+
+  @include breakpoint (phone) {
+    margin-top: 20px;
+    margin-bottom: 20px !important;
+  }
+
+  @include breakpoint (tablet) {
+    margin-top: 20px;
+    margin-bottom: 20px !important;
+  }
 
   h1 {
     font-size: 40px;
