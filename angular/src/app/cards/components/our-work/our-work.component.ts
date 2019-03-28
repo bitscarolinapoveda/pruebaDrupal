@@ -44,7 +44,7 @@ export class OurWorkComponent implements OnInit {
     this._http.getCustomCardInformationType('ourworkbitsamericas', this.type).subscribe(items => {
       this.title = items.header[0].data.title;
       this.subtitle = items.header[1].data.sub_title;
-      this.list = items.data;
+      this.list = this._http.addImageField(items.data, ['field_background_image']);
       if (this.title !== '' && this.list.length !== 0) {
         this.visible = true;
       }
