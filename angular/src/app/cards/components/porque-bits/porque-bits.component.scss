@@ -62,6 +62,16 @@
                 a:hover {
                     color: #a6cf24;
                 }
+
+                img {
+                    width: 150px;
+                    height: 150px;
+
+                    @include breakpoint (phone) {
+                        width: 100px;
+                        height: 90px;
+                    }
+                }
             }
 
             li:nth-child(6) {
