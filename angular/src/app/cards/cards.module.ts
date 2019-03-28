@@ -38,6 +38,7 @@ import { FilterComponent } from './components/filter/filter.component';
 import { ServicesFilterComponent } from './components/services-filter/services-filter.component';
 import { OurWorkComponent } from './components/our-work/our-work.component';
 import { ScreenshotsComponent } from './components/screenshots/screenshots.component';
+import { ProjectFilterComponent } from './components/project-filter/project-filter.component';
 
 // Servicios
 import { NodeService } from '../services/cards/node.service';
@@ -98,7 +99,8 @@ import { LoadDirective } from './components/client-proserv/load.directive';
     OrganizeGridMuuriDirective,
     LoadDirective,
     OurWorkComponent,
-    ScreenshotsComponent
+    ScreenshotsComponent,
+    ProjectFilterComponent
   ],
   exports: [
     CarouselItemComponent,
@@ -137,7 +139,8 @@ import { LoadDirective } from './components/client-proserv/load.directive';
     ServicesFilterComponent,
     OurWorkComponent,
     RecaptchaModule,
-    ScreenshotsComponent
+    ScreenshotsComponent,
+    ProjectFilterComponent
   ],
   imports: [
     BrowserModule,
