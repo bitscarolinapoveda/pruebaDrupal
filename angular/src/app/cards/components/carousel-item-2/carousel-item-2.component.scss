@@ -51,6 +51,7 @@
 
 .url-carousel {
     width: 132px;
+    color: transparent !important;
 
     @include breakpoint (tablet) {
         width: 285px;

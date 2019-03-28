@@ -23,6 +23,7 @@
     padding-right: 4%;
     margin-top: 1%;
     text-decoration: none;
+    color: transparent !important;
 
     @include breakpoint (desktop) {
         padding-left: 5%;
