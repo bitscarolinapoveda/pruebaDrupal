@@ -26,6 +26,7 @@ export class BannerComponent implements OnInit {
 
     ngOnInit() {
         if (this.titulo !== '') {
+            console.log('case A');
             while (this.titulo.indexOf('-') > -1) {
                 this.titulo = this.titulo.replace('-', '_');
             }
@@ -62,6 +63,12 @@ export class BannerComponent implements OnInit {
                     this.bannerBackground = servicesProduct[index].large_image[0].url;
                 }
             }
+            if (this.titulo !== '') {
+                while (this.titulo.indexOf('_') > -1) {
+                    this.titulo = this.titulo.replace('_', ' ');
+                }
+            }
+            this.bannerTitle = this.titulo;
         });
     }
 }
