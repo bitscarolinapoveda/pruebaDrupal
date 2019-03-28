@@ -21,12 +21,7 @@ export class ProductsOrServicesComponent implements OnInit {
   public nid: string;
   listMenu: DataMenu[];
   public imagen: string;
-
-  public principal: General;
-  public principal$: Observable<General>;
-
   public value: any;
-
   visible: boolean;
 
   constructor(private _http: CustomCardService, private rutaActiva: ActivatedRoute, private service: HttpService,
@@ -41,15 +36,7 @@ export class ProductsOrServicesComponent implements OnInit {
     this.meta.removeTag('name="general"');
     this.meta.updateTag({ name: 'component', content: 'app-products-or-services' });
 
-    this.type = this.rutaActiva.snapshot.params.type;
-
-    this.principal = {
-      body: [],
-      data: [{ id: '17', label: 'Deprisa' }, { id: '18', label: 'Clima' }],
-      files: [],
-      header: [],
-      others: [],
-    };
+    this.type = this.rutaActiva.snapshot.params.type;   
 
     this.rutaActiva.params.subscribe(
       (params: Params) => {
