@@ -92,7 +92,7 @@ export class CustomCardService {
   }
 
   getCustomCardInformationType(idblock, type) {
-    const url = `v1/card/config/${idblock}/${type}/export?_format=json`;
+    const url = `v1/card/config/${idblock}/export?_format=json`;
     return this.http.get(url);
   }
 
