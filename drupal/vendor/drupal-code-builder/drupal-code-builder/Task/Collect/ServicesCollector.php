@@ -3,6 +3,7 @@
 namespace DrupalCodeBuilder\Task\Collect;
 
 use DrupalCodeBuilder\Environment\EnvironmentInterface;
+use CaseConverter\CaseString;
 
 /**
  * Task helper for collecting data on services.
@@ -26,6 +27,7 @@ class ServicesCollector extends CollectorBase  {
     'current_user' => TRUE,
     'entity_type.manager' => TRUE,
     'module_handler' => TRUE,
+    'cache.discovery' => TRUE,
   ];
 
   /**
@@ -74,6 +76,7 @@ class ServicesCollector extends CollectorBase  {
    *    - 'id': The service ID.
    *    - 'label': A label for the service.
    *    - 'description': A longer description for the service.
+   *    - 'class': The fully-qualified class that is defined for the service.
    *    - 'interface': The fully-qualified interface that the service class
    *      implements, with the initial '\'.
    */
@@ -176,7 +179,7 @@ class ServicesCollector extends CollectorBase  {
         continue;
       }
 
-      // Skip if the class doesn't exist, or its parent doesn't exist, as we
+      // Skip if the class isn't loadable by PHP without causing a fatal, as we
       // can't work with just an ID to generate things like injection.
       // (The case of a service class whose parent does not exist happens if
       // a module Foo provides a service for module Bar's collection with a
@@ -184,21 +187,29 @@ class ServicesCollector extends CollectorBase  {
       if (!$this->codeAnalyser->classIsUsable($service_class)) {
         continue;
       }
-      if (!class_exists($service_class)) {
+
+      // Skip if the clas doesn't exist.
+      // The service class can sometimes actually be an interface, as with
+      // cache services. (This is not documented!)
+      if (!(class_exists($service_class) || interface_exists($service_class))) {
         continue;
       }
 
       // Get the short class name to use as a label.
       $service_class_pieces = explode('\\', $service_class);
       $service_short_class = array_pop($service_class_pieces);
-      // Convert CamelCase to Title Case. We don't expect any numbers to be in
-      // the name, so our conversion can be fairly naive.
-      $label = preg_replace('@([[:lower:]])([[:upper:]])@', '$1 $2', $service_short_class);
+
+      // If the class is in fact secretly an interface (this is the case for
+      // cache services!) then remove the 'Interface' suffix.
+      $service_short_class = preg_replace('/Interface$/', '', $service_short_class);
+
+      $label = CaseString::pascal($service_short_class)->sentence();
 
       $data[$service_id] = [
         'id' => $service_id,
         'label' => $label,
         'static_method' => '', // Not used.
+        'class' => '\\' . $service_class,
         'interface' => $this->getServiceInterface($service_class),
         'description' => "The {$label} service",
       ];
@@ -274,6 +285,8 @@ class ServicesCollector extends CollectorBase  {
    *   An array of service data.
    */
   protected function getStaticContainerServices() {
+    $container_builder = $this->containerBuilderGetter->getContainerBuilder();
+
     // We can get service IDs from the container,
     $static_container_reflection = new \ReflectionClass('\Drupal');
     $filename = $static_container_reflection->getFileName();
@@ -326,10 +339,13 @@ class ServicesCollector extends CollectorBase  {
       $description = ucfirst($matches[1]);
       $label = ucfirst($matches[2]);
 
+      $definition = $container_builder->getDefinition($service_id);
+
       $service_definition = [
         'id' => $service_id,
         'label' => $label,
         'static_method' => $name, // not used.
+        'class' => '\\' . $definition->getClass(),
         'interface' => $interface,
         'description' => $description,
       ];

@@ -15,11 +15,11 @@
                 "drupal/webform": "^5.0",
                 "drupal/webform_rest": "^2.0",
                 "drupal/devel": "^2.0",
-                "drupal/cors": "^1.0"
+                "drupal/cors": "^1.0",
+                "drupal/core": "^8.6",
+                "drush/drush": "^9.6"
         },
-        "replace": {
-            "drupal/core": "^8.6"
-        },
+        "replace": {},
         "minimum-stability": "dev",
         "prefer-stable": true,
         "config": {
