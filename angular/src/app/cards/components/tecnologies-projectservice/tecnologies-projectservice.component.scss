@@ -1,5 +1,9 @@
 @import './src/assets/scss/mixin.scss';
 
+.content {
+    height: 200px;
+}
+
 .content-img {
     display: flex;
     flex-wrap: wrap;

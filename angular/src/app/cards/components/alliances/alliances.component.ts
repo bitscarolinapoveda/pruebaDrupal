@@ -1,8 +1,9 @@
 import { CustomCardService } from './../../../services/cards/v1-card.services';
-import { Component, OnInit, HostListener, ElementRef } from '@angular/core';
+import { Component, OnInit, HostListener, ElementRef, Output, EventEmitter } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { animate, trigger, state, style, transition } from '@angular/animations';
 import { NgxCarousel } from 'ngx-carousel';
+import { DataMenu } from '../menu-template/menu-template.component';
 
 declare var $: any;
 
@@ -28,16 +29,20 @@ declare var $: any;
 export class AlliancesComponent implements OnInit {
   allianceArrayLogos: any = [];
   arrayLogosCustom: any[][];
-  allianceTitle: string = "";
-  allianceBackground: string = "";
+  allianceTitle: string = '';
+  allianceBackground: string = '';
   public carocarouselTile: NgxCarousel;
-  state = 'hide'
+  state = 'hide';
+  @Output() propagar = new EventEmitter<DataMenu>();
+  datosMenu: DataMenu;
+  visible: boolean;
 
   constructor(
     private alliance: CustomCardService,
     public el: ElementRef
   ) {
     this.arrayLogosCustom = [];
+    this.visible = false;
   }
 
   @HostListener('window:scroll', ['$event'])
@@ -45,14 +50,20 @@ export class AlliancesComponent implements OnInit {
     var componentPosition = this.el.nativeElement.offsetTop
     const scrollPosition = window.pageYOffset
     if (scrollPosition >= componentPosition) {
-      this.state = 'hide'
+      this.state = 'hide';
     } else {
-      this.state = 'show'
+      this.state = 'show';
     }
 
   }
 
   ngOnInit() {
+    this.datosMenu = {
+      label: 'ALIADOS',
+      id: 'a4',
+      url: ''
+    };
+    this.propagar.emit(this.datosMenu);
     this.getAlliance();
     this.allianceArrayLogos = [0, 1, 2, 3, 4, 5,];
     this.carocarouselTile = {
@@ -113,6 +124,10 @@ export class AlliancesComponent implements OnInit {
       items.data = this.alliance.addImageField(items.data, ['field_alliance_image']);
       this.allianceArrayLogos = items.data;
       this.customArrayImages(this.allianceArrayLogos);
+      console.log(this.allianceArrayLogos);
+      if (this.allianceTitle !== '' && this.customArrayImages.length !== 0) {
+        this.visible = true;
+      }
     });
   }
 }
