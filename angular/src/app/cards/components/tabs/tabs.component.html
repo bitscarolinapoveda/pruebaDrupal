@@ -47,8 +47,9 @@
 				</div>
 				<div class="col-md-6 item">
 					<label for="exampleInputTel">Telefono</label>
-					<input type="tel" class="form-control" id="org" placeholder="Escriba su telefono" name="telefono"
-						ngModel pattern="^(\([0-9]{3}\)|[0-9]{3})[0-9]{3}[0-9]{4}$" #telefono="ngModel">
+					<!-- pattern="^(\([0-9]{3}\)|[0-9]{3})[0-9]{3}[0-9]{4}$" -->
+					<input type="text" class="form-control" id="telefono" placeholder="Escriba su telefono"
+						name="telefono" ngModel required  #telefono="ngModel">
 					<div *ngIf="telefono.invalid && telefono.touched" class="alert alert-danger" role="alert">
 						Campo obligatorio o invalido
 					</div>
