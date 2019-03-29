@@ -34,6 +34,7 @@ export class PorqueBitsComponent implements OnInit {
   // }
   getMoralValuesItems () {
     this.porquebits.getCustomCardInformation('whybits').subscribe(items => {
+      items.data = this.porquebits.addImageField(items.data, ['field_imagen']);
       this.moralValues = items.data;
       this.mainTitleLink = items.header[0].data;
       this.mainUrlLink = items.header[1].data;

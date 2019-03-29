@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { RecaptchaModule, RECAPTCHA_SETTINGS, RecaptchaSettings } from 'ng-recaptcha';
+import { RecaptchaFormsModule } from 'ng-recaptcha/forms';
 
 import { HttpClientModule } from '@angular/common/http';
 
@@ -25,6 +27,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { NotificationService } from './services/shared/notification.service';
 
+
 @NgModule({
   declarations: [
     AppComponent
@@ -40,7 +43,9 @@ import { NotificationService } from './services/shared/notification.service';
     APP_ROUTES,
     OwlModule,
     DeferLoadModule,
-    SlickModule.forRoot()
+    SlickModule.forRoot(),
+    RecaptchaModule,
+    RecaptchaFormsModule
   ],
   providers: [
     NotificationService,

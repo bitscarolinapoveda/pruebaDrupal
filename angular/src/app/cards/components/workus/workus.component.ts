@@ -6,7 +6,7 @@ import { CustomCardService } from 'src/app/services/cards/v1-card.services';
 import { HttpClient } from '@angular/common/http';
 import { SelectComponent } from 'ng2-select';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import {DataMessage} from "../../../message/components/message/message.component";
+import { DataMessage } from "../../../message/components/message/message.component";
 
 declare var jQuery: any;
 declare var $: any;
@@ -43,14 +43,20 @@ export class WorkusComponent implements OnInit {
   form: FormGroup;
   file: any;
 
+  captcha_form: any;
+  valido: boolean;
+
   onSubmit(formulario) {
 
     formulario['archivo_adjunto'] = this.file;
 
     this.dataMessage = [];
     formulario['webform_id'] = 'work_with_us';
+    formulario['captcha'] = this.captcha_form;
+    this.captcha_form = '';
+    this.valido = false;
 
-    jQuery('#formulario_contacto')[0].reset();
+    grecaptcha.reset();
 
     /* jQuery('#msj-modal').show();
     jQuery('.close').click(function () {
@@ -74,6 +80,8 @@ export class WorkusComponent implements OnInit {
             );
           }
         } else if (datos.sid) {
+
+          jQuery('#formulario_contacto')[0].reset();
 
           this.ngSelectW.active = [];
           this.pais = '';
@@ -104,6 +112,7 @@ export class WorkusComponent implements OnInit {
     });
     this.file = '';
     this.hojaWU = '';
+    this.valido = false;
   }
 
   ngOnInit() {
@@ -131,6 +140,11 @@ export class WorkusComponent implements OnInit {
         e.preventDefault();
       });
     });
+  }
+
+  resolved(captchaResponse: string) {
+    this.captcha_form = `${captchaResponse}`;
+    this.valido = true;
   }
 
   onFileChange(event) {

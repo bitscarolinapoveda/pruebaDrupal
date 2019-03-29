@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { Component, OnInit, DoCheck, OnDestroy, EventEmitter, Input, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NgxCarousel } from 'ngx-carousel';
 import { CustomCardService } from 'src/app/services/cards/v1-card.services';
@@ -15,11 +15,12 @@ declare var $: any;
   styleUrls: ['./client-proserv.component.scss']
 })
 
-export class ClientProServComponent implements OnInit {
+export class ClientProServComponent implements OnInit, DoCheck, OnDestroy {
 
   public carouselOne: NgxCarousel;
 
-  clients: any[] = [];
+  clients: Array<any> = [];
+  lastclients: Array<any> = [];
   titleClients: string;
   public carocarouselTile: NgxCarousel;
 
@@ -31,6 +32,7 @@ export class ClientProServComponent implements OnInit {
 
   principal: General;
   principal$: Observable<General>;
+  cas: any = 0;
 
   visible: boolean;
 
@@ -39,6 +41,7 @@ export class ClientProServComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log('ngOnInit');
 
     while (this.type.indexOf('-') > -1) {
       this.type = this.type.replace('-', '_');
@@ -70,8 +73,8 @@ export class ClientProServComponent implements OnInit {
               white-space: nowrap;
               overflow: auto;
               box-sizing: border-box;
-            }
             .ngxcarouselPoint li {
+            }
               display: inline-block;
               border-radius: 50%;
               border: 2px solid rgba(0, 0, 0, 0.55);
@@ -97,11 +100,15 @@ export class ClientProServComponent implements OnInit {
 
   }
 
-  /* Ejemplo para la directiva
-  directiveOut(dato) {
-    console.log('dato de la lista directiva', dato);
-    this.clients = dato;
-  } */
+  ngDoCheck() {
+    if (this.lastclients != this.clients) {
+      console.log('ngDoCheck', 'lista clients', this.clients);
+      this.lastclients = this.clients
+    }
+  }
+  ngOnDestroy() {
+    console.log('ngOnDestroy');
+  }
 
   datos() {
 
@@ -123,8 +130,6 @@ export class ClientProServComponent implements OnInit {
         this.principal.data = datos;
       }
 
-      console.log('lista principal', this.principal);
-
       this._cardService.getCustomInfoIM('clientscard').subscribe(itemsw => {
         this.titleClients = itemsw.header[0].data.title;
 
@@ -141,18 +146,12 @@ export class ClientProServComponent implements OnInit {
           }
         }
 
-        if (this.titleClients !== '' && this.clients.length !== 0) {
+        this.clients = this._cardService.clone(this.clients);
+        this.cas = this.cas + 1;
+
+        if (this.clients.length !== 0) {
           this.visible = true;
         }
-
-        console.log('lista clients', this.clients);
-
-        /* if (this.clients !== undefined) {
-          this.clients = Object.keys(this.clients).map(function (key) { return this.clients[key]; });
-        } */
-
-        // this.clients = Object.keys(items.data).map(function (key) { return itemsw.data[key]; });
-
       });
     });
   }
