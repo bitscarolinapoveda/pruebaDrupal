@@ -6,68 +6,80 @@
       <div class="form-group" [ngClass]="aplicaCssErro(nombre)" class="col-md-12">
         <div class="col-md-6 item">
           <label for="exampleInputNombre">Nombre</label>
-          <input type="text" class="form-control" id="nombre" placeholder="Nombre" name="nombre" ngModel required
-            #nombre="ngModel">
+          <input type="text" class="form-control" id="nombreWS" placeholder="Nombre" name="nombre" ngModel required
+            #nombre="ngModel" (click)="mostrarDatosWS($event)" (mouseleave)="ocultarDatosWS($event)"
+            (mouseover)="mostrarDatosWS($event)">
           <div *ngIf="nombre.invalid && nombre.touched" class="alert alert-danger" role="alert">Campo obligatorio o
             invalido</div>
         </div>
         <div class="col-md-6 item">
           <label for="exampleInputEmail1">Email address</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Escriba su email"
-            name="correo_electronico" ngModel pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
-            #correo_electronico="ngModel">
-          <div *ngIf="correo_electronico.invalid && correo_electronico.touched" class="alert alert-danger" role="alert">Campo
+          <input type="email" class="form-control" id="correo_electronicoWS" aria-describedby="emailHelp"
+            placeholder="Escriba su email" required maxlength="50" name="correo_electronico" ngModel
+            pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
+            #correo_electronico="ngModel" (click)="mostrarDatosWS($event)" (mouseleave)="ocultarDatosWS($event)"
+            (mouseover)="mostrarDatosWS($event)">
+          <div *ngIf="correo_electronico.invalid && correo_electronico.touched" class="alert alert-danger" role="alert">
+            Campo
             obligatorio o invalido</div>
         </div>
       </div>
       <div class="form-group" class="col-md-12">
         <div class="col-md-6 item">
           <label for="exampleInputTel">Telefono</label>
-          <input type="tel" class="form-control" id="org" placeholder="Escriba su telefono" name="telefono" ngModel
-            pattern="^(\([0-9]{3}\)|[0-9]{3})[0-9]{3}[0-9]{4}$" #telefono="ngModel">
+          <!-- pattern="^(\([0-9]{3}\)|[0-9]{3})[0-9]{3}[0-9]{4}$" -->
+          <input type="text" class="form-control" id="telefonoWS" placeholder="Escriba su telefono" name="telefono"
+            ngModel required #telefono="ngModel" (click)="mostrarDatosWS($event)" (mouseleave)="ocultarDatosWS($event)"
+            (mouseover)="mostrarDatosWS($event)">
           <div *ngIf="telefono.invalid && telefono.touched" class="alert alert-danger" role="alert">Campo obligatorio o
             invalido</div>
         </div>
         <div class="col-md-6 item">
           <label for="exampleInputOrg">Hoja de vida</label>
-          <input type="file" id="hojav" class="form-control hoja-v" placeholder="Hoja de vida" name="hojav" (change)="onFileChange($event)" #hojavWS>
+          <input type="file" id="hojav" class="form-control hoja-v" placeholder="Hoja de vida" name="hojav"
+            (change)="onFileChange($event)" #hojavWS>
           <input type="text" class="form-control ocultar" id="hoja_de_vida" name="hoja_de_vida" [ngModel]="hojaWU">
         </div>
       </div>
       <div class="form-group" class="col-md-12">
         <div class="col-md-6 item">
           <label for="exampleInputPais">Pais</label>
-          <ng-select #paisWU class="select-autocomplete" id="pais" name="pais" placeholder="Seleccione su pais"
-            [allowClear]="true" [items]="listPais" [disabled]="disabled" (data)="refreshValuePais($event)" (selected)="selectedPais($event)"
-            (removed)="removedPais($event)" (typed)="typedPais($event)">
+          <ng-select #paisWU class="select-autocomplete" id="paisWS" name="pais" placeholder="Seleccione su pais"
+            [allowClear]="true" [items]="listPais" [disabled]="disabled" (data)="refreshValuePais($event)"
+            (selected)="selectedPais($event)" (removed)="removedPais($event)" (typed)="typedPais($event)">
           </ng-select>
           <input type="text" class="form-control ocultar" id="pais" name="pais" [ngModel]="pais">
         </div>
         <div class="col-md-6 item">
           <label for="exampleInputPais">Ciudad</label>
-          <input type="text" class="form-control" id="ciudad" placeholder="Ciudad" name="ciudad" ngModel #ciudad="ngModel">
+          <input type="text" class="form-control" id="ciudadWS" placeholder="Ciudad" name="ciudad" ngModel
+            #ciudad="ngModel" (click)="mostrarDatosWS($event)" (mouseleave)="ocultarDatosWS($event)"
+            (mouseover)="mostrarDatosWS($event)">
         </div>
       </div>
       <div class="col-md-12">
         <div class="col-md-6 item">
           <label for="exampleInputPais">Sitio web personal</label>
           <input type="text" class="form-control" id="web" placeholder="Su sitio web" name="sitio_web" ngModel
-            #sitio_web="ngModel" pattern="https?://.+">
+            #sitio_web="ngModel" pattern="https?://.+" (click)="mostrarDatosWS($event)"
+            (mouseleave)="ocultarDatosWS($event)" (mouseover)="mostrarDatosWS($event)">
           <div *ngIf="sitio_web.invalid && sitio_web.touched" class="alert alert-danger" role="alert">Campo obligatorio
             o invalido</div>
         </div>
         <div class="col-md-6 item">
           <label for="exampleInputPais">Linkedin</label>
           <input type="text" class="form-control" id="linkedin" placeholder="Su perfil" name="linkedin" ngModel
-            #linkedin="ngModel" pattern="https?://.+">
+            #linkedin="ngModel" pattern="https?://.+" (click)="mostrarDatosWS($event)"
+            (mouseleave)="ocultarDatosWS($event)" (mouseover)="mostrarDatosWS($event)">
           <div *ngIf="linkedin.invalid && linkedin.touched" class="alert alert-danger" role="alert">Campo obligatorio o
             invalido</div>
         </div>
       </div>
       <div class="form-group" class="col-md-12 comentario">
         <label for="exampleInputComm">Comentarios</label>
-        <textarea class="form-control" id="comentario" placeholder="Escriba sus comentarios" name="comentario" ngModel
-          #comentario="ngModel"></textarea>
+        <textarea class="form-control" id="comentarioWS" placeholder="Escriba sus comentarios" name="comentario" ngModel
+          #comentario="ngModel" (click)="mostrarDatosWS($event)" (mouseleave)="ocultarDatosWS($event)"
+          (mouseover)="mostrarDatosWS($event)"></textarea>
         <div *ngIf="comentario.invalid && comentario.touched" class="alert alert-danger" role="alert">Campo obligatorio
           o invalido</div>
       </div>
@@ -78,11 +90,20 @@
           <a data-trigger="focus" role="button" data-toggle="popover" data-placement="top" href="#">
             términos y condiciones
           </a>
+          <ng-template #tipQuestion>
+            <div [innerHTML]='listQuestion'></div>
+          </ng-template>
+          <div class="popover-question" [ngbPopover]="tipQuestion" popoverClass="question">
+            <i class="far fa-question-circle"></i>
+          </div>
         </label>
       </div>
       <re-captcha ngModel #captcha="ngModel" name="captcha" required class="captcha" (resolved)="resolved($event)"
-				siteKey="6LcOuyYTAAAAAHTjFuqhA52fmfJ_j5iFk5PsfXaU" ngDefaultControl></re-captcha>
-      <button type="submit" class="btn btn-primary" [disabled]="!valido">Enviar</button>
+        siteKey="6LcOuyYTAAAAAHTjFuqhA52fmfJ_j5iFk5PsfXaU" ngDefaultControl></re-captcha>
+      <ng-template #tipContent>{{hover_buttom}}</ng-template>
+      <button type="submit" class="btn btn-primary" [ngbTooltip]="tipContent" [ngClass]="!valido?'disabled':''">
+        ENVIAR
+      </button>
       <div class="obligatorios col-md-12"> <span>*</span>Datos Obligatorios</div>
     </form>
     <div id="msj-modal" class="modal" role="dialog">
