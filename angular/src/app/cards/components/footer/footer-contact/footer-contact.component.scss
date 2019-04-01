@@ -11,6 +11,8 @@
       padding: 0;
 
       .container-info-contact {
+        height: 100px;
+
         .title-contact {
           color: white;
           font-family: 'Open Sans';
@@ -34,6 +36,7 @@
 
               .fas.fa-envelope {
                 padding-right: 10px;
+                padding-top: 4px;
               }
             }
           }
