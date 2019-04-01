@@ -3,11 +3,15 @@
     <div class="col-md-12 pt-5 pb-2 px-2">
         <h1 class="text-center text-white">{{ allianceTitle }}</h1>
     </div>
-    <div class="col-md-12 py-5 px-2">
+    <div class="col-md-12 py-5 px-2 icons-container">
         <div class="tec-slider">
-            <ngx-tile NgxCarouselItem id="logos" *ngFor="let im of arrayLogosCustom" class="mx-auto div-slide">
-                <div class="img-fluid" *ngFor="let img of im" [ngStyle]="{'background-image':'url(' + img.field_alliance_image.url + ')'}"></div>
-            </ngx-tile>
+            <ngx-carousel [inputs]="carocarouselTile">
+                <ngx-tile NgxCarouselItem id="logos" *ngFor="let im of arrayLogosCustom" class="mx-auto div-slide">
+                    <div class="img-fluid" *ngFor="let img of im" [ngStyle]="{'background-image':'url(' + img.field_alliance_image.url + ')'}"></div>
+                </ngx-tile>
+                <button NgxCarouselPrev class="leftRs">&lt;</button>
+                <button NgxCarouselNext class="rightRs">&gt;</button>
+            </ngx-carousel>
         </div>
     </div>
 </div>
