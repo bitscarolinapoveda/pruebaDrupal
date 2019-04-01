@@ -43,5 +43,29 @@ h1.text-light {
 .green,
 .text-green {
     color: #91b520;
+}
+
+.text-light {
+    font-family: 'Open Sans light';
+}
+
+/deep/ {
+    .text-light {
+
+        ul {
+            list-style: none;
+
+            li:before {
+                margin-left: -2.5em;
+                margin-right: 0.5em;
+                color: #91b520;
+                font-weight: 900;
+                content: "\f00c";
+                font-family: "Font Awesome 5 Free";
+            }
+        }
+    }
+
+
 
 }
