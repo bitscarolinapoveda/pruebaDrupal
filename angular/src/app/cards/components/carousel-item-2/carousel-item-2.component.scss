@@ -51,13 +51,14 @@
 
 .url-carousel {
     width: 132px;
+    color: transparent !important;
 
     @include breakpoint (tablet) {
         width: 285px;
     }
 
     @include breakpoint (desktop) {
-        width: 230px;
+        width: 100%;
         padding-left: 2%;
         padding-right: 2%;
         text-decoration: none;
@@ -81,7 +82,7 @@
         height: 30%;
         position: relative;
         display: -webkit-inline-box;
-        margin-left: 11%;
+        margin-left: 5%;
 
         @media (max-width: 769px) {
             margin-left: 0;
@@ -96,12 +97,11 @@
         @include breakpoint(desktop) {
             display: flex;
             height: 235px;
-            width: 100%;
+            width: 90%;
             margin-bottom: 14%;
             margin-top: 0%;
-            padding-left: 20px;
-            padding-right: 20px;
-            width: 80%;
+            padding-left: 20%;
+            padding-right: 20%;
             transition: all ease 0.8s;
         }
 
@@ -176,7 +176,7 @@
         .text-description {
             text-align: center;
             width: 100%;
-            padding-top: 2%;
+            padding: 2% 5% 0 5%;
             font-size: 14px;
             color: #002b49;
             font-family: 'Open Sans';
@@ -297,7 +297,7 @@ h1 {
     margin: auto;
     top: 0;
     bottom: 0;
-    left: 0;
+    left: -25px;
     border: none;
     background: transparent;
     background-image: url(/assets/icon/left-arrow.svg);
@@ -310,6 +310,7 @@ h1 {
 
     @media (max-width: 767px) {
         margin-left: 10px;
+        left: 0px;
     }
 }
 
@@ -318,7 +319,7 @@ h1 {
     margin: auto;
     top: 0;
     bottom: 0;
-    right: 0;
+    right: -25px;
     border: none;
     background: transparent;
     background-image: url(/assets/icon/right-arrow.svg);
@@ -331,6 +332,7 @@ h1 {
 
     @media (max-width: 767px) {
         margin-right: 10px;
+        right: 0;
     }
 }
 

@@ -42,6 +42,7 @@ export class AchievementsComponent implements OnInit {
     this._service.getCustomCardInformationType('achievementsbitsamericas', this.type).subscribe(items => {
       this.title = items.header[0].data.title;
       this.subtitle = items.header[1].data.sub_title;
+      items.data = this._service.addImageField(items.data, ['field_imagen']);
       this.list = items.data;
       if (this.title !== '' && this.list.length !== 0) {
         this.visible = true;

@@ -1,20 +1,23 @@
-<section id="kw-title">
-  <h2>{{ title }}</h2>
-  <p [innerHTML]="subtitle"></p>
-</section>
+<div *ngIf="visible">
+  <app-separator [iconCustom]="'icon-people'" [id]="datosMenu.id"></app-separator>
+  <section id="kw-title">
+    <h2>{{ title }}</h2>
+    <p [innerHTML]="subtitle"></p>
+  </section>
 
-<section class="Knowus">
-  <div class="images-knowus">
-    <ul class="row first images col-md-12">
-      <li *ngFor="let kw of list; let i = index" class="col-md-4">
-        <div class="col-md-12">
-          <img [src]="kw.field_imagen.url" [alt]="kw.field_imagen.alt" class="col-md-6" />
-          <label class="col-md-6">
-            <span class="plus">+</span> <span>{{ kw.field_cantidad }}</span>
-            <p>{{ kw.title }}</p>
-          </label>
-        </div>
-      </li>
-    </ul>
-  </div>
-</section>
+  <section class="Knowus">
+    <div class="images-knowus">
+      <ul class="row first images col-md-12">
+        <li *ngFor="let kw of list; let i = index" class="col-md-4">
+          <div class="col-md-12">
+            <img [src]="kw.field_imagen.url" [alt]="kw.field_imagen.alt" class="col-md-6" />
+            <label class="col-md-6">
+              <span class="plus">+</span> <span>{{ kw.field_cantidad }}</span>
+              <p>{{ kw.title }}</p>
+            </label>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+</div>

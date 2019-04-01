@@ -1,12 +1,13 @@
 import { Http } from '@angular/http';
-import { Component, OnInit, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ViewChild, ElementRef, ViewEncapsulation } from '@angular/core';
 import 'rxjs/add/operator/map';
 import { HttpService } from '../../../services/http/http.service';
 import { CustomCardService } from 'src/app/services/cards/v1-card.services';
 import { HttpClient } from '@angular/common/http';
 import { SelectComponent } from 'ng2-select';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { DataMessage } from "../../../message/components/message/message.component";
+import { DataMessage } from '../../../message/components/message/message.component';
+import { NgbPopoverConfig } from '@ng-bootstrap/ng-bootstrap';
 
 declare var jQuery: any;
 declare var $: any;
@@ -14,7 +15,8 @@ declare var $: any;
 @Component({
   selector: 'app-workus',
   templateUrl: './workus.component.html',
-  styleUrls: ['./workus.component.scss']
+  styleUrls: ['./workus.component.scss'],
+  providers: [NgbPopoverConfig]
 })
 export class WorkusComponent implements OnInit {
   @ViewChild('paisWU') public ngSelectW: SelectComponent;
@@ -45,60 +47,66 @@ export class WorkusComponent implements OnInit {
 
   captcha_form: any;
   valido: boolean;
+  tituloQuestion: string;
+  listQuestion: any[];
+  hover_buttom: string;
 
   onSubmit(formulario) {
 
-    formulario['archivo_adjunto'] = this.file;
+    if (this.valido === true) {
+      formulario['archivo_adjunto'] = this.file;
 
-    this.dataMessage = [];
-    formulario['webform_id'] = 'work_with_us';
-    formulario['captcha'] = this.captcha_form;
-    this.captcha_form = '';
-    this.valido = false;
+      this.dataMessage = [];
+      formulario['webform_id'] = 'work_with_us';
+      formulario['captcha'] = this.captcha_form;
+      this.captcha_form = '';
+      this.valido = false;
+      this.hover_buttom = 'Faltan datos por llenar';
 
-    grecaptcha.reset();
+      grecaptcha.reset();
 
-    /* jQuery('#msj-modal').show();
-    jQuery('.close').click(function () {
-      jQuery('#msj-modal').hide();
-    }); */
+      /* jQuery('#msj-modal').show();
+      jQuery('.close').click(function () {
+        jQuery('#msj-modal').hide();
+      }); */
 
-    this._http.post('webform_rest/submit?_format=json', formulario, { // Hace el submit del formulario a Drupal
-      'Content-Type': 'application/json',
-      'X-CSRF-Token': this._token
-    })
-      .subscribe(datos => {
-        this.ubicar();
-        if (datos.error) {
-          for (var key in datos.error) {
+      this._http.post('webform_rest/submit?_format=json', formulario, { // Hace el submit del formulario a Drupal
+        'Content-Type': 'application/json',
+        'X-CSRF-Token': this._token
+      })
+        .subscribe(datos => {
+          this.ubicar();
+          if (datos.error) {
+            for (var key in datos.error) {
+              this.dataMessage.push(
+                {
+                  visible: true,
+                  status: 'error',
+                  message: datos.error[key]
+                }
+              );
+            }
+          } else if (datos.sid) {
+
+            jQuery('#formulario_contacto')[0].reset();
+
+            this.ngSelectW.active = [];
+            this.pais = '';
+
             this.dataMessage.push(
               {
                 visible: true,
-                status: 'error',
-                message: datos.error[key]
+                status: 'success',
+                message: 'Respuesta satisfactoria'
               }
             );
           }
-        } else if (datos.sid) {
-
-          jQuery('#formulario_contacto')[0].reset();
-
-          this.ngSelectW.active = [];
-          this.pais = '';
-
-          this.dataMessage.push(
-            {
-              visible: true,
-              status: 'success',
-              message: 'Respuesta satisfactoria'
-            }
-          );
-        }
-        // formulario.form.reset();
-      });
+        });
+    }
 
   }
-  constructor(private _http: HttpService, private _service: CustomCardService, private http_pais: HttpClient, private fb: FormBuilder) {
+  constructor(private _http: HttpService, private _service: CustomCardService,
+    private http_pais: HttpClient, private fb: FormBuilder, config: NgbPopoverConfig) {
     this.dataMessage = [];
     this.list = [];
     this.bandPais = [];
@@ -113,6 +121,17 @@ export class WorkusComponent implements OnInit {
     this.file = '';
     this.hojaWU = '';
     this.valido = false;
+    this.hover_buttom = 'Faltan datos por llenar';
+    config.placement = 'top';
+    config.triggers = 'hover';
+  }
+
+  mostrarDatosWS(id) {
+    $('#' + id.target.id).addClass('ocultar-placeholder');
+  }
+
+  ocultarDatosWS(id) {
+    $('#' + id.target.id).removeClass('ocultar-placeholder');
   }
 
   ngOnInit() {
@@ -121,6 +140,7 @@ export class WorkusComponent implements OnInit {
     });
 
     this.getPopoverService();
+    this.getPopoverQuestionService();
 
     this.getPaises();
 
@@ -140,11 +160,27 @@ export class WorkusComponent implements OnInit {
         e.preventDefault();
       });
     });
+    $(function () {
+      $('[data-toggle="popover-question"]').popover(
+        {
+          html: true,
+          title: function () {
+            return $('#popover-title-question').html();
+          },
+          content: function () {
+            return document.getElementById('popover-question').innerHTML;
+          }
+        }
+      ).click(function (e) {
+        e.preventDefault();
+      });
+    });
   }
 
   resolved(captchaResponse: string) {
     this.captcha_form = `${captchaResponse}`;
     this.valido = true;
+    this.hover_buttom = 'Enviar datos';
   }
 
   onFileChange(event) {
@@ -163,6 +199,13 @@ export class WorkusComponent implements OnInit {
     this._service.getCustomContentBasicPage('c00ea48d-1ce3-4bba-b65e-d57daf71cf4a').subscribe(params => {
       this.titulo = params.title;
       this.list = params.body;
+    });
+  }
+
+  getPopoverQuestionService() {
+    this._service.getCustomContentBasicPage('dc60d310-0a96-41a3-9522-951af2b9f340').subscribe(params => {
+      this.tituloQuestion = params.title;
+      this.listQuestion = params.body;
     });
   }
 

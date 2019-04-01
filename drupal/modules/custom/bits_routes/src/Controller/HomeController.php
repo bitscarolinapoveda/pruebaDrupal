@@ -3,6 +3,7 @@
 namespace Drupal\bits_routes\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
+use Drupal\Core\Routing\TrustedRedirectResponse;
 
 class HomeController extends ControllerBase {
 
@@ -65,6 +66,25 @@ class HomeController extends ControllerBase {
     return [
       '#type' => 'markup',
       '#markup' => 'Contact us',
+    ];
+  }
+  public function blockedHome() {
+    return [
+      '#theme' => 'page__home',
+      '#homeorerrorpage' => TRUE,
+    ];
+  }
+
+  public function notfound404() {
+    return [
+      '#theme' => 'page__404',
+      '#homeorerrorpage' => TRUE,
+    ];
+  }
+  public function forbidden403() {
+    return [
+      "#theme" => 'page__403',
+      '#homeorerrorpage' => TRUE,
     ];
   }
 }

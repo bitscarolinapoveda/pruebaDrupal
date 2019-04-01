@@ -42,6 +42,8 @@ export class TecnologiesProjectserviceComponent implements OnInit {
     this.https.getCustomCardInformationType('expertsinimedicalcard', this.type).subscribe(items => {
       this.title = items.header[0].data.title;
       this.subtitle = items.header[1].data.sub_title;
+      items.data = this.https.addImageField(items.data, ['field_tech_color_image']);
+      items.data = this.https.addImageField(items.data, ['field_tech_image']);
       this.CarouselControlArray = items.data;
       if (this.title !== '' && this.CarouselControlArray.length !== 0) {
         this.visible = true;

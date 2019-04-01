@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { ViewEncapsulation } from '@angular/core';
 import { CustomCardService } from 'src/app/services/cards/v1-card.services';
+import { DataMenu } from '../menu-template/menu-template.component';
 
 declare var TL: any;
 declare var window: any;
@@ -19,10 +20,21 @@ export class HistoryComponent implements OnInit {
   public obj;
   public title;
   public sub_title;
+  @Output() propagar = new EventEmitter<DataMenu>();
+  datosMenu: DataMenu;
+  visible: boolean;
 
-  constructor(private _http: CustomCardService) { }
+  constructor(private _http: CustomCardService) {
+    this.visible = false;
+  }
 
   ngOnInit() {
+    this.datosMenu = {
+      label: 'HISTORIA',
+      id: 'a2',
+      url: ''
+    };
+    this.propagar.emit(this.datosMenu);
     this.getHistoryService();
   }
 
@@ -34,6 +46,7 @@ export class HistoryComponent implements OnInit {
         'events': [
         ]
       };
+      params.data = this._http.addImageField(params.data, ['field_media_url']);
       const datos = params.data;
       for (let index = 0; index < datos.length; index++) {
         const fecha_start = new Date(datos[index].field_start_date);
@@ -74,6 +87,10 @@ export class HistoryComponent implements OnInit {
         start_at_end: false,
         timenav_height: 250
       };
+
+      if (this.title !== '' && params.data.length !== 0) {
+        this.visible = true;
+      }
 
       window.timeline = new TL.Timeline('timeline', dataObject, additionalOptions);
     });

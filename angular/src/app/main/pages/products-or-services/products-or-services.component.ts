@@ -6,6 +6,7 @@ import { HttpService } from '../../../services/http/http.service';
 import { getRelatedFormControls } from '@ng-dynamic-forms/core';
 import { General } from '../../../cards/components/blurb/blurb.component';
 import { Observable } from 'rxjs/Observable';
+import { Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-products-or-services',
@@ -20,15 +21,11 @@ export class ProductsOrServicesComponent implements OnInit {
   public nid: string;
   listMenu: DataMenu[];
   public imagen: string;
-
-  public principal: General;
-  public principal$: Observable<General>;
-
   public value: any;
-
   visible: boolean;
 
-  constructor(private _http: CustomCardService, private rutaActiva: ActivatedRoute, private service: HttpService) {
+  constructor(private _http: CustomCardService, private rutaActiva: ActivatedRoute, private service: HttpService,
+    private meta: Meta) {
     this.blurbArray = [];
     this.listMenu = [];
     this.visible = false;
@@ -36,15 +33,10 @@ export class ProductsOrServicesComponent implements OnInit {
 
   ngOnInit() {
 
-    this.type = this.rutaActiva.snapshot.params.type;
+    this.meta.removeTag('name="general"');
+    this.meta.updateTag({ name: 'component', content: 'app-products-or-services' });
 
-    this.principal = {
-      body: [],
-      data: [{ id: '17', label: 'Deprisa' }, { id: '18', label: 'Clima' }],
-      files: [],
-      header: [],
-      others: [],
-    };
+    this.type = this.rutaActiva.snapshot.params.type;   
 
     this.rutaActiva.params.subscribe(
       (params: Params) => {
@@ -62,6 +54,7 @@ export class ProductsOrServicesComponent implements OnInit {
       .subscribe(params => {
         this.tituloModulos = params.header[0].data.title;
         this.descripcionModulos = params.header[1].data.description;
+        params.data = this._http.addImageField(params.data, ['field_image']);
         for (let blurbItem of params.data) {
           let blurbObject: Blurb = {
             imageSrc: '',

@@ -23,6 +23,7 @@
     padding-right: 4%;
     margin-top: 1%;
     text-decoration: none;
+    color: transparent !important;
 
     @include breakpoint (desktop) {
         padding-left: 5%;
@@ -32,6 +33,11 @@
     .container-img {
         height: 123px;
         position: relative;
+
+        img {
+            max-width: 200px !important;
+            height: auto !important;
+        }
 
         @include breakpoint (tablet) {
             padding-left: 0%;
@@ -106,16 +112,26 @@
             font-weight: 300;
 
             @include breakpoint (desktop) {
-                padding-top: 14%;
+                padding-top: 8%;
             }
         }
 
         .main-title {
-            margin-top: 4%;
+            margin-top: 10px;
             font-size: 20px;
             font-family: 'Open Sans Codensed';
             font-weight: 300;
             text-transform: uppercase;
+
+            @include breakpoint (phone) {
+                margin-top: 20px;
+                margin-bottom: 20px !important;
+            }
+
+            @include breakpoint (tablet) {
+                margin-top: 20px;
+                margin-bottom: 20px !important;
+            }
         }
 
         .category {
@@ -131,7 +147,7 @@
                 padding-left: 12%;
                 padding-right: 12%;
                 width: 100%;
-                height: 56px;
+                height: 40px;
             }
         }
 
@@ -151,14 +167,16 @@
 #main-title {
     color: #002b49;
     text-align: center;
-    margin-top: 64px;
+    margin-top: 40px;
 
-    @include breakpoint(desktop) {
-        margin-top: 80px;
+    @include breakpoint (phone) {
+        margin-top: 20px;
+        margin-bottom: 20px !important;
     }
 
-    @include breakpoint(tablet) {
-        margin-top: 80px;
+    @include breakpoint (tablet) {
+        margin-top: 20px;
+        margin-bottom: 20px !important;
     }
 
     h2 {
@@ -234,6 +252,11 @@ h1 {
     overflow: hidden;
     padding-top: 37px;
     cursor: pointer;
+
+    @include breakpoint(desktop) {
+        left: -30px !important;
+    }
+
 }
 
 .rightRs {
@@ -251,6 +274,10 @@ h1 {
     overflow: hidden;
     padding-top: 37px;
     cursor: pointer;
+
+    @include breakpoint(desktop) {
+        right: -30px !important;
+    }
 }
 
 .rightRs:focus,

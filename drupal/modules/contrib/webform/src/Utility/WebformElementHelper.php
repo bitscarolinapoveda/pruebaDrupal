@@ -87,6 +87,26 @@ class WebformElementHelper {
   }
 
   /**
+   * Determine if an element has children.
+   *
+   * @param array|mixed $element
+   *   An element.
+   *
+   * @return bool
+   *   TRUE if an element has children.
+   *
+   * @see \Drupal\Core\Render\Element::children
+   */
+  public static function hasChildren($element) {
+    foreach ($element as $key => $value) {
+      if ($key === '' || $key[0] !== '#') {
+        return TRUE;
+      }
+    }
+    return FALSE;
+  }
+
+  /**
    * Determine if an element is a webform element and should be enhanced.
    *
    * @param array $element
@@ -592,8 +612,8 @@ class WebformElementHelper {
    *   An associative array containing an element's states.
    */
   public static function &getStates(array &$element) {
-    // Composite and multiple elements use use a custom states wrapper
-    // which will changes '#states' to '#_webform_states'.
+    // Composite and multiple elements use a custom states wrapper
+    // which will change '#states' to '#_webform_states'.
     // @see \Drupal\webform\Utility\WebformElementHelper::fixStatesWrapper
     if (!empty($element['#_webform_states'])) {
       return $element['#_webform_states'];

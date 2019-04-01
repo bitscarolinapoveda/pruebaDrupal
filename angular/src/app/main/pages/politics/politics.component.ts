@@ -1,4 +1,5 @@
 import { OnInit, Component } from '@angular/core';
+import { Meta } from '@angular/platform-browser';
 
 @Component({
     selector: 'app-politics-page',
@@ -7,9 +8,11 @@ import { OnInit, Component } from '@angular/core';
 })
 export class PoliticsComponent implements OnInit {
 
-    constructor() {
-
+    constructor(private meta: Meta) {
     }
 
-    ngOnInit() { }
+    ngOnInit() {
+        this.meta.removeTag('name="general"');
+        this.meta.updateTag({ name: 'component', content: 'app-politics-page' });
+    }
 }

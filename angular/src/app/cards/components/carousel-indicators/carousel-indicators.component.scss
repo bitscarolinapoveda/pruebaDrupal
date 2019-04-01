@@ -34,6 +34,17 @@
   }
 }
 
+:host /deep/ .carousel-indicators li:hover {
+  background-color: white;
+}
+
+:host /deep/ .carousel-subtitle {
+  @include breakpoint (phone) {
+    max-height: 80px;
+    overflow: hidden;
+  }
+}
+
 #carousel-container {
   .carousel-main-image {
     @include breakpoint (desktop) {
