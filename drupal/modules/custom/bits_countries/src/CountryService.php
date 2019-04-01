@@ -1,23 +1,23 @@
 <?php
 
 namespace Drupal\bits_countries;
-use Drupal\Core\Entity\EntityManagerInterface;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
 /**
  * Class CountryService.
  */
 class CountryService {
 
   /**
-   * Drupal\Core\Entity\EntityManagerInterface definition.
+   * Drupal\Core\Entity\EntityTypeManagerInterface definition.
    *
-   * @var \Drupal\Core\Entity\EntityManagerInterface
+   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
    */
-  protected $entityManager;
+  protected $entityTypeManager;
   /**
    * Constructs a new CountryService object.
    */
-  public function __construct(EntityManagerInterface $entity_manager) {
-    $this->entityManager = $entity_manager;
+  public function __construct(EntityTypeManagerInterface $entity_manager) {
+    $this->entityTypeManager = $entity_manager;
   }
 
   /**
@@ -28,15 +28,16 @@ class CountryService {
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */
   public function get($params) {
-    $query = \Drupal::entityQuery('country_entity');
+    $storage = $this->entityTypeManager->getStorage('country_entity');
+    $query = $storage->getQuery('AND');
     if(array_key_exists("name",$params)) {
       $query->condition("name","%".$params["name"]."%","LIKE")->execute();
     }
     $nids = $query->execute();
-    $list = $this->entityManager->getStorage('country_entity')->loadMultiple($nids);
+    $list = $storage->loadMultiple($nids);
     $listArray = [];
 
-    foreach ($list as  $entity) {
+    foreach ($list as $entity) {
       /* @var $entity \Drupal\bits_countries\Entity\CountryEntity */
       $listArray[] = ['iso_code' => $entity->getIsoCode(), 'label' => $entity->getLabelName()];
     }
