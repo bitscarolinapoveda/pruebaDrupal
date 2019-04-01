@@ -102,6 +102,11 @@ export class WorkusComponent implements OnInit {
             );
           }
         });
+    } else {
+      this.dataMessage = [];
+      formulario['captcha'] = this.captcha_form;
+      this.captcha_form = '';
+      grecaptcha.reset();
     }
 
   }

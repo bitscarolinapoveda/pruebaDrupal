@@ -5,7 +5,7 @@
       name="formulario_contacto">
       <div class="form-group" [ngClass]="aplicaCssErro(nombre)" class="col-md-12">
         <div class="col-md-6 item">
-          <label for="exampleInputNombre">Nombre</label>
+          <label for="exampleInputNombre">Nombre*</label>
           <input type="text" class="form-control" id="nombreWS" placeholder="Nombre" name="nombre" ngModel required
             #nombre="ngModel" (click)="mostrarDatosWS($event)" (mouseleave)="ocultarDatosWS($event)"
             (mouseover)="mostrarDatosWS($event)">
@@ -13,24 +13,22 @@
             invalido</div>
         </div>
         <div class="col-md-6 item">
-          <label for="exampleInputEmail1">Email address</label>
+          <label for="exampleInputEmail1">Email address*</label>
           <input type="email" class="form-control" id="correo_electronicoWS" aria-describedby="emailHelp"
             placeholder="Escriba su email" required maxlength="50" name="correo_electronico" ngModel
             pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
             #correo_electronico="ngModel" (click)="mostrarDatosWS($event)" (mouseleave)="ocultarDatosWS($event)"
             (mouseover)="mostrarDatosWS($event)">
           <div *ngIf="correo_electronico.invalid && correo_electronico.touched" class="alert alert-danger" role="alert">
-            Campo
-            obligatorio o invalido</div>
+            Campo obligatorio o invalido</div>
         </div>
       </div>
       <div class="form-group" class="col-md-12">
         <div class="col-md-6 item">
-          <label for="exampleInputTel">Telefono</label>
+          <label for="exampleInputTel">Telefono*</label>
           <!-- pattern="^(\([0-9]{3}\)|[0-9]{3})[0-9]{3}[0-9]{4}$" -->
           <input type="text" class="form-control" id="telefonoWS" placeholder="Escriba su telefono" name="telefono"
-            ngModel required #telefono="ngModel" (click)="mostrarDatosWS($event)" (mouseleave)="ocultarDatosWS($event)"
-            (mouseover)="mostrarDatosWS($event)">
+            ngModel required #telefono="ngModel" (click)="mostrarDatosWS($event)" (mouseleave)="ocultarDatosWS($event)" (mouseover)="mostrarDatosWS($event)">
           <div *ngIf="telefono.invalid && telefono.touched" class="alert alert-danger" role="alert">Campo obligatorio o
             invalido</div>
         </div>
@@ -71,8 +69,7 @@
           <input type="text" class="form-control" id="linkedin" placeholder="Su perfil" name="linkedin" ngModel
             #linkedin="ngModel" pattern="https?://.+" (click)="mostrarDatosWS($event)"
             (mouseleave)="ocultarDatosWS($event)" (mouseover)="mostrarDatosWS($event)">
-          <div *ngIf="linkedin.invalid && linkedin.touched" class="alert alert-danger" role="alert">Campo obligatorio o
-            invalido</div>
+          <div *ngIf="linkedin.invalid && linkedin.touched" class="alert alert-danger" role="alert">Campo obligatorio o invalido</div>
         </div>
       </div>
       <div class="form-group" class="col-md-12 comentario">
@@ -98,10 +95,10 @@
           </div>
         </label>
       </div>
-      <re-captcha ngModel #captcha="ngModel" name="captcha" required class="captcha" (resolved)="resolved($event)"
-        siteKey="6Lcn6poUAAAAAIzWlqjX9tgwdMcZRuaOO5NbEfUh" ngDefaultControl></re-captcha>
+      <re-captcha ngModel #captcha="ngModel" name="captcha" class="captcha" (resolved)="resolved($event)"
+        siteKey="6LcOuyYTAAAAAHTjFuqhA52fmfJ_j5iFk5PsfXaU" ngDefaultControl></re-captcha>
       <ng-template #tipContent>{{hover_buttom}}</ng-template>
-      <button type="submit" class="btn btn-primary" [ngbTooltip]="tipContent" [ngClass]="!valido?'disabled':''">
+      <button type="submit" class="btn btn-primary" [ngbTooltip]="tipContent" [ngClass]="userForm.invalid?'disabled':''" [disabled]="userForm.invalid">
         ENVIAR
       </button>
       <div class="obligatorios col-md-12"> <span>*</span>Datos Obligatorios</div>
