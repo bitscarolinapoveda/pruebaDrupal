@@ -113,6 +113,35 @@ export class CustomCardService {
   getTabsData() {
     // return this.http.get('v1/card/export/tab-horizontal');
   }
+
+  // Organiza el carrusel de a 4 y los espacios faltantes los llena aleatoriamente
+  organizeInfoForCarousel(carouselInfo) {
+    var arrayBox = [];
+    var number = carouselInfo.length / 4;
+    if (carouselInfo.length % 4 === 0) {
+      var numberOfBoxes = parseInt(number.toString(), 10);
+    } else {
+      var numberOfBoxes = 1 + parseInt(number.toString(), 10);
+    }
+    for (let i = 0; i < numberOfBoxes; i++) {
+      arrayBox[i] = [];
+    }
+    var vuelta = 0;
+    var hasta = 4;
+    var c = 0;
+    for (let i = 0; i < arrayBox.length; i++) {
+      for (let j = vuelta; j < hasta; j++) {
+        if (carouselInfo[j]=== undefined) {
+          arrayBox[i].push(carouselInfo[Math.floor(Math.random()*carouselInfo.length)]);
+        } else {
+          arrayBox[i].push(carouselInfo[j]);
+        }
+      }
+      vuelta = vuelta + 4;
+      hasta = hasta + 4;
+    }
+    return arrayBox;
+  }
 }
 
 export interface Slide {
