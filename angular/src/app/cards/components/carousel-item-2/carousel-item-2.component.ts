@@ -89,30 +89,6 @@ export class CarouselItem2Component implements OnInit {
       for (let i = len; i < len + 10; i++) { this.clients.push(i); }
     }
   }
-  organizeInfoForCarousel(clientsInfo) {
-    var number = clientsInfo.length / 4;
-    if (clientsInfo.length % 4 === 0) {
-      var numberOfBoxes = parseInt(number.toString(), 10);
-    } else {
-      var numberOfBoxes = 1 + parseInt(number.toString(), 10);
-    }
-    for (let i = 0; i < numberOfBoxes; i++) {
-      this.arrayBox[i] = [];
-    }
-    var vuelta = 0;
-    var hasta = 4;
-    for (let i = 0; i < this.arrayBox.length; i++) {
-      for (let j = vuelta; j < hasta; j++) {
-        if (clientsInfo[j]=== undefined) {
-          this.arrayBox[i].push(clientsInfo[Math.floor(Math.random()*clientsInfo.length)]);
-        } else {
-          this.arrayBox[i].push(clientsInfo[j]);
-        }
-      }
-      vuelta = vuelta + 4;
-      hasta = hasta + 4;
-    }
-  }
 
   getOurClientsItems() {
     this._cardService.getCustomCardInformation('clientscard').subscribe(items => {
@@ -121,7 +97,7 @@ export class CarouselItem2Component implements OnInit {
       this.titleClients = items.header[0].data.title;
       this.clients = Object.keys(items.data).map(function (key) { return items.data[key]; });
       this.clientsDesktop = Object.keys(items.data).map(function (key) { return items.data[key]; });
-      this.organizeInfoForCarousel(this.clients);
+      this.arrayBox = this._cardService.organizeInfoForCarousel(this.clients);
     });
   }
 }
