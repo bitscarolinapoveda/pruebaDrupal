@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\bits_prodandserv\Plugin\Block;
+namespace Drupal\bits_cards\Plugin\Block;
 
 use Drupal\adf_cards\Plugin\Block\CardBase;
 
@@ -9,25 +9,27 @@ use Drupal\adf_cards\Plugin\Block\CardBase;
  *
  * @Block(
  *  id = "all_services_card",
- *  admin_label = @Translation("All services card"),
+ *  admin_label = @Translation("All Services card"),
  * )
  */
-class AllServicesCard extends CardBase {
-
+class AllServicesCard extends CardBase
+{
   /**
    * {@inheritdoc}
    */
   public function defaultConfiguration() {
     return [
       'entity' => [
-        'name' => 'service_product_bits',
-        'type' => '', //necesario para no generar error bundleEntityTypes
+        'name' => 'node',
+        'type' => 'products_services',
         'conditions' => [
-          'type' => 'service',
+          'field_type' => '12', // ID service taxonomy term
         ],
-        'limit' => 1000,
+        'limit' => 6,
+        'offset' => 0,
       ],
       'others' => [],
     ];
   }
+
 }

@@ -58,7 +58,8 @@ class ProductsAndServicesCard extends CardBase
       ],
       'files' => [],
       'entity' => [
-        'name' => 'service_product_bits',
+        'name' => 'node',
+        'type' => 'products_services',
         'limit' => 6,
         'offset' => 0,
       ],
