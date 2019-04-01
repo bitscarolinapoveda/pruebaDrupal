@@ -21,6 +21,7 @@ export class LocationsComponent implements OnInit {
   public closeOthers = true;
   public infoWindowOpen = true;
   public locations_data: any;
+  public cant_locations_data: boolean;
   public lat: number;
   public lng: number;
   public titleCity;
@@ -69,6 +70,7 @@ export class LocationsComponent implements OnInit {
   ) {
     this.locations_data = [];
     this.infoWindowOpen = true;
+    this.cant_locations_data = false;
   }
   ngOnInit() {
     this.service.getCustomCardInformation('locationcard_2').subscribe((params) => {
@@ -91,6 +93,12 @@ export class LocationsComponent implements OnInit {
       this.addressCity = this.items[0].field_address;
       this.telephoneCity = this.items[0].field_telephone;
       this.locations_data = this.items;
+      if (this.locations_data.length < 4) {
+        this.cant_locations_data = true;
+      } else {
+        this.cant_locations_data = false;
+      }
+
     });
     this.onResize(screen);
   }

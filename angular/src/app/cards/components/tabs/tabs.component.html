@@ -20,9 +20,10 @@
 
 			<div class="form-group" [ngClass]="aplicaCssErro(nombre)" class="col-md-12">
 				<div class="col-md-6 item">
-					<label for="exampleInputNombre">Nombre</label>
+					<label for="exampleInputNombre">Nombre*</label>
 					<input type="text" class="form-control" id="nombre" placeholder="Nombre" name="nombre" ngModel
-						required #nombre="ngModel">
+						required #nombre="ngModel" (click)="mostrarDatos($event)" (mouseleave)="ocultarDatos($event)"
+						(mouseover)="mostrarDatos($event)">
 					<div *ngIf="nombre.invalid && nombre.touched" class="alert alert-danger" role="alert">
 						Campo obligatorio o invalido
 					</div>
@@ -30,25 +31,29 @@
 				<div class="col-md-6 item">
 					<label for="exampleInputOrg">Organización</label>
 					<input type="text" class="form-control" id="organizacion" placeholder="Organización"
-						name="organizacion" ngModel #organizacion="ngModel">
+						name="organizacion" ngModel #organizacion="ngModel" (click)="mostrarDatos($event)"
+						(mouseleave)="ocultarDatos($event)" (mouseover)="mostrarDatos($event)">
 				</div>
 			</div>
 			<div class="form-group" class="col-md-12">
 				<div class="col-md-6 item">
-					<label for="exampleInputEmail1">Email address</label>
+					<label for="exampleInputEmail1">Email address*</label>
 					<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
 						placeholder="Escriba su email" name="correo_electronico" ngModel
 						pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
-						#correo_electronico="ngModel">
+						maxlength="50" #correo_electronico="ngModel" required (click)="mostrarDatos($event)"
+						(mouseleave)="ocultarDatos($event)" (mouseover)="mostrarDatos($event)">
 					<div *ngIf="correo_electronico.invalid && correo_electronico.touched" class="alert alert-danger"
 						role="alert">
 						Campo obligatorio o invalido
 					</div>
 				</div>
 				<div class="col-md-6 item">
-					<label for="exampleInputTel">Telefono</label>
-					<input type="tel" class="form-control" id="org" placeholder="Escriba su telefono" name="telefono"
-						ngModel pattern="^(\([0-9]{3}\)|[0-9]{3})[0-9]{3}[0-9]{4}$" #telefono="ngModel">
+					<label for="exampleInputTel">Telefono*</label>
+					<!-- pattern="^(\([0-9]{3}\)|[0-9]{3})[0-9]{3}[0-9]{4}$" -->
+					<input type="text" class="form-control" id="telefono" placeholder="Escriba su telefono"
+						name="telefono" ngModel required #telefono="ngModel" (click)="mostrarDatos($event)"
+						(mouseleave)="ocultarDatos($event)" (mouseover)="mostrarDatos($event)">
 					<div *ngIf="telefono.invalid && telefono.touched" class="alert alert-danger" role="alert">
 						Campo obligatorio o invalido
 					</div>
@@ -67,7 +72,8 @@
 				<div class="col-md-6 item">
 					<label for="ciudad">Ciudad</label>
 					<input type="text" class="form-control" id="ciudad" placeholder="Ciudad" name="ciudad" ngModel
-						#ciudad="ngModel">
+						#ciudad="ngModel" (click)="mostrarDatos($event)" (mouseleave)="ocultarDatos($event)"
+						(mouseover)="mostrarDatos($event)">
 				</div>
 			</div>
 			<div class="col-md-12">
@@ -97,7 +103,8 @@
 			<div class="form-group" class="col-md-12 comentario">
 				<label for="exampleInputComm">Comentarios</label>
 				<textarea class="form-control" id="comentario" placeholder="Escriba sus comentarios" name="comentario"
-					ngModel #comentario="ngModel"></textarea>
+					ngModel #comentario="ngModel" (click)="mostrarDatos($event)" (mouseleave)="ocultarDatos($event)"
+					(mouseover)="mostrarDatos($event)"></textarea>
 				<div *ngIf="comentario.invalid && comentario.touched" class="alert alert-danger" role="alert">
 					Campo obligatorio o invalido
 				</div>
@@ -109,11 +116,22 @@
 					<a data-trigger="focus" role="button" data-toggle="popover" data-placement="top" href="#">
 						términos y condiciones
 					</a>
+					<ng-template #tipQuestion>
+						<div [innerHTML]='listQuestion'></div>
+					</ng-template>
+					<div class="popover-question" [ngbPopover]="tipQuestion" popoverClass="question">
+						<i class="far fa-question-circle"></i>
+					</div>
 				</label>
 			</div>
-			<re-captcha ngModel #captcha="ngModel" name="captcha" required class="captcha" (resolved)="resolved($event)"
+			<re-captcha ngModel #captcha="ngModel" name="captcha" class="captcha" (resolved)="resolved($event)"
 				siteKey="6LcOuyYTAAAAAHTjFuqhA52fmfJ_j5iFk5PsfXaU" ngDefaultControl></re-captcha>
-			<button type="submit" class="btn btn-primary" [disabled]="!valido">Enviar</button>
+			<ng-template #tipContent>{{hover_buttom}}</ng-template>
+			<button type="submit" class="btn btn-primary" [ngbTooltip]="tipContent"
+				[ngClass]="userForm.invalid?'disabled':''" [disabled]="userForm.invalid">
+				ENVIAR
+			</button>
+			<!-- [ngClass]="!userForm.valid?'disabled':'funciona'"  -->
 			<div class="obligatorios col-md-12"> <span>*</span>Datos Obligatorios</div>
 		</form>
 	</div>

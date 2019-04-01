@@ -1,8 +1,9 @@
 import { CustomCardService } from './../../../services/cards/v1-card.services';
-import { Component, OnInit, HostListener, ElementRef } from '@angular/core';
+import { Component, OnInit, HostListener, ElementRef, Output, EventEmitter } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { animate, trigger, state, style, transition } from '@angular/animations';
 import { NgxCarousel } from 'ngx-carousel';
+import { DataMenu } from '../menu-template/menu-template.component';
 
 declare var $: any;
 
@@ -14,16 +15,20 @@ declare var $: any;
 export class AlliancesComponent implements OnInit {
   allianceArrayLogos: any = [];
   arrayLogosCustom: any[][];
-  allianceTitle: string = "";
-  allianceBackground: string = "";
+  allianceTitle: string = '';
+  allianceBackground: string = '';
   public carocarouselTile: NgxCarousel;
-  state = 'hide'
+  state = 'hide';
+  @Output() propagar = new EventEmitter<DataMenu>();
+  datosMenu: DataMenu;
+  visible: boolean;
 
   constructor(
     private alliance: CustomCardService,
     public el: ElementRef
   ) {
     this.arrayLogosCustom = [];
+    this.visible = false;
   }
 
   ngOnInit() {

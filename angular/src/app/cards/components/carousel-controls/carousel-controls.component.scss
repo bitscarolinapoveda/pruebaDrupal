@@ -34,6 +34,11 @@
         height: 123px;
         position: relative;
 
+        img {
+            max-width: 200px !important;
+            height: auto !important;
+        }
+
         @include breakpoint (tablet) {
             padding-left: 0%;
             padding-right: 0%;
@@ -107,12 +112,12 @@
             font-weight: 300;
 
             @include breakpoint (desktop) {
-                padding-top: 14%;
+                padding-top: 8%;
             }
         }
 
         .main-title {
-            margin-top: 40px;
+            margin-top: 10px;
             font-size: 20px;
             font-family: 'Open Sans Codensed';
             font-weight: 300;
@@ -142,7 +147,7 @@
                 padding-left: 12%;
                 padding-right: 12%;
                 width: 100%;
-                height: 56px;
+                height: 40px;
             }
         }
 
@@ -247,6 +252,11 @@ h1 {
     overflow: hidden;
     padding-top: 37px;
     cursor: pointer;
+
+    @include breakpoint(desktop) {
+        left: -30px !important;
+    }
+
 }
 
 .rightRs {
@@ -264,6 +274,10 @@ h1 {
     overflow: hidden;
     padding-top: 37px;
     cursor: pointer;
+
+    @include breakpoint(desktop) {
+        right: -30px !important;
+    }
 }
 
 .rightRs:focus,

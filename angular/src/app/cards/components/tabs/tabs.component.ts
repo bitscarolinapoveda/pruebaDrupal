@@ -1,6 +1,6 @@
 import { CustomCardService } from 'src/app/services/cards/v1-card.services';
 import { ContactUsComponent } from 'src/app/main/pages/contact-us/contact-us.component';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import 'rxjs/add/operator/map';
 import { HttpService } from '../../../services/http/http.service';
 import { pureObjectDef } from '@angular/core/src/view';
@@ -9,6 +9,7 @@ import { Observable } from 'rxjs/Observable';
 import { analyzeAndValidateNgModules } from '@angular/compiler';
 import { SelectComponent } from 'ng2-select';
 import { DataMessage } from '../../../message/components/message/message.component';
+import { NgbPopoverConfig } from '@ng-bootstrap/ng-bootstrap';
 
 declare var jQuery: any;
 declare var $: any;
@@ -16,7 +17,8 @@ declare var $: any;
 @Component({
   selector: 'app-tabs',
   templateUrl: './tabs.component.html',
-  styleUrls: ['./tabs.component.scss']
+  styleUrls: ['./tabs.component.scss'],
+  providers: [NgbPopoverConfig]
 })
 
 export class TabsComponent implements OnInit {
@@ -35,6 +37,8 @@ export class TabsComponent implements OnInit {
   title_b: string;
   titulo: string;
   list: any[];
+  tituloQuestion: string;
+  listQuestion: any[];
   bandProduct: Array<string>;
   listProduct: Array<string>;
   bandService: Array<string>;
@@ -47,16 +51,17 @@ export class TabsComponent implements OnInit {
   descrip_form: string;
   checked: boolean;
   nombre: string;
-
+  hover_buttom: string;
   value: any = {};
   _disabledV: string;
   disabled: boolean;
   captcha_form: any;
   valido: boolean;
 
-  constructor(private _http: HttpService, private _service: CustomCardService, private http_pais: HttpClient) {
+  constructor(private _http: HttpService, private _service: CustomCardService, private http_pais: HttpClient, config: NgbPopoverConfig) {
     this.dataMessage = [];
     this.list = [];
+    this.listQuestion = [];
     this.bandProduct = [];
     this.listProduct = [];
     this.bandService = [];
@@ -70,6 +75,17 @@ export class TabsComponent implements OnInit {
     this.service = '';
     this.checked = false;
     this.valido = false;
+    this.hover_buttom = 'Faltan datos por llenar';
+    config.placement = 'top';
+    config.triggers = 'hover';
+  }
+
+  mostrarDatos(id) {
+    $('#' + id.target.id).addClass('ocultar-placeholder');
+  }
+
+  ocultarDatos(id) {
+    $('#' + id.target.id).removeClass('ocultar-placeholder');
   }
 
   toogleHidden() {
@@ -79,58 +95,67 @@ export class TabsComponent implements OnInit {
 
   onSubmit(formulario) {
 
-    this.dataMessage = [];
-    formulario['webform_id'] = 'contact_us';
-    formulario['captcha'] = this.captcha_form;
-    this.captcha_form = '';
-    this.valido = false;
+    if (this.valido === true) {
+      this.dataMessage = [];
+      formulario['webform_id'] = 'contact_us';
+      formulario['captcha'] = this.captcha_form;
+      this.captcha_form = '';
+      this.valido = false;
+      this.hover_buttom = 'Faltan datos por llenar';
 
-    grecaptcha.reset();
+      grecaptcha.reset();
 
-    /* $('#msj-modal').show();
-    $('.close').click(function () {
-      $('#msj-modal').hide();
-    }); */
+      /* $('#msj-modal').show();
+      $('.close').click(function () {
+        $('#msj-modal').hide();
+      }); */
 
-    this._http.post('webform_rest/submit?_format=json', formulario, { // Hace el submit del formulario a Drupal
-      'Content-Type': 'application/json',
-      'X-CSRF-Token': this._token
-    })
-      .subscribe(datos => {
-        this.ubicar();
-        if (datos.error) {
-          for (var key in datos.error) {
+      this._http.post('webform_rest/submit?_format=json', formulario, { // Hace el submit del formulario a Drupal
+        'Content-Type': 'application/json',
+        'X-CSRF-Token': this._token
+      })
+        .subscribe(datos => {
+          this.ubicar();
+          if (datos.error) {
+            for (var key in datos.error) {
+              this.dataMessage.push(
+                {
+                  visible: true,
+                  status: 'error',
+                  message: datos.error[key]
+                }
+              );
+            }
+
+          } else if (datos.sid) {
+
+            $('#formulario_contacto')[0].reset();
+
+            this.ngSelectP.active = [];
+            this.ngSelectS.active = [];
+            this.ngSelectPR.active = [];
+
+            this.pais = '';
+            this.product = '';
+            this.service = '';
+
             this.dataMessage.push(
               {
                 visible: true,
-                status: 'error',
-                message: datos.error[key]
+                status: 'success',
+                message: 'Respuesta satisfactoria'
               }
             );
           }
+        });
+    } else {
+      this.dataMessage = [];
+      formulario['captcha'] = this.captcha_form;
+      this.captcha_form = '';
+      grecaptcha.reset();
+    }
 
-        } else if (datos.sid) {
 
-          $('#formulario_contacto')[0].reset();
-
-          this.ngSelectP.active = [];
-          this.ngSelectS.active = [];
-          this.ngSelectPR.active = [];
-
-          this.pais = '';
-          this.product = '';
-          this.service = '';
-
-          this.dataMessage.push(
-            {
-              visible: true,
-              status: 'success',
-              message: 'Respuesta satisfactoria'
-            }
-          );
-        }
-        // formulario.form.reset();
-      });
   }
 
   ngOnInit() {
@@ -151,6 +176,7 @@ export class TabsComponent implements OnInit {
     });
 
     this.getPopoverService();
+    this.getPopoverQuestionService();
 
     this.getForm();
 
@@ -173,11 +199,27 @@ export class TabsComponent implements OnInit {
         e.preventDefault();
       });
     });
+    $(function () {
+      $('[data-toggle="popover-question"]').popover(
+        {
+          html: true,
+          title: function () {
+            return $('#popover-title-question').html();
+          },
+          content: function () {
+            return document.getElementById('popover-question').innerHTML;
+          }
+        }
+      ).click(function (e) {
+        e.preventDefault();
+      });
+    });
   }
 
   resolved(captchaResponse: string) {
     this.captcha_form = `${captchaResponse}`;
     this.valido = true;
+    this.hover_buttom = 'Enviar datos';
   }
 
   getTabsData() {
@@ -191,6 +233,13 @@ export class TabsComponent implements OnInit {
     this._service.getCustomContentBasicPage('c00ea48d-1ce3-4bba-b65e-d57daf71cf4a').subscribe(params => {
       this.titulo = params.title;
       this.list = params.body;
+    });
+  }
+
+  getPopoverQuestionService() {
+    this._service.getCustomContentBasicPage('dc60d310-0a96-41a3-9522-951af2b9f340').subscribe(params => {
+      this.tituloQuestion = params.title;
+      this.listQuestion = params.body;
     });
   }
 
