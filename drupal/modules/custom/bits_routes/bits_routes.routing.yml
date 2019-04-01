@@ -72,3 +72,30 @@ bits_routes.contactus:
     _title: 'Link contact us'
   requirements:
     _permission: 'access content'
+
+bits_routes.notfound404:
+  path: '/notfound404'
+  defaults:
+    _controller: '\Drupal\bits_routes\Controller\HomeController::notfound404'
+    _title: 'Not Found'
+  requirements:
+    _access: 'TRUE'
+
+bits_routes.forbidden403:
+  path: '/forbidden403'
+  defaults:
+    _controller: '\Drupal\bits_routes\Controller\HomeController::forbidden403'
+    _title: 'Not authorized'
+  requirements:
+    _access: 'TRUE'
+
+
+bits_routes.blockedhome:
+  path: '/blockedhome'
+  defaults:
+    _controller: '\Drupal\bits_routes\Controller\HomeController::blockedHome'
+    _title: 'Home'
+  requirements:
+    _access: 'TRUE'
+
+
