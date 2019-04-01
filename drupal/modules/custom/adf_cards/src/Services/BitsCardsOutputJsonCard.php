@@ -137,7 +137,12 @@ class BitsCardsOutputJsonCard {
             }
             elseif ($type === 'text_with_summary') {
               $value = $node->get($field)->getValue();
-              $data[$field] = $value[0]['value'];
+              if(isset($value[0]['summary'])) {
+                $data[$field]['summary'] = $value[0]['summary'];
+                $data[$field]['value'] = $value[0]['value'];
+              } else {
+                $data[$field] = $value[0]['value'];
+              }
             }
             elseif ($type === 'entity_reference'){
               $tid = $node->get($field)->getValue();
