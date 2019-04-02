@@ -14,7 +14,7 @@ export class VideoInformationComponent implements OnInit {
     videoURLSanitizer: SafeUrl;
     titleSection: string;
     descriptionSection: string;
-    @Input() link: string;
+    link: string;
 
     @Output() propagar = new EventEmitter<DataMenu>();
 
@@ -47,6 +47,7 @@ export class VideoInformationComponent implements OnInit {
 
     getVideoInformationService() {
         this.https.getCustomCardInformationType('videoplusinformation', this.type).subscribe(items => {
+            console.log(items);
             this.titleSection = items.data[0].title;
             this.descriptionSection = items.data[0].body;
             this.videoURL = items.data[0].field_url_video[0].uri;
@@ -56,7 +57,7 @@ export class VideoInformationComponent implements OnInit {
             } else {
                 this.videoURLSanitizer = this.sanitizer.bypassSecurityTrustResourceUrl(this.videoURL);
             }
-            // this.link = items.data[0].link;
+            this.link = items.data[0].field_url_video[0].uri;
 
             if (this.titleSection !== '' && this.videoURLSanitizer !== '') {
                 this.visible = true;
