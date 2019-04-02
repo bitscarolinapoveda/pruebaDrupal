@@ -24,7 +24,7 @@ export class FooterBrandComponent implements OnInit {
   getFooterBrandItems() {
     this.footerBrand.getCustomCardInformation('brandcard').subscribe((items) => {
       this.imageLogo = items.header[0].data[0];
-      this.nameBrand = items.body[0].data;
+      this.nameBrand = items.body[0].data.subtitle;
     });
   }
 }

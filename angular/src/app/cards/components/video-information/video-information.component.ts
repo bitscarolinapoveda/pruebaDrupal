@@ -47,7 +47,6 @@ export class VideoInformationComponent implements OnInit {
 
     getVideoInformationService() {
         this.https.getCustomCardInformationType('videoplusinformation', this.type).subscribe(items => {
-            console.log(items);
             this.titleSection = items.data[0].title;
             this.descriptionSection = items.data[0].body;
             this.videoURL = items.data[0].field_url_video[0].uri;

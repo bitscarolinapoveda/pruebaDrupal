@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CustomCardService } from 'src/app/services/cards/v1-card.services';
+import { NavbarService } from 'src/app/services/layout/navbar.service';
 
 @Component({
   selector: 'app-footer',
@@ -6,8 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
-
-  constructor() { }
+  items: any;
+  constructor(
+    private lowFooter: NavbarService
+  ) { }
   ngOnInit() {
+    this.getInfoLowFooter ();
+  }
+  getInfoLowFooter () {
+    this.lowFooter.getLowFooterInfo('sub-footer---pagina-bits').subscribe(items => {
+      console.log(items);
+      this.items = items;
+    });
   }
 }
