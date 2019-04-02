@@ -21,7 +21,7 @@
             <div class="second-blue-layer"></div>
             <div class="row row-info-footer">
                 <div class="col-12 list-of-footer">
-                    <a class="items-footer" *ngFor="let item of items; let last = last" href="#">
+                    <a class="items-footer" *ngFor="let item of items; let last = last" href="{{ item.uri }}">
                         {{ item.title }}
                         <div class="circule" [ngClass]="{ hide: last}"></div>
                     </a>
