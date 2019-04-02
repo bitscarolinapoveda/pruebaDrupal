@@ -1,3 +1,5 @@
+@import './src/assets/scss/mixin.scss';
+
 li.nav-item {
     border-right: 1px solid #a6cf24;
 
@@ -18,6 +20,57 @@ li.nav-item {
         &:hover {
             font-weight: bold;
         }
+    }
+
+}
+
+/deep/ {
+
+    #menu-phone {
+        display: none;
+    }    
+
+    @include breakpoint(phone) {
+        #menu-phone {
+            display: block;
+        }
+
+        #menu {
+            display: none;
+        }
+        #menu-phone .item {
+            width: auto;
+        } 
+
+    }
+
+    #menu-phone {
+
+        .rightRs,
+        .leftRs {
+            display: none !important;
+        }
+
+        .tile {
+            border-right: 1px solid #a6cf24;
+            font-family: 'Open Sans light';
+            box-shadow: none;
+            padding-right: 10px;
+            text-transform: uppercase;
+            cursor: pointer;
+            color: #002b49;
+            transition: 0.3s all;
+            -webkit-transition: 0.3s all;
+            -moz-transition: 0.3s all;
+            -o-transition: 0.3s all;
+
+            &:hover {
+                font-weight: bold;
+            }
+        }
+
+        
+
     }
 
 }

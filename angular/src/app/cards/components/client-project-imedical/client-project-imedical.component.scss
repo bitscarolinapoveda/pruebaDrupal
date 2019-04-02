@@ -1,3 +1,5 @@
+@import './src/assets/scss/mixin.scss';
+
 #logo-cliente {
     width: 50%;
     display: block;
@@ -27,6 +29,10 @@ h2 {
     color: #002b4994;
     font-size: 22px;
     letter-spacing: -1px;
+
+    @include breakpoint (phone) {
+        text-align: center;
+    }
 }
 
 .badge-custom {
@@ -40,4 +46,29 @@ h2 {
 a {
     color: #91b520;
     font-family: 'Open Sans Codensed', 'sans-serif';
+}
+
+.summary {
+    font-family: 'Open Sans light';
+
+    @include breakpoint (phone) {
+        text-align: center;
+    }
+}
+
+.badge {
+    font-family: 'Open Sans light';
+}
+
+@include breakpoint (phone) {
+
+    .col-md-12 {
+        text-align: center;
+    }
+
+    /* .condensed-phone,
+    .badge-phone {
+        text-align: center;
+    } */
+
 }

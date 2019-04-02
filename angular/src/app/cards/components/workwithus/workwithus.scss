@@ -88,3 +88,9 @@
     margin-bottom: 67px;
   }
 }
+
+@include breakpoint (phone) {
+  .subtitle {
+    padding: 5px;
+  }
+}
