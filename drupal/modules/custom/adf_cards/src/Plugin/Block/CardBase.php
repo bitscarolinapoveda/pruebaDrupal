@@ -424,8 +424,6 @@ class CardBase extends BlockBase implements ContainerFactoryPluginInterface {
    * @return AjaxResponse
    */
   public function changeEntityType(array &$form, FormStateInterface $form_state) {
-
-    $this->logger->get('casa')->notice('form ajax');
     return $form['settings']['entity'];
   }
 
