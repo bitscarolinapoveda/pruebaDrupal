@@ -2,7 +2,7 @@
 
 namespace Drupal\adf_menu\Plugin\rest\resource;
 
-use Drupal\Core\Entity\EntityManagerInterface;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\rest\Plugin\ResourceBase;
 use Drupal\rest\ResourceResponse;
 use Drupal\Core\Menu\MenuTreeParameters;
@@ -40,7 +40,7 @@ class MenuRestResource extends ResourceBase {
    *   Serializer formats.
    * @param \Psr\Log\LoggerInterface $logger
    *   Logger service.
-   * @param \Drupal\Core\Entity\EntityManagerInterface $entity_manager
+   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_manager
    *   A instance of entity manager.
    * @param \Drupal\Core\Session\AccountProxyInterface $current_user
    *   A current user instance.
@@ -56,9 +56,9 @@ class MenuRestResource extends ResourceBase {
   /**
    * A instance of entity manager.
    *
-   * @var \Drupal\Core\Entity\EntityManagerInterface
+   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
    */
-  protected $entityManager;
+  protected $entityTypeManager;
 
   /**
    * A current user instance.
@@ -75,11 +75,11 @@ class MenuRestResource extends ResourceBase {
                               $plugin_definition,
                               array $serializer_formats,
                               LoggerInterface $logger,
-                              EntityManagerInterface $entity_manager,
+                              EntityTypeManagerInterface $entity_manager,
                               AccountProxyInterface $current_user) {
     parent::__construct($configuration, $plugin_id, $plugin_definition, $serializer_formats, $logger);
 
-    $this->entityManager = $entity_manager;
+    $this->entityTypeManager = $entity_manager;
     $this->currentUser = $current_user;
   }
 
@@ -93,7 +93,7 @@ class MenuRestResource extends ResourceBase {
       $plugin_definition,
       $container->getParameter('serializer.formats'),
       $container->get('logger.factory')->get('rest'),
-      $container->get('entity.manager'),
+      $container->get('entity_type.manager'),
       $container->get('current_user')
     );
   }

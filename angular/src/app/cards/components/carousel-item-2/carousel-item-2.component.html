@@ -7,7 +7,7 @@
         <ngx-tile NgxCarouselItem *ngFor="let ourC of clientsDesktop; let i = index">
             <a href="#" class="url-carousel" >
                 <div class="container-img col-md-3 ">
-                    <img class="d-block img-fluid img-float  mx-auto" src="{{ ourC.field_image[0]?.url }}" alt="{{ ourC.field_image[0]?.alt }}">
+                    <img class="d-block img-fluid img-float  mx-auto" src="{{ ourC.field_image?.url }}" alt="{{ ourC.field_image?.alt }}">
                 </div>
                 <div class="info-carousel">
                     <h3 class="title">{{ ourC.title }}</h3>
