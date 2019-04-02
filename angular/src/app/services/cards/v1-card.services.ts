@@ -91,6 +91,23 @@ export class CustomCardService {
     return data;
   }
 
+  removeStrFieldFromTheName(data: any) {
+    for (let i = 0 ; i < data.length; i++) {
+      let entity = data[i];
+      let newEntity = [];
+      let newKey = '';
+      for (var k in entity) {
+        newKey = k;
+        if (k.indexOf('field_') != -1) {
+          newKey = k.substring(6);
+        }
+        newEntity[newKey] = entity[k];
+      }
+      data[i] = newEntity;
+    }
+    return data;
+  }
+
   getCustomCardInformationType(idblock, type) {
     const url = `v1/card/config/${idblock}/export?_format=json`;
     return this.http.get(url);

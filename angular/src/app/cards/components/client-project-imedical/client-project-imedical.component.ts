@@ -51,7 +51,7 @@ export class ClientProjectImedicalComponent implements OnInit {
       this.titleProject = params.data[0].field_title_description;
       this.summaryProject = params.data[0].field_description;
       this.tags = ['salud', 'cloud', 'angularjs', 'mobile', 'tag'];
-      this.linkProject = params.data[0].field_url_client;
+      this.linkProject = params.data[0].field_url_client[0];
     });
   }
 
