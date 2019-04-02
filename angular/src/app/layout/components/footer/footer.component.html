@@ -21,11 +21,10 @@
             <div class="second-blue-layer"></div>
             <div class="row row-info-footer">
                 <div class="col-12 list-of-footer">
-                    <a class="items-footer" href="#">politicas</a>
-                    <div class="circule"></div>
-                    <a class="items-footer" href="#">Mapa del sitio</a>
-                    <div class="circule"></div>
-                    <a class="items-footer" href="#">PQRS</a>
+                    <a class="items-footer" *ngFor="let item of items; let last = last" href="{{ item.uri }}">
+                        {{ item.title }}
+                        <div class="circule" [ngClass]="{ hide: last}"></div>
+                    </a>
                 </div>
             </div>
         </section>

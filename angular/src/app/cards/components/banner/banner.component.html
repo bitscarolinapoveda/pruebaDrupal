@@ -4,8 +4,7 @@
     </div>
     <ng-container>
         <picture>
-            <source media="(max-width:{{medius}})" [srcset]="bannerBackground">
-            <img [src]="bannerBackground" alt="Contactenos">
+            <div class="img" [ngStyle]="{'background-image': 'url(' + bannerBackground + ')'}"></div>
         </picture>
     </ng-container>
 </section>
