@@ -39,6 +39,7 @@ export class WorkWithUsProServComponent implements OnInit {
       this.workWithUsSubtitle = items.header[1].data;
       this.url = items.body[0].data.link;
       this.workWithUsButton = items.body[1].data;
+      this.workWithUsAdicional = items.body[2].data;
       this.workWithUsThirdText = items.body[3].data;
     });
   }

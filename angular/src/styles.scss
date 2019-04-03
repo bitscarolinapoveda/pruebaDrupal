@@ -61,15 +61,17 @@ body {
 
     .popover-body {
         font-family: 'Open Sans light' !important;
-        font-size: 18px !important;
-        height: 150px;
+        font-size: 14px !important;
+        height: 170px;
         overflow-y: scroll;
+        background-color: white;
 
         p,
         h3,
         h4 {
-            font-size: 15px !important;
+            font-size: 14px !important;
             text-align: justify;
+            margin-bottom: 0;
         }
     }
 
@@ -78,6 +80,8 @@ body {
         color: #ffffff !important;
         text-transform: uppercase;
         text-align: center;
+        
+
     }
 
 }
