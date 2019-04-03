@@ -130,7 +130,7 @@ export class ClientProServComponent implements OnInit, DoCheck, OnDestroy {
         this.principal.data = datos;
       }
 
-      this._cardService.getCustomInfoIM('clientscard').subscribe(itemsw => {
+      this._cardService.getCustomInfoIM('imedicalclients').subscribe(itemsw => {
         this.titleClients = itemsw.header[0].data.title;
         itemsw.data =  this._cardService.addImageField(itemsw.data, ['field_image']);
         const list_items = this._cardService.clone(itemsw.data);
