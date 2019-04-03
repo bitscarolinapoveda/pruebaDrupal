@@ -40,8 +40,6 @@ export class WorkWithUsProServComponent implements OnInit {
       this.url = items.body[0].data.link;
       this.workWithUsButton = items.body[1].data;
       this.workWithUsThirdText = items.body[3].data;
-      this.workWithUsAdicional = items.body[2].data;
-      console.log(this.workWithUsAdicional);
     });
   }
 }

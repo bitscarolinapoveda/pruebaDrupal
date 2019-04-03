@@ -209,7 +209,7 @@
                         @include breakpoint(desktop) {
                             color: #ffffff;
                             padding-left: 12%;
-                            padding-right: 15%;
+                            padding-right: 5%;
                             padding-top: 20%;
                             padding-bottom: 20%;
                         }
@@ -305,31 +305,12 @@
                     position: relative;
 
                     .menu-caret {
-                        display: block;
+                        display: inline-block;
 
                         @include breakpoint(desktop) {
                             &.fas.fa-caret-down {
                                 font-size: 10px;
-                                position: absolute;
-                                right: 35px;
-                                bottom: 46px;
                                 color: #fff;
-
-                                @media (max-width: 1281px) {
-                                    right: 12px;
-                                    bottom: 31px;
-                                }
-
-                                @media (min-width: 1282px) and (max-width: 1367px) {
-                                    right: 14px;
-                                    bottom: 34px;
-                                }
-
-                                @media (min-width: 1368px) and (max-width: 1441px) {
-                                    right: 16px;
-                                    bottom: 35px;
-                                }
-
                             }
 
                             &.fas.fa-angle-right {
@@ -341,7 +322,6 @@
                                 transition: 0.5s ease all;
                             }
                         }
-
                         @media (max-width: $desktop) {
                             position: absolute;
                             right: 10px;

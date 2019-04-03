@@ -78,7 +78,7 @@ export class CarouselItem2Component implements OnInit {
       load: 4,
       touch: true,
       easing: 'ease',
-      loop: true,
+      loop: false,
     };
 
   }
