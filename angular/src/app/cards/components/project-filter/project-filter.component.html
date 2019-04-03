@@ -6,11 +6,11 @@
     <div class="item-content" [ngStyle]="{'background-image':'url(' + gridBox.field_background_image.url + ')'}"></div>
     <div class="info-content info-{{i}}">
       <div class="logo-client" [ngStyle]="{'background-image':'url(' + gridBox.field_image.url + ')'}"></div>
-      <h1 class="text-grid">{{gridBox.title}}</h1>
+      <h2 class="text-grid">{{gridBox.title}}</h2>
       <p class="description">{{gridBox.field_subtitle}}</p>
     </div>
     <div class="complete-info-grid hover-info-{{i}}">
-      <h1 class="text-grid">{{gridBox.title}}</h1>
+      <h2 class="text-grid">{{gridBox.title}}</h2>
       <p class="description">{{gridBox.field_subtitle}}</p>
       <a [routerLink]="[gridBox.type, gridBox.nid]" href="#" class="plus-icon"></a>
     </div>

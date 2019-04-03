@@ -23,10 +23,10 @@
     <div class="item-content" [ngStyle]="{'background-image':'url(' + gridBox.short_image.url + ')'}"></div>
     <div class="info-content info-{{i}}">
       <i class="fas fa-database"></i>
-      <h1 class="text-grid">{{gridBox.label}}</h1>
+      <h2 class="text-grid">{{gridBox.label}}</h2>
     </div>
     <div class="complete-info-grid hover-info-{{i}}">
-      <h1 class="text-grid">{{gridBox.label}}</h1>
+      <h2 class="text-grid">{{gridBox.label}}</h2>
       <p class="description">{{gridBox.description}}</p>
       <a [routerLink]="[gridBox.type, gridBox.nid]" href="#" class="plus-icon"></a>
     </div>
