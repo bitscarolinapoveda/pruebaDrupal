@@ -53,22 +53,17 @@ export class WorkusComponent implements OnInit {
 
   onSubmit(formulario) {
 
+    if (this.captcha_form === 'null' || this.captcha_form === undefined) {
+      this.valido = false;
+      this.hover_buttom = 'Faltan datos por llenar';
+    }
+
     if (this.valido === true) {
       formulario['hojav'] = this.file;
 
       this.dataMessage = [];
       formulario['webform_id'] = 'work_with_us';
       formulario['captcha'] = this.captcha_form;
-      this.captcha_form = '';
-      this.valido = false;
-      this.hover_buttom = 'Faltan datos por llenar';
-
-      grecaptcha.reset();
-
-      /* jQuery('#msj-modal').show();
-      jQuery('.close').click(function () {
-        jQuery('#msj-modal').hide();
-      }); */
 
       this._http.post('webform_rest/submit?_format=json', formulario, { // Hace el submit del formulario a Drupal
         'Content-Type': 'application/json',
@@ -88,7 +83,7 @@ export class WorkusComponent implements OnInit {
             }
           } else if (datos.sid) {
 
-            jQuery('#formulario_contacto')[0].reset();
+            jQuery('#formulario_contactoWS')[0].reset();
 
             this.ngSelectW.active = [];
             this.pais = '';
@@ -97,16 +92,13 @@ export class WorkusComponent implements OnInit {
               {
                 visible: true,
                 status: 'success',
-                message: 'Respuesta satisfactoria'
+                message: 'Formulario de contacto enviado exitosamente. Nos podremos en contacto con usted!'
               }
             );
           }
         });
     } else {
       this.dataMessage = [];
-      formulario['captcha'] = this.captcha_form;
-      this.captcha_form = '';
-      grecaptcha.reset();
     }
 
   }

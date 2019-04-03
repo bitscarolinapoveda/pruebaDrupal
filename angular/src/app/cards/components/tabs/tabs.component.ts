@@ -95,20 +95,17 @@ export class TabsComponent implements OnInit {
 
   onSubmit(formulario) {
 
+
+    if (this.captcha_form === 'null' || this.captcha_form === undefined) {
+
+      this.valido = false;
+      this.hover_buttom = 'Faltan datos por llenar';
+    }
+
     if (this.valido === true) {
       this.dataMessage = [];
       formulario['webform_id'] = 'contact_us';
       formulario['captcha'] = this.captcha_form;
-      this.captcha_form = '';
-      this.valido = false;
-      this.hover_buttom = 'Faltan datos por llenar';
-
-      grecaptcha.reset();
-
-      /* $('#msj-modal').show();
-      $('.close').click(function () {
-        $('#msj-modal').hide();
-      }); */
 
       this._http.post('webform_rest/submit?_format=json', formulario, { // Hace el submit del formulario a Drupal
         'Content-Type': 'application/json',
@@ -143,16 +140,13 @@ export class TabsComponent implements OnInit {
               {
                 visible: true,
                 status: 'success',
-                message: 'Respuesta satisfactoria'
+                message: 'Formulario de contacto enviado exitosamente. Nos podremos en contacto con usted!'
               }
             );
           }
         });
     } else {
       this.dataMessage = [];
-      formulario['captcha'] = this.captcha_form;
-      this.captcha_form = '';
-      grecaptcha.reset();
     }
 
 
@@ -346,29 +340,3 @@ export class TabsComponent implements OnInit {
   }
 
 }
-
-//     arrayTabs:Tab[] = [];
-//     ids:number = 0;
-//     size:number;
-
-//     constructor(
-//         private https: CustomCardService,
-//     ) {}
-
-//     ngOnInit() {
-
-//     }
-
-//     mostrar(link:number){
-//         this.ids = link;
-//         console.log(this.ids);
-//     }
-// }
-
-// export interface Tab{
-//     titulo:string;
-//     icontab:string;
-//     urlicon:string;
-//     alticon:string;
-//     contenido:string;
-// }
