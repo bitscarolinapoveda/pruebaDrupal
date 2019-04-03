@@ -17,7 +17,6 @@ export class FooterComponent implements OnInit {
   }
   getInfoLowFooter () {
     this.lowFooter.getLowFooterInfo('sub-footer---pagina-bits').subscribe(items => {
-      console.log(items);
       this.items = items;
     });
   }
