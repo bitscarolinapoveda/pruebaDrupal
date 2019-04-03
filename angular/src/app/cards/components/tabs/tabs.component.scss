@@ -493,15 +493,27 @@ input:-moz-placeholder {
       width: 0;
       height: 0;
     }
-    
+
   }
 
   .question {
     background: #e3e4e5;
     font-size: 125%;
 
+    .popover-header {
+      width: 1000px !important;
+
+      @media screen and (max-width: 680px) {
+        width: 180px !important;
+      }
+
+      @media (max-width:1100px) and (min-width:679px) {
+        width: 330px !important;
+      }
+    }
+
     .popover-body p {
-      width: 700px;
+      //width: 900px !important;
 
       @media screen and (max-width: 680px) {
         width: 150px !important;
@@ -562,8 +574,9 @@ input:-moz-placeholder {
 
 }
 
-.fa-question-circle {
-  color: #21076c;
+.fa-exclamation-circle {
+  color: #91b520;
+  transform: rotate(180deg);
 }
 
 
