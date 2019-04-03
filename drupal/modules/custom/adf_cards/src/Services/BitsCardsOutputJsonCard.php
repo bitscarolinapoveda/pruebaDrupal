@@ -58,6 +58,16 @@ class BitsCardsOutputJsonCard {
       $ids->range($offset, $limit);
 
       $ids = $ids->execute();
+      $ids_weight = $settings['entity']['weight'];
+      $temp = [];
+      foreach ($ids as $key => $value) {
+        if(isset($ids_weight[$value])){
+          $temp[$ids_weight[$value]] = $value;
+          unset($ids[$key]);
+        }
+      }
+      ksort($temp);
+      $ids = $temp + $ids;
 
       // Load nodes.
       $nodes = \Drupal::entityTypeManager()->getStorage($name)->loadMultiple($ids);
