@@ -454,7 +454,7 @@ class CardBase extends BlockBase implements ContainerFactoryPluginInterface {
           '#default_value' => $entity['input']['link'],
           '#size' => 40,
           '#attributes' => [
-            'pattern' => '(https?://|ftps?://|/)[^ :]+'
+            'pattern' => '(https?://|ftps?://|mailto:|tel:|/)[^ :]+'
           ]
         ];
 

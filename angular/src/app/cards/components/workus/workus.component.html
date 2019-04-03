@@ -1,7 +1,7 @@
 <div class="container">
   <app-message [dataMessage]="dataMessage"></app-message>
   <div class="row">
-    <form id="formulario_contacto" #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)" class="col-md-12"
+    <form id="formulario_contactoWS" #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)" class="col-md-12"
       name="formulario_contacto">
       <div class="form-group" [ngClass]="aplicaCssErro(nombre)" class="col-md-12">
         <div class="col-md-6 item">
@@ -28,7 +28,8 @@
           <label for="exampleInputTel">Telefono*</label>
           <!-- pattern="^(\([0-9]{3}\)|[0-9]{3})[0-9]{3}[0-9]{4}$" -->
           <input type="text" class="form-control" id="telefonoWS" placeholder="Escriba su telefono" name="telefono"
-            ngModel required #telefono="ngModel" (click)="mostrarDatosWS($event)" (mouseleave)="ocultarDatosWS($event)" (mouseover)="mostrarDatosWS($event)">
+            ngModel required #telefono="ngModel" (click)="mostrarDatosWS($event)" (mouseleave)="ocultarDatosWS($event)"
+            (mouseover)="mostrarDatosWS($event)">
           <div *ngIf="telefono.invalid && telefono.touched" class="alert alert-danger" role="alert">Campo obligatorio o
             invalido</div>
         </div>
@@ -69,7 +70,8 @@
           <input type="text" class="form-control" id="linkedin" placeholder="Su perfil" name="linkedin" ngModel
             #linkedin="ngModel" pattern="https?://.+" (click)="mostrarDatosWS($event)"
             (mouseleave)="ocultarDatosWS($event)" (mouseover)="mostrarDatosWS($event)">
-          <div *ngIf="linkedin.invalid && linkedin.touched" class="alert alert-danger" role="alert">Campo obligatorio o invalido</div>
+          <div *ngIf="linkedin.invalid && linkedin.touched" class="alert alert-danger" role="alert">Campo obligatorio o
+            invalido</div>
         </div>
       </div>
       <div class="form-group" class="col-md-12 comentario">
@@ -81,7 +83,7 @@
           o invalido</div>
       </div>
       <div class="form-group" class="col-md-12 terminos_grupo">
-        <input type="checkbox" [checked]="checked" id="terms_of_serviceWS" name="terms_of_serviceWS" value="false"
+        <input type="checkbox" [checked]="checked" id="terms_of_serviceWS" name="terms_of_service" value="false"
           required ngModel>
         <label ng-reflect-ng-class="" for="terms_of_serviceWS">He leído y acepto los
           <a data-trigger="focus" role="button" data-toggle="popover" data-placement="top" href="#">
@@ -98,7 +100,8 @@
       <re-captcha ngModel #captcha="ngModel" name="captcha" class="captcha" (resolved)="resolved($event)"
         siteKey="6LfycJsUAAAAANcZLFFQErxM92v-rNzuZTX6I3Ob" ngDefaultControl></re-captcha>
       <ng-template #tipContent>{{hover_buttom}}</ng-template>
-      <button type="submit" class="btn btn-primary" [ngbTooltip]="tipContent" [ngClass]="userForm.invalid?'disabled':''" [disabled]="userForm.invalid">
+      <button type="submit" class="btn btn-primary" [ngbTooltip]="tipContent" [ngClass]="userForm.invalid?'disabled':''"
+        [disabled]="userForm.invalid">
         ENVIAR
       </button>
       <div class="obligatorios col-md-12"> <span>*</span>Datos Obligatorios</div>

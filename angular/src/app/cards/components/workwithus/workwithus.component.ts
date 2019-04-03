@@ -15,6 +15,7 @@ export class WorkWithUsComponent implements OnInit {
   url: string;
   workWithUsButton: any;
   workWithUsThirdText: string;
+  workWithUsAdicional: any;
   body: string;
   @Output() propagar = new EventEmitter<DataMenu>();
   datosMenu: DataMenu;
@@ -28,6 +29,7 @@ export class WorkWithUsComponent implements OnInit {
     this.workWithUsSubtitle = '';
     this.url = '';
     this.workWithUsButton = '';
+    this.workWithUsAdicional = '';
   }
 
   ngOnInit(): void {
@@ -52,7 +54,8 @@ export class WorkWithUsComponent implements OnInit {
       this.workWithUsSubtitle = items.header[1].data;
       this.url = items.body[0].data.link;
       this.workWithUsButton = items.body[1].data;
-      this.workWithUsThirdText = items.body[2].data;
+      this.workWithUsThirdText = items.body[3].data;
+      this.workWithUsAdicional = items.body[2].data;
     });
   }
 }

@@ -15,6 +15,7 @@ export class WorkWithUsProServComponent implements OnInit {
   workWithUsButton: any;
   workWithUsThirdText: string;
   body: string;
+  workWithUsAdicional: any;
 
 
   constructor(
@@ -25,6 +26,7 @@ export class WorkWithUsProServComponent implements OnInit {
     this.workWithUsSubtitle = '';
     this.url = '';
     this.workWithUsButton = '';
+    this.workWithUsAdicional = '';
   }
 
   ngOnInit(): void {
