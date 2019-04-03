@@ -54,7 +54,7 @@ export class WorkusComponent implements OnInit {
   onSubmit(formulario) {
 
     if (this.valido === true) {
-      formulario['archivo_adjunto'] = this.file;
+      formulario['hojav'] = this.file;
 
       this.dataMessage = [];
       formulario['webform_id'] = 'work_with_us';
@@ -193,6 +193,16 @@ export class WorkusComponent implements OnInit {
       this.file = event.target.files[0];
       this.form.get('hojav').setValue(this.file);
       this.hojaWU = this.file.name;
+
+      var reader = new FileReader();
+      reader.onloadend = e => {
+        this.file = e.target['result'];
+      }
+      reader.onerror = e =>{
+          console.log(e.target['error']);
+      }
+      reader.readAsArrayBuffer(this.file);
+
     }
   }
 
