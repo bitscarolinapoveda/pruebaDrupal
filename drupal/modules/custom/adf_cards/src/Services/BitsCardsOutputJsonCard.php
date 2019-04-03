@@ -61,7 +61,7 @@ class BitsCardsOutputJsonCard {
       $ids_weight = $settings['entity']['weight'];
       $temp = [];
       foreach ($ids as $key => $value) {
-        if(isset($ids_weight[$value])){
+        if(isset($ids_weight[$value]) && !isset($temp[$ids_weight[$value]] ) ){
           $temp[$ids_weight[$value]] = $value;
           unset($ids[$key]);
         }
