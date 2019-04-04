@@ -38,6 +38,20 @@ class ContactCard extends CardBase {
             'weight' => 1,
             'max_length' => 50,
           ],
+          'position' => [
+            'type' => 'radios',
+            'title' => $this->t('Posición bloque redes'),
+            'service_field' => 'position',
+            'options' => [
+              'top-left' => $this->t('Superior Izquierdo'),
+              'top-right' => $this->t('Superior Derecho'),
+              'bottom-left' => $this->t('Inferior Izquierdo'),
+              'bottom-right' => $this->t('Inferior Derecho'),
+              ],
+            'value' => 'bottom-left',
+            'show' => 1,
+            'weight' => 1,
+          ],
         ],
       ],
       'body' => [
@@ -67,7 +81,6 @@ class ContactCard extends CardBase {
       '#title' => $this->t('Otros ajustes'),
       '#open' => 'TRUE',
     ];
-
     $form['others']['steps'] = [
       '#type' => 'fieldgroup',
       '#title' => $this->t('Contenedor redes'),

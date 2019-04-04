@@ -164,6 +164,9 @@ class BitsCardsOutputJsonCard {
                   $entityName = explode(':',$dataDefinition)[1];
                   $term = \Drupal::entityTypeManager()->getStorage($entityName)->load($value['target_id']);
                 }
+                elseif ($dataDefinition == "default:node") {
+                  $term = Node::load($value['target_id']);
+                }
                 $data[$field][] = ['id' => $term->id(), 'label'=> $term->label()];
               }
             }
@@ -286,7 +289,10 @@ class BitsCardsOutputJsonCard {
 
           case 'textfield':
             $element['data'][preg_replace('@[^a-z0-9-]+@','_', strtolower($item['service_field']))] = $item['input'];
+            break;
 
+          case 'select' || 'checkboxes' || 'radios':
+            $element['data'][preg_replace('@[^a-z0-9-]+@','_', strtolower($item['service_field']))] = $item['input'];
             break;
 
           default:
