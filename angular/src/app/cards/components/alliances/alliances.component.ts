@@ -40,7 +40,7 @@ export class AlliancesComponent implements OnInit {
       point: {
         visible: false,
       },
-      load: 2,
+      load: 1,
       loop: true,
       touch: true,
       easing: 'ease',

@@ -36,6 +36,9 @@
 
 :host /deep/ .carousel-indicators li:hover {
   background-color: white;
+  @media (max-width: 1024px)  {
+    background-color: #a6cf24;
+  }
 }
 
 :host /deep/ .carousel-subtitle {
