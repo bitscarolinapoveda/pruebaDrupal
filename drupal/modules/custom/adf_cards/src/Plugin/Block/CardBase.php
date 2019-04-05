@@ -493,6 +493,11 @@ class CardBase extends BlockBase implements ContainerFactoryPluginInterface {
         $form[$key]['table_fields'][$id]['input']['#format'] = 'full_html';
       }
 
+      if ($entity['type'] == 'select' || $entity['type'] == 'checkboxes' || $entity['type'] == 'radios') {
+        $form[$key]['table_fields'][$id]['input']['#options'] = $entity['options'];
+        $form[$key]['table_fields'][$id]['input']['#default_value'] = $entity['input']['value'];
+      }
+
       $form[$key]['table_fields'][$id]['show'] = [
         '#type' => 'checkbox',
         '#default_value' => $entity['show'],

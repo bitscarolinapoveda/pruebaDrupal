@@ -57,6 +57,7 @@ export class TabsComponent implements OnInit {
   disabled: boolean;
   captcha_form: any;
   valido: boolean;
+  elementoForm: any;
 
   constructor(private _http: HttpService, private _service: CustomCardService, private http_pais: HttpClient, config: NgbPopoverConfig) {
     this.dataMessage = [];
@@ -94,7 +95,6 @@ export class TabsComponent implements OnInit {
   }
 
   onSubmit(formulario) {
-
 
     if (this.captcha_form === 'null' || this.captcha_form === undefined) {
 
@@ -149,7 +149,6 @@ export class TabsComponent implements OnInit {
       this.dataMessage = [];
     }
 
-
   }
 
   ngOnInit() {
@@ -178,21 +177,6 @@ export class TabsComponent implements OnInit {
 
     this.getPaises();
 
-    $(function () {
-      $('[data-toggle="popover"]').popover(
-        {
-          html: true,
-          title: function () {
-            return $('#popover-title').html();
-          },
-          content: function () {
-            return document.getElementById('popover-content').innerHTML;
-          }
-        }
-      ).click(function (e) {
-        e.preventDefault();
-      });
-    });
     $(function () {
       $('[data-toggle="popover-question"]').popover(
         {
@@ -259,7 +243,41 @@ export class TabsComponent implements OnInit {
     this._service.getCustomForm('work_with_us').subscribe(params => {
       this.descrip_form = params.markup['#markup'];
     });
+
+    this._service.getCustomForm('contact_us').subscribe(params => {
+      let elementLayout = '';
+      let listLayout = [];
+      // Se obtienen de la respuesta del servicio los layout y elementos del formulario, se almacan en un array.
+      for (var index in params) {
+        elementLayout = index;
+        if (elementLayout.indexOf('#') == -1) {
+          listLayout.push(params[index]);
+        }
+      }
+      // Se insertan en el array listLayout los campos del formulario que pertenecen a cada layout y los que no pertenecen
+      for (var index in listLayout) {
+        let campoForm = [];
+        let cont = 0;
+        if (listLayout[index])
+          for (var indexj in listLayout[index]) {
+            if (indexj.indexOf('#') == -1) {
+              cont++;
+              campoForm.push(listLayout[index][indexj]);
+            }
+          }
+        if (cont != 0) {
+          listLayout[index] = [];
+          for (var indexz in campoForm) {
+            listLayout[index].push(campoForm[indexz]);
+          }
+        }
+        // Array de campos que conforman el formulario
+        this.elementoForm = listLayout;
+      }
+    }
+    );
   }
+
   getDatosForm() {
     this._service.getCustomCardInformation('allproductsandservicescard').subscribe(params => {
       for (let index = 0; index < params.data.length; index++) {

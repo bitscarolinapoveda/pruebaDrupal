@@ -107,13 +107,16 @@ class BitsCardsOutputJsonCard {
 
       foreach ($nodes as $node) {
         $tag = $node->getEntityType()->getListCacheTags();
-
         if(!in_array( $tag[0], $node_tags))
         array_push($node_tags, $tag[0]);
+        $url = $node->toUrl()->toString(TRUE);
+        $url = $url->getGeneratedUrl();
+        $url = (strpos($url, 'node') === false) ? $url : '';
         if ($isContentEntity) {
           $data = [
             'nid' => $node->id(),
             'title' => $node->title->value,
+            'url' => $url,
           ];
         }
         else {
@@ -163,6 +166,9 @@ class BitsCardsOutputJsonCard {
                 elseif ($dataDefinition == "default:service_product_bits") {
                   $entityName = explode(':',$dataDefinition)[1];
                   $term = \Drupal::entityTypeManager()->getStorage($entityName)->load($value['target_id']);
+                }
+                elseif ($dataDefinition == "default:node") {
+                  $term = Node::load($value['target_id']);
                 }
                 $data[$field][] = ['id' => $term->id(), 'label'=> $term->label()];
               }
@@ -239,7 +245,7 @@ class BitsCardsOutputJsonCard {
                     }
                   }
                   if ($inputType == 'body') {
-                    if ($idCard == 'technologies' || $idCard == 'our_alliance' || $idCard == 'banner') {
+                    if ($idCard == 'technologies' || $idCard == 'our_alliance' || $idCard == 'banner' || $idCard == 'footer_block_simple') {
                       if ($key == '0') {
                         $element['data']['back_movil']['0']['title'] = $filename;
                         $element['data']['back_movil']['0']['url'] = file_create_url($file->getFileUri());
@@ -286,7 +292,10 @@ class BitsCardsOutputJsonCard {
 
           case 'textfield':
             $element['data'][preg_replace('@[^a-z0-9-]+@','_', strtolower($item['service_field']))] = $item['input'];
+            break;
 
+          case 'select' || 'checkboxes' || 'radios':
+            $element['data'][preg_replace('@[^a-z0-9-]+@','_', strtolower($item['service_field']))] = $item['input'];
             break;
 
           default:

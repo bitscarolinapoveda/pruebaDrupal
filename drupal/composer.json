@@ -17,7 +17,8 @@
                 "drupal/devel": "^2.0",
                 "drupal/cors": "^1.0",
                 "drupal/core": "^8.6",
-                "drush/drush": "^9.6"
+                "drush/drush": "^9.6",
+                "drupal/pathauto": "^1.4"
         },
         "replace": {},
         "minimum-stability": "dev",
