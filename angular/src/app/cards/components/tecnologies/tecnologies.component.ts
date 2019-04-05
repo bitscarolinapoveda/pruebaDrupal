@@ -14,7 +14,7 @@ export class TecnologiesComponent implements OnInit {
   arrayLogos: any = [];
   arrayLogosCustom: any[][];
   title: string;
-  background: string;
+  background: any;
   public carocarouselTile: NgxCarousel;
   state = 'hide';
   @Output() propagar = new EventEmitter<DataMenu>();

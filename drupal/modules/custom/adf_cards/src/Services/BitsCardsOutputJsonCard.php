@@ -245,7 +245,7 @@ class BitsCardsOutputJsonCard {
                     }
                   }
                   if ($inputType == 'body') {
-                    if ($idCard == 'technologies' || $idCard == 'our_alliance' || $idCard == 'banner') {
+                    if ($idCard == 'technologies' || $idCard == 'our_alliance' || $idCard == 'banner' || $idCard == 'footer_block_simple') {
                       if ($key == '0') {
                         $element['data']['back_movil']['0']['title'] = $filename;
                         $element['data']['back_movil']['0']['url'] = file_create_url($file->getFileUri());
