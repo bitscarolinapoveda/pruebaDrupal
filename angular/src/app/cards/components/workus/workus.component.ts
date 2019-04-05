@@ -35,21 +35,18 @@ export class WorkusComponent implements OnInit {
   listPais: Array<string>;
   pais: any;
   hojaWU: any;
-
   value: any = {};
   _disabledV: string;
   disabled: boolean;
-
   checked: boolean;
-
   form: FormGroup;
   file: any;
-
   captcha_form: any;
   valido: boolean;
   tituloQuestion: string;
   listQuestion: any[];
   hover_buttom: string;
+  elementoForm: any;
 
   onSubmit(formulario) {
 
@@ -59,7 +56,7 @@ export class WorkusComponent implements OnInit {
     }
 
     if (this.valido === true) {
-      formulario['hojav'] = this.file;
+      formulario['fileupload'] = this.file;
 
       this.dataMessage = [];
       formulario['webform_id'] = 'work_with_us';
@@ -141,22 +138,8 @@ export class WorkusComponent implements OnInit {
 
     this.getPaises();
 
-    $(function () {
-      $('[data-toggle="popover"]').popover(
-        {
-          html: true,
-          title: function () {
-            return $('#popover-title').html();
-          },
-          content: function () {
-            return document.getElementById('#popover-content').innerHTML;
+    this.getForm();
 
-          }
-        }
-      ).click(function (e) {
-        e.preventDefault();
-      });
-    });
     $(function () {
       $('[data-toggle="popover-question"]').popover(
         {
@@ -174,6 +157,42 @@ export class WorkusComponent implements OnInit {
     });
   }
 
+  getForm() {
+
+    this._service.getCustomForm('work_with_us').subscribe(params => {
+      let elementLayout = '';
+      let listLayout = [];
+      // Se obtienen de la respuesta del servicio los layout y elementos del formulario, se almacan en un array.
+      for (var index in params) {
+        elementLayout = index;
+        if (elementLayout.indexOf('#') == -1) {
+          listLayout.push(params[index]);
+        }
+      }
+      // Se insertan en el array listLayout los campos del formulario que pertenecen a cada layout y los que no pertenecen
+      for (var index in listLayout) {
+        let campoForm = [];
+        let cont = 0;
+        if (listLayout[index])
+          for (var indexj in listLayout[index]) {
+            if (indexj.indexOf('#') == -1) {
+              cont++;
+              campoForm.push(listLayout[index][indexj]);
+            }
+          }
+        if (cont != 0) {
+          listLayout[index] = [];
+          for (var indexz in campoForm) {
+            listLayout[index].push(campoForm[indexz]);
+          }
+        }
+        // Array de campos que conforman el formulario
+        this.elementoForm = listLayout;
+      }
+    }
+    );
+  }
+
   resolved(captchaResponse: string) {
     this.captcha_form = `${captchaResponse}`;
     this.valido = true;
@@ -181,6 +200,7 @@ export class WorkusComponent implements OnInit {
   }
 
   onFileChange(event) {
+
     if (event.target.files.length > 0) {
       this.file = event.target.files[0];
       this.form.get('hojav').setValue(this.file);
@@ -189,12 +209,11 @@ export class WorkusComponent implements OnInit {
       var reader = new FileReader();
       reader.onloadend = e => {
         this.file = e.target['result'];
-      }
-      reader.onerror = e =>{
-          console.log(e.target['error']);
-      }
+      };
+      reader.onerror = e => {
+        console.log(e.target['error']);
+      };
       reader.readAsArrayBuffer(this.file);
-
     }
   }
 

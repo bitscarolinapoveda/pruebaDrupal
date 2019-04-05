@@ -57,7 +57,7 @@ input:-moz-placeholder {
   color: #808080;
 }
 
-.comentario {
+.textarea, .text {
   width: 98%;
   margin: 0 auto;
 
@@ -74,6 +74,7 @@ input:-moz-placeholder {
     font-family: 'Open Sans light';
   }
 }
+
 
 .terminos_grupo {
   position: relative;
@@ -125,7 +126,6 @@ input:-moz-placeholder {
   [type="checkbox"]:checked+label:after {
     background: url('/assets/images/check2.png') left center no-repeat;
   }
-
 
 }
 
