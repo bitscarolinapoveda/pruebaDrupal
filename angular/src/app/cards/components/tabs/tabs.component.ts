@@ -178,21 +178,6 @@ export class TabsComponent implements OnInit {
     this.getPaises();
 
     $(function () {
-      $('[data-toggle="popover"]').popover(
-        {
-          html: true,
-          title: function () {
-            return $('#popover-title').html();
-          },
-          content: function () {
-            return document.getElementById('popover-content').innerHTML;
-          }
-        }
-      ).click(function (e) {
-        e.preventDefault();
-      });
-    });
-    $(function () {
       $('[data-toggle="popover-question"]').popover(
         {
           html: true,
