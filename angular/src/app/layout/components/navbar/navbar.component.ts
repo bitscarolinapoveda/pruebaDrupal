@@ -15,23 +15,25 @@ export class NavbarComponent implements OnInit {
     resolution: string = 'desktop';
     flActiveChilds: any[] = [];
     LanguageMenu: any;
+    heightScreen: any;
 
     constructor(private router: ActivatedRoute, private navbar: NavbarService) {
         this.onResize({});
     }
 
     ngOnInit() {
+        this.heightScreen = $(window).height()+'px';
         $('.Botton, .show-more').on('click', function () {
             $('.menu-scroll, .link').toggleClass('tigger-menu scroll-white color-white');
         });
         $(window).scroll(function () {
             if (window.scrollY > 0) {
                 $('.menu-scroll, .link').addClass('inverse-color color-scroll scroll-white');
-                $('.lines').css({ background: '#002b49' });
+                $('.burger').css({ color: '#002b49' });
                 $('.shadow-of-nav').addClass('shadow-if-exit-scroll');
             } else {
                 $('.menu-scroll, .link').removeClass('inverse-color color-scroll scroll-white');
-                $('.lines').css({ background: '#ffffff' });
+                $('.burger').css({ color: '#ffffff' });
                 $('.shadow-of-nav').removeClass('shadow-if-exit-scroll');
             }
         });
