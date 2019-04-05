@@ -34,13 +34,6 @@ export class NavbarComponent implements OnInit {
                 $('.lines').css({ background: '#ffffff' });
                 $('.shadow-of-nav').removeClass('shadow-if-exit-scroll');
             }
-            // if ($('.menu-scroll, .lines, .link').offset().top > 10) {
-            //     $('.menu-scroll, .lines, .link').addClass('inverse-color color-scroll scroll-white');
-            //     $('.shadow-of-nav').addClass('shadow-if-exit-scroll');
-            // } else {
-            //     $('.menu-scroll, .lines, .link').removeClass('inverse-color color-scroll scroll-white');
-            //     $('.shadow-of-nav').removeClass('shadow-if-exit-scroll');
-            // }
         });
         this.getNavBarItems();
         this.LanguageMenu = [{ 'title': 'ES', 'active': true }, { 'title': 'ENN', 'active': false }];
@@ -48,6 +41,7 @@ export class NavbarComponent implements OnInit {
 
     getNavBarItems() {
         return this.navbar.getMenuItems().subscribe(items => {
+            console.log(items);
             this.NavbarArray = items;
             this.NavbarArray = this.addIdForColToNavbar(this.NavbarArray, 1, 1);
         });
