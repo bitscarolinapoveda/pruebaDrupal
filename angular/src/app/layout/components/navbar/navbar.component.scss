@@ -47,6 +47,10 @@
                 padding-top: 1%;
             }
 
+            @include breakpoint(phone) {
+                padding-top: 5%;
+            }
+
             @include breakpoint(tablet) {
                 top: 0px;
             }
