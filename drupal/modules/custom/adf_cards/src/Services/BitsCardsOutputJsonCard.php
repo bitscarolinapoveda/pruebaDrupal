@@ -58,6 +58,16 @@ class BitsCardsOutputJsonCard {
       $ids->range($offset, $limit);
 
       $ids = $ids->execute();
+      $ids_weight = $settings['entity']['weight'];
+      $temp = [];
+      foreach ($ids as $key => $value) {
+        if(isset($ids_weight[$value]) && !isset($temp[$ids_weight[$value]] ) ){
+          $temp[$ids_weight[$value]] = $value;
+          unset($ids[$key]);
+        }
+      }
+      ksort($temp);
+      $ids = $temp + $ids;
 
       // Load nodes.
       $nodes = \Drupal::entityTypeManager()->getStorage($name)->loadMultiple($ids);
@@ -153,6 +163,9 @@ class BitsCardsOutputJsonCard {
                 elseif ($dataDefinition == "default:service_product_bits") {
                   $entityName = explode(':',$dataDefinition)[1];
                   $term = \Drupal::entityTypeManager()->getStorage($entityName)->load($value['target_id']);
+                }
+                elseif ($dataDefinition == "default:node") {
+                  $term = Node::load($value['target_id']);
                 }
                 $data[$field][] = ['id' => $term->id(), 'label'=> $term->label()];
               }
@@ -276,7 +289,10 @@ class BitsCardsOutputJsonCard {
 
           case 'textfield':
             $element['data'][preg_replace('@[^a-z0-9-]+@','_', strtolower($item['service_field']))] = $item['input'];
+            break;
 
+          case 'select' || 'checkboxes' || 'radios':
+            $element['data'][preg_replace('@[^a-z0-9-]+@','_', strtolower($item['service_field']))] = $item['input'];
             break;
 
           default:

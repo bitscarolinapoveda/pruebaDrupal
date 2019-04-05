@@ -5,7 +5,7 @@
     </div>
     <div class="col-md-12 py-5 px-2 icons-container">
         <div class="tec-slider">
-            <ngx-carousel [inputs]="carocarouselTile">
+            <ngx-carousel [inputs]="carocarouselTile"> 
                 <ngx-tile NgxCarouselItem id="logos" *ngFor="let im of arrayLogosCustom" class="mx-auto div-slide">
                     <div class="img-fluid" *ngFor="let img of im" [ngStyle]="{'background-image':'url(' + img.field_alliance_image.url + ')'}"></div>
                 </ngx-tile>

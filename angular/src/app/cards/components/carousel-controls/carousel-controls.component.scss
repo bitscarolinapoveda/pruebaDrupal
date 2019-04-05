@@ -31,30 +31,12 @@
     }
 
     .container-img {
-        height: 123px;
-        position: relative;
-
-        img {
-            max-width: 200px !important;
-            height: auto !important;
-        }
-
-        @include breakpoint (tablet) {
-            padding-left: 0%;
-            padding-right: 0%;
-        }
-
-        @include breakpoint (desktop) {
-            padding-left: 10%;
-            padding-right: 10%;
-        }
-
-        .img-float {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-        }
+        width: 150px; 
+        height: 150px; 
+        background-size: contain; 
+        background-repeat: no-repeat; 
+        background-position: center; 
+        margin: auto;
     }
 
     .info {
