@@ -25,7 +25,7 @@ export class ItemMenuComponent implements OnInit {
     ngOnInit() {
         this.onResize();
         this.value = false;
-        if (this.row === 3 && this.menus.length > 3 && window.innerWidth < 550) {
+        if (this.row === 3 && this.menus.length > 3 && window.innerWidth > 1025) {
             this.menusColum = this.menus.slice(3, this.menus.length);
             this.menus = this.menus.slice(0, 3);
             this.value = true;

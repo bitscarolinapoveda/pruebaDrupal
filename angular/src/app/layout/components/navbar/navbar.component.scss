@@ -489,6 +489,10 @@
                         float: left;
                     }
 
+                    @include breakpoint(phone) {
+                       background-image: none !important;
+                    }
+
                     li {
                         border: 0.1rem solid;
                         border-image: linear-gradient(to right, #7a7a79 0%, #a19e9e00 90%) 0.5;
