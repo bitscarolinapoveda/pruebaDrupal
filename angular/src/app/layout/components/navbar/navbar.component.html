@@ -1,17 +1,18 @@
 <section id="block-navbar">
-    <nav class="navbar-expand-lg flex-column flex-md-row  menu-scroll shadow-of-nav">
+    <nav class="navbar-expand-lg flex-column flex-md-row  menu-scroll shadow-of-nav nav-height" [ngStyle]="{'max-height': heightScreen}">
         <div class="menuToggle menu-scroll ">
-            <input type="checkbox" class="Botton" />
-            <span class="lines"></span>
-            <span class="lines"></span>
-            <span class="lines"></span>
+            <input type="checkbox" class="Botton"/>
+            <i class="fas fa-bars burger"></i>
             <ul class="list-menu">
                 <ng-container *ngFor="let nav of NavbarArray; let i= index ">
                     <li class="items customrow-1" [class.menu-has-children]="nav.below" (mouseover)='menuOver($event)'
                         (mouseleave)='menuOut($event)'>
-                        <a #sub [routerLink]="nav.showrow ? ['/'+nav.uri] : null" [routerLinkActive]="'active'"
+                        <a #sub [hidden]="nav.external" [routerLink]="nav.showrow ? ['/'+nav.uri] : null" [routerLinkActive]="'active'"
                             class="link">
                             {{ nav.title }}
+                        </a>
+                        <a #sub [hidden]="!nav.external" href="{{nav.uri}}" class="link">
+                        {{ nav.title }}
                         </a>
                         <ng-container *ngIf="nav.below">
                             <i class="fas fa-caret-down menu-caret arrow-down-change-color"

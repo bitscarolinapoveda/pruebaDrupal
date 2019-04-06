@@ -15,32 +15,27 @@ export class NavbarComponent implements OnInit {
     resolution: string = 'desktop';
     flActiveChilds: any[] = [];
     LanguageMenu: any;
+    heightScreen: any;
 
     constructor(private router: ActivatedRoute, private navbar: NavbarService) {
         this.onResize({});
     }
 
     ngOnInit() {
+        this.heightScreen = $(window).height()+'px';
         $('.Botton, .show-more').on('click', function () {
             $('.menu-scroll, .link').toggleClass('tigger-menu scroll-white color-white');
         });
         $(window).scroll(function () {
             if (window.scrollY > 0) {
                 $('.menu-scroll, .link').addClass('inverse-color color-scroll scroll-white');
-                $('.lines').css({ background: '#002b49' });
+                $('.burger').css({ color: '#002b49' });
                 $('.shadow-of-nav').addClass('shadow-if-exit-scroll');
             } else {
                 $('.menu-scroll, .link').removeClass('inverse-color color-scroll scroll-white');
-                $('.lines').css({ background: '#ffffff' });
+                $('.burger').css({ color: '#ffffff' });
                 $('.shadow-of-nav').removeClass('shadow-if-exit-scroll');
             }
-            // if ($('.menu-scroll, .lines, .link').offset().top > 10) {
-            //     $('.menu-scroll, .lines, .link').addClass('inverse-color color-scroll scroll-white');
-            //     $('.shadow-of-nav').addClass('shadow-if-exit-scroll');
-            // } else {
-            //     $('.menu-scroll, .lines, .link').removeClass('inverse-color color-scroll scroll-white');
-            //     $('.shadow-of-nav').removeClass('shadow-if-exit-scroll');
-            // }
         });
         this.getNavBarItems();
         this.LanguageMenu = [{ 'title': 'ES', 'active': true }, { 'title': 'ENN', 'active': false }];
@@ -48,6 +43,7 @@ export class NavbarComponent implements OnInit {
 
     getNavBarItems() {
         return this.navbar.getMenuItems().subscribe(items => {
+            console.log(items);
             this.NavbarArray = items;
             this.NavbarArray = this.addIdForColToNavbar(this.NavbarArray, 1, 1);
         });

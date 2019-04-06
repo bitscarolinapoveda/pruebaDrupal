@@ -107,13 +107,16 @@ class BitsCardsOutputJsonCard {
 
       foreach ($nodes as $node) {
         $tag = $node->getEntityType()->getListCacheTags();
-
         if(!in_array( $tag[0], $node_tags))
         array_push($node_tags, $tag[0]);
+        $url = $node->toUrl()->toString(TRUE);
+        $url = $url->getGeneratedUrl();
+        $url = (strpos($url, 'node') === false) ? $url : '';
         if ($isContentEntity) {
           $data = [
             'nid' => $node->id(),
             'title' => $node->title->value,
+            'url' => $url,
           ];
         }
         else {
@@ -242,7 +245,7 @@ class BitsCardsOutputJsonCard {
                     }
                   }
                   if ($inputType == 'body') {
-                    if ($idCard == 'technologies' || $idCard == 'our_alliance' || $idCard == 'banner') {
+                    if ($idCard == 'technologies' || $idCard == 'our_alliance' || $idCard == 'banner' || $idCard == 'footer_block_simple') {
                       if ($key == '0') {
                         $element['data']['back_movil']['0']['title'] = $filename;
                         $element['data']['back_movil']['0']['url'] = file_create_url($file->getFileUri());

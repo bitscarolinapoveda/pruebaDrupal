@@ -18,19 +18,23 @@ export class HeaderComponent implements OnInit {
       count = count + 1; // Numero Impar = menu abierto ; Numero par = menu cerrado
       if (count % 2 === 0) {
         //PAR MENU CERRADO
+        $('.burger').removeClass('fa-times');
+        $('.burger').addClass('fa-bars');
         $('html').css('overflow', 'auto');
         if (window.scrollY === 0) {
           $('.blur-logo').attr('src', 'assets/images/Logowhite.png');
           $('.arrow-down-change-color').css({ color: '#002b49' });
-          $('.lines').css({ background: '#fff' });
+          $('.burger').css({ color: '#fff' });
         }
       } else {
-        //IMPAR = MENU ABIERTO 
+        //IMPAR = MENU ABIERTO
+        $('.burger').addClass('fa-times');
+        $('.burger').removeClass('fa-bars'); 
         $('html').css('overflow', 'hidden');
         if (window.scrollY === 0) {
           $('.blur-logo').attr('src', 'assets/images/Logocolor.png');
           $('.arrow-down-change-color').css({ color: '#002b49' });
-          $('.lines').css({ background: '#002b49' });
+          $('.burger').css({ color: '#002b49' });
         }
       }
     });
@@ -38,15 +42,12 @@ export class HeaderComponent implements OnInit {
   @HostListener('window:scroll', [])
   onWindowScroll() {
     if (window.scrollY > 0) {
-      if (count) {
-
-      }
       $('.image-bits').attr('src', 'assets/images/Logocolor.png');
-      $('.lines').css({ background: '#002b49' });
+      $('.burger').css({ color: '#002b49' });
       $('.arrow-down-change-color').css({ color: '#002b49' });
     } else {
       $('.image-bits').attr('src', 'assets/images/Logowhite.png');
-      $('.lines').css({ background: '#fff' });
+      $('.burger').css({ color: '#fff' });
       $('.arrow-down-change-color').css({ color: '#fff' });
     }
     // if ($('.image-bits').offset().top > 40) {
