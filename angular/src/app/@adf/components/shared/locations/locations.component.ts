@@ -63,7 +63,6 @@ export class LocationsComponent implements OnInit {
     }
   ];
 
-
   constructor(
     private _http: HttpService,
     private service: CustomCardService

@@ -18,7 +18,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
   imports: [
     CommonModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyDw-dMpMZremi-1F3rIlzEuzrPgX9bojjM'
+      apiKey: 'AIzaSyC8-h7ndgaqbJAAKjM3JhTqBI_EQpKeCXc'
     }),
     NgbModule
   ]

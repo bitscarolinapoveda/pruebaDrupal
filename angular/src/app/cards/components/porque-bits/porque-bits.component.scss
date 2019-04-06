@@ -15,8 +15,7 @@
         .images {
             -webkit-padding-start: 0;
             justify-content: center;
-            margin-left: 0;
-            margin-right: 0;
+            margin: 0 2%;
 
             @include breakpoint(desktop) {
                 margin-left: 9%;
