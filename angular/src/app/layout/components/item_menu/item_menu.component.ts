@@ -2,7 +2,6 @@ import { Component, OnInit, Output, EventEmitter, HostListener, Directive } from
 import { NavbarComponent } from "../navbar/navbar.component";
 declare var $: any;
 
-
 @Component({
     inputs: ['padre', 'menus', 'col', 'row', 'image', 'flActiveActual'],
     selector: 'app-menu-item',
@@ -16,6 +15,8 @@ export class ItemMenuComponent implements OnInit {
     public heightTop;
     public desktop;
     public mobile;
+    menusColum: any[];
+    value: boolean;
 
     row: any;
     col: any;
@@ -23,6 +24,12 @@ export class ItemMenuComponent implements OnInit {
 
     ngOnInit() {
         this.onResize();
+        this.value = false;
+        if (this.row === 3 && this.menus.length > 3 && window.innerWidth < 550) {
+            this.menusColum = this.menus.slice(3, this.menus.length);
+            this.menus = this.menus.slice(0, 3);
+            this.value = true;
+        }
     }
     onResize() {
         if (window.innerWidth > 1025) {
