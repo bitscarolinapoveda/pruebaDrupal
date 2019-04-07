@@ -489,6 +489,32 @@
                         float: left;
                     }
 
+                    .box-second .separador {
+                        position: relative;
+                        height: 60px;
+                        margin: 0;
+                        margin-top: 10px;
+                        border: 0.1rem solid;
+                        box-shadow: inset 280px 100px 100px 0 #f8f9faeb !important;
+                        border-image: linear-gradient(to bottom, #7a7a79, rgba(0, 0, 0, 0)) 1 100%;
+                        border-right: none;
+                        width:0;
+
+                        @include breakpoint(phone) {
+                            display: none;
+                        }
+                    }
+                    .box-second {
+                        li {
+                            top: -68px
+                        }
+
+                        @include breakpoint(phone) {
+                            display: none;
+                        }
+                    }
+
+
                     @include breakpoint(phone) {
                        background-image: none !important;
                     }
@@ -636,7 +662,7 @@
                     >.box-menu>li.customrow-3 {
                         @include breakpoint(desktop) {
                             width: 100%;
-                            //float: left;
+                            float: left;
                         }
                     }
                 }

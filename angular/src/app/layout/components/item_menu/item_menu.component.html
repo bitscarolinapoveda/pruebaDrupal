@@ -41,11 +41,12 @@
         </li>        
     </ng-container>   
     </div>
-    <div class="box-menu box-second">
-    <ng-container *ngFor="let child of menusColum; let idx= index">        
+    <div class="box-menu box-second">        
+    <ng-container *ngFor="let child of menusColum; let idx= index"> 
+        <div class="separador"></div>       
         <li class="menu-item-child index-{{idx}} custmcol-{{col}} customrow-{{row}}" [ngClass]="{'active-ul': child.showrow === true}">
             <a [routerLink]="['/'+child.uri]" class="link">
-                <span class="title">{{ child.title }}alegna</span>
+                <span class="title">{{ child.title }}</span>
                 <span class="description">{{ child.description }}</span>
             </a>
             <ng-container *ngIf="child.below">
