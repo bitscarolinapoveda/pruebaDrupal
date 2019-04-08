@@ -1,6 +1,6 @@
 <footer id="footer-block">
     <div class="blue-layer"></div>
-    <div class="general-container footer-img">
+    <div class="general-container footer-img" [ngStyle]="{'background-image':'url(' + background + ')'}" (window:resize)="onResize()">
         <section class="first-info-container-footer">
             <div class="row row-info-footer">
                 <div class="col-sm-12 col-md-3 col-lg-6 col-xl-6 locations" >
