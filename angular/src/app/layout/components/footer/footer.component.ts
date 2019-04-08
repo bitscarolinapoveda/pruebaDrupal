@@ -33,7 +33,7 @@ export class FooterComponent implements OnInit {
   getImgFooter() {
     this.https.getCustomCardInformation('footerblock').subscribe(items => {
       this.backgroundDesktop = items.body[0].data.back_movil[0].url;
-      // this.backgroundMovil = items.body[0].data.back_desktop[0].url; 
+      this.backgroundMovil = items.body[0].data.back_desktop[0].url;
       this.onResize();
     });
   }
@@ -41,7 +41,7 @@ export class FooterComponent implements OnInit {
   onResize() {
     this.width = window.innerWidth;
     if (this.width <= 550) {
-      this.background = '';
+      this.background = this.backgroundMovil;
     } else {
       this.background = this.backgroundDesktop;
     }
