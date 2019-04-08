@@ -407,12 +407,12 @@ class CardBase extends BlockBase implements ContainerFactoryPluginInterface {
         $arRowForWeight[$weight] = $id;
       }
     }
-    ksort($arRowForWeight);
-
-    foreach ($arRowForWeight as $rowForWeight) {
-      $form['entity']['table-row'][$rowForWeight] = $arRows[$rowForWeight];
+    if(!empty($arRowForWeight)){
+      ksort($arRowForWeight);
+      foreach ($arRowForWeight as $rowForWeight) {
+        $form['entity']['table-row'][$rowForWeight] = $arRows[$rowForWeight];
+      }
     }
-
     return $form;
   }
 
@@ -493,9 +493,14 @@ class CardBase extends BlockBase implements ContainerFactoryPluginInterface {
         $form[$key]['table_fields'][$id]['input']['#format'] = 'full_html';
       }
 
-      if ($entity['type'] == 'select' || $entity['type'] == 'checkboxes' || $entity['type'] == 'radios') {
+      if ($entity['type'] == 'select' || $entity['type'] == 'checkboxes') {
         $form[$key]['table_fields'][$id]['input']['#options'] = $entity['options'];
         $form[$key]['table_fields'][$id]['input']['#default_value'] = $entity['input']['value'];
+      }
+
+      if ($entity['type'] == 'radios') {
+        $form[$key]['table_fields'][$id]['input']['#options'] = $entity['options'];
+        $form[$key]['table_fields'][$id]['input']['#default_value'] = $entity['value'];
       }
 
       $form[$key]['table_fields'][$id]['show'] = [
@@ -544,9 +549,12 @@ class CardBase extends BlockBase implements ContainerFactoryPluginInterface {
     $this->configuration['files'] = $form_state->getValue('files');
     $this->configuration['entity'] = $form_state->getValue('entity');
 
-    $arEntityIds = $form_state->getValues()['entity']['table-row'];
-    foreach ((array) $arEntityIds as $id => $weight) { // (array) se agrega para validar que sea un arreglo y evitar error foreach
-      $this->configuration['entity']['weight'][$id] = $weight['weight'];
+    $form_state_values = $form_state->getValues();
+    if( !empty($form_state_values['entity']['table-row']) ){
+      $arEntityIds = $form_state_values['entity']['table-row'];
+      foreach ((array) $arEntityIds as $id => $weight) { // (array) se agrega para validar que sea un arreglo y evitar error foreach
+        $this->configuration['entity']['weight'][$id] = $weight['weight'];
+      }
     }
 
     $filesArray = [
@@ -557,11 +565,13 @@ class CardBase extends BlockBase implements ContainerFactoryPluginInterface {
 
     foreach ($filesArray as $item) {
       foreach ((array) $item['table_fields'] as $field) { // (array) se agrega para validar que sea un arreglo y evitar error foreach
-        if ($field['type'] == 'managed_file') {
-          $fid = reset($field['input']);
-          // Save file permanently.
-          if ($fid) {
-            $this->setFileAsPermanent($fid);
+        if (!empty($item['table_fields'])){
+          if ($field['type'] == 'managed_file') {
+            $fid = reset($field['input']);
+            // Save file permanently.
+            if ($fid) {
+              $this->setFileAsPermanent($fid);
+            }
           }
         }
       }
@@ -631,10 +641,12 @@ class CardBase extends BlockBase implements ContainerFactoryPluginInterface {
             // use dependency injection instead.
             // $file = File::load(reset($item['input']))
             // $file = $this->entityTypeManager->getStorage('file')->load(reset($item['input']))
-            $file = File::load(reset($item['input']));
-            if ($file) {
-              $element['data'] = file_create_url($file->getFileUri());
-              $element['type'] = 'image';
+            if(count($item['input']) > 0){
+              $file = File::load(reset($item['input']));
+              if ($file) {
+                $element['data'] = file_create_url($file->getFileUri());
+                $element['type'] = 'image';
+              }
             }
           }
           break;
