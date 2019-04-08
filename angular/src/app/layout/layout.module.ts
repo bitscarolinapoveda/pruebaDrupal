@@ -11,8 +11,9 @@ import { FooterNewsletterComponent } from '../cards/components/footer/footer-new
 import { GeneratorOfLinksComponent } from '../cards/components/generator-of-links/generator-of-links.component';
 import { FooterBlockComponent } from '../cards/components/footer/footer-block/footer-block';
 import { RouterModule } from '@angular/router';
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {MessageModule} from "../message/message.module";
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {MessageModule} from '../message/message.module';
+import { FloatSocialComponent } from '../cards/components/float-social/float-social.component';
 
 @NgModule({
   imports: [
@@ -20,7 +21,7 @@ import {MessageModule} from "../message/message.module";
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
-    MessageModule,
+    MessageModule
   ],
   declarations: [
     ItemMenuComponent,
@@ -32,10 +33,12 @@ import {MessageModule} from "../message/message.module";
     FooterNewsletterComponent,
     GeneratorOfLinksComponent,
     FooterBlockComponent,
+    FloatSocialComponent
   ],
   exports: [
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    FloatSocialComponent
   ],
 })
 
