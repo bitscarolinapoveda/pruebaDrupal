@@ -20,6 +20,7 @@ const pagesRoutes: Routes = [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: 'home', component: HomeComponent },
       { path: 'contact-us', component: ContactUsComponent },
+      { path: 'contact-us/:type', component: ContactUsComponent },
       { path: 'products', component: ProductsComponent },
       { path: 'products/:type', component: ProductsOrServicesComponent },
       { path: 'projects', component: ProjectsComponent },
