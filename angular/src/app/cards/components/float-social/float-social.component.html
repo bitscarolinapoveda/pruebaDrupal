@@ -1,5 +1,5 @@
 <section id="float-social-block" [hidden]="!hide">
-  <section class="social-networks">
+  <section class="social-networks {{positionSidebar}}">
     <div class="icon-social">
       <ul class="row fa-ul">
         <li *ngFor="let net of socialmedia;">
@@ -10,7 +10,7 @@
       </ul>
     </div>
   </section>
-  <section class="envolope">
+  <section class="envolope {{positionSidebar}}">
     <div class="icon-mail">
       <ul class="row fa-ul">
         <li>
