@@ -58,7 +58,7 @@ class BitsCardsOutputJsonCard {
       $ids->range($offset, $limit);
 
       $ids = $ids->execute();
-      $ids_weight = $settings['entity']['weight'];
+      $ids_weight = isset($settings['entity']['weight']) ? $settings['entity']['weight'] : [] ;
       $temp = [];
       foreach ($ids as $key => $value) {
         if(isset($ids_weight[$value]) && !isset($temp[$ids_weight[$value]] ) ){
@@ -84,7 +84,7 @@ class BitsCardsOutputJsonCard {
       //  Si no es una entidad de contenido intenta como de configuración
       else {
         $nodes_values = array_values($nodes); // se separo function para evitar error "only variables should be passed by reference"
-        $fields = get_object_vars(array_shift($nodes_values));
+        $fields = count($nodes_values) > 0 ? get_object_vars(array_shift($nodes_values)) : [];
         $isContentEntity = false;
       }
 
