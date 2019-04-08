@@ -9,15 +9,41 @@ import { NavbarService } from 'src/app/services/layout/navbar.service';
 })
 export class FooterComponent implements OnInit {
   items: any;
+  background: any;
+  backgroundMovil: any;
+  backgroundDesktop: any;
+  width: any;
   constructor(
-    private lowFooter: NavbarService
-  ) { }
-  ngOnInit() {
-    this.getInfoLowFooter ();
+    private lowFooter: NavbarService, private https: CustomCardService
+  ) {
+    this.width = window.innerWidth;
   }
-  getInfoLowFooter () {
+
+  ngOnInit() {
+    this.getInfoLowFooter();
+    this.getImgFooter();
+  }
+
+  getInfoLowFooter() {
     this.lowFooter.getLowFooterInfo('sub-footer---pagina-bits').subscribe(items => {
       this.items = items;
     });
+  }
+
+  getImgFooter() {
+    this.https.getCustomCardInformation('footerblock').subscribe(items => {
+      this.backgroundDesktop = items.body[0].data.back_movil[0].url;
+      this.backgroundMovil = items.body[0].data.back_desktop[0].url;
+      this.onResize();
+    });
+  }
+
+  onResize() {
+    this.width = window.innerWidth;
+    if (this.width <= 550) {
+      this.background = this.backgroundMovil;
+    } else {
+      this.background = this.backgroundDesktop;
+    }
   }
 }

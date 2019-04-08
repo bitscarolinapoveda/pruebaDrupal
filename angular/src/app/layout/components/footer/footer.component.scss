@@ -11,7 +11,7 @@
   }
 
   .general-container.footer-img {
-    background-image: url("/assets/images/footer.png");
+    //background-image: url("/assets/images/footer.png");
     background-size: cover;
 
     @include breakpoint (phone) {
