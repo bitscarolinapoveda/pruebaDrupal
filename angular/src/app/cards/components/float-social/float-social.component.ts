@@ -24,6 +24,7 @@ export class FloatSocialComponent implements OnInit {
   descrip_form: string;
   footer_text: string;
   footer_contact: string;
+  positionSidebar: string;
   dataMessage: DataMessage[];
   private _token: string;
 
@@ -110,6 +111,9 @@ export class FloatSocialComponent implements OnInit {
   getFloatSocialItems() {
     this.service.getCustomCardInformation('contactcard').subscribe((items: { header, others }) => {
       this.socialmedia = items.others;
+      if(items.header){
+        this.positionSidebar = items.header[2].data.position;
+      }
     });
   }
   getModalData() {
