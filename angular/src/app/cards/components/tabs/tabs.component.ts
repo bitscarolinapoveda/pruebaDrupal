@@ -10,6 +10,7 @@ import { analyzeAndValidateNgModules } from '@angular/compiler';
 import { SelectComponent } from 'ng2-select';
 import { DataMessage } from '../../../message/components/message/message.component';
 import { NgbPopoverConfig } from '@ng-bootstrap/ng-bootstrap';
+import { ActivatedRoute } from '@angular/router';
 
 declare var jQuery: any;
 declare var $: any;
@@ -58,8 +59,10 @@ export class TabsComponent implements OnInit {
   captcha_form: any;
   valido: boolean;
   elementoForm: any;
+  type: any;
 
-  constructor(private _http: HttpService, private _service: CustomCardService, private http_pais: HttpClient, config: NgbPopoverConfig) {
+  constructor(private _http: HttpService, private _service: CustomCardService, private http_pais: HttpClient, config: NgbPopoverConfig,
+    private rutaActiva: ActivatedRoute) {
     this.dataMessage = [];
     this.list = [];
     this.listQuestion = [];
@@ -79,6 +82,7 @@ export class TabsComponent implements OnInit {
     this.hover_buttom = 'Faltan datos por llenar';
     config.placement = 'top';
     config.triggers = 'hover';
+    this.type = '';
   }
 
   mostrarDatos(id) {
@@ -152,6 +156,13 @@ export class TabsComponent implements OnInit {
   }
 
   ngOnInit() {
+
+    this.type = this.rutaActiva.snapshot.params.type;
+
+    if (this.type !== undefined) {
+      $('.trabaje button').toggleClass('active');
+      $('.contactenos button').toggleClass('active');
+    }
 
     this.getTabsData();
 
