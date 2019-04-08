@@ -22,7 +22,7 @@ export class NavbarComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.heightScreen = $(window).height()+'px';
+        this.heightScreen = $(window).height() + 'px';
         $('.Botton, .show-more').on('click', function () {
             $('.menu-scroll, .link').toggleClass('tigger-menu scroll-white color-white');
         });
@@ -43,7 +43,6 @@ export class NavbarComponent implements OnInit {
 
     getNavBarItems() {
         return this.navbar.getMenuItems().subscribe(items => {
-            console.log(items);
             this.NavbarArray = items;
             this.NavbarArray = this.addIdForColToNavbar(this.NavbarArray, 1, 1);
         });

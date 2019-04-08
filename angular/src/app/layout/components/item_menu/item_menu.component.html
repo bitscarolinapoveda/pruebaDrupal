@@ -1,8 +1,8 @@
 <ul class="menu-tree-level custmulcol-{{col}} customulrow-{{row}} {{flActiveActual ? 'visible-in-mobile' : 'invisible-in-mobile'}}"
     [style.backgroundImage]="image != undefined ? 'url(' + image + ')' : 'url(no-existe.png)'" (window:resize)="onResize()"
-    [ngStyle]="{'top': row === 2 ? heightTop : '0px'}"  >
+    [ngStyle]="{'top': row === 2 ? heightTop : '0px'}" >
     <ng-container *ngFor="let child of menus; let idx= index">
-        <li class="menu-item-child index-{{idx}} custmcol-{{col}} customrow-{{row}}" [ngClass]="{'active-ul': child.showrow === true}">
+        <li class="menu-item-child index-{{idx}} custmcol-{{col}} customrow-{{row}}" [ngClass]="{'active-ul': child.showrow === true}"  (mouseover)="mostrarDatosMenus(idx)" (mouseleave)="ocultarMenus()">
             <a [routerLink]="['/'+child.uri]" class="link">
                 <span class="title">{{ child.title }}</span>
                 <span class="description">{{ child.description }}</span>
@@ -24,7 +24,7 @@
     [ngStyle]="{'top': row === 2 ? heightTop : '0px'}" *ngIf="value == true">  
     <div class="box-menu">
       <ng-container *ngFor="let child of menus; let idx= index">
-        <li class="menu-item-child index-{{idx}} custmcol-{{col}} customrow-{{row}}" [ngClass]="{'active-ul': child.showrow === true}">
+        <li class="menu-item-child index-{{idx}} custmcol-{{col}} customrow-{{row}}" [ngClass]="{'active-ul': child.showrow === true}" (mouseover)="mostrarDatosMenus(idx)" (mouseleave)="ocultarMenus()">
             <a [routerLink]="['/'+child.uri]" class="link">
                 <span class="title">{{ child.title }}</span>
                 <span class="description">{{ child.description }}</span>
@@ -42,9 +42,9 @@
     </ng-container>   
     </div>
     <div class="box-menu box-second">        
-    <ng-container *ngFor="let child of menusColum; let idx= index"> 
+    <ng-container *ngFor="let child of menusColumn; let idx= index"> 
         <div class="separador"></div>       
-        <li class="menu-item-child index-{{idx}} custmcol-{{col}} customrow-{{row}}" [ngClass]="{'active-ul': child.showrow === true}">
+        <li class="menu-item-child index-{{idx}} custmcol-{{col}} customrow-{{row}}" [ngClass]="{'active-ul': child.showrow === true}" (mouseover)="mostrarDatosColumn(idx)" (mouseleave)="ocultarMenus()">
             <a [routerLink]="['/'+child.uri]" class="link">
                 <span class="title">{{ child.title }}</span>
                 <span class="description">{{ child.description }}</span>

@@ -418,6 +418,10 @@
                         bottom: 0;
                     }
 
+                    @include breakpoint(phone) {
+                        background-image: none !important;
+                     }
+
                     >li.customrow-2 {
 
                         @media (max-width: 1080px) {
