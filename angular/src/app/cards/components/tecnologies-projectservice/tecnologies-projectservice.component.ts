@@ -1,7 +1,8 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { CustomCardService } from 'src/app/services/cards/v1-card.services';
 import { DataMenu } from '../menu-template/menu-template.component';
-
+import { Observable } from 'rxjs/Observable';
+import { General } from '../blurb/blurb.component';
 
 @Component({
   selector: 'app-tecnologies-projectservice',
@@ -16,6 +17,8 @@ export class TecnologiesProjectserviceComponent implements OnInit {
   title: string;
   subtitle: string;
   CarouselControlArray: any[];
+  principalTecnologies: General;
+  casTecnologies: any = 0;
   visible: boolean;
 
   constructor(private https: CustomCardService) {
@@ -24,32 +27,36 @@ export class TecnologiesProjectserviceComponent implements OnInit {
   }
 
   ngOnInit() {
-    while (this.type.indexOf('-') > -1) {
-      this.type = this.type.replace('-', '_');
-    }
-
-    this.datosMenu = {
-      label: 'TECNOLOGIA',
-      id: 'a11',
-      url: '/imedical'
-    };
-
-    this.propagar.emit(this.datosMenu);
     this.getTecnoInformationService();
   }
 
   getTecnoInformationService() {
-    this.https.getCustomCardInformationType('expertsinimedicalcard', this.type).subscribe(items => {
-      this.title = items.header[0].data.title;
-      this.subtitle = items.header[1].data.sub_title;
-      items.data = this.https.addImageField(items.data, ['field_tech_color_image']);
-      items.data = this.https.addImageField(items.data, ['field_tech_image']);
-      this.CarouselControlArray = items.data;
-      if (this.title !== '' && this.CarouselControlArray.length !== 0) {
-        this.visible = true;
-      }
+
+    this.https.getCustomCardInformation('allproductsandservicescard_2').subscribe(items => {
+      this.principalTecnologies = this.https.getFilterPrincipalType(items, 'field_technologies', this.type);
+
+      this.https.getCustomCardInformation('expertsinimedicalcard').subscribe(itemsw => {
+        this.title = itemsw.header[0].data.title;
+        this.subtitle = itemsw.header[1].data.sub_title;
+        itemsw.data = this.https.addImageField(itemsw.data, ['field_tech_color_image']);
+        itemsw.data = this.https.addImageField(itemsw.data, ['field_tech_image']);
+
+        const list_items = itemsw.data;
+
+        this.CarouselControlArray = [];
+        this.CarouselControlArray = this.https.getFilterLists(this.principalTecnologies, itemsw.data);
+
+        if (this.title !== '' && this.CarouselControlArray.length !== 0) {
+          this.visible = true;
+          this.datosMenu = {
+            label: 'TECNOLOGIA',
+            id: 'a11',
+            url: '/imedical'
+          };
+          this.propagar.emit(this.datosMenu);
+        }
+
+      });
     });
-
   }
-
 }
