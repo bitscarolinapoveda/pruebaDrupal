@@ -49,9 +49,41 @@ export class CustomCardService {
     } else {
       setTimeout(() => {
         this.memory$[idblock].next(this.clone(this.memory[idblock]));
-      },1);
+      }, 1);
     }
     return this.memory$[idblock].asObservable();
+  }
+
+  getFilterPrincipalType(listPrincipal, campo, type) {
+    let value = 0;
+    let datos = [];
+    for (let index = 0; index < listPrincipal.data.length; index++) {
+      if (listPrincipal.data[index].url.indexOf(type) > -1) {
+        value++;
+        datos = listPrincipal.data[index][campo];
+      }
+    }
+    if (value === 0) {
+      listPrincipal.data = [];
+    } else {
+      listPrincipal.data = datos;
+    }
+    return listPrincipal;
+  }
+
+  getFilterLists(listPrincipal, listElement) {
+    let list: any[] = [];
+
+    if (listPrincipal.data !== undefined) {
+      for (let index = 0; index < listElement.length; index++) {
+        for (let j = 0; j < listPrincipal.data.length; j++) {
+          if (listElement[index].nid === listPrincipal.data[j].id) {
+            list.push(listElement[index]);
+          }
+        }
+      }
+    }
+    return list;
   }
 
   clone(obj) {
@@ -77,7 +109,7 @@ export class CustomCardService {
   addImageField(data: any, imagesList: any) {
     imagesList.forEach(imageName => {
       let i;
-      for (i = 0 ; i < data.length; i++) {
+      for (i = 0; i < data.length; i++) {
         if (data[i][imageName] == undefined) {
           data[i][imageName] = {
             url: '',
@@ -92,7 +124,7 @@ export class CustomCardService {
   }
 
   removeStrFieldFromTheName(data: any) {
-    for (let i = 0 ; i < data.length; i++) {
+    for (let i = 0; i < data.length; i++) {
       let entity = data[i];
       let newEntity = [];
       let newKey = '';
@@ -148,8 +180,8 @@ export class CustomCardService {
     var c = 0;
     for (let i = 0; i < arrayBox.length; i++) {
       for (let j = vuelta; j < hasta; j++) {
-        if (carouselInfo[j]=== undefined) {
-          arrayBox[i].push(carouselInfo[Math.floor(Math.random()*carouselInfo.length)]);
+        if (carouselInfo[j] === undefined) {
+          arrayBox[i].push(carouselInfo[Math.floor(Math.random() * carouselInfo.length)]);
         } else {
           arrayBox[i].push(carouselInfo[j]);
         }
