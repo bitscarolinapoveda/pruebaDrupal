@@ -19,7 +19,7 @@
         </div>
         <app-card-img-text [orientacion]="'IT'" (propagar)="onMenu($event)" [type]="type"></app-card-img-text>
         <app-tecnologies-projectservice (propagar)="onMenu($event)" [type]="type"></app-tecnologies-projectservice>
-        <app-testimonies (propagar)="onMenu($event)"></app-testimonies>
+        <app-testimonies (propagar)="onMenu($event)" [type]="type"></app-testimonies>
         <app-achievements (propagar)="onMenu($event)" [type]="type"></app-achievements>
     </div>
     <app-screenshots (propagar)="onMenu($event)" [type]="type"></app-screenshots>
