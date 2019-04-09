@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CustomCardService } from 'src/app/services/cards/v1-card.services';
 import { NavbarService } from 'src/app/services/layout/navbar.service';
-
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
@@ -32,8 +31,12 @@ export class FooterComponent implements OnInit {
 
   getImgFooter() {
     this.https.getCustomCardInformation('footerblock').subscribe(items => {
-      this.backgroundDesktop = items.body[0].data.back_movil[0].url;
-      this.backgroundMovil = items.body[0].data.back_desktop[0].url;
+      if (items.body[0].data.back_movil !== undefined) {
+        this.backgroundDesktop = items.body[0].data.back_movil[0].url;
+      }
+      if (items.body[0].data.back_desktop !== undefined) {
+        this.backgroundMovil = items.body[0].data.back_desktop[0].url;
+      }
       this.onResize();
     });
   }
