@@ -1,7 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { CustomCardService } from 'src/app/services/cards/v1-card.services';
 import { DataMenu } from '../menu-template/menu-template.component';
-import { Observable } from 'rxjs/Observable';
 import { General } from '../blurb/blurb.component';
 
 @Component({
@@ -18,7 +17,6 @@ export class TecnologiesProjectserviceComponent implements OnInit {
   subtitle: string;
   CarouselControlArray: any[];
   principalTecnologies: General;
-  casTecnologies: any = 0;
   visible: boolean;
 
   constructor(private https: CustomCardService) {
