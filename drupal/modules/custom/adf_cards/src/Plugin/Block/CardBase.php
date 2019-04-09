@@ -451,7 +451,7 @@ class CardBase extends BlockBase implements ContainerFactoryPluginInterface {
         $form[$key]['table_fields'][$id]['input']['link'] = [
           '#type' => 'textfield',
           '#title' => $this->t('Url'),
-          '#default_value' => $entity['input']['link'],
+          '#default_value' => isset($entity['input']['link']) ? $entity['input']['link'] : NULL,
           '#size' => 40,
           '#attributes' => [
             'pattern' => '(https?://|ftps?://|mailto:|tel:|/)[^ :]+'
@@ -461,19 +461,15 @@ class CardBase extends BlockBase implements ContainerFactoryPluginInterface {
         $form[$key]['table_fields'][$id]['input']['label'] = [
           '#type' => 'textfield',
           '#title' => $this->t('Label'),
-          '#default_value' => $entity['input']['label'],
+          '#default_value' => isset($entity['input']['label']) ? $entity['input']['label'] : NULL,
           '#size' => 40,
         ];
       } else {
         $form[$key]['table_fields'][$id]['input'] = [
           '#type' => $entity['type'],
-          '#default_value' => $entity['input'],
+          '#default_value' => isset($entity['input']) ? $entity['input'] : NULL,
           '#size' => 40,
         ];
-      }
-
-      if (isset($entity['max_length'])) {
-        $form[$key]['table_fields'][$id]['input']['#maxlength'] = $entity['max_length'];
       }
 
       if ($entity['type'] == 'managed_file') {
@@ -487,20 +483,23 @@ class CardBase extends BlockBase implements ContainerFactoryPluginInterface {
           $form[$key]['table_fields'][$id]['input']['#upload_validators'] = $entity['upload_validators'];
         }
       }
+      elseif (isset($entity['max_length']) ) {
+        $form[$key]['table_fields'][$id]['input']['#maxlength'] = $entity['max_length'];
+      }
 
       if ($entity['type'] == 'text_format') {
-        $form[$key]['table_fields'][$id]['input']['#default_value'] = $entity['input']['value'];
+        $form[$key]['table_fields'][$id]['input']['#default_value'] = isset($entity['input']['value']) ? $entity['input']['value'] : NULL;
         $form[$key]['table_fields'][$id]['input']['#format'] = 'full_html';
       }
 
       if ($entity['type'] == 'select' || $entity['type'] == 'checkboxes') {
         $form[$key]['table_fields'][$id]['input']['#options'] = $entity['options'];
-        $form[$key]['table_fields'][$id]['input']['#default_value'] = $entity['input']['value'];
+        $form[$key]['table_fields'][$id]['input']['#default_value'] = isset($entity['input']['value']) ? $entity['input']['value'] : NULL;
       }
 
       if ($entity['type'] == 'radios') {
         $form[$key]['table_fields'][$id]['input']['#options'] = $entity['options'];
-        $form[$key]['table_fields'][$id]['input']['#default_value'] = $entity['value'];
+        $form[$key]['table_fields'][$id]['input']['#default_value'] = isset($entity['value']) ? $entity['value'] : NULL;
       }
 
       $form[$key]['table_fields'][$id]['show'] = [
