@@ -1,7 +1,7 @@
 <app-banner [titulo]="type" [imgFondo]=""></app-banner>
 <div class="my-5">
     <div class="container">
-        <app-client-project-imedical (propagar)="onMenu($event)"></app-client-project-imedical>
+        <app-client-project-imedical (propagar)="onMenu($event)" [type]="type"></app-client-project-imedical>
     </div>
     <hr>
     <app-menu-template [menuList]="listMenu"></app-menu-template>
