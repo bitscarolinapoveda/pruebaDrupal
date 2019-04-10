@@ -75,15 +75,16 @@ export class CustomCardService {
     let list: any[] = [];
 
     if (listPrincipal.data !== undefined) {
-      for (let index = 0; index < listElement.length; index++) {
+      for (let index = 0; index < listElement.data.length; index++) {
         for (let j = 0; j < listPrincipal.data.length; j++) {
-          if (listElement[index].nid === listPrincipal.data[j].id) {
-            list.push(listElement[index]);
+          if (listElement.data[index].nid === listPrincipal.data[j].id) {
+            list.push(listElement.data[index]);
           }
         }
       }
     }
-    return list;
+    listElement.data = list;
+    return listElement;
   }
 
   clone(obj) {
