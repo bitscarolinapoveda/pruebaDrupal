@@ -7,7 +7,6 @@ import { getRelatedFormControls } from '@ng-dynamic-forms/core';
 import { General } from '../../../cards/components/blurb/blurb.component';
 import { Observable } from 'rxjs/Observable';
 import { Meta } from '@angular/platform-browser';
-
 @Component({
   selector: 'app-products-or-services',
   templateUrl: './products-or-services.component.html',
@@ -23,6 +22,7 @@ export class ProductsOrServicesComponent implements OnInit {
   public imagen: string;
   public value: any;
   visible: boolean;
+  principal: General;
 
   constructor(private _http: CustomCardService, private rutaActiva: ActivatedRoute, private service: HttpService,
     private meta: Meta) {
@@ -36,7 +36,7 @@ export class ProductsOrServicesComponent implements OnInit {
     this.meta.removeTag('name="general"');
     this.meta.updateTag({ name: 'component', content: 'app-products-or-services' });
 
-    this.type = this.rutaActiva.snapshot.params.type;   
+    this.type = this.rutaActiva.snapshot.params.type;
 
     this.rutaActiva.params.subscribe(
       (params: Params) => {
@@ -49,9 +49,11 @@ export class ProductsOrServicesComponent implements OnInit {
   }
 
   getModulesService() {
-    this._http
-      .getCustomCardInformation('moduleinformation')
-      .subscribe(params => {
+    this._http.getCustomCardInformation('allproductsandservicescard_2').subscribe(items => {
+      this.principal = this._http.getFilterPrincipalType(items, 'field_modules', this.type);
+
+      this._http.getCustomCardInformation('moduleinformation').subscribe(params => {
+        params = this._http.getFilterLists(this.principal, params);
         this.tituloModulos = params.header[0].data.title;
         this.descripcionModulos = params.header[1].data.description;
         params.data = this._http.addImageField(params.data, ['field_image']);
@@ -69,7 +71,9 @@ export class ProductsOrServicesComponent implements OnInit {
         if (this.tituloModulos !== '' && this.blurbArray.length !== 0) {
           this.visible = true;
         }
+
       });
+    });
   }
 
   onMenu(listMenu) {
