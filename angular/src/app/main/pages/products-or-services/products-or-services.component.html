@@ -5,7 +5,7 @@
     </div>
     <hr>
     <app-menu-template [menuList]="listMenu"></app-menu-template>
-    <app-slider></app-slider>
+    <app-slider (propagar)="onMenu($event)" [type]="type"></app-slider>
     <div class="container">
         <app-separator [iconCustom]="'icon-engranaje'" *ngIf="visible"></app-separator>
         <div class="row" *ngIf="visible">
