@@ -63,13 +63,14 @@ export class BannerComponent implements OnInit {
 
     getProductsAndServicesItems() {
         this.banner.getCustomCardInformation('allproductsandservicescard_2').subscribe(items => {
-            this.principalBanner = this.banner.clone(items);
+            this.principalBanner = items;
             this.principalBanner.data = this.banner.addImageField(this.principalBanner.data, ['field_short_image']);
             this.principalBanner.data = this.banner.addImageField(this.principalBanner.data, ['field_large_image']);
             const servicesProduct = this.principalBanner.data;
             for (let index = 0; index < servicesProduct.length; index++) {
                 if (servicesProduct[index].url.indexOf(this.titulo) > -1 && servicesProduct[index].field_large_image !== undefined) {
                     this.bannerBackground = servicesProduct[index].field_large_image.url;
+                    this.bannerDescrip = servicesProduct[index].field_descripcion;
                 }
             }
             if (this.titulo !== '') {
