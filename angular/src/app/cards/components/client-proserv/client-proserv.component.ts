@@ -90,7 +90,7 @@ export class ClientProServComponent implements OnInit, DoCheck, OnDestroy {
     this.principalClient$ = this._cardService.getCustomInfoIM('allproductsandservicescard_2');
     this.principalClient$.subscribe(items => {
       this.principalClient = this._cardService.clone(items);
-      this.principalClient = this._cardService.getFilterPrincipalType(this.principalClient, 'field_clients', this.type);
+      this.principalClient = this._cardService.getFilterPrincipalType(this.principalClient, 'field_imedical_clients', this.type);
 
       /* let value = 0;
       let datos = [];
