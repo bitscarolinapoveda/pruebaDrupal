@@ -63,7 +63,7 @@ export class CardImgTextComponent implements OnInit {
     getCardImgTextServiceR() {
 
         this._http.getCustomCardInformation('allproductsandservicescard_2').subscribe(items => {
-            this.principalR = this._http.getFilterPrincipalType(items, 'field_right', this.type);
+            this.principalR = this._http.getFilterPrincipalType(items, 'field_right_media', this.type);
 
             this._http.getCustomCardInformation('mediaimedicalcard').subscribe(params => {
                 params = this._http.getFilterLists(this.principalR, params);

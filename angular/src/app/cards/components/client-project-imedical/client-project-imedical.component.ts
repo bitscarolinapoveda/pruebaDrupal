@@ -43,7 +43,7 @@ export class ClientProjectImedicalComponent implements OnInit {
 
   getClientProjectImedicalService() {
     this._http.getCustomCardInformation('allproductsandservicescard_2').subscribe(items => {
-      this.principal = this._http.getFilterPrincipalType(items, 'field_clients', this.type);
+      this.principal = this._http.getFilterPrincipalType(items, 'field_top_client', this.type);
 
       this._http.getCustomCardInformation('imedicalclients_2').subscribe(params => {
         params = this._http.getFilterLists(this.principal, params);
