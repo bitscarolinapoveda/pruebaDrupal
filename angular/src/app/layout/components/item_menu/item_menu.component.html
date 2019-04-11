@@ -20,7 +20,9 @@
     </ng-container>         
 </ul>
 <ul class="menu-tree-level custmulcol-{{col}} customulrow-{{row}} {{flActiveActual ? 'visible-in-mobile' : 'invisible-in-mobile'}}" [ngClass]="{'box-large': value === true}"
-    [style.backgroundImage]="image != undefined ? 'url(' + image + ')' : 'url(no-existe.png)'" (window:resize)="onResize()"
+    [style.backgroundImage]="image != undefined ? 'url(' + image + ')' : 'url(no-existe.png)'"
+    [style.height.px]="height"
+     (window:resize)="onResize()"
     [ngStyle]="{'top': row === 2 ? heightTop : '0px'}" *ngIf="value == true">  
     <div class="box-menu">
       <ng-container *ngFor="let child of menus; let idx= index">

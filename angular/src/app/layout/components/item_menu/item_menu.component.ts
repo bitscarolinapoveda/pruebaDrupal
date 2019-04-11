@@ -17,6 +17,7 @@ export class ItemMenuComponent implements OnInit {
     public mobile;
     menusColumn: any[];
     value: boolean;
+    height: any;
 
     row: any;
     col: any;
@@ -29,9 +30,22 @@ export class ItemMenuComponent implements OnInit {
             this.image = this.menus[0].image;
         }
         if (this.row === 3 && this.menus.length > 3 && window.innerWidth > 1025) {
-            this.menusColumn = this.menus.slice(3, this.menus.length);
-            this.menus = this.menus.slice(0, 3);
+            let limit_a;
+            if (this.menus.length > 4) {
+                limit_a = Math.round(this.menus.length / 1.5);
+            } else {
+                limit_a = 3;
+            }
+            this.menusColumn = this.menus.slice(limit_a, this.menus.length);
+            this.menus = this.menus.slice(0, limit_a);
             this.value = true;
+            if (this.menus.length === 4) {
+                this.height = 300;
+            } else if (this.menus.length > 4 && this.menus.length < 6) {
+                this.height = Math.round(this.menus.length / 2) * 120;
+            } else if (this.menus.length >= 6) {
+                this.height = Math.round(this.menus.length / 2) * 130;
+            }
         }
     }
 
@@ -47,7 +61,6 @@ export class ItemMenuComponent implements OnInit {
 
     mostrarDatosColumn(index) {
         if (this.row === 3 && this.menusColumn.length >= 1) {
-            console.log('mostrarDatosColumn');
             this.image = this.menusColumn[index].image;
         }
     }
