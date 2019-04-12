@@ -20,32 +20,20 @@
     .info-title {
         font-size: 40px;
     }
-
-    .icons-container {
-        min-height: 300px;  
-        .tec-slider {
-            width: 100%;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            .item {
-                margin: 0 auto;
-                // position: absolute;
-            }
-            .div-slide {
-                margin: 0 auto;
-
-                @include mediaquery(max_960) {}
-
-                .img-slide {
-                    @include mediaquery(max_960) {}
-                }
-            }
+    .block-image {
+        width: 100%;
+        min-height: 300px;
+        .icons-container {
+            width:100%; 
+            background-color: transparent; 
+            display: flex; 
+            flex-direction: row; 
+            flex-wrap: wrap;
+            justify-content: center; 
+            align-items: center; 
         }
-    }
+    }  
 }
-
 .img-fluid {
     width: 140px;
     height: 120px;
