@@ -1,18 +1,16 @@
 <div class="row position-relative row-tec" [ngStyle]="{'background-image': 'url(' + background?.url + ')'}" 
 [id]="datosMenu.id">
-        <div class="position-absolute content-trans"></div>
-        <div class="col-md-12 pt-5 pb-2 px-2">
-            <h2 class="text-center text-white info-title">{{ title }}</h2>
-        </div>
-        <div class="col-md-12 py-5 px-2 icons-container">
-            <div class="tec-slider">
-                <ngx-carousel [inputs]="carocarouselTile">
-                    <ngx-tile NgxCarouselItem id="logos-{{i}}" *ngFor="let im of arrayLogosCustom; let i = index">
-                        <div class="img-fluid" *ngFor="let img of im" [ngStyle]="{'background-image':'url(' + img.field_tech_image?.url + ')'}"></div>
-                    </ngx-tile>
-                    <button NgxCarouselPrev class="leftRs">&lt;</button>
-                    <button NgxCarouselNext class="rightRs">&gt;</button>
-                </ngx-carousel>
-            </div>
-        </div>
+    <div class="position-absolute content-trans"></div>
+    <div class="col-md-12 pt-5 pb-2 px-2">
+        <h2 class="text-center text-white info-title">{{ title }}</h2>
+    </div>
+    <div style="width: 100%; height: 300px">
+        <mdb-carousel class="carousel slide carousel-fade" [animation]="'fade'" [interval]="'6000'" [isControls]="false" [noPause]="true">
+            <mdb-carousel-item *ngFor="let im of arrayLogosCustom;">
+                <div style="width:100%; height:300px; background-color: transparent; display: flex; flex-direction: row; justify-content: center; align-items: center">
+                    <div class="img-fluid" *ngFor="let img of im" [ngStyle]="{'background-image':'url(' + img.field_tech_image?.url + ')'}"></div>
+                </div>
+            </mdb-carousel-item>
+        </mdb-carousel>
+    </div>
 </div>

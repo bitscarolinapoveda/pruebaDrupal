@@ -119,3 +119,13 @@
     visibility: hidden;
     
 }
+.carousel-item>div>div {
+    transform: scale(0);
+    transition: all 3000ms ease !important;
+}
+.carousel-item.active>div>div {
+    transform: scale(1);
+}
+.carousel-item {
+    transition: all 3000ms ease !important;
+}
