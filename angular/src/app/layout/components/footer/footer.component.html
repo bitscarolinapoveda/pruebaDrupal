@@ -1,6 +1,6 @@
 <footer id="footer-block">
     <div class="blue-layer"></div>
-    <div class="general-container footer-img">
+    <div class="general-container footer-img" [ngStyle]="{'background-image':'url(' + background + ')'}" (window:resize)="onResize()">
         <section class="first-info-container-footer">
             <div class="row row-info-footer">
                 <div class="col-sm-12 col-md-3 col-lg-6 col-xl-6 locations" >
@@ -21,11 +21,10 @@
             <div class="second-blue-layer"></div>
             <div class="row row-info-footer">
                 <div class="col-12 list-of-footer">
-                    <a class="items-footer" href="#">politicas</a>
-                    <div class="circule"></div>
-                    <a class="items-footer" href="#">Mapa del sitio</a>
-                    <div class="circule"></div>
-                    <a class="items-footer" href="#">PQRS</a>
+                    <a class="items-footer" *ngFor="let item of items; let last = last" href="{{ item.uri }}">
+                        {{ item.title }}
+                        <div class="circule" [ngClass]="{ hide: last}"></div>
+                    </a>
                 </div>
             </div>
         </section>

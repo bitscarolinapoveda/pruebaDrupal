@@ -1,7 +1,7 @@
 <div *ngIf="visible">
   <app-separator [iconCustom]="'icon-camera'"></app-separator>
   <section id="principal">
-    <h1 [id]="datosMenu.id" class="title-principal">{{ screenshotsTitle }}</h1>
+    <h2 [id]="datosMenu.id" class="title-principal">{{ screenshotsTitle }}</h2>
     <p class="descrip-principal" [innerHTML]="screenshotsSubTitle"></p>
   </section>
   <ngx-carousel [inputs]="carouselOne" (carouselLoad)="carouselTileLoad($event)" id="screenshots">

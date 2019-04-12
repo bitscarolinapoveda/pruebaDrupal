@@ -33,6 +33,14 @@ class FooterBlockSimple extends CardBase {
       ],
       'body' => [
         'table_fields' => [
+           'image' => [
+            'type' => 'managed_file',
+            'title' => $this->t('Imagen'),
+            'service_field' => 'image',
+            'show' => 1,
+            'weight' => 1,
+            'max_length' => 5,
+          ],
           'content' => [
             'type' => 'text_format',
             'title' => $this->t('Título'),

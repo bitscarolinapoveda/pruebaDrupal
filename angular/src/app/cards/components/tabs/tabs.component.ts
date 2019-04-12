@@ -10,6 +10,7 @@ import { analyzeAndValidateNgModules } from '@angular/compiler';
 import { SelectComponent } from 'ng2-select';
 import { DataMessage } from '../../../message/components/message/message.component';
 import { NgbPopoverConfig } from '@ng-bootstrap/ng-bootstrap';
+import { ActivatedRoute } from '@angular/router';
 
 declare var jQuery: any;
 declare var $: any;
@@ -57,8 +58,11 @@ export class TabsComponent implements OnInit {
   disabled: boolean;
   captcha_form: any;
   valido: boolean;
+  elementoForm: any;
+  type: any;
 
-  constructor(private _http: HttpService, private _service: CustomCardService, private http_pais: HttpClient, config: NgbPopoverConfig) {
+  constructor(private _http: HttpService, private _service: CustomCardService, private http_pais: HttpClient, config: NgbPopoverConfig,
+    private rutaActiva: ActivatedRoute) {
     this.dataMessage = [];
     this.list = [];
     this.listQuestion = [];
@@ -78,6 +82,7 @@ export class TabsComponent implements OnInit {
     this.hover_buttom = 'Faltan datos por llenar';
     config.placement = 'top';
     config.triggers = 'hover';
+    this.type = '';
   }
 
   mostrarDatos(id) {
@@ -95,20 +100,16 @@ export class TabsComponent implements OnInit {
 
   onSubmit(formulario) {
 
+    if (this.captcha_form === 'null' || this.captcha_form === undefined) {
+
+      this.valido = false;
+      this.hover_buttom = 'Faltan datos por llenar';
+    }
+
     if (this.valido === true) {
       this.dataMessage = [];
       formulario['webform_id'] = 'contact_us';
       formulario['captcha'] = this.captcha_form;
-      this.captcha_form = '';
-      this.valido = false;
-      this.hover_buttom = 'Faltan datos por llenar';
-
-      grecaptcha.reset();
-
-      /* $('#msj-modal').show();
-      $('.close').click(function () {
-        $('#msj-modal').hide();
-      }); */
 
       this._http.post('webform_rest/submit?_format=json', formulario, { // Hace el submit del formulario a Drupal
         'Content-Type': 'application/json',
@@ -143,17 +144,25 @@ export class TabsComponent implements OnInit {
               {
                 visible: true,
                 status: 'success',
-                message: 'Respuesta satisfactoria'
+                message: 'Formulario de contacto enviado exitosamente. Nos podremos en contacto con usted!'
               }
             );
           }
         });
+    } else {
+      this.dataMessage = [];
     }
-
 
   }
 
   ngOnInit() {
+
+    this.type = this.rutaActiva.snapshot.params.type;
+
+    if (this.type !== undefined) {
+      $('.trabaje button').toggleClass('active');
+      $('.contactenos button').toggleClass('active');
+    }
 
     this.getTabsData();
 
@@ -179,21 +188,6 @@ export class TabsComponent implements OnInit {
 
     this.getPaises();
 
-    $(function () {
-      $('[data-toggle="popover"]').popover(
-        {
-          html: true,
-          title: function () {
-            return $('#popover-title').html();
-          },
-          content: function () {
-            return document.getElementById('popover-content').innerHTML;
-          }
-        }
-      ).click(function (e) {
-        e.preventDefault();
-      });
-    });
     $(function () {
       $('[data-toggle="popover-question"]').popover(
         {
@@ -260,7 +254,41 @@ export class TabsComponent implements OnInit {
     this._service.getCustomForm('work_with_us').subscribe(params => {
       this.descrip_form = params.markup['#markup'];
     });
+
+    this._service.getCustomForm('contact_us').subscribe(params => {
+      let elementLayout = '';
+      let listLayout = [];
+      // Se obtienen de la respuesta del servicio los layout y elementos del formulario, se almacan en un array.
+      for (var index in params) {
+        elementLayout = index;
+        if (elementLayout.indexOf('#') == -1) {
+          listLayout.push(params[index]);
+        }
+      }
+      // Se insertan en el array listLayout los campos del formulario que pertenecen a cada layout y los que no pertenecen
+      for (var index in listLayout) {
+        let campoForm = [];
+        let cont = 0;
+        if (listLayout[index])
+          for (var indexj in listLayout[index]) {
+            if (indexj.indexOf('#') == -1) {
+              cont++;
+              campoForm.push(listLayout[index][indexj]);
+            }
+          }
+        if (cont != 0) {
+          listLayout[index] = [];
+          for (var indexz in campoForm) {
+            listLayout[index].push(campoForm[indexz]);
+          }
+        }
+        // Array de campos que conforman el formulario
+        this.elementoForm = listLayout;
+      }
+    }
+    );
   }
+
   getDatosForm() {
     this._service.getCustomCardInformation('allproductsandservicescard').subscribe(params => {
       for (let index = 0; index < params.data.length; index++) {
@@ -341,29 +369,3 @@ export class TabsComponent implements OnInit {
   }
 
 }
-
-//     arrayTabs:Tab[] = [];
-//     ids:number = 0;
-//     size:number;
-
-//     constructor(
-//         private https: CustomCardService,
-//     ) {}
-
-//     ngOnInit() {
-
-//     }
-
-//     mostrar(link:number){
-//         this.ids = link;
-//         console.log(this.ids);
-//     }
-// }
-
-// export interface Tab{
-//     titulo:string;
-//     icontab:string;
-//     urlicon:string;
-//     alticon:string;
-//     contenido:string;
-// }

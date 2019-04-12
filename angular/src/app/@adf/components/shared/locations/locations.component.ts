@@ -21,8 +21,9 @@ export class LocationsComponent implements OnInit {
   public closeOthers = true;
   public infoWindowOpen = true;
   public locations_data: any;
-  public lat: number;
-  public lng: number;
+  public cant_locations_data: boolean;
+  public lat: number = 0;
+  public lng: number = 0;
   public titleCity;
   public addressCity;
   public telephoneCity;
@@ -33,6 +34,8 @@ export class LocationsComponent implements OnInit {
   public needButtons = false;
   public widthOftheMap;
   public defaultZoomMap = 15;
+  public seeMoreText = true;
+  public seeLessText;
   public bitsTypeMap: any = [
     {
       featureType: 'road.highway',
@@ -62,13 +65,12 @@ export class LocationsComponent implements OnInit {
     }
   ];
 
-
   constructor(
     private _http: HttpService,
     private service: CustomCardService
   ) {
     this.locations_data = [];
-    this.infoWindowOpen = true;
+    this.cant_locations_data = false;
   }
   ngOnInit() {
     this.service.getCustomCardInformation('locationcard_2').subscribe((params) => {
@@ -91,6 +93,12 @@ export class LocationsComponent implements OnInit {
       this.addressCity = this.items[0].field_address;
       this.telephoneCity = this.items[0].field_telephone;
       this.locations_data = this.items;
+      if (this.locations_data.length < 4) {
+        this.cant_locations_data = true;
+      } else {
+        this.cant_locations_data = false;
+      }
+
     });
     this.onResize(screen);
   }
@@ -126,21 +134,41 @@ export class LocationsComponent implements OnInit {
     }
     document.getElementById(index + '').style.backgroundColor = '#d9dfe4';
   }
-  scrollMaps(direction) {
-    const elem = document.getElementById('box-of-buttons');
-    const scrollTop = elem.scrollTop;
-    if (direction === 'down') {
-      if (scrollTop === 0) {
-        elem.scrollTo(0, 130);
-      } else {
-        document.getElementById('up-arrow').style.visibility = 'visible';
-        elem.scrollTo(0, 130 + scrollTop);
+  scrollMaps(direction,devices) {
+    if (devices == 'mobile') {
+      if (this.seeMoreText === true) {
+        $('#acordion-info').css('max-height','initial');
+        $('.see-more-button .fa-sort-down').css({
+          'padding-bottom': '5px',
+          'transform':'rotate(180deg)'
+        });
+        this.seeMoreText = false;
+        this.seeLessText = true;
+      } else if (this.seeMoreText === false){
+        $('#acordion-info').css('max-height','734px');
+        $('.see-more-button .fa-sort-down').css({
+          'padding-bottom': '0px',
+          'transform':'rotate(0deg)'
+        });
+        this.seeMoreText = true;
+        this.seeLessText = false;
       }
-    } else if (direction === 'up') {
-      if (scrollTop === 130) {
-        elem.scrollTo(0, -130);
-      } else {
-        elem.scrollTo(0, -130 + scrollTop);
+    } else if (devices === 'desktop') {
+      const elem = document.getElementById('box-of-buttons');
+      const scrollTop = elem.scrollTop;
+      if (direction === 'down') {
+        if (scrollTop === 0) {
+          elem.scrollTo(0, 121);
+        } else {
+          document.getElementById('up-arrow').style.visibility = 'visible';
+          elem.scrollTo(0, 121 + scrollTop);
+        }
+      } else if (direction === 'up') {
+        if (scrollTop === 121) {
+          elem.scrollTo(0, -121);
+        } else {
+          elem.scrollTo(0, -121 + scrollTop);
+        }
       }
     }
   }

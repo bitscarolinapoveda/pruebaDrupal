@@ -59,6 +59,16 @@ class BitsCardsOutputJsonCard {
       $ids->range($offset, $limit);
 
       $ids = $ids->execute();
+      $ids_weight = isset($settings['entity']['weight']) ? $settings['entity']['weight'] : [] ;
+      $temp = [];
+      foreach ($ids as $key => $value) {
+        if(isset($ids_weight[$value]) && !isset($temp[$ids_weight[$value]] ) ){
+          $temp[$ids_weight[$value]] = $value;
+          unset($ids[$key]);
+        }
+      }
+      ksort($temp);
+      $ids = $temp + $ids;
 
       // Load nodes.
       $nodes = \Drupal::entityTypeManager()->getStorage($name)->loadMultiple($ids);
@@ -75,7 +85,7 @@ class BitsCardsOutputJsonCard {
       //  Si no es una entidad de contenido intenta como de configuración
       else {
         $nodes_values = array_values($nodes); // se separo function para evitar error "only variables should be passed by reference"
-        $fields = get_object_vars(array_shift($nodes_values));
+        $fields = count($nodes_values) > 0 ? get_object_vars(array_shift($nodes_values)) : [];
         $isContentEntity = false;
       }
 
@@ -106,11 +116,16 @@ class BitsCardsOutputJsonCard {
           }
         }
         if(!in_array( $tag[0], $node_tags))
-          array_push($node_tags, $tag[0]);
+        array_push($node_tags, $tag[0]);
+        $url = $node->toUrl()->toString(TRUE);
+        $url = $url->getGeneratedUrl();
+        $url = (strpos($url, 'node') === false) ? $url : '';
+
         if ($isContentEntity) {
           $data = [
             'nid' => $node->id(),
             'title' => $node->title->value,
+            'url' => $url,
           ];
         }
         else {
@@ -144,11 +159,9 @@ class BitsCardsOutputJsonCard {
             }
             elseif ($type === 'text_with_summary') {
               $value = $node->get($field)->getValue();
+              $data[$field] = $value[0]['value'];
               if(isset($value[0]['summary'])) {
-                $data[$field]['summary'] = $value[0]['summary'];
-                $data[$field]['value'] = $value[0]['value'];
-              } else {
-                $data[$field] = $value[0]['value'];
+                $data[$field . '_summary'] = $value[0]['summary'];
               }
             }
             elseif ($type === 'entity_reference'){
@@ -241,7 +254,7 @@ class BitsCardsOutputJsonCard {
                     }
                   }
                   if ($inputType == 'body') {
-                    if ($idCard == 'technologies' || $idCard == 'our_alliance' || $idCard == 'banner') {
+                    if ($idCard == 'technologies' || $idCard == 'our_alliance' || $idCard == 'banner' || $idCard == 'footer_block_simple') {
                       if ($key == '0') {
                         $element['data']['back_movil']['0']['title'] = $filename;
                         $element['data']['back_movil']['0']['url'] = file_create_url($file->getFileUri());
@@ -288,7 +301,10 @@ class BitsCardsOutputJsonCard {
 
           case 'textfield':
             $element['data'][preg_replace('@[^a-z0-9-]+@','_', strtolower($item['service_field']))] = $item['input'];
+            break;
 
+          case 'select' || 'checkboxes' || 'radios':
+            $element['data'][preg_replace('@[^a-z0-9-]+@','_', strtolower($item['service_field']))] = $item['input'];
             break;
 
           default:

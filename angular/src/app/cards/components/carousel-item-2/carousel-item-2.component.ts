@@ -45,40 +45,16 @@ export class CarouselItem2Component implements OnInit {
 
     this.carocarouselTile = {
       grid: { xs: 1, sm: 2, md: 4, lg: 4, all: 0 },
-      slide: 2,
+      slide: 1,
       speed: 400,
       animation: 'lazy',
       point: {
         visible: false,
-        pointStyles: `
-            .ngxcarouselPoint {
-              list-style-type: none;
-              text-align: center;
-              padding: 12px;
-              margin: 0;
-              white-space: nowrap;
-              overflow: auto;
-              box-sizing: border-box;
-            }
-            .ngxcarouselPoint li {
-              display: inline-block;
-              border-radius: 50%;
-              border: 2px solid rgba(0, 0, 0, 0.55);
-              padding: 4px;
-              margin: 0 3px;
-              transition-timing-function: cubic-bezier(.17, .67, .83, .67);
-              transition: .4s;
-            }
-            .ngxcarouselPoint li.active {
-                background: #6b6b6b;
-                transform: scale(1.2);
-            }
-          `
       },
       load: 4,
       touch: true,
       easing: 'ease',
-      loop: true,
+      loop: false,
     };
 
   }
@@ -89,30 +65,6 @@ export class CarouselItem2Component implements OnInit {
       for (let i = len; i < len + 10; i++) { this.clients.push(i); }
     }
   }
-  organizeInfoForCarousel(clientsInfo) {
-    var number = clientsInfo.length / 4;
-    if (clientsInfo.length % 4 === 0) {
-      var numberOfBoxes = parseInt(number.toString(), 10);
-    } else {
-      var numberOfBoxes = 1 + parseInt(number.toString(), 10);
-    }
-    for (let i = 0; i < numberOfBoxes; i++) {
-      this.arrayBox[i] = [];
-    }
-    var vuelta = 0;
-    var hasta = 4;
-    for (let i = 0; i < this.arrayBox.length; i++) {
-      for (let j = vuelta; j < hasta; j++) {
-        if (clientsInfo[j]=== undefined) {
-          this.arrayBox[i].push(clientsInfo[Math.floor(Math.random()*clientsInfo.length)]);
-        } else {
-          this.arrayBox[i].push(clientsInfo[j]);
-        }
-      }
-      vuelta = vuelta + 4;
-      hasta = hasta + 4;
-    }
-  }
 
   getOurClientsItems() {
     this._cardService.getCustomCardInformation('clientscard').subscribe(items => {
@@ -121,7 +73,7 @@ export class CarouselItem2Component implements OnInit {
       this.titleClients = items.header[0].data.title;
       this.clients = Object.keys(items.data).map(function (key) { return items.data[key]; });
       this.clientsDesktop = Object.keys(items.data).map(function (key) { return items.data[key]; });
-      this.organizeInfoForCarousel(this.clients);
+      this.arrayBox = this._cardService.organizeInfoForCarousel(this.clients);
     });
   }
 }

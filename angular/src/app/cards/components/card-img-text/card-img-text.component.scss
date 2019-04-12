@@ -1,3 +1,5 @@
+@import './src/assets/scss/mixin.scss';
+
 h3.condensed {
     font-size: 20px;
     transform: scaleY(1.2);
@@ -7,7 +9,7 @@ h3.condensed {
     font-weight: lighter;
 }
 
-h1 {
+h2{
     color: #002b49;
     font-size: 30px;
     font-weight: lighter;
@@ -44,4 +46,23 @@ p {
 
 .color-back {
     background-color: #f8f9fa
+}
+
+.mostrar-card-phone {
+    display: none;
+}
+
+.mostrar-card {
+    display: block;
+}
+
+
+@include breakpoint(phone) {
+    .mostrar-card {
+        display: none;
+    }
+
+    .mostrar-card-phone {
+        display: block;
+    }
 }

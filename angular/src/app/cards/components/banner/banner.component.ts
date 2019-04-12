@@ -26,7 +26,6 @@ export class BannerComponent implements OnInit {
 
     ngOnInit() {
         if (this.titulo !== '') {
-            console.log('case A');
             while (this.titulo.indexOf('-') > -1) {
                 this.titulo = this.titulo.replace('-', '_');
             }

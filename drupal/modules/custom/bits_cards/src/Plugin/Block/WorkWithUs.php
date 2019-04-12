@@ -57,6 +57,13 @@ class WorkWithUs extends CardBase {
             'show' => 1,
             'weight' => 1,
           ],
+          'additional_text' => [
+            'type' => 'textfield',
+            'title' => $this->t('Texto adicional'),
+            'service_field' => 'additional_text',
+            'show' => 1,
+            'weight' => 1,
+          ],
           'subTitle' => [
             'type' => 'textfield',
             'title' => $this->t('Texto final'),

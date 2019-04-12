@@ -15,7 +15,8 @@ export class ClientProjectImedicalComponent implements OnInit {
   titleProject: string;
   summaryProject: string;
   tags: any[];
-  linkProject: string;
+  linkProjectUrl: string;
+  linkProjectTitle: string;
   @Output() propagar = new EventEmitter<DataMenu>();
   datosMenu: DataMenu;
 
@@ -27,7 +28,8 @@ export class ClientProjectImedicalComponent implements OnInit {
     this.titleProject = '';
     this.summaryProject = '';
     this.tags = [];
-    this.linkProject = '';
+    this.linkProjectUrl = '';
+    this.linkProjectTitle = '';
   }
 
   ngOnInit() {
@@ -51,7 +53,8 @@ export class ClientProjectImedicalComponent implements OnInit {
       this.titleProject = params.data[0].field_title_description;
       this.summaryProject = params.data[0].field_description;
       this.tags = ['salud', 'cloud', 'angularjs', 'mobile', 'tag'];
-      this.linkProject = params.data[0].field_url_client;
+      this.linkProjectUrl = params.data[0].field_url_client[0].uri;
+      this.linkProjectTitle = params.data[0].field_url_client[0].title;
     });
   }
 

@@ -2,6 +2,7 @@ import { OnInit, Component, Input } from '@angular/core';
 import { CustomCardService } from '../../../services/cards/v1-card.services';
 import { ActivatedRoute } from '@angular/router';
 import { HttpService } from '../../../services/http/http.service';
+import { NgxCarousel } from 'ngx-carousel';
 declare var $: any;
 
 @Component({
@@ -12,6 +13,8 @@ declare var $: any;
 export class MenuTemplateComponent implements OnInit {
 
     @Input() menuList: DataMenu[];
+    CarouselControlArray: any = [];
+    public carouselOne: NgxCarousel;
 
     constructor(private router: ActivatedRoute, private service: HttpService,
         private _http: CustomCardService
@@ -21,6 +24,19 @@ export class MenuTemplateComponent implements OnInit {
 
     ngOnInit() {
         // this.getMenuTemplateService();
+        this.carouselOne = {
+            grid: { xs: 3, sm: 3, md: 4, lg: 4, all: 0 },
+            slide: 2,
+            speed: 400,
+            animation: 'lazy',
+            point: {
+                visible: false
+            },
+            load: 4,
+            touch: true,
+            easing: 'ease',
+            loop: true,
+        };
     }
 
     getMenuTemplateService() {
@@ -35,6 +51,7 @@ export class MenuTemplateComponent implements OnInit {
             x.scrollIntoView({ block: 'start', inline: 'start', behavior: 'smooth' });
         }
     }
+
 }
 export interface DataMenu {
     label: string;
