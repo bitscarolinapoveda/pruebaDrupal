@@ -2,7 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { CustomCardService } from 'src/app/services/cards/v1-card.services';
 import { DataMenu } from '../menu-template/menu-template.component';
 import { NgxCarousel } from 'ngx-carousel';
-
+import { General } from '../blurb/blurb.component';
 @Component({
   selector: 'app-team',
   templateUrl: './team.component.html',
@@ -11,7 +11,7 @@ import { NgxCarousel } from 'ngx-carousel';
 export class TeamComponent implements OnInit {
   public carouselOne: NgxCarousel;
   visible: boolean;
-
+  principalTeam: General;
   @Output() propagar = new EventEmitter<DataMenu>();
   datosMenu: DataMenu;
   @Input() type: string;
@@ -27,17 +27,7 @@ export class TeamComponent implements OnInit {
   }
 
   ngOnInit() {
-    while (this.type.indexOf('-') > -1) {
-      this.type = this.type.replace('-', '_');
-    }
 
-    this.datosMenu = {
-      label: 'TEAMS',
-      id: 'a9',
-      url: '/imedical'
-    };
-
-    this.propagar.emit(this.datosMenu);
     this.getTeamInformationService();
     this.CarouselControlArray = [0, 1, 2, 3];
     this.carocarouselTile = {
@@ -89,17 +79,27 @@ export class TeamComponent implements OnInit {
   }
 
   getTeamInformationService() {
-    this.https.getCustomCardInformationType('teambitsamericas', this.type).subscribe(items => {
-      this.title = items.header[0].data.title;
-      this.subtitle = items.header[1].data.sub_title;
-      items.data = this.https.addImageField(items.data, ['field_imagen']);
-      this.CarouselControlArray = items.data;
-      this.CarouselControlArray = Object.keys(items.data).map(function (key) { return items.data[key]; });
-      if (this.title !== '' && this.CarouselControlArray.length !== 0) {
-        this.visible = true;
-      }
-    });
+    this.https.getCustomCardInformation('allproductsandservicescard_2').subscribe(items => {
+      this.principalTeam = this.https.getFilterPrincipalType(items, 'field_team', this.type);
 
+      this.https.getCustomCardInformation('teambitsamericas').subscribe(params => {
+        params = this.https.getFilterLists(this.principalTeam, params);
+        this.title = params.header[0].data.title;
+        this.subtitle = params.header[1].data.sub_title;
+        params.data = this.https.addImageField(params.data, ['field_imagen']);
+        this.CarouselControlArray = params.data;
+        this.CarouselControlArray = Object.keys(params.data).map(function (key) { return params.data[key]; });
+        if (this.title !== '' && this.CarouselControlArray.length !== 0) {
+          this.visible = true;
+          this.datosMenu = {
+            label: 'TEAMS',
+            id: 'a9',
+            url: '/imedical'
+          };
+          this.propagar.emit(this.datosMenu);
+        }
+      });
+    });
   }
 
 }

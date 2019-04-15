@@ -3,18 +3,20 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { isArray } from 'util';
 import { CustomCardService } from 'src/app/services/cards/v1-card.services';
-
+import { Observable } from 'rxjs/Observable';
+import { General } from '../blurb/blurb.component';
 @Component({
   selector: 'app-product-services',
   templateUrl: './product-services.component.html',
   styleUrls: ['./product-services.component.scss']
 })
 export class ProductServicesComponent implements OnInit {
-
   public servicesProduct: any[];
   public buttonL: Buttons;
   public buttonR: Buttons;
   public title: string;
+  principal: General;
+  principal$: Observable<General>;
 
   constructor(
     private _cardService: CustomCardService) {
@@ -34,19 +36,15 @@ export class ProductServicesComponent implements OnInit {
   }
 
   getProductsAndServicesItems() {
-    this._cardService.getCustomCardInformation('productsandservicescard_2').subscribe(items => {
-      items.data = this._cardService.addImageField(items.data, ['short_image']);
-      items.data = this._cardService.addImageField(items.data, ['large_image']);
-      this.servicesProduct = items.data;
-      this.title = items.header[0].data.title;
-      for (let index = 0; index < this.servicesProduct.length; index++) {
-        this.servicesProduct[index].type = '/' + this.servicesProduct[index].type;
-        while (this.servicesProduct[index].nid.indexOf('_') > -1) {
-          this.servicesProduct[index].nid = this.servicesProduct[index].nid.replace('_', '-');
-        }
-      }
-      this.buttonL = items.body[0].data;
-      this.buttonR = items.body[1].data;
+    this.principal$ = this._cardService.getCustomInfoIM('productsandservicescard');
+    this.principal$.subscribe(items => {
+      this.principal = this._cardService.clone(items);
+      this.principal.data = this._cardService.addImageField(this.principal.data, ['field_short_image']);
+      this.principal.data = this._cardService.addImageField(this.principal.data, ['field_large_image']);
+      this.servicesProduct = this.principal.data;
+      this.title = this.principal.header[0].data.title;
+      this.buttonL = this.principal.body[0].data;
+      this.buttonR = this.principal.body[1].data;
     });
   }
 }
