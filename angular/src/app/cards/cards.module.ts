@@ -1,5 +1,5 @@
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { NgModule } from '@angular/core';
+import { NgModule,  NO_ERRORS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '../../../node_modules/@angular/common';
 import { MessageModule } from '../message/message.module';
@@ -158,7 +158,8 @@ import { LoadDirective } from './components/client-proserv/load.directive';
     MessageModule,
     RecaptchaModule.forRoot()
   ],
-  providers: [NodeService]
+  providers: [NodeService],
+  schemas: [NO_ERRORS_SCHEMA]
 })
 export class CardsModule { }
 
