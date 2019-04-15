@@ -183,29 +183,32 @@ class BitsCardsOutputJsonCard {
               }
             }
             elseif ($type === 'link'){
-              $url = $node->get($field)[0]->getUrl();
-              if($url->isRouted()){
-                try {
-                  $route = $url->getRouteName();
-                  $parameters = $url->getRouteParameters(); // obtiene los parametetros enviados al route
-                  $generator = \Drupal::urlGenerator(); //permite crear urls desde drupal
-                  $path = '/'.$generator->getPathFromRoute($route, $parameters); //crea la url desde el route name si pertenece a drupal
-                } catch (\Throwable $th) {
-                  $path = $th['message'];
-                }
-              }
-              else{
-                $path = $url->toString(); //devuelve la url si no pertenece a drupal
-              }
-
-              if (strpos($path, 'node') !== false ) {
-                $alias = \Drupal::service('path.alias_manager')->getAliasByPath($path);
-                $path = (strpos($alias, 'node') === false) ? $alias : '';
-
-              }
               $link = $node->get($field)->getValue();
-              $link[0]['uri'] = $path;
-              $link[0]['external'] = $url->isExternal();
+              if (count($link) > 0) {
+                $url = $node->get($field)[0]->getUrl();
+                if($url->isRouted()){
+                  try {
+                    $route = $url->getRouteName();
+                    $parameters = $url->getRouteParameters(); // obtiene los parametetros enviados al route
+                    $generator = \Drupal::urlGenerator(); //permite crear urls desde drupal
+                    $path = '/'.$generator->getPathFromRoute($route, $parameters); //crea la url desde el route name si pertenece a drupal
+                  } catch (\Throwable $th) {
+                    $path = $th['message'];
+                  }
+                }
+                else{
+                  $path = $url->toString(); //devuelve la url si no pertenece a drupal
+                }
+
+                if (strpos($path, 'node') !== false ) {
+                  $alias = \Drupal::service('path.alias_manager')->getAliasByPath($path);
+                  $path = (strpos($alias, 'node') === false) ? $alias : '';
+                }
+                $link = $node->get($field)->getValue();
+                $link[0]['uri'] = $path;
+                $link[0]['external'] = $url->isExternal();
+              }
+
               $data[$field] = $link;
             }
             else {
