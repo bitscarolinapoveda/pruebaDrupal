@@ -40,12 +40,18 @@
 }
 .social-networks.top-left {
   top: 81px;
+  @media (min-width: 1366px) {
+    top: 104px;
+  }
   bottom: unset;
   margin-top: 0 !important;
 }
 .social-networks.top-right {
   right: 0;
   top: 81px;
+  @media (min-width: 1366px) {
+    top: 104px;
+  }
   bottom: unset;
   margin-top: 0 !important;
 }
@@ -103,18 +109,20 @@
     }
   }
 }
-.envolope.top-left {
-  top: 324px;
-  bottom: unset;
-  margin-top: 0 !important;
-}
-.envolope.top-right {
-  right: 0;
-  top: 324px;
-  margin-top: 0 !important;
-}
-.envolope.bottom-right {
-  right: 0;
+@include breakpoint (desktop){
+  .envolope.top-left {
+    top: 347px;
+    bottom: unset;
+    margin-top: 0 !important;
+  }
+  .envolope.top-right {
+    right: 0;
+    top: 347px;
+    margin-top: 0 !important;
+  }
+  .envolope.bottom-right {
+    right: 0;
+  }
 }
 
 .modal {
