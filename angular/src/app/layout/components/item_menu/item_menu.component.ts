@@ -44,7 +44,7 @@ export class ItemMenuComponent implements OnInit {
             } else if (this.menus.length > 4 && this.menus.length < 6) {
                 this.height = Math.round(this.menus.length / 2) * 120;
             } else if (this.menus.length >= 6) {
-                this.height = Math.round(this.menus.length / 2) * 130;
+                this.height = Math.round(this.menus.length / 2) * 135;
             }
         }
     }

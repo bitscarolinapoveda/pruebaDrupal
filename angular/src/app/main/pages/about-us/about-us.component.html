@@ -4,7 +4,7 @@
 <hr>
 <app-whybitsamericas (propagar)="onMenu($event)"></app-whybitsamericas>
 <app-history (propagar)="onMenu($event)"></app-history>
-<app-carousel-controls (propagar)="onMenu($event)"></app-carousel-controls>
+<app-carousel-controls (propagar)="onMenu($event)" [type]="type"></app-carousel-controls>
 <app-alliances (propagar)="onMenu($event)"></app-alliances>
 <app-knowus (propagar)="onMenu($event)"></app-knowus>
 <app-separator [iconCustom]="'icon-people'"></app-separator>
