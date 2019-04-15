@@ -1,5 +1,5 @@
 <div *ngIf="visible">
-    <app-separator [iconCustom]="'icon-medal'" [id]="datosMenu.id"></app-separator>
+    <app-separator [iconCustom]="'icon-medal'" [id]="datosMenu.id" *ngIf="type == 'about'"></app-separator>
     <section id="main-title">
         <h2>{{ caroseltitle }}</h2>
     </section>
