@@ -17,37 +17,6 @@
 		<form id="formulario_contacto" #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)" class="col-md-12"
 			name="formulario_contacto">
 			<app-message [dataMessage]="dataMessage"></app-message>
-
-<!--Ejemplo: -->
-<!--ng-template-->
-<ng-template [ngIf]="prueba"><!--Lo convierte en comentarios, deja el contenido sin tocar-->
-	<div>Alegna</div>
-</ng-template>
-<ng-template *ngIf="prueba"><!--Todo lo convierte en comentario porque asi no se usa-->
-	<div>Alegna 123</div>
-</ng-template>
-<div *ngIf="prueba then valid"></div>
-<ng-template #valid><!--ESta forma es la que menos se utiliza-->
-	<div class="alert alert-danger" role="alert">
-	Campo obligatorio o invalido
-	</div>
-</ng-template>
-<!--ng-content-->
-<div>
- <ng-content select="[car-header]"></ng-content>
- <ng-content select=".linda"></ng-content>
-</div> 
-<car-header>prueba header</car-header>
-<project-content>	
-	<h1>Alegna H1</h1>
-	<div class="linda">Alegna linda</div>
-</project-content>
-
-<!--*ngTemplateOulet-->
-<ng-template #este>elemento</ng-template>
-
-<!--fin de ejemplo-->
-
 			<div class="col-md-12 form-group">
 				<!-- elementoForm: array de campos que conforman el formulario-->
 				<ng-container *ngFor="let item of elementoForm">
@@ -84,8 +53,8 @@
 									(mouseover)="mostrarDatos($event)"
 									pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
 									ngModel>
-									<ng-container *ngIf="(email.invalid && email.touched) then valid">
-									</ng-container>								
+								<ng-container *ngIf="(email.invalid && email.touched) then valid">
+								</ng-container>
 								<ng-container *ngTemplateOutlet="este"></ng-container>
 							</div>
 							<!-- Campos textarea-->
@@ -99,7 +68,7 @@
 									required="{{elementLayout['#required'] ==  true}}"
 									maxlength="{{elementLayout['#maxlength']}}" #textarea="ngModel" ngModel></textarea>
 								<ng-container *ngIf="(textarea.invalid && textarea.touched) then valid">
-								</ng-container>							
+								</ng-container>
 							</div>
 							<!-- Campo select pais, se debe mantener el nombre para que funcione el componente-->
 							<div *ngIf="elementLayout['#webform_key'] == 'pais'">
@@ -157,7 +126,7 @@
 								name="{{item['#webform_key']}}" (click)="mostrarDatos($event)"
 								(mouseleave)="ocultarDatos($event)" required="{{item['#required'] ==  true}}"
 								(mouseover)="mostrarDatos($event)" maxlength="{{item['#maxlength']}}"
-								#textfield="ngModel" ngModel>							
+								#textfield="ngModel" ngModel>
 							<ng-container *ngIf="(textfield.invalid && textfield.touched) then valid">
 							</ng-container>
 						</div>
@@ -171,7 +140,7 @@
 								required="{{item['#required'] ==  true}}" (click)="mostrarDatos($event)"
 								(mouseleave)="ocultarDatos($event)" (mouseover)="mostrarDatos($event)"
 								pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
-								ngModel>							
+								ngModel>
 							<ng-container *ngIf="(email.invalid && email.touched) then valid">
 							</ng-container>
 						</div>

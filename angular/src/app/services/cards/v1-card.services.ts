@@ -178,11 +178,21 @@ export class CustomCardService {
     }
     var vuelta = 0;
     var hasta = 4;
-    var c = 0;
     for (let i = 0; i < arrayBox.length; i++) {
       for (let j = vuelta; j < hasta; j++) {
         if (carouselInfo[j] === undefined) {
-          arrayBox[i].push(carouselInfo[Math.floor(Math.random() * carouselInfo.length)]);
+          while (arrayBox[i].length < 4) {
+            var random = carouselInfo[Math.floor(Math.random() * carouselInfo.length)];
+            var cont = 0;
+            for (let c = 0; c < arrayBox[i].length; c++) {
+              if (arrayBox[i][c].nid === random.nid) {
+                cont ++;
+              }
+            }
+            if (cont === 0) {
+              arrayBox[i].push(random);
+            }
+          }
         } else {
           arrayBox[i].push(carouselInfo[j]);
         }

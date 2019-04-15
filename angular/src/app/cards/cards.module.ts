@@ -50,6 +50,7 @@ import { NgxCarouselModule } from 'ngx-carousel';
 import 'hammerjs';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SelectModule } from 'ng2-select';
+import { CarouselModule, WavesModule } from 'angular-bootstrap-md';
 
 // Pipes
 import { SafeHtmlPipe } from '../pipes/safehtml.pipe';
@@ -140,7 +141,7 @@ import { LoadDirective } from './components/client-proserv/load.directive';
     OurWorkComponent,
     RecaptchaModule,
     ScreenshotsComponent,
-    ProjectFilterComponent
+    ProjectFilterComponent,
   ],
   imports: [
     BrowserModule,
@@ -156,10 +157,11 @@ import { LoadDirective } from './components/client-proserv/load.directive';
     SelectModule,
     ReactiveFormsModule,
     MessageModule,
-    RecaptchaModule.forRoot()
+    RecaptchaModule.forRoot(),
+    CarouselModule.forRoot(),
+    WavesModule.forRoot()
   ],
-  providers: [NodeService],
-  schemas: [NO_ERRORS_SCHEMA]
+  providers: [NodeService, CarouselModule, WavesModule]
 })
 export class CardsModule { }
 

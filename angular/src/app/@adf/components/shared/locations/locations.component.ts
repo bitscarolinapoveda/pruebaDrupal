@@ -22,8 +22,8 @@ export class LocationsComponent implements OnInit {
   public infoWindowOpen = true;
   public locations_data: any;
   public cant_locations_data: boolean;
-  public lat: number;
-  public lng: number;
+  public lat: number = 0;
+  public lng: number = 0;
   public titleCity;
   public addressCity;
   public telephoneCity;
@@ -70,7 +70,6 @@ export class LocationsComponent implements OnInit {
     private service: CustomCardService
   ) {
     this.locations_data = [];
-    this.infoWindowOpen = true;
     this.cant_locations_data = false;
   }
   ngOnInit() {

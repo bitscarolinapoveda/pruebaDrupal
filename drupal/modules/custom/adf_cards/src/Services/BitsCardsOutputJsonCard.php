@@ -23,6 +23,7 @@ class BitsCardsOutputJsonCard {
     $settings = [];
     $node_tags = [];
     $block = Block::load($block_id);
+    $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
 
     if ($block) {
       $settings = $block->get('settings');
@@ -104,14 +105,22 @@ class BitsCardsOutputJsonCard {
           }
         }
       }
-
       foreach ($nodes as $node) {
         $tag = $node->getEntityType()->getListCacheTags();
+        if($language != 'es' &&  $isContentEntity){
+          if ($node->hasTranslation($language)) {
+            $node = $node->getTranslation($language);
+          }
+          else{
+            continue;
+          }
+        }
         if(!in_array( $tag[0], $node_tags))
         array_push($node_tags, $tag[0]);
         $url = $node->toUrl()->toString(TRUE);
         $url = $url->getGeneratedUrl();
         $url = (strpos($url, 'node') === false) ? $url : '';
+
         if ($isContentEntity) {
           $data = [
             'nid' => $node->id(),
