@@ -1,159 +1,161 @@
 <div class="container">
-  <div class="row">
-      <form id="formulario_contactoWS" #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)" class="col-md-12"
-			name="formulario_contacto">
+	<div class="row">
+		<form id="formulario_contactoWS" #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)" class="col-md-12"
+			name="formulario_contacto">			
 			<app-message [dataMessage]="dataMessage"></app-message>
+			<ng-template #valid>
+				<div class="alert alert-danger" role="alert">
+				Campo obligatorio o invalido
+				</div>
+			</ng-template>			
 			<div class="col-md-12 form-group">
 				<!-- elementoForm: array de campos que conforman el formulario-->
-				<div *ngFor="let item of elementoForm">
+				<ng-container *ngFor="let item of elementoForm">
 					<!-- *ngIf="item[0]": validacion para mostrar los elementos del formulario que pertenecen a layout-->
-					<div *ngIf="item[0]">
+					<ng-container *ngIf="item[0]">
 						<div class="col-md-6 item" *ngFor="let elementLayout of item">
 							<!-- Campos textfiel, tel, webform_autocomplete. No incluye los select: pais. -->
 							<div
 								*ngIf="(elementLayout['#type'] == 'textfield' || elementLayout['#type'] == 'tel' || elementLayout['#type'] =='webform_autocomplete') && elementLayout['#webform_key'] != 'pais' ">
 								<label for="{{elementLayout['#webform_key']}}">{{elementLayout["#title"]}}
 									<span *ngIf="elementLayout['#required'] ==  true">*</span></label>
-								<input type="{{elementLayout['#type']}}" class="form-control" id="{{'work_with_us__' + elementLayout['#webform_key'] }}"
+								<input type="{{elementLayout['#type']}}" class="form-control"
+									id="{{'work_with_us__' + elementLayout['#webform_key'] }}"
 									placeholder="{{elementLayout['#placeholder']}}" name="{{elementLayout['#webform_key']}}"
 									(click)="mostrarDatosWS($event)" (mouseleave)="ocultarDatosWS($event)"
 									required="{{elementLayout['#required'] ==  true}}" (mouseover)="mostrarDatosWS($event)"
 									maxlength="{{elementLayout['#maxlength']}}" #textfield="ngModel" ngModel>
-								<div *ngIf="textfield.invalid && textfield.touched" class="alert alert-danger"
-									role="alert">
-									Campo obligatorio o invalido
-								</div>
+								<ng-container *ngIf="(textfield.invalid && textfield.touched) then valid">
+								</ng-container>
 							</div>
 							<!-- Campos email-->
 							<div *ngIf="elementLayout['#type'] == 'email'">
-								<label for="{{elementLayout['#webform_key']}}">{{elementLayout["#title"]}}<span *ngIf="elementLayout['#required'] ==  true">*</span></label>
-								<input type="{{elementLayout['#type']}}" class="form-control" id="{{'work_with_us__' + elementLayout['#webform_key']}}"
+								<label for="{{elementLayout['#webform_key']}}">{{elementLayout["#title"]}}<span
+										*ngIf="elementLayout['#required'] ==  true">*</span></label>
+								<input type="{{elementLayout['#type']}}" class="form-control"
+									id="{{'work_with_us__' + elementLayout['#webform_key']}}"
 									placeholder="{{elementLayout['#placeholder']}}" name="{{elementLayout['#webform_key']}}"
 									maxlength="{{elementLayout['#maxlength']}}" #email="ngModel"
 									required="{{elementLayout['#required'] ==  true}}" (click)="mostrarDatosWS($event)"
 									(mouseleave)="ocultarDatosWS($event)" (mouseover)="mostrarDatosWS($event)"
-									pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?" ngModel>
-								<div *ngIf="email.invalid && email.touched" class="alert alert-danger" role="alert">
-									Campo obligatorio o invalido
-								</div>
+									pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
+									ngModel>								
+								<ng-container *ngIf="(email.invalid && email.touched) then valid">
+								</ng-container>
 							</div>
 							<!-- Campos textarea-->
 							<div *ngIf="elementLayout['#type'] == 'textarea'">
-								<label for="{{elementLayout['#webform_key']}}">{{elementLayout["#title"]}}<span *ngIf="elementLayout['#required'] ==  true">*</span></label>
+								<label for="{{elementLayout['#webform_key']}}">{{elementLayout["#title"]}}<span
+										*ngIf="elementLayout['#required'] ==  true">*</span></label>
 								<textarea class="form-control" id="{{elementLayout['#webform_key']}}"
-									placeholder="{{elementLayout['#placeholder']}}" name="{{'work_with_us__' + elementLayout['#webform_key']}}"
-									(click)="mostrarDatosWS($event)" (mouseleave)="ocultarDatosWS($event)"
-									(mouseover)="mostrarDatosWS($event)" required="{{elementLayout['#required'] ==  true}}"
-									maxlength="{{elementLayout['#maxlength']}}"
-									#textarea="ngModel" ngModel></textarea>
-								<div *ngIf="textarea.invalid && textarea.touched" class="alert alert-danger"
-									role="alert">
-									Campo obligatorio o invalido
-								</div>
+									placeholder="{{elementLayout['#placeholder']}}"
+									name="{{'work_with_us__' + elementLayout['#webform_key']}}" (click)="mostrarDatosWS($event)"
+									(mouseleave)="ocultarDatosWS($event)" (mouseover)="mostrarDatosWS($event)"
+									required="{{elementLayout['#required'] ==  true}}" maxlength="{{elementLayout['#maxlength']}}"
+									#textarea="ngModel" ngModel></textarea>								
+								<ng-container *ngIf="(textarea.invalid && textarea.touched) then valid">
+								</ng-container>
 							</div>
 							<!-- Campo select pais, se debe mantener el nombre para que funcione el componente-->
 							<div *ngIf="elementLayout['#webform_key'] == 'pais'">
-								<label for="{{elementLayout['#webform_key']}}">{{elementLayout['#title']}}<span *ngIf="elementLayout['#required'] ==  true">*</span></label>
-								<ng-select #paisWU class="select-autocomplete" id="{{'work_with_us__' + elementLayout['#webform_key']}}" name="pais"
-									placeholder="{{elementLayout['#placeholder']}}" [allowClear]="true" [items]="listPais"
-									[disabled]="disabled" (data)="refreshValuePais($event)"
-									(selected)="selectedPais($event)" (removed)="removedPais($event)"
-									(typed)="typedPais($event)">
+								<label for="{{elementLayout['#webform_key']}}">{{elementLayout['#title']}}<span
+										*ngIf="elementLayout['#required'] ==  true">*</span></label>
+								<ng-select #paisWU class="select-autocomplete" id="{{'work_with_us__' + elementLayout['#webform_key']}}"
+									name="pais" placeholder="{{elementLayout['#placeholder']}}" [allowClear]="true" [items]="listPais"
+									[disabled]="disabled" (data)="refreshValuePais($event)" (selected)="selectedPais($event)"
+									(removed)="removedPais($event)" (typed)="typedPais($event)">
 								</ng-select>
 								<input type="text" class="form-control ocultar" id="{{elementLayout['#webform_key']}}"
 									name="{{elementLayout['#webform_key']}}" [ngModel]="pais">
-              </div>
-              <!-- Campos managed_file -->
-							<div
-              *ngIf="elementLayout['#type'] == 'managed_file'">
-              <label for="{{elementLayout['#webform_key']}}">{{elementLayout["#title"]}}
-                <span *ngIf="elementLayout['#required'] ==  true">*</span></label>
-              <input type="file" class="form-control hoja-v" id="hojav"
-                placeholder="{{elementLayout['#placeholder']}}" name="hojav"
-                (change)="onFileChange($event)" #hojavWS>
-                <input type="text" class="form-control ocultar" id="fileupload" name="fileupload" [ngModel]="hojaWU">              
-            </div>	
-            <!-- Campos url -->
-							<div
-              *ngIf="elementLayout['#type'] == 'url'">
-              <label for="{{elementLayout['#webform_key']}}">{{elementLayout["#title"]}}
-                <span *ngIf="elementLayout['#required'] ==  true">*</span></label>                            
-							<input type="{{elementLayout['#type']}}" class="form-control" id="{{'work_with_us__' + elementLayout['#webform_key']}}" placeholder="{{elementLayout['#placeholder']}}" name="{{elementLayout['#webform_key']}}" ngModel pattern="https?://.+" (click)="mostrarDatosWS($event)" 
-							required="{{elementLayout['#required'] ==  true}}" maxlength="{{elementLayout['#maxlength']}}" #url="ngModel"
-                (mouseleave)="ocultarDatosWS($event)" (mouseover)="mostrarDatosWS($event)">
-              <div *ngIf="url.invalid && url.touched" class="alert alert-danger" role="alert">Campo obligatorio
-              o invalido</div>
-            </div>	
-          </div>
-        </div>
-					<!-- *ngIf="!item[0]": validacion para mostrar los elementos del formulario que no pertenecen a layout-->
-					<div *ngIf="!item[0]">
-						<!-- Campos textfiel, tel, webform_autocomplete. No incluye los select: pais-->
-						<div *ngIf="(item['#type'] == 'textfield' || item['#type'] == 'tel' || item['#type'] =='webform_autocomplete')&& item['#webform_key'] != 'pais'" class="text">
-							<label for="{{item['#webform_key']}}">{{item["#title"]}}<span *ngIf="item['#required'] ==  true">*</span></label>
-							<input type="{{item['#type']}}" class="form-control" id="{'work_with_us__' + {item['#webform_key']}}"
-								placeholder="{{item['#placeholder']}}" name="{{item['#webform_key']}}"
-								(click)="mostrarDatosWS($event)" (mouseleave)="ocultarDatosWS($event)"
-								required="{{item['#required'] ==  true}}" (mouseover)="mostrarDatosWS($event)"
-								maxlength="{{item['#maxlength']}}"
-								#textfield="ngModel" ngModel>
-							<div *ngIf="textfield.invalid && textfield.touched" class="alert alert-danger" role="alert">
-								Campo obligatorio o invalido
 							</div>
+							<!-- Campos managed_file -->
+							<div *ngIf="elementLayout['#type'] == 'managed_file'">
+								<label for="{{elementLayout['#webform_key']}}">{{elementLayout["#title"]}}
+									<span *ngIf="elementLayout['#required'] ==  true">*</span></label>
+								<input type="file" class="form-control hoja-v" id="hojav"
+									placeholder="{{elementLayout['#placeholder']}}" name="hojav" (change)="onFileChange($event)" #hojavWS>
+								<input type="text" class="form-control ocultar" id="fileupload" name="fileupload" [ngModel]="hojaWU">
+							</div>
+							<!-- Campos url -->
+							<div *ngIf="elementLayout['#type'] == 'url'">
+								<label for="{{elementLayout['#webform_key']}}">{{elementLayout["#title"]}}
+									<span *ngIf="elementLayout['#required'] ==  true">*</span></label>
+								<input type="{{elementLayout['#type']}}" class="form-control"
+									id="{{'work_with_us__' + elementLayout['#webform_key']}}"
+									placeholder="{{elementLayout['#placeholder']}}" name="{{elementLayout['#webform_key']}}" ngModel
+									pattern="https?://.+" (click)="mostrarDatosWS($event)"
+									required="{{elementLayout['#required'] ==  true}}" maxlength="{{elementLayout['#maxlength']}}"
+									#url="ngModel" (mouseleave)="ocultarDatosWS($event)" (mouseover)="mostrarDatosWS($event)">
+									<ng-container *ngIf="(url.invalid && url.touched) then valid">
+									</ng-container>
+							</div>
+						</div>
+					</ng-container>
+					<!-- *ngIf="!item[0]": validacion para mostrar los elementos del formulario que no pertenecen a layout-->
+					<ng-container *ngIf="!item[0]">
+						<!-- Campos textfiel, tel, webform_autocomplete. No incluye los select: pais-->
+						<div
+							*ngIf="(item['#type'] == 'textfield' || item['#type'] == 'tel' || item['#type'] =='webform_autocomplete')&& item['#webform_key'] != 'pais'"
+							class="text">
+							<label for="{{item['#webform_key']}}">{{item["#title"]}}<span
+									*ngIf="item['#required'] ==  true">*</span></label>
+							<input type="{{item['#type']}}" class="form-control" id="{'work_with_us__' + {item['#webform_key']}}"
+								placeholder="{{item['#placeholder']}}" name="{{item['#webform_key']}}" (click)="mostrarDatosWS($event)"
+								(mouseleave)="ocultarDatosWS($event)" required="{{item['#required'] ==  true}}"
+								(mouseover)="mostrarDatosWS($event)" maxlength="{{item['#maxlength']}}" #textfield="ngModel" ngModel>
+							<ng-container *ngIf="(textfield.invalid && textfield.touched) then valid">
+							</ng-container>
 						</div>
 						<!-- Campos email-->
 						<div *ngIf="item['#type'] == 'email'" class="text">
-							<label for="{{item['#webform_key']}}">{{item["#title"]}}<span *ngIf="item['#required'] ==  true">*</span></label>
+							<label for="{{item['#webform_key']}}">{{item["#title"]}}<span
+									*ngIf="item['#required'] ==  true">*</span></label>
 							<input type="{{item['#type']}}" class="form-control" id="{{'work_with_us__' + item['#webform_key']}}"
 								placeholder="{{item['#placeholder']}}" name="{{item['#webform_key']}}"
-								maxlength="{{item['#maxlength']}}" #email="ngModel"
-								required="{{item['#required'] ==  true}}" (click)="mostrarDatosWS($event)"
-								(mouseleave)="ocultarDatosWS($event)" (mouseover)="mostrarDatosWS($event)"
-								pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?" ngModel>
-							<div *ngIf="email.invalid && email.touched" class="alert alert-danger" role="alert">
-								Campo obligatorio o invalido
-							</div>
+								maxlength="{{item['#maxlength']}}" #email="ngModel" required="{{item['#required'] ==  true}}"
+								(click)="mostrarDatosWS($event)" (mouseleave)="ocultarDatosWS($event)"
+								(mouseover)="mostrarDatosWS($event)"
+								pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
+								ngModel>							
+							<ng-container *ngIf="(email.invalid && email.touched) then valid">
+							</ng-container>
 						</div>
 						<!-- Campos textarea-->
 						<div *ngIf="item['#type'] == 'textarea'" class="textarea">
-							<label for="{{item['#webform_key']}}">{{item["#title"]}}<span *ngIf="item['#required'] ==  true">*</span></label>
+							<label for="{{item['#webform_key']}}">{{item["#title"]}}<span
+									*ngIf="item['#required'] ==  true">*</span></label>
 							<textarea class="form-control" id="{{'work_with_us__' + item['#webform_key']}}"
-								placeholder="{{item['#placeholder']}}" name="{{item['#webform_key']}}"
-								(click)="mostrarDatosWS($event)" (mouseleave)="ocultarDatosWS($event)"
-								(mouseover)="mostrarDatosWS($event)" required="{{item['#required'] ==  true}}"
-								maxlength="{{item['#maxlength']}}"
-								#textarea="ngModel" ngModel></textarea>
-							<div *ngIf="textarea.invalid && textarea.touched" class="alert alert-danger" role="alert">
-								Campo obligatorio o invalido
-							</div>
-            </div>
-            <!-- Campos managed_file -->
-						 	<div
-              *ngIf="item['#type'] == 'managed_file'" class="text">
-              <label for="{{item['#webform_key']}}">{{item["#title"]}}
-                <span *ngIf="item['#required'] ==  true">*</span></label>
-              <input type="file" class="form-control hoja-v" id="hojav"
-                placeholder="{{item['#placeholder']}}" name="hojav"
-                (change)="onFileChange($event)" #hojavWS>
-                <input type="text" class="form-control ocultar" id="fileupload" name="fileupload" [ngModel]="hojaWU">              
-            </div>	 
-            <!-- Campos url -->
-							<div
-              *ngIf="item['#type'] == 'url'" class="text">
-              <label for="{{item['#webform_key']}}">{{item["#title"]}}
-                <span *ngIf="item['#required'] ==  true">*</span></label>                            
-              <input type="{{item['#type']}}" class="form-control" id="{{'work_with_us__' + item['#webform_key']}}" placeholder="{{item['#placeholder']}}" name="{{item['#webform_key']}}" ngModel pattern="https?://.+" (click)="mostrarDatosWS($event)" required="{{item['#required'] ==  true}}" maxlength="{{item['#maxlength']}}" #url="ngModel"
-                (mouseleave)="ocultarDatosWS($event)" (mouseover)="mostrarDatosWS($event)">
-              <div *ngIf="url.invalid && url.touched" class="alert alert-danger" role="alert">Campo obligatorio
-              o invalido</div>
-            </div>
+								placeholder="{{item['#placeholder']}}" name="{{item['#webform_key']}}" (click)="mostrarDatosWS($event)"
+								(mouseleave)="ocultarDatosWS($event)" (mouseover)="mostrarDatosWS($event)"
+								required="{{item['#required'] ==  true}}" maxlength="{{item['#maxlength']}}" #textarea="ngModel"
+								ngModel></textarea>							
+							<ng-container *ngIf="(textarea.invalid && textarea.touched) then valid">
+							</ng-container>
+						</div>
+						<!-- Campos managed_file -->
+						<div *ngIf="item['#type'] == 'managed_file'" class="text">
+							<label for="{{item['#webform_key']}}">{{item["#title"]}}
+								<span *ngIf="item['#required'] ==  true">*</span></label>
+							<input type="file" class="form-control hoja-v" id="hojav" placeholder="{{item['#placeholder']}}"
+								name="hojav" (change)="onFileChange($event)" #hojavWS>
+							<input type="text" class="form-control ocultar" id="fileupload" name="fileupload" [ngModel]="hojaWU">
+						</div>
+						<!-- Campos url -->
+						<div *ngIf="item['#type'] == 'url'" class="text">
+							<label for="{{item['#webform_key']}}">{{item["#title"]}}
+								<span *ngIf="item['#required'] ==  true">*</span></label>
+							<input type="{{item['#type']}}" class="form-control" id="{{'work_with_us__' + item['#webform_key']}}"
+								placeholder="{{item['#placeholder']}}" name="{{item['#webform_key']}}" ngModel pattern="https?://.+"
+								(click)="mostrarDatosWS($event)" required="{{item['#required'] ==  true}}"
+								maxlength="{{item['#maxlength']}}" #url="ngModel" (mouseleave)="ocultarDatosWS($event)"
+								(mouseover)="mostrarDatosWS($event)">							
+								<ng-container *ngIf="(url.invalid && url.touched) then valid">
+								</ng-container>
+						</div>
 						<!-- Campo terminos y condiciones-->
-						<div class="form-group" class="terminos_grupo"
-							*ngIf="item['#type'] == 'webform_terms_of_service'">
+						<div class="form-group" class="terminos_grupo" *ngIf="item['#type'] == 'webform_terms_of_service'">
 							<input type="checkbox" [checked]="checked" id="{{'work_with_us__' + item['#webform_key']}}"
-								name="{{item['#webform_key']}}" value="false" 
-								required="{{item['#required'] ==  true}}"
-								ngModel>
+								name="{{item['#webform_key']}}" value="false" required="{{item['#required'] ==  true}}" ngModel>
 							<label ng-reflect-ng-class="" for="{{'work_with_us__' + item['#webform_key']}}">He leído y acepto los<a
 									href="/politics">
 									términos y condiciones
@@ -167,17 +169,17 @@
 								</div>
 							</label>
 						</div>
-					</div>
-				</div>
+					</ng-container>
+				</ng-container>
 			</div>
 			<re-captcha ngModel #captcha="ngModel" name="captcha" class="captcha" (resolved)="resolved($event)"
 				siteKey="6LfycJsUAAAAANcZLFFQErxM92v-rNzuZTX6I3Ob" ngDefaultControl></re-captcha>
 			<ng-template #tipContent>{{hover_buttom}}</ng-template>
-			<button type="submit" class="btn btn-primary" [ngbTooltip]="tipContent"
-				[ngClass]="userForm.invalid?'disabled':''" [disabled]="userForm.invalid">
+			<button type="submit" class="btn btn-primary" [ngbTooltip]="tipContent" [ngClass]="userForm.invalid?'disabled':''"
+				[disabled]="userForm.invalid">
 				ENVIAR
 			</button>
 			<div class="obligatorios col-md-12"> <span>*</span>Datos Obligatorios</div>
-    </form>   
-  </div>
+		</form>
+	</div>
 </div>

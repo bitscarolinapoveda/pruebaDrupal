@@ -60,6 +60,7 @@ export class TabsComponent implements OnInit {
   valido: boolean;
   elementoForm: any;
   type: any;
+  prueba: boolean;
 
   constructor(private _http: HttpService, private _service: CustomCardService, private http_pais: HttpClient, config: NgbPopoverConfig,
     private rutaActiva: ActivatedRoute) {
@@ -83,6 +84,7 @@ export class TabsComponent implements OnInit {
     config.placement = 'top';
     config.triggers = 'hover';
     this.type = '';
+    this.prueba = true;
   }
 
   mostrarDatos(id) {
