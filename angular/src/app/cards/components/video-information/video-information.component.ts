@@ -19,6 +19,7 @@ export class VideoInformationComponent implements OnInit {
     @Input() type: string;
     visible: boolean;
     principalVideoInformation: General;
+    linkExternal: boolean;
 
     constructor(
         private https: CustomCardService,
@@ -48,6 +49,7 @@ export class VideoInformationComponent implements OnInit {
                         this.videoURLSanitizer = this.sanitizer.bypassSecurityTrustResourceUrl(this.videoURL);
                     }
                     this.link = params.data[0].field_url_video[0].uri;
+                    this.linkExternal = params.data[0].field_url_video[0].external;
                     if (this.titleSection !== '' && this.videoURLSanitizer !== '') {
                         this.visible = true;
                         this.datosMenu = {

@@ -10,8 +10,17 @@
             <h2>{{ titleL | uppercase }}</h2>
             <hr class="green">
             <p class="text-justify" [innerHTML]="cil.field_des"></p>
-            <a [href]="cil.field_link_imedical_media[0].uri" class="green">
-                {{ cil.field_link_imedical_media[0].title }}</a>
+            <ng-container *ngIf="cil.field_link_imedical_media[0].external then externo else interno">
+            </ng-container>
+            <ng-template #externo>
+                <a [href]="cil.field_link_imedical_media[0].uri"
+                    class="green">
+                    {{ cil.field_link_imedical_media[0].title }}</a>
+            </ng-template>
+            <ng-template #interno>
+                <a [routerLink]="cil.field_link_imedical_media[0].uri" class="green">
+                    {{ cil.field_link_imedical_media[0].title }}</a>
+            </ng-template>
         </div>
     </div>
 </div>
@@ -27,8 +36,16 @@
             <h2>{{ titleR | uppercase }}</h2>
             <hr class="green">
             <p class="text-justify" [innerHTML]="cir.field_des"></p>
-            <a [href]="cir.field_link_imedical_media[0].uri" class="green">
-                {{ cir.field_link_imedical_media[0].title }}</a>
+            <ng-container *ngIf="cir.field_link_imedical_media[0].external then externo else interno">
+            </ng-container>
+            <ng-template #externo>
+                <a [href]="cir.field_link_imedical_media[0].uri" class="green">
+                    {{ cir.field_link_imedical_media[0].title }}</a>
+            </ng-template>
+            <ng-template #interno>
+                <a [routerLink]="cir.field_link_imedical_media[0].uri" class="green">
+                    {{ cir.field_link_imedical_media[0].title }}</a>
+            </ng-template>
         </div>
         <div class="col-md-4 p-0 mostrar-card" *ngFor="let cir of cardImgR">
             <img [src]="cir.field_imagen_media_product.url" alt="{{cir.field_imagen_media_product.alt}}"

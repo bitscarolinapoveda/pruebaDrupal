@@ -27,6 +27,8 @@ import { HttpModule } from '@angular/http';
 import { ProductsOrServicesComponent } from './products-or-services/products-or-services.component';
 import { PoliticsComponent } from './politics/politics.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { MapsiteComponent } from './mapsite/mapsite.component';
+import { PqrsComponent } from './pqrs/pqrs.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,9 @@ import { AboutUsComponent } from './about-us/about-us.component';
     ProductServicesComponent,
     ProductsOrServicesComponent,
     PoliticsComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    MapsiteComponent,
+    PqrsComponent
   ],
   exports: [
     HomeComponent,

@@ -33,7 +33,6 @@ export class CarouselControlsComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log('carousel', this.type);
     this.datosMenu = {
       label: 'RECONOCIMIENTOS',
       id: 'a3',
