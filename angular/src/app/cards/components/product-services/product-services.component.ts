@@ -23,11 +23,13 @@ export class ProductServicesComponent implements OnInit {
     this.servicesProduct = [];
     this.buttonL = {
       link: 'string',
-      label: ''
+      label: '',
+      external: false,
     };
     this.buttonR = {
       link: '',
-      label: ''
+      label: '',
+      external: false,
     };
   }
 
@@ -51,4 +53,5 @@ export class ProductServicesComponent implements OnInit {
 export interface Buttons {
   link: string;
   label: string;
+  external: boolean;
 }
