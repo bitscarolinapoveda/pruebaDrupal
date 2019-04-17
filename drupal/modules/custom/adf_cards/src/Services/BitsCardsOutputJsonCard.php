@@ -360,6 +360,20 @@ class BitsCardsOutputJsonCard {
       }
     }
 
+    if (!empty($input[$inputType]) && $inputType == 'others') { // !empty permite evaluar si existe y no esta vacio
+      foreach ($input[$inputType] as $key => $itemOther) {
+        $elements = [];
+        if($itemOther['type'] == 'checkboxes'){
+          foreach ($itemOther['options'] as $id => $label) {
+            $elements[$key][$id]['id'] = $id;
+            $elements[$key][$id]['label'] = $label;
+            $elements[$key][$id]['status'] = ($itemOther[$id] !== 0) ? TRUE : FALSE;
+          }
+        }
+        $data[] = $elements;
+      }
+    }
+
     return $data;
   }
 

@@ -11,7 +11,16 @@
             <hr class="green">
             <p [innerHTML]="descriptionSection"></p>
             <br>
-            <a [href]="link" class="green"><i class="fa fa-link" aria-hidden="true"></i> {{link}}</a>
+            <ng-container *ngIf="linkExternal then externo else interno">
+            </ng-container>
+            <ng-template #externo>
+                <a [href]="link" class="green"><i class="fa fa-link" aria-hidden="true"></i>
+                    {{link}}</a>
+            </ng-template>
+            <ng-template #interno>
+                <a [routerLink]="link" class="green"><i class="fa fa-link"
+                        aria-hidden="true"></i> {{link}}</a>
+            </ng-template>
         </div>
     </div>
 </div>

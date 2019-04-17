@@ -31,7 +31,12 @@ export class ItemMenuComponent implements OnInit {
         }
         if (this.row === 3 && this.menus.length > 3 && window.innerWidth > 1025) {
             let limit_a;
-            if (this.menus.length > 4) {
+            if (this.menus.length > 10) {
+                this.menus = this.menus.slice(0, 10);
+            }
+            if (this.menus.length === 10) {
+                limit_a = 6;
+            } else if (this.menus.length > 4) {
                 limit_a = Math.round(this.menus.length / 1.5);
             } else {
                 limit_a = 3;
@@ -43,8 +48,8 @@ export class ItemMenuComponent implements OnInit {
                 this.height = 300;
             } else if (this.menus.length > 4 && this.menus.length < 6) {
                 this.height = Math.round(this.menus.length / 2) * 120;
-            } else if (this.menus.length >= 6) {
-                this.height = Math.round(this.menus.length / 2) * 135;
+            } else if (this.menus.length === 6) {
+                this.height = Math.round(this.menus.length / 2) * 140;
             }
         }
     }

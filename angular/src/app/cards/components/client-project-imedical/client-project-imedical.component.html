@@ -20,7 +20,15 @@
                         <span *ngFor="let tag of tags"
                             class="badge badge-custom mr-2 mt-2 p-2">{{ tag | uppercase }}</span>
                     </h5>
-                    <a [href]="linkProjectUrl" class="green">{{ linkProjectTitle }}</a>
+                    <ng-container *ngIf="linkExternal then externo else interno">
+                    </ng-container>
+                    <ng-template #externo>
+                        <a [href]="linkProjectUrl" class="green">{{ linkProjectTitle }}</a>
+                    </ng-template>
+                    <ng-template #interno>
+                        <a [routerLink]="linkProjectUrl"
+                            class="green">{{ linkProjectTitle }}</a>
+                    </ng-template>
                 </div>
             </div>
         </div>

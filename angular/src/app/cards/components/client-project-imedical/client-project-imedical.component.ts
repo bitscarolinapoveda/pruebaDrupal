@@ -23,6 +23,7 @@ export class ClientProjectImedicalComponent implements OnInit {
   principal: General;
   @Input() type: string;
   visible: boolean;
+  linkExternal: boolean;
 
   constructor(private _http: CustomCardService) {
     this.titleCard = '';
@@ -58,6 +59,7 @@ export class ClientProjectImedicalComponent implements OnInit {
           this.tags = ['salud', 'cloud', 'angularjs', 'mobile', 'tag'];
           this.linkProjectUrl = params.data[0].field_url_client[0].uri;
           this.linkProjectTitle = params.data[0].field_url_client[0].title;
+          this.linkExternal = params.data[0].field_url_client[0].external;
           if (params.data[0]) {
             this.visible = true;
             this.datosMenu = {

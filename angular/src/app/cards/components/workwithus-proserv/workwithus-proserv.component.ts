@@ -16,7 +16,7 @@ export class WorkWithUsProServComponent implements OnInit {
   workWithUsThirdText: string;
   body: string;
   workWithUsAdicional: any;
-
+  linkExternal: boolean;
 
   constructor(
     private router: ActivatedRoute,
@@ -38,6 +38,7 @@ export class WorkWithUsProServComponent implements OnInit {
       this.workWithUsTitle = items.header[0].data;
       this.workWithUsSubtitle = items.header[1].data;
       this.url = items.body[0].data.link;
+      this.linkExternal = items.body[0].data.external;
       this.workWithUsButton = items.body[1].data;
       this.workWithUsAdicional = items.body[2].data;
       this.workWithUsThirdText = items.body[3].data;
