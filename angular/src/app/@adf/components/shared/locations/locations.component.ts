@@ -9,6 +9,7 @@ declare var $: any;
   styleUrls: ['./locations.component.scss']
 })
 export class LocationsComponent implements OnInit {
+  
   public items = [];
   public title: string;
   public imageIcon = {
@@ -134,21 +135,21 @@ export class LocationsComponent implements OnInit {
     }
     document.getElementById(index + '').style.backgroundColor = '#d9dfe4';
   }
-  scrollMaps(direction,devices) {
+  scrollMaps(direction, devices) {
     if (devices == 'mobile') {
       if (this.seeMoreText === true) {
-        $('#acordion-info').css('max-height','initial');
+        $('#acordion-info').css('max-height', 'initial');
         $('.see-more-button .fa-sort-down').css({
           'padding-bottom': '5px',
-          'transform':'rotate(180deg)'
+          'transform': 'rotate(180deg)'
         });
         this.seeMoreText = false;
         this.seeLessText = true;
-      } else if (this.seeMoreText === false){
-        $('#acordion-info').css('max-height','734px');
+      } else if (this.seeMoreText === false) {
+        $('#acordion-info').css('max-height', '734px');
         $('.see-more-button .fa-sort-down').css({
           'padding-bottom': '0px',
-          'transform':'rotate(0deg)'
+          'transform': 'rotate(0deg)'
         });
         this.seeMoreText = true;
         this.seeLessText = false;
@@ -172,5 +173,14 @@ export class LocationsComponent implements OnInit {
       }
     }
   }
+
+  mostrarZoom() {
+    $('.map-location-desktop').removeClass('zoom-map');
+  }
+
+  ocultarZoom() {
+    $('.map-location-desktop').addClass('zoom-map');
+  }
+
 }
 
