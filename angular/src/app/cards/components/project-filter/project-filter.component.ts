@@ -1,9 +1,9 @@
 import { CustomCardService } from '../../../services/cards/v1-card.services';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ElementRef, ViewChild } from '@angular/core';
 
 declare var Muuri: any;
+declare var jQuery: any;
 declare var $: any;
-
 @Component({
   selector: 'app-project-filter',
   templateUrl: './project-filter.component.html',
@@ -13,31 +13,99 @@ export class ProjectFilterComponent implements OnInit {
   public gridInfo;
   public band;
   public grid;
+  title: string;
+  datos: any;
+  listClient: Array<string>;
+  listSector: Array<string>;
+  listTecnology: Array<string>;
+  private disabled: boolean;
+  selectedClient: any;
+  selectedSector: any;
+  selectedTecnology: any;
+  @ViewChild('divClick') divClick: ElementRef;
 
   constructor(
-    private projectInfo : CustomCardService,
-  ) { }
+    private projectInfo: CustomCardService,
+  ) {
+    this.title = '';
+    this.datos = [];
+    this.listClient = [];
+    this.listSector = [];
+    this.listTecnology = [];
+    this.gridInfo = [];
+  }
 
   ngOnInit() {
+    this.getFilterService();
     this.getInfoProject();
+    this.onResize();
   }
+
   getInfoProject() {
-    this.projectInfo.getCustomCardInformation('successworkcard').subscribe(items => {
+    this.listClient = [];
+    this.listSector = [];
+    this.listTecnology = [];
+    this.projectInfo.getCustomCardInformation('allourworkbitsamericas').subscribe(items => {
       items.data = this.projectInfo.addImageField(items.data, ['field_background_image']);
       items.data = this.projectInfo.addImageField(items.data, ['field_image']);
-      console.log(items.data);
       this.gridInfo = items.data;
-    });  
+
+      this.listClient = this.getFilterList('field_clients', 'clients-');
+      this.listSector = this.getFilterList('field_sector', 'sector-');
+      this.listTecnology = this.getFilterList('field_technologies', 'technologies-');
+    });
+  }
+  getFilterList(campo, id) {
+    var list: any[] = [];
+    for (let i = 0; i < this.gridInfo.length; i++) {
+      if (this.gridInfo[i][campo] !== undefined) {
+        for (let j = 0; j < this.gridInfo[i][campo].length; j++) {
+          if (list.length === 0) {
+            let obj = {
+              'id': [id] + this.gridInfo[i][campo][j].id,
+              'text': this.gridInfo[i][campo][j].label
+            }
+            list.push(obj);
+          } else {
+            let cont = 0;
+            for (let z = 0; z < list.length; z++) {
+              if (list[z].text === this.gridInfo[i][campo][j].label) {
+                cont++;
+              }
+            }
+            if (cont === 0) {
+              let obj = {
+                'id': [id] + this.gridInfo[i][campo][j].id,
+                'text': this.gridInfo[i][campo][j].label
+              }
+              list.push(obj);
+            }
+          }
+        }
+      }
+    }
+    return list;
+  }
+
+  filter(eve) {
+    if (eve.id !== undefined) {
+      this.grid.filter('.' + eve.id);
+      this.ocultarDatos();
+    }
+  }
+  getFilterService() {
+    this.projectInfo.getCustomCardInformation('successcasefiltercard').subscribe(params => {
+      this.title = params.header[0].data.title;
+      this.datos = params.body;
+    });
   }
   onResize() {
     var size = window.innerWidth;
     if (size < 767) {
       this.organizeGrid();
     } else {
-      var heightOfBox = ((window.innerWidth) / 3) + 'px';
+      var heightOfBox = Math.round(((window.innerWidth) / 3)) + 'px';
       $('.muuri-item').css('height', heightOfBox);
-      var heightOfBoxLarge = (((window.innerWidth) / 3) * 2) + 'px';
-      $('.item.box-5').css('height', heightOfBoxLarge);
     }
   }
   showDescription(eve, i) {
@@ -61,8 +129,12 @@ export class ProjectFilterComponent implements OnInit {
       });
     }
   }
+
   organizeGrid() {
+    var sizeOfBox = Math.round(((window.innerWidth) / 3));
+    console.log('sizeOfBox', sizeOfBox);
     var size = window.innerWidth;
+
     if (size < 767) {
       this.grid = new Muuri('.grid', {
         dragEnabled: false,
@@ -89,11 +161,13 @@ export class ProjectFilterComponent implements OnInit {
           var slotDimensions = array2D(rowCount);
           var newSlot, topSlot, leftSlot, slotRow, slotCol;
           items.forEach(function (item, index) {
+            console.log( Math.round(item._height));
+            console.log(Math.round(item._width));
             newSlot = {
               left: 0,
               top: 0,
-              height: item._height,
-              width: item._width
+              height: Math.round(item._height),
+              width: Math.round(item._width)
             };
             slotCol = index % colCount;
             var numRow2 = (index / colCount).toString();
@@ -101,9 +175,9 @@ export class ProjectFilterComponent implements OnInit {
             if (topRowExists(slotRow)) { // add slot to row below
               topSlot = slotDimensions[slotRow - 1][slotCol];
               if (index === 10 || index === 17) {
-                newSlot.top = topSlot.top + topSlot.height + 640;
+                newSlot.top = topSlot.top + topSlot.height + sizeOfBox;
               } else if (index === 20) {
-                newSlot.top = topSlot.top + topSlot.height - 640;
+                newSlot.top = topSlot.top + topSlot.height - sizeOfBox;
               } else {
                 newSlot.top = topSlot.top + topSlot.height;
               }
@@ -111,7 +185,7 @@ export class ProjectFilterComponent implements OnInit {
             if (leftColExists(slotCol)) { // add slot to rightward col
               leftSlot = slotDimensions[slotRow][slotCol - 1];
               if (index === 8 || index === 17 || index === 20) {
-                newSlot.left = (leftSlot.left + leftSlot.width) - 640;
+                newSlot.left = (leftSlot.left + leftSlot.width) - sizeOfBox;
               } else {
                 newSlot.left = leftSlot.left + leftSlot.width;
               }
@@ -139,8 +213,62 @@ export class ProjectFilterComponent implements OnInit {
       }
       return array;
     }
+
+    this.addFilterClass('field_clients', 'clients-');
+    this.addFilterClass('field_sector', 'sector-');
+    this.addFilterClass('field_technologies', 'technologies-');
+  }
+
+  addFilterClass(campo, id) {
     for (let i = 0; i < this.gridInfo.length; i++) {
-      $('.item.box-' + i).addClass(this.gridInfo[i].nid);
+      if (this.gridInfo[i][campo] !== undefined) {
+        for (let j = 0; j < this.gridInfo[i][campo].length; j++) {
+          $('.item.box-' + i).addClass([id] + this.gridInfo[i][campo][j].id);
+        }
+      }
     }
   }
+
+  public removed(value: any): void {
+    this.addFilterrClass();
+    this.gridInfo = [];
+    this.getInfoProject();
+    this.onResize();
+  }
+
+  public removedGeneral() {
+    this.addFilterrClass();
+    this.selectedClient = [];
+    this.selectedSector = [];
+    this.selectedTecnology = [];
+    this.gridInfo = [];
+    this.getInfoProject();
+    this.onResize();
+  }
+
+  public selected(value: any): void {
+    this.addFilterrClass();
+    this.ocultarDatos();
+  }
+
+  public typed(value: any): void {
+    this.removeFilterClass();
+  }
+
+  ocultarDatos() {
+    this.divClick.nativeElement.click();
+  }
+
+  addFilterrClass() {
+    $('#client').addClass('no-strong');
+    $('#sector').addClass('no-strong');
+    $('#tecnology').addClass('no-strong');
+  }
+
+  removeFilterClass() {
+    $('#client').removeClass('no-strong');
+    $('#sector').removeClass('no-strong');
+    $('#tecnology').removeClass('no-strong');
+  }
+
 }

@@ -2,27 +2,35 @@
   <div class="conteiner-2">
     <div class="div-left-side"></div>
     <div class="divIconSeparator">
-      <label>Filtrar casos de exito</label>
+      <label>Filtrar casos de éxito</label>
     </div>
     <div class="div-right-side"></div>
   </div>
 </div>
-<div class="filter">
-  <div class="items">
-    <label for="client">Clientes</label>
-    <ng-select #clientF class="select-autocomplete" id="client" name="client" [placeholder]="clients"
-      [allowClear]="true" [items]="listClients" [disabled]="disabled" (data)="filter($event)" (removed)="removedClient($event)">
-    </ng-select>
-  </div>  
+<div class="filter container">
+  <div class="row" #divClick>
+    <div class="items col-md-3" (mouseleave)="ocultarDatos()">
+      <label for="client">Clientes</label>
+      <ng-select #clientF class="select-autocomplete" id="client" name="client" [placeholder]="clients"
+        [allowClear]="true" [items]="listClients" [disabled]="disabled" (data)="filter($event)"
+        (removed)="removedClient($event)" [(ngModel)]="selectedClient" (selected)="selected($event)"
+        (typed)="typed($event)">
+      </ng-select>
+    </div>
+    <div class="items button-all col-md-3" (click)="removedGeneral()">
+      <i ngClass="icon-actu"></i>
+      <label class="margin-button">Ver todos los {{type}}</label>
+    </div>
+  </div>
 </div>
 <div class="grid" (window:resize)="onResize()">
   <div class="item box-{{i}}" *ngFor="let gridBox of gridInfo; let i = index; let $last = last" [isLast]='$last'
     (appOrganizeGridMuuri)="organizeGrid()" (mouseover)=showDescription($event,i)
     (mouseleave)=showDescription($event,i)>
     <div class="dark-layout"></div>
-    <div class="item-content" [ngStyle]="{'background-image':'url(' + gridBox.short_image.url + ')'}"></div>
+    <div class="item-content" [ngStyle]="{'background-image':'url(' + gridBox.large_image.url + ')'}"></div>
     <div class="info-content info-{{i}}">
-      <i class="fas fa-database"></i>
+        <div class="logo-client" [ngStyle]="{'background-image':'url(' + gridBox.short_image.url + ')'}"></div>
       <h2 class="text-grid">{{gridBox.label}}</h2>
     </div>
     <div class="complete-info-grid hover-info-{{i}}">
