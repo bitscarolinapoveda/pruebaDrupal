@@ -326,6 +326,10 @@ body {
   width: 100%;
   box-sizing: border-box;
   padding: 40px 65px 40px;
+
+  @include breakpoint (phone) {
+    padding-bottom: 10px;
+  }
 }
 
 /deep/ {
@@ -344,11 +348,11 @@ body {
       height: 2px;
       position: absolute;
       left: 0;
-      margin-left: -30px;
+      margin-left: -35px;
 
-      @media (max-width: 500px) {
+      @include breakpoint (phone) {
         background: #a6cf24;
-        width: 120%;
+        width: 130%;
       }
     }
 
@@ -361,10 +365,11 @@ body {
       margin-top: -20px;
       text-align: center;
 
-      @media (max-width: 500px) {
+      @include breakpoint (phone) {
         left: 0;
         margin-left: 0;
         margin-top: 10px;
+        display: none;
       }
     }
 
@@ -381,8 +386,19 @@ body {
       right: 0;
       margin-right: -30px;
 
-      @media (max-width: 500px) {
+      @include breakpoint (phone) {
         display: none;
+      }
+    }
+
+    .container-phone {
+      display: none;
+    }
+
+    @include breakpoint (phone) {
+      .container-phone {
+        display: block;
+        text-align: center;
       }
     }
   }
