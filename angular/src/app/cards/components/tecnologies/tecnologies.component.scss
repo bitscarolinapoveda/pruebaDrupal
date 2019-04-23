@@ -20,17 +20,26 @@
     .info-title {
         font-size: 40px;
     }
+    .dark-title {
+      color: #002b49 !important;
+    }
+    .descrip-principal {
+      text-align: center;
+      color: #002b49;
+      font-size: 20px;
+      font-family: 'Open Sans Codensed';
+    }
     .block-image {
         width: 100%;
         min-height: 300px;
         .icons-container {
-            width:100%; 
-            background-color: transparent; 
-            display: flex; 
-            flex-direction: row; 
+            width:100%;
+            background-color: transparent;
+            display: flex;
+            flex-direction: row;
             flex-wrap: wrap;
-            justify-content: center; 
-            align-items: center; 
+            justify-content: center;
+            align-items: center;
             @include breakpoint (desktop) {
                 padding-top: 60px;
             }
@@ -38,7 +47,7 @@
                 padding-top: 40px;
             }
         }
-    }  
+    }
 }
 .img-fluid {
     width: 140px;
@@ -76,14 +85,14 @@
         .icons-container {
             min-height: 322px !important;
         }
-    }       
+    }
 }
 @media screen and (max-width: 769px) {
     .row-tec {
         .icons-container {
             min-height: 422px;
         }
-    }       
+    }
  }
 
  .leftRs {
@@ -110,7 +119,7 @@
     border-radius: 999px;
     right: 0;
     visibility: hidden;
-    
+
 }
 .carousel-item>div>div {
     transform: scale(0);
