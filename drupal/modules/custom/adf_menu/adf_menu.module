@@ -22,3 +22,93 @@ function adf_menu_help($route_name, RouteMatchInterface $route_match) {
     default:
   }
 }
+
+/**
+ * Implements hook_form_alter().
+ */
+function adf_menu_form_alter(&$form, $form_state, $form_id) {
+  //drupal_set_message(t('Form-ID: '.$form_id),'warning');
+  if ($form_id == 'menu_edit_form') {
+    limit_menu_form_validate($form, $form_state);
+    $menu = $form['id']['#default_value'];
+    $suggested_items = \Drupal::config('adf_menu.settings')->get('suggested_items');
+    $suggested_items = isset($suggested_items[$menu]) ? $suggested_items[$menu] : [ 1 => 0, 2 => 0, 3 => 0];
+
+    // Add a custom submit handler to save the array of types back to the config file.
+    $form['actions']['submit']['#submit'][] = 'limit_menu_form_submit';
+    \Drupal::request()->query->remove('destination');
+
+    $form['suggested_items'] = [
+      '#type' => 'details',
+      '#tree' => TRUE,
+      '#title' => t('Items sugeridos por Nivel'),
+    ];
+    $form['suggested_items'][1] = [
+      '#type' => 'number',
+      '#title' => t('Items sugeridos Nivel 1'),
+      '#default_value' => $suggested_items[1],
+    ];
+    $form['suggested_items'][2] = [
+      '#type' => 'number',
+      '#title' => t('Items sugeridos Nivel 2'),
+      '#default_value' => $suggested_items[2],
+    ];
+    $form['suggested_items'][3] = [
+      '#type' => 'number',
+      '#title' => t('Items sugeridos Nivel 3'),
+      '#default_value' => $suggested_items[3],
+    ];
+  }
+}
+
+/**
+ * Validation form.
+ */
+function limit_menu_form_validate($form, $form_state) {
+  $menu = $form['id']['#default_value'];
+  $suggested_items = \Drupal::config('adf_menu.settings')->get('suggested_items');
+  $suggested_items = isset($suggested_items[$menu]) ? $suggested_items[$menu] : [ 1 => 0, 2 => 0, 3 => 0];
+
+  $childs = [];
+  $form_links = $form['links']['links'];
+
+  if( empty( $form_state->getUserInput()) && !empty($suggested_items)){
+    $limits = '';
+    $nivel = '-';
+    foreach ($suggested_items as $key => $value) {
+      if($value > 0){
+        $limits .= '<br>'.$nivel.'Nivel '.$key.' limite sugerido '.$value.' items.';
+      }
+        $nivel = $nivel.'-';
+    }
+    if(!empty($limits)){
+      drupal_set_message(t('Para una correcta visualizacion del menu se recomienda limitar los items: '. $limits));
+    }
+
+    foreach ($form_links as $key => $item) {
+      if (strpos($key,'menu_plugin_id') !== FALSE) {
+        $depth = $item['#item']->depth + 1;
+        $subtree = count($item['#item']->subtree);
+        if (!empty($suggested_items[$depth])){
+          if($subtree > $suggested_items[$depth]){
+            $title = $item['#item']->link->getTitle();
+            drupal_set_message(t('El item de menu: '.$title.' excede el limite de ('.$suggested_items[$depth].') subitems sugerido' ),'warning');
+          }
+        }
+      }
+    }
+  }
+
+  /**
+   * Submit form.
+   */
+  function limit_menu_form_submit($form, $form_state) {
+    $menu = $form['id']['#default_value'];
+    $suggested_items = [
+      $menu => $form_state->getValue('suggested_items'),
+    ];
+    \Drupal::configFactory()->getEditable('adf_menu.settings')
+     ->set('suggested_items', $suggested_items)
+     ->save();
+  }
+}
