@@ -15,14 +15,28 @@ export class NavbarComponent implements OnInit {
     positionChild: number = 1;
     resolution: string = 'desktop';
     flActiveChilds: any[] = [];
+    LanguageMenuDefault: any;
     LanguageMenu: any;
     heightScreen: any;
+    languagueBrowser: any;
+
 
     constructor(private router: ActivatedRoute, private navbar: NavbarService, private _service: CustomCardService) {
         this.onResize({});
+        this.LanguageMenu = [];
+        this.LanguageMenuDefault = {};
+        this.languagueBrowser = '';
     }
 
     ngOnInit() {
+        this.languagueBrowser = window.navigator.language;
+        if (this.languagueBrowser === undefined || this.languagueBrowser === null || this.languagueBrowser === '') {
+            this.languagueBrowser = 'es';
+        } else {
+            this.languagueBrowser = this.languagueBrowser.split('-')[0];
+        }
+        $('html').attr('lang', this.languagueBrowser);
+
         this.heightScreen = $(window).height() + 'px';
         $('.Botton, .show-more').on('click', function () {
             $('.menu-scroll, .link').toggleClass('tigger-menu scroll-white color-white');
@@ -39,8 +53,7 @@ export class NavbarComponent implements OnInit {
             }
         });
         this.getNavBarItems();
-        //this.getLanguageData();
-        this.LanguageMenu = [{ 'title': 'ES', 'active': true }, { 'title': 'ENN', 'active': false }];
+        this.getLanguageData();
     }
 
     getNavBarItems() {
@@ -53,10 +66,21 @@ export class NavbarComponent implements OnInit {
     getLanguageData() {
         this._service.getCustomCardInformation('languagescard').subscribe(items => {
             for (var index in items.others[0].languages) {
+                if (this.languagueBrowser === items.others[0].languages[index].id) {
+                    items.others[0].languages[index].status = true;
+                    this.LanguageMenuDefault = items.others[0].languages[index];
+                } else {
+                    items.others[0].languages[index].status = false;
+                }
                 this.LanguageMenu.push(items.others[0].languages[index]);
+            }
+            if (this.LanguageMenuDefault.id === undefined) {
+                this.LanguageMenu[0].status = true;
+                this.LanguageMenuDefault = this.LanguageMenu[0];
             }
         });
     }
+
 
     addIdForColToNavbar(navbarArray, posCol, posRow) {
 
