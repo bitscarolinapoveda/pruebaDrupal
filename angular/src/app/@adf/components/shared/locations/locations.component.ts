@@ -191,7 +191,7 @@ export class LocationsComponent implements OnInit {
           $('#acordion-info').css('max-height', '310px');
         }
       } else {
-        $('#acordion-info').css('max-height', '610px');
+        $('#acordion-info').css('max-height', 'auto');
       }
     }
   }
