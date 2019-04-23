@@ -9,9 +9,11 @@ import { DataMenu } from '../../../cards/components/menu-template/menu-template.
 })
 export class AboutUsComponent implements OnInit {
   listMenu: DataMenu[];
+  type: string;
 
   constructor(private meta: Meta) {
     this.listMenu = [];
+    this.type = 'about';
   }
 
   ngOnInit() {

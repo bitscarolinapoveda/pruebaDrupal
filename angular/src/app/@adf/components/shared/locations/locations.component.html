@@ -5,13 +5,13 @@
 </section>
 <!-- MOBILE -->
 <section id="accordion-section-mobile" (window:resize)="onResize(mobile)" *ngIf="mobileScreen">
-    <a class="see-more-button" (click)="scrollMaps('down','mobile')" *ngIf="locations_data.length > 3">
+    <a class="see-more-button" (click)="scrollMaps('down','mobile')" *ngIf="locations_data.length > 2">
         <h2 *ngIf="seeMoreText" class="text-see-more">VER MAS UBICACIONES</h2>
         <i class="fas fa-sort-down"></i>
         <h2 *ngIf="seeLessText" class="text-see-more">VER MENOS UBICACIONES</h2>
     </a>
     <section id="acordion-info" class="acordion-info">
-        <ngb-accordion #acc="ngbAccordion" activeIds="static-0" [closeOthers]="closeOthers">
+        <ngb-accordion #acc="ngbAccordion" activeIds="static-0" [closeOthers]="closeOthers" (click)="checkHeight($event)">
             <ngb-panel *ngFor="let ubicacion of locations_data ; let i = index" id="static-{{i}}">
                 <ng-template ngbPanelTitle>
                     <div class="container location-block">
@@ -59,7 +59,7 @@
 </section>
 <!-- DESKTOP -->
 <section id="accordion-section-desktop" (window:resize)="onResize(desktop)" *ngIf="desktopScreen">
-    <div class="row general-box-location">
+    <div class="row general-box-location" [ngStyle]="{'margin': locations_data.length > 3 ? '0' : '0 0 161px 0' }">
         <div class=" buttons-location-desktop" [ngClass]="cant_locations_data?'col-12':'col-4'">
             <div id="box-of-buttons" class="row location-button">
                 <div id="{{i}}" class="button-{{i}} info-location" [ngClass]="cant_locations_data?'col-4':'col-12'"
@@ -86,7 +86,7 @@
             <agm-map [latitude]="lat" [longitude]="lng" [styles]="bitsTypeMap" [zoom]="defaultZoomMap"
                 [ngStyle]="{'width': widthOftheMap}" [backgroundColor]="colorWhileLoad" style="height: 519px;">
                 <agm-marker [latitude]="lat" [longitude]="lng" [iconUrl]="imageIcon">
-                    <agm-info-window #windowDesktopasdfghj [isOpen]="infoWindowOpen">
+                    <agm-info-window #windowDesktop [isOpen]="infoWindowOpen">
                         <h6 class="info-window-location">{{ titleCity }}</h6>
                         <div class="address-block-info-window">
                             <i class="fas fa-map-marker-alt"></i>

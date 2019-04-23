@@ -10,6 +10,8 @@ import { ServicesComponent } from './services/services.component';
 import { ProductsOrServicesComponent } from './products-or-services/products-or-services.component';
 import { PoliticsComponent } from './politics/politics.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { MapsiteComponent } from './mapsite/mapsite.component';
+import { PqrsComponent } from './pqrs/pqrs.component';
 import { from } from 'rxjs';
 
 const pagesRoutes: Routes = [
@@ -28,6 +30,8 @@ const pagesRoutes: Routes = [
       { path: 'services/:type', component: ProductsOrServicesComponent },
       { path: 'politics', component: PoliticsComponent },
       { path: 'about-us', component: AboutUsComponent },
+      { path: 'mapa-del-sitio', component: MapsiteComponent },
+      { path: 'pqrs', component: PqrsComponent },
       { path: '**', component: NoPageFoundComponent }
 
       // { path: 'home', component: HomeComponent },

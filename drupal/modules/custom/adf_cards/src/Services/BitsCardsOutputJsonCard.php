@@ -23,6 +23,7 @@ class BitsCardsOutputJsonCard {
     $settings = [];
     $node_tags = [];
     $block = Block::load($block_id);
+    $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
 
     if ($block) {
       $settings = $block->get('settings');
@@ -104,14 +105,22 @@ class BitsCardsOutputJsonCard {
           }
         }
       }
-
       foreach ($nodes as $node) {
         $tag = $node->getEntityType()->getListCacheTags();
+        if($language != 'es' &&  $isContentEntity){
+          if ($node->hasTranslation($language)) {
+            $node = $node->getTranslation($language);
+          }
+          else{
+            continue;
+          }
+        }
         if(!in_array( $tag[0], $node_tags))
         array_push($node_tags, $tag[0]);
         $url = $node->toUrl()->toString(TRUE);
         $url = $url->getGeneratedUrl();
         $url = (strpos($url, 'node') === false) ? $url : '';
+
         if ($isContentEntity) {
           $data = [
             'nid' => $node->id(),
@@ -174,8 +183,33 @@ class BitsCardsOutputJsonCard {
               }
             }
             elseif ($type === 'link'){
-              $tid = $node->get($field)->getValue();
-              $data[$field] = $tid;
+              $link = $node->get($field)->getValue();
+              if (count($link) > 0) {
+                $url = $node->get($field)[0]->getUrl();
+                if($url->isRouted()){
+                  try {
+                    $route = $url->getRouteName();
+                    $parameters = $url->getRouteParameters(); // obtiene los parametetros enviados al route
+                    $generator = \Drupal::urlGenerator(); //permite crear urls desde drupal
+                    $path = '/'.$generator->getPathFromRoute($route, $parameters); //crea la url desde el route name si pertenece a drupal
+                  } catch (\Throwable $th) {
+                    $path = $th['message'];
+                  }
+                }
+                else{
+                  $path = $url->toString(); //devuelve la url si no pertenece a drupal
+                }
+
+                if (strpos($path, 'node') !== false ) {
+                  $alias = \Drupal::service('path.alias_manager')->getAliasByPath($path);
+                  $path = (strpos($alias, 'node') === false) ? $alias : '';
+                }
+                $link = $node->get($field)->getValue();
+                $link[0]['uri'] = $path;
+                $link[0]['external'] = $url->isExternal();
+              }
+
+              $data[$field] = $link;
             }
             else {
               $data[$field] = $node->get($field)->getString();
@@ -286,6 +320,7 @@ class BitsCardsOutputJsonCard {
             $element['data'] = [
               'link' => $item['input']['link'],
               'label' => $item['input']['label'],
+              'external' => strpos($item['input']['link'], '/') !== 0 ? TRUE : FALSE ,
             ];
             $element['type'] = 'url';
             break;
@@ -321,6 +356,20 @@ class BitsCardsOutputJsonCard {
           'text' => $itemOther['link']['text'],
         ];
 
+        $data[] = $elements;
+      }
+    }
+
+    elseif (!empty($input[$inputType]) && $inputType == 'others') { // !empty permite evaluar si existe y no esta vacio
+      foreach ($input[$inputType] as $key => $itemOther) {
+        $elements = [];
+        if($itemOther['type'] == 'checkboxes'){
+          foreach ($itemOther['options'] as $id => $label) {
+            $elements[$key][$id]['id'] = $id;
+            $elements[$key][$id]['label'] = $label;
+            $elements[$key][$id]['status'] = ($itemOther[$id] !== 0) ? TRUE : FALSE;
+          }
+        }
         $data[] = $elements;
       }
     }

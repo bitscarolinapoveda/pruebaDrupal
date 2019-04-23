@@ -1,5 +1,5 @@
 import { ContentType } from '../../../services/cards/content-type.services';
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NgxCarousel } from 'ngx-carousel';
 import { CustomCardService } from 'src/app/services/cards/v1-card.services';
@@ -22,6 +22,7 @@ export class CarouselControlsComponent implements OnInit {
   @Output() propagar = new EventEmitter<DataMenu>();
   datosMenu: DataMenu;
   visible: boolean;
+  @Input() type: string;
 
   constructor(
     private AchievementCarouselItems: ContentType,

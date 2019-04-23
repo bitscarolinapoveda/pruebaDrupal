@@ -4,6 +4,7 @@
             <input type="checkbox" class="Botton"/>
             <i class="fas fa-bars burger"></i>
             <ul class="list-menu">
+                <div class="open-menu-banner-white"></div>
                 <ng-container *ngFor="let nav of NavbarArray; let i= index ">
                     <li class="items customrow-1" [class.menu-has-children]="nav.below" (mouseover)='menuOver($event)'
                         (mouseleave)='menuOut($event)'>

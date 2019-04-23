@@ -8,7 +8,6 @@ import { General } from '../blurb/blurb.component';
 
 declare var jQuery: any;
 declare var $: any;
-
 @Component({
   selector: 'app-client-proserv',
   templateUrl: './client-proserv.component.html',
@@ -16,24 +15,17 @@ declare var $: any;
 })
 
 export class ClientProServComponent implements OnInit, DoCheck, OnDestroy {
-
   public carouselOne: NgxCarousel;
-
   clients: Array<any> = [];
   lastclients: Array<any> = [];
   titleClients: string;
   public carocarouselTile: NgxCarousel;
-
   @Output() propagar = new EventEmitter<DataMenu>();
-
   datosMenu: DataMenu;
-
   @Input() type: string;
-
-  principal: General;
-  principal$: Observable<General>;
-  cas: any = 0;
-
+  principalClient: General;
+  principalClient$: Observable<General>;
+  casClient: any = 0;
   visible: boolean;
 
   constructor(private _cardService: CustomCardService) {
@@ -41,19 +33,6 @@ export class ClientProServComponent implements OnInit, DoCheck, OnDestroy {
   }
 
   ngOnInit() {
-    console.log('ngOnInit');
-
-    while (this.type.indexOf('-') > -1) {
-      this.type = this.type.replace('-', '_');
-    }
-
-    this.datosMenu = {
-      label: 'CAROUSEL',
-      id: 'a6',
-      url: '/imedical'
-    };
-
-    this.propagar.emit(this.datosMenu);
 
     // this.getOurClientsItems();
 
@@ -96,61 +75,68 @@ export class ClientProServComponent implements OnInit, DoCheck, OnDestroy {
     };
 
     this.datos();
-
-
   }
 
   ngDoCheck() {
     if (this.lastclients !== this.clients) {
-      console.log('ngDoCheck', 'lista clients', this.clients);
       this.lastclients = this.clients;
     }
   }
+
   ngOnDestroy() {
-    console.log('ngOnDestroy');
   }
 
   datos() {
+    this.principalClient$ = this._cardService.getCustomInfoIM('allproductsandservicescard_2');
+    this.principalClient$.subscribe(items => {
+      this.principalClient = this._cardService.clone(items);
+      this.principalClient = this._cardService.getFilterPrincipalType(this.principalClient, 'field_clients', this.type);
 
-    this.principal$ = this._cardService.getCustomInfoIM('productsandservicescard_2');
-    this.principal$.subscribe(items => {
-      this.principal = this._cardService.clone(items);
-
-      let value = 0;
+      /* let value = 0;
       let datos = [];
-      for (let index = 0; index < this.principal.data.length; index++) {
-        if (this.principal.data[index].nid === this.type) {
+      for (let index = 0; index < this.principalClient.data.length; index++) {
+        if (this.principalClient.data[index].url.indexOf(this.type) > -1) {
           value++;
-          datos = this.principal.data[index].clients;
+          datos = this.principalClient.data[index].field_clients;
         }
       }
       if (value === 0) {
-        this.principal.data = [];
+        this.principalClient.data = [];
       } else {
-        this.principal.data = datos;
-      }
+        this.principalClient.data = datos;
+      } */
 
       this._cardService.getCustomInfoIM('imedicalclients').subscribe(itemsw => {
+        itemsw = this._cardService.getFilterLists(this.principalClient, itemsw);
         this.titleClients = itemsw.header[0].data.title;
-        itemsw.data =  this._cardService.addImageField(itemsw.data, ['field_image']);
+        itemsw.data = this._cardService.addImageField(itemsw.data, ['field_image']);
+
         const list_items = this._cardService.clone(itemsw.data);
 
-        let lista: any[] = [];
-        this.clients = [];
+        this.clients = list_items;
 
-        for (let index = 0; index < list_items.length; index++) {
-          for (let j = 0; j < this.principal.data.length; j++) {
-            if (list_items[index].nid === this.principal.data[j].id) {
-              this.clients.push(list_items[index]);
+        /* if (this.principalClient.data !== undefined) {
+          for (let index = 0; index < list_items.length; index++) {
+            for (let j = 0; j < this.principalClient.data.length; j++) {
+              if (list_items[index].nid === this.principalClient.data[j].id) {
+                this.clients.push(list_items[index]);
+              }
             }
           }
-        }
+        } */
 
         this.clients = this._cardService.clone(this.clients);
-        this.cas = this.cas + 1;
+        this.casClient = this.casClient + 1;
 
         if (this.clients.length !== 0) {
           this.visible = true;
+          this.datosMenu = {
+            label: 'CAROUSEL',
+            id: 'a6',
+            url: '/imedical'
+          };
+
+          this.propagar.emit(this.datosMenu);
         }
       });
     });
