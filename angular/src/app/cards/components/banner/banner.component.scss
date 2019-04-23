@@ -64,8 +64,9 @@
         }
 
         @include breakpoint (phone) {
-            margin-right: 0;
-            margin-left: 0;
+            margin-right: 10px;
+            margin-left: 10px;
+            text-align: center;
         }
     }
 }

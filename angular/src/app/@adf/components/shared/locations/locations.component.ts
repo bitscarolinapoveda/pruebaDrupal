@@ -9,6 +9,7 @@ declare var $: any;
   styleUrls: ['./locations.component.scss']
 })
 export class LocationsComponent implements OnInit {
+  
   public items = [];
   public title: string;
   public imageIcon = {
@@ -172,6 +173,15 @@ export class LocationsComponent implements OnInit {
       }
     }
   }
+
+  mostrarZoom() {
+    $('.map-location-desktop').removeClass('zoom-map');
+  }
+
+  ocultarZoom() {
+    $('.map-location-desktop').addClass('zoom-map');
+  }
+
   checkHeight() {
     for (let i = 0; i < $('.acordion-info .card button').length; i++) {
       if ($('#static-' + i + '-header button').hasClass('collapsed')) {
@@ -181,7 +191,7 @@ export class LocationsComponent implements OnInit {
           $('#acordion-info').css('max-height', '310px');
         }
       } else {
-        $('#acordion-info').css('max-height', '610px');
+        $('#acordion-info').css('max-height', 'auto');
       }
     }
   }

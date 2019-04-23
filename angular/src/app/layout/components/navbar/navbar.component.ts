@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewEncapsulation, HostListener } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NavbarService } from '../../../services/layout/navbar.service';
+import { CustomCardService } from 'src/app/services/cards/v1-card.services';
 
 declare var $: any;
 
@@ -17,7 +18,7 @@ export class NavbarComponent implements OnInit {
     LanguageMenu: any;
     heightScreen: any;
 
-    constructor(private router: ActivatedRoute, private navbar: NavbarService) {
+    constructor(private router: ActivatedRoute, private navbar: NavbarService, private _service: CustomCardService) {
         this.onResize({});
     }
 
@@ -38,6 +39,7 @@ export class NavbarComponent implements OnInit {
             }
         });
         this.getNavBarItems();
+        //this.getLanguageData();
         this.LanguageMenu = [{ 'title': 'ES', 'active': true }, { 'title': 'ENN', 'active': false }];
     }
 
@@ -45,6 +47,14 @@ export class NavbarComponent implements OnInit {
         return this.navbar.getMenuItems().subscribe(items => {
             this.NavbarArray = items;
             this.NavbarArray = this.addIdForColToNavbar(this.NavbarArray, 1, 1);
+        });
+    }
+
+    getLanguageData() {
+        this._service.getCustomCardInformation('languagescard').subscribe(items => {
+            for (var index in items.others[0].languages) {
+                this.LanguageMenu.push(items.others[0].languages[index]);
+            }
         });
     }
 
