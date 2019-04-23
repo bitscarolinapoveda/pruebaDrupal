@@ -20,7 +20,6 @@ export class MapsiteComponent implements OnInit {
   getItems() {
     return this.http.getLowFooterInfo('mapa-del-sitio---pagina-bit').subscribe(items => {
       this.Info = items;
-      console.log('items', items);
     });
   }
 
