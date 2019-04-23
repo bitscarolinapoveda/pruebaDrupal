@@ -135,24 +135,24 @@ export class LocationsComponent implements OnInit {
     }
     document.getElementById(index + '').style.backgroundColor = '#d9dfe4';
   }
-  scrollMaps(direction, devices) {
-    if (devices == 'mobile') {
+  scrollMaps(direction,devices) {
+    if (devices === 'mobile') {
       if (this.seeMoreText === true) {
+        this.seeMoreText = false;
+        this.seeLessText = true;
         $('#acordion-info').css('max-height', 'initial');
         $('.see-more-button .fa-sort-down').css({
           'padding-bottom': '5px',
           'transform': 'rotate(180deg)'
         });
-        this.seeMoreText = false;
-        this.seeLessText = true;
       } else if (this.seeMoreText === false) {
-        $('#acordion-info').css('max-height', '734px');
+        this.seeMoreText = true;
+        this.seeLessText = false;
+        this.checkHeight();
         $('.see-more-button .fa-sort-down').css({
           'padding-bottom': '0px',
           'transform': 'rotate(0deg)'
         });
-        this.seeMoreText = true;
-        this.seeLessText = false;
       }
     } else if (devices === 'desktop') {
       const elem = document.getElementById('box-of-buttons');
@@ -182,5 +182,18 @@ export class LocationsComponent implements OnInit {
     $('.map-location-desktop').addClass('zoom-map');
   }
 
+  checkHeight() {
+    for (let i = 0; i < $('.acordion-info .card button').length; i++) {
+      if ($('#static-' + i + '-header button').hasClass('collapsed')) {
+        if (this.seeMoreText === false) {
+          $('#acordion-info').css('max-height', 'initial');
+        } else {
+          $('#acordion-info').css('max-height', '310px');
+        }
+      } else {
+        $('#acordion-info').css('max-height', '610px');
+      }
+    }
+  }
 }
 
