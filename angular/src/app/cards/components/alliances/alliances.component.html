@@ -1,17 +1,21 @@
-<div class="row position-relative row-tec" [ngStyle]="{'background-image':'url(' + allianceBackground + ')'}">
-    <div class="position-absolute content-trans"></div>
-    <div class="col-md-12 pt-5 pb-2 px-2">
-        <h2 class="text-center text-white info-title">{{ allianceTitle }}</h2>
-    </div>
-    <div class="col-md-12 py-5 px-2 icons-container">
-        <div class="tec-slider">
-            <ngx-carousel [inputs]="carocarouselTile"> 
-                <ngx-tile NgxCarouselItem id="logos" *ngFor="let im of arrayLogosCustom" class="mx-auto div-slide">
-                    <div class="img-fluid" *ngFor="let img of im" [ngStyle]="{'background-image':'url(' + img.field_alliance_image.url + ')'}"></div>
-                </ngx-tile>
-                <button NgxCarouselPrev class="leftRs">&lt;</button>
-                <button NgxCarouselNext class="rightRs">&gt;</button>
-            </ngx-carousel>
+<div *ngIf="visible">
+    <div class="row position-relative row-tec" [ngStyle]="{'background-image':'url(' + allianceBackground + ')'}"
+        [id]="datosMenu.id">
+        <div class="position-absolute content-trans"></div>
+        <div class="col-md-12 pt-5 pb-2 px-2">
+            <h2 class="text-center text-white info-title">{{ allianceTitle }}</h2>
+        </div>
+        <div class="col-md-12 py-5 px-2 icons-container">
+            <div class="tec-slider">
+                <ngx-carousel [inputs]="carocarouselTile">
+                    <ngx-tile NgxCarouselItem id="logos" *ngFor="let im of arrayLogosCustom" class="mx-auto div-slide">
+                        <div class="img-fluid" *ngFor="let img of im"
+                            [ngStyle]="{'background-image':'url(' + img.field_alliance_image.url + ')'}"></div>
+                    </ngx-tile>
+                    <button NgxCarouselPrev class="leftRs">&lt;</button>
+                    <button NgxCarouselNext class="rightRs">&gt;</button>
+                </ngx-carousel>
+            </div>
         </div>
     </div>
 </div>
