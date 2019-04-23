@@ -132,7 +132,6 @@ export class ProjectFilterComponent implements OnInit {
 
   organizeGrid() {
     var sizeOfBox = Math.round(((window.innerWidth) / 3));
-    console.log('sizeOfBox', sizeOfBox);
     var size = window.innerWidth;
 
     if (size < 767) {
@@ -161,8 +160,7 @@ export class ProjectFilterComponent implements OnInit {
           var slotDimensions = array2D(rowCount);
           var newSlot, topSlot, leftSlot, slotRow, slotCol;
           items.forEach(function (item, index) {
-            console.log( Math.round(item._height));
-            console.log(Math.round(item._width));
+            
             newSlot = {
               left: 0,
               top: 0,
