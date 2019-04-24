@@ -46,16 +46,19 @@ function adf_menu_form_alter(&$form, $form_state, $form_id) {
     $form['suggested_items'][1] = [
       '#type' => 'number',
       '#title' => t('Items sugeridos Nivel 1'),
+      '#description' => t('Deje este valor en (0) cero para deshabilitar esta sugerencia'),
       '#default_value' => $suggested_items[1],
     ];
     $form['suggested_items'][2] = [
       '#type' => 'number',
       '#title' => t('Items sugeridos Nivel 2'),
+      '#description' => t('Deje este valor en (0) cero para deshabilitar esta sugerencia'),
       '#default_value' => $suggested_items[2],
     ];
     $form['suggested_items'][3] = [
       '#type' => 'number',
       '#title' => t('Items sugeridos Nivel 3'),
+      '#description' => t('Deje este valor en (0) cero para deshabilitar esta sugerencia'),
       '#default_value' => $suggested_items[3],
     ];
   }
