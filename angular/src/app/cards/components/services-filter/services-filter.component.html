@@ -2,19 +2,19 @@
   <div class="conteiner-2">
     <div class="div-left-side"></div>
     <div class="divIconSeparator">
-      <label>Filtrar casos de éxito</label>
+      <label>{{title}}</label>
     </div>
     <div class="div-right-side"></div>
     <div class="container-phone">
-      <label>Filtrar casos de éxito</label>
+      <label>{{title}}</label>
     </div>
   </div>
 </div>
 <div class="filter container">
   <div class="row" #divClick>
-    <div class="items col-md-3" (mouseleave)="ocultarDatos()">
-      <label for="client">Clientes</label>
-      <ng-select #clientF class="select-autocomplete" id="client" name="client" [placeholder]="clients"
+    <div class="items col-md-3" *ngIf="datos[0] != undefined || datos[1] != undefined" (mouseleave)="ocultarDatos()">
+      <label for="client">{{datos[0]?.data.category_service}}</label>
+      <ng-select #clientF class="select-autocomplete" id="client" name="client" [placeholder]="datos[1].data.category_service_placeholder"
         [allowClear]="true" [items]="listClients" [disabled]="disabled" (data)="filter($event)"
         (removed)="removedClient($event)" [(ngModel)]="selectedClient" (selected)="selected($event)"
         (typed)="typed($event)">
@@ -22,7 +22,7 @@
     </div>
     <div class="items button-all col-md-3" (click)="removedGeneral()">
       <i ngClass="icon-actu"></i>
-      <label class="margin-button">Ver todos los {{type}}</label>
+      <label class="margin-button">{{datos[4].data.button}}</label>
     </div>
   </div>
 </div>

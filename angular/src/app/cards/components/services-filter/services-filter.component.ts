@@ -12,7 +12,8 @@ declare var $: any;
 })
 
 export class ServicesFilterComponent implements OnInit {
-
+  title: string;
+  datos: any;
   public gridInfo;
   public listClients;
   public grid;
@@ -28,9 +29,11 @@ export class ServicesFilterComponent implements OnInit {
   ) {
     this.band = [];
     this.gridInfo = [];
+    this.title = '';
+    this.datos = [];
   }
   ngOnInit() {
-    this.clients = 'Filtre por Cliente';
+    this.getFilterService();
     this.getInfoServices();
     this.onResize();
   }
@@ -82,7 +85,20 @@ export class ServicesFilterComponent implements OnInit {
     }
     return list;
   }
+  getFilterService() {
+    if (this.type === 'product') {
+      this.servicesInfo.getCustomCardInformation('servicesfiltercard_2').subscribe(params => {
+        this.title = params.header[0].data.title;
+        this.datos = params.body;
+      });
+    } else if (this.type === 'service') {
+      this.servicesInfo.getCustomCardInformation('servicesfiltercard').subscribe(params => {
+        this.title = params.header[0].data.title;
+        this.datos = params.body;
+      });
+    }
 
+  }
   onResize() {
     var size = window.innerWidth;
     if (size < 767) {
