@@ -499,7 +499,7 @@ class CardBase extends BlockBase implements ContainerFactoryPluginInterface {
 
       if ($entity['type'] == 'radios') {
         $form[$key]['table_fields'][$id]['input']['#options'] = $entity['options'];
-        $form[$key]['table_fields'][$id]['input']['#default_value'] = isset($entity['value']) ? $entity['value'] : NULL;
+        $form[$key]['table_fields'][$id]['input']['#default_value'] = isset($entity['input']) ? $entity['input'] : (isset($entity['value']) ? $entity['value'] : NULL);
       }
 
       $form[$key]['table_fields'][$id]['show'] = [

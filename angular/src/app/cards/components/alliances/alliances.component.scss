@@ -11,41 +11,35 @@
     @media (min-width: 1100px) {
         background-attachment: fixed;
     }
-    .info-title {
-        font-size: 40px;
-    }
 
     .content-trans {
         background: rgba(0, 0, 0, 0.5);
         width: 100%;
         height: 100%;
     }
-
-    .icons-container {
-        min-height: 300px;  
-        .tec-slider {
-            width: 100%;
-            margin: 0 auto;
+    .info-title {
+        font-size: 40px;
+    }
+    .block-image {
+        width: 100%;
+        min-height: 300px;
+        .icons-container {
+            width:100%;
+            background-color: transparent;
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
             align-items: center;
-            .item {
-                margin: 0 auto;
-                // position: absolute;
+            @include breakpoint (desktop) {
+                padding-top: 60px;
             }
-            .div-slide {
-                margin: 0 auto;
-
-                @include mediaquery(max_960) {}
-
-                .img-slide {
-                    @include mediaquery(max_960) {}
-                }
+            @media (max-width: 1025px) {
+                padding-top: 40px;
             }
         }
     }
 }
-
 .img-fluid {
     width: 140px;
     height: 120px;
@@ -53,7 +47,6 @@
     background-position: center;
     background-size: contain;
     margin: 10px 40px;
-
     @media (max-width: 500px) {
         width: 100px;
         height: 90px;
@@ -83,14 +76,14 @@
         .icons-container {
             min-height: 322px !important;
         }
-    }       
+    }
 }
 @media screen and (max-width: 769px) {
     .row-tec {
         .icons-container {
             min-height: 422px;
         }
-    }       
+    }
  }
 
  .leftRs {
@@ -117,5 +110,15 @@
     border-radius: 999px;
     right: 0;
     visibility: hidden;
-    
+
+}
+.carousel-item>div>div {
+    transform: scale(0);
+    transition: all 3000ms ease !important;
+}
+.carousel-item.active>div>div {
+    transform: scale(1);
+}
+.carousel-item {
+    transition: all 3000ms ease !important;
 }

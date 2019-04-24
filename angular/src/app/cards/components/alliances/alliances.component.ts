@@ -32,20 +32,6 @@ export class AlliancesComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.carocarouselTile = {
-      grid: { xs: 1, sm: 1, md: 1, lg: 1, all: 0 },
-      slide: 1,
-      speed: 600,
-      interval: 3000,
-      point: {
-        visible: false,
-      },
-      load: 1,
-      loop: true,
-      touch: true,
-      easing: 'ease',
-      animation: 'lazy',
-    }
     this.getAlliance();
   }
 
