@@ -1,5 +1,5 @@
 import { CustomCardService } from '../../../services/cards/v1-card.services';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ElementRef, ViewChild } from '@angular/core';
 import { SelectComponent } from 'ng2-select';
 
 declare var Muuri: any;
@@ -12,7 +12,8 @@ declare var $: any;
 })
 
 export class ServicesFilterComponent implements OnInit {
-
+  title: string;
+  datos: any;
   public gridInfo;
   public listClients;
   public grid;
@@ -20,22 +21,26 @@ export class ServicesFilterComponent implements OnInit {
   public disabled;
   @Input() type: string;
   band: any[];
+  selectedClient: any;
+  @ViewChild('divClick') divClick: ElementRef;
 
   constructor(
     private servicesInfo: CustomCardService,
   ) {
     this.band = [];
+    this.gridInfo = [];
+    this.title = '';
+    this.datos = [];
   }
   ngOnInit() {
-    this.clients = 'Filtre por Cliente';
+    this.getFilterService();
     this.getInfoServices();
     this.onResize();
   }
   getInfoServices() {
-    var list = [];
     return this.servicesInfo.getCustomCardInformation('allproductsandservicescard').subscribe(items => {
-      items.data =  this.servicesInfo.addImageField(items.data, ['short_image']);
-      items.data =  this.servicesInfo.addImageField(items.data, ['large_image']);
+      items.data = this.servicesInfo.addImageField(items.data, ['short_image']);
+      items.data = this.servicesInfo.addImageField(items.data, ['large_image']);
       for (let index = 0; index < items.data.length; index++) {
         if (items.data[index].type === this.type) {
           this.band.push(items.data[index]);
@@ -46,29 +51,61 @@ export class ServicesFilterComponent implements OnInit {
         this.gridInfo[index].type = '/' + this.gridInfo[index].type;
       }
 
-      for (let i = 0; i < this.gridInfo.length; i++) {
-        for (let j = 0; j < this.gridInfo[i].clients.length; j++) {
+      this.listClients = this.getFilterList('clients', 'clients-');
+    });
+  }
+  getFilterList(campo, id) {
+    var list: any[] = [];
+    for (let i = 0; i < this.gridInfo.length; i++) {
+      if (this.gridInfo[i][campo] !== undefined) {
+        for (let j = 0; j < this.gridInfo[i][campo].length; j++) {
           if (list.length === 0) {
-            list.push(this.gridInfo[i].clients[j].label);
+            let obj = {
+              'id': [id] + this.gridInfo[i][campo][j].id,
+              'text': this.gridInfo[i][campo][j].label
+            }
+            list.push(obj);
           } else {
-            if (list.indexOf(this.gridInfo[i].clients[j].label) === -1) {
-              list.push(this.gridInfo[i].clients[j].label);
+            let cont = 0;
+            for (let z = 0; z < list.length; z++) {
+              if (list[z].text === this.gridInfo[i][campo][j].label) {
+                cont++;
+              }
+            }
+            if (cont === 0) {
+              let obj = {
+                'id': [id] + this.gridInfo[i][campo][j].id,
+                'text': this.gridInfo[i][campo][j].label
+              }
+              list.push(obj);
             }
           }
         }
-        this.listClients = list;
       }
-    });
+    }
+    return list;
+  }
+  getFilterService() {
+    if (this.type === 'product') {
+      this.servicesInfo.getCustomCardInformation('servicesfiltercard_2').subscribe(params => {
+        this.title = params.header[0].data.title;
+        this.datos = params.body;
+      });
+    } else if (this.type === 'service') {
+      this.servicesInfo.getCustomCardInformation('servicesfiltercard').subscribe(params => {
+        this.title = params.header[0].data.title;
+        this.datos = params.body;
+      });
+    }
+
   }
   onResize() {
     var size = window.innerWidth;
     if (size < 767) {
       this.organizeGrid();
     } else {
-      var heightOfBox = ((window.innerWidth) / 3) + 'px';
+      var heightOfBox = Math.round(((window.innerWidth) / 3)) + 'px';
       $('.muuri-item').css('height', heightOfBox);
-      var heightOfBoxLarge = (((window.innerWidth) / 3) * 2) + 'px';
-      $('.item.box-5').css('height', heightOfBoxLarge);
     }
   }
   showDescription(eve, i) {
@@ -93,6 +130,7 @@ export class ServicesFilterComponent implements OnInit {
     }
   }
   organizeGrid() {
+    var sizeOfBox = Math.round(((window.innerWidth) / 3));
     var size = window.innerWidth;
     if (size < 767) {
       this.grid = new Muuri('.grid', {
@@ -123,18 +161,20 @@ export class ServicesFilterComponent implements OnInit {
             newSlot = {
               left: 0,
               top: 0,
-              height: item._height,
-              width: item._width
+              height: Math.round(item._height),
+              width: Math.round(item._width)
             };
             slotCol = index % colCount;
             var numRow2 = (index / colCount).toString();
             slotRow = parseInt(numRow2, 10);
             if (topRowExists(slotRow)) { // add slot to row below
               topSlot = slotDimensions[slotRow - 1][slotCol];
-              if (index === 10 || index === 17) {
-                newSlot.top = topSlot.top + topSlot.height + 640;
+              if (index === 10 && sizeOfBox === 512) {
+                newSlot.top = topSlot.top + topSlot.height + sizeOfBox * 1.25;
+              } else if (index === 10 || index === 17) {
+                newSlot.top = topSlot.top + topSlot.height + sizeOfBox;
               } else if (index === 20) {
-                newSlot.top = topSlot.top + topSlot.height - 640;
+                newSlot.top = topSlot.top + topSlot.height - sizeOfBox;
               } else {
                 newSlot.top = topSlot.top + topSlot.height;
               }
@@ -142,7 +182,7 @@ export class ServicesFilterComponent implements OnInit {
             if (leftColExists(slotCol)) { // add slot to rightward col
               leftSlot = slotDimensions[slotRow][slotCol - 1];
               if (index === 8 || index === 17 || index === 20) {
-                newSlot.left = (leftSlot.left + leftSlot.width) - 640;
+                newSlot.left = (leftSlot.left + leftSlot.width) - sizeOfBox;
               } else {
                 newSlot.left = leftSlot.left + leftSlot.width;
               }
@@ -170,22 +210,59 @@ export class ServicesFilterComponent implements OnInit {
       }
       return array;
     }
+    this.addFilterClass('clients', 'clients-');
+  }
+  addFilterClass(campo, id) {
     for (let i = 0; i < this.gridInfo.length; i++) {
-      for (let j = 0; j < this.gridInfo[i].clients.length; j++) {
-        $('.item.box-' + i).addClass(this.gridInfo[i].clients[j].label);
+      if (this.gridInfo[i][campo] !== undefined) {
+        for (let j = 0; j < this.gridInfo[i][campo].length; j++) {
+          $('.item.box-' + i).addClass([id] + this.gridInfo[i][campo][j].id);
+        }
       }
     }
   }
   filter(eve) {
     if (eve.id !== undefined) {
       this.grid.filter('.' + eve.id);
+      this.ocultarDatos();
     }
   }
 
   public removedClient(value: any): void {
+    this.addFilterrClass();
     this.gridInfo = [];
     this.band = [];
     this.getInfoServices();
     this.onResize();
+  }
+
+  public removedGeneral() {
+    this.addFilterrClass();
+    this.selectedClient = [];
+    this.gridInfo = [];
+    this.band = [];
+    this.getInfoServices();
+    this.onResize();
+  }
+
+  public selected(value: any): void {
+    this.addFilterrClass();
+    this.ocultarDatos();
+  }
+
+  public typed(value: any): void {
+    this.removeFilterClass();
+  }
+
+  ocultarDatos() {
+    this.divClick.nativeElement.click();
+  }
+
+  addFilterrClass() {
+    $('#client').addClass('no-strong');
+  }
+
+  removeFilterClass() {
+    $('#client').removeClass('no-strong');
   }
 }

@@ -9,6 +9,7 @@ declare var $: any;
   styleUrls: ['./locations.component.scss']
 })
 export class LocationsComponent implements OnInit {
+  public zoom: boolean;
   public items = [];
   public title: string;
   public imageIcon = {
@@ -71,6 +72,7 @@ export class LocationsComponent implements OnInit {
   ) {
     this.locations_data = [];
     this.cant_locations_data = false;
+    this.zoom = false;
   }
   ngOnInit() {
     this.service.getCustomCardInformation('locationcard_2').subscribe((params) => {
@@ -134,7 +136,7 @@ export class LocationsComponent implements OnInit {
     }
     document.getElementById(index + '').style.backgroundColor = '#d9dfe4';
   }
-  scrollMaps(direction,devices) {
+  scrollMaps(direction, devices) {
     if (devices === 'mobile') {
       if (this.seeMoreText === true) {
         this.seeMoreText = false;
@@ -172,6 +174,22 @@ export class LocationsComponent implements OnInit {
       }
     }
   }
+
+  mostrarZoom() {
+    if (this.zoom === false) {
+      this.zoom = true;
+      $('.map-location-desktop').removeClass('zoom-map');
+    } else if (this.zoom === true) {
+      this.zoom = false;
+      $('.map-location-desktop').addClass('zoom-map');
+    }
+
+  }
+
+  ocultarZoom() {
+    $('.map-location-desktop').addClass('zoom-map');
+  }
+
   checkHeight() {
     for (let i = 0; i < $('.acordion-info .card button').length; i++) {
       if ($('#static-' + i + '-header button').hasClass('collapsed')) {
@@ -181,7 +199,7 @@ export class LocationsComponent implements OnInit {
           $('#acordion-info').css('max-height', '310px');
         }
       } else {
-        $('#acordion-info').css('max-height', '610px');
+        $('#acordion-info').css('max-height', 'auto');
       }
     }
   }

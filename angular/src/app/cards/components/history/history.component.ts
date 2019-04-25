@@ -29,12 +29,6 @@ export class HistoryComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.datosMenu = {
-      label: 'HISTORIA',
-      id: 'a2',
-      url: ''
-    };
-    this.propagar.emit(this.datosMenu);
     this.getHistoryService();
   }
 
@@ -90,6 +84,12 @@ export class HistoryComponent implements OnInit {
 
       if (this.title !== '' && params.data.length !== 0) {
         this.visible = true;
+        this.datosMenu = {
+          label: 'HISTORIA',
+          id: 'a2',
+          url: ''
+        };
+        this.propagar.emit(this.datosMenu);
       }
 
       window.timeline = new TL.Timeline('timeline', dataObject, additionalOptions);
