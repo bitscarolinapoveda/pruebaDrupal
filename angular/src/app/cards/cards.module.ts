@@ -32,7 +32,6 @@ import { KnowusComponent } from './components/knowus/knowus.component';
 import { TeamComponent } from './components/team/team.component';
 import { AchievementsComponent } from './components/achievements/achievements.component';
 import { TestimoniesComponent } from './components/testimonies/testimonies.component';
-// import { TecnologiesProjectserviceComponent } from './components/tecnologies-projectservice/tecnologies-projectservice.component';
 import { HistoryComponent } from './components/history/history.component';
 import { FilterComponent } from './components/filter/filter.component';
 import { ServicesFilterComponent } from './components/services-filter/services-filter.component';
@@ -92,7 +91,6 @@ import { LoadDirective } from './components/client-proserv/load.directive';
     KnowusComponent,
     TeamComponent,
     AchievementsComponent,
-    // TecnologiesProjectserviceComponent,
     HistoryComponent,
     TestimoniesComponent,
     FilterComponent,
@@ -131,7 +129,6 @@ import { LoadDirective } from './components/client-proserv/load.directive';
     KnowusComponent,
     TeamComponent,
     AchievementsComponent,
-    // TecnologiesProjectserviceComponent,
     HistoryComponent,
     TestimoniesComponent,
     FilterComponent,

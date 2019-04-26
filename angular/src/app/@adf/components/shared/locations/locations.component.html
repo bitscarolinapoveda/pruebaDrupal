@@ -82,7 +82,8 @@
                 </div>
             </div>
         </div>
-        <div class=" map-location-desktop" [ngClass]="cant_locations_data?'col-12':'col-8'">
+        <div class=" map-location-desktop zoom-map" [ngClass]="cant_locations_data?'col-12':'col-8'"
+            (click)="mostrarZoom()" (mouseleave)="ocultarZoom()">
             <agm-map [latitude]="lat" [longitude]="lng" [styles]="bitsTypeMap" [zoom]="defaultZoomMap"
                 [ngStyle]="{'width': widthOftheMap}" [backgroundColor]="colorWhileLoad" style="height: 519px;">
                 <agm-marker [latitude]="lat" [longitude]="lng" [iconUrl]="imageIcon">

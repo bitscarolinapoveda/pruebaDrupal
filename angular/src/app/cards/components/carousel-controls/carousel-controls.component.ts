@@ -33,12 +33,6 @@ export class CarouselControlsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.datosMenu = {
-      label: 'RECONOCIMIENTOS',
-      id: 'a3',
-      url: ''
-    };
-    this.propagar.emit(this.datosMenu);
     this.getAchievementsCarouselItems();
     this.CarouselControlArray = [0, 1, 2, 3];
     this.carocarouselTile = {
@@ -73,6 +67,12 @@ export class CarouselControlsComponent implements OnInit {
       this.CarouselControlArray = Object.keys(items.data).map(function (key) { return items.data[key]; });
       if (this.caroseltitle !== '' && this.CarouselControlArray.length !== 0) {
         this.visible = true;
+        this.datosMenu = {
+          label: 'RECONOCIMIENTOS',
+          id: 'a3',
+          url: ''
+        };
+        this.propagar.emit(this.datosMenu);
       }
     });
   }

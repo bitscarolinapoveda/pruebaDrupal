@@ -22,12 +22,6 @@ export class WhybitsamericasComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.datosMenu = {
-      label: 'POR QUE BITS AMERICAS',
-      id: 'a1',
-      url: ''
-    };
-    this.propagar.emit(this.datosMenu);
     this.getWhybitsInfo();
   }
 
@@ -39,6 +33,12 @@ export class WhybitsamericasComponent implements OnInit {
       this.whyData = items.data;
       if (this.whyTitle !== '' && this.whyData.length !== 0) {
         this.visible = true;
+        this.datosMenu = {
+          label: 'POR QUE BITS AMERICAS',
+          id: 'a1',
+          url: ''
+        };
+        this.propagar.emit(this.datosMenu);
       }
     });
   }

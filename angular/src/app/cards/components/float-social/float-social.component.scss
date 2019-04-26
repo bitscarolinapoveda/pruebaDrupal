@@ -88,7 +88,7 @@
       margin-bottom: 0;
 
       #openModal {
-        position: relative;
+        position: absolute;
 
         .fa-li {
           left: -1px;
@@ -121,7 +121,7 @@
     margin-top: 0 !important;
   }
   .envolope.bottom-right {
-    right: 0;
+    right: 0;   
   }
 }
 

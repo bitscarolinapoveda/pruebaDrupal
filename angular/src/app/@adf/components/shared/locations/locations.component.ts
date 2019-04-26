@@ -9,6 +9,7 @@ declare var $: any;
   styleUrls: ['./locations.component.scss']
 })
 export class LocationsComponent implements OnInit {
+  public zoom: boolean;
   public items = [];
   public title: string;
   public imageIcon = {
@@ -71,6 +72,7 @@ export class LocationsComponent implements OnInit {
   ) {
     this.locations_data = [];
     this.cant_locations_data = false;
+    this.zoom = false;
   }
   ngOnInit() {
     this.service.getCustomCardInformation('locationcard_2').subscribe((params) => {
@@ -139,7 +141,7 @@ export class LocationsComponent implements OnInit {
     }
     document.getElementById(index + '').style.backgroundColor = '#d9dfe4';
   }
-  scrollMaps(direction,devices) {
+  scrollMaps(direction, devices) {
     if (devices === 'mobile') {
       if (this.locations_data.length < 3) {
         $('.accordion .card:last-of-type').addClass('padding-off');
@@ -183,6 +185,22 @@ export class LocationsComponent implements OnInit {
       }
     }
   }
+
+  mostrarZoom() {
+    if (this.zoom === false) {
+      this.zoom = true;
+      $('.map-location-desktop').removeClass('zoom-map');
+    } else if (this.zoom === true) {
+      this.zoom = false;
+      $('.map-location-desktop').addClass('zoom-map');
+    }
+
+  }
+
+  ocultarZoom() {
+    $('.map-location-desktop').addClass('zoom-map');
+  }
+
   checkHeight() {
     if (this.locations_data.length > 3) {
       $(':host /deep/ .accordion .card:last-of-type').css('padding-bottom','49px');

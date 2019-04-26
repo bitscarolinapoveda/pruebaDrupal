@@ -21,12 +21,6 @@ export class KnowusComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.datosMenu = {
-      label: 'CONOZCANOS',
-      id: 'a5',
-      url: ''
-    };
-    this.propagar.emit(this.datosMenu);
     this.getKnowusData();
   }
 
@@ -38,6 +32,12 @@ export class KnowusComponent implements OnInit {
       this.list = items.data;
       if (this.title !== '' && this.list.length !== 0) {
         this.visible = true;
+        this.datosMenu = {
+          label: 'CONOZCANOS',
+          id: 'a5',
+          url: ''
+        };
+        this.propagar.emit(this.datosMenu);
       }
     });
   }

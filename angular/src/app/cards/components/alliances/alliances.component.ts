@@ -42,6 +42,15 @@ export class AlliancesComponent implements OnInit {
       items.data = this.alliance.addImageField(items.data, ['field_alliance_image']);
       this.allianceArrayLogos = items.data;
       this.arrayLogosCustom = this.alliance.organizeInfoForCarousel(this.allianceArrayLogos);
+      if (this.allianceTitle !== '' && this.allianceArrayLogos.length !== 0) {
+        this.visible = true;
+        this.datosMenu = {
+          label: 'ALIADOS',
+          id: 'a4',
+          url: ''
+        };
+        this.propagar.emit(this.datosMenu);
+      }
     });
   }
 }
