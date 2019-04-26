@@ -93,6 +93,11 @@ export class LocationsComponent implements OnInit {
       this.addressCity = this.items[0].field_address;
       this.telephoneCity = this.items[0].field_telephone;
       this.locations_data = this.items;
+      if (this.locations_data.length < 3 ) {
+        $('#acordion-info').addClass('one-item');
+      } else {
+        $('#acordion-info').addClass('more-item');
+      }
       if (this.locations_data.length < 4) {
         this.cant_locations_data = true;
       } else {
@@ -136,10 +141,16 @@ export class LocationsComponent implements OnInit {
   }
   scrollMaps(direction,devices) {
     if (devices === 'mobile') {
+      if (this.locations_data.length < 3) {
+        $('.accordion .card:last-of-type').addClass('padding-off');
+      } else {
+        $('.accordion .card:last-of-type').addClass('padding-on');
+      }
       if (this.seeMoreText === true) {
         this.seeMoreText = false;
         this.seeLessText = true;
-        $('#acordion-info').css('max-height', 'initial');
+        $('#acordion-info').removeClass('see-more-true');
+        $('#acordion-info').addClass('auto-height');
         $('.see-more-button .fa-sort-down').css({
           'padding-bottom': '5px',
           'transform': 'rotate(180deg)'
@@ -173,17 +184,33 @@ export class LocationsComponent implements OnInit {
     }
   }
   checkHeight() {
-    for (let i = 0; i < $('.acordion-info .card button').length; i++) {
-      if ($('#static-' + i + '-header button').hasClass('collapsed')) {
-        if (this.seeMoreText === false) {
-          $('#acordion-info').css('max-height', 'initial');
+    if (this.locations_data.length > 3) {
+      $(':host /deep/ .accordion .card:last-of-type').css('padding-bottom','49px');
+      for (let i = 0; i < $('.acordion-info.locations .card button').length; i++) {
+        if ($('#static-' + i + '-header button').hasClass('collapsed')) {
+          if (this.seeMoreText === false) {
+            $('#acordion-info').removeClass('see-more-true');
+            $('#acordion-info').addClass('auto-height');
+          } else {
+            $('#acordion-info').removeClass('auto-height');
+            $('#acordion-info').addClass('see-more-true');
+          }
         } else {
-          $('#acordion-info').css('max-height', '310px');
+          if (this.seeMoreText === false) {
+            $('#acordion-info').removeClass('see-more-true');
+            $('#acordion-info').addClass('auto-height');
+            break;
+          } else {
+            if (!$('#static-0-header button').hasClass('collapsed') || !$('#static-1-header button').hasClass('collapsed')) {
+              $('#acordion-info').removeClass('see-more-true');
+              $('#acordion-info').removeClass('auto-height');
+            } else {
+              $('#acordion-info').addClass('see-more-true');
+              $('#acordion-info').removeClass('auto-height');
+            }
+          }
         }
-      } else {
-        $('#acordion-info').css('max-height', '610px');
       }
     }
   }
 }
-

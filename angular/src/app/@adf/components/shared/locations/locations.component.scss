@@ -78,8 +78,11 @@
     }
   }
 }
-:host /deep/ .accordion .card:last-of-type {
+:host /deep/ .accordion .card.padding-on:last-of-type {
   padding-bottom: 49px;
+}
+:host /deep/ .accordion .card.padding-off:last-of-type {
+  padding-bottom: 0px;
 }
 
 #accordion-section-mobile {
@@ -87,10 +90,21 @@
   padding: 0;
   position: relative;
   .acordion-info {
-    max-height: 610px;
     overflow-y: hidden;
     scroll-behavior: smooth;
     transition: all 1s ease;
+  }
+  .acordion-info.one-item {
+    height: auto;
+  }
+  .acordion-info.more-item {
+    height: 610px;
+  }
+  .acordion-info.see-more-true {
+    height: 310px !important;
+  }
+  .acordion-info.auto-height {
+    height: auto !important;
   }
   .see-more-button {
     cursor: pointer;
@@ -104,7 +118,7 @@
     width: 100%;
     height: 65px;
     background-color: #f2f4f6;
-    border-top: 1px solid #cccccc;  
+    border-top: 1px solid #cccccc;
     .text-see-more {
       font-family: 'Open Sans Codensed';
       font-size: 16px;
@@ -115,7 +129,7 @@
       color: #002b49;
       transition: all 1s ease;
       font-size: 23px;
-    } 
+    }
   }
   .location-block.container {
     width: 100%;

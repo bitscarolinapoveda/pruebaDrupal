@@ -166,6 +166,7 @@ export class CustomCardService {
 
   // Organiza el carrusel de a 4 y los espacios faltantes los llena aleatoriamente
   organizeInfoForCarousel(carouselInfo) {
+    console.log(carouselInfo.length);
     var arrayBox = [];
     var number = carouselInfo.length / 4;
     if (carouselInfo.length % 4 === 0) {
@@ -176,30 +177,43 @@ export class CustomCardService {
     for (let i = 0; i < numberOfBoxes; i++) {
       arrayBox[i] = [];
     }
-    var vuelta = 0;
-    var hasta = 4;
-    for (let i = 0; i < arrayBox.length; i++) {
-      for (let j = vuelta; j < hasta; j++) {
-        if (carouselInfo[j] === undefined) {
-          while (arrayBox[i].length < 4) {
-            var random = carouselInfo[Math.floor(Math.random() * carouselInfo.length)];
-            var cont = 0;
-            for (let c = 0; c < arrayBox[i].length; c++) {
-              if (arrayBox[i][c].nid === random.nid) {
-                cont ++;
+    if(carouselInfo.length > 4) {
+      var vuelta = 0;
+      var hasta = 4;
+      for (let i = 0; i < arrayBox.length; i++) {
+        for (let j = vuelta; j < hasta; j++) {
+          if (carouselInfo[j] === undefined) {
+            while (arrayBox[i].length < 4) {
+              var random = carouselInfo[Math.floor(Math.random() * carouselInfo.length)];
+              var cont = 0;
+              for (let c = 0; c < arrayBox[i].length; c++) {
+                if (arrayBox[i][c].nid === random.nid) {
+                  cont ++;
+                }
+              }
+              if (cont === 0) {
+                arrayBox[i].push(random);
               }
             }
-            if (cont === 0) {
-              arrayBox[i].push(random);
-            }
+          } else {
+            arrayBox[i].push(carouselInfo[j]);
           }
-        } else {
-          arrayBox[i].push(carouselInfo[j]);
+        }
+        vuelta = vuelta + 4;
+        hasta = hasta + 4;
+      }
+    } else {
+      for (let i = 0; i < arrayBox.length; i++) {
+        for (let j = 0; j < 4; j++) {
+          if (carouselInfo[j] != undefined) {
+            arrayBox[i].push(carouselInfo[j]);
+          } else {
+            break;
+          }
         }
       }
-      vuelta = vuelta + 4;
-      hasta = hasta + 4;
     }
+    console.log(arrayBox);
     return arrayBox;
   }
 }
@@ -218,4 +232,3 @@ export interface Blurb {
   title: string;
   description: string;
 }
-
