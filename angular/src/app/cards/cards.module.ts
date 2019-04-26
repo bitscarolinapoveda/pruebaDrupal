@@ -57,7 +57,6 @@ import { SafeCssPipe } from '../pipes/safecss.pipe';
 // import { ClientProServComponent } from './components/client-proserv/client-proserv.component';
 import { WorkusComponent } from './components/workus/workus.component';
 import { OrganizeGridMuuriDirective } from '../directives/organize-grid-muuri.directive';
-import { LoadDirective } from './components/client-proserv/load.directive';
 
 
 @NgModule({
@@ -96,7 +95,6 @@ import { LoadDirective } from './components/client-proserv/load.directive';
     FilterComponent,
     ServicesFilterComponent,
     OrganizeGridMuuriDirective,
-    LoadDirective,
     OurWorkComponent,
     ScreenshotsComponent,
     ProjectFilterComponent
