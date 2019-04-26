@@ -36,6 +36,14 @@
         left: initial;
     }
 }
+.contenedor.one-items {
+  width: 54%;
+  .item {
+    width: 100% !important
+  };
+}
+.contenedor.two-items .item {width: 50% !important};
+.contenedor.three-items .item {width: 33% !important};
 
 .tile {
     float: left;

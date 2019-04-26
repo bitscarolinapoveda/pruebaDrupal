@@ -41,21 +41,24 @@ function adf_menu_form_alter(&$form, $form_state, $form_id) {
     $form['suggested_items'] = [
       '#type' => 'details',
       '#tree' => TRUE,
-      '#title' => t('Items sugeridos por Nivel'),
+      '#title' => t('Suggested items by level'),
     ];
     $form['suggested_items'][1] = [
       '#type' => 'number',
-      '#title' => t('Items sugeridos Nivel 1'),
+      '#title' => t('Suggested items Level 1'),
+      '#description' => t('Leave this value at (0) zero to disable this suggestion'),
       '#default_value' => $suggested_items[1],
     ];
     $form['suggested_items'][2] = [
       '#type' => 'number',
-      '#title' => t('Items sugeridos Nivel 2'),
+      '#title' => t('Suggested items Level 2'),
+      '#description' => t('Leave this value at (0) zero to disable this suggestion'),
       '#default_value' => $suggested_items[2],
     ];
     $form['suggested_items'][3] = [
       '#type' => 'number',
-      '#title' => t('Items sugeridos Nivel 3'),
+      '#title' => t('Suggested items Level 3'),
+      '#description' => t('Leave this value at (0) zero to disable this suggestion'),
       '#default_value' => $suggested_items[3],
     ];
   }
@@ -74,15 +77,19 @@ function limit_menu_form_validate($form, $form_state) {
 
   if( empty( $form_state->getUserInput()) && !empty($suggested_items)){
     $limits = '';
-    $nivel = '-';
+    $level = '-';
     foreach ($suggested_items as $key => $value) {
       if($value > 0){
-        $limits .= '<br>'.$nivel.'Nivel '.$key.' limite sugerido '.$value.' items.';
+        $limits .= t('<br> @level Level @key suggested limit @value items.', array(
+          '@level' => $level,
+          '@key' => $key,
+          '@value' => $value,
+        ));
       }
-        $nivel = $nivel.'-';
+        $level = $level.'-';
     }
     if(!empty($limits)){
-      drupal_set_message(t('Para una correcta visualizacion del menu se recomienda limitar los items: '. $limits));
+      drupal_set_message(t('For a correct visualization of the menu it is recommended to limit the items: '. $limits));
     }
 
     foreach ($form_links as $key => $item) {
@@ -92,7 +99,10 @@ function limit_menu_form_validate($form, $form_state) {
         if (!empty($suggested_items[$depth])){
           if($subtree > $suggested_items[$depth]){
             $title = $item['#item']->link->getTitle();
-            drupal_set_message(t('El item de menu: '.$title.' excede el limite de ('.$suggested_items[$depth].') subitems sugerido' ),'warning');
+            drupal_set_message(t('The menu item: %title exceeds the limit of (@suggested) suggested subitems.' , array(
+              '%title' => $title,
+              '@suggested' => $suggested_items[$depth],
+            )),'warning');
           }
         }
       }
