@@ -818,14 +818,14 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /var/www/bitsamericas/webSiteBitsD8/angular/node_modules/bootstrap/dist/css/bootstrap.min.css */"./node_modules/bootstrap/dist/css/bootstrap.min.css");
-__webpack_require__(/*! /var/www/bitsamericas/webSiteBitsD8/angular/node_modules/ngx-toastr/toastr.css */"./node_modules/ngx-toastr/toastr.css");
-__webpack_require__(/*! /var/www/bitsamericas/webSiteBitsD8/angular/node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss */"./node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss");
-__webpack_require__(/*! /var/www/bitsamericas/webSiteBitsD8/angular/node_modules/@fortawesome/fontawesome-free/scss/solid.scss */"./node_modules/@fortawesome/fontawesome-free/scss/solid.scss");
-__webpack_require__(/*! /var/www/bitsamericas/webSiteBitsD8/angular/node_modules/@fortawesome/fontawesome-free/scss/regular.scss */"./node_modules/@fortawesome/fontawesome-free/scss/regular.scss");
-__webpack_require__(/*! /var/www/bitsamericas/webSiteBitsD8/angular/node_modules/@fortawesome/fontawesome-free/scss/brands.scss */"./node_modules/@fortawesome/fontawesome-free/scss/brands.scss");
-__webpack_require__(/*! /var/www/bitsamericas/webSiteBitsD8/angular/node_modules/angular-bootstrap-md/scss/bootstrap/bootstrap.scss */"./node_modules/angular-bootstrap-md/scss/bootstrap/bootstrap.scss");
-module.exports = __webpack_require__(/*! /var/www/bitsamericas/webSiteBitsD8/angular/src/styles.scss */"./src/styles.scss");
+__webpack_require__(/*! /var/www/webSiteBitsD8/angular/node_modules/bootstrap/dist/css/bootstrap.min.css */"./node_modules/bootstrap/dist/css/bootstrap.min.css");
+__webpack_require__(/*! /var/www/webSiteBitsD8/angular/node_modules/ngx-toastr/toastr.css */"./node_modules/ngx-toastr/toastr.css");
+__webpack_require__(/*! /var/www/webSiteBitsD8/angular/node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss */"./node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss");
+__webpack_require__(/*! /var/www/webSiteBitsD8/angular/node_modules/@fortawesome/fontawesome-free/scss/solid.scss */"./node_modules/@fortawesome/fontawesome-free/scss/solid.scss");
+__webpack_require__(/*! /var/www/webSiteBitsD8/angular/node_modules/@fortawesome/fontawesome-free/scss/regular.scss */"./node_modules/@fortawesome/fontawesome-free/scss/regular.scss");
+__webpack_require__(/*! /var/www/webSiteBitsD8/angular/node_modules/@fortawesome/fontawesome-free/scss/brands.scss */"./node_modules/@fortawesome/fontawesome-free/scss/brands.scss");
+__webpack_require__(/*! /var/www/webSiteBitsD8/angular/node_modules/angular-bootstrap-md/scss/bootstrap/bootstrap.scss */"./node_modules/angular-bootstrap-md/scss/bootstrap/bootstrap.scss");
+module.exports = __webpack_require__(/*! /var/www/webSiteBitsD8/angular/src/styles.scss */"./src/styles.scss");
 
 
 /***/ })
