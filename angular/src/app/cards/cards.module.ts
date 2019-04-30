@@ -50,14 +50,13 @@ import 'hammerjs';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SelectModule } from 'ng2-select';
 import { CarouselModule, WavesModule } from 'angular-bootstrap-md';
+import { DeferLoadModule } from '@trademe/ng-defer-load';
 
 // Pipes
 import { SafeHtmlPipe } from '../pipes/safehtml.pipe';
 import { SafeCssPipe } from '../pipes/safecss.pipe';
-// import { ClientProServComponent } from './components/client-proserv/client-proserv.component';
 import { WorkusComponent } from './components/workus/workus.component';
 import { OrganizeGridMuuriDirective } from '../directives/organize-grid-muuri.directive';
-import { LoadDirective } from './components/client-proserv/load.directive';
 
 
 @NgModule({
@@ -86,7 +85,6 @@ import { LoadDirective } from './components/client-proserv/load.directive';
     CardImgTextComponent,
     BlogComponent,
     ClientProjectImedicalComponent,
-    // ClientProServComponent,
     WhybitsamericasComponent,
     KnowusComponent,
     TeamComponent,
@@ -96,10 +94,9 @@ import { LoadDirective } from './components/client-proserv/load.directive';
     FilterComponent,
     ServicesFilterComponent,
     OrganizeGridMuuriDirective,
-    LoadDirective,
     OurWorkComponent,
     ScreenshotsComponent,
-    ProjectFilterComponent
+    ProjectFilterComponent,
   ],
   exports: [
     CarouselItemComponent,
@@ -124,7 +121,6 @@ import { LoadDirective } from './components/client-proserv/load.directive';
     CardImgTextComponent,
     BlogComponent,
     ClientProjectImedicalComponent,
-    // ClientProServComponent,
     WhybitsamericasComponent,
     KnowusComponent,
     TeamComponent,
@@ -156,7 +152,8 @@ import { LoadDirective } from './components/client-proserv/load.directive';
     MessageModule,
     RecaptchaModule.forRoot(),
     CarouselModule.forRoot(),
-    WavesModule.forRoot()
+    WavesModule.forRoot(),
+    DeferLoadModule
   ],
   providers: [NodeService, CarouselModule, WavesModule]
 })
