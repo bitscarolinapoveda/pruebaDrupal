@@ -49,8 +49,8 @@ export class HistoryComponent implements OnInit {
         const element = {
           'media': {
             'url': datos[index].field_media_url.url,
-            'caption': datos[index].field_media_caption,
-            'credit': datos[index].field_media_credit,
+            /* 'caption': datos[index].field_media_caption,
+            'credit': datos[index].field_media_credit,*/
             'alt': datos[index].field_media_url.alt
           },
           'start_date': {
