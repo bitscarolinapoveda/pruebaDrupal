@@ -61,14 +61,14 @@ export class HistoryComponent implements OnInit {
             'minute': fecha_start.getMinutes(),
             'second': fecha_start.getSeconds()
           },
-          'end_date': {
+          /* 'end_date': {
             'month': fecha_end.getMonth(),
             'day': fecha_end.getDate(),
             'year': fecha_end.getFullYear(),
             'hour': fecha_end.getHours(),
             'minute': fecha_end.getMinutes(),
             'second': fecha_end.getSeconds()
-          },
+          }, */
           'text': {
             'headline': datos[index].title,
             'text': datos[index].field_text
