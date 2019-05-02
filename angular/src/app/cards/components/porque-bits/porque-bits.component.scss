@@ -1,12 +1,11 @@
 @import './src/assets/scss/mixin.scss';
 
 .WhyBits {
-    position: relative;
     width: 100%;
     margin-top: 39px;
 
     @include breakpoint(desktop) {
-        width: 98%;
+        width: 100%;
     }
 
     @include breakpoint(tablet) {}
@@ -16,10 +15,6 @@
             -webkit-padding-start: 0;
             justify-content: center;
             margin: 0 2%;
-
-            @include breakpoint(desktop) {
-                margin-left: 9%;
-            }
 
             @include breakpoint(tablet) {}
 
@@ -64,7 +59,10 @@
 
                 img {
                     width: 100px;
-                    height: 100px;                    
+                    height: 100px;  
+                    opacity: 0;
+                    transform: translate(0,30px);
+                    transition: all 300ms ease;               
                 }
             }
 
