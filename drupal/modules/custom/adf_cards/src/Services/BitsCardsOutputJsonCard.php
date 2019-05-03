@@ -8,6 +8,7 @@ use Drupal\block\Entity\Block;
 use Drupal\adf_cards\Services\ExportConfigCardService;
 use Drupal\taxonomy\Entity\Term;
 use Drupal\image\Entity\ImageStyle;
+use Drupal\responsive_image\Entity\ResponsiveImageStyle;
 use Drupal\rest\ResourceResponse;
 use Drupal\Core\Cache\CacheableMetadata;
 
@@ -143,18 +144,30 @@ class BitsCardsOutputJsonCard {
               $imageData = $node->get($field)->getValue();
               foreach ((array) $imageData as $key => $value) {
                 $file = File::load($imageData[$key]['target_id']);
-                $style_image = $fields[$field]['settings']['image_style']; //trae el estilo de imagen asociado
-                if (!empty($style_image)) {
+
+                if (!empty($fields[$field]['settings']['image_style'])) {
+                  $style_image = $fields[$field]['settings']['image_style']; //trae el estilo de imagen asociado
                   $data[$field][$key] = [
                     'url' => ImageStyle::load($style_image)->buildUrl($file->getFileUri()), // crea la url con el estilo de imagen asociado
+                    'alt' => $imageData[$key]['alt'],
                   ];
+                }
+                elseif (!empty($fields[$field]['settings']['responsive_image_style'])) {
+                  $responsive_image = ResponsiveImageStyle::load($fields[$field]['settings']['responsive_image_style']);
+                  $styles_image = $responsive_image->get('image_style_mappings')[0]['image_mapping']['sizes_image_styles'];
+                  foreach ($styles_image as $key2 => $value) {
+                    $data[$field][$value] = [
+                      'url' => ImageStyle::load($value)->buildUrl($file->getFileUri()), // crea la url con el estilo de imagen asociado
+                      'alt' => $imageData[$key]['alt'],
+                    ];
+                  }
                 }
                 else {
                   $data[$field][$key] = [
                     'url' => file_create_url($file->getFileUri()),
+                    'alt' => $imageData[$key]['alt'],
                   ];
                 }
-                $data[$field][$key]['alt'] = $imageData[$key]['alt'];
               }
             }
             elseif ($type === 'text_with_summary') {

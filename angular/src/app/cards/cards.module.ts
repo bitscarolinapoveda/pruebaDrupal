@@ -50,11 +50,11 @@ import 'hammerjs';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SelectModule } from 'ng2-select';
 import { CarouselModule, WavesModule } from 'angular-bootstrap-md';
+import { DeferLoadModule } from '@trademe/ng-defer-load';
 
 // Pipes
 import { SafeHtmlPipe } from '../pipes/safehtml.pipe';
 import { SafeCssPipe } from '../pipes/safecss.pipe';
-// import { ClientProServComponent } from './components/client-proserv/client-proserv.component';
 import { WorkusComponent } from './components/workus/workus.component';
 import { OrganizeGridMuuriDirective } from '../directives/organize-grid-muuri.directive';
 
@@ -85,7 +85,6 @@ import { OrganizeGridMuuriDirective } from '../directives/organize-grid-muuri.di
     CardImgTextComponent,
     BlogComponent,
     ClientProjectImedicalComponent,
-    // ClientProServComponent,
     WhybitsamericasComponent,
     KnowusComponent,
     TeamComponent,
@@ -97,7 +96,7 @@ import { OrganizeGridMuuriDirective } from '../directives/organize-grid-muuri.di
     OrganizeGridMuuriDirective,
     OurWorkComponent,
     ScreenshotsComponent,
-    ProjectFilterComponent
+    ProjectFilterComponent,
   ],
   exports: [
     //CarouselItemComponent,
@@ -122,7 +121,6 @@ import { OrganizeGridMuuriDirective } from '../directives/organize-grid-muuri.di
     CardImgTextComponent,
     BlogComponent,
     ClientProjectImedicalComponent,
-    // ClientProServComponent,
     WhybitsamericasComponent,
     KnowusComponent,
     TeamComponent,
@@ -154,7 +152,8 @@ import { OrganizeGridMuuriDirective } from '../directives/organize-grid-muuri.di
     MessageModule,
     RecaptchaModule.forRoot(),
     CarouselModule.forRoot(),
-    WavesModule.forRoot()
+    WavesModule.forRoot(),
+    DeferLoadModule
   ],
   providers: [NodeService, CarouselModule, WavesModule]
 })
