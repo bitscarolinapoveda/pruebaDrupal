@@ -13,6 +13,23 @@
             background-color: #a6cf24 !important;
         }
     }
+    .carousel-inner {
+      height: 460px;
+      @media (max-width: 500px) {
+        height: 520px;
+      }
+      .carousel-item {
+        height: 100%;
+        .pt-3 {
+          @media (max-width: 500px) {
+            display: none;
+          }
+        }
+        .fondoSlide {
+          height: 100%;
+        }
+      }
+    }
 }
 :host /deep/ .carousel-control-next,
 :host /deep/.carousel-control-prev {
