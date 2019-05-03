@@ -1,4 +1,3 @@
-// import { ContentType } from './../../../services/cards/content-type.services';
 import { Component, OnInit } from '@angular/core';
 import {CustomCardService} from "../../../services/cards/v1-card.services";
 

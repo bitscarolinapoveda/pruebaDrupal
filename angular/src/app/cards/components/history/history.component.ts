@@ -96,9 +96,7 @@ export class HistoryComponent implements OnInit {
           url: ''
         };
         this.propagar.emit(this.datosMenu);
-      }
-
-      console.log('this.width', this.width, this.visible);
+      }     
 
       window.timeline = new TL.Timeline('timeline', dataObject, additionalOptions);
     });
