@@ -54,7 +54,8 @@ input:-moz-placeholder {
   color: #808080;
 }
 
-.textarea, .text {
+.textarea,
+.text {
   width: 98%;
   margin: 0 auto;
 
@@ -183,6 +184,15 @@ select {
       font-family: 'Open Sans light';
       color: #2e516a;
       cursor: pointer;
+
+      .title-tabs {
+        color: #2e516a !important;
+
+        @include breakpoint(phone) {
+          line-height: 18px;
+          font-size: 15px;
+        }
+      }
     }
 
     button:active,
@@ -196,6 +206,10 @@ select {
 
       color: #fff;
       outline: 0px auto -webkit-focus-ring-color;
+
+      .title-tabs {
+        color: #fff !important;
+      }
     }
 
     button.active::before {
@@ -278,6 +292,15 @@ select {
       font-family: 'Open Sans light';
       color: #2e516a;
       cursor: pointer;
+
+      .title-tabs {
+        color: #2e516a !important;
+
+        @include breakpoint(phone) {
+          line-height: 18px;
+          font-size: 15px;
+        }
+      }
     }
 
     button:active,
@@ -291,6 +314,10 @@ select {
 
       color: #fff;
       outline: 0px auto -webkit-focus-ring-color;
+
+      .title-tabs {
+        color: #fff !important;
+      }
     }
 
     button.active::before {
@@ -353,6 +380,7 @@ select {
     color: #002b49cc;
     font-family: 'Open Sans light';
     font-size: 30px;
+    text-align: center;
   }
 }
 
