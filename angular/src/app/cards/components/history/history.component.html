@@ -1,8 +1,9 @@
 <div *ngIf="visible" (window:resize)="onResize()" class="visible">
-  <app-separator [iconCustom]="'icon-engranaje'" [id]="datosMenu.id"></app-separator>
+  <app-separator [iconCustom]="'icon-engranaje'"></app-separator>
   <section id="history-superior">
     <h2>{{ title | uppercase }}</h2>
-    <p [innerHTML]="sub_title"></p>
+    <p [innerHTML]="sub_title" ></p>
+    <div [id]="datosMenu.id"></div>
   </section> 
 </div>
 <div id="timeline"></div>

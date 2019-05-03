@@ -1,6 +1,6 @@
 <div *ngIf="visibleL">
     <app-separator [iconCustom]="'icon-engranaje'" *ngIf="visibleL && orientacion == 'IT'"></app-separator>
-    <div class="row color-back" *ngIf="orientacion == 'IT'" [id]="datosMenu.id">
+    <div class="row color-back" *ngIf="orientacion == 'IT'" [id]="datosMenuL.id">
         <div class="col-md-4 p-0" *ngFor="let cil of cardImgL">
             <img [src]="cil.field_imagen_media_product.url" alt="{{cil.field_imagen_media_product.alt}}"
                 class="img-fluid w-100">
@@ -26,7 +26,7 @@
 </div>
 <div *ngIf="visibleR">
     <app-separator [iconCustom]="'icon-engranaje'" *ngIf="visibleR && orientacion == 'TI'"></app-separator>
-    <div class="row color-back" *ngIf="orientacion == 'TI'" [id]="datosMenu.id">
+    <div class="row color-back" *ngIf="orientacion == 'TI'" [id]="datosMenuR.id">
         <div class="col-md-4 p-0 mostrar-card-phone" *ngFor="let cir of cardImgR">
             <img [src]="cir.field_imagen_media_product.url" alt="{{cir.field_imagen_media_product.alt}}"
                 class="img-fluid w-100">
