@@ -1,5 +1,11 @@
 @import './src/assets/scss/mixin.scss';
 
+@media (max-width: 919px) {
+    .visible {
+        display: none;
+    }
+}
+
 #history-superior {
     h2 {
         margin-left: 3%;
@@ -13,13 +19,6 @@
             margin-top: 20px;
             margin-bottom: 20px !important;
         }
-
-        @include breakpoint (phone) {
-            margin-top: 20px;
-            margin-bottom: 20px !important;
-            font-size: 28px;
-            margin-left: 20px;
-        }
     }
 
     p {
@@ -30,23 +29,18 @@
         margin-top: 10px;
         font-size: 20px;
         text-align: center;
-
-        @include breakpoint (desktop) {
-            margin-right: 0;
-            margin-left: 0;
-        }
-
-        @include breakpoint (phone) {
-            margin-right: 20px;
-            margin-left: 0;
-        }
     }
 }
 
 #timeline {
+    @media (max-width: 919px) {
+        display: none;
+    }
+
     height: 30%;
     width: 80%;
     margin: auto;
+
 
     .tl-timemarker {
         .tl-timemarker-content-container {
@@ -62,8 +56,20 @@
         }
     }
 
-    @include breakpoint (desktop) {
+    .tl-timemarker-active:before {
+        content: '';
+        z-index: 20;
+        position: absolute;
+        margin-left: -12px;
+        background-image: url('../../../../assets/timeline/css/timeline_icon.png');
+        background-repeat: no-repeat;
+        background-position: -160px -48px;
+        width: 24px;
+        height: 24px;
+        top: -5px;
+    }    
 
+    @media (min-width: 1367px)  and (max-width: 1920px){
         .tl-slide-content-container {
             .tl-slide-content {
                 padding-right: 0 !important;
@@ -78,9 +84,61 @@
                         max-width: 500px !important;
                         width: 500px !important;
                         height: 350px !important;
+
                     }
                 }
 
+            }
+        }
+
+    }
+
+    @media (min-width: 1920px){
+        .tl-slide-content-container {
+            .tl-slide-content {
+                padding-right: 0 !important;
+                width: 1200px !important;
+
+                .tl-media {
+                    max-width: 700px !important;
+                    width: 700px !important;
+                    height: 350px !important;
+
+                    img {
+                        max-width: 700px !important;
+                        width: 700px !important;
+                        height: 350px !important;
+                    }
+                }
+
+            }
+        }
+    }
+
+    @media (max-width: 1366px) {
+        .tl-slide-content-container {
+            .tl-slide-content {
+                padding-right: 0 !important;
+                width: 900px !important;
+
+                .tl-media {
+                    max-width: 500px !important;
+                    width: 500px !important;
+                    height: 250px !important;
+
+                    img {
+                        max-width: 500px !important;
+                        width: 500px !important;
+                        height: 250px !important;
+                    }
+                }
+            }
+        }
+    }
+
+    @include breakpoint (desktop) {
+        .tl-slide-content-container {
+            .tl-slide-content {
                 .tl-text {
                     padding: 0 0 0 20px;
 
@@ -89,40 +147,20 @@
                         overflow: hidden;
 
                         h3 {
-                            //margin-top: 20px;
                             margin-bottom: 10px;
                         }
                     }
                 }
             }
+
         }
 
-        @media (width: 1920px) {
-            .tl-slide-content-container {
-                .tl-slide-content {
-                    padding-right: 0 !important;
-                    width: 1200px !important;
-
-                    .tl-media {
-                        max-width: 700px !important;
-                        width: 700px !important;
-                        height: 350px !important;
-
-                        img {
-                            max-width: 700px !important;
-                            width: 700px !important;
-                            height: 350px !important;
-                        }
-                    }
-                }
-            }
-        }
     }
 
     @include breakpoint (tablet) {
         .tl-storyslider {
             box-shadow: none;
-        }        
+        }
 
         .tl-slide-content-container {
             .tl-slide-content {
@@ -159,40 +197,12 @@
         }
     }
 
-    @include breakpoint (phone) {
-        .tl-storyslider {
-            box-shadow: none;
-        }
-
-        .tl-slide-content-container {
-            .tl-slide-content {
-
-                .tl-text {
-                    margin-top: 0;
-
-                    .tl-text-content-container {
-                        height: 150px;
-                        overflow: hidden;
-
-                    }
-                }
-            }
-        }
-    }
-
-
     .tl-text-content-container {
-
         h2.tl-headline {
             color: #002b49cc;
             font-family: 'Open Sans light';
             font-size: 32px;
             line-height: 34px;
-
-            @include breakpoint (phone) {
-                font-size: 20px;
-                line-height: 22px;
-            }
 
             @include breakpoint (tablet) {
                 font-size: 20px;
@@ -205,10 +215,6 @@
                 font-size: 16px;
                 margin: 0 !important;
                 line-height: 34px;
-
-                @include breakpoint (phone) {
-                    line-height: 18px;
-                }
 
                 @include breakpoint (tablet) {
                     line-height: 18px;
@@ -247,14 +253,6 @@
         -webkit-box-shadow: 1px 3px 22px 0px rgba(125, 120, 125, 1);
         -moz-box-shadow: 1px 3px 22px 0px rgba(125, 120, 125, 1);
         box-shadow: 1px 3px 22px 0px rgba(125, 120, 125, 1);
-    }
-
-    @include breakpoint (phone) {
-        .tl-slide-content {
-            width: 256px !important;
-            padding-left: 20px !important;
-            padding-right: 20px !important;
-        }
     }
 
     .tl-attribution {
@@ -299,10 +297,6 @@
         top: -40px;
         margin-top: 0;
         left: -50px;
-
-        @include breakpoint (phone) {
-            left: 0;
-        }
     }
 
     .tl-message-full {
