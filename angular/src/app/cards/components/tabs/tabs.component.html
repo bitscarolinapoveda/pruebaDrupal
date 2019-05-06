@@ -168,15 +168,19 @@
 							<label ng-reflect-ng-class="" for="{{'contact_us__' +item['#webform_key']}}">He leído y
 								acepto los<a routerLink="/politics">
 									términos y condiciones
-								</a>
-								<ng-template #tipQuestion>
-									<div [innerHTML]='listQuestion'></div>
-								</ng-template>
-								<div class="popover-question" [ngbPopover]="tipQuestion" popoverClass="question"
-									[popoverTitle]="tituloQuestion">
-									<i class="fas fa-exclamation-circle"></i>
-								</div>
+								</a>								
 							</label>
+							<ng-template #tipQuestion>
+								<div [innerHTML]='listQuestion'></div>
+							</ng-template>
+							<div class="popover-question desktop" [ngbPopover]="tipQuestion" popoverClass="question"
+								[popoverTitle]="tituloQuestion" triggers="mouseenter:mouseleave" placement="top">
+								<i class="fas fa-exclamation-circle"></i>								
+							</div>	
+							<div class="popover-question phone" [ngbPopover]="tipQuestion" popoverClass="question"
+								[popoverTitle]="tituloQuestion" placement="left">
+								<i class="fas fa-exclamation-circle"></i>								
+							</div>				
 						</div>
 					</ng-container>
 				</ng-container>
