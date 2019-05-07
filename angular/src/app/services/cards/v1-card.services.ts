@@ -166,7 +166,6 @@ export class CustomCardService {
 
   // Organiza el carrusel de a 4 y los espacios faltantes los llena aleatoriamente
   organizeInfoForCarousel(carouselInfo) {
-    console.log(carouselInfo.length);
     var arrayBox = [];
     var number = carouselInfo.length / 4;
     if (carouselInfo.length % 4 === 0) {
@@ -177,7 +176,7 @@ export class CustomCardService {
     for (let i = 0; i < numberOfBoxes; i++) {
       arrayBox[i] = [];
     }
-    if(carouselInfo.length > 4) {
+    if (carouselInfo.length > 4) {
       var vuelta = 0;
       var hasta = 4;
       for (let i = 0; i < arrayBox.length; i++) {
@@ -188,7 +187,7 @@ export class CustomCardService {
               var cont = 0;
               for (let c = 0; c < arrayBox[i].length; c++) {
                 if (arrayBox[i][c].nid === random.nid) {
-                  cont ++;
+                  cont++;
                 }
               }
               if (cont === 0) {
@@ -213,7 +212,6 @@ export class CustomCardService {
         }
       }
     }
-    console.log(arrayBox);
     return arrayBox;
   }
 }

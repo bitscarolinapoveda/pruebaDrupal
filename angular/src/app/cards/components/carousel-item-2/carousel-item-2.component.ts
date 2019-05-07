@@ -48,7 +48,7 @@ export class CarouselItem2Component implements OnInit {
       url: '/imedical'
     };
 
-    this.propagar.emit(this.datosMenu);
+    //this.propagar.emit(this.datosMenu);
 
     this.getOurClientsItems();
     this.clients = [0, 1, 2, 3, 4, 5];

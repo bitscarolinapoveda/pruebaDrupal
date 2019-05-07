@@ -1,11 +1,11 @@
 <div *ngIf="visible">
   <app-separator [iconCustom]="'icon-startproject'"></app-separator>
   <section id="principal">
-    <h2 [id]="datosMenu.id" class="title-principal">{{ testimoniesTitle }}</h2>
-    <p class="descrip-principal" [innerHTML]="testimoniesSubTitle"></p>
+    <h2 class="title-principal">{{ testimoniesTitle }}</h2>
+    <p class="descrip-principal" [innerHTML]="testimoniesSubTitle" [id]="datosMenu.id"></p>
   </section>
   <div id="testimonies-carousel">
-    <ngb-carousel *ngIf="testimoniesData">
+    <ngb-carousel *ngIf="testimoniesData"  >
       <ng-template ngbSlide *ngFor="let item of testimoniesData">
         <div class="container"></div>
         <div class="carousel-caption">

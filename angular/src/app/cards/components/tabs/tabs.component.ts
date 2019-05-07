@@ -59,8 +59,7 @@ export class TabsComponent implements OnInit {
   captcha_form: any;
   valido: boolean;
   elementoForm: any;
-  type: any;
-  prueba: boolean;
+  type: any; 
 
   constructor(private _http: HttpService, private _service: CustomCardService, private http_pais: HttpClient, config: NgbPopoverConfig,
     private rutaActiva: ActivatedRoute) {
@@ -81,10 +80,6 @@ export class TabsComponent implements OnInit {
     this.checked = false;
     this.valido = false;
     this.hover_buttom = 'Faltan datos por llenar';
-    config.placement = 'top';
-    config.triggers = 'hover';
-    this.type = '';
-    this.prueba = true;
   }
 
   mostrarDatos(id) {
@@ -190,22 +185,8 @@ export class TabsComponent implements OnInit {
 
     this.getPaises();
 
-    $(function () {
-      $('[data-toggle="popover-question"]').popover(
-        {
-          html: true,
-          title: function () {
-            return $('#popover-title-question').html();
-          },
-          content: function () {
-            return document.getElementById('popover-question').innerHTML;
-          }
-        }
-      ).click(function (e) {
-        e.preventDefault();
-      });
-    });
   }
+
 
   resolved(captchaResponse: string) {
     this.captcha_form = `${captchaResponse}`;

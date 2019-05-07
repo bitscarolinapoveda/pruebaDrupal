@@ -7,8 +7,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { CommonModule } from '../../../node_modules/@angular/common';
 import { FooterBrandComponent } from '../cards/components/footer/footer-brand/footer-brand.component';
 import { FooterContactComponent } from '../cards/components/footer/footer-contact/footer-contact.component';
-import { FooterNewsletterComponent } from '../cards/components/footer/footer-newsletter/footer-newsletter.component'
-import { GeneratorOfLinksComponent } from '../cards/components/generator-of-links/generator-of-links.component';
+import { FooterNewsletterComponent } from '../cards/components/footer/footer-newsletter/footer-newsletter.component';
+/* import { GeneratorOfLinksComponent } from '../cards/components/generator-of-links/generator-of-links.component'; */
 import { FooterBlockComponent } from '../cards/components/footer/footer-block/footer-block';
 import { RouterModule } from '@angular/router';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -31,7 +31,7 @@ import { FloatSocialComponent } from '../cards/components/float-social/float-soc
     FooterBrandComponent,
     FooterContactComponent,
     FooterNewsletterComponent,
-    GeneratorOfLinksComponent,
+    //GeneratorOfLinksComponent,
     FooterBlockComponent,
     FloatSocialComponent
   ],

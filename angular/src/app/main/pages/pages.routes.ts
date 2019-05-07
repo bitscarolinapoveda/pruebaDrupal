@@ -20,31 +20,38 @@ const pagesRoutes: Routes = [
     component: PagesComponent,
     children: [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
-      { path: 'home', component: HomeComponent },
-      { path: 'contact-us', component: ContactUsComponent },
-      { path: 'contact-us/:type', component: ContactUsComponent },
-      { path: 'products', component: ProductsComponent },
-      { path: 'products/:type', component: ProductsOrServicesComponent },
-      { path: 'projects', component: ProjectsComponent },
-      { path: 'services', component: ServicesComponent },
-      { path: 'services/:type', component: ProductsOrServicesComponent },
-      { path: 'politics', component: PoliticsComponent },
-      { path: 'about-us', component: AboutUsComponent },
-      { path: 'mapa-del-sitio', component: MapsiteComponent },
-      { path: 'pqrs', component: PqrsComponent },
-      { path: '**', component: NoPageFoundComponent }
 
-      // { path: 'home', component: HomeComponent },
-      // { path: '', component: HomeComponent },
-      // { path: 'NoPageFoundComponent', component: NoPageFoundComponent },
-      // { path: '**', pathMatch: 'full', redirectTo: 'N√oPageFoundComponent' }
-      // { path: 'home', component: HomeComponent },
-      // { path: '', redirectTo: '/home', pathMatch: 'full' },
-      // { path: 'contact-us', component: ContactUsComponent },
-      // {path: 'workus', component: WorkusComponent},
-      // { path: 'contact-us', redirectTo: '/contact-us' },
-      // {path: 'workus', redirectTo: '/workus'},
-      // { path: '**', component: NoPageFoundComponent },
+      { path: 'inicio', component: HomeComponent },
+      { path: 'en/home', component: HomeComponent },
+
+      { path: 'contactenos', component: ContactUsComponent },
+      { path: 'en/contact-us', component: ContactUsComponent },
+      { path: 'en/contact-us/:type', component: ContactUsComponent },
+
+      { path: 'productos', component: ProductsComponent },
+      { path: 'en/products', component: ProductsComponent },
+      { path: 'en/products/:type', component: ProductsOrServicesComponent },
+
+      { path: 'proyectos', component: ProjectsComponent },
+      { path: 'en/projects', component: ProjectsComponent },
+
+      { path: 'servicios', component: ServicesComponent },
+      { path: 'en/services', component: ServicesComponent },
+      { path: 'en/services/:type', component: ProductsOrServicesComponent },
+
+      { path: 'politicas', component: PoliticsComponent },
+      { path: 'en/politics', component: PoliticsComponent },
+
+      { path: 'nosotros', component: AboutUsComponent },
+      { path: 'en/about-us', component: AboutUsComponent },
+
+      { path: 'mapa-del-sitio', component: MapsiteComponent },
+      { path: 'en/sitemap', component: MapsiteComponent },
+
+      { path: 'pqrs', component: PqrsComponent },
+      { path: 'en/pqrs', component: PqrsComponent },
+
+      { path: '**', component: NoPageFoundComponent }
 
     ]
   }
