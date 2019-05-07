@@ -17,6 +17,9 @@
     top: 0;
 
     /deep/ {
+      height: 220px;
+      overflow: hidden;
+      padding-bottom: 0;
 
       @include breakpoint (tablet) {
         height: 200px;
