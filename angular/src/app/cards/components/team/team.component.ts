@@ -31,7 +31,7 @@ export class TeamComponent implements OnInit {
     this.getTeamInformationService();
     this.CarouselControlArray = [0, 1, 2, 3];
     this.carocarouselTile = {
-      grid: { xs: 1, sm: 2, md: 4, lg: 4, all: 0 },
+      grid: { xs: 1, sm: 2, md: 3, lg: 4, all: 0 },
       slide: 1,
       speed: 400,
       animation: 'lazy',
