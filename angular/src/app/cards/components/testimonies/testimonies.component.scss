@@ -16,6 +16,19 @@
     padding-bottom: 50px;
     top: 0;
 
+    /deep/ {
+
+      @include breakpoint (tablet) {
+        height: 200px;
+        overflow: hidden;
+      }
+
+      @include breakpoint (phone) {
+        height: 400px;
+        overflow: hidden;
+      }
+    }
+
     .testimonies-text {
       font-family: 'Open Sans Light';
       color: #002b49;
