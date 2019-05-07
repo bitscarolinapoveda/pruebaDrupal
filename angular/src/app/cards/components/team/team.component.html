@@ -1,8 +1,9 @@
-<div *ngIf="visible">
+<div *ngIf="visible">  
+  <div [id]="datosMenu.id"></div>
   <app-separator [iconCustom]="'icon-people'"></app-separator>
   <section id="principal">
     <h2 class="title-principal">{{ title }}</h2>
-    <p class="descrip-principal" [innerHTML]="subtitle" [id]="datosMenu.id"></p>
+    <p class="descrip-principal" [innerHTML]="subtitle"></p>
   </section>
   <div class="contenedor">
     <ngx-carousel [inputs]="carocarouselTile" (carouselLoad)="carouselTileLoad($event)" *ngIf="CarouselControlArray">

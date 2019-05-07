@@ -48,7 +48,7 @@ export class MenuTemplateComponent implements OnInit {
     ubicaciones(id) {
         const x = document.querySelector('#' + id);
         if (x) {
-            x.scrollIntoView({ block: 'center', inline: 'start', behavior: 'smooth' });
+            x.scrollIntoView({ block: 'start', inline: 'start', behavior: 'smooth' });
         }
     }
 

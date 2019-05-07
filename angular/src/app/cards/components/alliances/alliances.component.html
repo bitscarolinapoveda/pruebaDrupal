@@ -1,6 +1,5 @@
-<div *ngIf="visible">
-    <div class="row position-relative row-tec" [ngStyle]="{'background-image':'url(' + allianceBackground + ')'}"
-        [id]="datosMenu.id">
+<div *ngIf="visible" [id]="datosMenu.id">
+    <div class="row position-relative row-tec" [ngStyle]="{'background-image':'url(' + allianceBackground + ')'}">
         <div class="position-absolute content-trans"></div>
         <div class="col-md-12 pt-5 pb-2 px-2">
             <h2 class="text-center text-white info-title">{{ allianceTitle }}</h2>
@@ -15,6 +14,6 @@
                     </div>
                 </mdb-carousel-item>
             </mdb-carousel>
-        </div>        
+        </div>
     </div>
 </div>

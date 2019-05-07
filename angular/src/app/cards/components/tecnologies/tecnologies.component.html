@@ -1,6 +1,7 @@
 <div *ngIf="visible">
+  <div [id]="datosMenu.id"></div>
   <app-separator [iconCustom]="'icon-engranaje'" *ngIf="flagUbication !== 'home'"></app-separator>
-  <div class="row position-relative row-tec" [ngStyle]="{'background-image': 'url(' + background?.url + ')'}" [id]="datosMenu.id">
+  <div class="row position-relative row-tec" [ngStyle]="{'background-image': 'url(' + background?.url + ')'}">
       <div class="position-absolute content-trans" [hidden]="flagUbication !== 'home'"></div>
       <div class="col-md-12 pt-5 pb-2 px-2">
           <h2 class="text-center text-white info-title" [ngClass]="{'dark-title': flagUbication !== 'home'}">{{ title }}</h2>

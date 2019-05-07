@@ -1,10 +1,10 @@
 <div *ngIf="visible">
+  <div [id]="datosMenu.id"></div>
   <app-separator [iconCustom]="'icon-people'"></app-separator>
   <section id="kw-title">
     <h2>{{ title }}</h2>
     <p [innerHTML]="subtitle"></p>
   </section>
-  <div [id]="datosMenu.id"></div>
   <section class="Knowus">
     <div class="images-knowus">
       <ul class="row first images col-md-12">
