@@ -88,7 +88,7 @@ export class TeamComponent implements OnInit {
         this.subtitle = params.header[1].data.sub_title;
         params.data = this.https.addImageField(params.data, ['field_imagen']);
         this.CarouselControlArray = params.data;
-        this.CarouselControlArray = Object.keys(params.data).map(function (key) { return params.data[key]; });
+        this.CarouselControlArray = Object.keys(params.data).map(function (key) { return params.data[key]; });       
         if (this.title !== '' && this.CarouselControlArray.length !== 0) {
           this.visible = true;
           this.datosMenu = {
