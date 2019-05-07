@@ -3,13 +3,19 @@
 /deep/ {
     #screenshots {
 
+        @include breakpoint (phone) {
+            ngx-tile {
+                padding: 0px
+            }
+        }
+
         .tile {
             box-shadow: none;
             text-align: center;
 
             img {
                 max-width: 350px;
-                height: 350px;                
+                height: 350px;
 
                 @media (max-width: 1500px) {
                     max-width: 300px;
@@ -21,8 +27,13 @@
                     height: 250px !important;
                 }
 
-                @media (max-width: 510px) {
-                    max-width: 100px !important;
+                @include breakpoint (tablet) {
+                    width: 200px !important;
+                    height: 200px !important;
+                }
+
+                @include breakpoint (phone) {
+                    width: 100px !important;
                     height: 100px !important;
                 }
 
@@ -64,6 +75,10 @@
                 left: 0;
             }
 
+            @include breakpoint (phone) {
+                display: none !important;
+            }
+
         }
 
         .rightRs {
@@ -86,6 +101,10 @@
 
             @media (max-width: 766px) {
                 right: 0;
+            }
+
+            @include breakpoint (phone) {
+                display: none !important;
             }
         }
 
