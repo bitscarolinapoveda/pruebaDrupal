@@ -30,7 +30,7 @@ const pagesRoutes: Routes = [
       { path: 'en/contact-us/:type', component: ContactUsComponent },
 
       { path: 'productos', component: ProductsComponent },
-      { path: 'productos/:type', component: ProductsComponent },
+      { path: 'productos/:type', component: ProductsOrServicesComponent },
       { path: 'en/products', component: ProductsComponent },
       { path: 'en/products/:type', component: ProductsOrServicesComponent },
 
@@ -38,7 +38,7 @@ const pagesRoutes: Routes = [
       { path: 'en/projects', component: ProjectsComponent },
 
       { path: 'servicios', component: ServicesComponent },
-      { path: 'servicios/:type', component: ServicesComponent },
+      { path: 'servicios/:type', component: ProductsOrServicesComponent },
       { path: 'en/services', component: ServicesComponent },
       { path: 'en/services/:type', component: ProductsOrServicesComponent },
 
