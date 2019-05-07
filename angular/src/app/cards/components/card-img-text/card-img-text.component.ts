@@ -35,8 +35,11 @@ export class CardImgTextComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.getCardImgTextServiceL();
-        this.getCardImgTextServiceR();
+        if (this.orientacion === 'IT') {
+            this.getCardImgTextServiceL();
+        } else {
+            this.getCardImgTextServiceR();
+        }
     }
 
     getCardImgTextServiceL() {
@@ -75,7 +78,7 @@ export class CardImgTextComponent implements OnInit {
                     this.visibleR = true;
                     this.datosMenuR = {
                         label: 'IMAG R',
-                        id: 'a4',
+                        id: 'a67',
                         url: '/imedical'
                     };
                     this.propagar.emit(this.datosMenuR);

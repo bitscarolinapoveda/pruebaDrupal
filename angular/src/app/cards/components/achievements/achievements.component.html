@@ -1,10 +1,11 @@
 <div *ngIf="visible">
+  <div [id]="datosMenu.id"></div>
   <app-separator [iconCustom]="'icon-medal'"></app-separator>
   <section id="principal">
     <h2 class="title-principal">{{ title }}</h2>
     <p class="descrip-principal" [innerHTML]="subtitle"></p>
   </section>
-  <section class="content" [id]="datosMenu.id">
+  <section class="content">
     <div class="images-content">
       <ul class="row first images col-md-12">
         <li *ngFor="let data of list; let i = index" class="col-md-4">

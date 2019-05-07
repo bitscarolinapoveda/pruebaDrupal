@@ -19,7 +19,7 @@ const pagesRoutes: Routes = [
     path: '',
     component: PagesComponent,
     children: [
-      { path: '', redirectTo: 'home', pathMatch: 'full' },
+      { path: '', redirectTo: '/inicio', pathMatch: 'full' },
 
       { path: 'inicio', component: HomeComponent },
       { path: 'en/home', component: HomeComponent },
