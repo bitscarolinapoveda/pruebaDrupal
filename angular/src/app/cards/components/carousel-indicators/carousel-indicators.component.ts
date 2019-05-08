@@ -16,7 +16,6 @@ export class CarouselIndicatorsComponent implements OnInit {
   medius = '550px';
   transition: number;
   public carousel: any[];
-
   height: any;
 
   constructor(
