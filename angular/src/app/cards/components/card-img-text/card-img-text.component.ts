@@ -20,7 +20,8 @@ export class CardImgTextComponent implements OnInit {
     // Si se recibe TI : Texto luego imagen
     @Input() orientacion: string;
     @Output() propagar = new EventEmitter<DataMenu>();
-    datosMenu: DataMenu;
+    datosMenuL: DataMenu;
+    datosMenuR: DataMenu;
     @Input() type: string;
 
     constructor(
@@ -34,8 +35,11 @@ export class CardImgTextComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.getCardImgTextServiceL();
-        this.getCardImgTextServiceR();
+        if (this.orientacion === 'IT') {
+            this.getCardImgTextServiceL();
+        } else {
+            this.getCardImgTextServiceR();
+        }
     }
 
     getCardImgTextServiceL() {
@@ -44,17 +48,17 @@ export class CardImgTextComponent implements OnInit {
 
             this._http.getCustomCardInformation('mediaimedicalcard_2').subscribe(params => {
                 params = this._http.getFilterLists(this.principalL, params);
-                this.titleL = params.header[0].data.title;
+                this.titleL = params.data[0].field_subtitulo;
                 params.data = this._http.addImageField(params.data, ['field_imagen_media_product']);
                 this.cardImgL = params.data;
                 if (this.cardImgL.length !== 0) {
                     this.visibleL = true;
-                    this.datosMenu = {
+                    this.datosMenuL = {
                         label: 'IMAG L',
                         id: 'a3',
                         url: '/imedical'
                     };
-                    this.propagar.emit(this.datosMenu);
+                    this.propagar.emit(this.datosMenuL);
                 }
             });
         });
@@ -67,17 +71,17 @@ export class CardImgTextComponent implements OnInit {
 
             this._http.getCustomCardInformation('mediaimedicalcard').subscribe(params => {
                 params = this._http.getFilterLists(this.principalR, params);
-                this.titleR = params.header[0].data.title;
+                this.titleR = params.data[0].field_subtitulo;
                 params.data = this._http.addImageField(params.data, ['field_imagen_media_product']);
                 this.cardImgR = params.data;
                 if (this.cardImgR.length !== 0) {
                     this.visibleR = true;
-                    this.datosMenu = {
+                    this.datosMenuR = {
                         label: 'IMAG R',
-                        id: 'a4',
+                        id: 'a67',
                         url: '/imedical'
                     };
-                    this.propagar.emit(this.datosMenu);
+                    this.propagar.emit(this.datosMenuR);
                 }
             });
         });

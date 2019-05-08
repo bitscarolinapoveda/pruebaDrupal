@@ -23,13 +23,19 @@ export class HistoryComponent implements OnInit {
   @Output() propagar = new EventEmitter<DataMenu>();
   datosMenu: DataMenu;
   visible: boolean;
+  width: any;
 
   constructor(private _http: CustomCardService) {
     this.visible = false;
   }
 
   ngOnInit() {
+    this.onResize();
     this.getHistoryService();
+  }
+
+  onResize() {
+    this.width = (window.innerWidth);
   }
 
   getHistoryService() {
@@ -49,8 +55,8 @@ export class HistoryComponent implements OnInit {
         const element = {
           'media': {
             'url': datos[index].field_media_url.url,
-            'caption': datos[index].field_media_caption,
-            'credit': datos[index].field_media_credit,
+            /* 'caption': datos[index].field_media_caption,
+            'credit': datos[index].field_media_credit,*/
             'alt': datos[index].field_media_url.alt
           },
           'start_date': {
@@ -61,14 +67,14 @@ export class HistoryComponent implements OnInit {
             'minute': fecha_start.getMinutes(),
             'second': fecha_start.getSeconds()
           },
-          'end_date': {
+          /* 'end_date': {
             'month': fecha_end.getMonth(),
             'day': fecha_end.getDate(),
             'year': fecha_end.getFullYear(),
             'hour': fecha_end.getHours(),
             'minute': fecha_end.getMinutes(),
             'second': fecha_end.getSeconds()
-          },
+          }, */
           'text': {
             'headline': datos[index].title,
             'text': datos[index].field_text
@@ -82,7 +88,7 @@ export class HistoryComponent implements OnInit {
         timenav_height: 250
       };
 
-      if (this.title !== '' && params.data.length !== 0) {
+      if (this.title !== '' && params.data.length !== 0 && this.width > 919 ) {
         this.visible = true;
         this.datosMenu = {
           label: 'HISTORIA',
@@ -90,7 +96,7 @@ export class HistoryComponent implements OnInit {
           url: ''
         };
         this.propagar.emit(this.datosMenu);
-      }
+      }     
 
       window.timeline = new TL.Timeline('timeline', dataObject, additionalOptions);
     });

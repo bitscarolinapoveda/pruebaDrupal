@@ -1,5 +1,6 @@
 <div *ngIf="visible">
-    <div class="row" [id]="datosMenu.id">
+    <div [id]="datosMenu.id"></div>    
+    <div class="row">
         <div class="col-md-4 mb-3">
             <div class="row">
                 <div class="col-md-12">
@@ -26,8 +27,7 @@
                         <a [href]="linkProjectUrl" class="green">{{ linkProjectTitle }}</a>
                     </ng-template>
                     <ng-template #interno>
-                        <a [routerLink]="linkProjectUrl"
-                            class="green">{{ linkProjectTitle }}</a>
+                        <a [routerLink]="linkProjectUrl" class="green">{{ linkProjectTitle }}</a>
                     </ng-template>
                 </div>
             </div>

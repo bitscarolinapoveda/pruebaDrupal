@@ -1,13 +1,14 @@
 <div *ngIf="visible">
+  <div [id]="datosMenu.id"></div>
   <app-separator [iconCustom]="'icon-camera'"></app-separator>
   <section id="principal">
-    <h2 [id]="datosMenu.id" class="title-principal">{{ screenshotsTitle }}</h2>
+    <h2 class="title-principal">{{ screenshotsTitle }}</h2>
     <p class="descrip-principal" [innerHTML]="screenshotsSubTitle"></p>
   </section>
   <ngx-carousel [inputs]="carouselOne" (carouselLoad)="carouselTileLoad($event)" id="screenshots">
     <ngx-tile NgxCarouselItem *ngFor="let value of CarouselControlArray">
       <img class="" src="{{ value.url }}" alt="{{ value.alt }}">
-    </ngx-tile>    
+    </ngx-tile>
     <button NgxCarouselPrev class='leftRs'></button>
     <button NgxCarouselNext class='rightRs'></button>
   </ngx-carousel>

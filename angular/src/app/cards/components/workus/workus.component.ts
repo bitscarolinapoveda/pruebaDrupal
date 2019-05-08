@@ -115,13 +115,12 @@ export class WorkusComponent implements OnInit {
     this.file = '';
     this.hojaWU = '';
     this.valido = false;
-    this.hover_buttom = 'Faltan datos por llenar';
-    config.placement = 'top';
-    config.triggers = 'hover';
+    this.hover_buttom = 'Faltan datos por llenar';    
+    this.hojaWU = 'Subir Fichero';
   }
 
   mostrarDatosWS(id) {
-    $('#' + id.target.id).addClass('ocultar-placeholder');
+    $('#' + id.target.id).addClass('ocultar-placeholder');    
   }
 
   ocultarDatosWS(id) {
@@ -139,22 +138,7 @@ export class WorkusComponent implements OnInit {
     this.getPaises();
 
     this.getForm();
-
-    $(function () {
-      $('[data-toggle="popover-question"]').popover(
-        {
-          html: true,
-          title: function () {
-            return $('#popover-title-question').html();
-          },
-          content: function () {
-            return document.getElementById('popover-question').innerHTML;
-          }
-        }
-      ).click(function (e) {
-        e.preventDefault();
-      });
-    });
+        
   }
 
   getForm() {

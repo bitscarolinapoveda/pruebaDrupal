@@ -1,6 +1,6 @@
-import {CustomCardService} from './../../../services/cards/v1-card.services';
-import {Component, OnInit} from '@angular/core';
-import {RouterModule} from '@angular/router';
+import { CustomCardService } from './../../../services/cards/v1-card.services';
+import { Component, OnInit } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 declare var $: any;
 
@@ -15,12 +15,12 @@ export class PorqueBitsComponent implements OnInit {
   mainTitleLink;
   mainUrlLink;
 
-  constructor (private router: RouterModule,
-               private porquebits: CustomCardService) {
+  constructor(private router: RouterModule,
+    private porquebits: CustomCardService) {
     this.moralValues = [];
   }
 
-  ngOnInit () {
+  ngOnInit() {
     this.getMoralValuesItems();
   }
   getMoralValuesItems () {

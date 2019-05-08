@@ -1,55 +1,56 @@
-<div *ngIf="visibleL">
-    <app-separator [iconCustom]="'icon-engranaje'" *ngIf="visibleL && orientacion == 'IT'"></app-separator>
-    <div class="row color-back" *ngIf="orientacion == 'IT'" [id]="datosMenu.id">
-        <div class="col-md-4 p-0" *ngFor="let cil of cardImgL">
-            <img [src]="cil.field_imagen_media_product.url" alt="{{cil.field_imagen_media_product.alt}}"
-                class="img-fluid w-100">
-        </div>
-        <div class="col-md-8 d-block px-4 py-5" *ngFor="let cil of cardImgL">
-            <h3 class="condensed">{{ cil.title }}</h3>
-            <h2>{{ titleL | uppercase }}</h2>
-            <hr class="green">
-            <p class="text-justify" [innerHTML]="cil.field_des"></p>
-            <ng-container *ngIf="cil.field_link_imedical_media[0].external then externo else interno">
-            </ng-container>
-            <ng-template #externo>
-                <a [href]="cil.field_link_imedical_media[0].uri"
-                    class="green">
-                    {{ cil.field_link_imedical_media[0].title }}</a>
-            </ng-template>
-            <ng-template #interno>
-                <a [routerLink]="cil.field_link_imedical_media[0].uri" class="green">
-                    {{ cil.field_link_imedical_media[0].title }}</a>
-            </ng-template>
-        </div>
-    </div>
-</div>
-<div *ngIf="visibleR">
-    <app-separator [iconCustom]="'icon-engranaje'" *ngIf="visibleR && orientacion == 'TI'"></app-separator>
-    <div class="row color-back" *ngIf="orientacion == 'TI'" [id]="datosMenu.id">
-        <div class="col-md-4 p-0 mostrar-card-phone" *ngFor="let cir of cardImgR">
-            <img [src]="cir.field_imagen_media_product.url" alt="{{cir.field_imagen_media_product.alt}}"
-                class="img-fluid w-100">
-        </div>
-        <div class="col-md-8 d-block px-4 py-5" *ngFor="let cir of cardImgR">
-            <h3 class="condensed">{{ cir.title }}</h3>
-            <h2>{{ titleR | uppercase }}</h2>
-            <hr class="green">
-            <p class="text-justify" [innerHTML]="cir.field_des"></p>
-            <ng-container *ngIf="cir.field_link_imedical_media[0].external then externo else interno">
-            </ng-container>
-            <ng-template #externo>
-                <a [href]="cir.field_link_imedical_media[0].uri" class="green">
-                    {{ cir.field_link_imedical_media[0].title }}</a>
-            </ng-template>
-            <ng-template #interno>
-                <a [routerLink]="cir.field_link_imedical_media[0].uri" class="green">
-                    {{ cir.field_link_imedical_media[0].title }}</a>
-            </ng-template>
-        </div>
-        <div class="col-md-4 p-0 mostrar-card" *ngFor="let cir of cardImgR">
-            <img [src]="cir.field_imagen_media_product.url" alt="{{cir.field_imagen_media_product.alt}}"
-                class="img-fluid w-100">
-        </div>
-    </div>
-</div>
+ <div *ngIf="visibleL">
+     <div [id]="datosMenuL.id"></div>
+     <app-separator [iconCustom]="'icon-engranaje'" *ngIf="visibleL && orientacion == 'IT'"></app-separator>
+     <div class="row color-back" *ngIf="orientacion == 'IT'">
+         <div class="col-md-4 p-0" *ngFor="let cil of cardImgL">
+             <img [src]="cil.field_imagen_media_product.url" alt="{{cil.field_imagen_media_product.alt}}"
+                 class="img-fluid w-100">
+         </div>
+         <div class="col-md-8 d-block px-4 py-5" *ngFor="let cil of cardImgL">
+             <h3 class="condensed">{{ cil.title }}</h3>
+             <h2>{{ titleL | uppercase }}</h2>
+             <hr class="green">
+             <p class="text-justify" [innerHTML]="cil.field_des"></p>
+             <ng-container *ngIf="cil.field_link_imedical_media[0].external then externo else interno">
+             </ng-container>
+             <ng-template #externo>
+                 <a [href]="cil.field_link_imedical_media[0].uri" class="green">
+                     {{ cil.field_link_imedical_media[0].title }}</a>
+             </ng-template>
+             <ng-template #interno>
+                 <a [routerLink]="cil.field_link_imedical_media[0].uri" class="green">
+                     {{ cil.field_link_imedical_media[0].title }}</a>
+             </ng-template>
+         </div>
+     </div>
+ </div>
+ <div *ngIf="visibleR">
+     <div [id]="datosMenuR.id"></div>
+     <app-separator [iconCustom]="'icon-engranaje'" *ngIf="visibleR && orientacion == 'TI'"></app-separator>
+     <div class="row color-back" *ngIf="orientacion == 'TI'">
+         <div class="col-md-4 p-0 mostrar-card-phone" *ngFor="let cir of cardImgR">
+             <img [src]="cir.field_imagen_media_product.url" alt="{{cir.field_imagen_media_product.alt}}"
+                 class="img-fluid w-100">
+         </div>
+         <div class="col-md-8 d-block px-4 py-5" *ngFor="let cir of cardImgR">
+             <h3 class="condensed">{{ cir.title }}</h3>
+             <h2>{{ titleR | uppercase }}</h2>
+             <hr class="green">
+             <p class="text-justify" [innerHTML]="cir.field_des"></p>
+             <ng-container *ngIf="cir.field_link_imedical_media[0].external then externo else interno">
+             </ng-container>
+             <ng-template #externo>
+                 <a [href]="cir.field_link_imedical_media[0].uri" class="green">
+                     {{ cir.field_link_imedical_media[0].title }}</a>
+             </ng-template>
+             <ng-template #interno>
+                 <a [routerLink]="cir.field_link_imedical_media[0].uri" class="green">
+                     {{ cir.field_link_imedical_media[0].title }}</a>
+             </ng-template>
+         </div>
+         <div class="col-md-4 p-0 mostrar-card" *ngFor="let cir of cardImgR">
+             <img [src]="cir.field_imagen_media_product.url" alt="{{cir.field_imagen_media_product.alt}}"
+                 class="img-fluid w-100">
+         </div>
+     </div>
+ </div>

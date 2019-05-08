@@ -5,7 +5,7 @@ import { CommonModule } from '../../../node_modules/@angular/common';
 import { MessageModule } from '../message/message.module';
 import { RecaptchaModule } from 'ng-recaptcha';
 
-import { CarouselItemComponent } from './components/carousel-item/carousel-item.component';
+/* import { CarouselItemComponent } from './components/carousel-item/carousel-item.component'; */
 import { CarouselIndicatorsComponent } from './components/carousel-indicators/carousel-indicators.component';
 import { TecnologiesComponent } from './components/tecnologies/tecnologies.component';
 import { PorqueBitsComponent } from './components/porque-bits/porque-bits.component';
@@ -33,7 +33,7 @@ import { TeamComponent } from './components/team/team.component';
 import { AchievementsComponent } from './components/achievements/achievements.component';
 import { TestimoniesComponent } from './components/testimonies/testimonies.component';
 import { HistoryComponent } from './components/history/history.component';
-import { FilterComponent } from './components/filter/filter.component';
+/* import { FilterComponent } from './components/filter/filter.component'; */
 import { ServicesFilterComponent } from './components/services-filter/services-filter.component';
 import { OurWorkComponent } from './components/our-work/our-work.component';
 import { ScreenshotsComponent } from './components/screenshots/screenshots.component';
@@ -63,7 +63,7 @@ import { OrganizeGridMuuriDirective } from '../directives/organize-grid-muuri.di
   declarations: [
     SafeHtmlPipe,
     SafeCssPipe,
-    CarouselItemComponent,
+    //CarouselItemComponent,
     CarouselIndicatorsComponent,
     CarouselControlsComponent,
     CarouselItem2Component,
@@ -91,7 +91,7 @@ import { OrganizeGridMuuriDirective } from '../directives/organize-grid-muuri.di
     AchievementsComponent,
     HistoryComponent,
     TestimoniesComponent,
-    FilterComponent,
+    //FilterComponent,
     ServicesFilterComponent,
     OrganizeGridMuuriDirective,
     OurWorkComponent,
@@ -99,7 +99,7 @@ import { OrganizeGridMuuriDirective } from '../directives/organize-grid-muuri.di
     ProjectFilterComponent,
   ],
   exports: [
-    CarouselItemComponent,
+    //CarouselItemComponent,
     CarouselIndicatorsComponent,
     CarouselControlsComponent,
     CarouselItem2Component,
@@ -127,7 +127,7 @@ import { OrganizeGridMuuriDirective } from '../directives/organize-grid-muuri.di
     AchievementsComponent,
     HistoryComponent,
     TestimoniesComponent,
-    FilterComponent,
+    //FilterComponent,
     OurWorkComponent,
     MessageModule,
     ServicesFilterComponent,

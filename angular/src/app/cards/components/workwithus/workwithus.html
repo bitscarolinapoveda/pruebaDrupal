@@ -1,5 +1,6 @@
 <section id="work-with-us">
-  <h1 [id]="datosMenu.id"> {{ workWithUsTitle.title }} </h1>
+  <div [id]="datosMenu.id"></div>
+  <h1> {{ workWithUsTitle.title }} </h1>
   <p class="subtitle"> {{ workWithUsSubtitle.subtitle }} </p>
   <ng-container *ngIf="linkExternal then externo else interno">
   </ng-container>

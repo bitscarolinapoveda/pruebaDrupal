@@ -7,7 +7,7 @@
     <app-menu-template [menuList]="listMenu"></app-menu-template>
     <app-slider (propagar)="onMenu($event)" [type]="type"></app-slider>
     <div class="container">
-        <app-separator [iconCustom]="'icon-engranaje'" *ngIf="visible"></app-separator>
+        <app-separator [iconCustom]="'icon-engranaje'" *ngIf="visible" id="a1"></app-separator>
         <div class="row" *ngIf="visible">
             <div class="col-md-12 mb-5" id="principal">
                 <h2 class="title-principal">{{ tituloModulos }}</h2>
