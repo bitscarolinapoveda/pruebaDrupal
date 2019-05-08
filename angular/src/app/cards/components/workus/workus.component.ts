@@ -84,6 +84,7 @@ export class WorkusComponent implements OnInit {
 
             this.ngSelectW.active = [];
             this.pais = '';
+            this.hojaWU = 'Subir Fichero';
 
             this.dataMessage.push(
               {
@@ -115,12 +116,12 @@ export class WorkusComponent implements OnInit {
     this.file = '';
     this.hojaWU = '';
     this.valido = false;
-    this.hover_buttom = 'Faltan datos por llenar';    
+    this.hover_buttom = 'Faltan datos por llenar';
     this.hojaWU = 'Subir Fichero';
   }
 
   mostrarDatosWS(id) {
-    $('#' + id.target.id).addClass('ocultar-placeholder');    
+    $('#' + id.target.id).addClass('ocultar-placeholder');
   }
 
   ocultarDatosWS(id) {
@@ -138,7 +139,7 @@ export class WorkusComponent implements OnInit {
     this.getPaises();
 
     this.getForm();
-        
+
   }
 
   getForm() {
@@ -149,7 +150,9 @@ export class WorkusComponent implements OnInit {
       // Se obtienen de la respuesta del servicio los layout y elementos del formulario, se almacan en un array.
       for (var index in params) {
         elementLayout = index;
-        if (elementLayout.indexOf('#') == -1) {
+        if (elementLayout === 'fileupload') {
+          listLayout.push(params[index]);
+        } else if (elementLayout.indexOf('#') == -1) {
           listLayout.push(params[index]);
         }
       }
@@ -157,17 +160,20 @@ export class WorkusComponent implements OnInit {
       for (var index in listLayout) {
         let campoForm = [];
         let cont = 0;
-        if (listLayout[index])
-          for (var indexj in listLayout[index]) {
-            if (indexj.indexOf('#') == -1) {
-              cont++;
-              campoForm.push(listLayout[index][indexj]);
+        if (listLayout[index]) {
+          if (listLayout[index]['#type'] !== 'managed_file') {
+            for (var indexj in listLayout[index]) {
+              if (indexj.indexOf('#') == -1) {
+                cont++;
+                campoForm.push(listLayout[index][indexj]);
+              }
             }
-          }
-        if (cont != 0) {
-          listLayout[index] = [];
-          for (var indexz in campoForm) {
-            listLayout[index].push(campoForm[indexz]);
+            if (cont != 0) {
+              listLayout[index] = [];
+              for (var indexz in campoForm) {
+                listLayout[index].push(campoForm[indexz]);
+              }
+            }
           }
         }
         // Array de campos que conforman el formulario
