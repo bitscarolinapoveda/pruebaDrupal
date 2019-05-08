@@ -29,7 +29,9 @@ export class ItemMenuComponent implements OnInit {
         if (this.row === 3) {
             this.image = this.menus[0].image;
         }
-        if (this.row === 3 && this.menus.length > 3 && window.innerWidth > 1025) {
+        if (this.row === 3 && this.menus.length === 3 && window.innerWidth > 1025) {
+            this.height = 220;
+        } else if (this.row === 3 && this.menus.length > 3 && window.innerWidth > 1025) {
             let limit_a;
             if (this.menus.length > 10) {
                 this.menus = this.menus.slice(0, 10);
