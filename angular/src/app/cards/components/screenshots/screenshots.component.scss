@@ -14,16 +14,11 @@
             text-align: center;
 
             img {
-                max-width: 350px;
-                height: 350px;
-
-                @media (max-width: 1500px) {
-                    max-width: 300px;
-                    height: 300px;
-                }
+                width: 430px;
+                height: 400px;
 
                 @media (max-width: 1230px) {
-                    max-width: 250px !important;
+                    width: 250px !important;
                     height: 250px !important;
                 }
 
@@ -57,15 +52,15 @@
             position: absolute;
             top: 0;
             bottom: 0;
-            left: 25%;
+            left: 10%;
             margin: auto;
             border: none;
             overflow: hidden;
             cursor: pointer;
             border-radius: 50%;
-            transform: rotate(270deg);
+            transform: rotate(180deg);
             background-color: transparent;
-            background-image: url(/assets/images/up-arrow-angle.svg);
+            background-image: url('../../../../assets/icon/FlechasScreenshots.svg');
             background-repeat: no-repeat;
             background-size: cover;
             width: 45px;
@@ -85,15 +80,15 @@
             position: absolute;
             top: 0;
             bottom: 0;
-            right: 25%;
+            right: 10%;
             margin: auto;
             border: none;
             overflow: hidden;
             cursor: pointer;
             border-radius: 50%;
-            transform: rotate(90deg);
+            transform: rotate(360deg);
             background-color: transparent;
-            background-image: url(/assets/images/up-arrow-angle.svg);
+            background-image: url('../../../../assets/icon/FlechasScreenshots.svg');
             background-repeat: no-repeat;
             background-size: cover;
             width: 45px;

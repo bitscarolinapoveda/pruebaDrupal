@@ -26,7 +26,7 @@ export class ScreenshotsComponent implements OnInit {
   ngOnInit() {
     this.getScreenshotsInfo();
     this.carouselOne = {
-      grid: { xs: 3, sm: 3, md: 4, lg: 4, all: 0 },
+      grid: { xs: 3, sm: 3, md: 3, lg: 3, all: 0 },
       slide: 2,
       speed: 400,
       animation: 'lazy',
@@ -52,7 +52,6 @@ export class ScreenshotsComponent implements OnInit {
         this.CarouselControlArray = items.data;
         for (let index = 0; index < items.data.length; index++) {
           for (let j = 0; j < items.data[index].field_image.length; j++) {
-            list.push(items.data[index].field_image[j]);
             list.push(items.data[index].field_image[j]);
           }
         }
