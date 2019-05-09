@@ -5,11 +5,15 @@
     <h2 class="title-principal">{{ screenshotsTitle }}</h2>
     <p class="descrip-principal" [innerHTML]="screenshotsSubTitle"></p>
   </section>
-  <ngx-carousel [inputs]="carouselOne" (carouselLoad)="carouselTileLoad($event)" id="screenshots">
-    <ngx-tile NgxCarouselItem *ngFor="let value of CarouselControlArray">
-      <img class="" src="{{ value.url }}" alt="{{ value.alt }}">
-    </ngx-tile>
-    <button NgxCarouselPrev class='leftRs'></button>
-    <button NgxCarouselNext class='rightRs'></button>
-  </ngx-carousel>
+  <div class="contenedor" (deferLoad)="show = true">
+    <ngx-carousel [inputs]="carouselOne" (carouselLoad)="carouselTileLoad($event)" id="screenshots">
+      <ngx-tile NgxCarouselItem *ngFor="let value of CarouselControlArray">
+        <ng-container *ngIf="show">
+          <img class="imagesScreen" src="{{ value.url }}" alt="{{ value.alt }}" (load)="showImage()">
+        </ng-container>
+      </ngx-tile>
+      <button NgxCarouselPrev class='leftRs'></button>
+      <button NgxCarouselNext class='rightRs'></button>
+    </ngx-carousel>
+  </div>
 </div>

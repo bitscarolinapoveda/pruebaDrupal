@@ -3,6 +3,8 @@ import { CustomCardService } from 'src/app/services/cards/v1-card.services';
 import { DataMenu } from '../menu-template/menu-template.component';
 import { NgxCarousel } from 'ngx-carousel';
 import { General } from '../blurb/blurb.component';
+
+declare var $: any;
 @Component({
   selector: 'app-team',
   templateUrl: './team.component.html',
@@ -20,10 +22,12 @@ export class TeamComponent implements OnInit {
   CarouselControlArray: any = [];
   caroseltitle: any = [];
   public carocarouselTile: NgxCarousel;
+  show: boolean;
 
   constructor(private https: CustomCardService) {
     this.CarouselControlArray = [];
     this.visible = false;
+    this.show = false;
   }
 
   ngOnInit() {
@@ -100,6 +104,11 @@ export class TeamComponent implements OnInit {
         }
       });
     });
+  }
+
+  showImage() {
+    $('.container-img .img-fluid').css('transform', 'translate(0,0)');
+    $('.container-img .img-fluid').css('opacity', '1');
   }
 
 }

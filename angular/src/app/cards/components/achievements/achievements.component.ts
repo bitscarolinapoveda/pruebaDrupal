@@ -2,6 +2,8 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { CustomCardService } from 'src/app/services/cards/v1-card.services';
 import { DataMenu } from '../menu-template/menu-template.component';
 import { General } from '../blurb/blurb.component';
+
+declare var $: any;
 @Component({
   selector: 'app-achievements',
   templateUrl: './achievements.component.html',
@@ -16,10 +18,12 @@ export class AchievementsComponent implements OnInit {
   datosMenu: DataMenu;
   @Input() type: string;
   principalAchievements: General;
+  show: boolean;
 
   constructor(private _service: CustomCardService) {
     this.list = [];
     this.visible = false;
+    this.show = false;
   }
 
   ngOnInit() {
@@ -47,6 +51,11 @@ export class AchievementsComponent implements OnInit {
         }
       });
     });
+  }
+
+  showImage() {
+    $('.images img').css('transform', 'translate(0,0)');
+    $('.images img').css('opacity', '1');
   }
 
 }

@@ -6,16 +6,18 @@
     <p [innerHTML]="subtitle"></p>
   </section>
   <section class="Knowus">
-    <div class="images-knowus">
+    <div class="images-knowus"  (deferLoad)="show = true">
       <ul class="row first images col-md-12">
         <li *ngFor="let kw of list; let i = index" class="col-md-4">
-          <div class="col-md-12">
-            <img [src]="kw.field_imagen.url" [alt]="kw.field_imagen.alt" class="col-md-6" />
-            <label class="col-md-6">
-              <span class="plus">+</span> <span>{{ kw.field_cantidad }}</span>
-              <p>{{ kw.title }}</p>
-            </label>
-          </div>
+          <ng-container *ngIf="show">
+            <div class="col-md-12">
+              <img [src]="kw.field_imagen.url" [alt]="kw.field_imagen.alt" class="col-md-6" (load)="showImage()"/>
+              <label class="col-md-6">
+                <span class="plus">+</span> <span>{{ kw.field_cantidad }}</span>
+                <p>{{ kw.title }}</p>
+              </label>
+            </div>
+          </ng-container>
         </li>
       </ul>
     </div>

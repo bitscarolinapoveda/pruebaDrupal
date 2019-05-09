@@ -28,6 +28,8 @@ export class CarouselItem2Component implements OnInit {
   casClient: any = 0;
   visible: boolean;
   flagUbication: string;
+  show: boolean;
+  showPhone: boolean;
 
   oneItems: boolean;
   twoItems: boolean;
@@ -39,6 +41,8 @@ export class CarouselItem2Component implements OnInit {
   constructor(private _cardService: CustomCardService) {
     this.clients = [];
     this.visible = false;
+    this.show = false;
+    this.showPhone = false;
   }
 
   ngOnInit() {
@@ -132,5 +136,15 @@ export class CarouselItem2Component implements OnInit {
       });
     }
 
+  }
+
+  showImage() {
+    $('.images img').css('transform', 'translate(0,0)');
+    $('.images img').css('opacity', '1');
+  }
+
+  showImagePhone() {
+    $('.images img').css('transform', 'translate(0,0)');
+    $('.images img').css('opacity', '1');
   }
 }

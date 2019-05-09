@@ -1,10 +1,12 @@
  <div *ngIf="visibleL">
      <div [id]="datosMenuL.id"></div>
      <app-separator [iconCustom]="'icon-engranaje'" *ngIf="visibleL && orientacion == 'IT'"></app-separator>
-     <div class="row color-back" *ngIf="orientacion == 'IT'">
-         <div class="col-md-4 p-0" *ngFor="let cil of cardImgL">
-             <img [src]="cil.field_imagen_media_product.url" alt="{{cil.field_imagen_media_product.alt}}"
-                 class="img-fluid w-100">
+     <div class="row color-back" *ngIf="orientacion == 'IT'" (deferLoad)="showL = true">
+         <div class="col-md-4 p-0 showL" *ngFor="let cil of cardImgL">
+             <ng-container *ngIf="showL">
+                 <img [src]="cil.field_imagen_media_product.url" alt="{{cil.field_imagen_media_product.alt}}"
+                     class="img-fluid w-100" (load)="showImageL()">
+             </ng-container>
          </div>
          <div class="col-md-8 d-block px-4 py-5" *ngFor="let cil of cardImgL">
              <h3 class="condensed">{{ cil.title }}</h3>
@@ -27,10 +29,12 @@
  <div *ngIf="visibleR">
      <div [id]="datosMenuR.id"></div>
      <app-separator [iconCustom]="'icon-engranaje'" *ngIf="visibleR && orientacion == 'TI'"></app-separator>
-     <div class="row color-back" *ngIf="orientacion == 'TI'">
-         <div class="col-md-4 p-0 mostrar-card-phone" *ngFor="let cir of cardImgR">
-             <img [src]="cir.field_imagen_media_product.url" alt="{{cir.field_imagen_media_product.alt}}"
-                 class="img-fluid w-100">
+     <div class="row color-back" *ngIf="orientacion == 'TI'" >
+         <div class="col-md-4 p-0 mostrar-card-phone showPhone" *ngFor="let cir of cardImgR" (deferLoad)="showPhone = true">
+             <ng-container *ngIf="showPhone">
+                 <img [src]="cir.field_imagen_media_product.url" alt="{{cir.field_imagen_media_product.alt}}"
+                     class="img-fluid w-100" (load)="showImagePhone()">
+             </ng-container>
          </div>
          <div class="col-md-8 d-block px-4 py-5" *ngFor="let cir of cardImgR">
              <h3 class="condensed">{{ cir.title }}</h3>
@@ -48,9 +52,11 @@
                      {{ cir.field_link_imedical_media[0].title }}</a>
              </ng-template>
          </div>
-         <div class="col-md-4 p-0 mostrar-card" *ngFor="let cir of cardImgR">
-             <img [src]="cir.field_imagen_media_product.url" alt="{{cir.field_imagen_media_product.alt}}"
-                 class="img-fluid w-100">
+         <div class="col-md-4 p-0 mostrar-card showR" *ngFor="let cir of cardImgR" (deferLoad)="showR = true">
+             <ng-container *ngIf="showR">
+                 <img [src]="cir.field_imagen_media_product.url" alt="{{cir.field_imagen_media_product.alt}}"
+                     class="img-fluid w-100" (load)="showImageR()">
+             </ng-container>
          </div>
      </div>
  </div>
