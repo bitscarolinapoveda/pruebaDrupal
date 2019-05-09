@@ -728,7 +728,7 @@
         .dropdown-menu a:hover {
             color: #a6cf24 !important;
         }
-        
+
         .dropdown-menu a:active {
             color: #a6cf24 !important;
             background-color: transparent;
@@ -766,6 +766,24 @@ app-navbar /deep/ {
         .locations-container {
             height: 100%;
             width: 100%;
+        }
+    }
+}
+
+/deep/ {
+    @include breakpoint(phone) {
+        .items-phone {
+            .fa-envelope {
+                left: 20px;
+            }
+        }
+    }
+
+    @include breakpoint(tablet) {
+        .items-phone {
+            .fa-envelope {
+                left: 20px;
+            }
         }
     }
 }
