@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Meta } from '@angular/platform-browser';
 import { DataMenu } from '../../../cards/components/menu-template/menu-template.component';
 
+declare var $: any;
 @Component({
   selector: 'app-about-us',
   templateUrl: './about-us.component.html',
@@ -19,6 +20,7 @@ export class AboutUsComponent implements OnInit {
   ngOnInit() {
     this.meta.removeTag('name="general"');
     this.meta.updateTag({ name: 'component', content: 'app-about-us' });
+    $('#float-social-block').removeClass('ocultar-phone');
   }
 
   onMenu(listMenu) {

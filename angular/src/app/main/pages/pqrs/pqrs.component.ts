@@ -151,6 +151,7 @@ export class PqrsComponent implements OnInit {
 
     this.getPaises();
 
+    $('#float-social-block').removeClass('ocultar-phone');
   }
 
   resolved(captchaResponse: string) {
