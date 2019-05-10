@@ -38,23 +38,30 @@
     }
   }
 }
+
 .social-networks.top-left {
   top: 81px;
+
   @media (min-width: 1366px) {
     top: 104px;
   }
+
   bottom: unset;
   margin-top: 0 !important;
 }
+
 .social-networks.top-right {
   right: 0;
   top: 81px;
+
   @media (min-width: 1366px) {
     top: 104px;
   }
+
   bottom: unset;
   margin-top: 0 !important;
 }
+
 .social-networks.bottom-right {
   right: 0;
 }
@@ -70,6 +77,7 @@
   z-index: 9;
   right: 18px;
   bottom: 15px;
+
   @include breakpoint(phone) {
     bottom: 25px;
   }
@@ -113,19 +121,22 @@
     }
   }
 }
-@include breakpoint (desktop){
+
+@include breakpoint (desktop) {
   .envolope.top-left {
     top: 347px;
     bottom: unset;
     margin-top: 0 !important;
   }
+
   .envolope.top-right {
     right: 0;
     top: 347px;
     margin-top: 0 !important;
   }
+
   .envolope.bottom-right {
-    right: 0;   
+    right: 0;
   }
 }
 
@@ -133,7 +144,7 @@
   .modal-content {
     border: 2px solid #a6cf24;
     width: auto;
-    height: auto;   
+    height: auto;
 
     .modal-header {
       position: relative;
@@ -337,6 +348,14 @@
       @media (max-width: 500px) {
         margin-left: -50px;
       }
+    }
+  }
+}
+
+@include breakpoint (phone) {
+  /deep/ {
+    #float-social-block.ocultar-phone .envolope {
+      display: none;
     }
   }
 }

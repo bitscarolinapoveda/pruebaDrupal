@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Meta } from '@angular/platform-browser';
 
+declare var $: any;
+
 @Component({
   selector: 'app-services',
   templateUrl: './services.component.html',
@@ -16,5 +18,6 @@ export class ServicesComponent implements OnInit {
   ngOnInit() {
     this.meta.removeTag('name="general"');
     this.meta.updateTag({ name: 'component', content: 'app-services' });
+    $('#float-social-block').removeClass('ocultar-phone');
   }
 }

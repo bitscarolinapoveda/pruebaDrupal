@@ -2,6 +2,8 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { CustomCardService } from './../../../services/cards/v1-card.services';
 import { DataMenu } from '../menu-template/menu-template.component';
 
+declare var $: any;
+
 @Component({
   selector: 'app-whybitsamericas',
   templateUrl: './whybitsamericas.component.html',
@@ -31,6 +33,9 @@ export class WhybitsamericasComponent implements OnInit {
       this.whySubTitle = items.header[1].data.sub_title;
       items.data = this.whyBits.addImageField(items.data, ['field_imagen']);
       this.whyData = items.data;
+      for (let i = 0; i < this.whyData.length; i++) {
+        this.whyData[i].show = false;
+      }
       if (this.whyTitle !== '' && this.whyData.length !== 0) {
         this.visible = true;
         this.datosMenu = {
@@ -41,5 +46,10 @@ export class WhybitsamericasComponent implements OnInit {
         this.propagar.emit(this.datosMenu);
       }
     });
+  }
+
+  showImage() {
+    $('.why-img img').css('transform', 'translate(0,0)');
+    $('.why-img img').css('opacity', '1');
   }
 }

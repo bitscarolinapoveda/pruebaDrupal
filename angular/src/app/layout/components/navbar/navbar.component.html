@@ -45,6 +45,9 @@
             <ul class="list-menu list-phone">
                 <ng-container>
                     <li class="items customrow-1 items-phone">
+                        <a class="link" routerLink="/contact-us" id="openModal">
+                            <i class="fa-li fas fa-envelope"></i>
+                        </a>
                         <a class="link" *ngFor="let nav of LanguageMenu; let i= index"
                             [ngClass]="{'active': nav.status == true}">
                             {{ nav.id }}
