@@ -37,7 +37,7 @@ export class NavbarComponent implements OnInit {
         this.url = window.location.pathname;
 
         this.languagueBrowser = this._service.getLanguageBrowser();
-       
+
         if (this.languagueBrowser !== 'es') {
             this.ruta = '/' + this.languagueBrowser + '/contact-us';
         } else if (this.languagueBrowser === 'es') {

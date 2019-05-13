@@ -47,6 +47,8 @@ export class WorkusComponent implements OnInit {
   listQuestion: any[];
   hover_buttom: string;
   elementoForm: any;
+  languagueBrowser: any;
+  ruta: any;
 
   onSubmit(formulario) {
 
@@ -118,6 +120,8 @@ export class WorkusComponent implements OnInit {
     this.valido = false;
     this.hover_buttom = 'Faltan datos por llenar';
     this.hojaWU = 'Subir Fichero';
+    this.languagueBrowser = '';
+    this.ruta = '';
   }
 
   mostrarDatosWS(id) {
@@ -129,6 +133,15 @@ export class WorkusComponent implements OnInit {
   }
 
   ngOnInit() {
+
+    this.languagueBrowser = this._service.getLanguageBrowser();
+
+    if (this.languagueBrowser !== 'es') {
+      this.ruta = '/' + this.languagueBrowser + '/contact-us';
+    } else if (this.languagueBrowser === 'es') {
+      this.ruta = '/contactenos';
+    }
+
     this._http.get('rest/session/token', {}, { responseType: 'text' }).subscribe((response) => {
       this._token = response;
     });

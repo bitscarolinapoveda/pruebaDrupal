@@ -15,6 +15,8 @@ export class FooterBlockComponent implements OnInit {
 
   public title: string;
   public dataUbicaciones: any;
+  languagueBrowser: any;
+  ruta: any;
 
   constructor(
     private router: ActivatedRoute,
@@ -23,10 +25,19 @@ export class FooterBlockComponent implements OnInit {
   ) {
 
     this.dataUbicaciones = [];
+    this.languagueBrowser = '';
+    this.ruta = '';
   }
 
   ngOnInit(): void {
     this.getFooterBlockItems();
+    this.languagueBrowser = this.service.getLanguageBrowser();
+
+    if (this.languagueBrowser !== 'es') {
+      this.ruta = '/' + this.languagueBrowser + '/contact-us';
+    } else if (this.languagueBrowser === 'es') {
+      this.ruta = '/contactenos';
+    }
   }
 
   getFooterBlockItems(): void {
