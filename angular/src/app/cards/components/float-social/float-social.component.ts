@@ -27,6 +27,8 @@ export class FloatSocialComponent implements OnInit {
   positionSidebar: string;
   dataMessage: DataMessage[];
   private _token: string;
+  languagueBrowser: any;
+  ruta: any;
 
   constructor(
     private router: ActivatedRoute,
@@ -81,6 +83,15 @@ export class FloatSocialComponent implements OnInit {
   }
 
   ngOnInit() {
+
+    this.languagueBrowser = this.service.getLanguageBrowser();
+
+    if (this.languagueBrowser !== 'es') {
+      this.ruta = '/' + this.languagueBrowser + '/contact-us';
+    } else if (this.languagueBrowser === 'es') {
+      this.ruta = '/contactenos';
+    }
+
     this.getFloatSocialItems();
 
     this.getModalData();
@@ -111,7 +122,7 @@ export class FloatSocialComponent implements OnInit {
   getFloatSocialItems() {
     this.service.getCustomCardInformation('contactcard').subscribe((items: { header, others }) => {
       this.socialmedia = items.others;
-      if(items.header){
+      if (items.header) {
         this.positionSidebar = items.header[2].data.position;
       }
     });

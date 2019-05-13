@@ -47,6 +47,8 @@ export class PqrsComponent implements OnInit {
   file: any;
   hojaWU: any;
   form: FormGroup;
+  ruta: any;
+  languagueBrowser: any;
 
   constructor(private _http: HttpService, private _service: CustomCardService, private http_pais: HttpClient, config: NgbPopoverConfig, private fb: FormBuilder,
     private rutaActiva: ActivatedRoute) {
@@ -70,6 +72,8 @@ export class PqrsComponent implements OnInit {
     this.form = this.fb.group({
       hojav: null
     });
+    this.ruta = '';
+    this.languagueBrowser = '';
   }
 
   mostrarDatos(id) {
@@ -138,6 +142,15 @@ export class PqrsComponent implements OnInit {
   ngOnInit() {
 
     this.type = this.rutaActiva.snapshot.params.type;
+
+    this.languagueBrowser = this._service.getLanguageBrowser();
+
+    if (this.languagueBrowser !== 'es') {
+        this.ruta = '/' + this.languagueBrowser + '/politics';
+    } else if (this.languagueBrowser === 'es') {
+        this.ruta = '/politicas';
+    }
+
 
     this._http.get('rest/session/token', {}, { responseType: 'text' }).subscribe((response) => {
       this._token = response;

@@ -236,6 +236,18 @@
                             color: #a6cf24;
                             text-decoration: none;
                         }
+
+                        @include breakpoint(phone) {
+                            i.icon-phone {
+                                color: #ffffff !important;
+                            }
+
+                            .link.icon-phone {
+                                color: #ffffff;
+                                text-decoration: none;
+                            }
+                        }
+
                     }
 
                     .link {
@@ -336,6 +348,7 @@
                     .link.active {
                         font-weight: 900;
                     }
+
                 }
 
                 @include breakpoint (tablet) {
@@ -452,7 +465,6 @@
 
                         &:hover {
                             >i {
-
                                 color: #a6cf24;
                             }
 
@@ -732,6 +744,10 @@
         .dropdown-menu a:active {
             color: #a6cf24 !important;
             background-color: transparent;
+        }
+
+        .dropdown-menu.show {
+            margin-top: 0;
         }
 
         @include breakpoint(phone) {

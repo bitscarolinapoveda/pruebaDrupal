@@ -26,17 +26,19 @@
                     </li>
                 </ng-container>
             </ul>
-            <div class="dropdown" *ngIf="LanguageMenu.length !== 0">
+            <div class="dropdown" *ngIf="LanguageMenu.length !== 0" 
+            (mouseleave)='menuOutLang($event)'>
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" (mouseover)='menuOverLang($event)'
-                    (mouseleave)='menuOutLang($event)'>
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" 
+                    (click)="menuOverLang($event)">
                     {{LanguageMenuDefault.id}}
                     <div class="items dropdown-menu items-phone" aria-labelledby="dropdownMenuButton">
                         <ng-container *ngFor="let nav of LanguageMenu; let i= index">
-                            <ng-container *ngIf="nav.status then link">
+                            <ng-container *ngIf="!nav.status then link">
                             </ng-container>
                             <ng-template #link>
-                                <a class="dropdown-item" href="#" *ngIf="nav.status == true">{{ nav.id }}</a>
+                                <a class="dropdown-item" [href]="url" *ngIf="nav.status == false"
+                                    (click)="changeLanguage(nav.id)">{{ nav.id }}</a>
                             </ng-template>
                         </ng-container>
                     </div>
@@ -45,11 +47,11 @@
             <ul class="list-menu list-phone">
                 <ng-container>
                     <li class="items customrow-1 items-phone">
-                        <a class="link" routerLink="/contact-us" id="openModal">
-                            <i class="fa-li fas fa-envelope"></i>
+                        <a class="link link-envelope" [routerLink]="ruta" id="openModal">
+                            <i class="fa-li fas fa-envelope icon-phone"></i>
                         </a>
-                        <a class="link" *ngFor="let nav of LanguageMenu; let i= index"
-                            [ngClass]="{'active': nav.status == true}">
+                        <a class="link link-language" *ngFor="let nav of LanguageMenu; let i= index"
+                            [ngClass]="{'active': nav.status == true}" (click)="changeLanguage(nav.id)">
                             {{ nav.id }}
                         </a>
                     </li>
