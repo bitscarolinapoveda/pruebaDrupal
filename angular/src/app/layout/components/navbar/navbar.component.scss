@@ -349,6 +349,13 @@
                         font-weight: 900;
                     }
 
+                    @include breakpoint (tablet) {
+                        .link.link-envelope {
+                            width: 100px !important;
+                            padding-right: 0;
+                        }
+                    }
+
                 }
 
                 @include breakpoint (tablet) {
@@ -792,6 +799,13 @@ app-navbar /deep/ {
             .fa-envelope {
                 left: 20px;
             }
+
+            .verticalLine {
+                width: 2px;
+                background-color: #ffff;
+                margin: 10px 5px;
+            }
+
         }
     }
 
@@ -799,6 +813,12 @@ app-navbar /deep/ {
         .items-phone {
             .fa-envelope {
                 left: 20px;
+            }            
+
+            .verticalLine {
+                width: 2px;
+                background-color: #ffff;
+                margin: 10px 5px;
             }
         }
     }
