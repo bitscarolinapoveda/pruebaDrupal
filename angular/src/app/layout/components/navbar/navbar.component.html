@@ -50,6 +50,7 @@
                         <a class="link link-envelope" [routerLink]="ruta" id="openModal">
                             <i class="fa-li fas fa-envelope icon-phone"></i>
                         </a>
+                        <div class="verticalLine"></div>
                         <a class="link link-language" *ngFor="let nav of LanguageMenu; let i= index"
                             [ngClass]="{'active': nav.status == true}" (click)="changeLanguage(nav.id)">
                             {{ nav.id }}
