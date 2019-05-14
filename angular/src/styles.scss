@@ -57,13 +57,16 @@ body {
 
 .popover {
     max-width: 800px !important;
-    font-weight: 600 !important;    
+    font-weight: 600 !important;
 
     .popover-body {
         font-family: 'Open Sans light' !important;
         font-size: 14px !important;
-        overflow-y: scroll;
         background-color: white;
+
+        @include breakpoint (phone) {
+            overflow-y: scroll;
+        }
 
         p,
         h3,

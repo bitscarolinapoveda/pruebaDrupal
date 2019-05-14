@@ -275,10 +275,14 @@ input:-moz-placeholder {
   }
 
   .popover-question.phone {
-    display: none;
+    display: block;
 
     @include breakpoint(phone) {
-      display: block;
+      display: block ;
+    }
+
+    @include breakpoint(desktop) {
+      display: none;
     }
   }
 
