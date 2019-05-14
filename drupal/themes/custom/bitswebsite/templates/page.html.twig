@@ -52,6 +52,7 @@
 #}
 <div id="page-wrapper">
   <div id="page">
+    {% if page.header or page.primary_menu or page.secondary_menu %}
     <header id="header" class="header" role="banner" aria-label="{{ 'Site header'|t }}">
       {% if (logged_in or theme_hook_suggestions[1] == 'page__user__login') %}
         <div class="section layout-container clearfix">
@@ -61,7 +62,7 @@
       </div>
       {% endif %}
     </header>
-
+    {% endif %}
     {% if page.highlighted and (logged_in or theme_hook_suggestions[1] == 'page__user__login') %}
       <div class="highlighted">
         <aside class="layout-container section clearfix" role="complementary">
@@ -76,6 +77,7 @@
         </aside>
       </div>
     {% endif %}
+    {% if page.content or page.sidebar_first or page.sidebar_second %}
     <div id="main-wrapper" class="layout-main-wrapper layout-container clearfix">
       <div id="main" class="layout-main clearfix">
         {{ page.breadcrumb }}
@@ -101,6 +103,7 @@
         {% endif %}
       </div>
     </div>
+    {% endif %}
     {% if (page.featured_bottom_first or page.featured_bottom_second or page.featured_bottom_third)  and (logged_in or theme_hook_suggestions[1] == 'page__user__login')%}
       <div class="featured-bottom">
         <aside class="layout-container clearfix" role="complementary">
@@ -110,6 +113,7 @@
         </aside>
       </div>
     {% endif %}
+    {% if page.footer_first or page.footer_second or page.footer_third or page.footer_fourth %}
     <footer
       {% if logged_in or theme_hook_suggestions[1] == 'page__user__login' %}
       class="site-footer"
@@ -133,5 +137,6 @@
         {% endif %}
       </div>
     </footer>
+    {% endif %}
   </div>
 </div>
