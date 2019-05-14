@@ -79,10 +79,10 @@ export class CustomCardService {
     let list: any[] = [];
 
     if (listPrincipal.data !== undefined) {
-      for (let index = 0; index < listElement.data.length; index++) {
-        for (let j = 0; j < listPrincipal.data.length; j++) {
-          if (listElement.data[index].nid === listPrincipal.data[j].id) {
-            list.push(listElement.data[index]);
+      for (let index = 0; index < listPrincipal.data.length; index++) {
+        for (let j = 0; j < listElement.data.length; j++) {
+          if (listPrincipal.data[index].id === listElement.data[j].nid) {
+            list.push(listElement.data[j]);
           }
         }
       }
