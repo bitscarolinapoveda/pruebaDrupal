@@ -1,9 +1,12 @@
 <app-banner imgFondo="" uuid="ae5fe7b0-3448-4cf2-8d47-d1d8f6c534ba"></app-banner>
 <div class="container">
 	<div class="row">
-		<!-- <p [innerHTML]="descrip_form" class="descrip-form"></p> -->
+		<section id="principal">
+			<h2 class="title-principal">{{ titlePrincipal }}</h2>
+			<p class="descrip-principal"> {{ descripPrincipal }}</p>
+		</section>
 		<form id="formulario_contacto" #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)" class="col-md-12"
-			name="formulario_contacto">			
+			name="formulario_contacto">
 			<app-message [dataMessage]="dataMessage"></app-message>
 			<ng-template #valid>
 				<div class="alert alert-danger" role="alert">
