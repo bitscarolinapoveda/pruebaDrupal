@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Resolve } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/observable/of';
+import { of } from 'rxjs/observable/of';
 import 'rxjs/add/operator/delay';
 import { CustomCardService } from '../cards/v1-card.services';
 
@@ -14,6 +14,6 @@ export class HnResolverService implements Resolve<Observable<any>> {
 
   resolve() {
     const language = this._service.getValidationLanguage();
-    return Observable.of(language);
+    return of(language);
   }
 }
