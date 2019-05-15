@@ -1,0 +1,12 @@
+@import '../../../cards/components/tabs/tabs.component.scss';
+@import '../../../cards/components/workus/workus.component.scss';
+
+:host /deep/ {
+    .terminos_grupo {
+        margin-top: 0px;
+    }    
+
+    .obligatorios {
+        margin-bottom: 40px;
+    }
+}

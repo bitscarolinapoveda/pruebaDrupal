@@ -54,6 +54,37 @@
             right: 0;
             border-radius: 50%;
         }
+
+        /deep/ {
+            @include breakpoint (desktop) {
+                img {
+                    width: 180px;
+                    height: 150px;
+                    opacity: 0;
+                    transform: translate(0, 30px);
+                    transition: all 300ms ease;
+                }
+            }
+
+            @include breakpoint (phone) {
+                img {
+                    width: 200px;
+                    height: 180px;
+                    opacity: 0;
+                    transform: translate(0, 30px);
+                    transition: all 300ms ease;
+                }
+            }
+            @include breakpoint (tablet) {
+                img {
+                    width: 200px;
+                    height: 150px;
+                    opacity: 0;
+                    transform: translate(0, 30px);
+                    transition: all 300ms ease;
+                }
+            }
+        }
     }
 
     .info {
@@ -74,6 +105,10 @@
             }
 
             @include breakpoint (desktop) {
+                display: none;
+            }
+
+            @include breakpoint (phone) {
                 display: none;
             }
         }
@@ -132,12 +167,16 @@
             font-weight: 300;
 
             @include breakpoint (desktop) {
-                padding-left: 12%;
-                padding-right: 12%;
+                padding-left: 0;
+                padding-right: 0;
                 width: 100%;
             }
 
             @include breakpoint (phone) {
+                padding: 0;
+            }
+
+            @include breakpoint (tablet) {
                 padding: 0;
             }
         }
@@ -232,7 +271,7 @@ h1 {
     margin: auto;
     top: 0;
     bottom: 0;
-    left: 0;
+    left: -50px;
     border: none;
     background: transparent;
     background-image: url(/assets/icon/left-arrow.svg);
@@ -242,6 +281,12 @@ h1 {
     overflow: hidden;
     padding-top: 37px;
     cursor: pointer;
+    @include breakpoint (tablet) {
+        left: -50px;
+    }
+    @include breakpoint (phone) {
+        left: -30px;
+    }
 }
 
 .rightRs {
@@ -249,7 +294,7 @@ h1 {
     margin: auto;
     top: 0;
     bottom: 0;
-    right: 0;
+    right: -50px;
     border: none;
     background: transparent;
     background-image: url(/assets/icon/right-arrow.svg);
@@ -259,6 +304,13 @@ h1 {
     overflow: hidden;
     padding-top: 37px;
     cursor: pointer;
+    @include breakpoint (tablet) {
+        right: -50px;
+    }
+    @include breakpoint (phone) {
+        right: -30px;
+    }
+
 }
 
 .rightRs:focus,

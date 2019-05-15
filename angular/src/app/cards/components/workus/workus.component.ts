@@ -47,6 +47,8 @@ export class WorkusComponent implements OnInit {
   listQuestion: any[];
   hover_buttom: string;
   elementoForm: any;
+  languagueBrowser: any;
+  ruta: any;
 
   onSubmit(formulario) {
 
@@ -84,6 +86,7 @@ export class WorkusComponent implements OnInit {
 
             this.ngSelectW.active = [];
             this.pais = '';
+            this.hojaWU = 'Subir Fichero';
 
             this.dataMessage.push(
               {
@@ -120,8 +123,9 @@ export class WorkusComponent implements OnInit {
     this.hojaWU = '';
     this.valido = false;
     this.hover_buttom = 'Faltan datos por llenar';
-    config.placement = 'top';
-    config.triggers = 'hover';
+    this.hojaWU = 'Subir Fichero';
+    this.languagueBrowser = '';
+    this.ruta = '';
   }
 
   mostrarDatosWS(id) {
@@ -133,6 +137,15 @@ export class WorkusComponent implements OnInit {
   }
 
   ngOnInit() {
+
+    this.languagueBrowser = this._service.getLanguageBrowser();
+
+    if (this.languagueBrowser !== 'es') {
+      this.ruta = '/' + this.languagueBrowser + '/contact-us';
+    } else if (this.languagueBrowser === 'es') {
+      this.ruta = '/contactenos';
+    }
+
     this._http.get('rest/session/token', {}, { responseType: 'text' }).subscribe((response) => {
       this._token = response;
     });
@@ -144,21 +157,6 @@ export class WorkusComponent implements OnInit {
 
     this.getForm();
 
-    $(function () {
-      $('[data-toggle="popover-question"]').popover(
-        {
-          html: true,
-          title: function () {
-            return $('#popover-title-question').html();
-          },
-          content: function () {
-            return document.getElementById('popover-question').innerHTML;
-          }
-        }
-      ).click(function (e) {
-        e.preventDefault();
-      });
-    });
   }
 
   getForm() {
@@ -169,7 +167,9 @@ export class WorkusComponent implements OnInit {
       // Se obtienen de la respuesta del servicio los layout y elementos del formulario, se almacan en un array.
       for (var index in params) {
         elementLayout = index;
-        if (elementLayout.indexOf('#') == -1) {
+        if (elementLayout === 'fileupload') {
+          listLayout.push(params[index]);
+        } else if (elementLayout.indexOf('#') == -1) {
           listLayout.push(params[index]);
         }
       }
@@ -177,17 +177,20 @@ export class WorkusComponent implements OnInit {
       for (var index in listLayout) {
         let campoForm = [];
         let cont = 0;
-        if (listLayout[index])
-          for (var indexj in listLayout[index]) {
-            if (indexj.indexOf('#') == -1) {
-              cont++;
-              campoForm.push(listLayout[index][indexj]);
+        if (listLayout[index]) {
+          if (listLayout[index]['#type'] !== 'managed_file') {
+            for (var indexj in listLayout[index]) {
+              if (indexj.indexOf('#') == -1) {
+                cont++;
+                campoForm.push(listLayout[index][indexj]);
+              }
             }
-          }
-        if (cont != 0) {
-          listLayout[index] = [];
-          for (var indexz in campoForm) {
-            listLayout[index].push(campoForm[indexz]);
+            if (cont != 0) {
+              listLayout[index] = [];
+              for (var indexz in campoForm) {
+                listLayout[index].push(campoForm[indexz]);
+              }
+            }
           }
         }
         // Array de campos que conforman el formulario

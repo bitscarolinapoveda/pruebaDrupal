@@ -1,21 +1,27 @@
 <div *ngIf="visible">
-    <app-separator [iconCustom]="'icon-medal'" [id]="datosMenu.id" *ngIf="type == 'about'"></app-separator>
+    <div [id]="datosMenu.id"></div>
+    <app-separator [iconCustom]="'icon-medal'" *ngIf="type == 'about'"></app-separator>
     <section id="main-title">
         <h2>{{ caroseltitle }}</h2>
     </section>
-    <div class="contenedor">
+    <div class="contenedor" (deferLoad)="show = true">
         <ngx-carousel [inputs]="carocarouselTile" (carouselLoad)="carouselTileLoad($event)"
             *ngIf="CarouselControlArray">
             <ngx-tile NgxCarouselItem *ngFor="let main of CarouselControlArray; let i = index">
-                <a href="" class="url-link">
-                    <div class="container-img" [ngStyle]="{'background-image':'url(' + main.field_image?.url + ')'}"></div>
-                    <div class="info">
-                        <hr class="line">
-                        <h4 class="name-organization">{{main.title}}</h4>
-                        <h3 class="main-title">{{main.field_recognition}}</h3>
-                        <h5 class="category">{{main.field_category}}</h5>
-                        <h5 class="yeard">{{main.field_year}}</h5>
-                    </div>
+                <a href="" class="url-link images">
+                    <ng-container *ngIf="show">
+                        <div class="container-img"
+                            [ngStyle]="{'background-image':'url(' + main.field_image?.url + ')'}">
+                        </div>
+                        <img class="ocultar" (load)="showImage()" src="{{ main.field_image?.url }}">
+                        <div class="info">
+                            <hr class="line">
+                            <h4 class="name-organization">{{main.title}}</h4>
+                            <h3 class="main-title">{{main.field_recognition}}</h3>
+                            <h5 class="category">{{main.field_category}}</h5>
+                            <h5 class="yeard">{{main.field_year}}</h5>
+                        </div>
+                    </ng-container>
                 </a>
             </ngx-tile>
             <button NgxCarouselPrev class='leftRs'>&lt;</button>

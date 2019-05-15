@@ -1,3 +1,5 @@
+@import './src/assets/scss/mixin.scss';
+
 .carousel /deep/ {
     .carousel-indicators {
         bottom: -10px;
@@ -13,10 +15,32 @@
             background-color: #a6cf24 !important;
         }
     }
+    .carousel-inner {
+      height: 460px;
+      @media (max-width: 500px) {
+        height: 520px;
+      }
+      .carousel-item {
+        height: 100%;
+        .pt-3 {
+          @media (max-width: 500px) {
+            display: none;
+          }
+        }
+        .fondoSlide {
+          height: 100%;
+        }
+      }
+    }
 }
 :host /deep/ .carousel-control-next,
 :host /deep/.carousel-control-prev {
   width: 38px;
+
+  @include breakpoint (phone) {
+    display: none;
+  }
+
 }
 
 :host /deep/ .carousel-control-prev .carousel-control-prev-icon {

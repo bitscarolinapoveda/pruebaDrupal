@@ -1,14 +1,15 @@
 <section id="main-title">
     <h2>{{ mainTitleLink?.title }}</h2>
 </section>
-
 <section class="WhyBits">
     <div class="images-whybits">
         <ul class="row first images">
-            <li *ngFor="let mv of moralValues; let i = index">
+            <li class="images" *ngFor="let image of moralValues; let i = index" (deferLoad)="image.show = true">
                 <a [routerLink]="'home'">
-                    <img [src]="mv.field_imagen.url" [alt]="mv.field_imagen.alt" />
-                    <p>{{ mv.title }}</p>
+                    <ng-container *ngIf="image.show" >
+                        <img class="{{i}}" [src]='image.field_imagen.url' [alt]="image.field_imagen.alt" (load)="showImage()">
+                    </ng-container>
+                    <p>{{ image.title }}</p>
                 </a>
             </li>
         </ul>

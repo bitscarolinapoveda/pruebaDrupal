@@ -2,6 +2,8 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { CustomCardService } from 'src/app/services/cards/v1-card.services';
 import { DataMenu } from '../menu-template/menu-template.component';
 
+declare var $: any;
+
 @Component({
   selector: 'app-knowus',
   templateUrl: './knowus.component.html',
@@ -14,10 +16,12 @@ export class KnowusComponent implements OnInit {
   @Output() propagar = new EventEmitter<DataMenu>();
   datosMenu: DataMenu;
   visible: boolean;
+  show: boolean;
 
   constructor(private _service: CustomCardService) {
     this.list = [];
     this.visible = false;
+    this.show = false;
   }
 
   ngOnInit() {
@@ -40,6 +44,11 @@ export class KnowusComponent implements OnInit {
         this.propagar.emit(this.datosMenu);
       }
     });
+  }
+
+  showImage() {
+    $('.images img').css('transform', 'translate(0,0)');
+    $('.images img').css('opacity', '1');
   }
 
 }

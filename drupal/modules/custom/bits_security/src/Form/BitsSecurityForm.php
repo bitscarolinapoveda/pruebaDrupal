@@ -92,8 +92,7 @@ class BitsSecurityForm extends ConfigFormBase {
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
     parent::submitForm($form, $form_state);
-
-    $this->config('bits_security.bitssecurity')
+    $this->configFactory->getEditable('bits_security.settings')
       ->set('login_path', $form_state->getValue('login_path'))
       ->set('login_path', $form_state->getValue('login_path'))
       ->set('register_path', $form_state->getValue('register_path'))

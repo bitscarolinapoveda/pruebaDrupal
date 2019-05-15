@@ -8,20 +8,22 @@
   <section class="WhyBits">
     <div class="images-whybits">
       <ul class="row why-boxes">
-        <li class="why-list" *ngFor="let why of whyData; let i = index">
-          <div class="row why-img-and-title-box">
-            <div class="col-5 why-img">
-              <img [src]="why.field_imagen?.url" [alt]="why.field_imagen?.alt" />
+        <li class="why-list" *ngFor="let why of whyData; let i = index" (deferLoad)="why.show = true">
+          <ng-container *ngIf="why.show">
+            <div class="row why-img-and-title-box">
+              <div class="col-5 why-img">
+                <img [src]="why.field_imagen?.url" [alt]="why.field_imagen?.alt" (load)="showImage()"/>
+              </div>
+              <div class="col-7 why-title">
+                <h3>{{ why?.title }}</h3>
+              </div>
             </div>
-            <div class="col-7 why-title">
-              <h3>{{ why?.title }}</h3>
+            <div class="row why-description-box">
+              <div class="col-12 why-description">
+                <p [innerHTML]="why.body"></p>
+              </div>
             </div>
-          </div>
-          <div class="row why-description-box">
-            <div class="col-12 why-description">
-              <p [innerHTML]="why.body"></p>
-            </div>
-          </div>
+          </ng-container>
         </li>
       </ul>
     </div>

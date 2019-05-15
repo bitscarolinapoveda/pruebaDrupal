@@ -17,7 +17,6 @@ export class TitleComponent implements OnInit {
         this.getTitiles();
     }
     getTitiles() {
-        // this.title.getCustomCardInformation('contact_title').subscribe(items => {
         this.title.getCustomCardInformation('howcanwehelpyoucard').subscribe(items => {
             this.titleArray = items.header[0].data.title;
         });

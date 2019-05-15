@@ -4,6 +4,8 @@ import { DataMenu } from '../menu-template/menu-template.component';
 import { NgxCarousel } from 'ngx-carousel';
 import { General } from '../blurb/blurb.component';
 
+declare var $: any;
+
 @Component({
   selector: 'app-screenshots',
   templateUrl: './screenshots.component.html',
@@ -20,13 +22,16 @@ export class ScreenshotsComponent implements OnInit {
   principalScreenshots: General;
   CarouselControlArray: any = [];
   public carouselOne: NgxCarousel;
+  show: boolean;
 
-  constructor(private screenshots: CustomCardService) { }
+  constructor(private screenshots: CustomCardService) {
+    this.show = false;
+   }
 
   ngOnInit() {
     this.getScreenshotsInfo();
     this.carouselOne = {
-      grid: { xs: 3, sm: 3, md: 4, lg: 4, all: 0 },
+      grid: { xs: 3, sm: 3, md: 3, lg: 3, all: 0 },
       slide: 2,
       speed: 400,
       animation: 'lazy',
@@ -53,7 +58,6 @@ export class ScreenshotsComponent implements OnInit {
         for (let index = 0; index < items.data.length; index++) {
           for (let j = 0; j < items.data[index].field_image.length; j++) {
             list.push(items.data[index].field_image[j]);
-            list.push(items.data[index].field_image[j]);
           }
         }
         this.CarouselControlArray = list;
@@ -75,6 +79,11 @@ export class ScreenshotsComponent implements OnInit {
     if (len <= 4) {
       for (let i = len; i < len + 10; i++) { this.CarouselControlArray.push(i); }
     }
+  }
+
+  showImage() {
+    $('.imagesScreen').css('transform', 'translate(0,0)');
+    $('.imagesScreen').css('opacity', '1');
   }
 
 }

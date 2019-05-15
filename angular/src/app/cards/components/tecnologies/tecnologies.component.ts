@@ -37,7 +37,7 @@ export class TecnologiesComponent implements OnInit {
       id: 'a5',
       url: '/imedical'
     };
-    this.propagar.emit(this.datosMenu);
+    //this.propagar.emit(this.datosMenu);
     this.getItemsTecnologies();
   }
 

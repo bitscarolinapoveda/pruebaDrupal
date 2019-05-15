@@ -236,6 +236,18 @@
                             color: #a6cf24;
                             text-decoration: none;
                         }
+
+                        @include breakpoint(phone) {
+                            i.icon-phone {
+                                color: #ffffff !important;
+                            }
+
+                            .link.icon-phone {
+                                color: #ffffff;
+                                text-decoration: none;
+                            }
+                        }
+
                     }
 
                     .link {
@@ -255,7 +267,7 @@
                         @include breakpoint(desktop) {
                             color: #ffffff;
                             padding-left: 12%;
-                            padding-right: 5%;
+                            padding-right: 12%;
                             padding-top: 20%;
                             padding-bottom: 20%;
                         }
@@ -336,6 +348,14 @@
                     .link.active {
                         font-weight: 900;
                     }
+
+                    @include breakpoint (tablet) {
+                        .link.link-envelope {
+                            width: 100px !important;
+                            padding-right: 0;
+                        }
+                    }
+
                 }
 
                 @include breakpoint (tablet) {
@@ -452,7 +472,6 @@
 
                         &:hover {
                             >i {
-
                                 color: #a6cf24;
                             }
 
@@ -728,10 +747,14 @@
         .dropdown-menu a:hover {
             color: #a6cf24 !important;
         }
-        
+
         .dropdown-menu a:active {
             color: #a6cf24 !important;
             background-color: transparent;
+        }
+
+        .dropdown-menu.show {
+            margin-top: 0;
         }
 
         @include breakpoint(phone) {
@@ -766,6 +789,37 @@ app-navbar /deep/ {
         .locations-container {
             height: 100%;
             width: 100%;
+        }
+    }
+}
+
+/deep/ {
+    @include breakpoint(phone) {
+        .items-phone {
+            .fa-envelope {
+                left: 20px;
+            }
+
+            .verticalLine {
+                width: 2px;
+                background-color: #ffff;
+                margin: 10px 5px;
+            }
+
+        }
+    }
+
+    @include breakpoint(tablet) {
+        .items-phone {
+            .fa-envelope {
+                left: 20px;
+            }            
+
+            .verticalLine {
+                width: 2px;
+                background-color: #ffff;
+                margin: 10px 5px;
+            }
         }
     }
 }

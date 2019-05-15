@@ -1,12 +1,12 @@
 <div class="tab">
 	<div class="contactenos">
 		<button class="active" (click)="toogleHidden()">
-			{{this.title_a}}
+			<label class="title-tabs">{{this.title_a}}</label>
 		</button>
 	</div>
 	<div class="trabaje">
 		<button (click)="toogleHidden()">
-			{{this.title_b}}
+			<label class="title-tabs">{{this.title_b}}</label>
 		</button>
 	</div>
 </div>
@@ -19,7 +19,7 @@
 			<app-message [dataMessage]="dataMessage"></app-message>
 			<ng-template #valid>
 				<div class="alert alert-danger" role="alert">
-				Campo obligatorio o invalido
+					Campo obligatorio o invalido
 				</div>
 			</ng-template>
 			<div class="col-md-12 form-group">
@@ -42,7 +42,7 @@
 									(mouseover)="mostrarDatos($event)" maxlength="{{elementLayout['#maxlength']}}"
 									#textfield="ngModel" ngModel>
 								<ng-container *ngIf="(textfield.invalid && textfield.touched) then valid">
-								</ng-container>								
+								</ng-container>
 							</div>
 							<!-- Campos email-->
 							<div *ngIf="elementLayout['#type'] == 'email'">
@@ -58,7 +58,7 @@
 									pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
 									ngModel>
 								<ng-container *ngIf="(email.invalid && email.touched) then valid">
-								</ng-container>								
+								</ng-container>
 							</div>
 							<!-- Campos textarea-->
 							<div *ngIf="elementLayout['#type'] == 'textarea'">
@@ -166,17 +166,21 @@
 								name="{{item['#webform_key']}}" value="false" required="{{item['#required'] ==  true}}"
 								ngModel>
 							<label ng-reflect-ng-class="" for="{{'contact_us__' +item['#webform_key']}}">He leído y
-								acepto los<a routerLink="/politics">
+								acepto los<a [routerLink]="ruta">
 									términos y condiciones
-								</a>
-								<ng-template #tipQuestion>
-									<div [innerHTML]='listQuestion'></div>
-								</ng-template>
-								<div class="popover-question" [ngbPopover]="tipQuestion" popoverClass="question"
-									[popoverTitle]="tituloQuestion">
-									<i class="fas fa-exclamation-circle"></i>
-								</div>
+								</a>								
 							</label>
+							<ng-template #tipQuestion>
+								<div [innerHTML]='listQuestion'></div>
+							</ng-template>
+							<div class="popover-question desktop" [ngbPopover]="tipQuestion" popoverClass="question"
+								[popoverTitle]="tituloQuestion" triggers="mouseenter:mouseleave" placement="top">
+								<i class="fas fa-exclamation-circle"></i>								
+							</div>	
+							<div class="popover-question phone" [ngbPopover]="tipQuestion" popoverClass="question"
+								[popoverTitle]="tituloQuestion" placement="left">
+								<i class="fas fa-exclamation-circle"></i>								
+							</div>				
 						</div>
 					</ng-container>
 				</ng-container>

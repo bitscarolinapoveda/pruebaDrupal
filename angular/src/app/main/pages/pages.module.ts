@@ -1,3 +1,4 @@
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -30,6 +31,8 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { MapsiteComponent } from './mapsite/mapsite.component';
 import { PqrsComponent } from './pqrs/pqrs.component';
 
+import { SelectModule } from 'ng2-select';
+
 @NgModule({
   declarations: [
     PagesComponent,
@@ -60,7 +63,9 @@ import { PqrsComponent } from './pqrs/pqrs.component';
     DynamicFormsCoreModule,
     DynamicFormsBasicUIModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    SelectModule,
+    NgbModule,
   ],
   providers: [
     HttpService,

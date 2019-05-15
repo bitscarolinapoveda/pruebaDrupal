@@ -56,15 +56,17 @@ body {
 }
 
 .popover {
-    max-width: 1000px !important;
+    max-width: 800px !important;
     font-weight: 600 !important;
 
     .popover-body {
         font-family: 'Open Sans light' !important;
         font-size: 14px !important;
-        height: 170px;
-        overflow-y: scroll;
         background-color: white;
+
+        @include breakpoint (phone) {
+            overflow-y: scroll;
+        }
 
         p,
         h3,
@@ -80,8 +82,6 @@ body {
         color: #ffffff !important;
         text-transform: uppercase;
         text-align: center;
-        
-
     }
 
 }
@@ -120,4 +120,9 @@ body {
     margin: auto;
     display: block;
     margin-bottom: 10px !important;
+}
+
+.carousel-inner {
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
 }

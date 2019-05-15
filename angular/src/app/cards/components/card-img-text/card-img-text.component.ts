@@ -2,6 +2,8 @@ import { OnInit, Component, Input, Output, EventEmitter } from '@angular/core';
 import { CustomCardService } from 'src/app/services/cards/v1-card.services';
 import { DataMenu } from '../menu-template/menu-template.component';
 import { General } from '../blurb/blurb.component';
+
+declare var $: any;
 @Component({
     selector: 'app-card-img-text',
     templateUrl: './card-img-text.component.html',
@@ -20,8 +22,12 @@ export class CardImgTextComponent implements OnInit {
     // Si se recibe TI : Texto luego imagen
     @Input() orientacion: string;
     @Output() propagar = new EventEmitter<DataMenu>();
-    datosMenu: DataMenu;
+    datosMenuL: DataMenu;
+    datosMenuR: DataMenu;
     @Input() type: string;
+    showL: boolean;
+    showR: boolean;
+    showPhone: boolean;
 
     constructor(
         private _http: CustomCardService
@@ -31,11 +37,17 @@ export class CardImgTextComponent implements OnInit {
         this.cardImgR = [];
         this.visibleL = false;
         this.visibleR = false;
+        this.showL = false;
+        this.showR = false;
+        this.showPhone = false;
     }
 
     ngOnInit() {
-        this.getCardImgTextServiceL();
-        this.getCardImgTextServiceR();
+        if (this.orientacion === 'IT') {
+            this.getCardImgTextServiceL();
+        } else {
+            this.getCardImgTextServiceR();
+        }
     }
 
     getCardImgTextServiceL() {
@@ -44,17 +56,17 @@ export class CardImgTextComponent implements OnInit {
 
             this._http.getCustomCardInformation('mediaimedicalcard_2').subscribe(params => {
                 params = this._http.getFilterLists(this.principalL, params);
-                this.titleL = params.header[0].data.title;
+                this.titleL = params.data[0].field_subtitulo;
                 params.data = this._http.addImageField(params.data, ['field_imagen_media_product']);
                 this.cardImgL = params.data;
                 if (this.cardImgL.length !== 0) {
                     this.visibleL = true;
-                    this.datosMenu = {
+                    this.datosMenuL = {
                         label: 'IMAG L',
                         id: 'a3',
                         url: '/imedical'
                     };
-                    this.propagar.emit(this.datosMenu);
+                    this.propagar.emit(this.datosMenuL);
                 }
             });
         });
@@ -67,19 +79,34 @@ export class CardImgTextComponent implements OnInit {
 
             this._http.getCustomCardInformation('mediaimedicalcard').subscribe(params => {
                 params = this._http.getFilterLists(this.principalR, params);
-                this.titleR = params.header[0].data.title;
+                this.titleR = params.data[0].field_subtitulo;
                 params.data = this._http.addImageField(params.data, ['field_imagen_media_product']);
                 this.cardImgR = params.data;
                 if (this.cardImgR.length !== 0) {
                     this.visibleR = true;
-                    this.datosMenu = {
+                    this.datosMenuR = {
                         label: 'IMAG R',
-                        id: 'a4',
+                        id: 'a67',
                         url: '/imedical'
                     };
-                    this.propagar.emit(this.datosMenu);
+                    this.propagar.emit(this.datosMenuR);
                 }
             });
         });
+    }
+
+    showImageL() {
+        $('.showL .img-fluid').css('transform', 'translate(0,0)');
+        $('.showL .img-fluid').css('opacity', '1');
+    }
+
+    showImageR() {
+        $('.showR .img-fluid').css('transform', 'translate(0,0)');
+        $('.showR .img-fluid').css('opacity', '1');
+    }
+
+    showImagePhone() {
+        $('.showPhone .img-fluid').css('transform', 'translate(0,0)');
+        $('.showPhone .img-fluid').css('opacity', '1');
     }
 }

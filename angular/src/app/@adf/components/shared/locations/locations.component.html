@@ -10,9 +10,9 @@
         <i class="fas fa-sort-down"></i>
         <h2 *ngIf="seeLessText" class="text-see-more">VER MENOS UBICACIONES</h2>
     </a>
-    <section id="acordion-info" class="acordion-info">
-        <ngb-accordion #acc="ngbAccordion" activeIds="static-0" [closeOthers]="closeOthers" (click)="checkHeight($event)">
-            <ngb-panel *ngFor="let ubicacion of locations_data ; let i = index" id="static-{{i}}">
+    <section id="acordion-info" class="acordion-info locations">
+        <ngb-accordion #acc="ngbAccordion" activeIds="static-0" [closeOthers]="closeOthers" (click)="checkHeight($event, i)">
+            <ngb-panel *ngFor="let ubicacion of locations_data ; let i = index; let l = last" id="static-{{i}}">
                 <ng-template ngbPanelTitle>
                     <div class="container location-block">
                         <div class="row location-button">

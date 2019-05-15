@@ -3,6 +3,8 @@ import { CustomCardService } from 'src/app/services/cards/v1-card.services';
 import { DataMenu } from '../menu-template/menu-template.component';
 import { NgxCarousel } from 'ngx-carousel';
 import { General } from '../blurb/blurb.component';
+
+declare var $: any;
 @Component({
   selector: 'app-team',
   templateUrl: './team.component.html',
@@ -20,10 +22,12 @@ export class TeamComponent implements OnInit {
   CarouselControlArray: any = [];
   caroseltitle: any = [];
   public carocarouselTile: NgxCarousel;
+  show: boolean;
 
   constructor(private https: CustomCardService) {
     this.CarouselControlArray = [];
     this.visible = false;
+    this.show = false;
   }
 
   ngOnInit() {
@@ -31,7 +35,7 @@ export class TeamComponent implements OnInit {
     this.getTeamInformationService();
     this.CarouselControlArray = [0, 1, 2, 3];
     this.carocarouselTile = {
-      grid: { xs: 1, sm: 2, md: 4, lg: 4, all: 0 },
+      grid: { xs: 1, sm: 2, md: 3, lg: 4, all: 0 },
       slide: 1,
       speed: 400,
       animation: 'lazy',
@@ -88,7 +92,7 @@ export class TeamComponent implements OnInit {
         this.subtitle = params.header[1].data.sub_title;
         params.data = this.https.addImageField(params.data, ['field_imagen']);
         this.CarouselControlArray = params.data;
-        this.CarouselControlArray = Object.keys(params.data).map(function (key) { return params.data[key]; });
+        this.CarouselControlArray = Object.keys(params.data).map(function (key) { return params.data[key]; });       
         if (this.title !== '' && this.CarouselControlArray.length !== 0) {
           this.visible = true;
           this.datosMenu = {
@@ -100,6 +104,11 @@ export class TeamComponent implements OnInit {
         }
       });
     });
+  }
+
+  showImage() {
+    $('.container-img .img-fluid').css('transform', 'translate(0,0)');
+    $('.container-img .img-fluid').css('opacity', '1');
   }
 
 }

@@ -17,24 +17,33 @@ export class NavbarComponent implements OnInit {
     flActiveChilds: any[] = [];
     LanguageMenuDefault: any;
     LanguageMenu: any;
+    LanguageMenuDesktop: any;
     heightScreen: any;
     languagueBrowser: any;
+    url: any;
+    ruta: any;
 
 
     constructor(private router: ActivatedRoute, private navbar: NavbarService, private _service: CustomCardService) {
         this.onResize({});
         this.LanguageMenu = [];
+        this.LanguageMenuDesktop = [];
         this.LanguageMenuDefault = {};
         this.languagueBrowser = '';
+        this.ruta = '';
     }
 
     ngOnInit() {
-        this.languagueBrowser = window.navigator.language;
-        if (this.languagueBrowser === undefined || this.languagueBrowser === null || this.languagueBrowser === '') {
-            this.languagueBrowser = 'es';
-        } else {
-            this.languagueBrowser = this.languagueBrowser.split('-')[0];
+        this.url = window.location.pathname;
+
+        this.languagueBrowser = this._service.getLanguageBrowser();
+
+        if (this.languagueBrowser !== 'es') {
+            this.ruta = '/' + this.languagueBrowser + '/contact-us';
+        } else if (this.languagueBrowser === 'es') {
+            this.ruta = '/contactenos';
         }
+
         $('html').attr('lang', this.languagueBrowser);
 
         this.heightScreen = $(window).height() + 'px';
@@ -71,6 +80,7 @@ export class NavbarComponent implements OnInit {
                     this.LanguageMenuDefault = items.others[0].languages[index];
                 } else {
                     items.others[0].languages[index].status = false;
+                    this.LanguageMenuDesktop.push(items.others[0].languages[index]);
                 }
                 this.LanguageMenu.push(items.others[0].languages[index]);
             }
@@ -139,5 +149,10 @@ export class NavbarComponent implements OnInit {
     menuOutLang($event) {
         $('.items-phone').addClass('hide');
         $('.items-phone').removeClass('show');
+    }
+
+    changeLanguage(id) {
+        window.sessionStorage.setItem('language', id);
+        location.reload();
     }
 }

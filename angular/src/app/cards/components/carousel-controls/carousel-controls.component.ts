@@ -23,6 +23,7 @@ export class CarouselControlsComponent implements OnInit {
   datosMenu: DataMenu;
   visible: boolean;
   @Input() type: string;
+  show: boolean;
 
   constructor(
     private AchievementCarouselItems: ContentType,
@@ -30,6 +31,7 @@ export class CarouselControlsComponent implements OnInit {
   ) {
     this.CarouselControlArray = [];
     this.visible = false;
+    this.show = false;
   }
 
   ngOnInit() {
@@ -75,6 +77,11 @@ export class CarouselControlsComponent implements OnInit {
         this.propagar.emit(this.datosMenu);
       }
     });
+  }
+
+  showImage() {
+    $('.images .container-img').css('transform', 'translate(0,0)');
+    $('.images .container-img').css('opacity', '1');
   }
 }
 

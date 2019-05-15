@@ -1,9 +1,11 @@
 import { ContentType } from '../../../services/cards/content-type.services';
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NgxCarousel } from 'ngx-carousel';
 import { CustomCardService } from 'src/app/services/cards/v1-card.services';
 import { DataMenu } from '../menu-template/menu-template.component';
+import { Observable } from 'rxjs/Observable';
+import { General } from '../blurb/blurb.component';
 
 declare var jQuery: any;
 declare var $: any;
@@ -15,20 +17,32 @@ declare var $: any;
 })
 export class CarouselItem2Component implements OnInit {
 
-  public carouselOne: NgxCarousel;
-
+  public carocarouselTile: NgxCarousel;
   clients: Array<any>;
   clientsDesktop: Array<any>;
   arrayBox = [];
   titleClients: string;
-  public carocarouselTile: NgxCarousel;
+  datosMenu: DataMenu;
+  principalClient: General;
+  principalClient$: Observable<General>;
+  casClient: any = 0;
+  visible: boolean;
+  flagUbication: string;
+  show: boolean;
+  showPhone: boolean;
+
+  oneItems: boolean;
+  twoItems: boolean;
+  threeItems: boolean;
 
   @Output() propagar = new EventEmitter<DataMenu>();
-
-  datosMenu: DataMenu;
+  @Input() type: string;
 
   constructor(private _cardService: CustomCardService) {
     this.clients = [];
+    this.visible = false;
+    this.show = false;
+    this.showPhone = false;
   }
 
   ngOnInit() {
@@ -38,7 +52,7 @@ export class CarouselItem2Component implements OnInit {
       url: '/imedical'
     };
 
-    this.propagar.emit(this.datosMenu);
+    //this.propagar.emit(this.datosMenu);
 
     this.getOurClientsItems();
     this.clients = [0, 1, 2, 3, 4, 5];
@@ -59,21 +73,78 @@ export class CarouselItem2Component implements OnInit {
 
   }
 
-  public carouselTileLoad(evt: any) {
-    const len = this.clients.length;
-    if (len <= 4) {
-      for (let i = len; i < len + 10; i++) { this.clients.push(i); }
+  getOurClientsItems() {
+    if (this.type === 'home') {
+      this.visible = true;
+      this.flagUbication = 'home';
+      this._cardService.getCustomCardInformation('clientscard').subscribe(items => {
+        items.data = this._cardService.addImageField(items.data, ['field_image']);
+        this.clients = items.data;
+        this.titleClients = items.header[0].data.title;
+        this.clients = Object.keys(items.data).map(function (key) { return items.data[key]; });
+        this.clientsDesktop = Object.keys(items.data).map(function (key) { return items.data[key]; });
+        switch (this.clientsDesktop.length) {
+          case 1:
+            this.oneItems = true;
+            break;
+          case 2:
+            this.twoItems = true;
+            break;
+          case 3:
+            this.threeItems = true;
+            break;
+        }
+        this.arrayBox = this._cardService.organizeInfoForCarousel(this.clients);
+      });
+    } else {
+      this.principalClient$ = this._cardService.getCustomInfoIM('allproductsandservicescard_2');
+      this.principalClient$.subscribe(items => {
+        this.principalClient = this._cardService.clone(items);
+        this.principalClient = this._cardService.getFilterPrincipalType(this.principalClient, 'field_clients', this.type);
+        this._cardService.getCustomInfoIM('imedicalclients').subscribe(itemsw => {
+          itemsw = this._cardService.getFilterLists(this.principalClient, itemsw);
+          this.titleClients = itemsw.header[0].data.title;
+          itemsw.data = this._cardService.addImageField(itemsw.data, ['field_image']);
+          const list_items = this._cardService.clone(itemsw.data);
+          this.clients = list_items;
+          this.clientsDesktop = list_items;
+          this.clients = this._cardService.clone(this.clients);
+          this.casClient = this.casClient + 1;
+          switch (this.clients.length) {
+            case 1:
+              this.oneItems = true;
+              break;
+            case 2:
+              this.twoItems = true;
+              break;
+            case 3:
+              this.threeItems = true;
+              break;
+          }
+          this.arrayBox = this._cardService.organizeInfoForCarousel(this.clients);
+
+          if (this.clients.length !== 0) {
+            this.visible = true;
+            this.datosMenu = {
+              label: 'CAROUSEL',
+              id: 'a6',
+              url: '/imedical'
+            };
+            this.propagar.emit(this.datosMenu);
+          }
+        });
+      });
     }
+
   }
 
-  getOurClientsItems() {
-    this._cardService.getCustomCardInformation('clientscard').subscribe(items => {
-      items.data = this._cardService.addImageField(items.data, ['field_image']);
-      this.clients = items.data;
-      this.titleClients = items.header[0].data.title;
-      this.clients = Object.keys(items.data).map(function (key) { return items.data[key]; });
-      this.clientsDesktop = Object.keys(items.data).map(function (key) { return items.data[key]; });
-      this.arrayBox = this._cardService.organizeInfoForCarousel(this.clients);
-    });
+  showImage() {
+    $('.images img').css('transform', 'translate(0,0)');
+    $('.images img').css('opacity', '1');
+  }
+
+  showImagePhone() {
+    $('.images img').css('transform', 'translate(0,0)');
+    $('.images img').css('opacity', '1');
   }
 }

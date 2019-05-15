@@ -1,3 +1,5 @@
+@import './src/assets/scss/mixin.scss';
+
 *,
 *::before,
 *::after {
@@ -17,7 +19,8 @@ label {
 }
 
 input,
-select {
+select,
+label.hoja-v {
   width: 100%;
   padding: 4px 2px;
   outline: none;
@@ -26,6 +29,20 @@ select {
   color: #002b49;
   border-radius: 0px;
   font-family: 'Open Sans light';
+  position: relative;
+}
+
+label.hoja-v {
+  margin-top: 5px;
+  color: #808080 !important;
+}
+
+label.hoja-v:hover {
+  cursor: pointer;
+}
+
+input.hoja-v {
+  display: none;
 }
 
 input.ng-invalid.ng-touched {
@@ -57,7 +74,8 @@ input:-moz-placeholder {
   color: #808080;
 }
 
-.textarea, .text {
+.textarea,
+.text {
   width: 98%;
   margin: 0 auto;
 
@@ -82,6 +100,10 @@ input:-moz-placeholder {
   margin: 40px auto;
   text-align: center;
 
+  @include breakpoint(phone) {
+    margin-left: 20px;
+  }
+
   [type="checkbox"] {
     position: absolute;
     left: -9999px;
@@ -95,12 +117,18 @@ input:-moz-placeholder {
   [type="checkbox"]+label {
     display: block;
     position: relative;
-    padding-left: 26px;
+    padding-left: 0px;
     cursor: pointer;
     line-height: 36px;
     font-size: 1rem;
     color: rgba(0, 43, 73, 0.8);
     transition: color .3s;
+
+    @include breakpoint(phone) {
+      width: 207px;
+      padding-left: 20px;
+      line-height: 33px;
+    }
   }
 
   [type="checkbox"]+label a {
@@ -113,6 +141,10 @@ input:-moz-placeholder {
     transition: all .2s;
     top: 0;
     left: 0;
+
+    @include breakpoint(phone) {
+      top: 20px;
+    }
   }
 
   /* OFF */
@@ -125,6 +157,16 @@ input:-moz-placeholder {
 
   [type="checkbox"]:checked+label:after {
     background: url('/assets/images/check2.png') left center no-repeat;
+  }
+
+  @include breakpoint(phone) {
+    label {
+      width: 75%;
+    }
+
+    a {
+      padding-left: 17px;
+    }
   }
 
 }
@@ -171,8 +213,8 @@ input:-moz-placeholder {
   height: 40px;
   width: 40px;
   position: absolute;
-  right: 15px;
-  top: 39px;
+  right: 0;
+  top: -10px;
 }
 
 .hoja-v:hover::before {
@@ -222,15 +264,52 @@ input:-moz-placeholder {
 }
 
 /deep/ {
+  @include breakpoint(phone) {
+    .popover {
+      z-index: 20;
+    }
+
+    .popover-body {
+      height: 200px;
+    }
+  }
+
+  .popover-question.phone {
+    display: block;
+
+    @include breakpoint(phone) {
+      display: block ;
+    }
+
+    @include breakpoint(desktop) {
+      display: none;
+    }
+  }
+
+  .popover-question.desktop {
+    display: block;
+
+    @include breakpoint(phone) {
+      display: none;
+    }
+
+    @include breakpoint(tablet) {
+      display: none;
+    }
+  }
+
   .popover-question {
     padding: 0;
-    float: right;
+    position: absolute;
+    right: 0;
+    top: 5px;
 
-    @media screen and (max-width: 480px) {
-      margin-right: 60px;
-      width: 0;
-      height: 0;
+    @include breakpoint(phone) {
+      top: 36px;
+      left: 210px;
+      right: unset;
     }
+
   }
 
   .question {
@@ -238,7 +317,7 @@ input:-moz-placeholder {
     font-size: 125%;
 
     .popover-header {
-      width: 1000px !important;
+      width: 800px !important;
 
       @media screen and (max-width: 680px) {
         width: 180px !important;
@@ -250,7 +329,6 @@ input:-moz-placeholder {
     }
 
     .popover-body p {
-      //width: 900px !important;
 
       @media screen and (max-width: 680px) {
         width: 150px !important;

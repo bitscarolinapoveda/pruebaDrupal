@@ -5,7 +5,7 @@ import { CommonModule } from '../../../node_modules/@angular/common';
 import { MessageModule } from '../message/message.module';
 import { RecaptchaModule } from 'ng-recaptcha';
 
-import { CarouselItemComponent } from './components/carousel-item/carousel-item.component';
+/* import { CarouselItemComponent } from './components/carousel-item/carousel-item.component'; */
 import { CarouselIndicatorsComponent } from './components/carousel-indicators/carousel-indicators.component';
 import { TecnologiesComponent } from './components/tecnologies/tecnologies.component';
 import { PorqueBitsComponent } from './components/porque-bits/porque-bits.component';
@@ -33,7 +33,7 @@ import { TeamComponent } from './components/team/team.component';
 import { AchievementsComponent } from './components/achievements/achievements.component';
 import { TestimoniesComponent } from './components/testimonies/testimonies.component';
 import { HistoryComponent } from './components/history/history.component';
-import { FilterComponent } from './components/filter/filter.component';
+/* import { FilterComponent } from './components/filter/filter.component'; */
 import { ServicesFilterComponent } from './components/services-filter/services-filter.component';
 import { OurWorkComponent } from './components/our-work/our-work.component';
 import { ScreenshotsComponent } from './components/screenshots/screenshots.component';
@@ -50,21 +50,20 @@ import 'hammerjs';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SelectModule } from 'ng2-select';
 import { CarouselModule, WavesModule } from 'angular-bootstrap-md';
+import { DeferLoadModule } from '@trademe/ng-defer-load';
 
 // Pipes
 import { SafeHtmlPipe } from '../pipes/safehtml.pipe';
 import { SafeCssPipe } from '../pipes/safecss.pipe';
-import { ClientProServComponent } from './components/client-proserv/client-proserv.component';
 import { WorkusComponent } from './components/workus/workus.component';
 import { OrganizeGridMuuriDirective } from '../directives/organize-grid-muuri.directive';
-import { LoadDirective } from './components/client-proserv/load.directive';
 
 
 @NgModule({
   declarations: [
     SafeHtmlPipe,
     SafeCssPipe,
-    CarouselItemComponent,
+    //CarouselItemComponent,
     CarouselIndicatorsComponent,
     CarouselControlsComponent,
     CarouselItem2Component,
@@ -86,23 +85,21 @@ import { LoadDirective } from './components/client-proserv/load.directive';
     CardImgTextComponent,
     BlogComponent,
     ClientProjectImedicalComponent,
-    ClientProServComponent,
     WhybitsamericasComponent,
     KnowusComponent,
     TeamComponent,
     AchievementsComponent,
     HistoryComponent,
     TestimoniesComponent,
-    FilterComponent,
+    //FilterComponent,
     ServicesFilterComponent,
     OrganizeGridMuuriDirective,
-    LoadDirective,
     OurWorkComponent,
     ScreenshotsComponent,
-    ProjectFilterComponent
+    ProjectFilterComponent,
   ],
   exports: [
-    CarouselItemComponent,
+    //CarouselItemComponent,
     CarouselIndicatorsComponent,
     CarouselControlsComponent,
     CarouselItem2Component,
@@ -124,14 +121,13 @@ import { LoadDirective } from './components/client-proserv/load.directive';
     CardImgTextComponent,
     BlogComponent,
     ClientProjectImedicalComponent,
-    ClientProServComponent,
     WhybitsamericasComponent,
     KnowusComponent,
     TeamComponent,
     AchievementsComponent,
     HistoryComponent,
     TestimoniesComponent,
-    FilterComponent,
+    //FilterComponent,
     OurWorkComponent,
     MessageModule,
     ServicesFilterComponent,
@@ -156,10 +152,9 @@ import { LoadDirective } from './components/client-proserv/load.directive';
     MessageModule,
     RecaptchaModule.forRoot(),
     CarouselModule.forRoot(),
-    WavesModule.forRoot()
+    WavesModule.forRoot(),
+    DeferLoadModule
   ],
   providers: [NodeService, CarouselModule, WavesModule]
 })
 export class CardsModule { }
-
-
