@@ -49,6 +49,8 @@ export class PqrsComponent implements OnInit {
   form: FormGroup;
   ruta: any;
   languagueBrowser: any;
+  titlePrincipal: any;
+  descripPrincipal: any;
 
   constructor(private _http: HttpService, private _service: CustomCardService, private http_pais: HttpClient, config: NgbPopoverConfig, private fb: FormBuilder,
     private rutaActiva: ActivatedRoute) {
@@ -74,6 +76,8 @@ export class PqrsComponent implements OnInit {
     });
     this.ruta = '';
     this.languagueBrowser = '';
+    this.titlePrincipal = '';
+    this.descripPrincipal = '';
   }
 
   mostrarDatos(id) {
@@ -146,9 +150,9 @@ export class PqrsComponent implements OnInit {
     this.languagueBrowser = this._service.getLanguageBrowser();
 
     if (this.languagueBrowser !== 'es') {
-        this.ruta = '/' + this.languagueBrowser + '/politics';
+      this.ruta = '/' + this.languagueBrowser + '/politics';
     } else if (this.languagueBrowser === 'es') {
-        this.ruta = '/politicas';
+      this.ruta = '/politicas';
     }
 
 
@@ -163,6 +167,8 @@ export class PqrsComponent implements OnInit {
     this.getForm();
 
     this.getPaises();
+
+    this.getDataTitle();
 
     $('#float-social-block').removeClass('ocultar-phone');
   }
@@ -184,6 +190,13 @@ export class PqrsComponent implements OnInit {
     this._service.getCustomContentBasicPage('dc60d310-0a96-41a3-9522-951af2b9f340').subscribe(params => {
       this.tituloQuestion = params.title;
       this.listQuestion = params.body;
+    });
+  }
+
+  getDataTitle() {
+    this._service.getCustomCardInformation('pqrsbitsamericas').subscribe(params => {
+      this.titlePrincipal = params.header[0].data.title;
+      this.descripPrincipal = params.header[1].data.sub_title;
     });
   }
 
