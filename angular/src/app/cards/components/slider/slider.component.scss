@@ -47,3 +47,11 @@
   width: 41px;
   height: 77px;
 }
+
+@media only screen and (max-width: 1024px) {
+
+  :host /deep/ .carousel-control-next,
+  :host /deep/.carousel-control-prev {
+    visibility: hidden;
+  }
+}  
