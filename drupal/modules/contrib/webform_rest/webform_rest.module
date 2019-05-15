@@ -1,0 +1,11 @@
+<?php
+
+/**
+ * Implements hook_rest_resource_alter().
+ */
+function webform_rest_rest_resource_alter(&$definitions) {
+  // Don't load the file upload resource unless the File module is enabled.
+  if (!\Drupal::moduleHandler()->moduleExists('file')) {
+    unset($definitions['webform_rest_file_upload']);
+  }
+}

@@ -40,7 +40,7 @@ export class WorkusComponent implements OnInit {
   disabled: boolean;
   checked: boolean;
   form: FormGroup;
-  file: any;
+  file: any = {};
   captcha_form: any;
   valido: boolean;
   tituloQuestion: string;
@@ -112,7 +112,11 @@ export class WorkusComponent implements OnInit {
     this.form = this.fb.group({
       hojav: null
     });
-    this.file = '';
+    this.file = {
+      name: '',
+      mime: '',
+      blob: '',
+    };
     this.hojaWU = '';
     this.valido = false;
     this.hover_buttom = 'Faltan datos por llenar';
@@ -200,20 +204,24 @@ export class WorkusComponent implements OnInit {
   }
 
   onFileChange(event) {
+    this.file['name'] = event.target.files[0].name;
+    this.file['mime'] = event.target.files[0].type;
+    this.file['blob'] = '';
 
     if (event.target.files.length > 0) {
-      this.file = event.target.files[0];
-      this.form.get('hojav').setValue(this.file);
-      this.hojaWU = this.file.name;
+      //this.file = event.target.files[0];
+      //his.form.get('hojav').setValue(this.file);
+      //this.hojaWU = this.file.name;
 
       var reader = new FileReader();
+      var ourThis = this;
       reader.onloadend = e => {
-        this.file = e.target['result'];
+        this.file['blob'] = ourThis._service.base64ArrayBuffer(e.target['result']);
       };
       reader.onerror = e => {
         console.log(e.target['error']);
       };
-      reader.readAsArrayBuffer(this.file);
+      reader.readAsArrayBuffer(event.target.files[0]);
     }
   }
 
@@ -282,4 +290,5 @@ export class WorkusComponent implements OnInit {
   public refreshValuePais(value: any): void {
     this.pais = value.text;
   }
+
 }

@@ -7,7 +7,7 @@ use Drupal\webform\WebformSubmissionForm;
 use Drupal\rest\Plugin\ResourceBase;
 use Drupal\rest\ModifiedResourceResponse;
 use Symfony\Component\HttpFoundation\JsonResponse;
-
+use Drupal\file\Entity\File;
 /**
  * Creates a resource for submitting a webform.
  *
@@ -35,6 +35,41 @@ class WebformSubmitResource extends ResourceBase {
    *   Throws HttpException in case of error.
    */
   public function post(array $webform_data) {
+
+    if (isset($webform_data['fileupload'])) {
+      $temp_file_path = file_unmanaged_save_data(base64_decode($webform_data['fileupload']['blob']));
+      $file_uri = 'public://paso7.pdf';
+
+      // Begin building file entity.
+      $file = File::create([]);
+      // Carga el usuario
+      $file->setOwnerId(1);//$this->currentUser->id());
+      // Coloca un nombrte que no este repetido
+      $file->setFilename($webform_data['fileupload']['name']);
+      // Mira el tipo de archivo que es
+      $file->setMimeType($webform_data['fileupload']['mime']);
+      // Coloca la ruta del archivo
+      $file->setFileUri($file_uri);
+      // Set the size. This is done in File::preSave() but we validate the file
+      // before it is saved.
+      $file->setSize(@filesize($temp_file_path));
+      // Validate the file entity against entity-level validation and field-level
+      // validators.
+      //$this->validate($file, $validators);
+
+      // Move the file to the correct location after validation. Use
+      // FILE_EXISTS_ERROR as the file location has already been determined above
+      // in file_unmanaged_prepare().
+      if (!file_unmanaged_move($temp_file_path, $file_uri, FILE_EXISTS_ERROR)) {
+        throw new HttpException(500, 'Temporary file could not be moved to file location');
+      }
+
+      $file->save();
+      $webform_data['fileupload'] = $file->id();
+    }
+
+
+
 
     // Basic check for webform ID.
     if (empty($webform_data['webform_id'])) {
