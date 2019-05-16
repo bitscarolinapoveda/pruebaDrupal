@@ -27,6 +27,7 @@ export class BannerComponent implements OnInit {
     }
 
     ngOnInit() {
+        this.ubicaciones();
         if (this.titulo !== '' && (this.imgFondo === '' || this.imgFondo === undefined)) {
             this.getProductsAndServicesItems();
         } else if (this.uuid === undefined || this.uuid === '') {
@@ -80,5 +81,12 @@ export class BannerComponent implements OnInit {
             }
             this.bannerTitle = this.titulo;
         });
+    }
+
+    ubicaciones() {
+        const x = document.querySelector('#banner');
+        if (x) {
+            x.scrollIntoView({ block: 'start', inline: 'nearest' });
+        }
     }
 }
