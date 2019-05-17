@@ -57,7 +57,10 @@ export class BannerComponent implements OnInit {
                 this.bannerDescrip = '';
             }
             if (this.imgFondo === '') {
-                this.bannerBackground = params.field_image.url;
+                if (params.field_image !== undefined) {
+                    this.bannerBackground = params.field_image.url;
+                }
+
             } else {
                 this.bannerBackground = this.imgFondo;
             }
@@ -83,5 +86,5 @@ export class BannerComponent implements OnInit {
             }
             this.bannerTitle = this.titulo;
         });
-    }    
+    }
 }
