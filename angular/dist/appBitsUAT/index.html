@@ -8,27 +8,78 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Bits americas, desarrolladora de software a la medida">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
-    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+    integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
   <link rel="stylesheet" href="assets/css/main.css">
   <!-- Add the slick-theme.css if you want default styling -->
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" />
   <!-- Add the slick-theme.css if you want default styling -->
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css">  
+  <style type="text/css">
+    #loading {
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #23475E;
+      z-index: 99999;
+      pointer-events: none;
+      overflow: hidden;
+    }
 
-<link rel="stylesheet" href="styles.20f47751874239a8e3eb.css"></head>
+    #loading .center {     
+      display: block;
+      width: 100%;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    #loading .logo {
+      width: 128px;
+      margin: 0 auto;
+    }
+
+    #loading .logo img {
+      filter: drop-shadow(0px 10px 6px rgba(0, 0, 0, 0.2))
+    }
+
+    #loading .spiner {
+      width: 20px;
+      margin: 0 auto 10px;
+      color: white;
+      opacity: .3;      
+    }
+  </style>
+<link rel="stylesheet" href="styles.2d46ba5b0106b5ff6240.css"></head>
 
 <body>
+  <div id="loading" class="loading">
+    <div class="center">
+      <br>
+      <div class="logo">
+        <img width="128" src="assets/images/logos/logowhite.svg">        
+      </div>
+      <br>
+      <div class="spiner">
+        <div class="">
+          <i class="fa fa-sync fa-spin fa-3x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
   <app-root></app-root>
-
-  <!-- <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-  <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script> -->
+  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.0/velocity.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/muuri/0.4.0/muuri.min.js"></script>
 
-<script type="text/javascript" src="runtime.26209474bfa8dc87a77c.js"></script><script type="text/javascript" src="polyfills.4c4f8ef040147bb3e499.js"></script><script type="text/javascript" src="scripts.141be368db70a7950dda.js"></script><script type="text/javascript" src="vendor.c7a8bd24fa58a2ca6fb6.js"></script><script type="text/javascript" src="main.7d0dec81112bdaf9279f.js"></script></body>
+<script type="text/javascript" src="runtime.a66f828dca56eeb90e02.js"></script><script type="text/javascript" src="polyfills.b2cb3d3bdbc0acaee741.js"></script><script type="text/javascript" src="scripts.3cd0b4573f04d1ea8f45.js"></script><script type="text/javascript" src="vendor.53bdf3c925120959fa01.js"></script><script type="text/javascript" src="main.1c21602eaf8b348474d5.js"></script></body>
 
 </html>
