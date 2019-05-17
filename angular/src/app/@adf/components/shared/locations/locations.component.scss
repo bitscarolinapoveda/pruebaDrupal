@@ -29,6 +29,8 @@
 :host /deep/ .gm-style-iw {
   position: relative;
   overflow: visible;
+  max-width: 0 !important;
+  max-height: 0 !important;
 
   .agm-info-window-content {
     position: absolute;
@@ -39,7 +41,18 @@
     padding: 10px 20px;
     bottom: -29px;
     left: -71px;
+    margin-bottom: 40px;
   }
+ 
+}
+
+:host /deep/ .gm-style-iw-c {
+  background-color: rgba(0, 0, 0, 0);
+  box-shadow: 0 2px 7px 1px rgba(0,0,0,0);
+}
+
+:host /deep/ .gm-style-iw-t {
+  bottom: 67px !important;
 }
 
 :host /deep/ .card-header,
@@ -79,9 +92,11 @@
     }
   }
 }
+
 :host /deep/ .accordion .card.padding-on:last-of-type {
   padding-bottom: 49px;
 }
+
 :host /deep/ .accordion .card.padding-off:last-of-type {
   padding-bottom: 0px;
 }
@@ -96,18 +111,23 @@
     scroll-behavior: smooth;
     transition: all 1s ease;
   }
+
   .acordion-info.one-item {
     height: auto;
   }
+
   .acordion-info.more-item {
     height: 610px;
   }
+
   .acordion-info.see-more-true {
     height: 310px !important;
   }
+
   .acordion-info.auto-height {
     height: auto !important;
   }
+
   .see-more-button {
     cursor: pointer;
     display: flex;
@@ -121,6 +141,7 @@
     height: 65px;
     background-color: #f2f4f6;
     border-top: 1px solid #cccccc;
+
     .text-see-more {
       font-family: 'Open Sans Codensed';
       font-size: 16px;
@@ -412,6 +433,8 @@
   :host /deep/ .gm-style-iw {
     position: relative;
     overflow: visible;
+    max-width: 0 !important;
+    max-height: 0 !important;
 
     .agm-info-window-content {
       position: absolute;
