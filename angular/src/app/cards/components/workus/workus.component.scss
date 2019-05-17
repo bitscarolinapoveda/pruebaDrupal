@@ -29,6 +29,7 @@ label.hoja-v {
   color: #002b49;
   border-radius: 0px;
   font-family: 'Open Sans light';
+  position: relative;
 }
 
 label.hoja-v {
@@ -36,8 +37,8 @@ label.hoja-v {
   color: #808080 !important;
 }
 
-label.hoja-v:hover{
-  cursor: pointer;  
+label.hoja-v:hover {
+  cursor: pointer;
 }
 
 input.hoja-v {
@@ -212,8 +213,8 @@ input:-moz-placeholder {
   height: 40px;
   width: 40px;
   position: absolute;
-  right: 15px;
-  top: 39px;
+  right: 0;
+  top: -10px;
 }
 
 .hoja-v:hover::before {
@@ -274,10 +275,14 @@ input:-moz-placeholder {
   }
 
   .popover-question.phone {
-    display: none;
+    display: block;
 
     @include breakpoint(phone) {
-      display: block;
+      display: block ;
+    }
+
+    @include breakpoint(desktop) {
+      display: none;
     }
   }
 
@@ -292,6 +297,7 @@ input:-moz-placeholder {
       display: none;
     }
   }
+
   .popover-question {
     padding: 0;
     position: absolute;

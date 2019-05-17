@@ -7,6 +7,8 @@ import { getRelatedFormControls } from '@ng-dynamic-forms/core';
 import { General } from '../../../cards/components/blurb/blurb.component';
 import { Observable } from 'rxjs/Observable';
 import { Meta } from '@angular/platform-browser';
+
+declare var $: any;
 @Component({
   selector: 'app-products-or-services',
   templateUrl: './products-or-services.component.html',
@@ -45,6 +47,8 @@ export class ProductsOrServicesComponent implements OnInit {
     );
 
     this.getModulesService();
+
+    $('#float-social-block').removeClass('ocultar-phone');
 
   }
 

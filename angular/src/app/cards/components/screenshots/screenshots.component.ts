@@ -4,6 +4,8 @@ import { DataMenu } from '../menu-template/menu-template.component';
 import { NgxCarousel } from 'ngx-carousel';
 import { General } from '../blurb/blurb.component';
 
+declare var $: any;
+
 @Component({
   selector: 'app-screenshots',
   templateUrl: './screenshots.component.html',
@@ -20,8 +22,11 @@ export class ScreenshotsComponent implements OnInit {
   principalScreenshots: General;
   CarouselControlArray: any = [];
   public carouselOne: NgxCarousel;
+  show: boolean;
 
-  constructor(private screenshots: CustomCardService) { }
+  constructor(private screenshots: CustomCardService) {
+    this.show = false;
+   }
 
   ngOnInit() {
     this.getScreenshotsInfo();
@@ -74,6 +79,11 @@ export class ScreenshotsComponent implements OnInit {
     if (len <= 4) {
       for (let i = len; i < len + 10; i++) { this.CarouselControlArray.push(i); }
     }
+  }
+
+  showImage() {
+    $('.imagesScreen').css('transform', 'translate(0,0)');
+    $('.imagesScreen').css('opacity', '1');
   }
 
 }

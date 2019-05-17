@@ -17,7 +17,7 @@
           <!-- <a href="#contactusModal" id="openModal">
             <i class="fa-li fas fa-envelope"></i>
           </a> -->
-          <a routerLink="/contact-us" id="openModal">
+          <a [routerLink]="ruta" id="openModal">
             <i class="fa-li fas fa-envelope"></i>
           </a>
         </li>
@@ -26,7 +26,8 @@
   </section>
 </section>
 <!-- Modal -->
-<div class="modal fade" id="contactusModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="contactusModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -49,8 +50,9 @@
           </div>
           <div class="col-md-12 item">
             <label class="label-modal" for="inputEmail">Correo Electronico*</label>
-            <input class="input-modal" type="email" id="field_email" aria-describedby="emailHelp" placeholder="Su correo electronico"
-              name="field_email" ngModel pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
+            <input class="input-modal" type="email" id="field_email" aria-describedby="emailHelp"
+              placeholder="Su correo electronico" name="field_email" ngModel
+              pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
               #field_email="ngModel" required>
             <div *ngIf="field_email.invalid && field_email.touched" class="alert alert-danger" role="alert">
               Campo obligatorio o invalido
@@ -58,13 +60,13 @@
           </div>
           <div class="col-md-12 item">
             <label class="label-modal" for="inputOrgan">Organizacion</label>
-            <input class="input-modal" type="text" id="field_organization" placeholder="Su organizacion" name="field_organization"
-              ngModel #field_organization="ngModel">
+            <input class="input-modal" type="text" id="field_organization" placeholder="Su organizacion"
+              name="field_organization" ngModel #field_organization="ngModel">
           </div>
           <div class="col-md-12 item">
             <label class="label-modal" for="inputComent">Comentario</label>
-            <textarea class="input-modal" id="field_commentary" placeholder="Escriba sus comentarios" name="field_commentary"
-              ngModel #field_commentary="ngModel"></textarea>
+            <textarea class="input-modal" id="field_commentary" placeholder="Escriba sus comentarios"
+              name="field_commentary" ngModel #field_commentary="ngModel"></textarea>
           </div>
         </form>
       </div>

@@ -2,6 +2,8 @@ import { OnInit, Component, Input, Output, EventEmitter } from '@angular/core';
 import { CustomCardService } from 'src/app/services/cards/v1-card.services';
 import { DataMenu } from '../menu-template/menu-template.component';
 import { General } from '../blurb/blurb.component';
+
+declare var $: any;
 @Component({
     selector: 'app-card-img-text',
     templateUrl: './card-img-text.component.html',
@@ -23,6 +25,9 @@ export class CardImgTextComponent implements OnInit {
     datosMenuL: DataMenu;
     datosMenuR: DataMenu;
     @Input() type: string;
+    showL: boolean;
+    showR: boolean;
+    showPhone: boolean;
 
     constructor(
         private _http: CustomCardService
@@ -32,6 +37,9 @@ export class CardImgTextComponent implements OnInit {
         this.cardImgR = [];
         this.visibleL = false;
         this.visibleR = false;
+        this.showL = false;
+        this.showR = false;
+        this.showPhone = false;
     }
 
     ngOnInit() {
@@ -85,5 +93,20 @@ export class CardImgTextComponent implements OnInit {
                 }
             });
         });
+    }
+
+    showImageL() {
+        $('.showL .img-fluid').css('transform', 'translate(0,0)');
+        $('.showL .img-fluid').css('opacity', '1');
+    }
+
+    showImageR() {
+        $('.showR .img-fluid').css('transform', 'translate(0,0)');
+        $('.showR .img-fluid').css('opacity', '1');
+    }
+
+    showImagePhone() {
+        $('.showPhone .img-fluid').css('transform', 'translate(0,0)');
+        $('.showPhone .img-fluid').css('opacity', '1');
     }
 }

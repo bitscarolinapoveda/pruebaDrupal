@@ -1,0 +1,13 @@
+block_translations.form:
+  path: '/admin/block_translations/{block}/{language}'
+  defaults:
+    _form: '\Drupal\block_translations\Form\BlockTranslationForm'
+    _title: 'Block Translations'
+  requirements:
+    _access: 'TRUE'
+  options:
+    parameters:
+      block:
+        type: block
+      language:
+        type: language

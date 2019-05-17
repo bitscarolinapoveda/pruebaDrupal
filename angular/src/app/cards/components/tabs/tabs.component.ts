@@ -59,7 +59,10 @@ export class TabsComponent implements OnInit {
   captcha_form: any;
   valido: boolean;
   elementoForm: any;
-  type: any; 
+  type: any;
+  languagueBrowser: any;
+  ruta: any;
+
 
   constructor(private _http: HttpService, private _service: CustomCardService, private http_pais: HttpClient, config: NgbPopoverConfig,
     private rutaActiva: ActivatedRoute) {
@@ -80,6 +83,8 @@ export class TabsComponent implements OnInit {
     this.checked = false;
     this.valido = false;
     this.hover_buttom = 'Faltan datos por llenar';
+    this.languagueBrowser = '';
+    this.ruta = '';
   }
 
   mostrarDatos(id) {
@@ -159,6 +164,14 @@ export class TabsComponent implements OnInit {
     if (this.type !== undefined) {
       $('.trabaje button').toggleClass('active');
       $('.contactenos button').toggleClass('active');
+    }
+
+    this.languagueBrowser = this._service.getLanguageBrowser();
+
+    if (this.languagueBrowser !== 'es') {
+      this.ruta = '/' + this.languagueBrowser + '/politics';
+    } else if (this.languagueBrowser === 'es') {
+      this.ruta = '/politicas';
     }
 
     this.getTabsData();

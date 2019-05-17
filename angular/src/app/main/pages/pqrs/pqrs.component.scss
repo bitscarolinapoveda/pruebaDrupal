@@ -1,0 +1,36 @@
+@import '../../../cards/components/tabs/tabs.component.scss';
+@import '../../../cards/components/workus/workus.component.scss';
+@import './src/assets/scss/mixin.scss';
+
+:host /deep/ {
+    .terminos_grupo {
+        margin-top: 0px;
+    }
+
+    .obligatorios {
+        margin-bottom: 40px;
+    }
+
+    #principal {
+        padding-right: 40px;
+        padding-left: 40px;
+
+        .title-principal {
+            margin-bottom: 30px;
+            text-transform: none;
+            font-family: 'Open Sans Codensed';
+        }
+
+        .descrip-principal {
+            text-align: justify;
+            
+            @include breakpoint (phone) {
+                margin-bottom: 0;
+            }
+        }
+
+        @include breakpoint (phone) {
+            margin-bottom: 0 !important;
+        }
+    }
+}

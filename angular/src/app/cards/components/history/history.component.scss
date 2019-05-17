@@ -72,6 +72,7 @@
     @media (min-width: 1367px)  and (max-width: 1920px){
         .tl-slide-content-container {
             .tl-slide-content {
+                padding-left: 200px !important;
                 padding-right: 0 !important;
                 width: 1000px !important;
 
@@ -96,8 +97,9 @@
     @media (min-width: 1920px){
         .tl-slide-content-container {
             .tl-slide-content {
+                padding-left: 250px !important;
                 padding-right: 0 !important;
-                width: 1200px !important;
+                width: 1400px !important;
 
                 .tl-media {
                     max-width: 700px !important;
@@ -115,9 +117,10 @@
         }
     }
 
-    @media (max-width: 1366px) {
+    @media (max-width: 1367px) {
         .tl-slide-content-container {
             .tl-slide-content {
+                padding-left: 200px;
                 padding-right: 0 !important;
                 width: 900px !important;
 

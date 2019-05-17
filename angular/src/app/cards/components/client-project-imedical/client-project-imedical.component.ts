@@ -3,6 +3,7 @@ import { CustomCardService } from 'src/app/services/cards/v1-card.services';
 import { DataMenu } from '../menu-template/menu-template.component';
 import { General } from '../blurb/blurb.component';
 
+declare var $: any;
 @Component({
   selector: 'app-client-project-imedical',
   templateUrl: './client-project-imedical.component.html',
@@ -24,6 +25,7 @@ export class ClientProjectImedicalComponent implements OnInit {
   @Input() type: string;
   visible: boolean;
   linkExternal: boolean;
+  show: boolean;
 
   constructor(private _http: CustomCardService) {
     this.titleCard = '';
@@ -36,6 +38,7 @@ export class ClientProjectImedicalComponent implements OnInit {
     this.linkProjectUrl = '';
     this.linkProjectTitle = '';
     this.visible = false;
+    this.show = false;
   }
 
   ngOnInit() {
@@ -73,6 +76,11 @@ export class ClientProjectImedicalComponent implements OnInit {
       });
     });
 
+  }
+
+  showImage() {
+    $('#logo-cliente').css('transform', 'translate(0,0)');
+    $('#logo-cliente').css('opacity', '1');
   }
 
 }

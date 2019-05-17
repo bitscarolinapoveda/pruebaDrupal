@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpService } from '../http/http.service';
 import { copyStyles } from '@angular/animations/browser/src/util';
 import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
 import { Subject } from 'rxjs/Subject';
 import { General } from '../../cards/components/blurb/blurb.component';
 
@@ -13,6 +15,7 @@ export class CustomCardService {
 
   private memory: any[] = [];
   private memory$: Subject<General>[] = [];
+  private language: string;
 
   private sliderData: Slide[] = [
     {
@@ -36,6 +39,7 @@ export class CustomCardService {
   constructor(
     private http: HttpService
   ) {
+    this.language = '';
   }
 
   getCustomInfoIM(idblock): Observable<General> {
@@ -75,10 +79,10 @@ export class CustomCardService {
     let list: any[] = [];
 
     if (listPrincipal.data !== undefined) {
-      for (let index = 0; index < listElement.data.length; index++) {
-        for (let j = 0; j < listPrincipal.data.length; j++) {
-          if (listElement.data[index].nid === listPrincipal.data[j].id) {
-            list.push(listElement.data[index]);
+      for (let index = 0; index < listPrincipal.data.length; index++) {
+        for (let j = 0; j < listElement.data.length; j++) {
+          if (listPrincipal.data[index].id === listElement.data[j].nid) {
+            list.push(listElement.data[j]);
           }
         }
       }
@@ -101,10 +105,56 @@ export class CustomCardService {
     return this.http.get(url);
   }
 
+  getLanguageBrowser() {
+    let languagueBrowser = window.navigator.language;
+    let languagueStorage = window.sessionStorage.getItem('language');
+    if (languagueStorage === undefined || languagueStorage === null || languagueStorage === '') {
+      if (languagueBrowser === undefined || languagueBrowser === null || languagueBrowser === '') {
+        languagueBrowser = 'es';
+      } else {
+        languagueBrowser = languagueBrowser.split('-')[0];
+      }
+      this.language = languagueBrowser;
+      window.sessionStorage.setItem('language', this.language);
+      return this.language;
+    } else if (languagueStorage !== undefined || languagueStorage !== null || languagueStorage !== '') {
+      this.language = window.sessionStorage.getItem('language');
+      return this.language;
+    }
+  }
+
+  getValidationLanguage() {
+    const lang = `v1/card/config/languagescard/export?_format=json`;
+    if (this.language === '') {
+      this.getLanguageBrowser();
+    }
+    this.http.get(lang).subscribe(items => {
+      let language = '';
+      for (var index in items.others[0].languages) {
+        if (this.language === items.others[0].languages[index].id) {
+          language = items.others[0].languages[index].id;
+        }
+      }
+
+      if (language === '') {
+        this.language = items.others[0].languages[0].id;
+      }
+      return this.language;
+    });
+  }
+
   getCustomCardInformation(idblock) {
-    console.log(`v1/card/config/${idblock}/export?_format=json`);
-    const url = `v1/card/config/${idblock}/export?_format=json`;
-    return this.http.get(url);
+    let url = `v1/card/config/${idblock}/export?_format=json`;
+
+    if (this.language === 'es') {
+      console.log(url);
+      return this.http.get(url);
+    } else if (this.language !== 'es') {
+      url = this.language + '/' + url;
+      console.log(url);
+      return this.http.get(url);
+    }
+
   }
 
   addImageField(data: any, imagesList: any) {

@@ -166,7 +166,7 @@
 								name="{{item['#webform_key']}}" value="false" required="{{item['#required'] ==  true}}"
 								ngModel>
 							<label ng-reflect-ng-class="" for="{{'contact_us__' +item['#webform_key']}}">He leído y
-								acepto los<a routerLink="/politics">
+								acepto los<a [routerLink]="ruta">
 									términos y condiciones
 								</a>								
 							</label>

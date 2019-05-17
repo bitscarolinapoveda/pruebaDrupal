@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NavbarService } from '../../../services/layout/navbar.service';
 
+declare var $: any;
+
 @Component({
   selector: 'app-mapsite',
   templateUrl: './mapsite.component.html',
@@ -15,6 +17,7 @@ export class MapsiteComponent implements OnInit {
 
   ngOnInit() {
     this.getItems();
+    $('#float-social-block').removeClass('ocultar-phone');
   }
 
   getItems() {

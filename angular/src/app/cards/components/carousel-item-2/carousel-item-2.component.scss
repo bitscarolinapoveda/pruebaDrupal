@@ -36,14 +36,28 @@
         left: initial;
     }
 }
+
 .contenedor.one-items {
-  width: 54%;
-  .item {
-    width: 100% !important
-  };
+    width: 54%;
+
+    .item {
+        width: 100% !important
+    }
+
+    ;
 }
-.contenedor.two-items .item {width: 50% !important};
-.contenedor.three-items .item {width: 33% !important};
+
+.contenedor.two-items .item {
+    width: 50% !important
+}
+
+;
+
+.contenedor.three-items .item {
+    width: 33% !important
+}
+
+;
 
 .tile {
     float: left;
@@ -125,6 +139,10 @@
         .img-fluid {
             height: 100%;
             width: 100%;
+            opacity: 0;
+            transform: translate(0, 30px);
+            transition: all 300ms ease;
+
 
             @include breakpoint (tablet) {
                 height: auto;
@@ -395,4 +413,8 @@ h1 {
         background-size: contain;
         margin: 10px 20px;
     }
+}
+
+:host /deep/ .ocultar {
+    display: none;
 }

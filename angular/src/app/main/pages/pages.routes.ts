@@ -1,3 +1,4 @@
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { PagesComponent } from './pages.component';
@@ -13,46 +14,47 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { MapsiteComponent } from './mapsite/mapsite.component';
 import { PqrsComponent } from './pqrs/pqrs.component';
 import { from } from 'rxjs';
+import { HnResolverService } from '../../services/cards/hn-resolver.service';
 
 const pagesRoutes: Routes = [
   {
     path: '',
     component: PagesComponent,
     children: [
-      { path: '', redirectTo: '/inicio', pathMatch: 'full' },
+      { path: '', redirectTo: '/inicio', pathMatch: 'full', resolve: { message: HnResolverService } },
 
-      { path: 'inicio', component: HomeComponent },
-      { path: 'en/home', component: HomeComponent },
+      { path: 'inicio', component: HomeComponent, resolve: { message: HnResolverService } },
+      { path: 'en/home', component: HomeComponent, resolve: { message: HnResolverService } },
 
-      { path: 'contactenos', component: ContactUsComponent },
-      { path: 'contactenos/:type', component: ContactUsComponent },
-      { path: 'en/contact-us', component: ContactUsComponent },
-      { path: 'en/contact-us/:type', component: ContactUsComponent },
+      { path: 'contactenos', component: ContactUsComponent, resolve: { message: HnResolverService } },
+      { path: 'contactenos/:type', component: ContactUsComponent, resolve: { message: HnResolverService } },
+      { path: 'en/contact-us', component: ContactUsComponent, resolve: { message: HnResolverService } },
+      { path: 'en/contact-us/:type', component: ContactUsComponent, resolve: { message: HnResolverService } },
 
-      { path: 'productos', component: ProductsComponent },
-      { path: 'productos/:type', component: ProductsOrServicesComponent },
-      { path: 'en/products', component: ProductsComponent },
-      { path: 'en/products/:type', component: ProductsOrServicesComponent },
+      { path: 'productos', component: ProductsComponent, resolve: { message: HnResolverService } },
+      { path: 'productos/:type', component: ProductsOrServicesComponent, resolve: { message: HnResolverService } },
+      { path: 'en/products', component: ProductsComponent, resolve: { message: HnResolverService } },
+      { path: 'en/products/:type', component: ProductsOrServicesComponent, resolve: { message: HnResolverService } },
 
-      { path: 'proyectos', component: ProjectsComponent },
-      { path: 'en/projects', component: ProjectsComponent },
+      { path: 'proyectos', component: ProjectsComponent, resolve: { message: HnResolverService } },
+      { path: 'en/projects', component: ProjectsComponent, resolve: { message: HnResolverService } },
 
-      { path: 'servicios', component: ServicesComponent },
-      { path: 'servicios/:type', component: ProductsOrServicesComponent },
-      { path: 'en/services', component: ServicesComponent },
-      { path: 'en/services/:type', component: ProductsOrServicesComponent },
+      { path: 'servicios', component: ServicesComponent, resolve: { message: HnResolverService } },
+      { path: 'servicios/:type', component: ProductsOrServicesComponent, resolve: { message: HnResolverService } },
+      { path: 'en/services', component: ServicesComponent, resolve: { message: HnResolverService } },
+      { path: 'en/services/:type', component: ProductsOrServicesComponent, resolve: { message: HnResolverService } },
 
-      { path: 'politicas', component: PoliticsComponent },
-      { path: 'en/politics', component: PoliticsComponent },
+      { path: 'politicas', component: PoliticsComponent, resolve: { message: HnResolverService } },
+      { path: 'en/politics', component: PoliticsComponent, resolve: { message: HnResolverService } },
 
-      { path: 'nosotros', component: AboutUsComponent },
-      { path: 'en/about-us', component: AboutUsComponent },
+      { path: 'nosotros', component: AboutUsComponent, resolve: { message: HnResolverService } },
+      { path: 'en/about-us', component: AboutUsComponent, resolve: { message: HnResolverService } },
 
-      { path: 'mapa-del-sitio', component: MapsiteComponent },
-      { path: 'en/sitemap', component: MapsiteComponent },
+      { path: 'mapa-del-sitio', component: MapsiteComponent, resolve: { message: HnResolverService } },
+      { path: 'en/sitemap', component: MapsiteComponent, resolve: { message: HnResolverService } },
 
-      { path: 'pqrs', component: PqrsComponent },
-      { path: 'en/pqrs', component: PqrsComponent },
+      { path: 'pqrs', component: PqrsComponent, resolve: { message: HnResolverService } },
+      { path: 'en/pqrs', component: PqrsComponent, resolve: { message: HnResolverService } },
 
       { path: '**', component: NoPageFoundComponent }
 
@@ -60,4 +62,13 @@ const pagesRoutes: Routes = [
   }
 ];
 
-export const PagesRoutes = RouterModule.forChild(pagesRoutes);
+//export const PagesRoutes = RouterModule.forChild(pagesRoutes);
+
+@NgModule({
+  imports: [RouterModule.forRoot(pagesRoutes)],
+  exports: [RouterModule],
+  providers: [
+    HnResolverService
+  ]
+})
+export class PagesRoutes {}
