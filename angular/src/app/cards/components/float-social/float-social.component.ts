@@ -113,11 +113,28 @@ export class FloatSocialComponent implements OnInit {
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
-    if ($(window).height() + $(document).scrollTop() === $(document).height()) {
+    var windowHeight = $(window).height() + $(document).scrollTop();
+
+    var contenido2 = $('#footer-block').offset();
+    contenido2 = contenido2.top;
+    console.log('windowHeight', windowHeight);
+    console.log('contenido2', contenido2);
+
+    if (windowHeight >= contenido2) {
+      $('#float-social-block').css('transition', 'all 300ms ease');
+      $('#float-social-block').css('opacity', '0');
+      //this.hide = false;
+    } else {
+      //this.hide = true;
+      $('#float-social-block').css('transition', 'all 300ms ease');
+      $('#float-social-block').css('opacity', '1');
+    }
+
+    /* if ($(window).height() + $(document).scrollTop() === $(document).height()) {
       this.hide = false;
     } else {
       this.hide = true;
-    }
+    } */
   }
   getFloatSocialItems() {
     this.service.getCustomCardInformation('contactcard').subscribe((items: { header, others }) => {
