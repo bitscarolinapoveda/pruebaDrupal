@@ -27,7 +27,6 @@ export class CarouselIndicatorsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.ubicaciones();
     this.getIndicatorsSliderItems();
   }
   getIndicatorsSliderItems() {
@@ -49,10 +48,5 @@ export class CarouselIndicatorsComponent implements OnInit {
     }, 2000);
     return false;
   }
-  ubicaciones() {
-    const x = document.querySelector('#carousel-container');
-    if (x) {
-      x.scrollIntoView({ block: 'start', inline: 'nearest' });
-    }
-  }
+
 }

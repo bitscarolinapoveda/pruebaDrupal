@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation, HostListener } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, HostListener, ViewChild, ElementRef } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NavbarService } from '../../../services/layout/navbar.service';
 import { CustomCardService } from 'src/app/services/cards/v1-card.services';
@@ -22,6 +22,8 @@ export class NavbarComponent implements OnInit {
     languagueBrowser: any;
     url: any;
     ruta: any;
+    @ViewChild('Botton') Botton: ElementRef;
+    @ViewChild('block-navbar') Bot: ElementRef;
 
 
     constructor(private router: ActivatedRoute, private navbar: NavbarService, private _service: CustomCardService) {
@@ -34,6 +36,7 @@ export class NavbarComponent implements OnInit {
     }
 
     ngOnInit() {
+
         this.url = window.location.pathname;
 
         this.languagueBrowser = this._service.getLanguageBrowser();
@@ -155,4 +158,13 @@ export class NavbarComponent implements OnInit {
         window.sessionStorage.setItem('language', id);
         location.reload();
     }
+
+    overMenu() {
+        if ($('body').width() < 1025) {
+            this.Botton.nativeElement.click();
+            this.Bot.nativeElement.click();
+        }
+    }
+
+
 }
