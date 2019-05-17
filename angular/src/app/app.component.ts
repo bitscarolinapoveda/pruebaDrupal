@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getTitleService();
+    //this.getTitleService();
   }
 
   getTitleService() {
