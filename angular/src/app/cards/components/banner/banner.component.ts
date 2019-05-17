@@ -17,6 +17,12 @@ export class BannerComponent implements OnInit {
     bannerDescrip: string;
     principalBanner: General;
 
+    phoneWidth = 500 * window.devicePixelRatio + 'w';
+    tabletWidth = 1024 * window.devicePixelRatio + 'w';
+    sxgaScreen = 1280 * window.devicePixelRatio + 'w';
+    hdScreen = 1366 * window.devicePixelRatio + 'w';
+    fhdScreen = 1920 * window.devicePixelRatio + 'w';
+
     constructor(
         router: ActivatedRoute,
         private banner: CustomCardService,
@@ -48,13 +54,14 @@ export class BannerComponent implements OnInit {
 
     getBannerService() {
         this.banner.getCustomContentBasicPage(this.uuid).subscribe(params => {
+            console.log(params);
             this.bannerTitle = params.title;
             this.bannerDescrip = params.body;
             if (this.bannerDescrip === null) {
                 this.bannerDescrip = '';
             }
             if (this.imgFondo === '') {
-                this.bannerBackground = params.field_image.url;
+                this.bannerBackground = params.field_image;
             } else {
                 this.bannerBackground = this.imgFondo;
             }
