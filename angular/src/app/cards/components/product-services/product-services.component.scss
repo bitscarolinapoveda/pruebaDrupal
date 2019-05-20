@@ -328,7 +328,7 @@
                 overflow: hidden;
 
                 @include breakpoint(phone) {
-                    height: 185px;
+                    height: auto;
                 }
 
                 @include breakpoint(tablet) {
