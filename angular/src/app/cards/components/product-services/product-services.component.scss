@@ -324,15 +324,15 @@
                 padding-top: 10%;
                 padding-left: 4%;
                 padding-right: 5%;
-                height: 250px;
+                max-height: 250px;
                 overflow: hidden;
 
                 @include breakpoint(phone) {
-                    height: auto;
+                    max-height: 185px;
                 }
 
                 @include breakpoint(tablet) {
-                    height: 208px;
+                    max-height: 208px;
                 }
 
                 @include breakpoint(desktop) {
