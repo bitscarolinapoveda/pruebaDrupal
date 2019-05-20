@@ -73,6 +73,9 @@
 :host /deep/ .ngxcarouselbnDZcg {
     width: 100%;
 }
+:host /deep/ div.carousel.slide.carousel-fade {
+    outline: none;
+}
 
 @media screen and (max-width:480px) {
     .img-slide {
