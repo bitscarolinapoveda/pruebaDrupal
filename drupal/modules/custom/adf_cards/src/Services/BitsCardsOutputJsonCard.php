@@ -192,7 +192,9 @@ class BitsCardsOutputJsonCard {
                 elseif ($dataDefinition == "default:node") {
                   $term = Node::load($value['target_id']);
                 }
-                $data[$field][] = ['id' => $term->id(), 'label'=> $term->label()];
+                if (!is_null($term)) {
+                  $data[$field][] = ['id' => $term->id(), 'label'=> $term->label()];
+                }
               }
             }
             elseif ($type === 'link'){

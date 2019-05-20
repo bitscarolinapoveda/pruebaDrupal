@@ -2,6 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CustomCardService } from 'src/app/services/cards/v1-card.services';
 import { General } from '../blurb/blurb.component';
+
+declare var $: any;
 @Component({
     selector: 'app-banner',
     templateUrl: './banner.component.html',
@@ -33,6 +35,7 @@ export class BannerComponent implements OnInit {
     }
 
     ngOnInit() {
+        $(window).scrollTop(0);
         if (this.titulo !== '' && (this.imgFondo === '' || this.imgFondo === undefined)) {
             this.getProductsAndServicesItems();
         } else if (this.uuid === undefined || this.uuid === '') {
