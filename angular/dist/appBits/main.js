@@ -13225,7 +13225,7 @@ __webpack_require__.r(__webpack_exports__);
 var environment = {
     production: false,
     name: 'default',
-    apiUrl: 'http://bits-redesign-uat.dev01.bitsamericas.net/',
+    apiUrl: 'http://bits-redesign-stg.dev01.bitsamericas.net/',
 };
 /*
  * In development mode, to ignore zone related error stack frames such as
