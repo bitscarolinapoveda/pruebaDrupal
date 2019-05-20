@@ -1,6 +1,6 @@
 import { ContentType } from '../../../services/cards/content-type.services';
 import { Component, OnInit, Inject } from '@angular/core';
-import {CustomCardService} from "../../../services/cards/v1-card.services";
+import { CustomCardService } from "../../../services/cards/v1-card.services";
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 
 import * as $ from 'jquery';
@@ -21,7 +21,7 @@ export class CarouselIndicatorsComponent implements OnInit {
   constructor(
     private _cardService: CustomCardService,
     private config: NgbCarouselConfig,
-    ) {
+  ) {
     this.carousel = [];
     this.height = (window.innerHeight) + 'px';
   }
@@ -29,7 +29,7 @@ export class CarouselIndicatorsComponent implements OnInit {
   ngOnInit() {
     this.getIndicatorsSliderItems();
   }
-  getIndicatorsSliderItems()  {
+  getIndicatorsSliderItems() {
     this._cardService.getCustomCardInformation('slidercard').subscribe(items => {
       items.data = this._cardService.addImageField(items.data, ['field_image']);
       this.carousel = items.data;
@@ -48,4 +48,5 @@ export class CarouselIndicatorsComponent implements OnInit {
     }, 2000);
     return false;
   }
+
 }

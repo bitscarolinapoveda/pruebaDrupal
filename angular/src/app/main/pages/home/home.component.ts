@@ -16,6 +16,7 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
+    $(window).scrollTop(0);
     this.meta.updateTag({ name: 'component', content: 'app-home' });
     this.meta.addTag({ name: 'general', content: 'Angular 7' });
     $('#float-social-block').removeClass('ocultar-phone');
