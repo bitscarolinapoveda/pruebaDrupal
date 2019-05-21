@@ -2,6 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CustomCardService } from 'src/app/services/cards/v1-card.services';
 import { General } from '../blurb/blurb.component';
+
+declare var $: any;
 @Component({
     selector: 'app-banner',
     templateUrl: './banner.component.html',
@@ -17,6 +19,12 @@ export class BannerComponent implements OnInit {
     bannerDescrip: string;
     principalBanner: General;
 
+    phoneWidth = 500 * window.devicePixelRatio + 'w';
+    tabletWidth = 1024 * window.devicePixelRatio + 'w';
+    sxgaScreen = 1280 * window.devicePixelRatio + 'w';
+    hdScreen = 1366 * window.devicePixelRatio + 'w';
+    fhdScreen = 1920 * window.devicePixelRatio + 'w';
+
     constructor(
         router: ActivatedRoute,
         private banner: CustomCardService,
@@ -27,6 +35,7 @@ export class BannerComponent implements OnInit {
     }
 
     ngOnInit() {
+        $(window).scrollTop(0);
         if (this.titulo !== '' && (this.imgFondo === '' || this.imgFondo === undefined)) {
             this.getProductsAndServicesItems();
         } else if (this.uuid === undefined || this.uuid === '') {
@@ -48,13 +57,14 @@ export class BannerComponent implements OnInit {
 
     getBannerService() {
         this.banner.getCustomContentBasicPage(this.uuid).subscribe(params => {
+            console.log(params);
             this.bannerTitle = params.title;
             this.bannerDescrip = params.body;
             if (this.bannerDescrip === null) {
                 this.bannerDescrip = '';
             }
             if (this.imgFondo === '') {
-                this.bannerBackground = params.field_image.url;
+                this.bannerBackground = params.field_image;
             } else {
                 this.bannerBackground = this.imgFondo;
             }

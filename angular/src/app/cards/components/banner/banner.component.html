@@ -1,10 +1,16 @@
-<section class="page-header">
+<section class="page-header" id="banner">
     <div class="title">
         <h1> {{ bannerTitle }} </h1>
     </div>
     <ng-container>
         <picture>
-            <div class="img" [ngStyle]="{'background-image': 'url(' + bannerBackground + ')'}"></div>
+            <!-- <div class="img" [ngStyle]="{'background-image': 'url(' + bannerBackground + ')'}"></div> -->
+            <img class="img" [src]="bannerBackground.slider_prueba?.url" alt="banner"
+                 srcset="{{bannerBackground.banner_screen_phone?.url}} {{phoneWidth}}, 
+                        {{bannerBackground.banner_screen_tablet?.url}} {{tabletWidth}},
+                        {{bannerBackground.banner_screen_sxga?.url}} {{sxgaScreen}},
+                        {{bannerBackground.banner_screen_hd?.url}} {{hdScreen}},
+                        {{bannerBackground.banner_screen_fhd?.url}} {{fhdScreen}}">
         </picture>
     </ng-container>
 </section>
