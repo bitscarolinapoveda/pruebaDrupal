@@ -24,9 +24,10 @@ const pagesRoutes: Routes = [
       { path: '', redirectTo: '/inicio', pathMatch: 'full', resolve: { message: HnResolverService } },
 
       { path: 'inicio', component: HomeComponent, resolve: { message: HnResolverService } },
+      { path: 'home', redirectTo: '/inicio', pathMatch: 'full', resolve: { message: HnResolverService } },
       { path: 'en/home', component: HomeComponent, resolve: { message: HnResolverService } },
-
       { path: 'contactenos', component: ContactUsComponent, resolve: { message: HnResolverService } },
+      { path: 'contact-us', redirectTo: '/contactenos', pathMatch: 'full', resolve: { message: HnResolverService } },
       { path: 'contactenos/:type', component: ContactUsComponent, resolve: { message: HnResolverService } },
       { path: 'en/contact-us', component: ContactUsComponent, resolve: { message: HnResolverService } },
       { path: 'en/contact-us/:type', component: ContactUsComponent, resolve: { message: HnResolverService } },
@@ -46,9 +47,12 @@ const pagesRoutes: Routes = [
 
       { path: 'politicas', component: PoliticsComponent, resolve: { message: HnResolverService } },
       { path: 'en/politics', component: PoliticsComponent, resolve: { message: HnResolverService } },
+      { path: 'politics', redirectTo: '/politicas', pathMatch: 'full', resolve: { message: HnResolverService } },
 
       { path: 'nosotros', component: AboutUsComponent, resolve: { message: HnResolverService } },
+      
       { path: 'en/about-us', component: AboutUsComponent, resolve: { message: HnResolverService } },
+      { path: 'contact-us', redirectTo: '/contactenos', pathMatch: 'full', resolve: { message: HnResolverService } },
 
       { path: 'mapa-del-sitio', component: MapsiteComponent, resolve: { message: HnResolverService } },
       { path: 'en/sitemap', component: MapsiteComponent, resolve: { message: HnResolverService } },
