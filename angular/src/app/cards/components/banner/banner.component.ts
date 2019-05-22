@@ -19,12 +19,14 @@ export class BannerComponent implements OnInit {
     bannerDescrip: string;
     principalBanner: General;
 
-    phoneWidth = 500 * window.devicePixelRatio + 'w';
-    tabletWidth = 1024 * window.devicePixelRatio + 'w';
-    sxgaScreen = 1280 * window.devicePixelRatio + 'w';
-    hdScreen = 1366 * window.devicePixelRatio + 'w';
-    fhdScreen = 1920 * window.devicePixelRatio + 'w';
 
+    phoneWidth = 500 * window.devicePixelRatio;
+    tabletWidth = 1024 * window.devicePixelRatio;
+    sxgaScreen = 1280 * window.devicePixelRatio;
+    hdScreen = 1366 * window.devicePixelRatio;
+    fhdScreen = 1920 * window.devicePixelRatio;
+
+    bandera_sevice = false;
     constructor(
         router: ActivatedRoute,
         private banner: CustomCardService,
@@ -37,11 +39,13 @@ export class BannerComponent implements OnInit {
     ngOnInit() {
         $(window).scrollTop(0);
         if (this.titulo !== '' && (this.imgFondo === '' || this.imgFondo === undefined)) {
+            this.bandera_sevice = false;
             this.getProductsAndServicesItems();
         } else if (this.uuid === undefined || this.uuid === '') {
             this.getTitle();
             this.bannerTitle = this.titulo;
         } else {
+            this.bandera_sevice = true;
             this.getTitle();
             this.getBannerService();
         }
@@ -57,7 +61,6 @@ export class BannerComponent implements OnInit {
 
     getBannerService() {
         this.banner.getCustomContentBasicPage(this.uuid).subscribe(params => {
-            console.log(params);
             this.bannerTitle = params.title;
             this.bannerDescrip = params.body;
             if (this.bannerDescrip === null) {
@@ -68,6 +71,7 @@ export class BannerComponent implements OnInit {
             } else {
                 this.bannerBackground = this.imgFondo;
             }
+            
         });
     }
 
