@@ -19,12 +19,14 @@ export class BannerComponent implements OnInit {
     bannerDescrip: string;
     principalBanner: General;
 
-    phoneWidth = 500 * window.devicePixelRatio + 'w';
-    tabletWidth = 1024 * window.devicePixelRatio + 'w';
-    sxgaScreen = 1280 * window.devicePixelRatio + 'w';
-    hdScreen = 1366 * window.devicePixelRatio + 'w';
-    fhdScreen = 1920 * window.devicePixelRatio + 'w';
 
+    phoneWidth = 500 * window.devicePixelRatio;
+    tabletWidth = 1024 * window.devicePixelRatio;
+    sxgaScreen = 1280 * window.devicePixelRatio;
+    hdScreen = 1366 * window.devicePixelRatio;
+    fhdScreen = 1920 * window.devicePixelRatio;
+
+    bandera_sevice = false;
     constructor(
         router: ActivatedRoute,
         private banner: CustomCardService,
@@ -37,11 +39,15 @@ export class BannerComponent implements OnInit {
     ngOnInit() {
         $(window).scrollTop(0);
         if (this.titulo !== '' && (this.imgFondo === '' || this.imgFondo === undefined)) {
+            this.bandera_sevice = false;
             this.getProductsAndServicesItems();
         } else if (this.uuid === undefined || this.uuid === '') {
+            console.log("ENTRO A OTRA 2");
             this.getTitle();
             this.bannerTitle = this.titulo;
         } else {
+            console.log("BASICA");
+            this.bandera_sevice = true;
             this.getTitle();
             this.getBannerService();
         }
@@ -57,17 +63,20 @@ export class BannerComponent implements OnInit {
 
     getBannerService() {
         this.banner.getCustomContentBasicPage(this.uuid).subscribe(params => {
-            console.log(params);
             this.bannerTitle = params.title;
             this.bannerDescrip = params.body;
             if (this.bannerDescrip === null) {
                 this.bannerDescrip = '';
             }
             if (this.imgFondo === '') {
+                console.log(params.field_image);
+ 
                 this.bannerBackground = params.field_image;
             } else {
+                console.log("NAAAA");
                 this.bannerBackground = this.imgFondo;
             }
+            
         });
     }
 
@@ -79,6 +88,7 @@ export class BannerComponent implements OnInit {
             const servicesProduct = this.principalBanner.data;
             for (let index = 0; index < servicesProduct.length; index++) {
                 if (servicesProduct[index].url.indexOf(this.titulo) > -1 && servicesProduct[index].field_large_image !== undefined) {
+     
                     this.bannerBackground = servicesProduct[index].field_large_image.url;
                     this.bannerDescrip = servicesProduct[index].field_descripcion;
                 }
