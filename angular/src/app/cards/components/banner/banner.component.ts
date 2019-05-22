@@ -42,11 +42,9 @@ export class BannerComponent implements OnInit {
             this.bandera_sevice = false;
             this.getProductsAndServicesItems();
         } else if (this.uuid === undefined || this.uuid === '') {
-            console.log("ENTRO A OTRA 2");
             this.getTitle();
             this.bannerTitle = this.titulo;
         } else {
-            console.log("BASICA");
             this.bandera_sevice = true;
             this.getTitle();
             this.getBannerService();
@@ -69,11 +67,8 @@ export class BannerComponent implements OnInit {
                 this.bannerDescrip = '';
             }
             if (this.imgFondo === '') {
-                console.log(params.field_image);
- 
                 this.bannerBackground = params.field_image;
             } else {
-                console.log("NAAAA");
                 this.bannerBackground = this.imgFondo;
             }
             
@@ -88,7 +83,6 @@ export class BannerComponent implements OnInit {
             const servicesProduct = this.principalBanner.data;
             for (let index = 0; index < servicesProduct.length; index++) {
                 if (servicesProduct[index].url.indexOf(this.titulo) > -1 && servicesProduct[index].field_large_image !== undefined) {
-     
                     this.bannerBackground = servicesProduct[index].field_large_image.url;
                     this.bannerDescrip = servicesProduct[index].field_descripcion;
                 }
