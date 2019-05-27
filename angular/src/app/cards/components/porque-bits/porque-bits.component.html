@@ -3,12 +3,10 @@
 </section>
 <section class="WhyBits">
     <div class="images-whybits">
-        <ul class="row first images">
-            <li class="images" *ngFor="let image of moralValues; let i = index" (deferLoad)="image.show = true">
+        <ul class="row first images" >
+            <li class="images" *ngFor="let image of moralValues; let i = index">
                 <a [routerLink]="'home'">
-                    <ng-container *ngIf="image.show" >
-                        <img class="{{i}}" [src]='image.field_imagen.url' [alt]="image.field_imagen.alt" (load)="showImage()">
-                    </ng-container>
+                        <img class="{{i}}" lazyload [src]='image.field_imagen.url' [alt]="image.field_imagen.alt">
                     <p>{{ image.title }}</p>
                 </a>
             </li>

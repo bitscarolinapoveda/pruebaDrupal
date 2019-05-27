@@ -57,7 +57,8 @@ import { SafeHtmlPipe } from '../pipes/safehtml.pipe';
 import { SafeCssPipe } from '../pipes/safecss.pipe';
 import { WorkusComponent } from './components/workus/workus.component';
 import { OrganizeGridMuuriDirective } from '../directives/organize-grid-muuri.directive';
-
+//Directivas
+import { LazyloadClass } from '../directives/lazyload.directive';
 
 @NgModule({
   declarations: [
@@ -97,6 +98,7 @@ import { OrganizeGridMuuriDirective } from '../directives/organize-grid-muuri.di
     OurWorkComponent,
     ScreenshotsComponent,
     ProjectFilterComponent,
+    LazyloadClass
   ],
   exports: [
     //CarouselItemComponent,

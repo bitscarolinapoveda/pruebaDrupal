@@ -28,9 +28,11 @@ import { ToastrModule } from 'ngx-toastr';
 import { NotificationService } from './services/shared/notification.service';
 
 
+
+
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +44,7 @@ import { NotificationService } from './services/shared/notification.service';
     ToastrModule.forRoot(),
     APP_ROUTES,
     OwlModule,
-    DeferLoadModule,
+   // DeferLoadModule,
     SlickModule.forRoot(),
     RecaptchaModule,
     RecaptchaFormsModule
