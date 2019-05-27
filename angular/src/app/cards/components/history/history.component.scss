@@ -72,9 +72,13 @@
     @media (min-width: 1367px)  and (max-width: 1920px){
         .tl-slide-content-container {
             .tl-slide-content {
-                padding-left: 200px !important;
-                padding-right: 0 !important;
+                padding-left: 150px !important;
+                padding-right: 200px !important;
                 width: 1000px !important;
+
+                .tl-text-content-container {                   
+                    width: 380px;
+                }
 
                 .tl-media {
                     max-width: 500px !important;
@@ -97,9 +101,13 @@
     @media (min-width: 1920px){
         .tl-slide-content-container {
             .tl-slide-content {
-                padding-left: 250px !important;
-                padding-right: 0 !important;
+                padding-left: 200px !important;
+                padding-right: 250px !important;
                 width: 1400px !important;
+
+                .tl-text-content-container {                   
+                    width: 420px;
+                }
 
                 .tl-media {
                     max-width: 700px !important;
@@ -120,9 +128,13 @@
     @media (max-width: 1367px) {
         .tl-slide-content-container {
             .tl-slide-content {
-                padding-left: 200px;
-                padding-right: 0 !important;
+                padding-left: 150px;
+                padding-right: 200px !important;
                 width: 900px !important;
+
+                .tl-text-content-container {                   
+                    width: 350px;
+                }
 
                 .tl-media {
                     max-width: 500px !important;
@@ -147,7 +159,7 @@
 
                     .tl-text-content-container {
                         height: 200px;
-                        overflow: hidden;
+                        overflow: hidden;                        
 
                         h3 {
                             margin-bottom: 10px;
@@ -168,7 +180,6 @@
         .tl-slide-content-container {
             .tl-slide-content {
                 padding-right: 0 !important;
-
                 width: 700px !important;
 
                 .tl-media {
@@ -189,6 +200,7 @@
                     .tl-text-content-container {
                         height: 150px;
                         overflow: hidden;
+                        width: 300px;
 
                         h3 {
                             margin-top: 20px;
@@ -226,6 +238,7 @@
 
             p {
                 font-size: 14px;
+                text-align: justify;
             }
         }
 
