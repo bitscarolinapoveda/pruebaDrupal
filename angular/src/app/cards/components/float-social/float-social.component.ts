@@ -117,8 +117,6 @@ export class FloatSocialComponent implements OnInit {
 
     var contenido2 = $('#footer-block').offset();
     contenido2 = contenido2.top;
-    console.log('windowHeight', windowHeight);
-    console.log('contenido2', contenido2);
 
     if (windowHeight >= contenido2) {
       $('#float-social-block').css('transition', 'all 300ms ease');
