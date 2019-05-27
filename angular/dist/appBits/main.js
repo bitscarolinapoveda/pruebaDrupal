@@ -4334,10 +4334,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PorqueBitsComponentNgFactory", function() { return PorqueBitsComponentNgFactory; });
 /* harmony import */ var _porque_bits_component_scss_shim_ngstyle__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./porque-bits.component.scss.shim.ngstyle */ "./src/app/cards/components/porque-bits/porque-bits.component.scss.shim.ngstyle.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _trademe_ng_defer_load_dist_defer_load_directive__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @trademe/ng-defer-load/dist/defer-load.directive */ "./node_modules/@trademe/ng-defer-load/dist/defer-load.directive.js");
-/* harmony import */ var _trademe_ng_defer_load_dist_defer_load_directive__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_trademe_ng_defer_load_dist_defer_load_directive__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _directives_lazyload_directive__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../directives/lazyload.directive */ "./src/app/directives/lazyload.directive.ts");
 /* harmony import */ var _porque_bits_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./porque-bits.component */ "./src/app/cards/components/porque-bits/porque-bits.component.ts");
 /* harmony import */ var _services_cards_v1_card_services__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../services/cards/v1-card.services */ "./src/app/services/cards/v1-card.services.ts");
 /**
@@ -4346,8 +4345,8 @@ __webpack_require__.r(__webpack_exports__);
  * @suppress {suspiciousCode,uselessCode,missingProperties,missingOverride,checkTypes}
  * tslint:disable
  */
-/** PURE_IMPORTS_START _porque_bits.component.scss.shim.ngstyle,_angular_core,_trademe_ng_defer_load_dist_defer_load.directive,_angular_router,_angular_common,_porque_bits.component,_.._.._services_cards_v1_card.services PURE_IMPORTS_END */
-/** PURE_IMPORTS_START _porque_bits.component.scss.shim.ngstyle,_angular_core,_trademe_ng_defer_load_dist_defer_load.directive,_angular_router,_angular_common,_porque_bits.component,_.._.._services_cards_v1_card.services PURE_IMPORTS_END */
+/** PURE_IMPORTS_START _porque_bits.component.scss.shim.ngstyle,_angular_core,_angular_router,_angular_common,_.._.._directives_lazyload.directive,_porque_bits.component,_.._.._services_cards_v1_card.services PURE_IMPORTS_END */
+/** PURE_IMPORTS_START _porque_bits.component.scss.shim.ngstyle,_angular_core,_angular_router,_angular_common,_.._.._directives_lazyload.directive,_porque_bits.component,_.._.._services_cards_v1_card.services PURE_IMPORTS_END */
 
 
 
@@ -4358,36 +4357,18 @@ __webpack_require__.r(__webpack_exports__);
 var styles_PorqueBitsComponent = [_porque_bits_component_scss_shim_ngstyle__WEBPACK_IMPORTED_MODULE_0__["styles"]];
 var RenderType_PorqueBitsComponent = /*@__PURE__*/ /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵcrt"]({ encapsulation: 0, styles: styles_PorqueBitsComponent, data: {} });
 
-function View_PorqueBitsComponent_2(_l) {
-    return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵvid"](0, [(_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](0, 0, null, null, 1, null, null, null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](1, 0, null, null, 0, "img", [], [[8, "className", 0], [8, "src", 4], [8, "alt", 0]], [[null, "load"]], function (_v, en, $event) {
-            var ad = true;
-            var _co = _v.component;
-            if (("load" === en)) {
-                var pd_0 = (_co.showImage() !== false);
-                ad = (pd_0 && ad);
-            }
-            return ad;
-        }, null, null))], null, function (_ck, _v) { var currVal_0 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵinlineInterpolate"](1, "", _v.parent.context.index, ""); var currVal_1 = _v.parent.context.$implicit.field_imagen.url; var currVal_2 = _v.parent.context.$implicit.field_imagen.alt; _ck(_v, 1, 0, currVal_0, currVal_1, currVal_2); });
-}
 function View_PorqueBitsComponent_1(_l) {
-    return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵvid"](0, [(_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](0, 0, null, null, 7, "li", [["class", "images"]], null, [[null, "deferLoad"]], function (_v, en, $event) {
-            var ad = true;
-            if (("deferLoad" === en)) {
-                var pd_0 = ((_v.context.$implicit.show = true) !== false);
-                ad = (pd_0 && ad);
-            }
-            return ad;
-        }, null, null)), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](1, 4341760, null, 0, _trademe_ng_defer_load_dist_defer_load_directive__WEBPACK_IMPORTED_MODULE_2__["DeferLoadDirective"], [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["PLATFORM_ID"]], null, { deferLoad: "deferLoad" }), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](2, 0, null, null, 5, "a", [], [[1, "target", 0], [8, "href", 4]], [[null, "click"]], function (_v, en, $event) {
+    return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵvid"](0, [(_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](0, 0, null, null, 6, "li", [["class", "images"]], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](1, 0, null, null, 5, "a", [], [[1, "target", 0], [8, "href", 4]], [[null, "click"]], function (_v, en, $event) {
             var ad = true;
             if (("click" === en)) {
-                var pd_0 = (_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 3).onClick($event.button, $event.ctrlKey, $event.metaKey, $event.shiftKey) !== false);
+                var pd_0 = (_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 2).onClick($event.button, $event.ctrlKey, $event.metaKey, $event.shiftKey) !== false);
                 ad = (pd_0 && ad);
             }
             return ad;
-        }, null, null)), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](3, 671744, null, 0, _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterLinkWithHref"], [_angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"], _angular_common__WEBPACK_IMPORTED_MODULE_4__["LocationStrategy"]], { routerLink: [0, "routerLink"] }, null), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵand"](16777216, null, null, 1, null, View_PorqueBitsComponent_2)), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](5, 16384, null, 0, _angular_common__WEBPACK_IMPORTED_MODULE_4__["NgIf"], [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewContainerRef"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["TemplateRef"]], { ngIf: [0, "ngIf"] }, null), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](6, 0, null, null, 1, "p", [], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵted"](7, null, ["", ""]))], function (_ck, _v) { var currVal_2 = "home"; _ck(_v, 3, 0, currVal_2); var currVal_3 = _v.context.$implicit.show; _ck(_v, 5, 0, currVal_3); }, function (_ck, _v) { var currVal_0 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 3).target; var currVal_1 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 3).href; _ck(_v, 2, 0, currVal_0, currVal_1); var currVal_4 = _v.context.$implicit.title; _ck(_v, 7, 0, currVal_4); });
+        }, null, null)), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](2, 671744, null, 0, _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterLinkWithHref"], [_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["LocationStrategy"]], { routerLink: [0, "routerLink"] }, null), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](3, 0, null, null, 1, "img", [["lazyload", ""]], [[8, "className", 0], [8, "alt", 0], [1, "src", 4]], null, null, null, null)), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](4, 4276224, null, 0, _directives_lazyload_directive__WEBPACK_IMPORTED_MODULE_4__["LazyloadClass"], [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"]], { src: [0, "src"] }, null), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](5, 0, null, null, 1, "p", [], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵted"](6, null, ["", ""]))], function (_ck, _v) { var currVal_2 = "home"; _ck(_v, 2, 0, currVal_2); var currVal_6 = _v.context.$implicit.field_imagen.url; _ck(_v, 4, 0, currVal_6); }, function (_ck, _v) { var currVal_0 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 2).target; var currVal_1 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 2).href; _ck(_v, 1, 0, currVal_0, currVal_1); var currVal_3 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵinlineInterpolate"](1, "", _v.context.index, ""); var currVal_4 = _v.context.$implicit.field_imagen.alt; var currVal_5 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 4).srcAttr; _ck(_v, 3, 0, currVal_3, currVal_4, currVal_5); var currVal_7 = _v.context.$implicit.title; _ck(_v, 6, 0, currVal_7); });
 }
-function View_PorqueBitsComponent_0(_l) { return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵvid"](0, [(_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](0, 0, null, null, 2, "section", [["id", "main-title"]], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](1, 0, null, null, 1, "h2", [], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵted"](2, null, ["", ""])), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](3, 0, null, null, 4, "section", [["class", "WhyBits"]], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](4, 0, null, null, 3, "div", [["class", "images-whybits"]], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](5, 0, null, null, 2, "ul", [["class", "row first images"]], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵand"](16777216, null, null, 1, null, View_PorqueBitsComponent_1)), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](7, 278528, null, 0, _angular_common__WEBPACK_IMPORTED_MODULE_4__["NgForOf"], [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewContainerRef"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["TemplateRef"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["IterableDiffers"]], { ngForOf: [0, "ngForOf"] }, null)], function (_ck, _v) { var _co = _v.component; var currVal_1 = _co.moralValues; _ck(_v, 7, 0, currVal_1); }, function (_ck, _v) { var _co = _v.component; var currVal_0 = ((_co.mainTitleLink == null) ? null : _co.mainTitleLink.title); _ck(_v, 2, 0, currVal_0); }); }
-function View_PorqueBitsComponent_Host_0(_l) { return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵvid"](0, [(_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](0, 0, null, null, 1, "app-porque-bits", [], null, null, null, View_PorqueBitsComponent_0, RenderType_PorqueBitsComponent)), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](1, 114688, null, 0, _porque_bits_component__WEBPACK_IMPORTED_MODULE_5__["PorqueBitsComponent"], [_angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterModule"], _services_cards_v1_card_services__WEBPACK_IMPORTED_MODULE_6__["CustomCardService"]], null, null)], function (_ck, _v) { _ck(_v, 1, 0); }, null); }
+function View_PorqueBitsComponent_0(_l) { return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵvid"](0, [(_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](0, 0, null, null, 2, "section", [["id", "main-title"]], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](1, 0, null, null, 1, "h2", [], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵted"](2, null, ["", ""])), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](3, 0, null, null, 4, "section", [["class", "WhyBits"]], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](4, 0, null, null, 3, "div", [["class", "images-whybits"]], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](5, 0, null, null, 2, "ul", [["class", "row first images"]], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵand"](16777216, null, null, 1, null, View_PorqueBitsComponent_1)), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](7, 278528, null, 0, _angular_common__WEBPACK_IMPORTED_MODULE_3__["NgForOf"], [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewContainerRef"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["TemplateRef"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["IterableDiffers"]], { ngForOf: [0, "ngForOf"] }, null)], function (_ck, _v) { var _co = _v.component; var currVal_1 = _co.moralValues; _ck(_v, 7, 0, currVal_1); }, function (_ck, _v) { var _co = _v.component; var currVal_0 = ((_co.mainTitleLink == null) ? null : _co.mainTitleLink.title); _ck(_v, 2, 0, currVal_0); }); }
+function View_PorqueBitsComponent_Host_0(_l) { return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵvid"](0, [(_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](0, 0, null, null, 1, "app-porque-bits", [], null, null, null, View_PorqueBitsComponent_0, RenderType_PorqueBitsComponent)), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](1, 114688, null, 0, _porque_bits_component__WEBPACK_IMPORTED_MODULE_5__["PorqueBitsComponent"], [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"], _services_cards_v1_card_services__WEBPACK_IMPORTED_MODULE_6__["CustomCardService"]], null, null)], function (_ck, _v) { _ck(_v, 1, 0); }, null); }
 var PorqueBitsComponentNgFactory = /*@__PURE__*/ /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵccf"]("app-porque-bits", _porque_bits_component__WEBPACK_IMPORTED_MODULE_5__["PorqueBitsComponent"], View_PorqueBitsComponent_Host_0, {}, {}, []);
 
 
@@ -8789,6 +8770,55 @@ __webpack_require__.r(__webpack_exports__);
 /** PURE_IMPORTS_START  PURE_IMPORTS_END */
 /** PURE_IMPORTS_START  PURE_IMPORTS_END */
 var styles = ["#work-with-us[_ngcontent-%COMP%] {\n  display: block;\n  margin-top: 65px;\n  text-align: center;\n  color: #002b49; }\n  #work-with-us[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%] {\n    font-size: 40px;\n    text-transform: none;\n    -webkit-transform: scaleY(1.2);\n            transform: scaleY(1.2);\n    letter-spacing: -2px; }\n  #work-with-us[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n    font-size: 20px;\n    margin-top: 11px;\n    margin-bottom: 30px; }\n  @media (min-width: 1025px) {\n      #work-with-us[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n        margin-bottom: 17px; } }\n  @media (min-width: 668px) and (max-width: 1024px) {\n      #work-with-us[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n        margin-bottom: 17px; } }\n  #work-with-us[_ngcontent-%COMP%]   a.btn-primary[_ngcontent-%COMP%] {\n    background-color: #a6cf24;\n    border-color: #a6cf24;\n    opacity: 0.75;\n    border-radius: 0;\n    width: 292px;\n    font-size: 20px;\n    height: 45px;\n    margin-bottom: 12px; }\n  @media (min-width: 1025px) {\n      #work-with-us[_ngcontent-%COMP%]   a.btn-primary[_ngcontent-%COMP%] {\n        margin-bottom: 0; } }\n  @media (min-width: 668px) and (max-width: 1024px) {\n      #work-with-us[_ngcontent-%COMP%]   a.btn-primary[_ngcontent-%COMP%] {\n        margin-bottom: 0; } }\n  #work-with-us[_ngcontent-%COMP%]   .text1[_ngcontent-%COMP%] {\n    font-size: 24px;\n    margin-top: 11px;\n    -webkit-transform: scaleY(1.2);\n            transform: scaleY(1.2);\n    background-color: #FFFFFF;\n    width: 42%;\n    margin-left: 29%; }\n  @media (min-width: 1025px) {\n      #work-with-us[_ngcontent-%COMP%]   .text1[_ngcontent-%COMP%] {\n        width: 12%;\n        margin-left: 44%; } }\n  @media (min-width: 668px) and (max-width: 1024px) {\n      #work-with-us[_ngcontent-%COMP%]   .text1[_ngcontent-%COMP%] {\n        width: 17%;\n        margin-left: 42%; } }\n  #work-with-us[_ngcontent-%COMP%]   hr[_ngcontent-%COMP%] {\n    background: linear-gradient(-90deg, #FFFFFF, #a6cf24, #a6cf24, #FFFFFF);\n    height: 1px;\n    width: 80%;\n    position: absolute;\n    margin-top: 31px;\n    left: 10%; }\n  @media (min-width: 1025px) {\n      #work-with-us[_ngcontent-%COMP%]   hr[_ngcontent-%COMP%] {\n        width: 22%;\n        left: 39%; } }\n  @media (min-width: 668px) and (max-width: 1024px) {\n      #work-with-us[_ngcontent-%COMP%]   hr[_ngcontent-%COMP%] {\n        width: 22%;\n        left: 39%; } }\n  #work-with-us[_ngcontent-%COMP%]   .text2[_ngcontent-%COMP%] {\n    margin-bottom: 67px; }\n  @media (max-width: 667px) {\n  .subtitle[_ngcontent-%COMP%] {\n    padding: 5px; } }"];
+
+
+
+
+/***/ }),
+
+/***/ "./src/app/directives/lazyload.directive.ts":
+/*!**************************************************!*\
+  !*** ./src/app/directives/lazyload.directive.ts ***!
+  \**************************************************/
+/*! exports provided: LazyloadClass */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LazyloadClass", function() { return LazyloadClass; });
+var LazyloadClass = /** @class */ /*@__PURE__*/ (function () {
+    function LazyloadClass(el) {
+        this.el = el;
+        this.srcAttr = null;
+    }
+    LazyloadClass.prototype.ngAfterViewInit = function () {
+        this.canLazyLoad() ? this.lazyLoadImage() : this.loadImage();
+    };
+    LazyloadClass.prototype.ngOnInit = function () {
+        //this.el.nativeElement.style.backgroundColor = "blue";
+    };
+    LazyloadClass.prototype.canLazyLoad = function () {
+        return window && 'IntersectionObserver' in window;
+    };
+    LazyloadClass.prototype.lazyLoadImage = function () {
+        var _this = this;
+        var obs = new IntersectionObserver(function (entries) {
+            entries.forEach(function (_a) {
+                var isIntersecting = _a.isIntersecting;
+                if (isIntersecting) {
+                    _this.loadImage();
+                    obs.unobserve(_this.el.nativeElement);
+                }
+            });
+        });
+        obs.observe(this.el.nativeElement);
+    };
+    LazyloadClass.prototype.loadImage = function () {
+        // setea el valor del source en la imagen
+        this.srcAttr = this.src;
+    };
+    return LazyloadClass;
+}());
 
 
 
