@@ -32,7 +32,7 @@ export class ScreenshotsComponent implements OnInit {
     this.getScreenshotsInfo();
     this.carouselOne = {
       grid: { xs: 3, sm: 3, md: 3, lg: 3, all: 0 },
-      slide: 2,
+      slide: 1,
       speed: 400,
       animation: 'lazy',
       point: {
