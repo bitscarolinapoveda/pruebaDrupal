@@ -19,14 +19,12 @@ export class BannerComponent implements OnInit {
     bannerDescrip: string;
     principalBanner: General;
 
+    phoneWidth = 500 * window.devicePixelRatio + 'w';
+    tabletWidth = 1024 * window.devicePixelRatio + 'w';
+    sxgaScreen = 1280 * window.devicePixelRatio + 'w';
+    hdScreen = 1366 * window.devicePixelRatio + 'w';
+    fhdScreen = 1920 * window.devicePixelRatio + 'w';
 
-    phoneWidth = 500 * window.devicePixelRatio;
-    tabletWidth = 1024 * window.devicePixelRatio;
-    sxgaScreen = 1280 * window.devicePixelRatio;
-    hdScreen = 1366 * window.devicePixelRatio;
-    fhdScreen = 1920 * window.devicePixelRatio;
-
-    bandera_sevice = false;
     constructor(
         router: ActivatedRoute,
         private banner: CustomCardService,
@@ -39,13 +37,11 @@ export class BannerComponent implements OnInit {
     ngOnInit() {
         $(window).scrollTop(0);
         if (this.titulo !== '' && (this.imgFondo === '' || this.imgFondo === undefined)) {
-            this.bandera_sevice = false;
             this.getProductsAndServicesItems();
         } else if (this.uuid === undefined || this.uuid === '') {
             this.getTitle();
             this.bannerTitle = this.titulo;
         } else {
-            this.bandera_sevice = true;
             this.getTitle();
             this.getBannerService();
         }
@@ -71,7 +67,6 @@ export class BannerComponent implements OnInit {
             } else {
                 this.bannerBackground = this.imgFondo;
             }
-            
         });
     }
 
@@ -84,7 +79,7 @@ export class BannerComponent implements OnInit {
             for (let index = 0; index < servicesProduct.length; index++) {
                 if (servicesProduct[index].url.indexOf(this.titulo) > -1 && servicesProduct[index].field_large_image !== undefined) {
                     this.bannerBackground = servicesProduct[index].field_large_image.url;
-                    this.bannerDescrip = servicesProduct[index].field_descripcion;
+                    this.bannerDescrip = servicesProduct[index].field_descriptions;
                 }
             }
             if (this.titulo !== '') {
