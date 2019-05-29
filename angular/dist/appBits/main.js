@@ -1350,7 +1350,7 @@ var BannerComponent = /** @class */ /*@__PURE__*/ (function () {
             for (var index = 0; index < servicesProduct.length; index++) {
                 if (servicesProduct[index].url.indexOf(_this.titulo) > -1 && servicesProduct[index].field_large_image !== undefined) {
                     _this.bannerBackground = servicesProduct[index].field_large_image.url;
-                    _this.bannerDescrip = servicesProduct[index].field_descripcion;
+                    _this.bannerDescrip = servicesProduct[index].field_descriptions;
                 }
             }
             if (_this.titulo !== '') {
