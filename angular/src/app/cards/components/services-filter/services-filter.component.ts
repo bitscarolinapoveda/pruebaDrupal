@@ -63,20 +63,21 @@ export class ServicesFilterComponent implements OnInit {
   }
 
   getInfoServices() {
-    return this.servicesInfo.getCustomCardInformation('allproductsandservicescard').subscribe(items => {
-      items.data = this.servicesInfo.addImageField(items.data, ['short_image']);
-      items.data = this.servicesInfo.addImageField(items.data, ['large_image']);
+    return this.servicesInfo.getCustomCardInformation('allproductsandservicescard_2').subscribe(items => {
+      items.data = this.servicesInfo.addImageField(items.data, ['field_white_icon']);
+      items.data = this.servicesInfo.addImageField(items.data, ['field_large_image']);
+      items.data = this.servicesInfo.addImageField(items.data, ['field_short_image']);
       for (let index = 0; index < items.data.length; index++) {
-        if (items.data[index].type === this.type) {
+        if (items.data[index].field_type[0].label === this.type) {
           this.band.push(items.data[index]);
         }
       }
       this.gridInfo = this.band;
       for (let index = 0; index < this.gridInfo.length; index++) {
-        this.gridInfo[index].type = '/' + this.gridInfo[index].type;
+        this.gridInfo[index].type = '/' + items.data[index].field_type[0].label;
       }
 
-      this.listClients = this.getFilterList('clients', 'clients-');
+      this.listClients = this.getFilterList('field_clients', 'clients-');
     });
   }
   getFilterList(campo, id) {
@@ -87,7 +88,7 @@ export class ServicesFilterComponent implements OnInit {
           if (list.length === 0) {
             let obj = {
               'id': [id] + this.gridInfo[i][campo][j].id,
-              'text': this.gridInfo[i][campo][j].label
+              'text': this.gridInfo[i][campo][j].label,
             }
             list.push(obj);
           } else {
@@ -112,12 +113,12 @@ export class ServicesFilterComponent implements OnInit {
   }
 
   getFilterService() {
-    if (this.type === 'product') {
+    if (this.type === 'producto') {
       this.servicesInfo.getCustomCardInformation('servicesfiltercard_2').subscribe(params => {
         this.title = params.header[0].data.title;
         this.datos = params.body;
       });
-    } else if (this.type === 'service') {
+    } else if (this.type === 'servicio') {
       this.servicesInfo.getCustomCardInformation('servicesfiltercard').subscribe(params => {
         this.title = params.header[0].data.title;
         this.datos = params.body;
@@ -160,7 +161,7 @@ export class ServicesFilterComponent implements OnInit {
       });
     }
 
-    this.addFilterClass('clients', 'clients-');
+    this.addFilterClass('field_clients', 'clients-');
   }
   addFilterClass(campo, id) {
     for (let i = 0; i < this.gridInfo.length; i++) {

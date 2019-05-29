@@ -31,15 +31,15 @@
     (appOrganizeGridMuuri)="organizeGrid()" (mouseover)=showDescription($event,i)
     (mouseleave)=showDescription($event,i)>
     <div class="dark-layout"></div>
-    <div class="item-content" [ngStyle]="{'background-image':'url(' + gridBox.large_image.url + ')'}"></div>
+    <div class="item-content" [ngStyle]="{'background-image':'url(' + gridBox.field_large_image.url + ')'}"></div>
     <div class="info-content info-{{i}}">
-        <div class="logo-client" [ngStyle]="{'background-image':'url(' + gridBox.short_image.url + ')'}"></div>
-      <h2 class="text-grid">{{gridBox.label}}</h2>
+        <div class="logo-client" [ngStyle]="{'background-image':'url(' + gridBox.field_white_icon.url + ')'}"></div>
+      <h2 class="text-grid">{{gridBox.title}}</h2>
     </div>
     <div class="complete-info-grid hover-info-{{i}}">
-      <h2 class="text-grid">{{gridBox.label}}</h2>
-      <p class="description">{{gridBox.description}}</p>
-      <a [routerLink]="[gridBox.type, gridBox.nid]" href="#" class="plus-icon"></a>
+      <h2 class="text-grid">{{gridBox.title}}</h2>
+      <p class="description">{{gridBox.field_abstract}}</p>
+      <a [routerLink]="[gridBox.url]" href="#" class="plus-icon"></a>
     </div>
   </div>
 </div>
