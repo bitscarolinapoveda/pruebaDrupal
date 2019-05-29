@@ -181,6 +181,8 @@ class MenuRestResource extends ResourceBase {
       } catch (\Throwable $th) {
         $path = $th['message'];
       }
+      $alias = \Drupal::service('path.alias_manager')->getAliasByPath($path);
+      $path = (strpos($alias, 'node') === false) ? $alias : '';
     }
     else{
       $path = $url->toString(); //devuelve la url si no pertenece a drupal
