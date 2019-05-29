@@ -84,7 +84,7 @@ export class BannerComponent implements OnInit {
             for (let index = 0; index < servicesProduct.length; index++) {
                 if (servicesProduct[index].url.indexOf(this.titulo) > -1 && servicesProduct[index].field_large_image !== undefined) {
                     this.bannerBackground = servicesProduct[index].field_large_image.url;
-                    this.bannerDescrip = servicesProduct[index].field_descripcion;
+                    this.bannerDescrip = servicesProduct[index].field_descriptions;
                 }
             }
             if (this.titulo !== '') {
