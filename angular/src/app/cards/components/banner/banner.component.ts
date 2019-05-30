@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CustomCardService } from 'src/app/services/cards/v1-card.services';
 import { General } from '../blurb/blurb.component';
+import { TextService } from 'src/app/services/text/text.service';
 
 declare var $: any;
 @Component({
@@ -30,6 +31,7 @@ export class BannerComponent implements OnInit {
     constructor(
         router: ActivatedRoute,
         private banner: CustomCardService,
+        private textFilter: TextService,
     ) {
         this.uuid = '';
         this.bannerDescrip = '';
@@ -62,7 +64,7 @@ export class BannerComponent implements OnInit {
     getBannerService() {
         this.banner.getCustomContentBasicPage(this.uuid).subscribe(params => {
             this.bannerTitle = params.title;
-            this.bannerDescrip = params.body;
+            this.bannerDescrip = this.textFilter.filterHtml(params.body);
             if (this.bannerDescrip === null) {
                 this.bannerDescrip = '';
             }
@@ -84,15 +86,10 @@ export class BannerComponent implements OnInit {
             for (let index = 0; index < servicesProduct.length; index++) {
                 if (servicesProduct[index].url.indexOf(this.titulo) > -1 && servicesProduct[index].field_large_image !== undefined) {
                     this.bannerBackground = servicesProduct[index].field_large_image.url;
-                    this.bannerDescrip = servicesProduct[index].field_descriptions;
+                    this.bannerDescrip = this.textFilter.filterHtml(servicesProduct[index].field_descriptions);
+                    this.bannerTitle = servicesProduct[index].title;
                 }
             }
-            if (this.titulo !== '') {
-                while (this.titulo.indexOf('-') > -1) {
-                    this.titulo = this.titulo.replace('-', ' ');
-                }
-            }
-            this.bannerTitle = this.titulo;
         });
     }
 }
