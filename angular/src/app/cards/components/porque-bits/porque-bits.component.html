@@ -6,7 +6,7 @@
         <ul class="row first images" >
             <li class="images" *ngFor="let image of moralValues; let i = index">
                 <a [routerLink]="'home'">
-                        <img class="{{i}}" lazyload [src]='image.field_imagen.url' [alt]="image.field_imagen.alt">
+                        <img lazyload  class="picture-why {{i}}"  [src]='image.field_imagen.url'>
                     <p>{{ image.title }}</p>
                 </a>
             </li>

@@ -5,16 +5,13 @@
         <h2>{{ titleClients }}</h2>
     </section>
 
-    <div class="contenedor" [ngClass]="{'three-items': threeItems, 'two-items': twoItems, 'one-items': oneItems }"
-        (deferLoad)="show = true">
+    <div class="contenedor" [ngClass]="{'three-items': threeItems, 'two-items': twoItems, 'one-items': oneItems }">
         <ngx-carousel [inputs]="carocarouselTile">
             <ngx-tile NgxCarouselItem *ngFor="let ourC of clientsDesktop; let i = index">
                 <a href="#" class="url-carousel">
                     <div class="container-img col-md-3 images">
-                        <ng-container *ngIf="show">
                             <img class="d-block img-fluid img-float  mx-auto" src="{{ ourC.field_image?.url }}"
-                                alt="{{ ourC.field_image?.alt }}" (load)="showImage()">
-                        </ng-container>
+                                 lazyload>
                     </div>
                     <div class="info-carousel">
                         <h3 class="title">{{ ourC.title }}</h3>
@@ -34,7 +31,7 @@
                 <ng-container *ngIf="showPhone">
                     <div class="image-client-carousel-mobile images" *ngFor="let icons of items"
                         [ngStyle]="{'background-image':'url(' + icons?.field_image?.url + ')'}">
-                        <img class="ocultar" src="{{ icons?.field_image?.url }}" (load)="showImagePhone()">
+                        <img class="ocultar" src="{{ icons?.field_image?.url }}" lazyload>
                     </div>
                 </ng-container>
             </ngx-tile>

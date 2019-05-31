@@ -1,5 +1,5 @@
 import { CustomCardService } from './../../../services/cards/v1-card.services';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer, ElementRef } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 declare var $: any;
@@ -10,11 +10,12 @@ declare var $: any;
   styleUrls: ['./porque-bits.component.scss']
 })
 export class PorqueBitsComponent implements OnInit {
-
+  rend_event : Renderer;
+  element_refer: ElementRef;
   moralValues: any[];
   mainTitleLink;
   mainUrlLink;
-
+  bandera = false;
   constructor(private router: RouterModule,
     private porquebits: CustomCardService) {
     this.moralValues = [];
@@ -35,7 +36,7 @@ export class PorqueBitsComponent implements OnInit {
     });
   }
   showImage() {
-    $('.images img').css('transform', 'translate(0,0)');
-    $('.images img').css('opacity', '1');
+    this.bandera = true;
   }
+
 }
