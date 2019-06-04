@@ -39,6 +39,12 @@ class BasicPageContentService {
     $resp = [];
     $resp['title'] = $node->getTitle();
     $resp['body'] = $node->get('body')->value;
+
+    if ($node->hasField('field_meta_tags')) {
+      $metatags = $node->get('field_meta_tags')->value;
+      $resp['metatags'] = unserialize($metatags);
+    }
+
     $entity_img = $node->field_ps_large_image->entity;
 
     //add responsive images and image styles

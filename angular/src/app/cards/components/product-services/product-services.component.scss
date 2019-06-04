@@ -53,7 +53,7 @@
     }
 
     @include breakpoint(desktop) {
-        height: 906px;
+        height: auto;
     }
 
     .block-title {
