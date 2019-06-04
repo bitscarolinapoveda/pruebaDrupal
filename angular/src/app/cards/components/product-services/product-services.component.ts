@@ -44,6 +44,11 @@ export class ProductServicesComponent implements OnInit {
       this.principal.data = this._cardService.addImageField(this.principal.data, ['field_short_image']);
       this.principal.data = this._cardService.addImageField(this.principal.data, ['field_large_image']);
       this.servicesProduct = this.principal.data;
+      if (this.servicesProduct.length > 3 && this.servicesProduct.length < 6) {
+        this.servicesProduct.splice(3);
+      } else if (this.servicesProduct.length >= 6) {
+        this.servicesProduct.slice(6);
+      }
       this.title = this.principal.header[0].data.title;
       this.buttonL = this.principal.body[0].data;
       this.buttonR = this.principal.body[1].data;
