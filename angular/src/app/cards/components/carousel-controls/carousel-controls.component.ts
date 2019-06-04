@@ -65,7 +65,9 @@ export class CarouselControlsComponent implements OnInit {
     return this._cardService.getCustomCardInformation('achievementscard').subscribe(items => {
       items.data = this._cardService.addImageField(items.data, ['field_image']);
       this.CarouselControlArray = items.data;
-      this.caroseltitle = items.header[0].data.title;
+      if (items.header[0] !== undefined) {
+        this.caroseltitle = items.header[0].data.title;
+      }
       this.CarouselControlArray = Object.keys(items.data).map(function (key) { return items.data[key]; });
       if (this.caroseltitle !== '' && this.CarouselControlArray.length !== 0) {
         this.visible = true;

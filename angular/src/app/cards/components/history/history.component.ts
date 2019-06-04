@@ -40,8 +40,12 @@ export class HistoryComponent implements OnInit {
 
   getHistoryService() {
     this._http.getCustomCardInformation('historycard').subscribe(params => {
-      this.title = params.header[0].data.title;
+      if ( params.header[0] !== undefined) {
+        this.title = params.header[0].data.title;
+      }
+     if (params.header[1] !== undefined) {
       this.sub_title = params.header[1].data.sub_title;
+     }     
       const dataObject = {
         'events': [
         ]

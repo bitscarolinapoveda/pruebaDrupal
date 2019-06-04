@@ -31,8 +31,12 @@ export class PorqueBitsComponent implements OnInit {
       for (let i = 0; i < this.moralValues.length; i++) {
         this.moralValues[i].show = false;
       }
-      this.mainTitleLink = items.header[0].data;
-      this.mainUrlLink = items.header[1].data;
+      if (items.header[0] !== undefined) {
+        this.mainTitleLink = items.header[0].data;
+      }
+      if (items.header[1] !== undefined) {
+        this.mainUrlLink = items.header[1].data;
+      }
     });
   }
   showImage() {

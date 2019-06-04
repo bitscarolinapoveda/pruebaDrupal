@@ -56,7 +56,9 @@ export class CardImgTextComponent implements OnInit {
 
             this._http.getCustomCardInformation('mediaimedicalcard_2').subscribe(params => {
                 params = this._http.getFilterLists(this.principalL, params);
-                this.titleL = params.data[0].field_subtitulo;
+                if (params.data[0] !== undefined) {
+                    this.titleL = params.data[0].field_subtitulo;
+                }
                 params.data = this._http.addImageField(params.data, ['field_imagen_media_product']);
                 this.cardImgL = params.data;
                 if (this.cardImgL.length !== 0) {
@@ -79,7 +81,9 @@ export class CardImgTextComponent implements OnInit {
 
             this._http.getCustomCardInformation('mediaimedicalcard').subscribe(params => {
                 params = this._http.getFilterLists(this.principalR, params);
-                this.titleR = params.data[0].field_subtitulo;
+                if (params.data[0] !== undefined) {
+                    this.titleR = params.data[0].field_subtitulo;
+                }
                 params.data = this._http.addImageField(params.data, ['field_imagen_media_product']);
                 this.cardImgR = params.data;
                 if (this.cardImgR.length !== 0) {
