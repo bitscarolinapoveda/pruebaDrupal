@@ -69,7 +69,11 @@ export class BannerComponent implements OnInit {
                 this.bannerDescrip = '';
             }
             if (this.imgFondo === '') {
-                this.bannerBackground = params.field_image;
+                if (params.field_image === undefined) {
+                    this.bandera_sevice = false;
+                } else {
+                    this.bannerBackground = params.field_image;
+                }
             } else {
                 this.bannerBackground = this.imgFondo;
             }
