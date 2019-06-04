@@ -44,7 +44,7 @@ export class PqrsComponent implements OnInit {
   valido: boolean;
   elementoForm: any;
   type: any;
-  file: any;
+  file: any = {};
   hojaWU: any;
   form: FormGroup;
   ruta: any;
@@ -78,6 +78,11 @@ export class PqrsComponent implements OnInit {
     this.languagueBrowser = '';
     this.titlePrincipal = '';
     this.descripPrincipal = '';
+    this.file = {
+      name: '',
+      mime: '',
+      blob: '',
+      };
   }
 
   mostrarDatos(id) {
@@ -95,10 +100,12 @@ export class PqrsComponent implements OnInit {
     }
 
     if (this.valido === true) {
-      formulario['fileupload'] = this.file;
+      formulario['adjunto'] = this.file;
+      console.log(this.file);
       this.dataMessage = [];
       formulario['webform_id'] = 'pqrsf';
       formulario['captcha'] = this.captcha_form;
+      console.log(formulario);
 
       this._http.post('webform_rest/submit?_format=json', formulario, { // Hace el submit del formulario a Drupal
         'Content-Type': 'application/json',
@@ -262,19 +269,24 @@ export class PqrsComponent implements OnInit {
   }
 
   onFileChange(event) {
+    console.log(event.target.files[0]);
+    
+    this.file['name'] = event.target.files[0].name;
+    this.file['mime'] = event.target.files[0].type;
+    this.file['blob'] = '';
+
     if (event.target.files.length > 0) {
-      this.file = event.target.files[0];
-      this.form.get('hojav').setValue(this.file);
-      this.hojaWU = this.file.name;
+      this.hojaWU = event.target.files[0].name;
 
       var reader = new FileReader();
+      var ourThis = this;
       reader.onloadend = e => {
-        this.file = e.target['result'];
+        this.file['blob'] = ourThis._service.base64ArrayBuffer(e.target['result']);
       };
       reader.onerror = e => {
         console.log(e.target['error']);
       };
-      reader.readAsArrayBuffer(this.file);
+      reader.readAsArrayBuffer(event.target.files[0]);
     }
   }
 
