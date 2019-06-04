@@ -29,9 +29,8 @@
         <ngx-carousel [inputs]="carocarouselTile">
             <ngx-tile NgxCarouselItem *ngFor="let items of arrayBox; let i = index">
                 <ng-container *ngIf="showPhone">
-                    <div class="image-client-carousel-mobile images" *ngFor="let icons of items"
-                        [ngStyle]="{'background-image':'url(' + icons?.field_image?.url + ')'}">
-                        <img class="ocultar" src="{{ icons?.field_image?.url }}" lazyload>
+                    <div class="image-client-carousel-mobile images" *ngFor="let icons of items">
+                        <img  src="{{ icons?.field_image?.url }}" lazyload>
                     </div>
                 </ng-container>
             </ngx-tile>

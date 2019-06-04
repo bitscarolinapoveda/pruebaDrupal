@@ -404,10 +404,12 @@ h1 {
     .image-client-carousel-mobile {
         width: 100px;
         height: 90px;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: contain;
         margin: 10px 20px;
+        img{
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+        }
     }
 }
 
