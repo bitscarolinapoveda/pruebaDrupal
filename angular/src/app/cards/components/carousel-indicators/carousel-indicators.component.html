@@ -1,8 +1,8 @@
 <section id="carousel-container">
     <ngb-carousel *ngIf="carousel.length > 0" (window:resize)="onResize()" (interval)="1000">
         <ng-template class="prueba" ngbSlide *ngFor="let item of carousel">
-            <img class="carousel-main-image" [src]="item.field_image.slider_prueba?.url" alt="Random first slide" [ngStyle]="{'height': height}" 
-                 srcset="{{item.field_image.slider_principal_phone.url}} {{phoneWidth}}, 
+            <img class="carousel-main-image" [src]="item.field_image.slider_prueba?.url" alt="Random first slide" [ngStyle]="{'height': height}"
+                 srcset="{{item.field_image.slider_principal_phone.url}} {{phoneWidth}},
                         {{item.field_image.slider_principal_tablet.url}} {{tabletWidth}},
                         {{item.field_image.slider_principal_desktop_sxga.url}} {{sxgaScreen}},
                         {{item.field_image.slider_prueba.url}} {{hdScreen}},
@@ -15,7 +15,7 @@
     </ngb-carousel>
     <div class="col section-button-explorar" (click)="slideDown()">
         <div class="row button-explorar">
-            <h6 class="anchor">EXPLORAR</h6>
+            <h6 class="anchor">{{headerCarrusel[1].data.anchor_explore}}</h6>
         </div>
         <div class="row button-explorar">
             <img class="down-arrow-slider" src="../assets/images/DownArrow.svg" alt="DownArrow">
