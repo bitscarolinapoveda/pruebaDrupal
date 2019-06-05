@@ -16,6 +16,7 @@ export class CarouselIndicatorsComponent implements OnInit {
   medius = '550px';
   transition: number;
   public carousel: any[];
+  public headerCarrusel: any[];
   height: any;
   phoneWidth = 500 * window.devicePixelRatio + 'w';
   tabletWidth = 1024 * window.devicePixelRatio + 'w';
@@ -37,6 +38,7 @@ export class CarouselIndicatorsComponent implements OnInit {
     this._cardService.getCustomCardInformation('slidercard').subscribe(items => {
       items.data = this._cardService.addImageField(items.data, ['field_image']);
       this.carousel = items.data;
+      this.headerCarrusel = items.header;
       this.transition = parseInt(items.header[2].data.transition, 10);
       this.config.interval = this.transition;
     });

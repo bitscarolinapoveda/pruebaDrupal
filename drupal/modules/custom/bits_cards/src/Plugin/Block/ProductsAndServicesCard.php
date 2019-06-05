@@ -29,6 +29,14 @@ class ProductsAndServicesCard extends CardBase
             'weight' => 1,
             'max_length' => 50,
           ],
+          'button_see_more' => [
+            'type' => 'textfield',
+            'title' => $this->t('Btn Principal'),
+            'service_field' => 'button_see_more',
+            'show' => 1,
+            'weight' => 1,
+            'max_length' => 25,
+          ],
         ],
       ],
       'body' => [
