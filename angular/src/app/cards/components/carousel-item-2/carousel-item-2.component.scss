@@ -63,6 +63,8 @@
     float: left;
     box-shadow: none !important;
     position: relative;
+    clear: both;
+  
 
     @include breakpoint (desktop) {
         left: 0%;

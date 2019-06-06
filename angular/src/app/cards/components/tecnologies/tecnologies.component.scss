@@ -1,7 +1,10 @@
 @import './src/assets/scss/mixin.scss';
-
+.clear{
+    clear: both;
+}
 .row-tec {
     width: 100%;
+    clear:both;
     margin: 0;
     background-position: center;
     background-repeat: no-repeat;
@@ -29,9 +32,17 @@
       font-size: 20px;
       font-family: 'Open Sans Codensed';
     }
+
     .block-image {
+        position:relative;
         width: 100%;
         min-height: 300px;
+        .phone-hck{
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            z-index: 3;
+        }
         .icons-container {
             width:100%;
             background-color: transparent;
@@ -74,7 +85,9 @@
     width: 100%;
 }
 :host /deep/ div.carousel.slide.carousel-fade {
-    outline: none;
+      outline: none;
+
+    
 }
 
 @media screen and (max-width:480px) {

@@ -23,6 +23,13 @@
     .block-image {
         width: 100%;
         min-height: 300px;
+        position:relative;
+        .phone-hck{
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            z-index: 3;
+        }
         .icons-container {
             width:100%;
             background-color: transparent;
