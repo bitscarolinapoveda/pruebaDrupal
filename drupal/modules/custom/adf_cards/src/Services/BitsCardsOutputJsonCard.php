@@ -272,7 +272,7 @@ class BitsCardsOutputJsonCard {
     $data = [];
 
     if (!empty($input[$inputType]['table_fields'])) { // !empty permite evaluar si existe y no esta vacio
-      foreach ($input[$inputType]['table_fields'] as $item) {
+      foreach ($input[$inputType]['table_fields'] as $item_key => $item) {
         $element = [];
         switch ($item['type']) {
           case 'managed_file':
@@ -287,6 +287,10 @@ class BitsCardsOutputJsonCard {
                     if ($idCard == 'brand_card') {
                       $element['data'][$key]['title'] = $filename;
                       $element['data'][$key]['url'] = file_create_url($file->getFileUri());
+                    }
+                    elseif ($idCard == 'header_brand_card') {
+                      $element[$item_key][$key]['title'] = $filename;
+                      $element[$item_key][$key]['url'] = file_create_url($file->getFileUri());
                     }
                     else {
                       $element['data'][$key]['title'][] = $filename;

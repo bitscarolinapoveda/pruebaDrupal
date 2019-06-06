@@ -15,6 +15,7 @@ export class ProductServicesComponent implements OnInit {
   public buttonL: Buttons;
   public buttonR: Buttons;
   public title: string;
+  public btnPrincipal: string;
   principal: General;
   principal$: Observable<General>;
 
@@ -50,6 +51,7 @@ export class ProductServicesComponent implements OnInit {
         this.servicesProduct.slice(6);
       }
       this.title = this.principal.header[0].data.title;
+      this.btnPrincipal = this.principal.header[1].data.button_see_more;
       this.buttonL = this.principal.body[0].data;
       this.buttonR = this.principal.body[1].data;
     });

@@ -29,10 +29,10 @@ class SliderCard extends CardBase {
             'weight' => 1,
             'max_length' => 50,
           ],
-          'subtitle' => [
+          'anchor_explore' => [
             'type' => 'textfield',
-            'title' => $this->t('Subtítulo'),
-            'service_field' => 'subtitle',
+            'title' => $this->t('Anchor explore'),
+            'service_field' => 'anchor_explore',
             'show' => 1,
             'weight' => 1,
           ],
