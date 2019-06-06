@@ -85,7 +85,7 @@ class ContentBasicPageRestResource extends ResourceBase {
    */
   public function get($uuid) {
 
-    \Drupal::service('page_cache_kill_switch')->trigger();
+    // \Drupal::service('page_cache_kill_switch')->trigger();
 
     // You must to implement the logic of your REST Resource here.
     // Use current user after pass authentication to validate access.
@@ -96,7 +96,7 @@ class ContentBasicPageRestResource extends ResourceBase {
     $service = \Drupal::service('adf_content_types.basic_page');
     $config = $service->get($uuid);
 
-    return new ResourceResponse($config);
+    return $config;
   }
 
 }

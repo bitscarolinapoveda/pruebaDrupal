@@ -4,6 +4,8 @@ namespace Drupal\adf_content_types\Services;
 use Drupal\Core\Entity\EntityRepositoryInterface;
 use Drupal\image\Entity\ImageStyle;
 use Drupal\responsive_image\Entity\ResponsiveImageStyle;
+use Drupal\rest\ResourceResponse;
+use Drupal\Core\Cache\CacheableMetadata;
 
 /**
  * Class BasicPageContentService.
@@ -27,6 +29,7 @@ class BasicPageContentService {
     if (is_null($node = $this->entityRepository->loadEntityByUuid('node', $uuid))) {
       return [];
     }
+    $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
     $queryFields = \Drupal::entityTypeManager() // se cambia entityManager por entityTypeManager esta depreciado
     ->getStorage('entity_view_display')
     ->load( 'node.page.default');
@@ -35,7 +38,11 @@ class BasicPageContentService {
     if ($queryFields) {
       $fields = $queryFields->getComponents();
     }
-
+    if($language != 'es'){
+      if ($node->hasTranslation($language)) {
+        $node = $node->getTranslation($language);
+      }
+    }
     $resp = [];
     $resp['title'] = $node->getTitle();
     $resp['body'] = $node->get('body')->value;
@@ -73,6 +80,17 @@ class BasicPageContentService {
         ];
       }
     }
-    return $resp;
+    //$resp['datetime'] = date('U');
+    //$resp['language'] = $language;
+    $resource = new ResourceResponse($resp);
+    $resource->addCacheableDependency(CacheableMetadata::createFromRenderArray(
+      [
+        '#cache' => [
+          'contexts' => ['languages:language_content'],
+          'tags' => ['node:'.$node->id()],
+        ],
+      ]
+    ));
+    return $resource;
   }
 }
