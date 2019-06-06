@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpService } from '../http/http.service';
+import { CustomCardService } from '../cards/v1-card.services';
 
 @Injectable({
   providedIn: 'root'
@@ -7,15 +8,23 @@ import { HttpService } from '../http/http.service';
 
 export class NavbarService {
 
-  constructor(private http: HttpService) {
+  constructor(private http: HttpService, private card: CustomCardService) {
    // console.log('NavBar Listo');
   }
-
+  private langcode = '';
+  refreshLangcode(){
+    if (this.card.getLanguageBrowser() != 'es') {
+      this.langcode = this.card.getLanguageBrowser() + '/';
+    }
+  }
   getMenuItems() {
-    return this.http.get('adf_menu/menu?_format=json');
+    console.log('carga menu...');
+    this.refreshLangcode();
+    return this.http.get(this.langcode + 'adf_menu/menu?_format=json');
   }
   getLowFooterInfo (key) {
-    const info = `adf_menu/${key}?_format=json`;
+    this.refreshLangcode();
+    const info = this.langcode + `adf_menu/${key}?_format=json`;
     return this.http.get(info);
   }
 }
