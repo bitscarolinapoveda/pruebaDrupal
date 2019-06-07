@@ -38,7 +38,7 @@ export class CarouselIndicatorsComponent implements OnInit {
     this._cardService.getCustomCardInformation('slidercard').subscribe(items => {
       items.data = this._cardService.addImageField(items.data, ['field_image']);
       this.carousel = items.data;
-      this.headerCarrusel = items.header;
+      this.headerCarrusel = items.header[1].data.anchor_explore;
       this.transition = parseInt(items.header[2].data.transition, 10);
       this.config.interval = this.transition;
     });
