@@ -36,6 +36,7 @@ export class FooterNewsletterComponent implements OnInit {
   message_success: string;
   message_error: string;
   private _token: string;
+  visible: boolean = false;
 
   constructor(
     private _cardService: CustomCardService,
@@ -100,37 +101,39 @@ export class FooterNewsletterComponent implements OnInit {
   }
   getModalCard() {
     this._cardService.getCustomCardInformation('newslettermodalcard').subscribe(items => {
-      this.titleNewsletter = items.header[0].data.title;
-      this.descriptionNewsletter = items.header[1].data.subtitle;
-      for (let attr of items.body) {
-        let obj = attr.data;
-        if (obj['name']) {
-          this.nameInput = obj.name;
-        } else if (obj['name_description']) {
-          this.nameInputPlaceholder = obj.name_description;
-        } else if (obj['last_name']) {
-          this.lastNameInput = obj.last_name;
-        } else if (obj['last_name_description']) {
-          this.lastNameInputPlaceholder = obj.last_name_description;
-        } else if (obj['email']) {
-          this.emailInput = obj.email;
-        } else if (obj['email_description']) {
-          this.emailInputPlaceholder = obj.email_description;
-        } else if (obj['link']) {
-          this.linkTerms = obj.link;
-        } else if (obj['label']) {
-          this.labelTerms = obj.label;
-        } else if (obj['button']) {
-          this.buttonSendNewsletter = obj.button;
+      if (items.header.length > 0 && items.data.length > 0) {
+        this.titleNewsletter = items.header[0].data.title;
+        this.descriptionNewsletter = items.header[1].data.subtitle;
+        for (let attr of items.body) {
+          let obj = attr.data;
+          if (obj['name']) {
+            this.nameInput = obj.name;
+          } else if (obj['name_description']) {
+            this.nameInputPlaceholder = obj.name_description;
+          } else if (obj['last_name']) {
+            this.lastNameInput = obj.last_name;
+          } else if (obj['last_name_description']) {
+            this.lastNameInputPlaceholder = obj.last_name_description;
+          } else if (obj['email']) {
+            this.emailInput = obj.email;
+          } else if (obj['email_description']) {
+            this.emailInputPlaceholder = obj.email_description;
+          } else if (obj['link']) {
+            this.linkTerms = obj.link;
+          } else if (obj['label']) {
+            this.labelTerms = obj.label;
+          } else if (obj['button']) {
+            this.buttonSendNewsletter = obj.button;
+          }
+          else if (obj['message_success']) {
+            this.message_success = obj.message_success;
+          }
+          else if (obj['message_error']) {
+            this.message_error = obj.message_error;
+          }
         }
-        else if (obj['message_success']) {
-          this.message_success = obj.message_success;
-        }
-        else if (obj['message_error']) {
-          this.message_error = obj.message_error;
-        }
+        this.visible = true;
       }
-
     });
   }
 
