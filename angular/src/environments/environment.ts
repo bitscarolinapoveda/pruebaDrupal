@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   name: 'default',
-  apiUrl: 'http://bits-redesign-uat.dev01.bitsamericas.net/',
+  apiUrl: 'http://bits-redesign-stg.dev01.bitsamericas.net/',
 };
 
 /*
