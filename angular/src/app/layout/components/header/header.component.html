@@ -1,8 +1,9 @@
 <header>
     <section class="logo">
         <div class="container-logo">
-            <a routerLink="/inicio" class="image-url">
-                <img class="image-bits blur-logo" src="assets/images/Logowhite.png" alt="BitsAmericas">
+            <a *ngIf="imageLogo" [routerLink]="imageLogo.link" class="image-url">
+                <img class="image-bits blur-logo" *ngIf="imageLogo" [src]="imageLogo.white"
+                    [alt]="imageLogo.label" >
             </a>
         </div>
     </section>
