@@ -31,11 +31,13 @@ export class FooterComponent implements OnInit {
 
   getImgFooter() {
     this.https.getCustomCardInformation('footerblock').subscribe(items => {
-      if (items.body[0].data.back_movil !== undefined) {
-        this.backgroundDesktop = items.body[0].data.back_movil[0].url;
-      }
-      if (items.body[0].data.back_desktop !== undefined) {
-        this.backgroundMovil = items.body[0].data.back_desktop[0].url;
+      if (items.body[0].data) {
+        if (items.body[0].data.back_movil !== undefined) {
+          this.backgroundDesktop = items.body[0].data.back_movil[0].url;
+        }
+        if (items.body[0].data.back_desktop !== undefined) {
+          this.backgroundMovil = items.body[0].data.back_desktop[0].url;
+        }
       }
       this.onResize();
     });

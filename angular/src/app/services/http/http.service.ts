@@ -144,7 +144,7 @@ export class HttpService extends BaseService {
       if (this._in === 0) // Valida /0
         return;
       let porc = (this._out * 100) / this._in;
-      console.log(parseInt(porc.toString()) + '% loaded : get requests');
+      // console.log(parseInt(porc.toString()) + '% loaded : get requests');
       if (porc >= this.targetPorcentaje) { // Se cumple el objetivo (targetPorcentaje)
         this.allLoaded = true;
         this.subscriber.next(); // Notifica a los "suscriptores"

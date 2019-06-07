@@ -18,7 +18,6 @@ export class NavbarService {
     }
   }
   getMenuItems() {
-    console.log('carga menu...');
     this.refreshLangcode();
     return this.http.get(this.langcode + 'adf_menu/menu?_format=json');
   }

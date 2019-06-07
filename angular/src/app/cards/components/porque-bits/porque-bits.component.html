@@ -1,4 +1,4 @@
-<section id="main-title" *ngIf="mainTitleLink !== ''">
+<section id="main-title" *ngIf="mainTitleLink !== '' && moralValues.length > 0">
     <h2>{{ mainTitleLink?.title }}</h2>
 </section>
 <section class="WhyBits" *ngIf="moralValues.length > 0">

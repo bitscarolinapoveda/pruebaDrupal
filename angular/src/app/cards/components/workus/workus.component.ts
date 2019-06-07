@@ -213,8 +213,8 @@ export class WorkusComponent implements OnInit {
 
     if (event.target.files.length > 0) {
       //this.file = event.target.files[0];
-      //his.form.get('hojav').setValue(this.file);
-      //this.hojaWU = this.file.name;
+      //this.form.get('hojav').setValue(this.file);
+      this.hojaWU = event.target.files[0].name;
 
       var reader = new FileReader();
       var ourThis = this;

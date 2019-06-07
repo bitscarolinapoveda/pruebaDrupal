@@ -147,11 +147,9 @@ export class CustomCardService {
     let url = `v1/card/config/${idblock}/export?_format=json`;
 
     if (this.language === 'es') {
-      console.log(url);
       return this.http.get(url);
     } else if (this.language !== 'es') {
       url = this.language + '/' + url;
-      console.log(url);
       return this.http.get(url);
     }
 
