@@ -45,8 +45,12 @@ export class TecnologiesComponent implements OnInit {
     if (this.type === 'home') {
       this.flagUbication = 'home';
       return this._tecnologies.getCustomCardInformation('technologies').subscribe(items => {
-        this.title = items.header[0].data.title;
-        this.background = items.body[0].data.back_movil[0];
+        if (items.header[0] !== undefined) {
+          this.title = items.header[0].data.title;
+        }
+        if (items.body[0] !== undefined) {
+          this.background = items.body[0].data.back_movil[0];
+        }
         items.data = this._tecnologies.addImageField(items.data, ['field_tech_image']);
         this.arrayLogos = items.data;
         this.arrayLogosCustom = this._tecnologies.organizeInfoForCarousel(this.arrayLogos);

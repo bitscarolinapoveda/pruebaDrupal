@@ -1,15 +1,6 @@
 @import './src/assets/scss/mixin.scss';
 
-#title-gallery {
-    margin-top: 14%;
-
-    @include breakpoint (tablet) {
-        margin-top: 7%;
-    }
-
-    @include breakpoint (desktop) {
-        margin-top: 4%;
-    }
+#title-gallery {    
 
     .title {
         background: rgb(247, 249, 249);

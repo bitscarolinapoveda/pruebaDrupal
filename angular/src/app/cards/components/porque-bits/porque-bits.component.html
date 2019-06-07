@@ -1,7 +1,7 @@
-<section id="main-title">
+<section id="main-title" *ngIf="mainTitleLink !== ''">
     <h2>{{ mainTitleLink?.title }}</h2>
 </section>
-<section class="WhyBits">
+<section class="WhyBits" *ngIf="moralValues.length > 0">
     <div class="images-whybits">
         <ul class="row first images" >
             <li class="images" *ngFor="let image of moralValues; let i = index">
