@@ -48,7 +48,7 @@ export class ProductServicesComponent implements OnInit {
       if (this.servicesProduct.length > 3 && this.servicesProduct.length < 6) {
         this.servicesProduct.splice(3);
       } else if (this.servicesProduct.length >= 6) {
-        this.servicesProduct.slice(6);
+        this.servicesProduct.splice(6);
       }
       this.title = this.principal.header[0].data.title;
       this.btnPrincipal = this.principal.header[1].data.button_see_more;
