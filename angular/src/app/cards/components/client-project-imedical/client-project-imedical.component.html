@@ -24,7 +24,7 @@
                     <p class="summary" [innerHTML]="summaryProject"></p>
                     <h5>
                         <span *ngFor="let tag of tags"
-                            class="badge badge-custom mr-2 mt-2 p-2">{{ tag | uppercase }}</span>
+                            class="badge badge-custom mr-2 mt-2 p-2">{{ tag.label | uppercase }}</span>
                     </h5>
                     <ng-container *ngIf="linkExternal then externo else interno">
                     </ng-container>
