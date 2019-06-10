@@ -2409,7 +2409,7 @@ function View_ClientProjectImedicalComponent_2(_l) {
             return ad;
         }, null, null))], null, function (_ck, _v) { var _co = _v.component; var currVal_0 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵunv"](_v, 4, 0, _ck(_v, 5, 0, _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v.parent.parent, 0), _co.titleCard)); _ck(_v, 4, 0, currVal_0); var currVal_1 = _co.imgSrcClient; var currVal_2 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵinlineInterpolate"](1, "", _co.nameClient, ""); _ck(_v, 7, 0, currVal_1, currVal_2); });
 }
-function View_ClientProjectImedicalComponent_3(_l) { return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵvid"](0, [(_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](0, 0, null, null, 2, "span", [["class", "badge badge-custom mr-2 mt-2 p-2"]], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵted"](1, null, ["", ""])), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵppd"](2, 1)], null, function (_ck, _v) { var currVal_0 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵunv"](_v, 1, 0, _ck(_v, 2, 0, _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v.parent.parent, 0), _v.context.$implicit)); _ck(_v, 1, 0, currVal_0); }); }
+function View_ClientProjectImedicalComponent_3(_l) { return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵvid"](0, [(_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](0, 0, null, null, 2, "span", [["class", "badge badge-custom mr-2 mt-2 p-2"]], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵted"](1, null, ["", ""])), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵppd"](2, 1)], null, function (_ck, _v) { var currVal_0 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵunv"](_v, 1, 0, _ck(_v, 2, 0, _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v.parent.parent, 0), _v.context.$implicit.label)); _ck(_v, 1, 0, currVal_0); }); }
 function View_ClientProjectImedicalComponent_4(_l) { return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵvid"](0, [(_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](0, 0, null, null, 0, null, null, null, null, null, null, null))], null, null); }
 function View_ClientProjectImedicalComponent_5(_l) { return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵvid"](0, [(_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](0, 0, null, null, 1, "a", [["class", "green"]], [[8, "href", 4]], null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵted"](1, null, ["", ""]))], null, function (_ck, _v) { var _co = _v.component; var currVal_0 = _co.linkProjectUrl; _ck(_v, 0, 0, currVal_0); var currVal_1 = _co.linkProjectTitle; _ck(_v, 1, 0, currVal_1); }); }
 function View_ClientProjectImedicalComponent_6(_l) {
@@ -2512,7 +2512,7 @@ var ClientProjectImedicalComponent = /** @class */ /*@__PURE__*/ (function () {
                     _this.titleSection = 'El Proyecto';
                     _this.titleProject = params.data[0].field_title_description;
                     _this.summaryProject = params.data[0].field_description;
-                    _this.tags = ['salud', 'cloud', 'angularjs', 'mobile', 'tag'];
+                    _this.tags = params.data[0].field_tags;
                     _this.linkProjectUrl = params.data[0].field_url_client[0].uri;
                     _this.linkProjectTitle = params.data[0].field_url_client[0].title;
                     _this.linkExternal = params.data[0].field_url_client[0].external;
