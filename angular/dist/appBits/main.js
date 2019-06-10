@@ -12665,6 +12665,9 @@ var CustomCardService = /** @class */ /*@__PURE__*/ (function () {
     };
     CustomCardService.prototype.getCustomForm = function (idForm) {
         var url = "webform_rest/" + idForm + "/elements";
+        if (this.language !== 'es') {
+            url = this.language + '/' + url;
+        }
         return this.http.get(url);
     };
     CustomCardService.prototype.getLanguageBrowser = function () {
