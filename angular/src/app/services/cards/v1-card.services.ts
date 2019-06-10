@@ -101,7 +101,10 @@ export class CustomCardService {
   }
 
   getCustomForm(idForm) {
-    const url = `webform_rest/${idForm}/elements`;
+    let url = `webform_rest/${idForm}/elements`;
+    if (this.language !== 'es') {
+      url = this.language + '/' + url;
+    }
     return this.http.get(url);
   }
 
