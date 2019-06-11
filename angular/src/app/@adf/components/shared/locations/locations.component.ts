@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../../../../services/http/http.service';
 import { CustomCardService } from 'src/app/services/cards/v1-card.services';
+import { Router } from '@angular/router';
 declare var $: any;
 
 @Component({
@@ -9,6 +10,7 @@ declare var $: any;
   styleUrls: ['./locations.component.scss']
 })
 export class LocationsComponent implements OnInit {
+  ruta: any;
   public zoom: boolean;
   public items = [];
   public title: string;
@@ -68,13 +70,23 @@ export class LocationsComponent implements OnInit {
 
   constructor(
     private _http: HttpService,
-    private service: CustomCardService
+    private service: CustomCardService, private router: Router
   ) {
     this.locations_data = [];
     this.cant_locations_data = false;
     this.zoom = false;
+    this.ruta = '';
   }
   ngOnInit() {
+    this.router.events.subscribe((url: any) => url );
+    this.ruta = this.router.url;
+    if (this.ruta.indexOf('title-description') > -1) {
+      const x = document.querySelector('#title-description');
+      if (x) {
+        x.scrollIntoView({ block: 'start', inline: 'start', behavior: 'smooth' });
+      }
+    }
+
     this.service.getCustomCardInformation('locationcard_2').subscribe((params) => {
       this.title = params.header[0].data.title;
       for (let index = 0; index < params.data.length; index++) {
