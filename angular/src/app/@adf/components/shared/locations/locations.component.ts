@@ -113,7 +113,11 @@ export class LocationsComponent implements OnInit {
     const widthScreen = (window.innerWidth);
     if (widthScreen < 1164) {
       this.mobileScreen = true;
+      if (this.locations_data.length >= 3 ) {
+        $(".card:not(:nth-child(-n+2))").hide();
+      }
       this.desktopScreen = false;
+
     } else {
       this.mobileScreen = false;
       this.desktopScreen = true;
@@ -143,24 +147,23 @@ export class LocationsComponent implements OnInit {
   }
   scrollMaps(direction, devices) {
     if (devices === 'mobile') {
-      if (this.locations_data.length < 3) {
-        $('.accordion .card:last-of-type').addClass('padding-off');
-      } else {
-        $('.accordion .card:last-of-type').addClass('padding-on');
-      }
       if (this.seeMoreText === true) {
         this.seeMoreText = false;
         this.seeLessText = true;
+        console.log("MAS TEXTO----");
         $('#acordion-info').removeClass('see-more-true');
         $('#acordion-info').addClass('auto-height');
+        $(".card:not(:nth-child(-n+2))").show();
         $('.see-more-button .fa-sort-down').css({
-          'padding-bottom': '5px',
+          'padding-bottom': '0px',
           'transform': 'rotate(180deg)'
         });
       } else if (this.seeMoreText === false) {
+        console.log("MENOS TEXTO----");
         this.seeMoreText = true;
         this.seeLessText = false;
         this.checkHeight();
+        $(".card:not(:nth-child(-n+2))").hide();
         $('.see-more-button .fa-sort-down').css({
           'padding-bottom': '0px',
           'transform': 'rotate(0deg)'
@@ -177,6 +180,7 @@ export class LocationsComponent implements OnInit {
           elem.scrollTo(0, 121 + scrollTop);
         }
       } else if (direction === 'up') {
+  
         if (scrollTop === 121) {
           elem.scrollTo(0, -121);
         } else {
