@@ -14,6 +14,9 @@ export class LocationsComponent implements OnInit {
   public zoom: boolean;
   public items = [];
   public title: string;
+  public subtitle: string;
+  public seeMore: string;
+  public seeLess: string;
   public imageIcon = {
     url: '/assets/icon/iconBitsLocationMarker.svg',
     scaledSize: {
@@ -89,6 +92,9 @@ export class LocationsComponent implements OnInit {
 
     this.service.getCustomCardInformation('locationcard_2').subscribe((params) => {
       this.title = params.header[0].data.title;
+      this.subtitle = params.header[1].data.subtitle;
+      this.seeMore = params.header[2].data.seemore;
+      this.seeLess = params.header[3].data.seeless;
       for (let index = 0; index < params.data.length; index++) {
         const value = params.data[index].field_location.split(',');
         this.items[index] = { lat: '', lon: '', title: '', field_address: '', field_telephone: '' };
@@ -192,7 +198,7 @@ export class LocationsComponent implements OnInit {
           elem.scrollTo(0, 121 + scrollTop);
         }
       } else if (direction === 'up') {
-  
+
         if (scrollTop === 121) {
           elem.scrollTo(0, -121);
         } else {

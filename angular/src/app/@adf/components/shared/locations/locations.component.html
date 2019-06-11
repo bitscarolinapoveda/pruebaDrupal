@@ -1,14 +1,14 @@
 <section id="title-description">
     <h4 class="title-block-location">{{title}}</h4>
-    <p class="description-block-location">Aqui podra ver la ubicacion de nuestras oficinas</p>
+    <p class="description-block-location">{{ subtitle }}</p>
     <!-- CONFIGURACION DE DRUPAL -->
 </section>
 <!-- MOBILE -->
 <section id="accordion-section-mobile" (window:resize)="onResize(mobile)" *ngIf="mobileScreen">
     <a class="see-more-button" (click)="scrollMaps('down','mobile')" *ngIf="locations_data.length > 2">
-        <h2 *ngIf="seeMoreText" class="text-see-more">VER MAS UBICACIONES</h2>
+        <h2 *ngIf="seeMoreText" class="text-see-more">{{ seeMore }} </h2>
         <i class="fas fa-sort-down"></i>
-        <h2 *ngIf="seeLessText" class="text-see-more">VER MENOS UBICACIONES</h2>
+        <h2 *ngIf="seeLessText" class="text-see-more">{{ seeLess }}</h2>
     </a>
     <section id="acordion-info" class="acordion-info locations">
         <ngb-accordion #acc="ngbAccordion" activeIds="static-0" [closeOthers]="closeOthers" (click)="checkHeight($event, i)">
