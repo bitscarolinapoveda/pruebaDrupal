@@ -98,4 +98,34 @@ $max_480:480px;
             @content;
         }
     }
+    @else{
+        @media (max-width: $size) {
+            @content;
+        }
+    }
 }
+
+//---------------------------------------
+//--------------------------------------
+// FONT RELATIVE 
+@mixin font_relative($anchoA,$tamanoFuenteA,$anchoB,$tamanoFuenteB, $items) {
+    $divisores: $items;
+    $ancho: ( $anchoA - $anchoB ) / $divisores;
+    $tamanoFuente: ( $tamanoFuenteA - $tamanoFuenteB ) / $divisores;
+
+    @include mediaquery($anchoA) {
+        font-size: $tamanoFuenteA;
+    }
+
+    @for $i from 1 through $divisores {
+      $ind: $ancho * $i;
+      $width_media : $anchoA - $ind;
+      $tamanoFuente_fin:  $tamanoFuenteA - ($i * $tamanoFuente);
+      @include mediaquery($width_media) {
+        font-size:  $tamanoFuente_fin;
+      }
+      
+    }
+  }
+
+
