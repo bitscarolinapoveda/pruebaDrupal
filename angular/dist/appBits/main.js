@@ -12758,6 +12758,9 @@ var CustomCardService = /** @class */ /*@__PURE__*/ (function () {
     };
     CustomCardService.prototype.getCustomContentBasicPage = function (uuid) {
         var url = "v1/content/" + uuid + "/export?_format=json";
+        if (this.language !== 'es') {
+            url = this.language + '/' + url;
+        }
         return this.http.get(url);
     };
     CustomCardService.prototype.getFooterContactItems = function () {
