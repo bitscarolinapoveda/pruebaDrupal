@@ -16,7 +16,7 @@
 						<div class="col-md-6 item" *ngFor="let elementLayout of item">
 							<!-- Campos textfiel, tel, webform_autocomplete. No incluye los select: pais. -->
 							<div
-								*ngIf="(elementLayout['#type'] == 'textfield' || elementLayout['#type'] == 'tel' || elementLayout['#type'] =='webform_autocomplete') && elementLayout['#webform_key'] != 'pais' ">
+								*ngIf="(elementLayout['#type'] == 'textfield' || elementLayout['#type'] == 'tel' || elementLayout['#type'] =='webform_autocomplete') && elementLayout['#webform_key'] != 'pais' " class="pos-flex">
 								<label for="{{elementLayout['#webform_key']}}">{{elementLayout["#title"]}}
 									<span *ngIf="elementLayout['#required'] ==  true">*</span></label>
 								<input type="{{elementLayout['#type']}}" class="form-control"
@@ -31,7 +31,7 @@
 								</ng-container>
 							</div>
 							<!-- Campos email-->
-							<div *ngIf="elementLayout['#type'] == 'email'">
+							<div *ngIf="elementLayout['#type'] == 'email'" class="pos-flex">
 								<label for="{{elementLayout['#webform_key']}}">{{elementLayout["#title"]}}<span
 										*ngIf="elementLayout['#required'] ==  true">*</span></label>
 								<input type="{{elementLayout['#type']}}" class="form-control"
@@ -47,7 +47,7 @@
 								</ng-container>
 							</div>
 							<!-- Campos textarea-->
-							<div *ngIf="elementLayout['#type'] == 'textarea'">
+							<div *ngIf="elementLayout['#type'] == 'textarea'" class="pos-flex">
 								<label for="{{elementLayout['#webform_key']}}">{{elementLayout["#title"]}}<span
 										*ngIf="elementLayout['#required'] ==  true">*</span></label>
 								<textarea class="form-control" id="{{elementLayout['#webform_key']}}"
@@ -61,7 +61,7 @@
 								</ng-container>
 							</div>
 							<!-- Campo select pais, se debe mantener el nombre para que funcione el componente-->
-							<div *ngIf="elementLayout['#webform_key'] == 'pais'">
+							<div *ngIf="elementLayout['#webform_key'] == 'pais'" class="pos-flex">
 								<label for="{{elementLayout['#webform_key']}}">{{elementLayout['#title']}}<span
 										*ngIf="elementLayout['#required'] ==  true">*</span></label>
 								<ng-select #paisWU class="select-autocomplete"
@@ -75,7 +75,7 @@
 									name="{{elementLayout['#webform_key']}}" [ngModel]="pais">
 							</div>
 							<!-- Campos managed_file -->
-							<div *ngIf="elementLayout['#type'] == 'managed_file'">
+							<div *ngIf="elementLayout['#type'] == 'managed_file'" class="pos-flex">
 								<label for="{{elementLayout['#webform_key']}}">{{elementLayout["#title"]}}
 									<span *ngIf="elementLayout['#required'] ==  true">*</span></label>
 								<label for="hojav" class="hoja-v">{{hojaWU}}
@@ -87,7 +87,7 @@
 									[ngModel]="hojaWU">
 							</div>
 							<!-- Campos url -->
-							<div *ngIf="elementLayout['#type'] == 'url'">
+							<div *ngIf="elementLayout['#type'] == 'url'" class="pos-flex">
 								<label for="{{elementLayout['#webform_key']}}">{{elementLayout["#title"]}}
 									<span *ngIf="elementLayout['#required'] ==  true">*</span></label>
 								<input type="{{elementLayout['#type']}}" class="form-control"

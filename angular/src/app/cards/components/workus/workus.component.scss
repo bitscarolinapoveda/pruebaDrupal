@@ -346,6 +346,8 @@ input:-moz-placeholder {
 
   #formulario_contactoWS {
     .select-autocomplete {
+      width: 100%;
+      
       .btn-default {
         color: #333;
         background-color: #fff;
@@ -412,4 +414,15 @@ input:-moz-placeholder {
 .ocultar-placeholder:-moz-placeholder {
   /* Firefox 18- */
   color: transparent;
+}
+
+:host /deep/  #formulario_contactoWS .col-md-6 .pos-flex {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+}
+
+:host /deep/  #formulario_contactoWS .col-md-6 .alert-danger {
+  width: 100%;
+  margin-bottom: 0;
 }
