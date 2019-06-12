@@ -13,6 +13,7 @@ export class HnResolverService implements Resolve<Observable<any>> {
   constructor(private _service: CustomCardService) { }
 
   resolve() {
+    window.document.getElementById('loading').style.display='block';
     const language = this._service.getValidationLanguage();
     return of(language);
   }

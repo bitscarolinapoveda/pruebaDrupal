@@ -12492,6 +12492,7 @@ var HnResolverService = /** @class */ /*@__PURE__*/ (function () {
         this._service = _service;
     }
     HnResolverService.prototype.resolve = function () {
+        window.document.getElementById('loading').style.display = 'block';
         var language = this._service.getValidationLanguage();
         return Object(rxjs_observable_of__WEBPACK_IMPORTED_MODULE_0__["of"])(language);
     };
