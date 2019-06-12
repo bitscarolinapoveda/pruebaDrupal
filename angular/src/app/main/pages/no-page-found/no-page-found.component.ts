@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-no-page-found',
@@ -8,12 +7,10 @@ import { Meta } from '@angular/platform-browser';
 })
 export class NoPageFoundComponent implements OnInit {
 
-  constructor(private meta: Meta) {
+  constructor() {
   }
 
   ngOnInit() {
-    this.meta.removeTag('name="general"');
-    this.meta.updateTag({ name: 'component', content: 'app-no-page-found' });
   }
 
 }
