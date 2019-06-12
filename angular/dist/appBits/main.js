@@ -10608,7 +10608,6 @@ var PagesComponent = /** @class */ /*@__PURE__*/ (function () {
     }
     PagesComponent.prototype.ngOnInit = function () {
         var _this = this;
-        $('.loading').css('display', 'none');
         this.iniciarCarga();
         this._router.events.subscribe(function (event) {
             if (event instanceof _angular_router__WEBPACK_IMPORTED_MODULE_0__["NavigationStart"]) {
@@ -10627,6 +10626,7 @@ var PagesComponent = /** @class */ /*@__PURE__*/ (function () {
     PagesComponent.prototype.endLoad = function () {
         this.loading = false;
         document.body.style.overflow = 'auto';
+        $('.loading').css('display', 'none');
     };
     return PagesComponent;
 }());
