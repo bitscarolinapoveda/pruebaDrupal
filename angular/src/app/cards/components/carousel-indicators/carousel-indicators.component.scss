@@ -80,6 +80,7 @@
       font-size: 28px;
       display: block;
       padding-left: 25%;
+      @include font_relative(1400px,24px,1000px,20px,4);
     }
   }
 
@@ -141,7 +142,7 @@
 
       .carousel-subtitle {
         font-family: 'Open Sans light';
-        font-size: 18px;
+       //font-size: 18px;
         display: block;
         padding: 0;
       }

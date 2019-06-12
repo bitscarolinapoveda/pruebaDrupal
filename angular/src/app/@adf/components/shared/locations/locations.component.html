@@ -4,6 +4,7 @@
     <!-- CONFIGURACION DE DRUPAL -->
 </section>
 <!-- MOBILE -->
+
 <section id="accordion-section-mobile" (window:resize)="onResize(mobile)" *ngIf="mobileScreen">
     <a class="see-more-button" (click)="scrollMaps('down','mobile')" *ngIf="locations_data.length > 2">
         <h2 *ngIf="seeMoreText" class="text-see-more">{{ seeMore }} </h2>
@@ -55,6 +56,11 @@
                 </ng-template>
             </ngb-panel>
         </ngb-accordion>
+        <a class="see-more-button" (click)="scrollMaps('down','mobile')" *ngIf="locations_data.length > 2">
+            <h2 *ngIf="seeMoreText" class="text-see-more">VER MAS UBICACIONES</h2>
+            <i class="fas fa-sort-down"></i>
+            <h2 *ngIf="seeLessText" class="text-see-more" >VER MENOS UBICACIONES</h2>
+        </a>
     </section>
 </section>
 <!-- DESKTOP -->
