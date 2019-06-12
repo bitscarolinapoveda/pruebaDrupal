@@ -6,6 +6,8 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import { Subject } from 'rxjs/Subject';
 import { General } from '../../cards/components/blurb/blurb.component';
+import { Meta } from '@angular/platform-browser';
+import { Title } from '@angular/platform-browser';
 
 @Injectable({
   providedIn: 'root'
@@ -37,9 +39,47 @@ export class CustomCardService {
   ];
 
   constructor(
-    private http: HttpService
+    private http: HttpService,
+    private meta: Meta,
+    private titleService: Title
   ) {
     this.language = '';
+  }
+
+  getMetaService(uuid) {
+    this.getCustomContentBasicPage(uuid).subscribe(params => {
+      if ( params.metatags !== false) {
+        if (params.metatags.title) {
+            this.meta.updateTag({ name: 'title', content: params.metatags.title });
+            this.titleService.setTitle(params.metatags.title);
+        } else {
+            this.titleService.setTitle('');
+            this.meta.updateTag({ name: 'title', content: '' });
+        }
+        if (params.metatags.description) {
+            this.meta.updateTag({ name: 'description', content: params.metatags.description });
+        } else {
+            this.meta.updateTag({ name: 'description', content: '' });
+        }
+        if (params.metatags.abstract) {
+            this.meta.updateTag({ name: 'abstract', content: params.metatags.abstract });
+        } else {
+            this.meta.updateTag({ name: 'abstract', content: '' });
+        }
+        if (params.metatags.keywords) {
+            this.meta.updateTag({ name: 'keywords', content: params.metatags.keywords });
+        } else {
+            this.meta.updateTag({ name: 'keywords', content: '' });
+        }
+      } else {
+        this.meta.updateTag({ name: 'title', content: '' });
+        this.meta.updateTag({ name: 'description', content: '' });
+        this.meta.updateTag({ name: 'abstract', content: '' });
+        this.meta.updateTag({ name: 'keywords', content: '' });
+        this.titleService.setTitle('');
+      }
+
+    });
   }
 
   getCustomInfoIM(idblock): Observable<General> {

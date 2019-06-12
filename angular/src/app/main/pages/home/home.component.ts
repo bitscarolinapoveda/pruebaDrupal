@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Meta } from '@angular/platform-browser';
+import { CustomCardService } from 'src/app/services/cards/v1-card.services';
 
 declare var $: any;
 
@@ -10,16 +10,21 @@ declare var $: any;
 })
 export class HomeComponent implements OnInit {
   type: string;
+  uuid: string;
 
-  constructor(private meta: Meta) {
+  constructor(private home: CustomCardService) {
     this.type = 'home';
+    this.uuid = 'be6c9489-edec-441e-a542-5927cdfe6e89';
   }
 
   ngOnInit() {
     $(window).scrollTop(0);
-    this.meta.updateTag({ name: 'component', content: 'app-home' });
-    this.meta.addTag({ name: 'general', content: 'Angular 7' });
     $('#float-social-block').removeClass('ocultar-phone');
+    this.getHomeService();
+  }
+
+  getHomeService() {
+    this.home.getMetaService(this.uuid);
   }
 
 }
