@@ -198,7 +198,10 @@ export class CustomCardService {
   }
 
   getCustomContentBasicPage(uuid) {
-    const url = `v1/content/${uuid}/export?_format=json`;
+    let url = `v1/content/${uuid}/export?_format=json`;
+    if (this.language !== 'es') {
+      url = this.language + '/' + url;
+    }
     return this.http.get(url);
   }
 
