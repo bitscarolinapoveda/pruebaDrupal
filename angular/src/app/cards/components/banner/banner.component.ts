@@ -31,7 +31,7 @@ export class BannerComponent implements OnInit {
     constructor(
         router: ActivatedRoute,
         private banner: CustomCardService,
-        private textFilter: TextService,
+        private textFilter: TextService
     ) {
         this.uuid = '';
         this.bannerDescrip = '';
@@ -62,6 +62,7 @@ export class BannerComponent implements OnInit {
     }
 
     getBannerService() {
+        this.banner.getMetaService(this.uuid);
         this.banner.getCustomContentBasicPage(this.uuid).subscribe(params => {
             this.bannerTitle = params.title;
             this.bannerDescrip = this.textFilter.filterHtml(params.body);
@@ -77,7 +78,6 @@ export class BannerComponent implements OnInit {
             } else {
                 this.bannerBackground = this.imgFondo;
             }
-
         });
     }
 

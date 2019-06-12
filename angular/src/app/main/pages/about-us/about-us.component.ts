@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Meta } from '@angular/platform-browser';
 import { DataMenu } from '../../../cards/components/menu-template/menu-template.component';
 
 declare var $: any;
@@ -12,14 +11,12 @@ export class AboutUsComponent implements OnInit {
   listMenu: DataMenu[];
   type: string;
 
-  constructor(private meta: Meta) {
+  constructor() {
     this.listMenu = [];
     this.type = 'about';
   }
 
   ngOnInit() {
-    this.meta.removeTag('name="general"');
-    this.meta.updateTag({ name: 'component', content: 'app-about-us' });
     $('#float-social-block').removeClass('ocultar-phone');
   }
 
