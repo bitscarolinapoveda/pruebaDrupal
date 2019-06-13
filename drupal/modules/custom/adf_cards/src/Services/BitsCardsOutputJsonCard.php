@@ -193,7 +193,13 @@ class BitsCardsOutputJsonCard {
                   $term = Node::load($value['target_id']);
                 }
                 if (!is_null($term)) {
-                  $data[$field][] = ['id' => $term->id(), 'label'=> $term->label()];
+                  $termUuid = '';
+                  if (method_exists($term, 'uuid')) {
+                    $termUuid = $term->uuid();
+                  }
+                  $data[$field][] = ['id' => $term->id(), 'uuid' => $termUuid, 'label'=> $term->label()];
+
+
                 }
               }
             }
