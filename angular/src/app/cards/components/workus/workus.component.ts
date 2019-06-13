@@ -142,8 +142,10 @@ export class WorkusComponent implements OnInit {
 
     if (this.languagueBrowser !== 'es') {
       this.ruta = '/' + this.languagueBrowser + '/contact-us';
+      this.getChangeLanguage(this.languagueBrowser);
     } else if (this.languagueBrowser === 'es') {
       this.ruta = '/contactenos';
+      this.getChangeLanguage(this.languagueBrowser);
     }
 
     this._http.get('rest/session/token', {}, { responseType: 'text' }).subscribe((response) => {
@@ -198,6 +200,18 @@ export class WorkusComponent implements OnInit {
       }
     }
     );
+  }
+
+  getChangeLanguage(lang) {
+    setTimeout(function () {
+      const language = lang;
+      const captchaElm = $(document).find('.captcha').find('iframe');
+      if (captchaElm.length) {
+        let src = captchaElm.attr('src');
+        src = src.replace(/(hl=)[^\&]+/, `$1${language}`);
+        captchaElm.attr('src', src);
+      }
+    }, 2000);
   }
 
   resolved(captchaResponse: string) {
