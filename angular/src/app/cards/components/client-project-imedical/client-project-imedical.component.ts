@@ -10,10 +10,10 @@ declare var $: any;
   styleUrls: ['./client-project-imedical.component.scss']
 })
 export class ClientProjectImedicalComponent implements OnInit {
-  titleCard: string;
+  titleLeft: string;
   imgSrcClient: string;
   nameClient: string;
-  titleSection: string;
+  titleRight: string;
   titleProject: string;
   summaryProject: string;
   tags: any[];
@@ -28,10 +28,10 @@ export class ClientProjectImedicalComponent implements OnInit {
   show: boolean;
 
   constructor(private _http: CustomCardService) {
-    this.titleCard = '';
+    this.titleLeft = '';
     this.imgSrcClient = '';
     this.nameClient = '';
-    this.titleSection = '';
+    this.titleRight = '';
     this.titleProject = '';
     this.summaryProject = '';
     this.tags = [];
@@ -53,10 +53,10 @@ export class ClientProjectImedicalComponent implements OnInit {
         params = this._http.getFilterLists(this.principal, params);
         params.data = this._http.addImageField(params.data, ['field_image']);
         if (params.data.length > 0) {
-          this.titleCard = 'El Cliente';
+          this.titleLeft = params.header[1].data.title_left;
           this.imgSrcClient = params.data[0].field_image.url;
           this.nameClient = params.data[0].field_image.alt;
-          this.titleSection = 'El Proyecto';
+          this.titleRight = params.header[2].data.title_right;
           this.titleProject = params.data[0].field_title_description;
           this.summaryProject = params.data[0].field_description;
           this.tags = params.data[0].field_tags;
