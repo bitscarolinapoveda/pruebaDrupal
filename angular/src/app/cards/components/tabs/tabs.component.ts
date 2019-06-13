@@ -11,6 +11,7 @@ import { SelectComponent } from 'ng2-select';
 import { DataMessage } from '../../../message/components/message/message.component';
 import { NgbPopoverConfig } from '@ng-bootstrap/ng-bootstrap';
 import { ActivatedRoute } from '@angular/router';
+import { resolve } from 'url';
 
 declare var jQuery: any;
 declare var $: any;
@@ -170,9 +171,12 @@ export class TabsComponent implements OnInit {
 
     if (this.languagueBrowser !== 'es') {
       this.ruta = '/' + this.languagueBrowser + '/politics';
+      this.getChangeLanguage(this.languagueBrowser);
     } else if (this.languagueBrowser === 'es') {
       this.ruta = '/politicas';
+      this.getChangeLanguage(this.languagueBrowser);
     }
+
 
     this.getTabsData();
 
@@ -198,6 +202,18 @@ export class TabsComponent implements OnInit {
 
     this.getPaises();
 
+  }
+
+  getChangeLanguage(lang) {
+    setTimeout(function () {
+      const language = lang;
+      const captchaElm = $(document).find('.captcha').find('iframe');
+      if (captchaElm.length) {
+        let src = captchaElm.attr('src');
+        src = src.replace(/(hl=)[^\&]+/, `$1${language}`);
+        captchaElm.attr('src', src);
+      }
+    }, 2000);
   }
 
 
