@@ -131,7 +131,12 @@ class BitsCardsOutputJsonCard {
 
           $languages = \Drupal::languageManager()->getLanguages();
           foreach ($languages as $key => $value) {
-            $data['others_urls'][$key] = \Drupal::service('path.alias_manager')->getAliasByPath('/node/'.$node->id(), $key);
+            $otherURL = \Drupal::service('path.alias_manager')->getAliasByPath('/node/'.$node->id(), $key);
+            $otherURL = (strpos($url, 'node') === false) ? $otherURL : '';
+            if ($key != 'es') {
+              $otherURL = '/' . $key . $otherURL;
+            }
+            $data['others_urls'][$key] = $otherURL;
           }
 
         }
