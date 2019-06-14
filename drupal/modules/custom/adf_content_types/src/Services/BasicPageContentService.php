@@ -50,7 +50,7 @@ class BasicPageContentService {
     $languages = \Drupal::languageManager()->getLanguages();
     foreach ($languages as $key => $value) {
       $otherURL = \Drupal::service('path.alias_manager')->getAliasByPath('/node/'.$node->id(), $key);
-      $otherURL = (strpos($url, 'node') === false) ? $otherURL : '';
+      $otherURL = (strpos($otherURL, 'node') === false) ? $otherURL : '';
       if ($key != 'es') {
         $otherURL = '/' . $key . $otherURL;
       }
