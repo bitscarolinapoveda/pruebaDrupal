@@ -19,7 +19,6 @@ export class PagesComponent implements OnInit {
   }
 
   ngOnInit() {
-    $('.loading').css('display', 'none');
     this.iniciarCarga();
 
     this._router.events.subscribe(event => {
@@ -42,5 +41,6 @@ export class PagesComponent implements OnInit {
   endLoad() {
     this.loading = false;
     document.body.style.overflow = 'auto';
+    $('.loading').css('display', 'none');
   }
 }

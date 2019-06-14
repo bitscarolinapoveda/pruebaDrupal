@@ -128,6 +128,17 @@ class BitsCardsOutputJsonCard {
             'title' => $node->title->value,
             'url' => $url,
           ];
+
+          $languages = \Drupal::languageManager()->getLanguages();
+          foreach ($languages as $key => $value) {
+            $otherURL = \Drupal::service('path.alias_manager')->getAliasByPath('/node/'.$node->id(), $key);
+            $otherURL = (strpos($url, 'node') === false) ? $otherURL : '';
+            if ($key != 'es') {
+              $otherURL = '/' . $key . $otherURL;
+            }
+            $data['others_urls'][$key] = $otherURL;
+          }
+
         }
         else {
           $data = [
@@ -193,7 +204,13 @@ class BitsCardsOutputJsonCard {
                   $term = Node::load($value['target_id']);
                 }
                 if (!is_null($term)) {
-                  $data[$field][] = ['id' => $term->id(), 'label'=> $term->label()];
+                  $termUuid = '';
+                  if (method_exists($term, 'uuid')) {
+                    $termUuid = $term->uuid();
+                  }
+                  $data[$field][] = ['id' => $term->id(), 'uuid' => $termUuid, 'label'=> $term->label()];
+
+
                 }
               }
             }

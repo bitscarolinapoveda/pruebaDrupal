@@ -302,12 +302,14 @@ export class TabsComponent implements OnInit {
   }
 
   getDatosForm() {
-    this._service.getCustomCardInformation('allproductsandservicescard').subscribe(params => {
+    this._service.getCustomCardInformation('allproductsandservicescard_2').subscribe(params => {
       for (let index = 0; index < params.data.length; index++) {
-        if (params.data[index].type === 'product') {
-          this.bandProduct.push(params.data[index].label);
-        } else if (params.data[index].type === 'service') {
-          this.bandService.push(params.data[index].label);
+        // Cuando es un producto
+        if (params.data[index].field_type[0].uuid === '7105bc2b-1dde-4877-9e67-2aa8e3c9c999') {
+          this.bandProduct.push(params.data[index].title);
+        // Cuando es un servicio
+        } else if (params.data[index].field_type[0].uuid === '0494c41b-7483-4df0-8ff8-af4744ce623c') {
+          this.bandService.push(params.data[index].title);
         }
       }
       this.listProduct = this.bandProduct;

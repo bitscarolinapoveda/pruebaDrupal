@@ -5,7 +5,7 @@
             <ng-container *ngIf="show">
                 <div class="row">
                     <div class="col-md-12">
-                        <h2 class="condensed">{{ titleCard | uppercase}}</h2>
+                        <h2 class="condensed">{{ titleLeft | uppercase}}</h2>
                         <hr class="green">
 
                         <img id="logo-cliente" [src]="imgSrcClient" class="img-fluid" alt="{{nameClient}}"
@@ -18,7 +18,7 @@
         <div class="col-md-8 mb-3">
             <div class="row">
                 <div class="col-md-12">
-                    <h2 class="condensed">{{ titleSection | uppercase }}</h2>
+                    <h2 class="condensed">{{ titleRight | uppercase }}</h2>
                     <hr class="green">
                     <h2>{{ titleProject | uppercase }}</h2>
                     <p class="summary" [innerHTML]="summaryProject"></p>
