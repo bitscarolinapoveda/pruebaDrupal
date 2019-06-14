@@ -39,7 +39,6 @@ export class ProductsOrServicesComponent implements OnInit {
     this.meta.updateTag({ name: 'component', content: 'app-products-or-services' });
 
     this.type = this.rutaActiva.snapshot.params.type;
-
     this.rutaActiva.params.subscribe(
       (params: Params) => {
         this.type = params.type;

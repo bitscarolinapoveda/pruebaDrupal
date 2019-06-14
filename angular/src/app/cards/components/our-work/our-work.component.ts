@@ -17,10 +17,12 @@ export class OurWorkComponent implements OnInit {
   @Output() propagar = new EventEmitter<DataMenu>();
   datosMenu: DataMenu;
   principalOurWork: General;
+  titleInternalMenu: string;
 
   constructor(private _http: CustomCardService) {
     this.list = [];
     this.visible = false;
+    this.titleInternalMenu = '';
   }
 
   ngOnInit() {
@@ -31,15 +33,16 @@ export class OurWorkComponent implements OnInit {
     this._http.getCustomCardInformation('allproductsandservicescard_2').subscribe(params => {
       this.principalOurWork = this._http.getFilterPrincipalType(params, 'field_our_work', this.type);
 
-      this._http.getCustomCardInformationType('ourworkbitsamericas', this.type).subscribe(items => {
+      this._http.getCustomCardInformation('ourworkbitsamericas').subscribe(items => {
         items = this._http.getFilterLists(this.principalOurWork, items);
         this.title = items.header[0].data.title;
         this.subtitle = items.header[1].data.sub_title;
+        this.titleInternalMenu = items.header[2].data.internal_menu_title;
         this.list = this._http.addImageField(items.data, ['field_background_image']);
         if (this.title !== '' && this.list.length !== 0) {
           this.visible = true;
           this.datosMenu = {
-            label: 'NUESTRO TRABAJO',
+            label: this.titleInternalMenu,
             id: 'a14',
             url: '/products'
           };

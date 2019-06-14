@@ -21,6 +21,7 @@ export class TecnologiesComponent implements OnInit {
   subtitle: string;
   visible: boolean;
   flagUbication: string;
+  titleInternalMenu: string;
   @Output() propagar = new EventEmitter<DataMenu>();
   @Input() type: string;
 
@@ -29,6 +30,7 @@ export class TecnologiesComponent implements OnInit {
     public el: ElementRef
   ) {
     this.arrayLogosCustom = [];
+    this.titleInternalMenu = '';
   }
 
   ngOnInit() {
@@ -68,11 +70,12 @@ export class TecnologiesComponent implements OnInit {
           this.subtitle = itemsw.header[1].data.sub_title;
           itemsw.data = this._tecnologies.addImageField(itemsw.data, ['field_tech_color_image']);
           this.arrayLogosCustom = this._tecnologies.organizeInfoForCarousel(itemsw.data);
+          this.titleInternalMenu = itemsw.header[2].data.internal_menu_title;
 
           if (this.title !== '' && this.arrayLogosCustom.length !== 0) {
             this.visible = true;
             this.datosMenu = {
-              label: 'TECNOLOGIA',
+              label: this.titleInternalMenu,
               id: 'a11',
               url: '/imedical'
             };

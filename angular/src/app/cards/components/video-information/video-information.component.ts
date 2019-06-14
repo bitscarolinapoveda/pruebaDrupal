@@ -20,11 +20,13 @@ export class VideoInformationComponent implements OnInit {
     visible: boolean;
     principalVideoInformation: General;
     linkExternal: boolean;
+    titleInternalMenu: string;
 
     constructor(
         private https: CustomCardService,
         private sanitizer: DomSanitizer) {
         this.visible = false;
+        this.titleInternalMenu = '';
     }
 
     ngOnInit() {
@@ -40,6 +42,7 @@ export class VideoInformationComponent implements OnInit {
                 if (params.data.length !== 0) {
                     this.titleSection = params.data[0].title;
                     this.descriptionSection = params.data[0].body;
+                    this.titleInternalMenu = params.header[0].data.internal_menu_title;
                     this.videoURL = params.data[0].field_url_video[0].uri;
                     if (this.videoURL.includes('watch?v=')) {
                         this.videoURLSanitizer = this.sanitizer
@@ -53,7 +56,7 @@ export class VideoInformationComponent implements OnInit {
                     if (this.titleSection !== '' && this.videoURLSanitizer !== '') {
                         this.visible = true;
                         this.datosMenu = {
-                            label: 'VIDEOS',
+                            label: this.titleInternalMenu,
                             id: 'a7',
                             url: '/imedical'
                         };
