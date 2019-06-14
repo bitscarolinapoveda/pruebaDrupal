@@ -1,5 +1,5 @@
 <div *ngIf="visible" [id]="datosMenu.id">
-    <div class="row position-relative row-tec" [ngStyle]="{'background-image':'url(' + allianceBackground + ')'}">
+    <div class="row position-relative row-tec" [class.edgefixed]="edge"  [ngStyle]="{'background-image':'url(' + allianceBackground + ')'}">
         <div class="position-absolute content-trans"></div>
         <div class="col-md-12 pt-5 pb-2 px-2">
             <h2 class="text-center text-white info-title">{{ allianceTitle }}</h2>
