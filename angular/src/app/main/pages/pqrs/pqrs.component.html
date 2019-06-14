@@ -74,7 +74,7 @@
 									(selected)="selectedPais($event)" (removed)="removedPais($event)"
 									(typed)="typedPais($event)">
 								</ng-select>
-								<input type="text" class="form-control ocultar" id="{{elementLayout['#webform_key']}}"
+								<input type="text" autocomplete="off" class="form-control ocultar" id="{{elementLayout['#webform_key']}}"
 									name="{{elementLayout['#webform_key']}}" [ngModel]="pais">
 							</div>
 							<!-- Campo select departamento o estado, se debe mantener el nombre para que funcione el componente-->
@@ -88,7 +88,7 @@
 									(selected)="selectedTipo($event)" (removed)="removedTipo($event)"
 									(typed)="typedTipo($event)">
 								</ng-select>
-								<input type="text" class="form-control ocultar" id="{{elementLayout['#webform_key']}}"
+								<input type="text" autocomplete="off" class="form-control ocultar" id="{{elementLayout['#webform_key']}}"
 									name="{{elementLayout['#webform_key']}}" [ngModel]="tipo">
 							</div>
 							<!-- Campos managed_file -->
