@@ -11,7 +11,9 @@
     @media (min-width: 1100px) {
         background-attachment: fixed;
     }
-
+    &.edgefixed{
+        background-attachment: scroll !important;
+    }
     .content-trans {
         background: rgba(0, 0, 0, 0.5);
         width: 100%;
