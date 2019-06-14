@@ -46,6 +46,12 @@ class BasicPageContentService {
     $resp = [];
     $resp['title'] = $node->getTitle();
     $resp['body'] = $node->get('body')->value;
+    $resp['url'] = \Drupal::service('path.alias_manager')->getAliasByPath('/node/'.$node->id());
+    $languages = \Drupal::languageManager()->getLanguages();
+    foreach ($languages as $key => $value) {
+      $resp['others_urls'][$key] = \Drupal::service('path.alias_manager')->getAliasByPath('/node/'.$node->id(), $key);
+    }
+
 
     if ($node->hasField('field_meta_tags')) {
       $metatags = $node->get('field_meta_tags')->value;
