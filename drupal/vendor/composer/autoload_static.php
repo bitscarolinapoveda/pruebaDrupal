@@ -13,12 +13,12 @@ class ComposerStaticInitDrupal8
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
         '023d27dca8066ef29e6739335ea73bad' => __DIR__ . '/..' . '/symfony/polyfill-php70/bootstrap.php',
+        '25072dd6e2470089de65ae7bf11d3109' => __DIR__ . '/..' . '/symfony/polyfill-php72/bootstrap.php',
+        '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
         'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
         'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
-        '25072dd6e2470089de65ae7bf11d3109' => __DIR__ . '/..' . '/symfony/polyfill-php72/bootstrap.php',
-        '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
         'cf97c57bfe0f23854afd2f3818abb7a0' => __DIR__ . '/..' . '/zendframework/zend-diactoros/src/functions/create_uploaded_file.php',
         '9bf37a3d0dad93e29cb4e1b1bfab04e9' => __DIR__ . '/..' . '/zendframework/zend-diactoros/src/functions/marshal_headers_from_sapi.php',
         'ce70dccb4bcc2efc6e94d2ee526e6972' => __DIR__ . '/..' . '/zendframework/zend-diactoros/src/functions/marshal_method_from_sapi.php',
@@ -106,6 +106,7 @@ class ComposerStaticInitDrupal8
             'Psr\\Log\\' => 8,
             'Psr\\Http\\Message\\' => 17,
             'Psr\\Container\\' => 14,
+            'Prophecy\\' => 9,
             'PhpParser\\' => 10,
         ),
         'M' => 
@@ -118,6 +119,7 @@ class ComposerStaticInitDrupal8
         ),
         'J' => 
         array (
+            'JsonSchema\\' => 11,
             'JakubOnderka\\PhpConsoleHighlighter\\' => 35,
             'JakubOnderka\\PhpConsoleColor\\' => 29,
         ),
@@ -138,10 +140,14 @@ class ComposerStaticInitDrupal8
             'Grasmash\\Expander\\' => 18,
             'Goutte\\' => 7,
         ),
+        'E' => 
+        array (
+            'Egulias\\EmailValidator\\' => 23,
+        ),
         'D' => 
         array (
             'Drush\\Internal\\' => 15,
-            'Drush\\Commands\\' => 15,
+            'Drush\\Commands\\code_builder_commands\\' => 37,
             'Drush\\' => 6,
             'Drupal\\Driver\\' => 14,
             'Drupal\\Core\\Composer\\' => 21,
@@ -149,6 +155,7 @@ class ComposerStaticInitDrupal8
             'Drupal\\Console\\Core\\' => 20,
             'Drupal\\Console\\Composer\\Plugin\\' => 31,
             'Drupal\\Console\\' => 15,
+            'Drupal\\Component\\Version\\' => 25,
             'Drupal\\Component\\Uuid\\' => 22,
             'Drupal\\Component\\Utility\\' => 25,
             'Drupal\\Component\\Transliteration\\' => 33,
@@ -175,7 +182,9 @@ class ComposerStaticInitDrupal8
             'DrupalCodeGenerator\\' => 20,
             'DrupalCodeBuilder\\' => 18,
             'Doctrine\\Instantiator\\' => 22,
+            'Doctrine\\Common\\Lexer\\' => 22,
             'Doctrine\\Common\\Inflector\\' => 26,
+            'Doctrine\\Common\\Collections\\' => 28,
             'Doctrine\\Common\\Cache\\' => 22,
             'Doctrine\\Common\\' => 16,
             'DeepCopy\\' => 9,
@@ -401,6 +410,10 @@ class ComposerStaticInitDrupal8
         array (
             0 => __DIR__ . '/..' . '/psr/container/src',
         ),
+        'Prophecy\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpspec/prophecy/src/Prophecy',
+        ),
         'PhpParser\\' => 
         array (
             0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
@@ -412,6 +425,10 @@ class ComposerStaticInitDrupal8
         'League\\Container\\' => 
         array (
             0 => __DIR__ . '/..' . '/league/container/src',
+        ),
+        'JsonSchema\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/justinrainbow/json-schema/src/JsonSchema',
         ),
         'JakubOnderka\\PhpConsoleHighlighter\\' => 
         array (
@@ -454,13 +471,17 @@ class ComposerStaticInitDrupal8
         array (
             0 => __DIR__ . '/..' . '/fabpot/goutte/Goutte',
         ),
+        'Egulias\\EmailValidator\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator',
+        ),
         'Drush\\Internal\\' => 
         array (
             0 => __DIR__ . '/..' . '/drush/drush/src/internal-forks',
         ),
-        'Drush\\Commands\\' => 
+        'Drush\\Commands\\code_builder_commands\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/drush/contrib/drupal-code-builder-drush/src/Commands',
+            0 => __DIR__ . '/../..' . '/drush/contrib/code_builder_commands',
         ),
         'Drush\\' => 
         array (
@@ -491,6 +512,10 @@ class ComposerStaticInitDrupal8
         'Drupal\\Console\\' => 
         array (
             0 => __DIR__ . '/..' . '/drupal/console/src',
+        ),
+        'Drupal\\Component\\Version\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/core/lib/Drupal/Component/Version',
         ),
         'Drupal\\Component\\Uuid\\' => 
         array (
@@ -597,9 +622,17 @@ class ComposerStaticInitDrupal8
         array (
             0 => __DIR__ . '/..' . '/doctrine/instantiator/src/Doctrine/Instantiator',
         ),
+        'Doctrine\\Common\\Lexer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/lexer/lib/Doctrine/Common/Lexer',
+        ),
         'Doctrine\\Common\\Inflector\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Common/Inflector',
+        ),
+        'Doctrine\\Common\\Collections\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/collections/lib/Doctrine/Common/Collections',
         ),
         'Doctrine\\Common\\Cache\\' => 
         array (
@@ -685,7 +718,7 @@ class ComposerStaticInitDrupal8
         array (
             'org\\bovigo\\vfs\\' => 
             array (
-                0 => __DIR__ . '/..' . '/mikey179/vfsStream/src/main/php',
+                0 => __DIR__ . '/..' . '/mikey179/vfsstream/src/main/php',
             ),
         ),
         'W' => 
@@ -711,17 +744,13 @@ class ComposerStaticInitDrupal8
         ),
         'P' => 
         array (
-            'Prophecy\\' => 
+            'PEAR' => 
             array (
-                0 => __DIR__ . '/..' . '/phpspec/prophecy/src',
+                0 => __DIR__ . '/..' . '/pear/pear_exception',
             ),
         ),
         'E' => 
         array (
-            'Egulias\\' => 
-            array (
-                0 => __DIR__ . '/..' . '/egulias/email-validator/src',
-            ),
             'EasyRdf_' => 
             array (
                 0 => __DIR__ . '/..' . '/easyrdf/easyrdf/lib',
@@ -735,15 +764,7 @@ class ComposerStaticInitDrupal8
             ),
             'DrupalPractice\\' => 
             array (
-                0 => __DIR__ . '/..' . '/drupal/coder/coder_sniffer/Drupal',
-            ),
-            'Doctrine\\Common\\Lexer\\' => 
-            array (
-                0 => __DIR__ . '/..' . '/doctrine/lexer/lib',
-            ),
-            'Doctrine\\Common\\Collections\\' => 
-            array (
-                0 => __DIR__ . '/..' . '/doctrine/collections/lib',
+                0 => __DIR__ . '/..' . '/drupal/coder/coder_sniffer/DrupalPractice',
             ),
             'Doctrine\\Common\\Annotations\\' => 
             array (
@@ -762,6 +783,24 @@ class ComposerStaticInitDrupal8
                 0 => __DIR__ . '/..' . '/dflydev/dot-access-configuration/src',
             ),
         ),
+        'C' => 
+        array (
+            'Console' => 
+            array (
+                0 => __DIR__ . '/..' . '/pear/console_getopt',
+            ),
+        ),
+        'A' => 
+        array (
+            'Archive_Tar' => 
+            array (
+                0 => __DIR__ . '/..' . '/pear/archive_tar',
+            ),
+        ),
+    );
+
+    public static $fallbackDirsPsr0 = array (
+        0 => __DIR__ . '/..' . '/pear/pear-core-minimal/src',
     );
 
     public static $classMap = array (
@@ -1330,7 +1369,6 @@ class ComposerStaticInitDrupal8
         'TheSeer\\Tokenizer\\Tokenizer' => __DIR__ . '/..' . '/theseer/tokenizer/src/Tokenizer.php',
         'TheSeer\\Tokenizer\\XMLSerializer' => __DIR__ . '/..' . '/theseer/tokenizer/src/XMLSerializer.php',
         'TypeError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/TypeError.php',
-        'geoPHP' => __DIR__ . '/..' . '/phayes/geophp/geoPHP.inc',
     );
 
     public static function getInitializer(ClassLoader $loader)
@@ -1339,6 +1377,7 @@ class ComposerStaticInitDrupal8
             $loader->prefixLengthsPsr4 = ComposerStaticInitDrupal8::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInitDrupal8::$prefixDirsPsr4;
             $loader->prefixesPsr0 = ComposerStaticInitDrupal8::$prefixesPsr0;
+            $loader->fallbackDirsPsr0 = ComposerStaticInitDrupal8::$fallbackDirsPsr0;
             $loader->classMap = ComposerStaticInitDrupal8::$classMap;
 
         }, null, ClassLoader::class);

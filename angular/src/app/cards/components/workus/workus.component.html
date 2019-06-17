@@ -71,7 +71,7 @@
 									(selected)="selectedPais($event)" (removed)="removedPais($event)"
 									(typed)="typedPais($event)">
 								</ng-select>
-								<input type="text" class="form-control ocultar" id="{{elementLayout['#webform_key']}}"
+								<input type="text" autocomplete="off" class="form-control ocultar" id="{{elementLayout['#webform_key']}}"
 									name="{{elementLayout['#webform_key']}}" [ngModel]="pais">
 							</div>
 							<!-- Campos managed_file -->
@@ -182,14 +182,14 @@
 							</label>
 							<ng-template #tipQuestion>
 								<div [innerHTML]='listQuestion'></div>
-							</ng-template>							
+							</ng-template>
 							<div class="popover-question desktop" [ngbPopover]="tipQuestion" popoverClass="question"
 								[popoverTitle]="tituloQuestion" triggers="mouseenter:mouseleave" placement="top">
-								<i class="fas fa-exclamation-circle"></i>								
-							</div>	
+								<i class="fas fa-exclamation-circle"></i>
+							</div>
 							<div class="popover-question phone" [ngbPopover]="tipQuestion" popoverClass="question"
 								[popoverTitle]="tituloQuestion" placement="left">
-								<i class="fas fa-exclamation-circle"></i>								
+								<i class="fas fa-exclamation-circle"></i>
 							</div>
 						</div>
 					</ng-container>

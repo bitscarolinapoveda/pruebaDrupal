@@ -263,19 +263,20 @@ class ComponentContentEntityType8Test extends TestBase {
         // Additional entity keys.
         [
           'uid' => 'uid',
+          'owner' => 'uid',
         ],
         // Additional traits.
-        [],
+        [
+          'Drupal\user\EntityOwnerTrait',
+        ],
         // Additional base fields.
-        [
-          'uid' => 'entity_reference',
-        ],
-        // Additional base field helper calls.
         [],
-        // Additional methods the entity class should have.
+        // Additional base field helper calls.
         [
-          'getCurrentUserId',
+          'ownerBaseFieldDefinitions'
         ],
+        // Additional methods the entity class should have.
+        [],
       ],
       'changed' => [
         ['changed'],
@@ -327,22 +328,23 @@ class ComponentContentEntityType8Test extends TestBase {
         // Additional entity keys.
         [
           'uid' => 'uid',
+          'owner' => 'uid',
         ],
         // Additional traits.
         [
           'Drupal\Core\Entity\EntityChangedTrait',
+          'Drupal\user\EntityOwnerTrait',
         ],
         // Additional base fields.
         [
-          'uid' => 'entity_reference',
           'changed' => 'changed',
         ],
         // Additional base field helper calls.
-        [],
-        // Additional methods the entity class should have.
         [
-          'getCurrentUserId',
+          'ownerBaseFieldDefinitions'
         ],
+        // Additional methods the entity class should have.
+        [],
       ],
     ];
   }
@@ -691,6 +693,7 @@ class ComponentContentEntityType8Test extends TestBase {
       'label',
       'uuid',
       'bundle',
+      'owner',
       'uid',
     ], 'entity_keys', "The content entity has the expected entity_keys annotation properties.");
     $annotation_tester->assertPropertyHasValue(['entity_keys', 'id'], 'kitty_cat_id');
@@ -729,11 +732,11 @@ class ComponentContentEntityType8Test extends TestBase {
 
     $config_yaml_file = $files['config/schema/test_module.schema.yml'];
     $yaml_tester = new YamlTester($config_yaml_file);
-    $yaml_tester->assertHasProperty('test_module.kitty_cat_type');
-    $yaml_tester->assertPropertyHasValue(['test_module.kitty_cat_type', 'type'], 'config_entity');
-    $yaml_tester->assertPropertyHasValue(['test_module.kitty_cat_type', 'label'], 'Kitty Cat Type');
-    $yaml_tester->assertHasProperty(['test_module.kitty_cat_type', 'mapping', 'foo']);
-    $yaml_tester->assertHasProperty(['test_module.kitty_cat_type', 'mapping', 'colour']);
+    $yaml_tester->assertHasProperty('test_module.kitty_cat_type.*');
+    $yaml_tester->assertPropertyHasValue(['test_module.kitty_cat_type.*', 'type'], 'config_entity');
+    $yaml_tester->assertPropertyHasValue(['test_module.kitty_cat_type.*', 'label'], 'Kitty Cat Type');
+    $yaml_tester->assertHasProperty(['test_module.kitty_cat_type.*', 'mapping', 'foo']);
+    $yaml_tester->assertHasProperty(['test_module.kitty_cat_type.*', 'mapping', 'colour']);
 
     // Check the permissions file.
     $permissions_file = $files["$module_name.permissions.yml"];

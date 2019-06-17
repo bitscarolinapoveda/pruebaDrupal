@@ -16,7 +16,7 @@
                 "drupal/webform_rest": "^2.0",
                 "drupal/devel": "^2.1",
                 "drupal/cors": "^1.0",
-                "drupal/core": "^8.6",
+                "drupal/core": "^8.7",
                 "drush/drush": "^9.6",
                 "drupal/pathauto": "^1.4",
                 "drupal/swiftmailer": "^1.0@beta",
