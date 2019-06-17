@@ -939,6 +939,7 @@ var AchievementsComponent = /** @class */ /*@__PURE__*/ (function () {
         this.list = [];
         this.visible = false;
         this.show = false;
+        this.titleInternalMenu = '';
     }
     AchievementsComponent.prototype.ngOnInit = function () {
         this.getAchievementData();
@@ -953,10 +954,11 @@ var AchievementsComponent = /** @class */ /*@__PURE__*/ (function () {
                 _this.subtitle = params.header[1].data.sub_title;
                 params.data = _this._service.addImageField(params.data, ['field_imagen']);
                 _this.list = params.data;
+                _this.titleInternalMenu = params.header[2].data.internal_menu_title;
                 if (_this.title !== '' && _this.list.length !== 0) {
                     _this.visible = true;
                     _this.datosMenu = {
-                        label: 'LOGROS',
+                        label: _this.titleInternalMenu,
                         id: 'a10',
                         url: '/imedical'
                     };
@@ -1513,22 +1515,24 @@ var BlurbComponent = /** @class */ /*@__PURE__*/ (function () {
     function BlurbComponent(_http) {
         this._http = _http;
         this.propagar = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
-        this.blurb = {
-            imageSrc: 'assets/images/historiaclinicadesktop.png',
-            title: 'titulo 1',
-            description: 'hola mundo'
-        };
+        this.titlesmenu = '';
     }
     BlurbComponent.prototype.ngOnInit = function () {
-        while (this.type.indexOf('-') > -1) {
-            this.type = this.type.replace('-', '_');
-        }
-        this.datosMenu = {
-            label: 'MÓDULOS',
-            id: 'a1',
-            url: '/products'
-        };
-        this.propagar.emit(this.datosMenu);
+        this.getModuleService();
+    };
+    BlurbComponent.prototype.getModuleService = function () {
+        var _this = this;
+        this._http.getCustomCardInformation('moduleinformation').subscribe(function (params) {
+            _this.titlesmenu = params.header[2].data.internal_menu_title;
+            if (params.data[0]) {
+                _this.datosMenu = {
+                    label: _this.titlesmenu,
+                    id: 'a1',
+                    url: '/products'
+                };
+                _this.propagar.emit(_this.datosMenu);
+            }
+        });
     };
     return BlurbComponent;
 }());
@@ -1737,6 +1741,8 @@ var CardImgTextComponent = /** @class */ /*@__PURE__*/ (function () {
         this.showL = false;
         this.showR = false;
         this.showPhone = false;
+        this.titleInternalMenuIleft = '';
+        this.titleInternalMenuIright = '';
     }
     CardImgTextComponent.prototype.ngOnInit = function () {
         if (this.orientacion === 'IT') {
@@ -1757,10 +1763,11 @@ var CardImgTextComponent = /** @class */ /*@__PURE__*/ (function () {
                 }
                 params.data = _this._http.addImageField(params.data, ['field_imagen_media_product']);
                 _this.cardImgL = params.data;
+                _this.titleInternalMenuIleft = params.header[1].data.internal_menu_title;
                 if (_this.cardImgL.length !== 0) {
                     _this.visibleL = true;
                     _this.datosMenuL = {
-                        label: 'IMAG L',
+                        label: _this.titleInternalMenuIleft,
                         id: 'a3',
                         url: '/imedical'
                     };
@@ -1779,11 +1786,12 @@ var CardImgTextComponent = /** @class */ /*@__PURE__*/ (function () {
                     _this.titleR = params.data[0].field_subtitulo;
                 }
                 params.data = _this._http.addImageField(params.data, ['field_imagen_media_product']);
+                _this.titleInternalMenuIright = params.header[1].data.internal_menu_title;
                 _this.cardImgR = params.data;
                 if (_this.cardImgR.length !== 0) {
                     _this.visibleR = true;
                     _this.datosMenuR = {
-                        label: 'IMAG R',
+                        label: _this.titleInternalMenuIright,
                         id: 'a67',
                         url: '/imedical'
                     };
@@ -2307,6 +2315,7 @@ var CarouselItem2Component = /** @class */ /*@__PURE__*/ (function () {
         this.visible = false;
         this.show = false;
         this.showPhone = false;
+        this.titleInternalMenu = '';
     }
     CarouselItem2Component.prototype.ngOnInit = function () {
         this.datosMenu = {
@@ -2370,6 +2379,7 @@ var CarouselItem2Component = /** @class */ /*@__PURE__*/ (function () {
                     _this.clientsDesktop = list_items;
                     _this.clients = _this._cardService.clone(_this.clients);
                     _this.casClient = _this.casClient + 1;
+                    _this.titleInternalMenu = itemsw.header[3].data.internal_menu_title;
                     switch (_this.clients.length) {
                         case 1:
                             _this.oneItems = true;
@@ -2385,7 +2395,7 @@ var CarouselItem2Component = /** @class */ /*@__PURE__*/ (function () {
                     if (_this.clients.length !== 0) {
                         _this.visible = true;
                         _this.datosMenu = {
-                            label: 'CAROUSEL',
+                            label: _this.titleInternalMenu,
                             id: 'a6',
                             url: '/imedical'
                         };
@@ -2536,6 +2546,8 @@ var ClientProjectImedicalComponent = /** @class */ /*@__PURE__*/ (function () {
         this._http = _http;
         this.propagar = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
         this.titleLeft = '';
+        this.titleCard = '';
+        this.titleSection = '';
         this.imgSrcClient = '';
         this.nameClient = '';
         this.titleRight = '';
@@ -2546,6 +2558,7 @@ var ClientProjectImedicalComponent = /** @class */ /*@__PURE__*/ (function () {
         this.linkProjectTitle = '';
         this.visible = false;
         this.show = false;
+        this.titleInternalMenu = '';
     }
     ClientProjectImedicalComponent.prototype.ngOnInit = function () {
         this.getClientProjectImedicalService();
@@ -2568,10 +2581,11 @@ var ClientProjectImedicalComponent = /** @class */ /*@__PURE__*/ (function () {
                     _this.linkProjectUrl = params.data[0].field_url_client[0].uri;
                     _this.linkProjectTitle = params.data[0].field_url_client[0].title;
                     _this.linkExternal = params.data[0].field_url_client[0].external;
+                    _this.titleInternalMenu = params.header[3].data.internal_menu_title;
                     if (params.data[0]) {
                         _this.visible = true;
                         _this.datosMenu = {
-                            label: 'CLIENTS',
+                            label: _this.titleInternalMenu,
                             id: 'a8',
                             url: '/imedical'
                         };
@@ -4218,6 +4232,7 @@ var OurWorkComponent = /** @class */ /*@__PURE__*/ (function () {
         this.propagar = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
         this.list = [];
         this.visible = false;
+        this.titleInternalMenu = '';
     }
     OurWorkComponent.prototype.ngOnInit = function () {
         this.getOurWorkData();
@@ -4226,15 +4241,16 @@ var OurWorkComponent = /** @class */ /*@__PURE__*/ (function () {
         var _this = this;
         this._http.getCustomCardInformation('allproductsandservicescard_2').subscribe(function (params) {
             _this.principalOurWork = _this._http.getFilterPrincipalType(params, 'field_our_work', _this.type);
-            _this._http.getCustomCardInformationType('ourworkbitsamericas', _this.type).subscribe(function (items) {
+            _this._http.getCustomCardInformation('ourworkbitsamericas').subscribe(function (items) {
                 items = _this._http.getFilterLists(_this.principalOurWork, items);
                 _this.title = items.header[0].data.title;
                 _this.subtitle = items.header[1].data.sub_title;
+                _this.titleInternalMenu = items.header[2].data.internal_menu_title;
                 _this.list = _this._http.addImageField(items.data, ['field_background_image']);
                 if (_this.title !== '' && _this.list.length !== 0) {
                     _this.visible = true;
                     _this.datosMenu = {
-                        label: 'NUESTRO TRABAJO',
+                        label: _this.titleInternalMenu,
                         id: 'a14',
                         url: '/products'
                     };
@@ -5111,6 +5127,7 @@ var ScreenshotsComponent = /** @class */ /*@__PURE__*/ (function () {
         this.propagar = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
         this.CarouselControlArray = [];
         this.show = false;
+        this.titleInternalMenu = '';
     }
     ScreenshotsComponent.prototype.ngOnInit = function () {
         this.getScreenshotsInfo();
@@ -5135,6 +5152,7 @@ var ScreenshotsComponent = /** @class */ /*@__PURE__*/ (function () {
             _this.screenshots.getCustomCardInformation('screenshotscard').subscribe(function (items) {
                 items = _this.screenshots.getFilterLists(_this.principalScreenshots, items);
                 var list = [];
+                _this.titleInternalMenu = items.header[2].data.internal_menu_title;
                 _this.screenshotsTitle = items.header[0].data.title;
                 _this.screenshotsSubTitle = items.header[1].data.sub_title;
                 _this.CarouselControlArray = items.data;
@@ -5147,7 +5165,7 @@ var ScreenshotsComponent = /** @class */ /*@__PURE__*/ (function () {
                 if (_this.screenshotsTitle !== '' && _this.CarouselControlArray.length !== 0) {
                     _this.visible = true;
                     _this.datosMenu = {
-                        label: 'SCRENSHOTS',
+                        label: _this.titleInternalMenu,
                         id: 'a18',
                         url: '/imedical'
                     };
@@ -5832,6 +5850,7 @@ var SliderComponent = /** @class */ /*@__PURE__*/ (function () {
         this._cardService = _cardService;
         this.propagar = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
         this.sliderArray = [];
+        this.titleInternalMenu = '';
     }
     SliderComponent.prototype.ngOnInit = function () {
         this.getSliderItems();
@@ -5844,6 +5863,7 @@ var SliderComponent = /** @class */ /*@__PURE__*/ (function () {
                 items = _this._cardService.getFilterLists(_this.principalSlider, items);
                 items.data = _this._cardService.addImageField(items.data, ['field_background_image']);
                 items.data = _this._cardService.addImageField(items.data, ['field_right_image']);
+                _this.titleInternalMenu = items.header[1].data.internal_menu_title;
                 var sliders = [];
                 for (var _i = 0, _a = items.data; _i < _a.length; _i++) {
                     var item = _a[_i];
@@ -5862,7 +5882,7 @@ var SliderComponent = /** @class */ /*@__PURE__*/ (function () {
                 if (_this.sliderArray.length !== 0) {
                     _this.visible = true;
                     _this.datosMenu = {
-                        label: 'SLIDER',
+                        label: _this.titleInternalMenu,
                         id: 'a61',
                         url: '/imedical'
                     };
@@ -6865,6 +6885,7 @@ var TeamComponent = /** @class */ /*@__PURE__*/ (function () {
         this.caroseltitle = [];
         this.CarouselControlArray = [];
         this.visible = false;
+        this.titleInternalMenu = '';
         this.show = false;
     }
     TeamComponent.prototype.ngOnInit = function () {
@@ -6901,13 +6922,14 @@ var TeamComponent = /** @class */ /*@__PURE__*/ (function () {
                 params = _this.https.getFilterLists(_this.principalTeam, params);
                 _this.title = params.header[0].data.title;
                 _this.subtitle = params.header[1].data.sub_title;
+                _this.titleInternalMenu = params.header[2].data.internal_menu_title;
                 params.data = _this.https.addImageField(params.data, ['field_imagen']);
                 _this.CarouselControlArray = params.data;
                 _this.CarouselControlArray = Object.keys(params.data).map(function (key) { return params.data[key]; });
                 if (_this.title !== '' && _this.CarouselControlArray.length !== 0) {
                     _this.visible = true;
                     _this.datosMenu = {
-                        label: 'TEAMS',
+                        label: _this.titleInternalMenu,
                         id: 'a9',
                         url: '/imedical'
                     };
@@ -7050,6 +7072,7 @@ var TecnologiesComponent = /** @class */ /*@__PURE__*/ (function () {
         this.state = 'hide';
         this.propagar = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
         this.arrayLogosCustom = [];
+        this.titleInternalMenu = '';
     }
     TecnologiesComponent.prototype.ngOnInit = function () {
         this.datosMenu = {
@@ -7093,10 +7116,11 @@ var TecnologiesComponent = /** @class */ /*@__PURE__*/ (function () {
                     _this.subtitle = itemsw.header[1].data.sub_title;
                     itemsw.data = _this._tecnologies.addImageField(itemsw.data, ['field_tech_color_image']);
                     _this.arrayLogosCustom = _this._tecnologies.organizeInfoForCarousel(itemsw.data);
+                    _this.titleInternalMenu = itemsw.header[2].data.internal_menu_title;
                     if (_this.title !== '' && _this.arrayLogosCustom.length !== 0) {
                         _this.visible = true;
                         _this.datosMenu = {
-                            label: 'TECNOLOGIA',
+                            label: _this.titleInternalMenu,
                             id: 'a11',
                             url: '/imedical'
                         };
@@ -7232,6 +7256,7 @@ var TestimoniesComponent = /** @class */ /*@__PURE__*/ (function () {
         this.testimonies = testimonies;
         this.propagar = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
         this.visible = false;
+        this.titleInternalMenu = '';
     }
     TestimoniesComponent.prototype.ngOnInit = function () {
         this.getTestimoniesInfo();
@@ -7245,10 +7270,11 @@ var TestimoniesComponent = /** @class */ /*@__PURE__*/ (function () {
                 _this.testimoniesTitle = itemsw.header[0].data.title;
                 _this.testimoniesSubTitle = itemsw.header[1].data.sub_title;
                 _this.testimoniesData = itemsw.data;
+                _this.titleInternalMenu = itemsw.header[2].data.internal_menu_title;
                 if (_this.testimoniesTitle !== '' && _this.testimoniesData.length !== 0) {
                     _this.visible = true;
                     _this.datosMenu = {
-                        label: 'TESTIMONIES',
+                        label: _this.titleInternalMenu,
                         id: 'a12',
                         url: '/imedical'
                     };
@@ -7470,6 +7496,7 @@ var VideoInformationComponent = /** @class */ /*@__PURE__*/ (function () {
         this.sanitizer = sanitizer;
         this.propagar = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
         this.visible = false;
+        this.titleInternalMenu = '';
     }
     VideoInformationComponent.prototype.ngOnInit = function () {
         this.getVideoInformationService();
@@ -7483,6 +7510,7 @@ var VideoInformationComponent = /** @class */ /*@__PURE__*/ (function () {
                 if (params.data.length !== 0) {
                     _this.titleSection = params.data[0].title;
                     _this.descriptionSection = params.data[0].body;
+                    _this.titleInternalMenu = params.header[0].data.internal_menu_title;
                     _this.videoURL = params.data[0].field_url_video[0].uri;
                     if (_this.videoURL.includes('watch?v=')) {
                         _this.videoURLSanitizer = _this.sanitizer
@@ -7496,7 +7524,7 @@ var VideoInformationComponent = /** @class */ /*@__PURE__*/ (function () {
                     if (_this.titleSection !== '' && _this.videoURLSanitizer !== '') {
                         _this.visible = true;
                         _this.datosMenu = {
-                            label: 'VIDEOS',
+                            label: _this.titleInternalMenu,
                             id: 'a7',
                             url: '/imedical'
                         };
