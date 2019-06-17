@@ -28,6 +28,8 @@ export class CardImgTextComponent implements OnInit {
     showL: boolean;
     showR: boolean;
     showPhone: boolean;
+    titleInternalMenuIleft: string;
+    titleInternalMenuIright: string;
 
     constructor(
         private _http: CustomCardService
@@ -40,6 +42,8 @@ export class CardImgTextComponent implements OnInit {
         this.showL = false;
         this.showR = false;
         this.showPhone = false;
+        this.titleInternalMenuIleft = '';
+        this.titleInternalMenuIright = '';
     }
 
     ngOnInit() {
@@ -61,10 +65,11 @@ export class CardImgTextComponent implements OnInit {
                 }
                 params.data = this._http.addImageField(params.data, ['field_imagen_media_product']);
                 this.cardImgL = params.data;
+                this.titleInternalMenuIleft = params.header[1].data.internal_menu_title;
                 if (this.cardImgL.length !== 0) {
                     this.visibleL = true;
                     this.datosMenuL = {
-                        label: 'IMAG L',
+                        label: this.titleInternalMenuIleft,
                         id: 'a3',
                         url: '/imedical'
                     };
@@ -85,11 +90,12 @@ export class CardImgTextComponent implements OnInit {
                     this.titleR = params.data[0].field_subtitulo;
                 }
                 params.data = this._http.addImageField(params.data, ['field_imagen_media_product']);
+                this.titleInternalMenuIright = params.header[1].data.internal_menu_title;
                 this.cardImgR = params.data;
                 if (this.cardImgR.length !== 0) {
                     this.visibleR = true;
                     this.datosMenuR = {
-                        label: 'IMAG R',
+                        label: this.titleInternalMenuIright,
                         id: 'a67',
                         url: '/imedical'
                     };

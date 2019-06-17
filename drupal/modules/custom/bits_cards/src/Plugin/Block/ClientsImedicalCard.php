@@ -29,6 +29,7 @@ class ClientsImedicalCard extends CardBase {
             'weight' => 1,
             'max_length' => 50,
           ],
+
           'title_left' => [
             'type' => 'textfield',
             'title' => $this->t('Título Izquierda'),
@@ -37,14 +38,26 @@ class ClientsImedicalCard extends CardBase {
             'weight' => 1,
             'max_length' => 50,
           ],
+
           'title_right' => [
             'type' => 'textfield',
             'title' => $this->t('Título Derecha'),
             'service_field' => 'title_right',
+
             'show' => 1,
             'weight' => 1,
             'max_length' => 50,
           ],
+
+          'internal_menu_title' => [
+            'type' => 'textfield',
+            'title' => $this->t('Título menú interno'),
+            'service_field' => 'internal_menu_title',
+            'show' => 1,
+            'weight' => 1,
+            'max_length' => 25,
+          ],
+
         ],
       ],
       'body' => [

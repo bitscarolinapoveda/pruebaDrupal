@@ -23,9 +23,11 @@ export class ScreenshotsComponent implements OnInit {
   CarouselControlArray: any = [];
   public carouselOne: NgxCarousel;
   show: boolean;
+  titleInternalMenu: string;
 
   constructor(private screenshots: CustomCardService) {
     this.show = false;
+    this.titleInternalMenu = '';
    }
 
   ngOnInit() {
@@ -52,6 +54,7 @@ export class ScreenshotsComponent implements OnInit {
       this.screenshots.getCustomCardInformation('screenshotscard').subscribe(items => {
         items = this.screenshots.getFilterLists(this.principalScreenshots, items);
         var list = [];
+        this.titleInternalMenu = items.header[2].data.internal_menu_title;
         this.screenshotsTitle = items.header[0].data.title;
         this.screenshotsSubTitle = items.header[1].data.sub_title;
         this.CarouselControlArray = items.data;
@@ -64,7 +67,7 @@ export class ScreenshotsComponent implements OnInit {
         if (this.screenshotsTitle !== '' && this.CarouselControlArray.length !== 0) {
           this.visible = true;
           this.datosMenu = {
-            label: 'SCRENSHOTS',
+            label: this.titleInternalMenu,
             id: 'a18',
             url: '/imedical'
           };

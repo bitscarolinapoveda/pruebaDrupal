@@ -23,10 +23,12 @@ export class TeamComponent implements OnInit {
   caroseltitle: any = [];
   public carocarouselTile: NgxCarousel;
   show: boolean;
+  titleInternalMenu: string;
 
   constructor(private https: CustomCardService) {
     this.CarouselControlArray = [];
     this.visible = false;
+    this.titleInternalMenu = '';
     this.show = false;
   }
 
@@ -90,13 +92,14 @@ export class TeamComponent implements OnInit {
         params = this.https.getFilterLists(this.principalTeam, params);
         this.title = params.header[0].data.title;
         this.subtitle = params.header[1].data.sub_title;
+        this.titleInternalMenu = params.header[2].data.internal_menu_title;
         params.data = this.https.addImageField(params.data, ['field_imagen']);
         this.CarouselControlArray = params.data;
-        this.CarouselControlArray = Object.keys(params.data).map(function (key) { return params.data[key]; });       
+        this.CarouselControlArray = Object.keys(params.data).map(function (key) { return params.data[key]; });
         if (this.title !== '' && this.CarouselControlArray.length !== 0) {
           this.visible = true;
           this.datosMenu = {
-            label: 'TEAMS',
+            label: this.titleInternalMenu,
             id: 'a9',
             url: '/imedical'
           };

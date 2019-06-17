@@ -30,6 +30,7 @@ export class CarouselItem2Component implements OnInit {
   flagUbication: string;
   show: boolean;
   showPhone: boolean;
+  titleInternalMenu: string;
 
   oneItems: boolean;
   twoItems: boolean;
@@ -43,6 +44,7 @@ export class CarouselItem2Component implements OnInit {
     this.visible = false;
     this.show = false;
     this.showPhone = false;
+    this.titleInternalMenu = '';
   }
 
   ngOnInit() {
@@ -110,6 +112,7 @@ export class CarouselItem2Component implements OnInit {
           this.clientsDesktop = list_items;
           this.clients = this._cardService.clone(this.clients);
           this.casClient = this.casClient + 1;
+          this.titleInternalMenu = itemsw.header[3].data.internal_menu_title;
           switch (this.clients.length) {
             case 1:
               this.oneItems = true;
@@ -126,7 +129,7 @@ export class CarouselItem2Component implements OnInit {
           if (this.clients.length !== 0) {
             this.visible = true;
             this.datosMenu = {
-              label: 'CAROUSEL',
+              label: this.titleInternalMenu,
               id: 'a6',
               url: '/imedical'
             };

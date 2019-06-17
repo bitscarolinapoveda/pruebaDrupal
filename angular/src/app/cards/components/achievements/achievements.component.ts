@@ -19,11 +19,13 @@ export class AchievementsComponent implements OnInit {
   @Input() type: string;
   principalAchievements: General;
   show: boolean;
+  titleInternalMenu: string;
 
   constructor(private _service: CustomCardService) {
     this.list = [];
     this.visible = false;
     this.show = false;
+    this.titleInternalMenu = '';
   }
 
   ngOnInit() {
@@ -40,10 +42,11 @@ export class AchievementsComponent implements OnInit {
         this.subtitle = params.header[1].data.sub_title;
         params.data = this._service.addImageField(params.data, ['field_imagen']);
         this.list = params.data;
+        this.titleInternalMenu = params.header[2].data.internal_menu_title;
         if (this.title !== '' && this.list.length !== 0) {
           this.visible = true;
           this.datosMenu = {
-            label: 'LOGROS',
+            label: this.titleInternalMenu,
             id: 'a10',
             url: '/imedical'
           };

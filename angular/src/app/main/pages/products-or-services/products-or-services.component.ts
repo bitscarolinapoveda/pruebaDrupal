@@ -34,7 +34,6 @@ export class ProductsOrServicesComponent implements OnInit {
   ngOnInit() {
     
     this.type = this.rutaActiva.snapshot.params.type;
-
     this.rutaActiva.params.subscribe(
       (params: Params) => {
         this.type = params.type;

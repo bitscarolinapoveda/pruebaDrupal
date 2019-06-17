@@ -16,34 +16,33 @@ export class BlurbComponent implements OnInit {
     @Output() propagar = new EventEmitter<DataMenu>();
 
     datosMenu: DataMenu;
-
+    titlesmenu: string;
 
     constructor(
         private _http: CustomCardService
     ) {
-        this.blurb = {
-            imageSrc: 'assets/images/historiaclinicadesktop.png',
-            title: 'titulo 1',
-            description: 'hola mundo'
-        };
+      this.titlesmenu = '';
     }
 
     ngOnInit() {
-
-        while (this.type.indexOf('-') > -1) {
-            this.type = this.type.replace('-', '_');
-        }
-
-        this.datosMenu = {
-            label: 'MÓDULOS',
-            id: 'a1',
-            url: '/products'
-        };
-
-        this.propagar.emit(this.datosMenu);
+      this.getModuleService();
     }
 
+    getModuleService() {
+      this._http.getCustomCardInformation('moduleinformation').subscribe(params => {
+        this.titlesmenu = params.header[2].data.internal_menu_title;
+        if (params.data[0]) {
+        this.datosMenu = {
+          label: this.titlesmenu,
+          id: 'a1',
+          url: '/products'
+        };
+        this.propagar.emit(this.datosMenu);
+      }
+    });
+    }
 }
+
 export interface General {
     body: any;
     data: any;
