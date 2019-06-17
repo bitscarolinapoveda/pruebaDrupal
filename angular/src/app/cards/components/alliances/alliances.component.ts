@@ -22,7 +22,7 @@ export class AlliancesComponent implements OnInit {
   @Output() propagar = new EventEmitter<DataMenu>();
   datosMenu: DataMenu;
   visible: boolean;
-
+  edge:boolean;
   constructor(
     private alliance: CustomCardService,
     public el: ElementRef
@@ -33,6 +33,12 @@ export class AlliancesComponent implements OnInit {
 
   ngOnInit() {
     this.getAlliance();
+    
+    if (/Edge\/\d./i.test(navigator.userAgent)){ 
+      if(window.screen.width>1100){
+      this.edge = true;
+      }
+    }
   }
 
   getAlliance() {

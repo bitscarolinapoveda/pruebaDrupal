@@ -50,7 +50,7 @@ const pagesRoutes: Routes = [
       { path: 'politics', redirectTo: '/politicas', pathMatch: 'full', resolve: { message: HnResolverService } },
 
       { path: 'nosotros', component: AboutUsComponent, resolve: { message: HnResolverService } },
-      
+
       { path: 'en/about-us', component: AboutUsComponent, resolve: { message: HnResolverService } },
       { path: 'contact-us', redirectTo: '/contactenos', pathMatch: 'full', resolve: { message: HnResolverService } },
 
@@ -60,7 +60,8 @@ const pagesRoutes: Routes = [
       { path: 'pqrs', component: PqrsComponent, resolve: { message: HnResolverService } },
       { path: 'en/pqrs', component: PqrsComponent, resolve: { message: HnResolverService } },
 
-      { path: '**', component: NoPageFoundComponent }
+      { path: '**', component: NoPageFoundComponent },
+      { path: 'error', component: NoPageFoundComponent }
 
     ]
   }

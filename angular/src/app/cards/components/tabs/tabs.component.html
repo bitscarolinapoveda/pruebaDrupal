@@ -30,7 +30,7 @@
 						<div class="col-md-6 item" *ngFor="let elementLayout of item">
 							<!-- Campos textfiel o tel. No incluye los select: pais, servicios de interes y productos de interes-->
 							<div
-								*ngIf="(elementLayout['#type'] == 'textfield' || elementLayout['#type'] == 'tel') && elementLayout['#webform_key'] != 'pais' && elementLayout['#webform_key'] != 'servicios_de_interes' && elementLayout['#webform_key'] != 'productos_de_interes'">
+								*ngIf="(elementLayout['#type'] == 'textfield' || elementLayout['#type'] == 'tel') && elementLayout['#webform_key'] != 'pais' && elementLayout['#webform_key'] != 'servicios_de_interes' && elementLayout['#webform_key'] != 'productos_de_interes'" class="pos-flex">
 								<label for="{{elementLayout['#webform_key']}}">{{elementLayout["#title"]}}
 									<span *ngIf="elementLayout['#required'] ==  true">*</span></label>
 								<input type="{{elementLayout['#type']}}" class="form-control"
@@ -45,7 +45,7 @@
 								</ng-container>
 							</div>
 							<!-- Campos email-->
-							<div *ngIf="elementLayout['#type'] == 'email'">
+							<div *ngIf="elementLayout['#type'] == 'email'" class="pos-flex">
 								<label for="{{elementLayout['#webform_key']}}">{{elementLayout["#title"]}}<span
 										*ngIf="elementLayout['#required'] ==  true">*</span></label>
 								<input type="{{elementLayout['#type']}}" class="form-control"
@@ -61,7 +61,7 @@
 								</ng-container>
 							</div>
 							<!-- Campos textarea-->
-							<div *ngIf="elementLayout['#type'] == 'textarea'">
+							<div *ngIf="elementLayout['#type'] == 'textarea'" class="pos-flex">
 								<label for="{{elementLayout['#webform_key']}}">{{elementLayout["#title"]}}<span
 										*ngIf="elementLayout['#required'] ==  true">*</span></label>
 								<textarea class="form-control" id="{{'contact_us__' +elementLayout['#webform_key']}}"
@@ -74,7 +74,7 @@
 								</ng-container>
 							</div>
 							<!-- Campo select pais, se debe mantener el nombre para que funcione el componente-->
-							<div *ngIf="elementLayout['#webform_key'] == 'pais'">
+							<div *ngIf="elementLayout['#webform_key'] == 'pais'" class="pos-flex">
 								<label for="{{elementLayout['#webform_key']}}">{{elementLayout['#title']}}<span
 										*ngIf="elementLayout['#required'] ==  true">*</span></label>
 								<ng-select #paisTB class="select-autocomplete"
@@ -84,11 +84,11 @@
 									(selected)="selectedPais($event)" (removed)="removedPais($event)"
 									(typed)="typedPais($event)">
 								</ng-select>
-								<input type="text" class="form-control ocultar" id="{{elementLayout['#webform_key']}}"
+								<input type="text" autocomplete="off" class="form-control ocultar" id="{{elementLayout['#webform_key']}}"
 									name="{{elementLayout['#webform_key']}}" [ngModel]="pais">
 							</div>
 							<!-- Campo select servicios de interes, se debe mantener el nombre para que funcione el componente-->
-							<div *ngIf="elementLayout['#webform_key'] == 'servicios_de_interes'">
+							<div *ngIf="elementLayout['#webform_key'] == 'servicios_de_interes'" class="pos-flex">
 								<label for="{{elementLayout['#webform_key']}}">{{elementLayout['#title']}}<span
 										*ngIf="elementLayout['#required'] ==  true">*</span></label>
 								<ng-select #serviceTB class="select-autocomplete"
@@ -98,11 +98,11 @@
 									(selected)="selectedService($event)" (removed)="removedService($event)"
 									(typed)="typedService($event)">
 								</ng-select>
-								<input type="text" class="form-control ocultar" id="{{elementLayout['#webform_key']}}"
+								<input type="text" autocomplete="off" class="form-control ocultar" id="{{elementLayout['#webform_key']}}"
 									name="{{elementLayout['#webform_key']}}" [ngModel]="service">
 							</div>
 							<!-- Campo select productos de interes, se debe mantener el nombre para que funcione el componente-->
-							<div *ngIf="elementLayout['#webform_key'] == 'productos_de_interes'">
+							<div *ngIf="elementLayout['#webform_key'] == 'productos_de_interes'" class="pos-flex">
 								<label for="{{elementLayout['#webform_key']}}">{{elementLayout['#title']}}<span
 										*ngIf="elementLayout['#required'] ==  true">*</span></label>
 								<ng-select #productTB class="select-autocomplete"
@@ -112,7 +112,7 @@
 									(selected)="selectedProduct($event)" (removed)="removedProduct($event)"
 									(typed)="typedProduct($event)">
 								</ng-select>
-								<input type="text" class="form-control ocultar" id="{{elementLayout['#webform_key']}}"
+								<input type="text" autocomplete="off" class="form-control ocultar" id="{{elementLayout['#webform_key']}}"
 									name="{{elementLayout['#webform_key']}}" [ngModel]="product">
 							</div>
 						</div>
@@ -168,19 +168,19 @@
 							<label ng-reflect-ng-class="" for="{{'contact_us__' +item['#webform_key']}}">He leído y
 								acepto los<a [routerLink]="ruta">
 									términos y condiciones
-								</a>								
+								</a>
 							</label>
 							<ng-template #tipQuestion>
 								<div [innerHTML]='listQuestion'></div>
 							</ng-template>
 							<div class="popover-question desktop" [ngbPopover]="tipQuestion" popoverClass="question"
 								[popoverTitle]="tituloQuestion" triggers="mouseenter:mouseleave" placement="top">
-								<i class="fas fa-exclamation-circle"></i>								
-							</div>	
+								<i class="fas fa-exclamation-circle"></i>
+							</div>
 							<div class="popover-question phone" [ngbPopover]="tipQuestion" popoverClass="question"
 								[popoverTitle]="tituloQuestion" placement="left">
-								<i class="fas fa-exclamation-circle"></i>								
-							</div>				
+								<i class="fas fa-exclamation-circle"></i>
+							</div>
 						</div>
 					</ng-container>
 				</ng-container>

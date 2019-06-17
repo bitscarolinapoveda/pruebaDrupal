@@ -2,6 +2,7 @@
 namespace Drush\Commands\sql;
 
 use Consolidation\AnnotatedCommand\CommandData;
+use Consolidation\SiteProcess\Util\Tty;
 use Drupal\Core\Database\Database;
 use Drush\Commands\DrushCommands;
 use Drush\Drush;
@@ -10,7 +11,6 @@ use Drush\Exec\ExecTrait;
 use Drush\Sql\SqlBase;
 use Consolidation\OutputFormatters\StructuredData\PropertyList;
 use Symfony\Component\Console\Input\InputInterface;
-use Drush\Utils\TerminalUtils;
 
 class SqlCommands extends DrushCommands
 {
@@ -88,18 +88,17 @@ class SqlCommands extends DrushCommands
         $sql = SqlBase::create($options);
         $db_spec = $sql->getDbSpec();
         // Prompt for confirmation.
-        if (!$this->getConfig()->simulate()) {
-            // @todo odd - maybe for sql-sync.
-            $txt_destination = (isset($db_spec['remote-host']) ? $db_spec['remote-host'] . '/' : '') . $db_spec['database'];
-            $this->output()->writeln(dt("Creating database !target. Any existing database will be dropped!", ['!target' => $txt_destination]));
 
-            if (!$this->io()->confirm(dt('Do you really want to continue?'))) {
-                throw new UserAbortException();
-            }
+        // @todo odd - maybe for sql-sync.
+        $txt_destination = (isset($db_spec['remote-host']) ? $db_spec['remote-host'] . '/' : '') . $db_spec['database'];
+        $this->output()->writeln(dt("Creating database !target. Any existing database will be dropped!", ['!target' => $txt_destination]));
 
-            if (!$sql->createdb(true)) {
-                throw new \Exception('Unable to create database. Rerun with --debug to see any error message.');
-            }
+        if (!$this->getConfig()->simulate() && !$this->io()->confirm(dt('Do you really want to continue?'))) {
+            throw new UserAbortException();
+        }
+
+        if (!$sql->createdb(true)) {
+            throw new \Exception('Unable to create database. Rerun with --debug to see any error message.');
         }
     }
 
@@ -143,7 +142,7 @@ class SqlCommands extends DrushCommands
     {
         $sql = SqlBase::create($options);
         $process = $this->processManager()->shell($sql->connect(), null, $sql->getEnv());
-        if (!TerminalUtils::isTty(false)) {
+        if (!Tty::isTtySupported()) {
             $process->setInput(STDIN);
         } else {
             $process->setTty($this->getConfig()->get('ssh.tty', $input->isInteractive()));
@@ -237,7 +236,10 @@ class SqlCommands extends DrushCommands
             throw new \Exception('Unable to dump database. Rerun with --debug to see any error message.');
         }
 
-        $this->logger()->success(dt('Database dump saved to !path', ['!path' => $return]));
+        // SqlBase::dump() returns null if 'result-file' option is empty.
+        if ($return) {
+            $this->logger()->success(dt('Database dump saved to !path', ['!path' => $return]));
+        }
         return new PropertyList(['path' => $return]);
     }
 

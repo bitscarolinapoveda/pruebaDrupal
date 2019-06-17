@@ -1,5 +1,4 @@
 import { OnInit, Component } from '@angular/core';
-import { Meta } from '@angular/platform-browser';
 
 declare var $: any;
 
@@ -10,12 +9,10 @@ declare var $: any;
 })
 export class PoliticsComponent implements OnInit {
 
-    constructor(private meta: Meta) {
+    constructor() {
     }
 
     ngOnInit() {
-        this.meta.removeTag('name="general"');
-        this.meta.updateTag({ name: 'component', content: 'app-politics-page' });
         $('#float-social-block').removeClass('ocultar-phone');
     }
 }

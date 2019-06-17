@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Meta } from '@angular/platform-browser';
+import { CustomCardService } from 'src/app/services/cards/v1-card.services';
+
+declare var $: any;
 
 @Component({
   selector: 'app-no-page-found',
@@ -7,13 +9,19 @@ import { Meta } from '@angular/platform-browser';
   styleUrls: ['./no-page-found.component.scss']
 })
 export class NoPageFoundComponent implements OnInit {
+  uuid: string;
 
-  constructor(private meta: Meta) {
+  constructor(private http: CustomCardService) {
+    this.uuid = '62fcf55e-7a6a-46ad-8852-fcc1292843b9';
   }
 
   ngOnInit() {
-    this.meta.removeTag('name="general"');
-    this.meta.updateTag({ name: 'component', content: 'app-no-page-found' });
+    $('#float-social-block').removeClass('ocultar-phone');
+    this.getNoFoundService();
+  }
+
+  getNoFoundService() {
+    this.http.getMetaService(this.uuid);
   }
 
 }

@@ -22,7 +22,10 @@ export class TecnologiesComponent implements OnInit {
   visible: boolean;
   flagUbication: string;
   titleInternalMenu: string;
+  edge: boolean;
+
   @Output() propagar = new EventEmitter<DataMenu>();
+
   @Input() type: string;
 
   constructor(
@@ -41,6 +44,12 @@ export class TecnologiesComponent implements OnInit {
     };
     //this.propagar.emit(this.datosMenu);
     this.getItemsTecnologies();
+
+    if (/Edge\/\d./i.test(navigator.userAgent)){
+      if(window.screen.width>1100){
+      this.edge = true;
+      }
+    }
   }
 
   getItemsTecnologies() {
@@ -85,4 +94,5 @@ export class TecnologiesComponent implements OnInit {
       });
     }
   }
+
 }

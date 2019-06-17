@@ -1,7 +1,0 @@
-services:
-  webform_rest.uninstall_validator:
-    class: Drupal\webform_rest\WebformRestUninstallValidator
-    tags:
-      - { name: module_install.uninstall_validator }
-    arguments: ['@config.factory']
-    lazy: true
