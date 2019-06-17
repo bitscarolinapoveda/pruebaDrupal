@@ -2,13 +2,12 @@
 
 namespace Drupal\content_sync\Normalizer;
 
-use Drupal\content_sync\ContentSyncManager;
 use Drupal\content_sync\Plugin\SyncNormalizerDecoratorManager;
 use Drupal\content_sync\Plugin\SyncNormalizerDecoratorTrait;
+use Drupal\Core\Entity\ContentEntityBase;
 use Drupal\Core\Entity\ContentEntityInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Entity\RevisionableInterface;
-use Drupal\Core\Url;
 use Drupal\serialization\Normalizer\ContentEntityNormalizer as BaseContentEntityNormalizer;
 
 /**
@@ -59,15 +58,10 @@ class ContentEntityNormalizer extends BaseContentEntityNormalizer {
       // Get the ID key from the base field definition for the bundle key or
       // default to 'value'.
       $key_id = isset($base_field_definitions[$bundle_key]) ? $base_field_definitions[$bundle_key]->getFieldStorageDefinition()
-        ->getMainPropertyName() : 'value';
-
+                                                                                                  ->getMainPropertyName() : 'value';
       // Normalize the bundle if it is not explicitly set.
       $bundle = isset($data[$bundle_key][0][$key_id]) ? $data[$bundle_key][0][$key_id] : (isset($data[$bundle_key]) ? $data[$bundle_key] : NULL);
     }
-
-    // Decorate data before denormalizing it.
-    $this->decorateDenormalization($data, $entity_type_id, $format, $context);
-
     // Resolve references
     $this->fixReferences($data, $entity_type_id, $bundle);
 
@@ -90,35 +84,21 @@ class ContentEntityNormalizer extends BaseContentEntityNormalizer {
     /* @var ContentEntityInterface $object */
     $normalized_data = parent::normalize($object, $format, $context);
 
-    $normalized_data['_content_sync'] = $this->getContentSyncMetadata($object, $context);
-
+    $normalized_data['_content_sync'] = [
+      'entity_type' => $object->getEntityTypeId()
+    ];
     /**
      * @var \Drupal\Core\Entity\ContentEntityBase $object
      */
     $referenced_entities = $object->referencedEntities();
-
-    // Add node uuid for menu link if any.
-    if ($object->getEntityTypeId() == 'menu_link_content') {
-      if ($entity = $this->getMenuLinkNodeAttached($object)) {
-        $normalized_data['_content_sync']['menu_entity_link'][$entity->getEntityTypeId()] = $entity->uuid();
-        $referenced_entities[] = $entity;
-      }
-    }
-
     if (!empty($referenced_entities)) {
+      $normalized_data['_content_sync']['entity_dependencies'] = [];
       $dependencies = [];
       foreach ($referenced_entities as $entity) {
-        $reflection = new \ReflectionClass($entity);
-        if ($reflection->implementsInterface(ContentEntityInterface::class)) {
-          $ids = [
-            $entity->getEntityTypeId(),
-            $entity->bundle(),
-            $entity->uuid(),
-          ];
-          $dependency = implode(ContentSyncManager::DELIMITER, $ids);
-          if (!in_array($dependency, $dependencies)) {
-            $dependencies[$entity->getEntityTypeId()][] = $dependency;
-          }
+        if (is_a($entity, ContentEntityBase::class)) {
+          /** @var ContentEntityInterface $entity */
+          $dependency_name = $entity->getEntityTypeId() . "." . $entity->bundle() . "." . $entity->uuid();
+          $dependencies[$entity->getEntityTypeId()][] = $dependency_name;
         }
       }
       $normalized_data['_content_sync']['entity_dependencies'] = $dependencies;
@@ -128,37 +108,6 @@ class ContentEntityNormalizer extends BaseContentEntityNormalizer {
       $this->decorateNormalization($normalized_data, $object, $format, $context);
     }
     return $normalized_data;
-  }
-
-  /**
-   * Gets a node attached to a menu link. The node has already been imported.
-   *
-   * @param \Drupal\Core\Entity\EntityInterface $object
-   *   Menu Link Entity
-   *
-   * @return bool|\Drupal\Core\Entity\EntityInterface|null
-   *   Node Entity.
-   *
-   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
-   */
-  protected function getMenuLinkNodeAttached($object) {
-    $entity = FALSE;
-
-    $uri = $object->get('link')->getString();
-    $url = Url::fromUri($uri);
-    $route_parameters = NULL;
-    try {
-      $route_parameters = $url->getRouteParameters();
-    }
-    catch (\Exception $e) {
-      // If menu link is linked to a non-node page - just do nothing.
-    }
-    if (count($route_parameters) == 1) {
-      $entity_id = reset($route_parameters);
-      $entity_type = key($route_parameters);
-      $entity = \Drupal::entityTypeManager()->getStorage($entity_type)->load($entity_id);
-    }
-    return $entity;
   }
 
   /**
@@ -173,19 +122,6 @@ class ContentEntityNormalizer extends BaseContentEntityNormalizer {
    */
   public function supportsDenormalization($data, $type, $format = NULL) {
     return parent::supportsDenormalization($data, $type, $format);
-  }
-
-  /**
-   * @param $object
-   * @param array $context
-   *
-   * @return array
-   */
-  protected function getContentSyncMetadata($object, $context = []) {
-    $metadata = [
-      'entity_type' => $object->getEntityTypeId(),
-    ];
-    return $metadata;
   }
 
   /**
@@ -206,36 +142,23 @@ class ContentEntityNormalizer extends BaseContentEntityNormalizer {
       $field_definitions = $this->entityManager->getFieldDefinitions($entity_type_id, $bundle);
     }
     else {
-      $bundles = array_keys($this->entityManager->getBundleInfo($entity_type_id));
-      $field_definitions = [];
-      foreach ($bundles as $bundle) {
-        $field_definitions_bundle = $this->entityManager->getFieldDefinitions($entity_type_id, $bundle);
-        if (is_array($field_definitions_bundle)) {
-          $field_definitions += $field_definitions_bundle;
-        }
-      }
+      $field_definitions = $this->entityManager->getBaseFieldDefinitions($entity_type_id);
     }
     foreach ($field_definitions as $field_name => $field_definition) {
       // We are only interested in importing content entities.
       if (!is_a($field_definition->getClass(), '\Drupal\Core\Field\EntityReferenceFieldItemList', TRUE)) {
         continue;
       }
-      if (!empty($data[$field_name]) && is_array($data[$field_name])) {
+      if (is_array($data[$field_name]) && !empty($data[$field_name])) {
         $key = $field_definition->getFieldStorageDefinition()
-          ->getMainPropertyName();
-        foreach ($data[$field_name] as $i => &$item) {
-          if (!empty($item['target_uuid'])) {
+                                ->getMainPropertyName();
+        foreach ($data[$field_name] as &$item) {
+          if (!empty($item[$key_entityid]) && !empty($item['target_uuid'])) {
             $reference = $this->entityManager->loadEntityByUuid($item['target_type'], $item['target_uuid']);
             if ($reference) {
               $item[$key] = $reference->id();
               if (is_a($reference, RevisionableInterface::class, TRUE)) {
                 $item['target_revision_id'] = $reference->getRevisionId();
-              }
-            }
-            else {
-              $reflection = new \ReflectionClass($this->entityManager->getStorage($item['target_type'])->getEntityType()->getClass());
-              if ($reflection->implementsInterface(ContentEntityInterface::class)) {
-                unset($data[$field_name][$i]);
               }
             }
           }
@@ -254,14 +177,7 @@ class ContentEntityNormalizer extends BaseContentEntityNormalizer {
       $field_definitions = $this->entityManager->getFieldDefinitions($entity_type_id, $bundle);
     }
     else {
-      $bundles = array_keys($this->entityManager->getBundleInfo($entity_type_id));
-      $field_definitions = [];
-      foreach ($bundles as $bundle) {
-        $field_definitions_bundle = $this->entityManager->getFieldDefinitions($entity_type_id, $bundle);
-        if (is_array($field_definitions_bundle)) {
-          $field_definitions += $field_definitions_bundle;
-        }
-      }
+      $field_definitions = $this->entityManager->getBaseFieldDefinitions($entity_type_id);
     }
     $field_names = array_keys($field_definitions);
     foreach ($data as $field_name => $field_data) {

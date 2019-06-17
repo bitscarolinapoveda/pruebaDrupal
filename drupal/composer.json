@@ -20,7 +20,7 @@
                 "drush/drush": "^9.6",
                 "drupal/pathauto": "^1.4",
                 "drupal/swiftmailer": "^1.0@beta",
-                "drupal/content_sync": "^2.1"
+                "drupal/content_sync": "~2.0.0"
         },
         "replace": {},
         "minimum-stability": "dev",

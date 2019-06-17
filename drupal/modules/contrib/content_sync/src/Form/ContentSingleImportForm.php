@@ -25,7 +25,7 @@ class ContentSingleImportForm extends FormBase {
   protected $contentImporter;
 
   /**
-   * ContentImportForm constructor.
+   * ContentExportForm constructor.
    */
   public function __construct(EntityTypeManagerInterface $entity_type_manager, ContentImporterInterface $content_importer) {
     $this->entityTypeManager = $entity_type_manager;

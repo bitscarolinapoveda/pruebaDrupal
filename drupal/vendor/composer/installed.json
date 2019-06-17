@@ -2830,18 +2830,18 @@
     },
     {
         "name": "drupal/content_sync",
-        "version": "2.1.0",
-        "version_normalized": "2.1.0.0",
+        "version": "2.0.0",
+        "version_normalized": "2.0.0.0",
         "source": {
             "type": "git",
             "url": "https://git.drupalcode.org/project/content_sync.git",
-            "reference": "8.x-2.1"
+            "reference": "8.x-2.0"
         },
         "dist": {
             "type": "zip",
-            "url": "https://ftp.drupal.org/files/projects/content_sync-8.x-2.1.zip",
-            "reference": "8.x-2.1",
-            "shasum": "6eab25cdeed48efdd608db40191243f0bd61db47"
+            "url": "https://ftp.drupal.org/files/projects/content_sync-8.x-2.0.zip",
+            "reference": "8.x-2.0",
+            "shasum": "8382a422c907f353bdbaad13ea788390a13038eb"
         },
         "require": {
             "drupal/core": "*"
@@ -2852,7 +2852,7 @@
                 "dev-2.x": "2.x-dev"
             },
             "drupal": {
-                "version": "8.x-2.1",
+                "version": "8.x-2.0",
                 "datestamp": "1551619984",
                 "security-coverage": {
                     "status": "covered",
@@ -2860,7 +2860,7 @@
                 }
             }
         },
-        "installation-source": "dist",
+        "installation-source": "source",
         "notification-url": "https://packages.drupal.org/8/downloads",
         "license": [
             "GPL-2.0-or-later"

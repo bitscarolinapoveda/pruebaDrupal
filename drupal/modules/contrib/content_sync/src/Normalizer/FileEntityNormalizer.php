@@ -64,14 +64,7 @@ class FileEntityNormalizer extends ContentEntityNormalizer {
           if (!file_exists($file) || (md5_file($file) !== md5_file($source))) {
             $dir = $this->fileSystem->dirname($data['uri'][0]['value']);
             file_prepare_directory($dir, FILE_CREATE_DIRECTORY);
-            $uri = file_unmanaged_copy($source, $data['uri'][0]['value']);
-            $data['uri'] = [
-              [
-                'value' => $uri,
-                'url' => str_replace($GLOBALS['base_url'], '', file_create_url($uri))
-              ]
-            ];
-
+            $data['uri'] = file_unmanaged_copy($source, $data['uri'][0]['value']);
             // We just need a method to create the image.
             $file_data = '';
           }
@@ -131,7 +124,7 @@ class FileEntityNormalizer extends ContentEntityNormalizer {
 
     // Set base64-encoded file contents to the "data" property.
     if (!empty($context['content_sync_file_base_64'])) {
-      $file_data = base64_encode(file_get_contents($object->getFileUri()));
+      $file_data = base64_encode(file_get_contents($this->fileSystem->realpath($object->getFileUri())));
       $data['data'] = [['value' => $file_data]];
     }
 
