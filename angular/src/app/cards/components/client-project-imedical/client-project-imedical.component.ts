@@ -11,6 +11,8 @@ declare var $: any;
 })
 export class ClientProjectImedicalComponent implements OnInit {
   titleLeft: string;
+  titleCard: string;
+  titleSection: string;
   imgSrcClient: string;
   nameClient: string;
   titleRight: string;
@@ -30,6 +32,8 @@ export class ClientProjectImedicalComponent implements OnInit {
 
   constructor(private _http: CustomCardService) {
     this.titleLeft = '';
+    this.titleCard = '';
+    this.titleSection = '';
     this.imgSrcClient = '';
     this.nameClient = '';
     this.titleRight = '';
@@ -56,11 +60,10 @@ export class ClientProjectImedicalComponent implements OnInit {
         params.data = this._http.addImageField(params.data, ['field_image']);
         if (params.data.length > 0) {
 
-          this.titleCard = params.header[1].data.title_column_left;
+          this.titleLeft = params.header[1].data.title_left;
           this.imgSrcClient = params.data[0].field_image.url;
           this.nameClient = params.data[0].field_image.alt;
-          this.titleSection = params.header[2].data.title_column_right;
-
+          this.titleRight = params.header[2].data.title_right;
 
           this.titleProject = params.data[0].field_title_description;
           this.summaryProject = params.data[0].field_description;
