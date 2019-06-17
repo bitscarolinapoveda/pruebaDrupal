@@ -80,6 +80,11 @@ export class BannerComponent implements OnInit {
             } else {
                 this.bannerBackground = this.imgFondo;
             }
+            if (params.others_urls[this.languagueBrowser] !== '' &&
+                params.others_urls[this.languagueBrowser] !== '/' + this.languagueBrowser &&
+                params.others_urls[this.languagueBrowser] !== '/node') {
+                this.router.navigate([params.others_urls[this.languagueBrowser]]);
+            }
         });
     }
 
@@ -93,17 +98,25 @@ export class BannerComponent implements OnInit {
             for (let index = 0; index < servicesProduct.length; index++) {
                 cont = 0;
                 for (let value in servicesProduct[index].others_urls) {
-                    if (servicesProduct[index].others_urls[value].indexOf(this.titulo) > -1 &&
-                     servicesProduct[index].field_large_image !== undefined) {
-                      cont ++;
+                    var titulo_comd = servicesProduct[index].others_urls[value].split('/');
+                    if(value === 'es'){
+                        var result = titulo_comd[2];
+                    } else {
+                        var result = titulo_comd[3];
+                    }
+                    if (result !== undefined) {
+                        if (result.indexOf(this.titulo) > -1 &&
+                            servicesProduct[index].field_large_image !== undefined) {
+                            cont++;
+                        }
                     }
                 }
                 if (cont > 0) {
-                       this.bannerBackground = servicesProduct[index].field_large_image.url;
-                       this.bannerDescrip = this.textFilter.filterHtml(servicesProduct[index].field_descriptions);
-                       this.bannerTitle = servicesProduct[index].title;
-                       this.router.navigate([servicesProduct[index].others_urls[this.languagueBrowser]]);
-                       break;
+                    this.bannerBackground = servicesProduct[index].field_large_image.url;
+                    this.bannerDescrip = this.textFilter.filterHtml(servicesProduct[index].field_descriptions);
+                    this.bannerTitle = servicesProduct[index].title;
+                    this.router.navigate([servicesProduct[index].others_urls[this.languagueBrowser]]);
+                    break;
                 }
             }
             if (cont === 0) {
