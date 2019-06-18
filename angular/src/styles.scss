@@ -137,5 +137,12 @@ body {
     text-align: center;
 }
 
+.centred{
+    #footer-block-contact{
+      display: flex;
+      justify-content: center;
+    }
+  }
+
 
 @import './src/assets/scss/keyframe.scss';

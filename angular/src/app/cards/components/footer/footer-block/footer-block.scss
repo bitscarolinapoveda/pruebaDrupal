@@ -12,6 +12,7 @@
       padding: 0;
 
       .footer-block-location {
+   
         .location-row {
           margin: 0;
 
@@ -70,6 +71,13 @@
             }
           }
         }
+      }
+    }
+    .centred{
+      .footer-block-location{
+        display: flex;
+        justify-content: center;
+        margin-left: 3em;
       }
     }
   }
