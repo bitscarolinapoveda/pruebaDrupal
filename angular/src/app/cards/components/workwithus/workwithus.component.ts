@@ -21,6 +21,7 @@ export class WorkWithUsComponent implements OnInit {
   datosMenu: DataMenu;
   @Input() type: string;
   linkExternal: boolean;
+  titleInternalMenu: string;
 
   constructor(
     private router: ActivatedRoute,
@@ -31,6 +32,7 @@ export class WorkWithUsComponent implements OnInit {
     this.url = '';
     this.workWithUsButton = '';
     this.workWithUsAdicional = '';
+    this.titleInternalMenu= '';
   }
 
   ngOnInit(): void {
@@ -38,14 +40,6 @@ export class WorkWithUsComponent implements OnInit {
     while (this.type.indexOf('-') > -1) {
       this.type = this.type.replace('-', '_');
     }
-
-    this.datosMenu = {
-      label: 'RELACIONADOS',
-      id: 'a2',
-      url: '/imedical'
-    };
-
-    this.propagar.emit(this.datosMenu);
     this.getWorkwithUsItems();
   }
 
@@ -58,6 +52,15 @@ export class WorkWithUsComponent implements OnInit {
       this.workWithUsButton = items.body[1].data;
       this.workWithUsThirdText = items.body[3].data;
       this.workWithUsAdicional = items.body[2].data;
+      this.titleInternalMenu = items.header[2].data.internal_menu_title;
+
+      this.datosMenu = {
+        label: this.titleInternalMenu,
+        id: 'a2',
+        url: '/imedical'
+      };
+
+      this.propagar.emit(this.datosMenu);
     });
   }
 }

@@ -37,6 +37,14 @@ class WorkWithUs extends CardBase {
             'weight' => 1,
             'max_length' => 500,
           ],
+          'internal_menu_title' => [
+            'type' => 'textfield',
+            'title' => $this->t('Título menú interno'),
+            'service_field' => 'internal_menu_title',
+            'show' => 1,
+            'weight' => 1,
+            'max_length' => 25,
+          ],
         ],
       ],
       'body' => [
