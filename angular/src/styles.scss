@@ -126,4 +126,16 @@ body {
     overflow-y: auto !important;
     overflow-x: hidden !important;
 }
+
+.text-align-justify {
+    text-align: justify;
+}
+.text-align-right {
+    text-align: right;
+}
+.text-align-center {
+    text-align: center;
+}
+
+
 @import './src/assets/scss/keyframe.scss';

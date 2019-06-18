@@ -16,6 +16,7 @@ export class TestimoniesComponent implements OnInit {
   @Input() type: string;
   @Output() propagar = new EventEmitter<DataMenu>();
   datosMenu: DataMenu;
+  titleInternalMenu: string;
   public carousel;
   public images;
 
@@ -23,6 +24,7 @@ export class TestimoniesComponent implements OnInit {
     private testimonies: CustomCardService,
   ) {
     this.visible = false;
+    this.titleInternalMenu = '';
   }
 
   ngOnInit() {
@@ -38,11 +40,12 @@ export class TestimoniesComponent implements OnInit {
         this.testimoniesTitle = itemsw.header[0].data.title;
         this.testimoniesSubTitle = itemsw.header[1].data.sub_title;
         this.testimoniesData = itemsw.data;
+        this.titleInternalMenu = itemsw.header[2].data.internal_menu_title;
 
         if (this.testimoniesTitle !== '' && this.testimoniesData.length !== 0) {
           this.visible = true;
           this.datosMenu = {
-            label: 'TESTIMONIES',
+            label: this.titleInternalMenu,
             id: 'a12',
             url: '/imedical'
           };

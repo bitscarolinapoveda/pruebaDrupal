@@ -20,7 +20,16 @@ class VideoPlusInformationBlock extends CardBase {
   public function defaultConfiguration() {
     return [
       'header' => [
-        'table_fields' => [],
+        'table_fields' => [
+          'internal_menu_title' => [
+            'type' => 'textfield',
+            'title' => $this->t('Título menú interno'),
+            'service_field' => 'internal_menu_title',
+            'show' => 1,
+            'weight' => 1,
+            'max_length' => 25,
+          ],
+        ],
       ],
       'body' => [
         'table_fields' => [],

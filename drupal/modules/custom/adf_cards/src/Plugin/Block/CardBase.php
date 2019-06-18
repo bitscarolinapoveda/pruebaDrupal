@@ -101,7 +101,11 @@ class CardBase extends BlockBase implements ContainerFactoryPluginInterface {
     $keys = array_keys($this->configuration);
     // Se recorre las claves creadas en la configuración para crear el formulario.
     foreach ($keys as $key) {
-      if (isset($this->configuration[$key]['table_fields']) && count($this->configuration[$key]['table_fields']) > 0) {
+      if (isset($this->configuration[$key]['table_fields'])
+        &&
+        is_array($this->configuration[$key]['table_fields'])
+        &&
+        count($this->configuration[$key]['table_fields']) > 0) {
         $form[$key] = [
           '#type' => 'details',
           '#title' => $this->t($this->key_config[$key]['title']),
@@ -664,8 +668,10 @@ class CardBase extends BlockBase implements ContainerFactoryPluginInterface {
           break;
 
         default:
-          $element['data'] = $item['input'];
-          $element['type'] = 'default';
+          if (isset($item) && isset($item['input'])) {
+            $element['data'] = $item['input'];
+            $element['type'] = 'default';
+          }
           break;
       }
 

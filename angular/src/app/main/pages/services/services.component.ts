@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Meta } from '@angular/platform-browser';
 
 declare var $: any;
 
@@ -11,13 +10,11 @@ declare var $: any;
 export class ServicesComponent implements OnInit {
   public title: string;
 
-  constructor(private meta: Meta) {
+  constructor() {
     this.title = 'Servicios';
   }
 
   ngOnInit() {
-    this.meta.removeTag('name="general"');
-    this.meta.updateTag({ name: 'component', content: 'app-services' });
     $('#float-social-block').removeClass('ocultar-phone');
   }
 }

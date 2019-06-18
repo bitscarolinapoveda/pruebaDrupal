@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Meta } from '@angular/platform-browser';
+import { CustomCardService } from 'src/app/services/cards/v1-card.services';
+import { ActivatedRoute, Router } from '@angular/router';
 
 declare var $: any;
 
@@ -10,16 +11,31 @@ declare var $: any;
 })
 export class HomeComponent implements OnInit {
   type: string;
+  uuid: string;
+  languagueBrowser: any;
 
-  constructor(private meta: Meta) {
+  constructor(private home: CustomCardService, private router: Router) {
     this.type = 'home';
+    this.uuid = 'be6c9489-edec-441e-a542-5927cdfe6e89';
+    this.languagueBrowser = '';
   }
 
   ngOnInit() {
     $(window).scrollTop(0);
-    this.meta.updateTag({ name: 'component', content: 'app-home' });
-    this.meta.addTag({ name: 'general', content: 'Angular 7' });
     $('#float-social-block').removeClass('ocultar-phone');
+    this.getHomeService();
+  }
+
+  getHomeService() {
+    this.home.getMetaService(this.uuid);
+    this.languagueBrowser = this.home.getLanguageBrowser();
+    this.home.getCustomContentBasicPage(this.uuid).subscribe(params => {
+      if (params.others_urls[this.languagueBrowser] !== '' ||
+        params.others_urls[this.languagueBrowser] !== '/' + this.languagueBrowser ||
+        params.others_urls[this.languagueBrowser] !== '/node') {
+        this.router.navigate([params.others_urls[this.languagueBrowser]]);
+      }
+    });
   }
 
 }
