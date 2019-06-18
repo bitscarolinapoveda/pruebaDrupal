@@ -247,6 +247,10 @@ class BitsCardsOutputJsonCard {
               $text = $node->get($field)->getValue();
               $data[$field] = $text[0]['value'];
             }
+            elseif ($type === 'metatag'){
+              $metatags = $node->get('field_meta_tags')->value;
+              $data[$field] = unserialize($metatags);
+            }
             else {
               $data[$field] = $node->get($field)->getString();
             }

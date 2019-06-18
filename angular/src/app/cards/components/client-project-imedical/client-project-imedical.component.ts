@@ -11,6 +11,8 @@ declare var $: any;
 })
 export class ClientProjectImedicalComponent implements OnInit {
   titleLeft: string;
+  titleCard: string;
+  titleSection: string;
   imgSrcClient: string;
   nameClient: string;
   titleRight: string;
@@ -26,9 +28,12 @@ export class ClientProjectImedicalComponent implements OnInit {
   visible: boolean;
   linkExternal: boolean;
   show: boolean;
+  titleInternalMenu: string;
 
   constructor(private _http: CustomCardService) {
     this.titleLeft = '';
+    this.titleCard = '';
+    this.titleSection = '';
     this.imgSrcClient = '';
     this.nameClient = '';
     this.titleRight = '';
@@ -39,6 +44,7 @@ export class ClientProjectImedicalComponent implements OnInit {
     this.linkProjectTitle = '';
     this.visible = false;
     this.show = false;
+    this.titleInternalMenu = '';
   }
 
   ngOnInit() {
@@ -53,20 +59,23 @@ export class ClientProjectImedicalComponent implements OnInit {
         params = this._http.getFilterLists(this.principal, params);
         params.data = this._http.addImageField(params.data, ['field_image']);
         if (params.data.length > 0) {
+
           this.titleLeft = params.header[1].data.title_left;
           this.imgSrcClient = params.data[0].field_image.url;
           this.nameClient = params.data[0].field_image.alt;
           this.titleRight = params.header[2].data.title_right;
+
           this.titleProject = params.data[0].field_title_description;
           this.summaryProject = params.data[0].field_description;
           this.tags = params.data[0].field_tags;
           this.linkProjectUrl = params.data[0].field_url_client[0].uri;
           this.linkProjectTitle = params.data[0].field_url_client[0].title;
           this.linkExternal = params.data[0].field_url_client[0].external;
+          this.titleInternalMenu = params.header[3].data.internal_menu_title;
           if (params.data[0]) {
             this.visible = true;
             this.datosMenu = {
-              label: 'CLIENTS',
+              label: this.titleInternalMenu,
               id: 'a8',
               url: '/imedical'
             };

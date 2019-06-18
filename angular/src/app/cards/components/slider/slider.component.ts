@@ -17,9 +17,11 @@ export class SliderComponent implements OnInit {
     @Input() type: string;
     principalSlider: General;
     visible: boolean;
+    titleInternalMenu: string;
 
     constructor(private _cardService: CustomCardService) {
         this.sliderArray = [];
+        this.titleInternalMenu = '';
     }
     ngOnInit() {
         this.getSliderItems();
@@ -27,11 +29,11 @@ export class SliderComponent implements OnInit {
     getSliderItems() {
         this._cardService.getCustomCardInformation('allproductsandservicescard_2').subscribe(params => {
             this.principalSlider = this._cardService.getFilterPrincipalType(params, 'field_slider', this.type);
-
             this._cardService.getCustomCardInformation('sliderbackmediarightcard').subscribe(items => {
                 items = this._cardService.getFilterLists(this.principalSlider, items);
                 items.data = this._cardService.addImageField(items.data, ['field_background_image']);
                 items.data = this._cardService.addImageField(items.data, ['field_right_image']);
+                this.titleInternalMenu = items.header[1].data.internal_menu_title;
                 let sliders = [];
                 for (let item of items.data) {
                     let slide: Slide;
@@ -50,7 +52,7 @@ export class SliderComponent implements OnInit {
                 if (this.sliderArray.length !== 0) {
                     this.visible = true;
                     this.datosMenu = {
-                        label: 'SLIDER',
+                        label: this.titleInternalMenu,
                         id: 'a61',
                         url: '/imedical'
                     };
