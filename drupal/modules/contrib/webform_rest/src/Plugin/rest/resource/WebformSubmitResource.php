@@ -36,6 +36,39 @@ class WebformSubmitResource extends ResourceBase {
    */
   public function post(array $webform_data) {
 
+    foreach ($webform_data as $key => $field) {
+      if (isset($field['name']) && isset($field['mime']) && isset($field['blob'])) {
+        if (isset($webform_data[$key])) {
+          $temp_file_path = file_unmanaged_save_data(base64_decode($webform_data['fileupload']['blob']));
+          $file_uri = 'public://paso8.pdf';
+          // Begin building file entity.
+          $file = File::create([]);
+          // Carga el usuario
+          $file->setOwnerId(1);//$this->currentUser->id());
+          // Coloca un nombrte que no este repetido
+          $file->setFilename($webform_data[$key]['name']);
+          // Mira el tipo de archivo que es
+          $file->setMimeType($webform_data[$key]['mime']);
+          // Coloca la ruta del archivo
+          $file->setFileUri($file_uri);
+          // Set the size. This is done in File::preSave() but we validate the file
+          // before it is saved.
+          $file->setSize(@filesize($temp_file_path));
+          // Validate the file entity against entity-level validation and field-level
+          // validators.
+          //$this->validate($file, $validators);
+          // Move the file to the correct location after validation. Use
+          // FILE_EXISTS_ERROR as the file location has already been determined above
+          // in file_unmanaged_prepare().
+          if (!file_unmanaged_move($temp_file_path, $file_uri, FILE_EXISTS_RENAME)) {
+            throw new HttpException(500, 'Temporary file could not be moved to file location');
+          }
+          $file->save();
+          $webform_data[$key] = [$file->id()];
+        }
+      }
+    }
+
     // Basic check for webform ID.
     if (empty($webform_data['webform_id'])) {
       $errors = [
