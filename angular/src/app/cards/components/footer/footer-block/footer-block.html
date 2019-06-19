@@ -1,9 +1,9 @@
 <ng-container>
     <section id="footer-block-location">
         <div class="row row-block">
-            <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-block"
+            <div  [ngClass]="mayor ?'col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-block':'col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-block centred'"
                 *ngFor="let ubicacion of dataUbicaciones; let i = index">
-                <div class="footer-block-location" [class.site]="i > 0" [class.random]="i > 0">
+                <div class="footer-block-location" [class.site]="i > 0" [class.random]="i > 0" >
                     <div class="row location-row">
                         <div class="col-10 info-location">
                             <h2 class="title-location">{{ubicacion.title}}</h2>
