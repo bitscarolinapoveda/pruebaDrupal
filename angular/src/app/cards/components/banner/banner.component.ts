@@ -64,8 +64,8 @@ export class BannerComponent implements OnInit {
     }
 
     getBannerService() {
-        this.banner.getMetaService(this.uuid);
         this.banner.getCustomContentBasicPage(this.uuid).subscribe(params => {
+            this.banner.getMetaService(params.metatags);
             this.bannerTitle = params.title;
             this.bannerDescrip = this.textFilter.filterHtml(params.body);
             if (this.bannerDescrip === null) {
@@ -112,6 +112,7 @@ export class BannerComponent implements OnInit {
                     }
                 }
                 if (cont > 0) {
+                    this.banner.getMetaService(servicesProduct[index].field_meta_tags);
                     this.bannerBackground = servicesProduct[index].field_large_image.url;
                     this.bannerDescrip = this.textFilter.filterHtml(servicesProduct[index].field_descriptions);
                     this.bannerTitle = servicesProduct[index].title;

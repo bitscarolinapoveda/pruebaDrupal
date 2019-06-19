@@ -27,9 +27,9 @@ export class HomeComponent implements OnInit {
   }
 
   getHomeService() {
-    this.home.getMetaService(this.uuid);
     this.languagueBrowser = this.home.getLanguageBrowser();
     this.home.getCustomContentBasicPage(this.uuid).subscribe(params => {
+      this.home.getMetaService(params.metatags);
       if (params.others_urls[this.languagueBrowser] !== '' ||
         params.others_urls[this.languagueBrowser] !== '/' + this.languagueBrowser ||
         params.others_urls[this.languagueBrowser] !== '/node') {

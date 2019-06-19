@@ -51,6 +51,7 @@ export class PqrsComponent implements OnInit {
   languagueBrowser: any;
   titlePrincipal: any;
   descripPrincipal: any;
+  complement: any;
 
   constructor(private _http: HttpService, private _service: CustomCardService, private http_pais: HttpClient, config: NgbPopoverConfig, private fb: FormBuilder,
     private rutaActiva: ActivatedRoute) {
@@ -83,6 +84,7 @@ export class PqrsComponent implements OnInit {
       mime: '',
       blob: '',
       };
+    this.complement = [];
   }
 
   mostrarDatos(id) {
@@ -178,6 +180,8 @@ export class PqrsComponent implements OnInit {
     this.getDataTitle();
 
     $('#float-social-block').removeClass('ocultar-phone');
+
+    this.getComplementForm();
   }
 
   resolved(captchaResponse: string) {
@@ -266,6 +270,12 @@ export class PqrsComponent implements OnInit {
       }
     }
     );
+  }
+
+  getComplementForm() {
+    this._service.getCustomCardInformation('complementsformbitsamericas').subscribe(params => {
+      this.complement = params.header;
+    });
   }
 
   onFileChange(event) {

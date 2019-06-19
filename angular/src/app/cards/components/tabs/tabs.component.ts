@@ -63,6 +63,7 @@ export class TabsComponent implements OnInit {
   type: any;
   languagueBrowser: any;
   ruta: any;
+  complement: any;
 
 
   constructor(private _http: HttpService, private _service: CustomCardService, private http_pais: HttpClient, config: NgbPopoverConfig,
@@ -86,6 +87,7 @@ export class TabsComponent implements OnInit {
     this.hover_buttom = 'Faltan datos por llenar';
     this.languagueBrowser = '';
     this.ruta = '';
+    this.complement = [];
   }
 
   mostrarDatos(id) {
@@ -202,6 +204,8 @@ export class TabsComponent implements OnInit {
 
     this.getPaises();
 
+    this.getComplementForm();
+
   }
 
   getChangeLanguage(lang) {
@@ -315,6 +319,12 @@ export class TabsComponent implements OnInit {
       this.listProduct = this.bandProduct;
       this.listService = this.bandService;
 
+    });
+  }
+
+  getComplementForm() {
+    this._service.getCustomCardInformation('complementsformbitsamericas').subscribe(params => {
+      this.complement = params.header;
     });
   }
 

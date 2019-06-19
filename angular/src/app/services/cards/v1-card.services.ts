@@ -46,28 +46,27 @@ export class CustomCardService {
     this.language = '';
   }
 
-  getMetaService(uuid) {
-    this.getCustomContentBasicPage(uuid).subscribe(params => {
-      if ( params.metatags !== false) {
-        if (params.metatags.title) {
-            this.meta.updateTag({ name: 'title', content: params.metatags.title });
-            this.titleService.setTitle(params.metatags.title);
+  getMetaService(params) {
+      if ( params !== false) {
+        if (params.title) {
+            this.meta.updateTag({ name: 'title', content: params.title });
+            this.titleService.setTitle(params.title);
         } else {
             this.titleService.setTitle('');
             this.meta.updateTag({ name: 'title', content: '' });
         }
-        if (params.metatags.description) {
-            this.meta.updateTag({ name: 'description', content: params.metatags.description });
+        if (params.description) {
+            this.meta.updateTag({ name: 'description', content: params.description });
         } else {
             this.meta.updateTag({ name: 'description', content: '' });
         }
-        if (params.metatags.abstract) {
-            this.meta.updateTag({ name: 'abstract', content: params.metatags.abstract });
+        if (params.abstract) {
+            this.meta.updateTag({ name: 'abstract', content: params.abstract });
         } else {
             this.meta.updateTag({ name: 'abstract', content: '' });
         }
-        if (params.metatags.keywords) {
-            this.meta.updateTag({ name: 'keywords', content: params.metatags.keywords });
+        if (params.keywords) {
+            this.meta.updateTag({ name: 'keywords', content: params.keywords });
         } else {
             this.meta.updateTag({ name: 'keywords', content: '' });
         }
@@ -78,8 +77,6 @@ export class CustomCardService {
         this.meta.updateTag({ name: 'keywords', content: '' });
         this.titleService.setTitle('');
       }
-
-    });
   }
 
   getCustomInfoIM(idblock): Observable<General> {
