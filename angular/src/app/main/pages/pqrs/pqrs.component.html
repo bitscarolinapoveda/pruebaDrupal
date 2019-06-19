@@ -9,8 +9,8 @@
 			name="formulario_contacto">
 			<app-message [dataMessage]="dataMessage"></app-message>
 			<ng-template #valid>
-				<div class="alert alert-danger" role="alert">
-					Campo obligatorio o invalido
+				<div class="alert alert-danger" role="alert" *ngIf="this.complement[0]?.data['alert_error'] !== '' && this.complement[0] !==  undefinded">
+					{{this.complement[0]?.data['alert_error']}}
 				</div>
 			</ng-template>
 			<div class="col-md-12 form-group">
@@ -21,7 +21,7 @@
 						<div class="col-md-6 item" *ngFor="let elementLayout of item">
 							<!-- Campos textfiel o tel. No incluye los select: pais, servicios de interes y productos de interes-->
 							<div
-								*ngIf="(elementLayout['#type'] == 'textfield' || elementLayout['#type'] == 'tel') && elementLayout['#webform_key'] != 'pais' && elementLayout['#webform_key'] != 'tipo_solicitante'">
+								*ngIf="(elementLayout['#type'] == 'textfield' || elementLayout['#type'] == 'tel') && elementLayout['#webform_key'] != 'pais' && elementLayout['#webform_key'] != 'tipo_solicitante'" class="pos-flex">
 								<label for="{{elementLayout['#webform_key']}}">{{elementLayout["#title"]}}
 									<span *ngIf="elementLayout['#required'] ==  true">*</span></label>
 								<input type="{{elementLayout['#type']}}" class="form-control"
@@ -36,7 +36,7 @@
 								</ng-container>
 							</div>
 							<!-- Campos email-->
-							<div *ngIf="elementLayout['#type'] == 'email'">
+							<div *ngIf="elementLayout['#type'] == 'email'" class="pos-flex">
 								<label for="{{elementLayout['#webform_key']}}">{{elementLayout["#title"]}}<span
 										*ngIf="elementLayout['#required'] ==  true">*</span></label>
 								<input type="{{elementLayout['#type']}}" class="form-control"
@@ -52,7 +52,7 @@
 								</ng-container>
 							</div>
 							<!-- Campos textarea-->
-							<div *ngIf="elementLayout['#type'] == 'textarea'">
+							<div *ngIf="elementLayout['#type'] == 'textarea'" class="pos-flex">
 								<label for="{{elementLayout['#webform_key']}}">{{elementLayout["#title"]}}<span
 										*ngIf="elementLayout['#required'] ==  true">*</span></label>
 								<textarea class="form-control" id="{{'pqrs__' +elementLayout['#webform_key']}}"
@@ -65,7 +65,7 @@
 								</ng-container>
 							</div>
 							<!-- Campo select pais, se debe mantener el nombre para que funcione el componente-->
-							<div *ngIf="elementLayout['#webform_key'] == 'pais'">
+							<div *ngIf="elementLayout['#webform_key'] == 'pais'" class="pos-flex">
 								<label for="{{elementLayout['#webform_key']}}">{{elementLayout['#title']}}<span
 										*ngIf="elementLayout['#required'] ==  true">*</span></label>
 								<ng-select #paisPQ class="select-autocomplete"
@@ -78,7 +78,7 @@
 									name="{{elementLayout['#webform_key']}}" [ngModel]="pais">
 							</div>
 							<!-- Campo select departamento o estado, se debe mantener el nombre para que funcione el componente-->
-							<div *ngIf="elementLayout['#webform_key'] == 'tipo_solicitante'">
+							<div *ngIf="elementLayout['#webform_key'] == 'tipo_solicitante'" class="pos-flex">
 								<label for="{{elementLayout['#webform_key']}}">{{elementLayout['#title']}}<span
 										*ngIf="elementLayout['#required'] ==  true">*</span></label>
 								<ng-select #departPQ class="select-autocomplete"
@@ -92,7 +92,7 @@
 									name="{{elementLayout['#webform_key']}}" [ngModel]="tipo">
 							</div>
 							<!-- Campos managed_file -->
-							<div *ngIf="elementLayout['#type'] == 'managed_file'">
+							<div *ngIf="elementLayout['#type'] == 'managed_file'" class="pos-flex">
 								<label for="{{elementLayout['#webform_key']}}">{{elementLayout["#title"]}}
 									<span *ngIf="elementLayout['#required'] ==  true">*</span></label>
 								<label for="hojav" class="hoja-v">{{hojaWU}}
@@ -164,9 +164,9 @@
 							<input type="checkbox" [checked]="checked" id="{{'pqrs__' +item['#webform_key']}}"
 								name="{{item['#webform_key']}}" value="false" required="{{item['#required'] ==  true}}"
 								ngModel>
-							<label ng-reflect-ng-class="" for="{{'pqrs__' +item['#webform_key']}}">He leído y
-								acepto los<a [routerLink]="ruta">
-									términos y condiciones
+							<label ng-reflect-ng-class="" for="{{'pqrs__' +item['#webform_key']}}" *ngIf="this.complement[2]?.data['link_descrip'] !== '' &&
+							this.complement[2] !==  undefinded">{{this.complement[2]?.data['link_descrip']}}<a [routerLink]="ruta" *ngIf="this.complement[1]?.data['link_approved'] !== '' && this.complement[1] !==  undefinded">
+								{{this.complement[1]?.data['link_approved']}}
 								</a>
 							</label>
 							<ng-template #tipQuestion>
@@ -188,10 +188,12 @@
 				siteKey="6LfycJsUAAAAANcZLFFQErxM92v-rNzuZTX6I3Ob" ngDefaultControl></re-captcha>
 			<ng-template #tipContent>{{hover_buttom}}</ng-template>
 			<button type="submit" class="btn btn-primary" [ngbTooltip]="tipContent"
-				[ngClass]="userForm.invalid?'disabled':''" [disabled]="userForm.invalid">
-				ENVIAR
+				[ngClass]="userForm.invalid?'disabled':''" [disabled]="userForm.invalid" *ngIf="this.complement[3]?.data['text_button'] !== '' &&
+				this.complement[3] !==  undefinded">
+				{{this.complement[3]?.data['text_button']}}
 			</button>
-			<div class="obligatorios col-md-12"> <span>*</span>Datos Obligatorios</div>
+			<div class="obligatorios col-md-12" *ngIf="this.complement[4]?.data['alert_required'] !== '' &&
+			this.complement[4] !==  undefinded"> <span>*</span>{{this.complement[4]?.data['alert_required']}}</div>
 		</form>
 	</div>
 </div>

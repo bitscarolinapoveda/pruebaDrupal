@@ -49,6 +49,7 @@ export class WorkusComponent implements OnInit {
   elementoForm: any;
   languagueBrowser: any;
   ruta: any;
+  complement: any;
 
   onSubmit(formulario) {
 
@@ -126,6 +127,7 @@ export class WorkusComponent implements OnInit {
     this.hojaWU = 'Subir Fichero';
     this.languagueBrowser = '';
     this.ruta = '';
+    this.complement = [];
   }
 
   mostrarDatosWS(id) {
@@ -158,6 +160,8 @@ export class WorkusComponent implements OnInit {
     this.getPaises();
 
     this.getForm();
+
+    this.getComplementForm();
 
   }
 
@@ -200,6 +204,12 @@ export class WorkusComponent implements OnInit {
       }
     }
     );
+  }
+
+  getComplementForm() {
+    this._service.getCustomCardInformation('complementsformbitsamericas').subscribe(params => {
+      this.complement = params.header;
+    });
   }
 
   getChangeLanguage(lang) {
