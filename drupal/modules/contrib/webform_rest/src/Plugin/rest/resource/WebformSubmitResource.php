@@ -7,6 +7,7 @@ use Drupal\webform\WebformSubmissionForm;
 use Drupal\rest\Plugin\ResourceBase;
 use Drupal\rest\ModifiedResourceResponse;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Drupal\file\Entity\File;
 
 /**
  * Creates a resource for submitting a webform.
