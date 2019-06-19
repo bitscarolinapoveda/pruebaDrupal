@@ -50,6 +50,7 @@ export class WorkusComponent implements OnInit {
   languagueBrowser: any;
   ruta: any;
   complement: any;
+  val_HojaVW: any;
 
   onSubmit(formulario) {
 
@@ -87,7 +88,7 @@ export class WorkusComponent implements OnInit {
 
             this.ngSelectW.active = [];
             this.pais = '';
-            this.hojaWU = 'Subir Fichero';
+            this.hojaWU = this.val_HojaVW;
 
             this.dataMessage.push(
               {
@@ -124,10 +125,11 @@ export class WorkusComponent implements OnInit {
     this.hojaWU = '';
     this.valido = false;
     this.hover_buttom = 'Faltan datos por llenar';
-    this.hojaWU = 'Subir Fichero';
+     this.hojaWU = '';
     this.languagueBrowser = '';
     this.ruta = '';
     this.complement = [];
+    this.val_HojaVW = '';
   }
 
   mostrarDatosWS(id) {
@@ -194,6 +196,10 @@ export class WorkusComponent implements OnInit {
             if (cont != 0) {
               listLayout[index] = [];
               for (var indexz in campoForm) {
+                if(campoForm[indexz]['#type'] === 'managed_file'){
+                  this.val_HojaVW = campoForm[indexz]['#placeholder'];
+                  this.hojaWU = this.val_HojaVW;
+                }
                 listLayout[index].push(campoForm[indexz]);
               }
             }
