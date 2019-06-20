@@ -24,6 +24,7 @@ export class CarouselControlsComponent implements OnInit {
   visible: boolean;
   @Input() type: string;
   show: boolean;
+  titleInternalMenu: string;
 
   constructor(
     private AchievementCarouselItems: ContentType,
@@ -65,6 +66,7 @@ export class CarouselControlsComponent implements OnInit {
     return this._cardService.getCustomCardInformation('achievementscard').subscribe(items => {
       items.data = this._cardService.addImageField(items.data, ['field_image']);
       this.CarouselControlArray = items.data;
+      this.titleInternalMenu = items.header[1].data.internal_menu_title;
       if (items.header[0] !== undefined) {
         this.caroseltitle = items.header[0].data.title;
       }
@@ -72,7 +74,7 @@ export class CarouselControlsComponent implements OnInit {
       if (this.caroseltitle !== '' && this.CarouselControlArray.length !== 0) {
         this.visible = true;
         this.datosMenu = {
-          label: 'RECONOCIMIENTOS',
+          label: this.titleInternalMenu,
           id: 'a3',
           url: ''
         };
@@ -86,4 +88,3 @@ export class CarouselControlsComponent implements OnInit {
     $('.images .container-img').css('opacity', '1');
   }
 }
-
