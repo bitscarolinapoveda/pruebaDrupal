@@ -47,7 +47,7 @@ export class CustomCardService {
   }
 
   getMetaService(params) {
-      if ( params !== false) {
+      if (params) {
         if (params.title) {
             this.meta.updateTag({ name: 'title', content: params.title });
             this.titleService.setTitle(params.title);
