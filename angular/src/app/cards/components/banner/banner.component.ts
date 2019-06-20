@@ -20,7 +20,7 @@ export class BannerComponent implements OnInit {
     bannerDescrip: string;
     principalBanner: General;
     languagueBrowser: any;
-
+    contact: false;
     phoneWidth = 500 * window.devicePixelRatio;
     tabletWidth = 1024 * window.devicePixelRatio;
     sxgaScreen = 1280 * window.devicePixelRatio;
@@ -40,6 +40,7 @@ export class BannerComponent implements OnInit {
     }
 
     ngOnInit() {
+
         $(window).scrollTop(0);
         this.languagueBrowser = this.banner.getLanguageBrowser();
         if (this.titulo !== '' && (this.imgFondo === '' || this.imgFondo === undefined)) {
@@ -48,11 +49,24 @@ export class BannerComponent implements OnInit {
         } else if (this.uuid === undefined || this.uuid === '') {
             this.getTitle();
             this.bannerTitle = this.titulo;
+            //this.uuid == "39ce2484-2be2-470b-9768-fed85f14bc87" ? this.contact = true : this.contact = false;
+            //console.log(this.contact);
         } else {
             this.bandera_sevice = true;
             this.getTitle();
             this.getBannerService();
         }
+
+        // VALIDA SI EL UUID ES IGUAL  CONTÁCTENOS PARA OCULTAR EL SOBRE
+        if ($("app-banner").attr("uuid") == "39ce2484-2be2-470b-9768-fed85f14bc87") {
+
+            setTimeout(function () {
+                $(".envolope").hide();
+                }, 1000);
+
+             } else {
+                 $(".envolope").show();
+             }
     }
 
     getTitle() {
@@ -99,7 +113,7 @@ export class BannerComponent implements OnInit {
                 cont = 0;
                 for (let value in servicesProduct[index].others_urls) {
                     var titulo_comd = servicesProduct[index].others_urls[value].split('/');
-                    if(value === 'es'){
+                    if (value === 'es') {
                         var result = titulo_comd[2];
                     } else {
                         var result = titulo_comd[3];

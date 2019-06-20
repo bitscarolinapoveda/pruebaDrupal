@@ -23,6 +23,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     $(window).scrollTop(0);
     $('#float-social-block').removeClass('ocultar-phone');
+    $(".envolope").show();
     this.getHomeService();
   }
 
