@@ -193,6 +193,10 @@ export class TabsComponent implements OnInit {
       $('.trabaje button').toggleClass('active');
       $('.contactenos button').toggleClass('active');
     });
+    // HACK SAFARI
+    $(".terminos_grupo [type='checkbox']+label a ").click(function(){
+      $(this).css("color","blue");
+    });
 
     this.getPopoverService();
     this.getPopoverQuestionService();

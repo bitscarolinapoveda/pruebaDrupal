@@ -112,6 +112,15 @@ input:-moz-placeholder {
 
   [type="checkbox"]+label a {
     color: #91b520;
+    height: 100%;
+
+    &:active{
+      text-decoration: underline !important;
+      line-height: 2;
+    }
+    &:focus{
+      text-decoration: underline;
+    }
   }
 
   [type="checkbox"]+label:after {
