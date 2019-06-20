@@ -92,7 +92,7 @@ class RedirectRestResource extends ResourceBase {
         }
 
         $redirectsIds = \Drupal::entityQuery('redirect')->execute();
-        $redirects = \Drupal::entityTypeManager()->getStorage('redirect')->loadMultiple($redirecsIds);
+        $redirects = \Drupal::entityTypeManager()->getStorage('redirect')->loadMultiple($redirectsIds);
 
         $data = [];
         foreach ($redirects as $redirect) {
