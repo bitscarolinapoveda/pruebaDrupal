@@ -3567,48 +3567,48 @@ var FooterNewsletterComponent = /** @class */ /*@__PURE__*/ (function () {
     FooterNewsletterComponent.prototype.getModalCard = function () {
         var _this = this;
         this._cardService.getCustomCardInformation('newslettermodalcard').subscribe(function (items) {
-            // if (items.header.length > 0 && items.data.length > 0) {
-            _this.titleNewsletter = items.header[0].data.title;
-            _this.descriptionNewsletter = items.header[1].data.subtitle;
-            for (var _i = 0, _a = items.body; _i < _a.length; _i++) {
-                var attr = _a[_i];
-                var obj = attr.data;
-                if (obj['name']) {
-                    _this.nameInput = obj.name;
+            if (items.header && items.header[0] && items.header[0].data && items.header[0].data.title && items.header[0].data.title != '') {
+                _this.titleNewsletter = items.header[0].data.title;
+                _this.descriptionNewsletter = items.header[1].data.subtitle;
+                for (var _i = 0, _a = items.body; _i < _a.length; _i++) {
+                    var attr = _a[_i];
+                    var obj = attr.data;
+                    if (obj['name']) {
+                        _this.nameInput = obj.name;
+                    }
+                    else if (obj['name_description']) {
+                        _this.nameInputPlaceholder = obj.name_description;
+                    }
+                    else if (obj['last_name']) {
+                        _this.lastNameInput = obj.last_name;
+                    }
+                    else if (obj['last_name_description']) {
+                        _this.lastNameInputPlaceholder = obj.last_name_description;
+                    }
+                    else if (obj['email']) {
+                        _this.emailInput = obj.email;
+                    }
+                    else if (obj['email_description']) {
+                        _this.emailInputPlaceholder = obj.email_description;
+                    }
+                    else if (obj['link']) {
+                        _this.linkTerms = obj.link;
+                    }
+                    else if (obj['label']) {
+                        _this.labelTerms = obj.label;
+                    }
+                    else if (obj['button']) {
+                        _this.buttonSendNewsletter = obj.button;
+                    }
+                    else if (obj['message_success']) {
+                        _this.message_success = obj.message_success;
+                    }
+                    else if (obj['message_error']) {
+                        _this.message_error = obj.message_error;
+                    }
                 }
-                else if (obj['name_description']) {
-                    _this.nameInputPlaceholder = obj.name_description;
-                }
-                else if (obj['last_name']) {
-                    _this.lastNameInput = obj.last_name;
-                }
-                else if (obj['last_name_description']) {
-                    _this.lastNameInputPlaceholder = obj.last_name_description;
-                }
-                else if (obj['email']) {
-                    _this.emailInput = obj.email;
-                }
-                else if (obj['email_description']) {
-                    _this.emailInputPlaceholder = obj.email_description;
-                }
-                else if (obj['link']) {
-                    _this.linkTerms = obj.link;
-                }
-                else if (obj['label']) {
-                    _this.labelTerms = obj.label;
-                }
-                else if (obj['button']) {
-                    _this.buttonSendNewsletter = obj.button;
-                }
-                else if (obj['message_success']) {
-                    _this.message_success = obj.message_success;
-                }
-                else if (obj['message_error']) {
-                    _this.message_error = obj.message_error;
-                }
+                _this.visible = true;
             }
-            //this.visible = true;
-            //  }
         });
     };
     FooterNewsletterComponent.prototype.getPopoverService = function () {
@@ -8785,6 +8785,11 @@ var WorkWithUsComponent = /** @class */ /*@__PURE__*/ (function () {
         this.router = router;
         this.footerService = footerService;
         this.propagar = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+        this.datosMenu = {
+            label: '',
+            id: 'a2',
+            url: '/imedical'
+        };
         this.workWithUsTitle = '';
         this.workWithUsSubtitle = '';
         this.url = '';
