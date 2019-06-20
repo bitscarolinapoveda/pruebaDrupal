@@ -52,8 +52,10 @@ export class PqrsComponent implements OnInit {
   titlePrincipal: any;
   descripPrincipal: any;
   complement: any;
+  val_HojaVW: any;
 
-  constructor(private _http: HttpService, private _service: CustomCardService, private http_pais: HttpClient, config: NgbPopoverConfig, private fb: FormBuilder,
+  constructor(private _http: HttpService, private _service: CustomCardService, 
+    private http_pais: HttpClient, config: NgbPopoverConfig, private fb: FormBuilder,
     private rutaActiva: ActivatedRoute) {
     this.dataMessage = [];
     this.list = [];
@@ -68,10 +70,9 @@ export class PqrsComponent implements OnInit {
     this.tipo = '';
     this.checked = false;
     this.valido = false;
-    this.hover_buttom = 'Faltan datos por llenar';
+    this.hover_buttom = '';
     this.file = '';
     this.hojaWU = '';
-    this.hojaWU = 'Subir Fichero';
     this.form = this.fb.group({
       hojav: null
     });
@@ -85,6 +86,7 @@ export class PqrsComponent implements OnInit {
       blob: '',
       };
     this.complement = [];
+    this.val_HojaVW = '';
   }
 
   mostrarDatos(id) {
@@ -98,16 +100,14 @@ export class PqrsComponent implements OnInit {
   onSubmit(formulario) {
     if (this.captcha_form === 'null' || this.captcha_form === undefined) {
       this.valido = false;
-      this.hover_buttom = 'Faltan datos por llenar';
+      this.hover_buttom = this.complement[6].data['button_hover_empty'];
     }
 
     if (this.valido === true) {
       formulario['adjunto'] = this.file;
-      console.log(this.file);
       this.dataMessage = [];
       formulario['webform_id'] = 'pqrsf';
       formulario['captcha'] = this.captcha_form;
-      console.log(formulario);
 
       this._http.post('webform_rest/submit?_format=json', formulario, { // Hace el submit del formulario a Drupal
         'Content-Type': 'application/json',
@@ -135,13 +135,13 @@ export class PqrsComponent implements OnInit {
 
             this.pais = '';
             this.tipo = '';
-            this.hojaWU = 'Subir Fichero';
+            this.hojaWU = this.val_HojaVW;
 
             this.dataMessage.push(
               {
                 visible: true,
                 status: 'success',
-                message: 'Formulario de contacto enviado exitosamente. Nos podremos en contacto con usted!'
+                message: this.complement[5].data['message_success']
               }
             );
           }
@@ -160,8 +160,10 @@ export class PqrsComponent implements OnInit {
 
     if (this.languagueBrowser !== 'es') {
       this.ruta = '/' + this.languagueBrowser + '/politics';
+      this.getChangeLanguage(this.languagueBrowser);
     } else if (this.languagueBrowser === 'es') {
       this.ruta = '/politicas';
+      this.getChangeLanguage(this.languagueBrowser);
     }
 
 
@@ -184,10 +186,22 @@ export class PqrsComponent implements OnInit {
     this.getComplementForm();
   }
 
+  getChangeLanguage(lang) {
+    setTimeout(function () {
+      const language = lang;
+      const captchaElm = $(document).find('.captcha').find('iframe');
+      if (captchaElm.length) {
+        let src = captchaElm.attr('src');
+        src = src.replace(/(hl=)[^\&]+/, `$1${language}`);
+        captchaElm.attr('src', src);
+      }
+    }, 2000);
+  }
+
   resolved(captchaResponse: string) {
     this.captcha_form = `${captchaResponse}`;
     this.valido = true;
-    this.hover_buttom = 'Enviar datos';
+    this.hover_buttom = this.complement[7].data['button_hover_success'];
   }
 
   getPopoverService() {
@@ -260,6 +274,10 @@ export class PqrsComponent implements OnInit {
             if (cont != 0) {
               listLayout[index] = [];
               for (var indexz in campoForm) {
+                if(campoForm[indexz]['#type'] === 'managed_file'){
+                  this.val_HojaVW = campoForm[indexz]['#placeholder'];
+                  this.hojaWU = this.val_HojaVW;
+                }
                 listLayout[index].push(campoForm[indexz]);
               }
             }
@@ -275,12 +293,12 @@ export class PqrsComponent implements OnInit {
   getComplementForm() {
     this._service.getCustomCardInformation('complementsformbitsamericas').subscribe(params => {
       this.complement = params.header;
+      this.hover_buttom = this.complement[6].data['button_hover_empty'];
     });
   }
 
   onFileChange(event) {
-    console.log(event.target.files[0]);
-    
+
     this.file['name'] = event.target.files[0].name;
     this.file['mime'] = event.target.files[0].type;
     this.file['blob'] = '';
