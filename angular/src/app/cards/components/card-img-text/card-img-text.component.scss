@@ -1,7 +1,7 @@
 @import './src/assets/scss/mixin.scss';
 
 h3.condensed {
-    font-size: 20px;
+    font-size: 24px;
     transform: scaleY(1.2);
     letter-spacing: -1px;
     color: #002b49;
@@ -39,7 +39,7 @@ a {
 p {
     font-size: 14px;
     width: 88%;
-    font-family: 'Open Sans Codensed', 'sans-serif';
+    font-family: 'Open Sans Light', 'sans-serif';
     font-weight: lighter;
     color: #002b49;
 }
@@ -67,7 +67,7 @@ p {
     }
 }
 
-:host /deep/ .img-fluid {    
+:host /deep/ .img-fluid {
     opacity: 0;
     transform: translate(0, 30px);
     transition: all 300ms ease;

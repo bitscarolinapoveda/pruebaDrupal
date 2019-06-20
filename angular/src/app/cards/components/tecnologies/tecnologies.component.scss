@@ -9,11 +9,11 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-  
-    min-height: 380px;
+
+    min-height: 370px;
     @media (min-width: 1100px) {
        background-attachment: fixed;
-       
+
     }
     &.edgefixed{
         background-attachment: scroll !important;
@@ -40,7 +40,7 @@
     .block-image {
         position:relative;
         width: 100%;
-        min-height: 300px;
+        min-height: 260px;
         .phone-hck{
             height: 100%;
             width: 100%;
@@ -91,7 +91,7 @@
 :host /deep/ div.carousel.slide.carousel-fade {
       outline: none;
 
-    
+
 }
 
 @media screen and (max-width:480px) {
