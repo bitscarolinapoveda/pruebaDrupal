@@ -49,12 +49,14 @@ export class WorkusComponent implements OnInit {
   elementoForm: any;
   languagueBrowser: any;
   ruta: any;
+  complement: any;
+  val_HojaVW: any;
 
   onSubmit(formulario) {
 
     if (this.captcha_form === 'null' || this.captcha_form === undefined) {
       this.valido = false;
-      this.hover_buttom = 'Faltan datos por llenar';
+      this.hover_buttom = this.complement[6].data['button_hover_empty'];
     }
 
     if (this.valido === true) {
@@ -86,13 +88,13 @@ export class WorkusComponent implements OnInit {
 
             this.ngSelectW.active = [];
             this.pais = '';
-            this.hojaWU = 'Subir Fichero';
+            this.hojaWU = this.val_HojaVW;
 
             this.dataMessage.push(
               {
                 visible: true,
                 status: 'success',
-                message: 'Formulario de contacto enviado exitosamente. Nos podremos en contacto con usted!'
+                message: this.complement[5].data['message_success']
               }
             );
           }
@@ -122,10 +124,12 @@ export class WorkusComponent implements OnInit {
     };
     this.hojaWU = '';
     this.valido = false;
-    this.hover_buttom = 'Faltan datos por llenar';
-    this.hojaWU = 'Subir Fichero';
+    this.hover_buttom = '';
+     this.hojaWU = '';
     this.languagueBrowser = '';
     this.ruta = '';
+    this.complement = [];
+    this.val_HojaVW = '';
   }
 
   mostrarDatosWS(id) {
@@ -141,10 +145,10 @@ export class WorkusComponent implements OnInit {
     this.languagueBrowser = this._service.getLanguageBrowser();
 
     if (this.languagueBrowser !== 'es') {
-      this.ruta = '/' + this.languagueBrowser + '/contact-us';
+      this.ruta = '/' + this.languagueBrowser + '/politics';
       this.getChangeLanguage(this.languagueBrowser);
     } else if (this.languagueBrowser === 'es') {
-      this.ruta = '/contactenos';
+      this.ruta = '/politicas';
       this.getChangeLanguage(this.languagueBrowser);
     }
 
@@ -158,6 +162,8 @@ export class WorkusComponent implements OnInit {
     this.getPaises();
 
     this.getForm();
+
+    this.getComplementForm();
 
   }
 
@@ -190,6 +196,10 @@ export class WorkusComponent implements OnInit {
             if (cont != 0) {
               listLayout[index] = [];
               for (var indexz in campoForm) {
+                if(campoForm[indexz]['#type'] === 'managed_file'){
+                  this.val_HojaVW = campoForm[indexz]['#placeholder'];
+                  this.hojaWU = this.val_HojaVW;
+                }
                 listLayout[index].push(campoForm[indexz]);
               }
             }
@@ -200,6 +210,13 @@ export class WorkusComponent implements OnInit {
       }
     }
     );
+  }
+
+  getComplementForm() {
+    this._service.getCustomCardInformation('complementsformbitsamericas').subscribe(params => {
+      this.complement = params.header;
+      this.hover_buttom = this.complement[6].data['button_hover_empty'];
+    });
   }
 
   getChangeLanguage(lang) {
@@ -217,7 +234,7 @@ export class WorkusComponent implements OnInit {
   resolved(captchaResponse: string) {
     this.captcha_form = `${captchaResponse}`;
     this.valido = true;
-    this.hover_buttom = 'Enviar datos';
+    this.hover_buttom = this.complement[7].data['button_hover_success'];
   }
 
   onFileChange(event) {
@@ -226,8 +243,6 @@ export class WorkusComponent implements OnInit {
     this.file['blob'] = '';
 
     if (event.target.files.length > 0) {
-      //this.file = event.target.files[0];
-      //this.form.get('hojav').setValue(this.file);
       this.hojaWU = event.target.files[0].name;
 
       var reader = new FileReader();

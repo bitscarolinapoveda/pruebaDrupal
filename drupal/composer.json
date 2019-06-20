@@ -12,15 +12,16 @@
             "drupal/geolocation": "^3.0",
             "drupal/entityqueue": "^1.0",
             "drupal/admin_toolbar": "^1.25",
-                "drupal/webform": "^5.0",
-                "drupal/webform_rest": "^2.0",
-                "drupal/devel": "^2.1",
-                "drupal/cors": "^1.0",
-                "drupal/core": "^8.7",
-                "drush/drush": "^9.6",
-                "drupal/pathauto": "^1.4",
-                "drupal/swiftmailer": "^1.0@beta",
-                "drupal/content_sync": "~2.0.0"
+            "drupal/webform": "^5.0",
+            "drupal/webform_rest": "^2.0",
+            "drupal/devel": "^2.1",
+            "drupal/cors": "^1.0",
+            "drupal/core": "^8.7",
+            "drush/drush": "^9.6",
+            "drupal/pathauto": "^1.4",
+            "drupal/swiftmailer": "^1.0@beta",
+            "drupal/content_sync": "^2.1",
+            "drupal/redirect": "^1.3"
         },
         "replace": {},
         "minimum-stability": "dev",
@@ -53,6 +54,11 @@
                 "drush/contrib/{$name}": ["type:drupal-drush"],
                 "modules/custom/{$name}": ["type:drupal-custom-module"],
                 "themes/custom/{$name}": ["type:drupal-custom-theme"]
+            },
+            "patches": {
+                "drupal/webform_rest": {
+                    "Drupal file fix default syncing": "/patches/webform_rest_addfile.patch"
+                }
             }
         },
         "autoload": {

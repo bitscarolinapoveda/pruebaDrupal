@@ -4,8 +4,8 @@
 			name="formulario_contacto">
 			<app-message [dataMessage]="dataMessage"></app-message>
 			<ng-template #valid>
-				<div class="alert alert-danger" role="alert">
-					Campo obligatorio o invalido
+				<div class="alert alert-danger" role="alert" *ngIf="this.complement[0]?.data['alert_error'] !== '' && this.complement[0] !==  undefined">
+					{{this.complement[0]?.data['alert_error']}}
 				</div>
 			</ng-template>
 			<div class="col-md-12 form-group">
@@ -175,9 +175,9 @@
 							<input type="checkbox" [checked]="checked" id="{{'work_with_us__' + item['#webform_key']}}"
 								name="{{item['#webform_key']}}" value="false" required="{{item['#required'] ==  true}}"
 								ngModel>
-							<label ng-reflect-ng-class="" for="{{'work_with_us__' + item['#webform_key']}}">He leído y
-								acepto los<a [routerLink]="ruta">
-									términos y condiciones
+							<label ng-reflect-ng-class="" for="{{'work_with_us__' + item['#webform_key']}}" *ngIf="this.complement[2]?.data['link_descrip'] !== '' &&
+							this.complement[2] !==  undefined">{{this.complement[2]?.data['link_descrip']}}<a [routerLink]="ruta" *ngIf="this.complement[1]?.data['link_approved'] !== '' && this.complement[1] !==  undefined">
+								{{this.complement[1]?.data['link_approved']}}
 								</a>
 							</label>
 							<ng-template #tipQuestion>
@@ -199,10 +199,13 @@
 				siteKey="6LfycJsUAAAAANcZLFFQErxM92v-rNzuZTX6I3Ob" ngDefaultControl></re-captcha>
 			<ng-template #tipContent>{{hover_buttom}}</ng-template>
 			<button type="submit" class="btn btn-primary" [ngbTooltip]="tipContent"
-				[ngClass]="userForm.invalid?'disabled':''" [disabled]="userForm.invalid">
-				ENVIAR
+				[ngClass]="userForm.invalid?'disabled':''" [disabled]="userForm.invalid"
+				*ngIf="this.complement[3]?.data['text_button'] !== '' &&
+			this.complement[3] !==  undefined">
+			{{this.complement[3]?.data['text_button']}}
 			</button>
-			<div class="obligatorios col-md-12"> <span>*</span>Datos Obligatorios</div>
+			<div class="obligatorios col-md-12" *ngIf="this.complement[4]?.data['alert_required'] !== '' &&
+			this.complement[4] !==  undefined"> <span>*</span>{{this.complement[4]?.data['alert_required']}}</div>
 		</form>
 	</div>
 </div>

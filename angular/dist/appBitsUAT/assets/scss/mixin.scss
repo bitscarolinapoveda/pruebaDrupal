@@ -108,8 +108,8 @@ $max_480:480px;
 //---------------------------------------
 //--------------------------------------
 // FONT RELATIVE 
-@mixin font_relative($anchoA,$tamanoFuenteA,$anchoB,$tamanoFuenteB, $items) {
-    $divisores: $items;
+@mixin font_relative($anchoA,$tamanoFuenteA,$anchoB,$tamanoFuenteB, $divisores) {
+
     $ancho: ( $anchoA - $anchoB ) / $divisores;
     $tamanoFuente: ( $tamanoFuenteA - $tamanoFuenteB ) / $divisores;
 
@@ -124,8 +124,16 @@ $max_480:480px;
       @include mediaquery($width_media) {
         font-size:  $tamanoFuente_fin;
       }
-      
     }
   }
 
+
+  //-----------------------------------
+  // HACK ZOOMEABLE IN PAGE
+
+  @mixin zoomeable($max, $min) {
+    @media (min-height: $min + 1) and (max-height: $max) {
+        @content;
+    }
+  }
 

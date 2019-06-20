@@ -63,6 +63,7 @@ export class TabsComponent implements OnInit {
   type: any;
   languagueBrowser: any;
   ruta: any;
+  complement: any;
 
 
   constructor(private _http: HttpService, private _service: CustomCardService, private http_pais: HttpClient, config: NgbPopoverConfig,
@@ -83,9 +84,10 @@ export class TabsComponent implements OnInit {
     this.service = '';
     this.checked = false;
     this.valido = false;
-    this.hover_buttom = 'Faltan datos por llenar';
+    this.hover_buttom = '';
     this.languagueBrowser = '';
     this.ruta = '';
+    this.complement = [];
   }
 
   mostrarDatos(id) {
@@ -104,9 +106,8 @@ export class TabsComponent implements OnInit {
   onSubmit(formulario) {
 
     if (this.captcha_form === 'null' || this.captcha_form === undefined) {
-
       this.valido = false;
-      this.hover_buttom = 'Faltan datos por llenar';
+      this.hover_buttom = this.complement[6].data['button_hover_empty'];
     }
 
     if (this.valido === true) {
@@ -147,7 +148,7 @@ export class TabsComponent implements OnInit {
               {
                 visible: true,
                 status: 'success',
-                message: 'Formulario de contacto enviado exitosamente. Nos podremos en contacto con usted!'
+                message: this.complement[5].data['message_success']
               }
             );
           }
@@ -206,6 +207,8 @@ export class TabsComponent implements OnInit {
 
     this.getPaises();
 
+    this.getComplementForm();
+
   }
 
   getChangeLanguage(lang) {
@@ -224,7 +227,7 @@ export class TabsComponent implements OnInit {
   resolved(captchaResponse: string) {
     this.captcha_form = `${captchaResponse}`;
     this.valido = true;
-    this.hover_buttom = 'Enviar datos';
+    this.hover_buttom = this.complement[7].data['button_hover_success'];
   }
 
   getTabsData() {
@@ -319,6 +322,13 @@ export class TabsComponent implements OnInit {
       this.listProduct = this.bandProduct;
       this.listService = this.bandService;
 
+    });
+  }
+
+  getComplementForm() {
+    this._service.getCustomCardInformation('complementsformbitsamericas').subscribe(params => {
+      this.complement = params.header;
+      this.hover_buttom = this.complement[6].data['button_hover_empty'];
     });
   }
 

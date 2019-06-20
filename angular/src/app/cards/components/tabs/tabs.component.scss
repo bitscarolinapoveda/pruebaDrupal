@@ -613,3 +613,7 @@ select {
   width: 100%;
   margin-bottom: 0;
 }
+
+:host /deep/ .btn-primary {
+  text-transform: uppercase;
+}
