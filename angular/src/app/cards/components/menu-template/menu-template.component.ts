@@ -35,7 +35,7 @@ export class MenuTemplateComponent implements OnInit {
             load: 4,
             touch: true,
             easing: 'ease',
-            loop: true,
+            loop: false,
         };
     }
 
