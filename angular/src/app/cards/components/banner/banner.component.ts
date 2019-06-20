@@ -20,7 +20,7 @@ export class BannerComponent implements OnInit {
     bannerDescrip: string;
     principalBanner: General;
     languagueBrowser: any;
-
+    contact :  false;
     phoneWidth = 500 * window.devicePixelRatio;
     tabletWidth = 1024 * window.devicePixelRatio;
     sxgaScreen = 1280 * window.devicePixelRatio;
@@ -48,6 +48,8 @@ export class BannerComponent implements OnInit {
         } else if (this.uuid === undefined || this.uuid === '') {
             this.getTitle();
             this.bannerTitle = this.titulo;
+            //this.uuid == "39ce2484-2be2-470b-9768-fed85f14bc87" ? this.contact = true : this.contact = false;
+            //console.log(this.contact);
         } else {
             this.bandera_sevice = true;
             this.getTitle();
