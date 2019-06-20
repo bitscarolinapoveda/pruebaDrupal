@@ -91,16 +91,21 @@ class RedirectRestResource extends ResourceBase {
             throw new AccessDeniedHttpException();
         }
 
-        return new ResourceResponse([
-            [
-                'origin' => '/desarrollo-de-software-adaptado-sus-necesidades-de-negocio',
-                'to' => '/servicio/desarrollo-de-software-adaptado-sus-necesidades-de-negocio'
-            ],
-            [
-                'origin' => '/desarrollo-de-software-la-medida-sitios-web',
-                'to' => '/nosotros'
-            ]
-        ], 200);
+        $redirectsIds = \Drupal::entityQuery('redirect')->execute();
+        $redirects = \Drupal::entityTypeManager()->getStorage('redirect')->loadMultiple($redirecsIds);
+
+        $data = [];
+        foreach ($redirects as $redirect) {
+            $data[] = [
+                'origin' => $redirect->getSourceUrl(),
+                'to' => str_replace("internal:", "", $redirect->getRedirect()['uri']),
+                'internal' => (strrpos($redirect->getRedirect()['uri'], 'internal:/') === 0 ? true : false),
+                'statuscode' => $redirect->getStatusCode()
+
+            ];
+        }
+
+        return new ResourceResponse($data, 200);
     }
 
 }
