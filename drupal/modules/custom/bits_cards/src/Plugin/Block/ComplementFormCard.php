@@ -67,7 +67,7 @@ class ComplementFormCard extends CardBase {
             'service_field' => 'message_success',
             'show' => 1,
             'weight' => 1,
-            'max_length' => 20,
+            'max_length' => 150,
           ],
           'button_hover_empty' => [
             'type' => 'textfield',
@@ -75,7 +75,7 @@ class ComplementFormCard extends CardBase {
             'service_field' => 'button_hover_empty',
             'show' => 1,
             'weight' => 1,
-            'max_length' => 10,
+            'max_length' => 30,
           ],
           'button_hover_success' => [
             'type' => 'textfield',
@@ -83,7 +83,7 @@ class ComplementFormCard extends CardBase {
             'service_field' => 'button_hover_success',
             'show' => 1,
             'weight' => 1,
-            'max_length' => 10,
+            'max_length' => 30,
           ]
         ],
       ],
