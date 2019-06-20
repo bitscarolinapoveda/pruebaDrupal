@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewChild  } from '@angular/core';
 import { CustomCardService } from 'src/app/services/cards/v1-card.services';
 import { NavbarService } from 'src/app/services/layout/navbar.service';
+import { FooterNewsletterComponent } from 'src/app/cards/components/footer/footer-newsletter/footer-newsletter.component';
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
@@ -12,13 +13,17 @@ export class FooterComponent implements OnInit {
   backgroundMovil: any;
   backgroundDesktop: any;
   width: any;
+  @ViewChild(FooterNewsletterComponent) hijo: FooterNewsletterComponent;
+
   constructor(
     private lowFooter: NavbarService, private https: CustomCardService
   ) {
     this.width = window.innerWidth;
+
   }
 
   ngOnInit() {
+   
     this.getInfoLowFooter();
     this.getImgFooter();
   }

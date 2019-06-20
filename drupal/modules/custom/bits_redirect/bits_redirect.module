@@ -16,7 +16,7 @@ function bits_redirect_help($route_name, RouteMatchInterface $route_match) {
     case 'help.page.bits_redirect':
       $output = '';
       $output .= '<h3>' . t('About') . '</h3>';
-      $output .= '<p>' . t('My Awesome Module') . '</p>';
+      $output .= '<p>' . t('Show rest resource with redirects urls') . '</p>';
       return $output;
 
     default:

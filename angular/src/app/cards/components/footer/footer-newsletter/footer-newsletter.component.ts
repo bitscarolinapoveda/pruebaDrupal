@@ -78,30 +78,33 @@ export class FooterNewsletterComponent implements OnInit {
   }
   getIndicatorsSliderItems() {
     this._cardService.getCustomCardInformation('newslettercard_2').subscribe(items => {
-      let title, subtitle, button, message_error, message_success;
-      for (let attr of items.header) {
-        let obj = attr.data;
-        if (obj['title']) {
-          title = obj.title;
-        } else if (obj['subtitle'])
-          subtitle = obj.subtitle;
+      if(items.header.length>0){
+          let title, subtitle, button, message_error, message_success;
+          for (let attr of items.header) {
+            let obj = attr.data;
+            if (obj['title']) {
+              title = obj.title;
+            } else if (obj['subtitle'])
+              subtitle = obj.subtitle;
+          }
+          for (let attr of items.body) {
+            let obj = attr.data;
+            if (obj['button']) {
+              button = obj.button;
+            }
+          }
+          this.footerData = {
+            title: title,
+            subtitle: subtitle,
+            button: button,
+          };
+          this.visible = true;
       }
-      for (let attr of items.body) {
-        let obj = attr.data;
-        if (obj['button']) {
-          button = obj.button;
-        }
-      }
-      this.footerData = {
-        title: title,
-        subtitle: subtitle,
-        button: button,
-      };
     });
   }
   getModalCard() {
     this._cardService.getCustomCardInformation('newslettermodalcard').subscribe(items => {
-      if (items.header.length > 0 && items.data.length > 0) {
+     // if (items.header.length > 0 && items.data.length > 0) {
         this.titleNewsletter = items.header[0].data.title;
         this.descriptionNewsletter = items.header[1].data.subtitle;
         for (let attr of items.body) {
@@ -132,8 +135,8 @@ export class FooterNewsletterComponent implements OnInit {
             this.message_error = obj.message_error;
           }
         }
-        this.visible = true;
-      }
+        //this.visible = true;
+    //  }
     });
   }
 
