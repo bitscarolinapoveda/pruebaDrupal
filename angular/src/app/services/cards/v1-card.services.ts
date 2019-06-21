@@ -183,6 +183,18 @@ export class CustomCardService {
     });
   }
 
+  getRedirect() {
+    let url = `v1/redirect/export?_format=json`;
+
+    if (this.language === 'es') {
+      return this.http.get(url);
+    } else if (this.language !== 'es') {
+      url = this.language + '/' + url;
+      return this.http.get(url);
+    }
+
+  }
+
   getCustomCardInformation(idblock) {
     let url = `v1/card/config/${idblock}/export?_format=json`;
 

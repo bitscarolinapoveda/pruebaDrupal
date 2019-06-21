@@ -20,6 +20,7 @@ export class BannerComponent implements OnInit {
     bannerDescrip: string;
     principalBanner: General;
     languagueBrowser: any;
+    ruta: any;
     contact: false;
     phoneWidth = 500 * window.devicePixelRatio;
     tabletWidth = 1024 * window.devicePixelRatio;
@@ -37,9 +38,12 @@ export class BannerComponent implements OnInit {
         this.bannerDescrip = '';
         this.titulo = '';
         this.languagueBrowser = '';
+        this.ruta = '';
     }
 
     ngOnInit() {
+        this.router.events.subscribe((url: any) => url);
+        this.ruta = this.router.url;
 
         $(window).scrollTop(0);
         this.languagueBrowser = this.banner.getLanguageBrowser();
@@ -94,10 +98,12 @@ export class BannerComponent implements OnInit {
             } else {
                 this.bannerBackground = this.imgFondo;
             }
-            if (params.others_urls[this.languagueBrowser] !== '' &&
-                params.others_urls[this.languagueBrowser] !== '/' + this.languagueBrowser &&
-                params.others_urls[this.languagueBrowser] !== '/node') {
-                this.router.navigate([params.others_urls[this.languagueBrowser]]);
+            if (this.ruta.indexOf('title-description') === -1) {
+                if (params.others_urls[this.languagueBrowser] !== '' &&
+                    params.others_urls[this.languagueBrowser] !== '/' + this.languagueBrowser &&
+                    params.others_urls[this.languagueBrowser] !== '/node') {
+                    this.router.navigate([params.others_urls[this.languagueBrowser]]);
+                }
             }
         });
     }
