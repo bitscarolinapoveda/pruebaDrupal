@@ -49,9 +49,9 @@
   }
 }
 
-#carousel-container {
+#carousel-container { 
+
   .carousel-main-image {
-    object-fit: cover;
     @include breakpoint (desktop) { 
       width: 100%;
       height: 5000px;
@@ -166,4 +166,18 @@
     bottom: 95px;
     justify-content: center;
   }
+}
+
+:host /deep/ #carousel-container {
+  background-color: gray !important;
+}
+
+
+:host /deep/  .carousel-item {
+  display: block !important;
+  visibility: hidden !important;
+}
+:host /deep/  .carousel-item.active {
+  display: block !important;
+  visibility: visible !important;
 }
