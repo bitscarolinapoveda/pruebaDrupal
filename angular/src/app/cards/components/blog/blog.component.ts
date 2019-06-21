@@ -11,6 +11,7 @@ export class BlogComponent implements OnInit {
 
     titulo: string;
     list: string;
+    status: boolean;
 
     // Se recibe uuid
     @Input() uuid: string;
@@ -30,6 +31,7 @@ export class BlogComponent implements OnInit {
         this._http.getCustomContentBasicPage(this.uuid).subscribe(params => {
             this.titulo = params.title;
             this.list = params.body;
+            this.status = params.status;
         });
     }
 
