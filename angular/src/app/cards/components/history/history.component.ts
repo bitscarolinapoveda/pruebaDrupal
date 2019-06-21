@@ -24,6 +24,7 @@ export class HistoryComponent implements OnInit {
   datosMenu: DataMenu;
   visible: boolean;
   width: any;
+  titleInternalMenu: string;
 
   constructor(private _http: CustomCardService) {
     this.visible = false;
@@ -45,7 +46,10 @@ export class HistoryComponent implements OnInit {
       }
      if (params.header[1] !== undefined) {
       this.sub_title = params.header[1].data.sub_title;
-     }     
+     }
+     if (params.header[2] !== undefined) {
+      this.titleInternalMenu = params.header[2].data.internal_menu_title;
+     }
       const dataObject = {
         'events': [
         ]
@@ -95,12 +99,12 @@ export class HistoryComponent implements OnInit {
       if (this.title !== '' && params.data.length !== 0 && this.width > 919 ) {
         this.visible = true;
         this.datosMenu = {
-          label: 'HISTORIA',
+          label: this.titleInternalMenu,
           id: 'a2',
           url: ''
         };
         this.propagar.emit(this.datosMenu);
-      }     
+      }
 
       window.timeline = new TL.Timeline('timeline', dataObject, additionalOptions);
     });
