@@ -46,7 +46,6 @@ export class FooterBlockComponent implements OnInit {
     this.service.getCustomCardInformation('locationcard').subscribe(params => {
       this.title = params.header[0].data.title;
       this.dataUbicaciones = params.data;
-      console.log(params);
       if(params.data[1]){
         this.mayor = true;
       }

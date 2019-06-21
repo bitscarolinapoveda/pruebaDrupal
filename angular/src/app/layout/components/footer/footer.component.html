@@ -4,17 +4,17 @@
         <section class="first-info-container-footer">
             <div class="row row-info-footer">
                 
-                <div class="col-sm-12 col-md-3 col-lg-6 col-xl-6 locations" >
+                <div [ngClass]="location.mayor ?'col-sm-12 col-md-3 col-lg-6 col-xl-6 locations':'col-sm-12 col-md-3 col-lg-5 col-xl-5 locations'" >
                     <app-footer-block class="locations-container"></app-footer-block>
                 </div>
       
                     <div class="newsletters" [ngClass]="hijo.visible ?'col-sm-12 col-md-3 col-lg-2 col-xl-2':'d-none'" >
                     <app-footer-newsletter></app-footer-newsletter>
                     </div>
-                <div class="contact" [ngClass]="hijo.visible ?'col-sm-12 col-md-3 col-lg-2 col-xl-2':'col-sm-12 col-md-3 col-lg-4 col-xl-4 centred'">
+                <div class="contact" [ngClass]="hijo.visible ?'col-sm-12 col-md-3 col-lg-2 col-xl-2':'col-sm-12 col-md-3 col-lg-3 col-xl-3 centred'">
                     <app-footer-contact></app-footer-contact>
                 </div>
-                <div class="col-sm-12 col-md-3 col-lg-2 col-xl-2 iconbits">
+                <div  [ngClass]="hijo.visible ?'col-sm-12 col-md-3 col-lg-2 col-xl-2 iconbits':'col-sm-12 col-md-3 col-lg-3 col-xl-3 iconbits pr_image'">
                     <app-footer-brand></app-footer-brand>
                 </div>
             </div>

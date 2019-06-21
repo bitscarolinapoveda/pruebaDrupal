@@ -2,6 +2,7 @@ import { Component, OnInit,ViewChild  } from '@angular/core';
 import { CustomCardService } from 'src/app/services/cards/v1-card.services';
 import { NavbarService } from 'src/app/services/layout/navbar.service';
 import { FooterNewsletterComponent } from 'src/app/cards/components/footer/footer-newsletter/footer-newsletter.component';
+import { FooterBlockComponent } from 'src/app/cards/components/footer/footer-block/footer-block';
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
@@ -14,7 +15,7 @@ export class FooterComponent implements OnInit {
   backgroundDesktop: any;
   width: any;
   @ViewChild(FooterNewsletterComponent) hijo: FooterNewsletterComponent;
-
+  @ViewChild(FooterBlockComponent) location: FooterBlockComponent;
   constructor(
     private lowFooter: NavbarService, private https: CustomCardService
   ) {
