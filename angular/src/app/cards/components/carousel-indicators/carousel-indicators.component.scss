@@ -172,12 +172,18 @@
   background-color: gray !important;
 }
 
-
 :host /deep/  .carousel-item {
   display: block !important;
   visibility: hidden !important;
 }
+
 :host /deep/  .carousel-item.active {
   display: block !important;
   visibility: visible !important;
+}
+
+@media only screen and (max-width: 900px) and (orientation: landscape) {
+  :host /deep/ ol.carousel-indicators {
+    top: 90px !important;
+  }
 }
