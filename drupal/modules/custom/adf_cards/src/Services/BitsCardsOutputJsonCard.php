@@ -29,7 +29,6 @@ class BitsCardsOutputJsonCard {
     if ($block) {
       $settings = $block->get('settings');
     }
-
     $response['header'] = $this->getRenderData($settings, 'header', $settings['id']);
     $response['body'] = $this->getRenderData($settings, 'body', $settings['id']);
     $response['files'] = $this->getRenderData($settings, 'files', $settings['id']);
@@ -209,8 +208,6 @@ class BitsCardsOutputJsonCard {
                     $termUuid = $term->uuid();
                   }
                   $data[$field][] = ['id' => $term->id(), 'uuid' => $termUuid, 'label'=> $term->label()];
-
-
                 }
               }
             }
@@ -306,44 +303,44 @@ class BitsCardsOutputJsonCard {
 
                   if ($inputType == 'header') {
                     if ($idCard == 'brand_card') {
-                      $element['data'][$key]['title'] = $filename;
-                      $element['data'][$key]['url'] = file_create_url($file->getFileUri());
+                      $element['data'][$key]['title'] = ($item['show'] != 1) ? '' : $filename;
+                      $element['data'][$key]['url'] = ($item['show'] != 1) ? '' : file_create_url($file->getFileUri());
                     }
                     elseif ($idCard == 'header_brand_card') {
-                      $element[$item_key][$key]['title'] = $filename;
-                      $element[$item_key][$key]['url'] = file_create_url($file->getFileUri());
+                      $element[$item_key][$key]['title'] = ($item['show'] != 1) ? '' : $filename;
+                      $element[$item_key][$key]['url'] = ($item['show'] != 1) ? '' : file_create_url($file->getFileUri());
                     }
                     else {
-                      $element['data'][$key]['title'][] = $filename;
-                      $element['data'][$key]['url'][] = file_create_url($file->getFileUri());
+                      $element['data'][$key]['title'][] = ($item['show'] != 1) ? '' : $filename;
+                      $element['data'][$key]['url'][] = ($item['show'] != 1) ? '' : file_create_url($file->getFileUri());
                     }
                   }
                   if ($inputType == 'body') {
                     if ($idCard == 'technologies' || $idCard == 'our_alliance' || $idCard == 'banner' || $idCard == 'footer_block_simple') {
                       if ($key == '0') {
-                        $element['data']['back_movil']['0']['title'] = $filename;
-                        $element['data']['back_movil']['0']['url'] = file_create_url($file->getFileUri());
+                        $element['data']['back_movil']['0']['title'] = ($item['show'] != 1) ? '' : $filename;
+                        $element['data']['back_movil']['0']['url'] = ($item['show'] != 1) ? '' : file_create_url($file->getFileUri());
                       }
                       else {
                         if ($key == '1') {
-                          $element['data']['back_desktop']['0']['title'] = $filename;
-                          $element['data']['back_desktop']['0']['url'] = file_create_url($file->getFileUri());
+                          $element['data']['back_desktop']['0']['title'] = ($item['show'] != 1) ? '' : $filename;
+                          $element['data']['back_desktop']['0']['url'] = ($item['show'] != 1) ? '' : file_create_url($file->getFileUri());
                         }
                       }
                     }
                     else {
-                      $element['data'][$key]['title'] = $filename;
-                      $element['data'][$key]['url'] = file_create_url($file->getFileUri());
+                      $element['data'][$key]['title'] = ($item['show'] != 1) ? '' : $filename;
+                      $element['data'][$key]['url'] = ($item['show'] != 1) ? '' : file_create_url($file->getFileUri());
                     }
                   }
                   if ($inputType == 'files') {
                     if ($idCard == 'technologies' || $idCard == 'our_alliance') {
-                      $element['data']['logo'][$key]['title'] = $filename;
-                      $element['data']['logo'][$key]['image'] = file_create_url($file->getFileUri());
+                      $element['data']['logo'][$key]['title'] = ($item['show'] != 1) ? '' : $filename;
+                      $element['data']['logo'][$key]['image'] = ($item['show'] != 1) ? '' : file_create_url($file->getFileUri());
                     }
                     else {
-                      $element['data'][$key]['title'] = $filename;
-                      $element['data'][$key]['url'] = file_create_url($file->getFileUri());
+                      $element['data'][$key]['title'] = ($item['show'] != 1) ? '' : $filename;
+                      $element['data'][$key]['url'] = ($item['show'] != 1) ? '' : file_create_url($file->getFileUri());
                     }
                   }
                 }
@@ -352,37 +349,33 @@ class BitsCardsOutputJsonCard {
             break;
 
           case 'text_format':
-            $element['data'] = $item['input']['value'];
-            $element['type'] = 'formated';
+            $element['data'] = ($item['show'] != 1) ? '' : $item['input']['value'];
+            $element['type'] = ($item['show'] != 1) ? '' : 'formated';
             break;
 
           case 'url':
             $element['data'] = [
-              'link' => $item['input']['link'],
-              'label' => $item['input']['label'],
-              'external' => strpos($item['input']['link'], '/') !== 0 ? TRUE : FALSE ,
+              'link' => ($item['show'] != 1) ? '' : $item['input']['link'],
+              'label' => ($item['show'] != 1) ? '' : $item['input']['label'],
+              'external' => ($item['show'] != 1) ? '' : (strpos($item['input']['link'], '/') !== 0 ? TRUE : FALSE) ,
             ];
             $element['type'] = 'url';
             break;
 
           case 'textfield':
-            $element['data'][preg_replace('@[^a-z0-9-]+@','_', strtolower($item['service_field']))] = $item['input'];
+            $element['data'][preg_replace('@[^a-z0-9-]+@','_', strtolower($item['service_field']))] = ($item['show'] != 1) ? '' : $item['input'];
             break;
 
           case 'select' || 'checkboxes' || 'radios':
-            $element['data'][preg_replace('@[^a-z0-9-]+@','_', strtolower($item['service_field']))] = $item['input'];
+            $element['data'][preg_replace('@[^a-z0-9-]+@','_', strtolower($item['service_field']))] = ($item['show'] != 1) ? '' : $item['input'];
             break;
 
           default:
-            $element['data'] = $item['input'];
-            $element['type'] = 'default';
+            $element['data'] = ($item['show'] != 1) ? '' : $item['input'];
+            $element['type'] = ($item['show'] != 1) ? '' : 'default';
             break;
         }
-
-        if ($item['show'] == 1) {
-          $data[] = $element;
-        }
-
+        $data[] = $element;
       }
     }
 

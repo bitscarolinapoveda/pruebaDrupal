@@ -47,7 +47,7 @@ export class CustomCardService {
   }
 
   getMetaService(params) {
-      if ( params !== false) {
+      if (params) {
         if (params.title) {
             this.meta.updateTag({ name: 'title', content: params.title });
             this.titleService.setTitle(params.title);
@@ -181,6 +181,18 @@ export class CustomCardService {
       }
       return this.language;
     });
+  }
+
+  getRedirect() {
+    let url = `v1/redirect/export?_format=json`;
+
+    if (this.language === 'es') {
+      return this.http.get(url);
+    } else if (this.language !== 'es') {
+      url = this.language + '/' + url;
+      return this.http.get(url);
+    }
+
   }
 
   getCustomCardInformation(idblock) {

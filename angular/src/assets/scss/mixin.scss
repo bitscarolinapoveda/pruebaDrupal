@@ -1,6 +1,7 @@
 $phone:667px;
 $tablet:920px;
 $desktop:1024px;
+$desktopxl:1930px;
 @mixin breakpoint($media) {
     @if $media==phone {
         @media (max-width: $phone) {
@@ -16,6 +17,11 @@ $desktop:1024px;
         @media (min-width: $desktop + 1) {
             @content;
         }
+    }
+    @else if $media==desktopxl{
+      @media (min-width: $desktop + 1)  and (max-width: $desktopxl + 1) {
+          @content;
+      }
     }
 }
 
@@ -107,7 +113,8 @@ $max_480:480px;
 
 //---------------------------------------
 //--------------------------------------
-// FONT RELATIVE 
+
+// FONT RELATIVE
 @mixin font_relative($anchoA,$tamanoFuenteA,$anchoB,$tamanoFuenteB, $divisores) {
 
     $ancho: ( $anchoA - $anchoB ) / $divisores;
@@ -124,6 +131,7 @@ $max_480:480px;
       @include mediaquery($width_media) {
         font-size:  $tamanoFuente_fin;
       }
+
     }
   }
 
@@ -136,4 +144,3 @@ $max_480:480px;
         @content;
     }
   }
-
