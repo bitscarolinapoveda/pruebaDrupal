@@ -12,6 +12,7 @@
     width: 80%;
     margin: 0 auto;
     display: block;
+    margin-bottom: 1.2%;
 
     @media (max-width: 767px) {
         display: none;
@@ -64,7 +65,7 @@
     box-shadow: none !important;
     position: relative;
     clear: both;
-  
+
 
     @include breakpoint (desktop) {
         left: 0%;

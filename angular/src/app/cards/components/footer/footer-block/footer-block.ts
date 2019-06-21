@@ -49,9 +49,6 @@ export class FooterBlockComponent implements OnInit {
       console.log(params);
       if(params.data[1]){
         this.mayor = true;
-        console.log(this.mayor);
-      }else{
-        console.log("NO ES MAYOR", params.data.lenght);
       }
     });
   }

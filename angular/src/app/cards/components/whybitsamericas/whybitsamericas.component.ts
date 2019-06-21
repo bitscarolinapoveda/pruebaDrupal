@@ -16,11 +16,12 @@ export class WhybitsamericasComponent implements OnInit {
   @Output() propagar = new EventEmitter<DataMenu>();
   datosMenu: DataMenu;
   visible: boolean;
+  titleInternalMenu: string;
 
   constructor(
     private whyBits: CustomCardService,
   ) {
-    this.visible = false;
+    this.visible = false;  
   }
 
   ngOnInit() {
@@ -29,17 +30,19 @@ export class WhybitsamericasComponent implements OnInit {
 
   getWhybitsInfo() {
     return this.whyBits.getCustomCardInformation('whybitsamericas').subscribe(items => {
+      console.log("item", items);
       this.whyTitle = items.header[0].data.title;
       this.whySubTitle = items.header[1].data.sub_title;
       items.data = this.whyBits.addImageField(items.data, ['field_imagen']);
       this.whyData = items.data;
+      this.titleInternalMenu = items.header[2].data.internal_menu_title;
       for (let i = 0; i < this.whyData.length; i++) {
         this.whyData[i].show = false;
       }
       if (this.whyTitle !== '' && this.whyData.length !== 0) {
         this.visible = true;
         this.datosMenu = {
-          label: 'POR QUE BITS AMERICAS',
+          label: this.titleInternalMenu,
           id: 'a1',
           url: ''
         };

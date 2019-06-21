@@ -9,6 +9,7 @@ use Drupal\rest\ResourceResponse;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
+use Drupal\Core\Cache\CacheableMetadata;
 
 /**
  * Provides a resource to get view modes by entity and bundle.
@@ -105,7 +106,11 @@ class RedirectRestResource extends ResourceBase {
             ];
         }
 
-        return new ResourceResponse($data, 200);
+        $resource = new ResourceResponse($data, 200);
+        $resource->addCacheableDependency(CacheableMetadata::createFromRenderArray([
+            '#cache' => ['tags' => ['redirect_list'], ],
+        ]));
+        return $resource;
     }
 
 }

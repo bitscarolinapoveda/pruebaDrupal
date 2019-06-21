@@ -23,6 +23,8 @@ export class AlliancesComponent implements OnInit {
   datosMenu: DataMenu;
   visible: boolean;
   edge:boolean;
+  titleInternalMenu: string;
+
   constructor(
     private alliance: CustomCardService,
     public el: ElementRef
@@ -33,8 +35,8 @@ export class AlliancesComponent implements OnInit {
 
   ngOnInit() {
     this.getAlliance();
-    
-    if (/Edge\/\d./i.test(navigator.userAgent)){ 
+
+    if (/Edge\/\d./i.test(navigator.userAgent)){
       if(window.screen.width>1100){
       this.edge = true;
       }
@@ -43,6 +45,7 @@ export class AlliancesComponent implements OnInit {
 
   getAlliance() {
     return this.alliance.getCustomCardInformation('ouralliance').subscribe(items => {
+      this.titleInternalMenu = items.header[1].data.internal_menu_title;
       this.allianceTitle = items.header[0].data.title;
       this.allianceBackground = items.body[0].data.back_movil[0].url;
       items.data = this.alliance.addImageField(items.data, ['field_alliance_image']);
@@ -51,7 +54,7 @@ export class AlliancesComponent implements OnInit {
       if (this.allianceTitle !== '' && this.allianceArrayLogos.length !== 0) {
         this.visible = true;
         this.datosMenu = {
-          label: 'ALIADOS',
+          label: this.titleInternalMenu,
           id: 'a4',
           url: ''
         };

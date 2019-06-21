@@ -18,7 +18,11 @@ export class WorkWithUsComponent implements OnInit {
   workWithUsAdicional: any;
   body: string;
   @Output() propagar = new EventEmitter<DataMenu>();
-  datosMenu: DataMenu;
+  datosMenu: DataMenu = {
+    label: '',
+    id: 'a2',
+    url: '/imedical'
+  };
   @Input() type: string;
   linkExternal: boolean;
   titleInternalMenu: string;

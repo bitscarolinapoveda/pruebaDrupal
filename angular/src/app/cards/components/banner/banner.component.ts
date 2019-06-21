@@ -21,6 +21,7 @@ export class BannerComponent implements OnInit {
     principalBanner: General;
     languagueBrowser: any;
     ruta: any;
+    contact: false;
     phoneWidth = 500 * window.devicePixelRatio;
     tabletWidth = 1024 * window.devicePixelRatio;
     sxgaScreen = 1280 * window.devicePixelRatio;
@@ -52,11 +53,24 @@ export class BannerComponent implements OnInit {
         } else if (this.uuid === undefined || this.uuid === '') {
             this.getTitle();
             this.bannerTitle = this.titulo;
+            //this.uuid == "39ce2484-2be2-470b-9768-fed85f14bc87" ? this.contact = true : this.contact = false;
+            //console.log(this.contact);
         } else {
             this.bandera_sevice = true;
             this.getTitle();
             this.getBannerService();
         }
+
+        // VALIDA SI EL UUID ES IGUAL  CONTÁCTENOS PARA OCULTAR EL SOBRE
+        if ($("app-banner").attr("uuid") == "39ce2484-2be2-470b-9768-fed85f14bc87") {
+
+            setTimeout(function () {
+                $(".envolope").hide();
+                }, 1000);
+
+             } else {
+                 $(".envolope").show();
+             }
     }
 
     getTitle() {

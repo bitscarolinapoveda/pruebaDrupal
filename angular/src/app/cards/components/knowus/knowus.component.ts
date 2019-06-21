@@ -17,6 +17,7 @@ export class KnowusComponent implements OnInit {
   datosMenu: DataMenu;
   visible: boolean;
   show: boolean;
+  titleInternalMenu: string;
 
   constructor(private _service: CustomCardService) {
     this.list = [];
@@ -32,12 +33,13 @@ export class KnowusComponent implements OnInit {
     this._service.getCustomCardInformation('knowusbitsamericas').subscribe(items => {
       this.title = items.header[0].data.title;
       this.subtitle = items.header[1].data.sub_title;
+      this.titleInternalMenu = items.header[2].data.internal_menu_title;
       items.data = this._service.addImageField(items.data, ['field_imagen']);
       this.list = items.data;
       if (this.title !== '' && this.list.length !== 0) {
         this.visible = true;
         this.datosMenu = {
-          label: 'CONOZCANOS',
+          label: this.titleInternalMenu,
           id: 'a5',
           url: ''
         };
