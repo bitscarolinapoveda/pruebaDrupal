@@ -20,7 +20,7 @@ export class BannerComponent implements OnInit {
     bannerDescrip: string;
     principalBanner: General;
     languagueBrowser: any;
-
+    ruta: any;
     phoneWidth = 500 * window.devicePixelRatio;
     tabletWidth = 1024 * window.devicePixelRatio;
     sxgaScreen = 1280 * window.devicePixelRatio;
@@ -37,9 +37,13 @@ export class BannerComponent implements OnInit {
         this.bannerDescrip = '';
         this.titulo = '';
         this.languagueBrowser = '';
+        this.ruta = '';
     }
 
     ngOnInit() {
+        this.router.events.subscribe((url: any) => url);
+        this.ruta = this.router.url;
+
         $(window).scrollTop(0);
         this.languagueBrowser = this.banner.getLanguageBrowser();
         if (this.titulo !== '' && (this.imgFondo === '' || this.imgFondo === undefined)) {
@@ -80,10 +84,12 @@ export class BannerComponent implements OnInit {
             } else {
                 this.bannerBackground = this.imgFondo;
             }
-            if (params.others_urls[this.languagueBrowser] !== '' &&
-                params.others_urls[this.languagueBrowser] !== '/' + this.languagueBrowser &&
-                params.others_urls[this.languagueBrowser] !== '/node') {
-                this.router.navigate([params.others_urls[this.languagueBrowser]]);
+            if (this.ruta.indexOf('title-description') === -1) {
+                if (params.others_urls[this.languagueBrowser] !== '' &&
+                    params.others_urls[this.languagueBrowser] !== '/' + this.languagueBrowser &&
+                    params.others_urls[this.languagueBrowser] !== '/node') {
+                    this.router.navigate([params.others_urls[this.languagueBrowser]]);
+                }
             }
         });
     }
@@ -99,7 +105,7 @@ export class BannerComponent implements OnInit {
                 cont = 0;
                 for (let value in servicesProduct[index].others_urls) {
                     var titulo_comd = servicesProduct[index].others_urls[value].split('/');
-                    if(value === 'es'){
+                    if (value === 'es') {
                         var result = titulo_comd[2];
                     } else {
                         var result = titulo_comd[3];
