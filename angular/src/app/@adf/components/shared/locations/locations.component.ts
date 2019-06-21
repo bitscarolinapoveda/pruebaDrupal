@@ -168,7 +168,7 @@ export class LocationsComponent implements OnInit {
       if (this.seeMoreText === true) {
         this.seeMoreText = false;
         this.seeLessText = true;
-        console.log("MAS TEXTO----");
+       
         $('#acordion-info').removeClass('see-more-true');
         $('#acordion-info').addClass('auto-height');
         $(".card:not(:nth-child(-n+2))").show();
@@ -177,7 +177,7 @@ export class LocationsComponent implements OnInit {
           'transform': 'rotate(180deg)'
         });
       } else if (this.seeMoreText === false) {
-        console.log("MENOS TEXTO----");
+
         this.seeMoreText = true;
         this.seeLessText = false;
         this.checkHeight();

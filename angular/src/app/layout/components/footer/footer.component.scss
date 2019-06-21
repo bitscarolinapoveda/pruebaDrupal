@@ -9,6 +9,13 @@
     height: 100%;
     background: rgba(0, 43, 73, 0.82);
   }
+  .iconbits{
+    @include breakpoint (desktop) {
+      &.pr_image{
+        padding-left: 5.4em ;
+      }
+    }
+  }    
 
   .general-container.footer-img {
     //background-image: url("/assets/images/footer.png");
