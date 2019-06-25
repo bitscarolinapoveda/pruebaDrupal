@@ -50,8 +50,9 @@
 }
 
 #carousel-container { 
-
   .carousel-main-image {
+    object-fit: cover;
+    background-size: cover;
     @include breakpoint (desktop) { 
       width: 100%;
       height: 5000px;
