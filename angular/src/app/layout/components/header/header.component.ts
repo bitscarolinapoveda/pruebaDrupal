@@ -12,7 +12,14 @@ var count = 0;
 export class HeaderComponent implements OnInit {
   imageLogo: any;
 
-  constructor(@Inject(DOCUMENT) private document: Document, private headerBrand: CustomCardService) { }
+  constructor(@Inject(DOCUMENT) private document: Document, private headerBrand: CustomCardService) {
+    this.imageLogo = {
+      'white': '',
+      'color': '',
+      'link' : '',
+      'label' : '',
+    };
+   }
 
   ngOnInit() {
     this.getHeaderBrandItems();

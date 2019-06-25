@@ -3,7 +3,7 @@
         <h1> {{ bannerTitle }} </h1>
     </div>
     <ng-container>
-        <picture>
+        <picture> 
 
             <div class="img" *ngIf="!bandera_sevice" [ngStyle]="{'background-image': 'url(' + bannerBackground + ')'}"></div>
             <source srcset="{{bannerBackground.banner_screen_phone?.url}} {{phoneWidth}}">

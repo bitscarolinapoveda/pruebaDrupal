@@ -2,12 +2,12 @@
     <ngb-carousel *ngIf="carousel.length > 0" (window:resize)="onResize()" (interval)="1000">
         <ng-template class="prueba" ngbSlide *ngFor="let item of carousel">
             <picture>
-                <source srcset="{{item.field_image.slider_principal_phone.url}} {{phoneWidth}}">
-                <source srcset="{{item.field_image.slider_principal_tablet.url}} {{tabletWidth}}">
-                <source srcset="{{item.field_image.slider_principal_desktop_sxga.url}} {{sxgaScreen}}">
-                <source srcset="{{item.field_image.slider_prueba.url}} {{hdScreen}}">
-                <source srcset="{{item.field_image.slider_principal_desktop_fhd.url}} {{fhdScreen}}">
-                <img class="carousel-main-image" [src]="item.field_image.slider_prueba?.url" alt="Random first slide"
+                <source srcset="{{item.field_image.slider_principal_phone?.url}} {{phoneWidth}}">
+                <source srcset="{{item.field_image.slider_principal_tablet?.url}} {{tabletWidth}}">
+                <source srcset="{{item.field_image.slider_principal_desktop_sxga?.url}} {{sxgaScreen}}">
+                <source srcset="{{item.field_image.slider_prueba?.url}} {{hdScreen}}">
+                <source srcset="{{item.field_image.slider_principal_desktop_fhd?.url}} {{fhdScreen}}">
+                <img class="carousel-main-image" [attr.src]="item.field_image.slider_prueba?.url" alt="Random first slide"
                     [ngStyle]="{'height': height}">
             </picture>
             <!-- <img class="carousel-main-image" [src]="item.field_image.slider_prueba?.url" alt="Random first slide"
