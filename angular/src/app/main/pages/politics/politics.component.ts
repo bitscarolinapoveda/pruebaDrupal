@@ -26,6 +26,7 @@ export class PoliticsComponent implements OnInit {
 
     getPoliticService() {
         this._http.getCustomContentBasicPage(this.uuid).subscribe(params => {
+          this.status = params.status;
           if (this.status === '0') {
             this.visable = true;
           } else if (this.uuid !== 'b63181f1-38dd-40c9-a993-c4b8d7faf305') {
