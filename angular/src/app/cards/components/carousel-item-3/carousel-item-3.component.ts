@@ -102,8 +102,8 @@ export class CarouselItem3Component implements OnInit {
       this.principalClient$ = this._cardService.getCustomInfoIM('allproductsandservicescard_2');
       this.principalClient$.subscribe(items => {
         this.principalClient = this._cardService.clone(items);
-        this.principalClient = this._cardService.getFilterPrincipalType(this.principalClient, 'field_clients', this.type);
-        this._cardService.getCustomInfoIM('imedicalclients').subscribe(itemsw => {
+        this.principalClient = this._cardService.getFilterPrincipalType(this.principalClient, 'field_client_simple', this.type);
+        this._cardService.getCustomInfoIM('clientsimplecard').subscribe(itemsw => {
           itemsw = this._cardService.getFilterLists(this.principalClient, itemsw);
           this.titleClients = itemsw.header[0].data.title;
           itemsw.data = this._cardService.addImageField(itemsw.data, ['field_image']);
