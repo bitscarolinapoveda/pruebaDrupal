@@ -124,6 +124,8 @@ class MenuRestResource extends ResourceBase {
       throw new AccessDeniedHttpException();
     }
 
+    $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+
     if ($menuName) {
 
       $parameters = new MenuTreeParameters();
@@ -144,6 +146,7 @@ class MenuRestResource extends ResourceBase {
 
       foreach ($tree as $key => $item) {
         $this->menuDetails[$key] = $this->getItemDetails($item);
+        $this->menuDetails[$key]['uri'] = ($language != 'es' ? '/' . $language : '') . $this->menuDetails[$key]['uri'];
         if($item->hasChildren){
           $index = 0;
           foreach ($item->subtree as $subitem) {
@@ -167,6 +170,10 @@ class MenuRestResource extends ResourceBase {
     }
 
     throw new HttpException(t("Menu name is required parameter"));
+  }
+
+  protected function addTranslationLang() {
+
   }
 
 
