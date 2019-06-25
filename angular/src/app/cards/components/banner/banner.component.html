@@ -6,13 +6,18 @@
         <picture>
 
             <div class="img" *ngIf="!bandera_sevice" [ngStyle]="{'background-image': 'url(' + bannerBackground + ')'}"></div>
+            <source srcset="{{bannerBackground.banner_screen_phone?.url}} {{phoneWidth}}">
+            <source srcset="{{bannerBackground.banner_screen_tablet?.url}} {{tabletWidth}}">
+            <source srcset="{{bannerBackground.banner_screen_sxga?.url}} {{sxgaScreen}}">
+            <source srcset="{{bannerBackground.banner_screen_hd?.url}} {{hdScreen}}">
+            <source srcset="{{bannerBackground.banner_screen_fhd?.url}} {{fhdScreen}}">
                                 
-            <img *ngIf="bandera_sevice"  class="img" [src]="bannerBackground.banner_screen_hd?.url" alt="banner"
-                 srcset="{{bannerBackground.banner_screen_phone?.url}} {{phoneWidth}}w, 
+            <img *ngIf="bandera_sevice"  class="img" [src]="bannerBackground.banner_screen_hd?.url" alt="banner">
+                <!--  srcset="{{bannerBackground.banner_screen_phone?.url}} {{phoneWidth}}w, 
                         {{bannerBackground.banner_screen_tablet?.url}} {{tabletWidth}}w,
                         {{bannerBackground.banner_screen_sxga?.url}} {{sxgaScreen}}w,
                         {{bannerBackground.banner_screen_hd?.url}} {{hdScreen}}w,
-                        {{bannerBackground.banner_screen_fhd?.url}} {{fhdScreen}}w">
+                        {{bannerBackground.banner_screen_fhd?.url}} {{fhdScreen}}w" -->
  
         </picture>
     </ng-container>
