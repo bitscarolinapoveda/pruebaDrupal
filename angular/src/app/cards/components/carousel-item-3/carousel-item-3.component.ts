@@ -141,13 +141,4 @@ export class CarouselItem3Component implements OnInit {
 
   }
 
-  showImage() {
-    $('.images img').css('transform', 'translate(0,0)');
-    $('.images img').css('opacity', '1');
-  }
-
-  showImagePhone() {
-    $('.images img').css('transform', 'translate(0,0)');
-    $('.images img').css('opacity', '1');
-  }
 }

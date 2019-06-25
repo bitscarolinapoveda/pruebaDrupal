@@ -1,15 +1,15 @@
 <div *ngIf="visible">
     <div [id]="datosMenu.id"></div>
-    <div class="row" (deferLoad)="show = true">
+    <div class="row" >
         <div class="col-md-4 mb-3">
-            <ng-container *ngIf="show">
+            <ng-container >
                 <div class="row">
                     <div class="col-md-12">
                         <h2 class="condensed">{{ titleLeft | uppercase}}</h2>
                         <hr class="green">
 
                         <img id="logo-cliente" [src]="imgSrcClient" class="img-fluid" alt="{{nameClient}}"
-                            (load)="showImage()">
+                         lazyload>
 
                     </div>
                 </div>
