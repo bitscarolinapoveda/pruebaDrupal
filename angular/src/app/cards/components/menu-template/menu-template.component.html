@@ -5,7 +5,7 @@
         </div>
     </li>
 </ul>
-<ngx-carousel [inputs]="carouselOne" id="menu-phone">
+<ngx-carousel [inputs]="carouselOne" id="menu-phone" >
     <ngx-tile NgxCarouselItem *ngFor="let value of menuList">
         <div class="nav-link" (click)="ubicaciones(value.id)">
             {{ value.label }}
