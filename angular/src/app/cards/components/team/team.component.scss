@@ -60,9 +60,7 @@
                 img {
                     width: 180px;
                     height: 180px;
-                    opacity: 0;
-                    transform: translate(0, 30px);
-                    transition: all 300ms ease;
+
                 }
             }
 
@@ -70,18 +68,14 @@
                 img {
                     width: 200px;
                     height: 180px;
-                    opacity: 0;
-                    transform: translate(0, 30px);
-                    transition: all 300ms ease;
+ 
                 }
             }
             @include breakpoint (tablet) {
                 img {
                     width: 200px;
                     height: 150px;
-                    opacity: 0;
-                    transform: translate(0, 30px);
-                    transition: all 300ms ease;
+                   
                 }
             }
         }
