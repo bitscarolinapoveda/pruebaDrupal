@@ -24,15 +24,13 @@
         </ngx-carousel>
     </div>
 
-    <div class="contenedor-mobile" (deferLoad)="showPhone = true">
+    <div class="contenedor-mobile">
         <!-- (window:resize)="onResize(screen)" -->
         <ngx-carousel [inputs]="carocarouselTile">
-            <ngx-tile NgxCarouselItem *ngFor="let items of arrayBox; let i = index">
-                <ng-container *ngIf="showPhone">
+            <ngx-tile NgxCarouselItem *ngFor="let items of arrayBox; let i = index">               
                     <div class="image-client-carousel-mobile images" *ngFor="let icons of items">
                         <img  src="{{ icons?.field_image?.url }}" lazyload>
                     </div>
-                </ng-container>
             </ngx-tile>
             <button NgxCarouselPrev class='leftRs'>&lt;</button>
             <button NgxCarouselNext class='rightRs'>&gt;</button>

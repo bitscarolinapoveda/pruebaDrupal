@@ -6,12 +6,12 @@
     <p class="descrip-principal" [innerHTML]="subtitle"></p>
   </section>
   <section class="content">
-    <div class="images-content" (deferLoad)="show = true">
+    <div class="images-content" >
       <ul class="row first images col-md-12">
         <li *ngFor="let data of list; let i = index" class="col-md-4">
-          <ng-container *ngIf="show">
+        
             <div class="col-md-12">
-              <img [src]="data.field_imagen.url" [alt]="data.field_imagen.alt" class="col-md-6" (load)="showImage()" />
+              <img [src]="data.field_imagen.url" [alt]="data.field_imagen.alt" class="col-md-6" lazyload />
               <label class="col-md-6">
                 <span class="plus" *ngIf="data.field_icono == 'up'">↑</span>
                 <span class="plus" *ngIf="data.field_icono == 'more'">+</span>
@@ -20,7 +20,7 @@
                 <p>{{ data.title }}</p>
               </label>
             </div>
-          </ng-container>
+       
         </li>
       </ul>
     </div>
