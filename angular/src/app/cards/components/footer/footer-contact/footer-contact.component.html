@@ -21,7 +21,7 @@
                 </a>
               </ng-template>
             </li>
-            <li class="li-contact-footer-icons" *ngFor="let socialIcon of contactSocialArray;">
+            <li class="li-contact-footer-icons" *ngFor="let socialIcon of contactSocialArray;" [ngClass]="{'d-none': socialIcon.data.url ==''}">
               <a class="link-icons" href="{{ socialIcon.data.url }}">
                 <i class="{{ socialIcon.data.text }} size-of-icons"></i>
               </a>

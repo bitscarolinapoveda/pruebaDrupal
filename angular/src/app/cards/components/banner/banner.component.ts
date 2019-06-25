@@ -12,7 +12,7 @@ declare var $: any;
 })
 export class BannerComponent implements OnInit {
     @Input() uuid: string;
-    @Input() titulo: string;
+    @Input() urlservprod: string;
     @Input() imgFondo: string;
     bannerTitle: any = [];
     bannerBackground: any = [];
@@ -36,7 +36,7 @@ export class BannerComponent implements OnInit {
     ) {
         this.uuid = '';
         this.bannerDescrip = '';
-        this.titulo = '';
+        this.urlservprod = '';
         this.languagueBrowser = '';
         this.ruta = '';
     }
@@ -47,17 +47,14 @@ export class BannerComponent implements OnInit {
 
         $(window).scrollTop(0);
         this.languagueBrowser = this.banner.getLanguageBrowser();
-        if (this.titulo !== '' && (this.imgFondo === '' || this.imgFondo === undefined)) {
+        if (this.urlservprod !== '' && (this.imgFondo === '' || this.imgFondo === undefined)) {
             this.bandera_sevice = false;
             this.getProductsAndServicesItems();
         } else if (this.uuid === undefined || this.uuid === '') {
-            this.getTitle();
-            this.bannerTitle = this.titulo;
+            this.bannerTitle = this.urlservprod;
             //this.uuid == "39ce2484-2be2-470b-9768-fed85f14bc87" ? this.contact = true : this.contact = false;
-            //console.log(this.contact);
         } else {
             this.bandera_sevice = true;
-            this.getTitle();
             this.getBannerService();
         }
 
@@ -71,14 +68,6 @@ export class BannerComponent implements OnInit {
              } else {
                  $(".envolope").show();
              }
-    }
-
-    getTitle() {
-        if (this.titulo !== '') {
-            while (this.titulo.indexOf('-') > -1) {
-                this.titulo = this.titulo.replace('-', '_');
-            }
-        }
     }
 
     getBannerService() {
@@ -111,36 +100,44 @@ export class BannerComponent implements OnInit {
     getProductsAndServicesItems() {
         this.banner.getCustomCardInformation('allproductsandservicescard_2').subscribe(items => {
             this.principalBanner = items;
-            this.principalBanner.data = this.banner.addImageField(this.principalBanner.data, ['field_short_image']);
             this.principalBanner.data = this.banner.addImageField(this.principalBanner.data, ['field_large_image']);
             const servicesProduct = this.principalBanner.data;
-            let cont = 0;
+            let bnVerContenido = false;
+            let bnRedirigirPorCambioDeIdioma = false;
+            //  Pasa por cada uno de los productos o servicios
             for (let index = 0; index < servicesProduct.length; index++) {
-                cont = 0;
-                for (let value in servicesProduct[index].others_urls) {
-                    var titulo_comd = servicesProduct[index].others_urls[value].split('/');
-                    if (value === 'es') {
-                        var result = titulo_comd[2];
-                    } else {
-                        var result = titulo_comd[3];
+                if (window.location.pathname == servicesProduct[index].url) {
+                    if (this.languagueBrowser
+                        && servicesProduct[index].others_urls[this.languagueBrowser]
+                        && servicesProduct[index].url != servicesProduct[index].others_urls[this.languagueBrowser]) {
+                            this.router.navigate([servicesProduct[index].others_urls[this.languagueBrowser]]);
                     }
-                    if (result !== undefined) {
-                        if (result.indexOf(this.titulo) > -1 &&
-                            servicesProduct[index].field_large_image !== undefined) {
-                            cont++;
+                    else {
+                        bnVerContenido = true;
+                    }
+                }
+                else {
+                    for (let value in servicesProduct[index].others_urls) {
+                        var titulo_comd = servicesProduct[index].others_urls[value];
+                        if (window.location.pathname == titulo_comd) {
+                            if (this.languagueBrowser
+                                && servicesProduct[index].others_urls[this.languagueBrowser]) {
+                                this.router.navigate([servicesProduct[index].others_urls[this.languagueBrowser]]);
+                                bnVerContenido = true;
+                            }
                         }
                     }
                 }
-                if (cont > 0) {
+                //  Debido a que es la misma URL cargamos la información del contenido
+                if (bnVerContenido) {
                     this.banner.getMetaService(servicesProduct[index].field_meta_tags);
                     this.bannerBackground = servicesProduct[index].field_large_image.url;
                     this.bannerDescrip = this.textFilter.filterHtml(servicesProduct[index].field_descriptions);
                     this.bannerTitle = servicesProduct[index].title;
-                    this.router.navigate([servicesProduct[index].others_urls[this.languagueBrowser]]);
                     break;
                 }
             }
-            if (cont === 0) {
+            if (!bnVerContenido) {
                 this.router.navigate(['/error']);
             }
         });

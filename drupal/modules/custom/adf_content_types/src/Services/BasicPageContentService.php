@@ -47,6 +47,7 @@ class BasicPageContentService {
     $resp['title'] = $node->getTitle();
     $resp['body'] = $node->get('body')->value;
     $resp['url'] = \Drupal::service('path.alias_manager')->getAliasByPath('/node/'.$node->id());
+    $resp['status'] = $node->get('status')->value;
     $languages = \Drupal::languageManager()->getLanguages();
     foreach ($languages as $key => $value) {
       $otherURL = \Drupal::service('path.alias_manager')->getAliasByPath('/node/'.$node->id(), $key);
