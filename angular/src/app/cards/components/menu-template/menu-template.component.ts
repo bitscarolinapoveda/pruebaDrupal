@@ -25,18 +25,23 @@ export class MenuTemplateComponent implements OnInit {
     ngOnInit() {
         // this.getMenuTemplateService();
         this.carouselOne = {
-            grid: { xs: 3, sm: 3, md: 4, lg: 4, all: 0 },
-            slide: 2,
+            grid: { xs: 2, sm: 2, md: 4, lg: 4, all: 0 },
+            slide: 1,
             speed: 400,
             animation: 'lazy',
             point: {
                 visible: false
             },
-            load: 4,
+            load: 2,
             touch: true,
             easing: 'ease',
-            loop: false,
+            loop: true
         };
+       /* setTimeout(function(){
+            $('.ngxcarousel-items ngx-tile:last-child').on({ 'touchstart' : function(){ 
+                console.log("BORAARR---------");
+             } });
+        },1000)*/
     }
 
     getMenuTemplateService() {
