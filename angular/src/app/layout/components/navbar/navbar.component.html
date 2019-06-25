@@ -9,7 +9,7 @@
                 <ng-container *ngFor="let nav of NavbarArray; let i= index ">
                     <li class="items customrow-1" [class.menu-has-children]="nav.below" (mouseover)='menuOver($event)'
                         (mouseleave)='menuOut($event)'>
-                        <a #sub [hidden]="nav.external" [routerLink]="nav.showrow ? ['/'+nav.uri] : null"
+                        <a #sub [hidden]="nav.external" [routerLink]="nav.showrow ? [nav.uri] : null"
                             [routerLinkActive]="'active'" class="link" (click)="overMenu()">
                             {{ nav.title }}
                         </a>
@@ -26,10 +26,10 @@
                     </li>
                 </ng-container>
             </ul>
-            <div class="dropdown" *ngIf="LanguageMenu.length !== 0" 
+            <div class="dropdown" *ngIf="LanguageMenu.length !== 0"
             (mouseleave)='menuOutLang($event)'>
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" 
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                     (click)="menuOverLang($event)">
                     {{LanguageMenuDefault.id}}
                     <div class="items dropdown-menu items-phone" aria-labelledby="dropdownMenuButton">

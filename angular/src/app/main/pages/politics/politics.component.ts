@@ -12,6 +12,7 @@ export class PoliticsComponent implements OnInit {
 
     visable: boolean;
     uuid: string;
+    status: any;
 
     constructor(private _http: CustomCardService) {
       this.visable = false;
@@ -25,17 +26,17 @@ export class PoliticsComponent implements OnInit {
 
     getPoliticService() {
         this._http.getCustomContentBasicPage(this.uuid).subscribe(params => {
-            if (this.status === '0') {
-              this.visable = true;
-            } else if (this.uuid !== 'b63181f1-38dd-40c9-a993-c4b8d7faf305') {
-              this.uuid = 'b63181f1-38dd-40c9-a993-c4b8d7faf305';
-              this._http.getCustomContentBasicPage(this.uuid).subscribe(items => {
+          if (this.status === '0') {
+            this.visable = true;
+          } else if (this.uuid !== 'b63181f1-38dd-40c9-a993-c4b8d7faf305') {
+            this.uuid = 'b63181f1-38dd-40c9-a993-c4b8d7faf305';
+            this._http.getCustomContentBasicPage(this.uuid).subscribe(items => {
               this.status = items.status;
               if (this.status === '0') {
                 this.visable = true;
               }
             });
           }
-        }
+        });
     }
 }

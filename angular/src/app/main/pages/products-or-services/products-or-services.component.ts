@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CustomCardService, Blurb } from '../../../services/cards/v1-card.services';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { DataMenu } from '../../../cards/components/menu-template/menu-template.component';
 import { HttpService } from '../../../services/http/http.service';
 import { getRelatedFormControls } from '@ng-dynamic-forms/core';
@@ -25,14 +25,15 @@ export class ProductsOrServicesComponent implements OnInit {
   visible: boolean;
   principal: General;
 
-  constructor(private _http: CustomCardService, private rutaActiva: ActivatedRoute, private service: HttpService) {
+  constructor(private _http: CustomCardService, private rutaActiva: ActivatedRoute, private service: HttpService, private router: Router) {
     this.blurbArray = [];
     this.listMenu = [];
     this.visible = false;
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
   }
 
   ngOnInit() {
-    
+
     this.type = this.rutaActiva.snapshot.params.type;
     this.rutaActiva.params.subscribe(
       (params: Params) => {

@@ -1,8 +1,8 @@
 <div class="row" id="blog">
     <div class="col-md-12">
-        <h2  [hidden]="status === '0'" class="condensed text-center">{{ titulo }}</h2>
+        <h2  [hidden]="status" class="condensed text-center">{{ titulo }}</h2>
     </div>
     <div class="col-md-12">
-        <p [hidden]="status === '0'" class="" [innerHTML]="list"></p>
+        <p [hidden]="status" class="" [innerHTML]="list"></p>
     </div>
 </div>

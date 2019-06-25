@@ -64,21 +64,23 @@ export class CarouselControlsComponent implements OnInit {
 
   getAchievementsCarouselItems() {
     return this._cardService.getCustomCardInformation('achievementscard').subscribe(items => {
-      items.data = this._cardService.addImageField(items.data, ['field_image']);
-      this.CarouselControlArray = items.data;
-      this.titleInternalMenu = items.header[1].data.internal_menu_title;
-      if (items.header[0] !== undefined) {
-        this.caroseltitle = items.header[0].data.title;
-      }
-      this.CarouselControlArray = Object.keys(items.data).map(function (key) { return items.data[key]; });
-      if (this.caroseltitle !== '' && this.CarouselControlArray.length !== 0) {
-        this.visible = true;
-        this.datosMenu = {
-          label: this.titleInternalMenu,
-          id: 'a3',
-          url: ''
-        };
-        this.propagar.emit(this.datosMenu);
+      if (items.header && items.header[0] && items.header[0].data && items.header[0].data.title && items.header[0].data.title != '') {
+        items.data = this._cardService.addImageField(items.data, ['field_image']);
+        this.CarouselControlArray = items.data;
+        this.titleInternalMenu = items.header[1].data.internal_menu_title;
+        if (items.header[0] !== undefined) {
+          this.caroseltitle = items.header[0].data.title;
+        }
+        this.CarouselControlArray = Object.keys(items.data).map(function (key) { return items.data[key]; });
+        if (this.caroseltitle !== '' && this.CarouselControlArray.length !== 0) {
+          this.visible = true;
+          this.datosMenu = {
+            label: this.titleInternalMenu,
+            id: 'a3',
+            url: ''
+          };
+          this.propagar.emit(this.datosMenu);
+        }
       }
     });
   }

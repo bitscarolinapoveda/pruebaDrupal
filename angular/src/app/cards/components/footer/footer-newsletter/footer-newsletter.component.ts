@@ -98,13 +98,13 @@ export class FooterNewsletterComponent implements OnInit {
             subtitle: subtitle,
             button: button,
           };
-          this.visible = true;
       }
     });
   }
   getModalCard() {
+    this.visible = false;
     this._cardService.getCustomCardInformation('newslettermodalcard').subscribe(items => {
-     if (items.header && items.header[0] && items.header[0].data && items.header[0].data.title && items.header[0].data.title != '') {
+      if (items.header && items.header[0] && items.header[0].data && items.header[0].data.title && items.header[0].data.title != '') {
         this.titleNewsletter = items.header[0].data.title;
         this.descriptionNewsletter = items.header[1].data.subtitle;
         for (let attr of items.body) {
