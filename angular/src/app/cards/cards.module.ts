@@ -59,6 +59,7 @@ import { WorkusComponent } from './components/workus/workus.component';
 import { OrganizeGridMuuriDirective } from '../directives/organize-grid-muuri.directive';
 //Directivas
 import { LazyloadClass } from '../directives/lazyload.directive';
+import { CarouselItem3Component } from './components/carousel-item-3/carousel-item-3.component';
 
 @NgModule({
   declarations: [
@@ -68,6 +69,7 @@ import { LazyloadClass } from '../directives/lazyload.directive';
     CarouselIndicatorsComponent,
     CarouselControlsComponent,
     CarouselItem2Component,
+    CarouselItem3Component,
     TecnologiesComponent,
     PorqueBitsComponent,
     AlliancesComponent,
@@ -105,6 +107,7 @@ import { LazyloadClass } from '../directives/lazyload.directive';
     CarouselIndicatorsComponent,
     CarouselControlsComponent,
     CarouselItem2Component,
+    CarouselItem3Component,
     TecnologiesComponent,
     PorqueBitsComponent,
     AlliancesComponent,
