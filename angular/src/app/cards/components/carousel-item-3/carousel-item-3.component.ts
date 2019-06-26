@@ -23,8 +23,7 @@ export class CarouselItem3Component implements OnInit {
   arrayBox = [];
   titleClients: string;
   datosMenu: DataMenu;
-  principalClient: General;
-  principalClient$: Observable<General>;
+  principalClient: any;
   casClient: any = 0;
   visible: boolean;
   flagUbication: string;
@@ -76,16 +75,20 @@ export class CarouselItem3Component implements OnInit {
   }
 
   getOurClientsItems() {
-    if (this.type === 'home') {
-      this.visible = true;
-      this.flagUbication = 'home';
-      this._cardService.getCustomCardInformation('clientscard').subscribe(items => {
-        items.data = this._cardService.addImageField(items.data, ['field_image']);
-        this.clients = items.data;
-        this.titleClients = items.header[0].data.title;
-        this.clients = Object.keys(items.data).map(function (key) { return items.data[key]; });
-        this.clientsDesktop = Object.keys(items.data).map(function (key) { return items.data[key]; });
-        switch (this.clientsDesktop.length) {
+    this._cardService.getCustomCardInformation('allproductsandservicescard_2').subscribe(items => {
+      this.principalClient = this._cardService.clone(items);
+      this.principalClient = this._cardService.getFilterPrincipalType(this.principalClient, 'field_client_simple', this.type);
+      this._cardService.getCustomCardInformation('clientsimplecard').subscribe(itemsw => {
+        itemsw = this._cardService.getFilterLists(this.principalClient, itemsw);
+        this.titleClients = itemsw.header[0].data.title;
+        itemsw.data = this._cardService.addImageField(itemsw.data, ['field_image']);
+        const list_items = this._cardService.clone(itemsw.data);
+        this.clients = list_items;
+        this.clientsDesktop = list_items;
+        this.clients = this._cardService.clone(this.clients);
+        this.casClient = this.casClient + 1;
+        this.titleInternalMenu = itemsw.header[2].data.internal_menu_title;
+        switch (this.clients.length) {
           case 1:
             this.oneItems = true;
             break;
@@ -97,48 +100,18 @@ export class CarouselItem3Component implements OnInit {
             break;
         }
         this.arrayBox = this._cardService.organizeInfoForCarousel(this.clients);
-      });
-    } else {
-      this.principalClient$ = this._cardService.getCustomInfoIM('allproductsandservicescard_2');
-      this.principalClient$.subscribe(items => {
-        this.principalClient = this._cardService.clone(items);
-        this.principalClient = this._cardService.getFilterPrincipalType(this.principalClient, 'field_clients', this.type);
-        this._cardService.getCustomInfoIM('imedicalclients').subscribe(itemsw => {
-          itemsw = this._cardService.getFilterLists(this.principalClient, itemsw);
-          this.titleClients = itemsw.header[0].data.title;
-          itemsw.data = this._cardService.addImageField(itemsw.data, ['field_image']);
-          const list_items = this._cardService.clone(itemsw.data);
-          this.clients = list_items;
-          this.clientsDesktop = list_items;
-          this.clients = this._cardService.clone(this.clients);
-          this.casClient = this.casClient + 1;
-          this.titleInternalMenu = itemsw.header[3].data.internal_menu_title;
-          switch (this.clients.length) {
-            case 1:
-              this.oneItems = true;
-              break;
-            case 2:
-              this.twoItems = true;
-              break;
-            case 3:
-              this.threeItems = true;
-              break;
-          }
-          this.arrayBox = this._cardService.organizeInfoForCarousel(this.clients);
 
-          if (this.clients.length !== 0) {
-            this.visible = true;
-            this.datosMenu = {
-              label: this.titleInternalMenu,
-              id: 'a6',
-              url: '/imedical'
-            };
-            this.propagar.emit(this.datosMenu);
-          }
-        });
+        if (this.clients.length !== 0) {
+          this.visible = true;
+          this.datosMenu = {
+            label: this.titleInternalMenu,
+            id: 'a6',
+            url: '/imedical'
+          };
+          this.propagar.emit(this.datosMenu);
+        }
       });
-    }
-
+    });
   }
 
 }

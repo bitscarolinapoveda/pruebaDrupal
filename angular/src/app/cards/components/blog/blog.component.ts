@@ -11,7 +11,7 @@ export class BlogComponent implements OnInit {
 
     titulo: string;
     list: string;
-    status: boolean;
+    status: string;
 
     // Se recibe uuid
     @Input() uuid: string;

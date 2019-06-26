@@ -60,6 +60,7 @@ import { OrganizeGridMuuriDirective } from '../directives/organize-grid-muuri.di
 //Directivas
 import { LazyloadClass } from '../directives/lazyload.directive';
 import { CarouselItem3Component } from './components/carousel-item-3/carousel-item-3.component';
+import { ClientsSimpleComponent } from './components/clients-simple/clients-simple.component';
 
 @NgModule({
   declarations: [
@@ -100,7 +101,8 @@ import { CarouselItem3Component } from './components/carousel-item-3/carousel-it
     OurWorkComponent,
     ScreenshotsComponent,
     ProjectFilterComponent,
-    LazyloadClass
+    LazyloadClass,
+    ClientsSimpleComponent
   ],
   exports: [
     //CarouselItemComponent,
@@ -140,6 +142,7 @@ import { CarouselItem3Component } from './components/carousel-item-3/carousel-it
     RecaptchaModule,
     ScreenshotsComponent,
     ProjectFilterComponent,
+    ClientsSimpleComponent
   ],
   imports: [
     BrowserModule,
