@@ -34,12 +34,13 @@ li.nav-item {
         #menu-phone {
             display: block;
         }
-
         #menu {
             display: none;
         }
         #menu-phone .item {
-            width: auto;
+            width: 50%;
+            text-align: center;
+            padding: 0px 0px 11px 0px;
         } 
 
     }

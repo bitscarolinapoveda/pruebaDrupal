@@ -28,11 +28,9 @@
         <!-- (window:resize)="onResize(screen)" -->
         <ngx-carousel [inputs]="carocarouselTile">
             <ngx-tile NgxCarouselItem *ngFor="let items of arrayBox; let i = index">
-            
                     <div class="image-client-carousel-mobile images" *ngFor="let icons of items">
                         <img  src="{{ icons?.field_image?.url }}" lazyload>
                     </div>
-
             </ngx-tile>
             <button NgxCarouselPrev class='leftRs'>&lt;</button>
             <button NgxCarouselNext class='rightRs'>&gt;</button>

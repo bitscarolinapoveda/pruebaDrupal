@@ -116,7 +116,6 @@ export class CardImgTextComponent implements OnInit {
     }
 
     showImagePhone() {
-        $('.showPhone .img-fluid').css('transform', 'translate(0,0)');
-        $('.showPhone .img-fluid').css('opacity', '1');
+    
     }
 }

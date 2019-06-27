@@ -165,7 +165,7 @@
 								name="{{item['#webform_key']}}" value="false" required="{{item['#required'] ==  true}}"
 								ngModel>
 							<label ng-reflect-ng-class="" for="{{'pqrs__' +item['#webform_key']}}" *ngIf="this.complement[2]?.data['link_descrip'] !== '' &&
-							this.complement[2] !==  undefined">{{this.complement[2]?.data['link_descrip']}}<a [routerLink]="ruta" *ngIf="this.complement[1]?.data['link_approved'] !== '' && this.complement[1] !==  undefined">
+							this.complement[2] !==  undefined">{{this.complement[2]?.data['link_descrip']}}<a target="_blank" [href]="ruta" *ngIf="this.complement[1]?.data['link_approved'] !== '' && this.complement[1] !==  undefined">
 								{{this.complement[1]?.data['link_approved']}}
 								</a>
 							</label>
