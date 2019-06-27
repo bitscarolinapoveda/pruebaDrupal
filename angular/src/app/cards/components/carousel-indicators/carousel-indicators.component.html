@@ -1,21 +1,20 @@
 <section id="carousel-container">
     <ngb-carousel *ngIf="carousel.length > 0" (window:resize)="onResize()" (interval)="1000">
         <ng-template class="prueba" ngbSlide *ngFor="let item of carousel">
-            <picture>
-                <source srcset="{{item.field_image.slider_principal_phone?.url}} {{phoneWidth}}">
-                <source srcset="{{item.field_image.slider_principal_tablet?.url}} {{tabletWidth}}">
-                <source srcset="{{item.field_image.slider_principal_desktop_sxga?.url}} {{sxgaScreen}}">
-                <source srcset="{{item.field_image.slider_prueba?.url}} {{hdScreen}}">
-                <source srcset="{{item.field_image.slider_principal_desktop_fhd?.url}} {{fhdScreen}}">
-                <img class="carousel-main-image" [attr.src]="item.field_image.slider_prueba?.url" alt="Random first slide"
-                    [ngStyle]="{'height': height}">
-            </picture>
-            <!-- <img class="carousel-main-image" [src]="item.field_image.slider_prueba?.url" alt="Random first slide"
-                [ngStyle]="{'height': height}" srcset="{{item.field_image.slider_principal_phone.url}} {{phoneWidth}},
-                        {{item.field_image.slider_principal_tablet.url}} {{tabletWidth}},
-                        {{item.field_image.slider_principal_desktop_sxga.url}} {{sxgaScreen}},
-                        {{item.field_image.slider_prueba.url}} {{hdScreen}},
-                        {{item.field_image.slider_principal_desktop_fhd.url}} {{fhdScreen}}"> -->
+             <picture>
+                <source media="(max-width: 800px)" srcset="{{item.field_image.slider_principal_phone?.url}}">
+                <source media="(max-width: 1024px)" srcset="{{item.field_image.slider_principal_tablet?.url}}">
+                <source media="(max-width: 1280px)" srcset="{{item.field_image.slider_principal_desktop_sxga?.url}} ">
+                <source media="(max-width: 1360px)" srcset="{{item.field_image.slider_prueba?.url}}">
+                <source media="(max-width: 1920px)" srcset="{{item.field_image.slider_principal_desktop_fhd?.url}}">
+                <img class="carousel-main-image" [src]="item.field_image.slider_principal_desktop_fhd?.url" alt="Random first slide" [ngStyle]="{'height': height}">
+            </picture> 
+            <!--<img class="carousel-main-image" [src]="item.field_image.slider_prueba?.url" alt="Random first slide"
+                [ngStyle]="{'height': height}" srcset="{{item.field_image.slider_principal_phone.url}} 800w,
+                        {{item.field_image.slider_principal_tablet.url}} 1024w,
+                        {{item.field_image.slider_principal_desktop_sxga.url}} 1280w,
+                        {{item.field_image.slider_prueba.url}} 1360w,
+                        {{item.field_image.slider_principal_desktop_fhd.url}} 1920w" sizes="100vw">-->
             <div class="carousel-caption">
                 <h3 class="carousel-title">{{ item.title }}</h3>
                 <p class="carousel-subtitle">{{ item.field_subtitle }}</p>
