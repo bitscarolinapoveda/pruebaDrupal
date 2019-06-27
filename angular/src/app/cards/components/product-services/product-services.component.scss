@@ -428,6 +428,9 @@
                 justify-content: center;
                 align-items: center;
 
+                @include mediaquery(350px){
+                    width: 41%;
+                }
                 @include breakpoint (tablet) {
                     width: 14%;
                     padding-top: 1%;
