@@ -22,11 +22,11 @@ export class BannerComponent implements OnInit {
     languagueBrowser: any;
     ruta: any;
     contact: false;
-    phoneWidth = 500 * window.devicePixelRatio;
-    tabletWidth = 1024 * window.devicePixelRatio;
-    sxgaScreen = 1280 * window.devicePixelRatio;
-    hdScreen = 1366 * window.devicePixelRatio;
-    fhdScreen = 1920 * window.devicePixelRatio;
+    phoneWidth = 500 * window.devicePixelRatio + 'w';
+    tabletWidth = 1024 * window.devicePixelRatio + 'w';
+    sxgaScreen = 1280 * window.devicePixelRatio + 'w';
+    hdScreen = 1366 * window.devicePixelRatio + 'w';
+    fhdScreen = 1920 * window.devicePixelRatio + 'w';
 
     bandera_sevice = false;
     constructor(

@@ -3,17 +3,21 @@
         <h1> {{ bannerTitle }} </h1>
     </div>
     <ng-container>
-        <picture>
+        <picture> 
 
             <div class="img" *ngIf="!bandera_sevice" [ngStyle]="{'background-image': 'url(' + bannerBackground + ')'}"></div>
-
-            <img *ngIf="bandera_sevice"  class="img" [src]="bannerBackground.banner_screen_hd?.url" alt="banner"
-                 srcset="{{bannerBackground.banner_screen_phone?.url}} {{phoneWidth}}w,
+            <source media="(max-width: 800px)" srcset="{{bannerBackground.banner_screen_phone?.url}}">
+            <source media="(max-width: 1024px)" srcset="{{bannerBackground.banner_screen_tablet?.url}}">
+            <source media="(max-width: 1280px)" srcset="{{bannerBackground.banner_screen_sxga?.url}}">
+            <source media="(max-width: 1360px)" srcset="{{bannerBackground.banner_screen_hd?.url}}">
+            <source media="(max-width: 1920px)" srcset="{{bannerBackground.banner_screen_fhd?.url}}">                               
+            <img *ngIf="bandera_sevice"  class="img" [src]="bannerBackground.banner_screen_fhd?.url" alt="banner"           >   
+            <!-- srcset="{{bannerBackground.banner_screen_phone?.url}} {{phoneWidth}}w, 
                         {{bannerBackground.banner_screen_tablet?.url}} {{tabletWidth}}w,
                         {{bannerBackground.banner_screen_sxga?.url}} {{sxgaScreen}}w,
                         {{bannerBackground.banner_screen_hd?.url}} {{hdScreen}}w,
-                        {{bannerBackground.banner_screen_fhd?.url}} {{fhdScreen}}w">
-
+                        {{bannerBackground.banner_screen_fhd?.url}} {{fhdScreen}}w"     -->        
+ 
         </picture>
     </ng-container>
 </section>
