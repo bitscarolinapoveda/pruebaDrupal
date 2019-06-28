@@ -83,18 +83,21 @@
       display: block;
       padding-left: 25%;
       @include font_relative(1400px,24px,1000px,20px,4);
+      
       @include font_relative(700px,18px,400px,15px,3);
+      @include zoomeable(653px,575px){
+        font-size: 18px;
+      }
+      @include zoomeable(574px, 480px){
+        font-size: 15px;
+      }
+      @include font_relative(399px,16px,199px,14px,2);
 
       // ZOOM SUPPORT
        /* @media (min-height: 576px) and (max-height: 653px) {
           font-size: 14px;
         }*/
-        @include zoomeable(653px,575px){
-          font-size: 18px;
-        }
-        @include zoomeable(574px, 480px){
-          font-size: 15px;
-        }
+ 
     }
   }
 
