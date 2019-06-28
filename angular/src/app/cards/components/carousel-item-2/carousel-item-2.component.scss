@@ -413,6 +413,9 @@ h1 {
             width: 100%;
             object-fit: contain;
         }
+        @media (max-width: 600px) and (orientation: landscape){
+            width: 150px;
+        }
     }
 }
 
