@@ -9,11 +9,11 @@
                 <ng-container *ngFor="let nav of NavbarArray; let i= index ">
                     <li class="items customrow-1" [class.menu-has-children]="nav.below" (mouseover)='menuOver($event)'
                         (mouseleave)='menuOut($event)'>
-                        <a #sub [hidden]="nav.external" [routerLink]="nav.showrow ? [nav.uri] : null"
+                        <a #sub *ngIf="!nav.external" [routerLink]="nav.showrow ? [nav.uri] : null"
                             [routerLinkActive]="'active'" class="link" (click)="overMenu()">
                             {{ nav.title }}
                         </a>
-                        <a #sub [hidden]="!nav.external" href="{{nav.uri}}" class="link">
+                        <a #sub *ngIf="nav.external" href="{{nav.uri}}" class="link">
                             {{ nav.title }}
                         </a>
                         <ng-container *ngIf="nav.below">

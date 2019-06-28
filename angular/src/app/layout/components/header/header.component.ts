@@ -14,10 +14,10 @@ export class HeaderComponent implements OnInit {
 
   constructor(@Inject(DOCUMENT) private document: Document, private headerBrand: CustomCardService) {
     this.imageLogo = {
-      'white': '',
-      'color': '',
-      'link' : '',
-      'label' : '',
+      white: '',
+      color: '',
+      link : '',
+      label : '',
     };
    }
 
@@ -71,10 +71,10 @@ export class HeaderComponent implements OnInit {
   getHeaderBrandItems() {
     this.headerBrand.getCustomCardInformation('headerbrandcard').subscribe((items) => {
       this.imageLogo = {
-        'white': items.header[0].white_logo[0].url,
-        'color': items.header[1].color_logo[0].url,
-        'link' : items.header[2].data.link,
-        'label' : items.header[2].data.label,
+        white: items.header[0].white_logo[0].url,
+        color: items.header[1].color_logo[0].url,
+        link : items.header[2].data.link,
+        label : items.header[2].data.label,
       };
     });
   }
