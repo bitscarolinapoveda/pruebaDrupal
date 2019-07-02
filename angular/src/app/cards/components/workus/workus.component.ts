@@ -51,6 +51,9 @@ export class WorkusComponent implements OnInit {
   ruta: any;
   complement: any;
   val_HojaVW: any;
+  pais_required: boolean;
+  hojav_required: boolean;
+  blob: boolean;
 
   onSubmit(formulario) {
 
@@ -83,6 +86,8 @@ export class WorkusComponent implements OnInit {
               );
             }
           } else if (datos.sid) {
+
+            this.dataMessage = [];
 
             jQuery('#formulario_contactoWS')[0].reset();
 
@@ -125,11 +130,13 @@ export class WorkusComponent implements OnInit {
     this.hojaWU = '';
     this.valido = false;
     this.hover_buttom = '';
-     this.hojaWU = '';
+    this.hojaWU = '';
     this.languagueBrowser = '';
     this.ruta = '';
     this.complement = [];
     this.val_HojaVW = '';
+    this.pais_required = false;
+    this.hojav_required = false;
   }
 
   mostrarDatosWS(id) {
@@ -167,6 +174,14 @@ export class WorkusComponent implements OnInit {
 
   }
 
+  validFile() {
+    if (this.file.blob === '' && this.hojav_required === true) {
+      this.blob = false;
+      $('label.hoja-v').addClass('ng-pristine ng-invalid ng-touched');
+    }
+
+  }
+
   getForm() {
 
     this._service.getCustomForm('work_with_us').subscribe(params => {
@@ -196,9 +211,10 @@ export class WorkusComponent implements OnInit {
             if (cont != 0) {
               listLayout[index] = [];
               for (var indexz in campoForm) {
-                if(campoForm[indexz]['#type'] === 'managed_file'){
+                if (campoForm[indexz]['#type'] === 'managed_file') {
                   this.val_HojaVW = campoForm[indexz]['#placeholder'];
                   this.hojaWU = this.val_HojaVW;
+                  this.hojav_required = campoForm[indexz]['#required'];
                 }
                 listLayout[index].push(campoForm[indexz]);
               }
@@ -238,22 +254,26 @@ export class WorkusComponent implements OnInit {
   }
 
   onFileChange(event) {
-    this.file['name'] = event.target.files[0].name;
-    this.file['mime'] = event.target.files[0].type;
-    this.file['blob'] = '';
+    if (event.target.files[0] !== undefined) {
+      this.file['name'] = event.target.files[0].name;
+      this.file['mime'] = event.target.files[0].type;
+      this.file['blob'] = '';
 
-    if (event.target.files.length > 0) {
-      this.hojaWU = event.target.files[0].name;
+      if (event.target.files.length > 0) {
+        this.hojaWU = event.target.files[0].name;
 
-      var reader = new FileReader();
-      var ourThis = this;
-      reader.onloadend = e => {
-        this.file['blob'] = ourThis._service.base64ArrayBuffer(e.target['result']);
-      };
-      reader.onerror = e => {
-        console.log(e.target['error']);
-      };
-      reader.readAsArrayBuffer(event.target.files[0]);
+        var reader = new FileReader();
+        var ourThis = this;
+        reader.onloadend = e => {
+          $('label.hoja-v').removeClass('ng-pristine ng-invalid ng-touched');
+          this.blob = true;
+          this.file['blob'] = ourThis._service.base64ArrayBuffer(e.target['result']);
+        };
+        reader.onerror = e => {
+          console.log(e.target['error']);
+        };
+        reader.readAsArrayBuffer(event.target.files[0]);
+      }
     }
   }
 
@@ -310,6 +330,10 @@ export class WorkusComponent implements OnInit {
 
   public selectedPais(value: any): void {
     this.pais = value.text;
+    if (this.pais !== '') {
+      $('#work_with_us__pais .ui-select-container').removeClass('ng-pristine ng-invalid ng-touched');
+      this.pais_required = false;
+    }
   }
 
   public removedPais(value: any): void {
@@ -321,6 +345,9 @@ export class WorkusComponent implements OnInit {
 
   public refreshValuePais(value: any): void {
     this.pais = value.text;
+    if (this.pais === undefined) {
+      $('#work_with_us__pais .ui-select-container').addClass('ng-pristine ng-invalid ng-touched');
+      this.pais_required = true;
+    }
   }
-
 }

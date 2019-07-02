@@ -64,6 +64,9 @@ export class TabsComponent implements OnInit {
   languagueBrowser: any;
   ruta: any;
   complement: any;
+  pais_required: boolean;
+  service_required: boolean;
+  product_required: boolean;
 
 
   constructor(private _http: HttpService, private _service: CustomCardService, private http_pais: HttpClient, config: NgbPopoverConfig,
@@ -88,6 +91,9 @@ export class TabsComponent implements OnInit {
     this.languagueBrowser = '';
     this.ruta = '';
     this.complement = [];
+    this.pais_required = false;
+    this.service_required = false;
+    this.product_required = false;
   }
 
   mostrarDatos(id) {
@@ -133,6 +139,8 @@ export class TabsComponent implements OnInit {
             }
 
           } else if (datos.sid) {
+
+            this.dataMessage = [];
 
             $('#formulario_contacto')[0].reset();
 
@@ -194,8 +202,8 @@ export class TabsComponent implements OnInit {
       $('.contactenos button').toggleClass('active');
     });
     // HACK SAFARI
-    $(".terminos_grupo [type='checkbox']+label a ").click(function(){
-      $(this).css("color","blue");
+    $(".terminos_grupo [type='checkbox']+label a ").click(function () {
+      $(this).css("color", "blue");
     });
 
     this.getPopoverService();
@@ -314,7 +322,7 @@ export class TabsComponent implements OnInit {
         // Cuando es un producto
         if (params.data[index].field_type[0].uuid === '7105bc2b-1dde-4877-9e67-2aa8e3c9c999') {
           this.bandProduct.push(params.data[index].title);
-        // Cuando es un servicio
+          // Cuando es un servicio
         } else if (params.data[index].field_type[0].uuid === '0494c41b-7483-4df0-8ff8-af4744ce623c') {
           this.bandService.push(params.data[index].title);
         }
@@ -353,6 +361,10 @@ export class TabsComponent implements OnInit {
 
   public selectedPais(value: any): void {
     this.pais = value.text;
+    if (this.pais !== '') {
+      $('#contact_us__pais .ui-select-container').removeClass('ng-pristine ng-invalid ng-touched');
+      this.pais_required = false;
+    }
   }
 
   public removedPais(value: any): void {
@@ -364,10 +376,18 @@ export class TabsComponent implements OnInit {
 
   public refreshValuePais(value: any): void {
     this.pais = value.text;
+    if (this.pais === undefined) {
+      $('#contact_us__pais .ui-select-container').addClass('ng-pristine ng-invalid ng-touched');
+      this.pais_required = true;
+    }
   }
 
   public selectedProduct(value: any): void {
     this.product = value.text;
+    if (this.product !== '') {
+      $('#contact_us__product .ui-select-container').removeClass('ng-pristine ng-invalid ng-touched');
+      this.product_required = false;
+    }
   }
 
   public removedProduct(value: any): void {
@@ -379,10 +399,18 @@ export class TabsComponent implements OnInit {
 
   public refreshValueProduct(value: any): void {
     this.product = value.text;
+    if (this.product === undefined) {
+      $('#contact_us__product .ui-select-container').addClass('ng-pristine ng-invalid ng-touched');
+      this.product_required = true;
+    }
   }
 
   public selectedService(value: any): void {
     this.service = value.text;
+    if (this.service !== '') {
+      $('#contact_us__service .ui-select-container').removeClass('ng-pristine ng-invalid ng-touched');
+      this.service_required = false;
+    }
   }
 
   public removedService(value: any): void {
@@ -394,6 +422,10 @@ export class TabsComponent implements OnInit {
 
   public refreshValueService(value: any): void {
     this.service = value.text;
+    if (this.service === undefined) {
+      $('#contact_us__service .ui-select-container').addClass('ng-pristine ng-invalid ng-touched');
+      this.service_required = true;
+    }
   }
 
 }
