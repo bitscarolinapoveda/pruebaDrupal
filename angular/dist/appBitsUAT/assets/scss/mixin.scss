@@ -126,7 +126,7 @@ $max_350:350px;
     $ancho: ( $anchoA - $anchoB ) / $divisores;
     $tamanoFuente: ( $tamanoFuenteA - $tamanoFuenteB ) / $divisores;
 
-    @include mediaquery($anchoA) {
+    @media (max-width: $anchoA) {
         font-size: $tamanoFuenteA;
     }
 
@@ -134,7 +134,7 @@ $max_350:350px;
       $ind: $ancho * $i;
       $width_media : $anchoA - $ind;
       $tamanoFuente_fin:  $tamanoFuenteA - ($i * $tamanoFuente);
-      @include mediaquery($width_media) {
+      @media (max-width: $width_media) {
         font-size:  $tamanoFuente_fin;
       }
 
