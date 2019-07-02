@@ -111,7 +111,7 @@ $max_350:350px;
         }
     }
     @else{
-        @media (max-width: $size) {
+        @media (max-width: $size) and (orientation: portrait) {
             @content;
         }
     }
