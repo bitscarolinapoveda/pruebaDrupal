@@ -1,6 +1,6 @@
 @import './src/assets/scss/mixin.scss';
 
-#title-gallery {    
+#title-gallery {
 
     .title {
         background: rgb(247, 249, 249);
@@ -163,6 +163,7 @@
                 width: 100%;
                 height: 100%;
                 z-index: -1;
+                object-fit: cover;
             }
         }
 
@@ -428,6 +429,9 @@
                 justify-content: center;
                 align-items: center;
 
+                @include mediaquery(350px){
+                    width: 41%;
+                }
                 @include breakpoint (tablet) {
                     width: 14%;
                     padding-top: 1%;

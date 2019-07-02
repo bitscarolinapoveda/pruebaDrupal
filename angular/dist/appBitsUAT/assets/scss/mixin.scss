@@ -38,7 +38,13 @@ $max_736:736px;
 $max_599:599px;
 $max_575:575px;
 $max_480:480px;
+$max_350:350px;
 @mixin mediaquery ($size) {
+    @if $size==$max_350 {
+        @media (max-width: $max_350) {
+            @content;
+        }
+    }
     @if $size==max_1690 {
         @media (max-width: $max_1690) {
             @content;
@@ -105,7 +111,7 @@ $max_480:480px;
         }
     }
     @else{
-        @media (max-width: $size) {
+        @media (max-width: $size) and (orientation: portrait) {
             @content;
         }
     }
