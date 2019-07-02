@@ -53,8 +53,12 @@ export class PqrsComponent implements OnInit {
   descripPrincipal: any;
   complement: any;
   val_HojaVW: any;
+  pais_required: boolean;
+  tipo_required: boolean;
+  hojav_required: boolean;
+  blob: boolean;
 
-  constructor(private _http: HttpService, private _service: CustomCardService, 
+  constructor(private _http: HttpService, private _service: CustomCardService,
     private http_pais: HttpClient, config: NgbPopoverConfig, private fb: FormBuilder,
     private rutaActiva: ActivatedRoute) {
     this.dataMessage = [];
@@ -84,9 +88,19 @@ export class PqrsComponent implements OnInit {
       name: '',
       mime: '',
       blob: '',
-      };
+    };
     this.complement = [];
     this.val_HojaVW = '';
+    this.pais_required = false;
+    this.tipo_required = false;
+  }
+
+  validFile() {
+    if (this.file.blob === '' && this.hojav_required === true) {
+      this.blob = false;
+      $('label.hoja-v').addClass('ng-pristine ng-invalid ng-touched');
+    }
+
   }
 
   mostrarDatos(id) {
@@ -127,6 +141,8 @@ export class PqrsComponent implements OnInit {
             }
 
           } else if (datos.sid) {
+
+            this.dataMessage = [];
 
             $('#formulario_contacto')[0].reset();
 
@@ -274,9 +290,10 @@ export class PqrsComponent implements OnInit {
             if (cont != 0) {
               listLayout[index] = [];
               for (var indexz in campoForm) {
-                if(campoForm[indexz]['#type'] === 'managed_file'){
+                if (campoForm[indexz]['#type'] === 'managed_file') {
                   this.val_HojaVW = campoForm[indexz]['#placeholder'];
                   this.hojaWU = this.val_HojaVW;
+                  this.hojav_required = campoForm[indexz]['#required'];
                 }
                 listLayout[index].push(campoForm[indexz]);
               }
@@ -298,23 +315,27 @@ export class PqrsComponent implements OnInit {
   }
 
   onFileChange(event) {
+    if (event.target.files[0] !== undefined) {
 
-    this.file['name'] = event.target.files[0].name;
-    this.file['mime'] = event.target.files[0].type;
-    this.file['blob'] = '';
+      this.file['name'] = event.target.files[0].name;
+      this.file['mime'] = event.target.files[0].type;
+      this.file['blob'] = '';
 
-    if (event.target.files.length > 0) {
-      this.hojaWU = event.target.files[0].name;
+      if (event.target.files.length > 0) {
+        this.hojaWU = event.target.files[0].name;
 
-      var reader = new FileReader();
-      var ourThis = this;
-      reader.onloadend = e => {
-        this.file['blob'] = ourThis._service.base64ArrayBuffer(e.target['result']);
-      };
-      reader.onerror = e => {
-        console.log(e.target['error']);
-      };
-      reader.readAsArrayBuffer(event.target.files[0]);
+        var reader = new FileReader();
+        var ourThis = this;
+        reader.onloadend = e => {
+          $('label.hoja-v').removeClass('ng-pristine ng-invalid ng-touched');
+          this.blob = true;
+          this.file['blob'] = ourThis._service.base64ArrayBuffer(e.target['result']);
+        };
+        reader.onerror = e => {
+          console.log(e.target['error']);
+        };
+        reader.readAsArrayBuffer(event.target.files[0]);
+      }
     }
   }
 
@@ -339,6 +360,10 @@ export class PqrsComponent implements OnInit {
 
   public selectedPais(value: any): void {
     this.pais = value.text;
+    if (this.pais !== '') {
+      $('#pqrs__pais .ui-select-container').removeClass('ng-pristine ng-invalid ng-touched');
+      this.pais_required = false;
+    }
   }
 
   public removedPais(value: any): void {
@@ -350,10 +375,18 @@ export class PqrsComponent implements OnInit {
 
   public refreshValuePais(value: any): void {
     this.pais = value.text;
+    if (this.pais === undefined) {
+      $('#pqrs__pais .ui-select-container').addClass('ng-pristine ng-invalid ng-touched');
+      this.pais_required = true;
+    }
   }
 
   public selectedTipo(value: any): void {
     this.tipo = value.text;
+    if (this.tipo !== '') {
+      $('#pqrs__tipo .ui-select-container').removeClass('ng-pristine ng-invalid ng-touched');
+      this.tipo_required = false;
+    }
   }
 
   public removedTipo(value: any): void {
@@ -365,6 +398,10 @@ export class PqrsComponent implements OnInit {
 
   public refreshValueTipo(value: any): void {
     this.tipo = value.text;
+    if (this.tipo === undefined) {
+      $('#pqrs__tipo .ui-select-container').addClass('ng-pristine ng-invalid ng-touched');
+      this.tipo_required = true;
+    }
   }
 
 }

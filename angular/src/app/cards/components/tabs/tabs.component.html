@@ -17,8 +17,15 @@
 		<form id="formulario_contacto" #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)" class="col-md-12"
 			name="formulario_contacto">
 			<app-message [dataMessage]="dataMessage"></app-message>
-			<ng-template #valid>
-				<div class="alert alert-danger" role="alert" *ngIf="this.complement[0]?.data['alert_error'] !== '' && this.complement[0] !==  undefined">
+			<ng-template #valid_required>
+				<div class="alert alert-danger" role="alert"
+					*ngIf="this.complement[8]?.data['alert_error'] !== '' && this.complement[8] !==  undefined">
+					{{this.complement[8]?.data['alert_required']}}
+				</div>
+			</ng-template>
+			<ng-template #error>
+				<div class="alert alert-danger" role="alert"
+					*ngIf="this.complement[0]?.data['alert_error'] !== '' && this.complement[0] !==  undefined">
 					{{this.complement[0]?.data['alert_error']}}
 				</div>
 			</ng-template>
@@ -29,8 +36,8 @@
 					<ng-container *ngIf="item[0]">
 						<div class="col-md-6 item" *ngFor="let elementLayout of item">
 							<!-- Campos textfiel o tel. No incluye los select: pais, servicios de interes y productos de interes-->
-							<div
-								*ngIf="(elementLayout['#type'] == 'textfield' || elementLayout['#type'] == 'tel') && elementLayout['#webform_key'] != 'pais' && elementLayout['#webform_key'] != 'servicios_de_interes' && elementLayout['#webform_key'] != 'productos_de_interes'" class="pos-flex">
+							<div *ngIf="(elementLayout['#type'] == 'textfield' || elementLayout['#type'] == 'tel') && elementLayout['#webform_key'] != 'pais' && elementLayout['#webform_key'] != 'servicios_de_interes' && elementLayout['#webform_key'] != 'productos_de_interes'"
+								class="pos-flex">
 								<label for="{{elementLayout['#webform_key']}}">{{elementLayout["#title"]}}
 									<span *ngIf="elementLayout['#required'] ==  true">*</span></label>
 								<input type="{{elementLayout['#type']}}" class="form-control"
@@ -41,7 +48,8 @@
 									required="{{elementLayout['#required'] ==  true}}"
 									(mouseover)="mostrarDatos($event)" maxlength="{{elementLayout['#maxlength']}}"
 									#textfield="ngModel" ngModel>
-								<ng-container *ngIf="(textfield.invalid && textfield.touched) then valid">
+								<ng-container
+									*ngIf="(textfield.touched &&  (textfield.errors && textfield.errors.required)) then valid_required">
 								</ng-container>
 							</div>
 							<!-- Campos email-->
@@ -57,8 +65,13 @@
 									(mouseover)="mostrarDatos($event)"
 									pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
 									ngModel>
-								<ng-container *ngIf="(email.invalid && email.touched) then valid">
+								<ng-container
+									*ngIf="(email.touched &&  (email.errors && email.errors.required)) then valid_required; else valid_error">
 								</ng-container>
+								<ng-template #valid_error>
+									<ng-container *ngIf="(email.touched && email.invalid && email.dirty ) then error">
+									</ng-container>
+								</ng-template>
 							</div>
 							<!-- Campos textarea-->
 							<div *ngIf="elementLayout['#type'] == 'textarea'" class="pos-flex">
@@ -70,7 +83,8 @@
 									(mouseleave)="ocultarDatos($event)" (mouseover)="mostrarDatos($event)"
 									required="{{elementLayout['#required'] ==  true}}"
 									maxlength="{{elementLayout['#maxlength']}}" #textarea="ngModel" ngModel></textarea>
-								<ng-container *ngIf="(textarea.invalid && textarea.touched) then valid">
+								<ng-container
+									*ngIf="(textarea.touched &&  (textarea.errors && textarea.errors.required)) then valid_required">
 								</ng-container>
 							</div>
 							<!-- Campo select pais, se debe mantener el nombre para que funcione el componente-->
@@ -84,8 +98,12 @@
 									(selected)="selectedPais($event)" (removed)="removedPais($event)"
 									(typed)="typedPais($event)">
 								</ng-select>
-								<input type="text" autocomplete="off" class="form-control ocultar" id="{{elementLayout['#webform_key']}}"
-									name="{{elementLayout['#webform_key']}}" [ngModel]="pais">
+								<input type="text" autocomplete="off" class="form-control ocultar"
+									id="{{elementLayout['#webform_key']}}" name="{{elementLayout['#webform_key']}}"
+									[ngModel]="pais">
+								<ng-container
+									*ngIf="(elementLayout['#required'] ==  true && pais_required == true) then valid_required">
+								</ng-container>
 							</div>
 							<!-- Campo select servicios de interes, se debe mantener el nombre para que funcione el componente-->
 							<div *ngIf="elementLayout['#webform_key'] == 'servicios_de_interes'" class="pos-flex">
@@ -98,8 +116,12 @@
 									(selected)="selectedService($event)" (removed)="removedService($event)"
 									(typed)="typedService($event)">
 								</ng-select>
-								<input type="text" autocomplete="off" class="form-control ocultar" id="{{elementLayout['#webform_key']}}"
-									name="{{elementLayout['#webform_key']}}" [ngModel]="service">
+								<input type="text" autocomplete="off" class="form-control ocultar"
+									id="{{elementLayout['#webform_key']}}" name="{{elementLayout['#webform_key']}}"
+									[ngModel]="service">
+								<ng-container
+									*ngIf="(elementLayout['#required'] ==  true && service_required == true) then valid_required">
+								</ng-container>
 							</div>
 							<!-- Campo select productos de interes, se debe mantener el nombre para que funcione el componente-->
 							<div *ngIf="elementLayout['#webform_key'] == 'productos_de_interes'" class="pos-flex">
@@ -112,8 +134,12 @@
 									(selected)="selectedProduct($event)" (removed)="removedProduct($event)"
 									(typed)="typedProduct($event)">
 								</ng-select>
-								<input type="text" autocomplete="off" class="form-control ocultar" id="{{elementLayout['#webform_key']}}"
-									name="{{elementLayout['#webform_key']}}" [ngModel]="product">
+								<input type="text" autocomplete="off" class="form-control ocultar"
+									id="{{elementLayout['#webform_key']}}" name="{{elementLayout['#webform_key']}}"
+									[ngModel]="product">
+								<ng-container
+									*ngIf="(elementLayout['#required'] ==  true && product_required == true) then valid_required">
+								</ng-container>
 							</div>
 						</div>
 					</ng-container>
@@ -130,7 +156,8 @@
 								(mouseleave)="ocultarDatos($event)" required="{{item['#required'] ==  true}}"
 								(mouseover)="mostrarDatos($event)" maxlength="{{item['#maxlength']}}"
 								#textfield="ngModel" ngModel>
-							<ng-container *ngIf="(textfield.invalid && textfield.touched) then valid">
+							<ng-container
+								*ngIf="(textfield.touched &&  (textfield.errors && textfield.errors.required)) then valid_required">
 							</ng-container>
 						</div>
 						<!-- Campos email-->
@@ -144,8 +171,13 @@
 								(mouseleave)="ocultarDatos($event)" (mouseover)="mostrarDatos($event)"
 								pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
 								ngModel>
-							<ng-container *ngIf="(email.invalid && email.touched) then valid">
+							<ng-container
+								*ngIf="(email.touched &&  (email.errors && email.errors.required)) then valid_required; else valid_error">
 							</ng-container>
+							<ng-template #valid_error>
+								<ng-container *ngIf="(email.touched && email.invalid && email.dirty ) then error">
+								</ng-container>
+							</ng-template>
 						</div>
 						<!-- Campos textarea-->
 						<div *ngIf="item['#type'] == 'textarea'" class="textarea" class="text">
@@ -156,7 +188,8 @@
 								(click)="mostrarDatos($event)" (mouseleave)="ocultarDatos($event)"
 								(mouseover)="mostrarDatos($event)" required="{{item['#required'] ==  true}}"
 								maxlength="{{item['#maxlength']}}" #textarea="ngModel" ngModel></textarea>
-							<ng-container *ngIf="(textarea.invalid && textarea.touched) then valid">
+							<ng-container
+								*ngIf="(textarea.touched &&  (textarea.errors && textarea.errors.required)) then valid_required">
 							</ng-container>
 						</div>
 						<!-- Campo terminos y condiciones-->
@@ -166,7 +199,8 @@
 								name="{{item['#webform_key']}}" value="false" required="{{item['#required'] ==  true}}"
 								ngModel>
 							<label ng-reflect-ng-class="" for="{{'contact_us__' +item['#webform_key']}}" *ngIf="this.complement[2]?.data['link_descrip'] !== '' &&
-							this.complement[2] !==  undefined">{{this.complement[2]?.data['link_descrip']}} <a target="_blank" [href]="ruta" *ngIf="this.complement[1]?.data['link_approved'] !== '' && this.complement[1] !==  undefined">
+							this.complement[2] !==  undefined">{{this.complement[2]?.data['link_descrip']}} <a target="_blank" [href]="ruta"
+									*ngIf="this.complement[1]?.data['link_approved'] !== '' && this.complement[1] !==  undefined">
 									{{this.complement[1]?.data['link_approved']}}
 
 								</a>
@@ -190,13 +224,12 @@
 				siteKey="6LfycJsUAAAAANcZLFFQErxM92v-rNzuZTX6I3Ob" ngDefaultControl></re-captcha>
 			<ng-template #tipContent>{{hover_buttom}}</ng-template>
 			<button type="submit" class="btn btn-primary" [ngbTooltip]="tipContent"
-				[ngClass]="userForm.invalid?'disabled':''" [disabled]="userForm.invalid"
-				*ngIf="this.complement[3]?.data['text_button'] !== '' &&
+				[ngClass]="userForm.invalid?'disabled':''" [disabled]="userForm.invalid" *ngIf="this.complement[3]?.data['text_button'] !== '' &&
 			this.complement[3] !==  undefined">
 				{{this.complement[3]?.data['text_button']}}
 			</button>
-			<div class="obligatorios col-md-12" *ngIf="this.complement[4]?.data['alert_required'] !== '' &&
-			this.complement[4] !==  undefined"> <span>*</span>{{this.complement[4]?.data['alert_required']}}</div>
+			<div class="obligatorios col-md-12" *ngIf="this.complement[4]?.data['alert_required_general'] !== '' &&
+			this.complement[4] !==  undefined"> <span>*</span>{{this.complement[4]?.data['alert_required_general']}}</div>
 		</form>
 	</div>
 </div>

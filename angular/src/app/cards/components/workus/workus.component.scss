@@ -431,3 +431,11 @@ input:-moz-placeholder {
 :host /deep/ .btn-primary {
   text-transform: uppercase;
 }
+
+:host /deep/ div.ng-invalid.ng-touched {
+  border: solid 1px red;
+}
+
+:host /deep/ label.ng-invalid.ng-touched {
+  border: solid 1px red;
+}
