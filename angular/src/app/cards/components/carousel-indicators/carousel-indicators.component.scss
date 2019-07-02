@@ -186,8 +186,21 @@
   visibility: visible !important;
 }
 
-@media only screen and (max-width: 900px) and (orientation: landscape) {
+@media only screen and (max-width: 680px) and (min-width:320px) and (orientation: landscape) {
   :host /deep/ ol.carousel-indicators {
-    top: 90px !important;
+        top: 14.5em;
+        justify-content: center;
+  }
+  
+  #carousel-container{
+   .carousel-caption{
+      top: 26%;
+      .carousel-subtitle{
+        font-size: 15px;
+      }
+    }
+    .section-button-explorar{
+      bottom: 18px;
+    }
   }
 }
