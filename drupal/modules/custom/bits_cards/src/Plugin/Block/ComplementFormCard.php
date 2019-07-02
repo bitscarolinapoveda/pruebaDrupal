@@ -29,14 +29,6 @@ class ComplementFormCard extends CardBase {
             'weight' => 1,
             'max_length' => 30,
           ],
-          'alert_required' => [
-            'type' => 'textfield',
-            'title' => $this->t('Mensaje de alerta ¨required¨ del Formulario'),
-            'service_field' => 'alert_required',
-            'show' => 1,
-            'weight' => 1,
-            'max_length' => 30,
-          ],
           'link_approved' => [
             'type' => 'textfield',
             'title' => $this->t('Link de Términos y Condiciones del Formulario'),
@@ -61,10 +53,10 @@ class ComplementFormCard extends CardBase {
             'weight' => 1,
             'max_length' => 10,
           ],
-          'alert_required' => [
+          'alert_required_general' => [
             'type' => 'textfield',
             'title' => $this->t('Mensaje Datos Obligatorios del Formulario'),
-            'service_field' => 'alert_required',
+            'service_field' => 'alert_required_general',
             'show' => 1,
             'weight' => 1,
             'max_length' => 20,
@@ -92,7 +84,15 @@ class ComplementFormCard extends CardBase {
             'show' => 1,
             'weight' => 1,
             'max_length' => 30,
-          ]
+          ],
+          'alert_required' => [
+            'type' => 'textfield',
+            'title' => $this->t('Mensaje de alerta ¨required¨ del Formulario'),
+            'service_field' => 'alert_required',
+            'show' => 1,
+            'weight' => 1,
+            'max_length' => 30,
+          ],
         ],
       ],
       'body' => [],
