@@ -4,17 +4,17 @@
 			name="formulario_contacto">
 			<app-message [dataMessage]="dataMessage"></app-message>
 			<ng-template #valid_required>
-				<div class="alert alert-danger" role="alert"
-					*ngIf="this.complement[0]?.data['alert_error'] !== '' && this.complement[0] !==  undefined">
-					{{this.complement[0]?.data['alert_error']}}
-				</div>
-			</ng-template>
-			<ng-template #error>
-				<div class="alert alert-danger" role="alert"
-					*ngIf="this.complement[0]?.data['alert_error'] !== '' && this.complement[0] !==  undefined">
-					Campo invalido
-				</div>
-			</ng-template>
+					<div class="alert alert-danger" role="alert"
+						*ngIf="this.complement[8]?.data['alert_error'] !== '' && this.complement[8] !==  undefined">
+						{{this.complement[8]?.data['alert_error']}}
+					</div>
+				</ng-template>
+				<ng-template #error>
+					<div class="alert alert-danger" role="alert"
+						*ngIf="this.complement[0]?.data['alert_error'] !== '' && this.complement[0] !==  undefined">
+						{{this.complement[0]?.data['alert_required']}}
+					</div>
+				</ng-template>
 			<div class="col-md-12 form-group">
 				<!-- elementoForm: array de campos que conforman el formulario-->
 				<ng-container *ngFor="let item of elementoForm">
@@ -246,8 +246,8 @@
 			this.complement[3] !==  undefined">
 				{{this.complement[3]?.data['text_button']}}
 			</button>
-			<div class="obligatorios col-md-12" *ngIf="this.complement[4]?.data['alert_required'] !== '' &&
-			this.complement[4] !==  undefined"> <span>*</span>{{this.complement[4]?.data['alert_required']}}</div>
+			<div class="obligatorios col-md-12" *ngIf="this.complement[4]?.data['alert_required_general'] !== '' &&
+			this.complement[4] !==  undefined"> <span>*</span>{{this.complement[4]?.data['alert_required_general']}}</div>
 		</form>
 	</div>
 </div>
