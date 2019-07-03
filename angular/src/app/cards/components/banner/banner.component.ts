@@ -48,7 +48,7 @@ export class BannerComponent implements OnInit {
         $(window).scrollTop(0);
         this.languagueBrowser = this.banner.getLanguageBrowser();
         if (this.urlservprod !== '' && (this.imgFondo === '' || this.imgFondo === undefined)) {
-            this.bandera_sevice = false;
+            this.bandera_sevice = true;
             this.getProductsAndServicesItems();
         } else if (this.uuid === undefined || this.uuid === '') {
             this.bannerTitle = this.urlservprod;
@@ -131,7 +131,7 @@ export class BannerComponent implements OnInit {
                 //  Debido a que es la misma URL cargamos la información del contenido
                 if (bnVerContenido) {
                     this.banner.getMetaService(servicesProduct[index].field_meta_tags);
-                    this.bannerBackground = servicesProduct[index].field_large_image.url;
+                    this.bannerBackground = servicesProduct[index].field_large_image;
                     this.bannerDescrip = this.textFilter.filterHtml(servicesProduct[index].field_descriptions);
                     this.bannerTitle = servicesProduct[index].title;
                     break;
