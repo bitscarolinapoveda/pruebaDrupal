@@ -1,0 +1,12 @@
+<header>
+    <section class="logo">
+        <div class="container-logo">
+            <a *ngIf="imageLogo" [routerLink]="imageLogo.link" class="image-url">
+                <img class="image-bits blur-logo" *ngIf="imageLogo" [src]="imageLogo?.white"
+                    [alt]="imageLogo.label" >
+            </a>
+        </div>
+    </section>
+    <app-navbar #navBar ></app-navbar>
+    <app-float-social></app-float-social>
+</header>

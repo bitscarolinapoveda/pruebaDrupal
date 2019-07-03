@@ -1,0 +1,30 @@
+<div *ngIf="visible">
+    <div [id]="datosMenu.id"></div>
+    <app-separator [iconCustom]="'icon-medal'" *ngIf="type == 'about'"></app-separator>
+    <section id="main-title">
+        <h2>{{ caroseltitle }}</h2>
+    </section>
+    <div class="contenedor">
+        <ngx-carousel [inputs]="carocarouselTile" (carouselLoad)="carouselTileLoad($event)"
+            *ngIf="CarouselControlArray">
+            <ngx-tile NgxCarouselItem *ngFor="let main of CarouselControlArray; let i = index">
+                <a href="" class="url-link images">
+                    <ng-container>
+                        <div class="container-img">  
+                                 <img lazyload  src="{{ main.field_image?.url }}">
+                         </div>
+                        <div class="info">
+                            <hr class="line">
+                            <h4 class="name-organization">{{main.title}}</h4>
+                            <h3 class="main-title">{{main.field_recognition}}</h3>
+                            <h5 class="category">{{main.field_category}}</h5>
+                            <h5 class="yeard">{{main.field_year}}</h5>
+                        </div>
+                    </ng-container>
+                </a>
+            </ngx-tile>
+            <button NgxCarouselPrev class='leftRs'>&lt;</button>
+            <button NgxCarouselNext class='rightRs'>&gt;</button>
+        </ngx-carousel>
+    </div>
+</div>

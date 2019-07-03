@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains bits_security.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function bits_security_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the bits_security module.
+    case 'help.page.bits_security':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Bits Security') . '</p>';
+      return $output;
+
+    default:
+  }
+}

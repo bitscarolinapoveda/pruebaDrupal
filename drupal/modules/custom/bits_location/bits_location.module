@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains bits_location.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function bits_location_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the bits_location module.
+    case 'help.page.bits_location':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Enterprise location.') . '</p>';
+      return $output;
+
+    default:
+  }
+}

@@ -1,0 +1,5 @@
+name: 'bits_rest'
+type: module
+description: 'Modulo que edita la respuesta json de las vistas tipo rest para devolver el titulo de manera general'
+core: 8.x
+package: 'Custom'

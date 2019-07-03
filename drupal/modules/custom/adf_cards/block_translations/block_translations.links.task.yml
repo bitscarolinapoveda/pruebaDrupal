@@ -1,0 +1,9 @@
+block_translations.tabs: # (1) Non-default tab by side of "Block layout" (which is on block.admin_display)
+  title: 'Block Translations'
+  route_name: block_translations.form
+  base_route: entity.block.edit_form
+  route_parameters:
+    language: 'en'
+block_translations.tabs2: # (3) Non-default subtab alongside the "Blocks" default tab
+  deriver: '\Drupal\block_translations\Plugin\Derivative\BlockTranslationTasks'
+  weight: 100

@@ -1,0 +1,63 @@
+<section id="block-navbar">
+    <nav class="navbar-expand-lg flex-column flex-md-row  menu-scroll shadow-of-nav nav-height"
+        [ngStyle]="{'max-height': heightScreen}">
+        <div class="menuToggle menu-scroll ">
+            <input type="checkbox" class="Botton" #Botton/>
+            <i class="fas fa-bars burger"></i>
+            <ul class="list-menu">
+                <div class="open-menu-banner-white"></div>
+                <ng-container *ngFor="let nav of NavbarArray; let i= index ">
+                    <li class="items customrow-1" [class.menu-has-children]="nav.below" (mouseover)='menuOver($event)'
+                        (mouseleave)='menuOut($event)'>
+                        <a #sub *ngIf="!nav.external" [routerLink]="nav.showrow ? [nav.uri] : null"
+                            [routerLinkActive]="'active'" class="link" (click)="overMenu()">
+                            {{ nav.title }}
+                        </a>
+                        <a #sub *ngIf="nav.external" href="{{nav.uri}}" class="link">
+                            {{ nav.title }}
+                        </a>
+                        <ng-container *ngIf="nav.below">
+                            <i class="fas fa-caret-down menu-caret arrow-down-change-color"
+                                (click)="activeChild(i)"></i>
+                            <app-menu-item [padre]="nav" [menus]="nav.below" [col]="i" [row]="2"
+                                (addchild)="activeChild($event)" [flActiveActual]="getActiveChild(i)" *ngIf="nav.below">
+                            </app-menu-item>
+                        </ng-container>
+                    </li>
+                </ng-container>
+            </ul>
+            <div class="dropdown" *ngIf="LanguageMenu.length !== 0"
+            (mouseleave)='menuOutLang($event)'>
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                    (click)="menuOverLang($event)">
+                    {{LanguageMenuDefault.id}}
+                    <div class="items dropdown-menu items-phone" aria-labelledby="dropdownMenuButton">
+                        <ng-container *ngFor="let nav of LanguageMenu; let i= index">
+                            <ng-container *ngIf="!nav.status then link">
+                            </ng-container>
+                            <ng-template #link>
+                                <a class="dropdown-item" [href]="url" *ngIf="nav.status == false"
+                                    (click)="changeLanguage(nav.id)">{{ nav.id }}</a>
+                            </ng-template>
+                        </ng-container>
+                    </div>
+                </button>
+            </div>
+            <ul class="list-menu list-phone">
+                <ng-container>
+                    <li class="items customrow-1 items-phone">
+                        <a class="link link-envelope" [routerLink]="ruta" id="openModal">
+                            <i class="fa-li fas fa-envelope icon-phone"></i>
+                        </a>
+                        <div class="verticalLine"></div>
+                        <a class="link link-language" *ngFor="let nav of LanguageMenu; let i= index"
+                            [ngClass]="{'active': nav.status == true}" (click)="changeLanguage(nav.id)">
+                            {{ nav.id }}
+                        </a>
+                    </li>
+                </ng-container>
+            </ul>
+        </div>
+    </nav>
+</section>

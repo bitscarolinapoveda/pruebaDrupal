@@ -1,0 +1,25 @@
+<div *ngIf="visible">
+  <div [id]="datosMenu.id"></div>
+  <app-separator [iconCustom]="'icon-engranaje'" *ngIf="flagUbication !== 'home'"></app-separator>
+  <div class="row">
+    <div class="position-relative row-tec" [class.edgefixed]="edge" id="b_edge" [ngStyle]="{'background-image': 'url(' + background?.url + ')'}">
+        <div class="position-absolute content-trans clear" [hidden]="flagUbication !== 'home'"></div>
+          <div class="col-md-12 pt-5 pb-2 px-2">
+              <h2 class="text-center text-white info-title" [ngClass]="{'dark-title': flagUbication !== 'home'}">{{ title }}</h2>
+              <p class="descrip-principal" [innerHTML]="subtitle" *ngIf="flagUbication !== 'home'"></p>
+          </div>
+
+          <div class="block-image">
+                <div class="phone-hck"></div>
+              <mdb-carousel class="carousel slide carousel-fade" [animation]="'fade'" [interval]="'6000'" [isControls]="false" [noPause]="true">
+                  <mdb-carousel-item *ngFor="let im of arrayLogosCustom;">
+                      <div class="icons-container">
+                          <div class="img-fluid" *ngFor="let img of im" [ngStyle]="{'background-image': flagUbication !== 'home' ? 'url(' + img.field_imagen_a_color?.url + ')' : 'url(' + img.field_tech_image?.url + ')'}"></div>
+                      </div>
+                  </mdb-carousel-item>
+              </mdb-carousel>
+          </div>
+      </div>
+  </div>
+
+</div>

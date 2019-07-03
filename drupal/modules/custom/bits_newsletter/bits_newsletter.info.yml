@@ -1,0 +1,7 @@
+name: 'bits_newsletter'
+type: module
+description: 'Newsletter module for bits website'
+core: 8.x
+package: 'Custom'
+dependencies:
+  - adf_cards

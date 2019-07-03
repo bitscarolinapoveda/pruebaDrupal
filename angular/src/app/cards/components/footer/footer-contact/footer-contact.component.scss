@@ -1,0 +1,142 @@
+
+
+#footer-block-contact {
+margin: 20px 0 0 0;
+border-right: 1px solid rgba(255, 255, 255, 0.3);
+
+.row-contact-block-footer {
+  margin: 0;
+  padding: 0;
+
+  .col-contact-footer {
+    margin: 0;
+    padding: 0;
+
+    .container-info-contact {
+      height: 100px;
+
+      .title-contact {
+        color: white;
+        font-family: 'Open Sans';
+        font-size: 12px;
+      }
+
+      .other-contact-info {
+        .li-contact-footer-mail {
+          list-style: none;
+
+          .link-mail {
+            display: inline-flex;
+            color: rgba($color: white, $alpha: 0.7);
+            font-family: 'Open Sans Light';
+            font-size: 11px;
+
+            &:hover {
+              color: #a6cf24;
+              text-decoration: none;
+            }
+
+            .fas.fa-envelope {
+              padding-right: 10px;
+              padding-top: 4px;
+            }
+          }
+        }
+
+        .li-contact-footer-icons {
+          display: inline-block;
+          padding-top: 5px;
+          
+          
+          .link-icons {
+            padding: 10px 0;
+            color: rgba($color: white, $alpha: 0.7);
+
+            &:hover {
+              color: #a6cf24;
+              text-decoration: none;
+            }
+
+            .size-of-icons {
+              padding: 0 17px;
+              font-size: 25px;
+
+              &:first-child {
+                padding: 0 17px 0 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+}
+
+@media only screen and (max-width:769px) {
+#footer-block-contact {
+  margin: 30px 0 30px 0;
+  padding-left: 0;
+  border-right: 0;
+  text-align: center;
+
+  .row-contact-block-footer {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .col-contact-footer {
+      .container-info-contact {
+        .other-contact-info {
+          .li-contact-footer-icons {
+            .link-icons {
+              .size-of-icons {
+                font-size: 18px;
+
+                &:first-child {
+                  padding: 0 15px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+}
+
+@media only screen and (min-width: 769px) {
+@media only screen and (max-width: 1025px) {
+  #footer-block-contact {
+    .row-contact-block-footer {
+      .col-contact-footer {
+        .container-info-contact {
+          .other-contact-info {
+            .li-contact-footer-mail {
+              .link-mail {
+                .fas.fa-envelope {
+                  padding-right: 5px;
+                }
+              }
+            }
+
+            .li-contact-footer-icons {
+              .link-icons {
+                .size-of-icons {
+                  font-size: 25px;
+                  padding: 0 12px;
+
+                  &:first-child {
+                    padding: 0 12px 0 0;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+}

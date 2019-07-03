@@ -1,0 +1,347 @@
+@import './src/assets/scss/mixin.scss';
+
+@media (max-width: 919px) {
+    .visible {
+        display: none;
+    }
+}
+
+#history-superior {
+    h2 {
+        margin-left: 3%;
+        font-size: 40px;
+        color: #002b49;
+        text-align: center;
+        margin-top: 40px;
+        text-transform: uppercase;
+
+        @include breakpoint (tablet) {
+            margin-top: 20px;
+            margin-bottom: 20px !important;
+        }
+    }
+
+    p {
+        color: #002b49cc;
+        font-family: 'Open Sans Codensed';
+        margin-right: 180px;
+        margin-left: 200px;
+        margin-top: 10px;
+        font-size: 20px;
+        text-align: center;
+    }
+}
+
+#timeline {
+    @media (max-width: 919px) {
+        display: none;
+    }
+
+    height: 30%;
+    width: 80%;
+    margin: auto;
+
+
+    .tl-timemarker {
+        .tl-timemarker-content-container {
+            border-left: 2px solid #517bbd;
+        }
+    }
+
+    .tl-timemarker.tl-timemarker-active {
+        border-left: 2px solid #a6cf24;
+
+        .tl-timemarker-content-container {
+            border-left: 1px solid #a6cf24;
+        }
+    }
+
+    .tl-timemarker-active:before {
+        content: '';
+        z-index: 20;
+        position: absolute;
+        margin-left: -12px;
+        background-image: url('../../../../assets/timeline/css/timeline_icon.png');
+        background-repeat: no-repeat;
+        background-position: -160px -48px;
+        width: 24px;
+        height: 24px;
+        top: -5px;
+    }    
+
+    @media (min-width: 1367px)  and (max-width: 1920px){
+        .tl-slide-content-container {
+            .tl-slide-content {
+                padding-left: 150px !important;
+                padding-right: 200px !important;
+                width: 1000px !important;
+
+                .tl-text-content-container {                   
+                    width: 340px;
+                }
+
+                .tl-media {
+                    max-width: 500px !important;
+                    width: 500px !important;
+                    height: 350px !important;
+
+                    img {
+                        max-width: 500px !important;
+                        width: 500px !important;
+                        height: 350px !important;
+
+                    }
+                }
+
+            }
+        }
+
+    }
+
+    @media (min-width: 1920px){
+        .tl-slide-content-container {
+            .tl-slide-content {
+                padding-left: 200px !important;
+                padding-right: 250px !important;
+                width: 1400px !important;
+
+                .tl-text-content-container {                   
+                    width: 420px;
+                }
+
+                .tl-media {
+                    max-width: 700px !important;
+                    width: 700px !important;
+                    height: 350px !important;
+
+                    img {
+                        max-width: 700px !important;
+                        width: 700px !important;
+                        height: 350px !important;
+                    }
+                }
+
+            }
+        }
+    }
+
+    @media (max-width: 1367px) {
+        .tl-slide-content-container {
+            .tl-slide-content {
+                padding-left: 150px;
+                padding-right: 200px !important;
+                width: 900px !important;
+
+                .tl-text-content-container {                   
+                    width: 350px;
+                }
+
+                .tl-media {
+                    max-width: 500px !important;
+                    width: 500px !important;
+                    height: 250px !important;
+
+                    img {
+                        max-width: 500px !important;
+                        width: 500px !important;
+                        height: 250px !important;
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width: 1300px) {
+        .tl-slide-content-container {
+            .tl-slide-content {
+                padding-left: 150px;
+                padding-right: 200px !important;
+                width: 900px !important;
+
+                .tl-text-content-container {                   
+                    width: 200px;
+                }
+
+                .tl-media {
+                    max-width: 400px !important;
+                    width: 400px !important;
+                    height: 250px !important;
+
+                    img {
+                        max-width: 400px !important;
+                        width: 400px !important;
+                        height: 250px !important;
+                    }
+                }
+            }
+        }
+    }
+
+    @include breakpoint (desktop) {
+        .tl-slide-content-container {
+            .tl-slide-content {
+                .tl-text {
+                    padding: 0 0 0 20px;
+
+                    .tl-text-content-container {
+                        height: 200px;
+                        overflow: hidden;                        
+
+                        h3 {
+                            margin-bottom: 10px;
+                        }
+                    }
+                }
+            }
+
+        }
+
+    }
+
+    @include breakpoint (tablet) {
+        .tl-storyslider {
+            box-shadow: none;
+        }
+
+        .tl-slide-content-container {
+            .tl-slide-content {
+                padding-right: 0 !important;
+                width: 600px !important;
+
+                .tl-media {
+                    max-width: 250px !important;
+                    width: 250px !important;
+                    height: 200px !important;
+
+                    img {
+                        max-width: 250px !important;
+                        width: 250px !important;
+                        height: 200px !important;
+                    }
+                }
+
+                .tl-text {
+                    padding: 0 0 0 20px;
+
+                    .tl-text-content-container {
+                        height: 150px;
+                        overflow: hidden;
+                        width: 300px;
+
+                        h3 {
+                            margin-top: 20px;
+                            margin-bottom: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .tl-text-content-container {
+        h2.tl-headline {
+            color: #002b49cc;
+            font-family: 'Open Sans light';
+            font-size: 32px;
+            line-height: 34px;
+
+            @include breakpoint (tablet) {
+                font-size: 20px;
+                line-height: 22px;
+            }
+        }
+
+        .tl-text-content {
+            h2 {
+                font-size: 16px;
+                margin: 0 !important;
+                line-height: 34px;
+
+                @include breakpoint (tablet) {
+                    line-height: 18px;
+                }
+            }
+
+            p {
+                font-size: 14px;
+                text-align: justify;
+            }
+        }
+
+        .tl-headline-date small {
+            display: block;
+        }
+    }
+
+    .tl-timemarker-content {
+        .tl-timemarker-media-container {
+            display: none;
+        }
+    }
+
+    #tl-aucnud {
+        height: 341px;
+    }
+
+    .tl-timenav {
+        height: 165px;
+    }
+
+    .tl-storyslider {
+        height: 423px;
+        z-index: 0;
+    }
+
+    .tl-media-image {
+        -webkit-box-shadow: 1px 3px 22px 0px rgba(125, 120, 125, 1);
+        -moz-box-shadow: 1px 3px 22px 0px rgba(125, 120, 125, 1);
+        box-shadow: 1px 3px 22px 0px rgba(125, 120, 125, 1);
+    }
+
+    .tl-attribution {
+        display: none;
+    }
+
+    .tl-slidenav-next .tl-slidenav-content-container .tl-slidenav-icon {
+        position: absolute;
+        margin: auto;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        border: none;
+        background: transparent;
+        background-image: url(/assets/icon/right-arrow.svg);
+        background-size: 37px;
+        height: 0;
+        width: 28px;
+        overflow: hidden;
+        padding-top: 37px;
+        cursor: pointer;
+        top: -40px;
+        margin-top: 0;
+    }
+
+    .tl-slidenav-previous .tl-slidenav-content-container .tl-slidenav-icon {
+        position: absolute;
+        margin: auto;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        border: none;
+        background: transparent;
+        background-image: url(/assets/icon/left-arrow.svg);
+        background-size: 37px;
+        height: 0;
+        width: 28px;
+        overflow: hidden;
+        padding-top: 37px;
+        cursor: pointer;
+        left: 50px;
+        top: -40px;
+        margin-top: 0;
+        left: -50px;
+    }
+
+    .tl-message-full {
+        display: none;
+    }
+}

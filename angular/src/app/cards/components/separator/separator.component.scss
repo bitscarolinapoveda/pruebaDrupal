@@ -1,0 +1,156 @@
+.conteiner-1 {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 70px 65px 40px;
+}
+
+.conteiner-2 {
+    max-width: 900px;
+    position: relative;
+    margin: 0 auto;
+
+    .div-left-side {
+        background: #e2e2e2;
+        background: -moz-linear-gradient(left, #e2e2e2 0%, #135670 100%);
+        background: -webkit-linear-gradient(left, #e2e2e2 0%, #135670 100%);
+        background: linear-gradient(to right, #e2e2e2 0%, #135670 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e2e2e2', endColorstr='#135670', GradientType=1);
+        width: 50%;
+        height: 2px;
+        position: absolute;
+        left: 0;
+        margin-left: -30px;
+    }
+
+    .divIconSeparator {
+        display: block;
+        position: absolute;
+        width: 60px;
+        left: 50%;
+        margin-left: -30px;
+        margin-top: -20px;
+        text-align: center;
+    }
+
+    .div-right-side {
+        background: #135670;
+        background: -moz-linear-gradient(left, #135670 0%, #e2e2e2 99%);
+        background: -webkit-linear-gradient(left, #135670 0%, #e2e2e2 99%);
+        background: linear-gradient(to right, #135670 0%, #e2e2e2 99%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#135670', endColorstr='#e2e2e2', GradientType=1);
+        width: 50%;
+        height: 2px;
+        display: block;
+
+        position: absolute;
+        right: 0;
+        margin-right: -30px;
+    }
+}
+
+.bits-icon {
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    background-repeat: no-repeat;
+
+    &.icon-startproject {
+        background-image: url('/assets/icon/aboutus5-startproject.svg');
+    }
+
+    &.icon-startmeeting {
+        background-image: url('/assets/icon/aboutus5-startprojectv2.svg');
+    }
+
+    &.icon-people {
+        background-image: url('/assets/icon/template8-team.svg');
+    }
+
+    &.icon-location {
+        background-image: url('/assets/icon/contactus3-placeholder.svg');
+    }
+
+    &.icon-module {
+        background-image: url('/assets/icon/template2-module.svg');
+    }
+
+    &.icon-video {
+        background-image: url('/assets/icon/template3-video.svg');
+    }
+
+    &.icon-technologies {
+        background-image: url('/assets/icon/template4-tech.svg');
+    }
+
+    &.icon-opinions {
+        background-image: url('/assets/icon/template5-opinions.svg');
+    }
+
+    &.icon-results {
+        background-image: url('/assets/icon/template6-done.svg');
+    }
+
+    &.icon-camera {
+        background-image: url('/assets/icon/template7-camera.svg');
+    }
+
+    &.icon-team {
+        background-image: url('/assets/icon/template8-team.svg');
+    }
+
+    &.icon-clients {
+        background-image: url('/assets/icon/template9-clients.svg');
+    }
+
+    &.icon-project {
+        background-image: url('/assets/icon/template10-related.svg');
+    }
+
+    &.icon-startteam {
+        background-image: url('/assets/icon/aboutus1-whyus.svg');
+    }
+
+    &.icon-history {
+        background-image: url('/assets/icon/aboutus2-timeline.svg');
+    }
+
+    &.icon-certficate {
+        background-image: url('/assets/icon/aboutus3-certficate.svg');
+    }
+
+    &.icon-medal {
+        background-image: url('/assets/icon/medalla.svg');
+    }
+
+    &.icon-aboutus {
+        background-image: url('/assets/icon/aboutus4-aboutus.svg');
+    }
+
+    &.icon-privacity {
+        background-image: url('/assets/icon/privacy1.svg');
+    }
+
+    &.icon-historymedical {
+        background-image: url('/assets/icon/template1A-medical.svg');
+    }
+
+    &.icon-medicallogistic {
+        background-image: url('/assets/icon/template1B-logistic.svg');
+    }
+
+    &.icon-medicalIT {
+        background-image: url('/assets/icon/template1C-IT.svg');
+    }
+
+    &.icon-redes {
+        background-image: url('/assets/icon/template1D-IT.svg');
+    }
+
+    &.icon-connection {
+        background-image: url('/assets/icon/template1E-IT.svg');
+    }
+
+    &.icon-engranaje {
+        background-image: url('/assets/icon/Engranes.svg');
+    }
+}

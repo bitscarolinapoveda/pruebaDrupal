@@ -1,0 +1,20 @@
+<div *ngIf="visible" [id]="datosMenu.id">
+    <div class="row position-relative row-tec" [class.edgefixed]="edge"  [ngStyle]="{'background-image':'url(' + allianceBackground + ')'}">
+        <div class="position-absolute content-trans"></div>
+        <div class="col-md-12 pt-5 pb-2 px-2">
+            <h2 class="text-center text-white info-title">{{ allianceTitle }}</h2>
+        </div>
+        <div class="block-image">
+                <div class="phone-hck"></div>
+            <mdb-carousel class="carousel slide carousel-fade" [animation]="'fade'" [interval]="'6000'"
+                [isControls]="false" [noPause]="true">
+                <mdb-carousel-item *ngFor="let im of arrayLogosCustom;">
+                    <div class="icons-container">
+                        <div class="img-fluid" *ngFor="let img of im"
+                            [ngStyle]="{'background-image':'url(' + img.field_alliance_image.url + ')'}"></div>
+                    </div>
+                </mdb-carousel-item>
+            </mdb-carousel>
+        </div>
+    </div>
+</div>

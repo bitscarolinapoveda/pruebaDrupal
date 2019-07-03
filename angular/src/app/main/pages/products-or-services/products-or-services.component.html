@@ -1,0 +1,35 @@
+<app-banner [urlservprod]="type" [imgFondo]=""></app-banner>
+<div class="my-5">
+    <div class="container">
+        <app-client-project-imedical (propagar)="onMenu($event)" [type]="type"></app-client-project-imedical>
+    </div>
+    <hr>
+    <app-menu-template [menuList]="listMenu"></app-menu-template>
+    <app-slider (propagar)="onMenu($event)" [type]="type"></app-slider>
+    <div class="container">
+        <app-separator [iconCustom]="'icon-engranaje'" *ngIf="visible" id="a1"></app-separator>
+        <div class="row" *ngIf="visible">
+            <div class="col-md-12 mb-5" id="principal">
+                <h2 class="title-principal">{{ tituloModulos }}</h2>
+                <p class="descrip-principal" [innerHTML]="descripcionModulos"></p>
+            </div>
+            <div class="col-md-4" *ngFor="let blurbItem of blurbArray">
+                <app-blurb [blurb]="blurbItem" (propagar)="onMenu($event)" [type]="type"></app-blurb>
+            </div>
+        </div>
+        <app-card-img-text [orientacion]="'IT'" (propagar)="onMenu($event)" [type]="type"></app-card-img-text>
+        <app-tecnologies (propagar)="onMenu($event)" [type]="type"></app-tecnologies>
+        <app-testimonies (propagar)="onMenu($event)" [type]="type"></app-testimonies>
+        <app-achievements (propagar)="onMenu($event)" [type]="type"></app-achievements>
+    </div>
+    <app-screenshots (propagar)="onMenu($event)" [type]="type"></app-screenshots>
+    <div class="container">
+        <app-team (propagar)="onMenu($event)" [type]="type"></app-team>
+        <app-card-img-text [orientacion]="'TI'" (propagar)="onMenu($event)" [type]="type"></app-card-img-text>
+        <app-carousel-item-3 (propagar)="onMenu($event)" [type]="type"></app-carousel-item-3>
+        <app-carousel-item-2 (propagar)="onMenu($event)" [type]="type"></app-carousel-item-2>
+        <app-video-information (propagar)="onMenu($event)" [type]="type"></app-video-information>
+    </div>
+    <app-our-work (propagar)="onMenu($event)" [type]="type"></app-our-work>
+    <app-workwithus (propagar)="onMenu($event)" [type]="type"></app-workwithus>
+</div>

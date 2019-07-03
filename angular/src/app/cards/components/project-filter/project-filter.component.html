@@ -1,0 +1,62 @@
+<div class="conteiner-1">
+  <div class="conteiner-2">
+    <div class="div-left-side"></div>
+    <div class="divIconSeparator">
+      <label>{{title}}</label>
+    </div>
+    <div class="div-right-side"></div>
+    <div class="container-phone">
+      <label>{{title}}</label>
+    </div>
+  </div>
+</div>
+<div class="filter container">
+  <div class="row" #divClick>
+    <div class="items col-md-3" *ngIf="datos[0] != undefined || datos[1] != undefined" (mouseleave)="ocultarDatos()">
+      <label for="client">{{datos[0]?.data.client}}</label>
+      <ng-select #clientF class="select-autocomplete" id="client" name="client"
+        [placeholder]="datos[1].data.client_placeholder" [allowClear]="true" [items]="listClient" [disabled]="disabled"
+        (data)="filter($event)" (removed)="removed($event)" [(ngModel)]="selectedClient" (selected)="selected($event)"
+        (typed)="typed($event)">
+      </ng-select>
+    </div>
+    <div class="items col-md-3" *ngIf="datos[2] != undefined || datos[3] != undefined" (mouseleave)="ocultarDatos()">
+      <label for="sector">{{datos[2].data.sector}}</label>
+      <ng-select #sectorF class="select-autocomplete" id="sector" name="sector"
+        [placeholder]="datos[3].data.sector_placeholder" [allowClear]="true" [items]="listSector" [disabled]="disabled"
+        (data)="filter($event)" (removed)="removed($event)" [(ngModel)]="selectedSector" (selected)="selected($event)"
+        (typed)="typed($event)">
+      </ng-select>
+    </div>
+    <div class="items col-md-3" *ngIf="datos[4] != undefined || datos[5] != undefined" (mouseleave)="ocultarDatos()">
+      <label for="tecnology">{{datos[4].data.tecnology}}</label>
+      <ng-select #tecnologyF class="select-autocomplete" id="tecnology" name="tecnology"
+        [placeholder]="datos[5].data.tecnology_placeholder" [allowClear]="true" [items]="listTecnology"
+        [disabled]="disabled" (data)="filter($event)" (removed)="removed($event)" [(ngModel)]="selectedTecnology"
+        (selected)="selected($event)" (typed)="typed($event)">
+      </ng-select>
+    </div>
+    <div class="items button-all col-md-3" *ngIf="datos[8] != undefined" (click)="removedGeneral()">
+      <i ngClass="icon-actu"></i>
+      <label class="margin-button">{{datos[8].data.button}}</label>
+    </div>
+  </div>
+</div>
+<div class="grid" (window:resize)="onResize()">
+  <div class="item box-{{i}}" *ngFor="let gridBox of gridInfo; let i = index; let $last = last" [isLast]='$last'
+    (appOrganizeGridMuuri)="organizeGrid()" (mouseover)=showDescription($event,i)
+    (mouseleave)=showDescription($event,i)>
+    <div class="dark-layout"></div>
+    <div class="item-content" [ngStyle]="{'background-image':'url(' + gridBox.field_background_image.url + ')'}"></div>
+    <div class="info-content info-{{i}}">
+      <div class="logo-client" [ngStyle]="{'background-image':'url(' + gridBox.field_image.url + ')'}"></div>
+      <h2 class="text-grid">{{gridBox.title}}</h2>
+      <p class="description">{{gridBox.field_subtitle}}</p>
+    </div>
+    <div class="complete-info-grid hover-info-{{i}}">
+      <h2 class="text-grid">{{gridBox.title}}</h2>
+      <p class="description">{{gridBox.field_description_to_contact}}</p>
+      <a [routerLink]="[gridBox.type, gridBox.nid]" href="#" class="plus-icon"></a>
+    </div>
+  </div>
+</div>

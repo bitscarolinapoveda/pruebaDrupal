@@ -1,0 +1,55 @@
+<?php
+
+/**
+ * @file
+ * Contains bits_rest.module.
+ * @Author: Valentina Aguirre
+ */
+
+use Drupal\views\ViewExecutable;
+use Drupal\views\Plugin\views\cache\CachePluginBase;
+use Drupal\views\Render\ViewsRenderPipelineMarkup;
+
+/**
+ * Implements hook_views_post_render().
+ */
+function bits_rest_views_post_render(ViewExecutable $view, &$output, CachePluginBase $cache) {
+
+  // Read display plugin of view.
+  $displayObj = $view->getDisplay();
+  $displayName = $displayObj->display['display_plugin'];
+  // Check if view its a rest_export.
+  if ($displayName == 'rest_export') {
+    // Get render data of output and decode.
+    $jsonData = json_decode(\Drupal::service('renderer')->render($output)->__toString());
+    $newArray = new stdClass();
+    // Read array data and laod new array of information.
+    foreach ($jsonData as $key => $dato) {
+      // Check if is first iteraction and check y object
+      // contains a type attribute.
+      if ($key == 0 && isset($dato->type)) {
+        $newArray->titulo = $dato->type;
+        unset($dato->type);
+        $newArray->datos[$key] = $dato;
+      }
+      else {
+        if (isset($dato->type)) {
+          unset($dato->type);
+          $newArray->datos[$key] = $dato;
+        }
+        else {
+          $newArray = $jsonData;
+          break;
+        }
+      }
+    }
+    // Set a new ViewsRenderPipelineMarkup object to generate new output.
+    $dato = new ViewsRenderPipelineMarkup();
+
+    $output['#markup'] = $dato->create((string) json_encode($newArray));
+    // Unset values fot get the view renderable when load.
+    unset($output['#attached']);
+    unset($output['#children']);
+    unset($output['#printed']);
+  }
+}

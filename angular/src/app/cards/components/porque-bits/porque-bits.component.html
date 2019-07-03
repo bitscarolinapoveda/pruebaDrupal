@@ -1,0 +1,15 @@
+<section id="main-title" *ngIf="mainTitleLink !== '' && moralValues.length > 0">
+    <h2>{{ mainTitleLink?.title }}</h2>
+</section>
+<section class="WhyBits" *ngIf="moralValues.length > 0">
+    <div class="images-whybits">
+        <ul class="row first images" >
+            <li class="images" *ngFor="let image of moralValues; let i = index">
+                <a [routerLink]="'home'">
+                        <img lazyload  class="picture-why {{i}}"  [src]='image.field_imagen.url'>
+                    <p>{{ image.title }}</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+</section>

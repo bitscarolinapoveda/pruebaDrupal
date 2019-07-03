@@ -1,0 +1,53 @@
+
+bits_countries.menu_link:
+  title: 'Countries and cities'
+  route_name: bits_countries.menu
+  description: 'Contries and cities menu'
+  parent: system.admin_structure
+  weight: 100
+
+# Countries api entity menu items definition
+entity.countries_api_entity.collection:
+  title: 'Countries api entity'
+  route_name: entity.countries_api_entity.collection
+  description: 'List Countries api entity (bundles)'
+  parent: bits_countries.menu_link
+  weight: 99
+
+
+# Country entity menu items definition
+entity.country_entity.collection:
+  title: 'Country entity list'
+  route_name: entity.country_entity.collection
+  description: 'List Country entity entities'
+  parent: bits_countries.menu_link
+  weight: 100
+
+
+bits_countries.load_countries_data_form:
+  title: 'Load countries data form'
+  route_name: bits_countries.load_countries_data_form
+  description: 'Form to load countries and cities data'
+  parent: system.admin_config_system
+  weight: 99
+
+
+# City entity menu items definition
+entity.city_entity.collection:
+  title: 'City entity list'
+  route_name: entity.city_entity.collection
+  description: 'List City entity entities'
+  parent: bits_countries.menu_link
+  weight: 100
+
+#country_entity.admin.structure.settings:
+#  title: 'Country entity settings'
+#  description: 'Configure Country entity entities'
+#  route_name: country_entity.settings
+#  parent: bits_countries.menu
+
+#city_entity.admin.structure.settings:
+#  title: 'City entity settings'
+#  description: 'Configure City entity entities'
+#  route_name: city_entity.settings
+#  parent: bits_countries.menu

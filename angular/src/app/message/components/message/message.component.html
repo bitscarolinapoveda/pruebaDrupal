@@ -1,0 +1,8 @@
+<ul *ngIf="dataMessage.length > 0">
+  <li *ngFor="let data of dataMessage">
+    <div *ngIf="data.visible == true" ngClass={{data.status}}>
+      <i ngClass={{data.status}}></i>
+      <p>{{ data.message}}</p>
+    </div>
+  </li>
+</ul>

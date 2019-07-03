@@ -1,0 +1,85 @@
+@import './src/assets/scss/mixin.scss';
+
+.page-header {
+    height: 352px;
+    overflow: hidden;
+    position: relative;
+    .title {
+        width: 100%;
+        color: #FFFFFF;
+        position: absolute;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 3em;
+        height: 100%;
+        @include breakpoint(phone) {
+            padding-top: 3.7em;
+        }
+
+        h1 {
+            text-transform: uppercase;
+            position: absolute;
+            line-height: 33px;
+            //width: 100%;
+            margin-left: 50%;
+            font-size: 36px;
+            transform: translateX(-50%);
+
+            @include breakpoint(desktop) {
+                font-size: 50px;
+                line-height: 48px;
+            }
+
+            @include breakpoint(tablet) {
+                font-size: 40px;
+                line-height: 40px;
+            }
+        }
+    }
+
+    picture {
+        .img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    }
+}
+
+.page-header::before {
+    content: "";
+    background-color: #000000;
+    opacity: 0.3;
+    height: 352px;
+    width: 100%;
+    position: absolute;
+}
+
+#descrip-banner {
+
+    p {
+    
+        color: #002b49;
+        font-family: 'Open Sans Codensed';
+        margin-top: 30px;
+        font-size: 20px;
+        overflow-wrap: break-word;
+
+        @include breakpoint (desktop) {
+            margin: auto;
+            max-width: 800px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        @include breakpoint (phone) {
+            margin-right: 10px;
+            margin-left: 10px;
+            text-align: center;
+        }
+    }
+}

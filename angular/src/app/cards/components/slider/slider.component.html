@@ -1,0 +1,8 @@
+<div *ngIf="visible">
+    <div [id]="datosMenu.id"></div>
+    <ngb-carousel *ngIf="sliderArray.length > 0">
+        <ng-template ngbSlide *ngFor="let item of sliderArray">
+            <app-slide [slide]="item"></app-slide>
+        </ng-template>
+    </ngb-carousel>
+</div>

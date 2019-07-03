@@ -1,0 +1,19 @@
+<div class="row fondoSlide h-100" [ngStyle]="{'background-image':'url('+ slide.bkgSrcSlide +')'}">
+    <div class="container  h-100">
+        <div class="row  h-100">
+            <div class="col-md-7 h-100">
+                <div class="mx-4 px-3 pt-7 pb-3 black-trans">
+                    <h1 class="text-light">{{ slide.titleSlide | uppercase }}</h1>
+                    <h2 class="condensed text-green">{{ slide.subtitleSlide | uppercase}}</h2>
+                    <div class="text-light" [innerHTML]="slide.descriptionSlide"></div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="pt-3">
+                    <img [src]="slide.imgSrcSlide" [alt]="slide.titleSlide" width="400" height="400"
+                        class="d-block m-auto img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,88 @@
+<section id="float-social-block" [hidden]="!hide">
+  <section class="social-networks {{positionSidebar}}">
+    <div class="icon-social">
+      <ul class="row fa-ul">
+        <li *ngFor="let net of socialmedia;">
+          <a href="{{ net.data.url }}" target="_blank">
+            <i class="{{ net.data.text }}"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <section class="envolope {{positionSidebar}}">
+    <div class="icon-mail">
+      <ul class="row fa-ul">
+        <li>
+          <!-- <a href="#contactusModal" id="openModal">
+            <i class="fa-li fas fa-envelope"></i>
+          </a> -->
+          <a [routerLink]="ruta" id="openModal">
+            <i class="fa-li fas fa-envelope"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>
+<!-- Modal -->
+<div class="modal fade" id="contactusModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel" [innerHTML]="title_form"></h5>
+        <p class="description-modal" [innerHTML]="descrip_form"></p>
+        <button type="button" class="close button-modal" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <app-message [dataMessage]="dataMessage"></app-message>
+      <div class="modal-body">
+        <form id="modal-form" #userForm="ngForm" name="modal-form">
+          <div class="col-md-12 item">
+            <label class="label-modal" for="inputName">Nombre*</label>
+            <input class="input-modal" type="text" id="field_name" placeholder="Nombre Completo" name="field_name"
+              ngModel required #field_name="ngModel">
+            <div *ngIf="field_name.invalid && field_name.touched" class="alert alert-danger" role="alert">
+              Campo obligatorio o invalido
+            </div>
+          </div>
+          <div class="col-md-12 item">
+            <label class="label-modal" for="inputEmail">Correo Electronico*</label>
+            <input class="input-modal" type="email" id="field_email" aria-describedby="emailHelp"
+              placeholder="Su correo electronico" name="field_email" ngModel
+              pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
+              #field_email="ngModel" required>
+            <div *ngIf="field_email.invalid && field_email.touched" class="alert alert-danger" role="alert">
+              Campo obligatorio o invalido
+            </div>
+          </div>
+          <div class="col-md-12 item">
+            <label class="label-modal" for="inputOrgan">Organizacion</label>
+            <input class="input-modal" type="text" id="field_organization" placeholder="Su organizacion"
+              name="field_organization" ngModel #field_organization="ngModel">
+          </div>
+          <div class="col-md-12 item">
+            <label class="label-modal" for="inputComent">Comentario</label>
+            <textarea class="input-modal" id="field_commentary" placeholder="Escriba sus comentarios"
+              name="field_commentary" ngModel #field_commentary="ngModel"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="text" class="save-modal-button" (click)="clickOnSubmit(userForm.value)">ENVIAR</button>
+        <div class="conteiner-1">
+          <div class="conteiner-2">
+            <div class="div-left-side"></div>
+            <div class="divIconSeparator">
+              <label [innerHTML]="footer_text"></label>
+            </div>
+            <div class="div-right-side"></div>
+          </div>
+        </div>
+        <label class="label-modal" [innerHTML]="footer_contact"></label>
+      </div>
+    </div>
+  </div>
+</div>

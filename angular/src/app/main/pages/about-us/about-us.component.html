@@ -1,0 +1,11 @@
+<app-banner imgFondo="" uuid="e58b3214-c259-4bd2-b6ba-2f81c9ba86b4"></app-banner>
+<hr>
+<app-menu-template [menuList]="listMenu"></app-menu-template>
+<hr>
+<app-whybitsamericas (propagar)="onMenu($event)"></app-whybitsamericas>
+<app-history (propagar)="onMenu($event)"></app-history>
+<app-carousel-controls (propagar)="onMenu($event)" [type]="type"></app-carousel-controls>
+<app-alliances (propagar)="onMenu($event)"></app-alliances>
+<app-knowus (propagar)="onMenu($event)"></app-knowus>
+<app-separator [iconCustom]="'icon-people'"></app-separator>
+<app-workwithus-proserv></app-workwithus-proserv>

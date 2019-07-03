@@ -1,0 +1,114 @@
+@import './src/assets/scss/mixin.scss';
+
+#footer-block {
+  position: relative;
+
+  .blue-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 43, 73, 0.82);
+  }
+  .iconbits{
+    @include breakpoint (desktop) {
+      &.pr_image{
+        padding-left: 5.4em ;
+      }
+    }
+  }    
+
+  .general-container.footer-img {
+    //background-image: url("/assets/images/footer.png");
+    background-size: cover;
+
+    @include breakpoint (phone) {
+      background-position: top right;
+    }
+
+    .first-info-container-footer {
+      margin: 0;
+
+      .row-info-footer {
+        margin: 0;
+
+        .locations,
+        .newsletters,
+        .contact,
+        .iconbits {
+          margin: 24px 0 0 0;
+        }
+      }
+    }
+
+    .second-info-container-footer {
+      width: 100%;
+
+      .second-blue-layer {
+        position: absolute;
+        width: 100%;
+        height: 47px;
+        background: rgba(0, 43, 73, 0.6);
+      }
+
+      .row-info-footer {
+        margin: 0;
+        height: 47px;
+        align-items: center;
+
+        .list-of-footer {
+          text-align: center;
+
+          .items-footer {
+            font-family: 'Open Sans light';
+            font-size: 11px;
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+
+            &:hover {
+              color: #d8d8dc;
+            }
+          }
+
+          .circule {
+            margin: 0 20px;
+            display: inline-block;
+            background: white;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+          }
+          .hide {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #footer-block {
+    .general-container.footer-img {
+      .first-info-container-footer {
+        .row-info-footer {
+          margin: 0 87px;
+
+          .locations,
+          .newsletters,
+          .contact {
+            padding: 0;
+            margin: 0;
+            border-right: 0px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+          }
+
+          .iconbits {
+            padding: 0;
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+}

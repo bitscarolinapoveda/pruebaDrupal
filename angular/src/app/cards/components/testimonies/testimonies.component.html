@@ -1,0 +1,20 @@
+<div *ngIf="visible">
+  <div [id]="datosMenu.id"></div>
+  <app-separator [iconCustom]="'icon-startproject'"></app-separator>
+  <section id="principal">
+    <h2 class="title-principal">{{ testimoniesTitle }}</h2>
+    <p class="descrip-principal" [innerHTML]="testimoniesSubTitle"></p>
+  </section>
+  <div id="testimonies-carousel">
+    <ngb-carousel *ngIf="testimoniesData"  >
+      <ng-template ngbSlide *ngFor="let item of testimoniesData">
+        <div class="container"></div>
+        <div class="carousel-caption">
+          <p class="testimonies-text testimonies-description" [innerHTML]="item.body"></p>
+          <h3 class="testimonies-text testimonies-name">{{item.title}}</h3>
+          <h3 class="testimonies-text testimonies-company">{{item.field_nombre_compania}}</h3>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+  </div>
+</div>

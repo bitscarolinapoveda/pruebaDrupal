@@ -1,0 +1,41 @@
+<div *ngIf="visible">
+    <div [id]="datosMenu.id"></div>
+    <div class="row" >
+        <div class="col-md-4 mb-3">
+            <ng-container >
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="condensed">{{ titleLeft | uppercase}}</h2>
+                        <hr class="green">
+
+                        <img id="logo-cliente" [src]="imgSrcClient" class="img-fluid" alt="{{nameClient}}"
+                         lazyload>
+
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+        <div class="col-md-8 mb-3">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="condensed">{{ titleRight | uppercase }}</h2>
+                    <hr class="green">
+                    <h2>{{ titleProject | uppercase }}</h2>
+                    <p class="summary" [innerHTML]="summaryProject"></p>
+                    <h5>
+                        <span *ngFor="let tag of tags"
+                            class="badge badge-custom mr-2 mt-2 p-2">{{ tag.label | uppercase }}</span>
+                    </h5>
+                    <ng-container *ngIf="linkExternal then externo else interno">
+                    </ng-container>
+                    <ng-template #externo>
+                        <a [href]="linkProjectUrl" class="green">{{ linkProjectTitle }}</a>
+                    </ng-template>
+                    <ng-template #interno>
+                        <a [routerLink]="linkProjectUrl" class="green">{{ linkProjectTitle }}</a>
+                    </ng-template>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

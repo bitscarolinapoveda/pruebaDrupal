@@ -1,0 +1,18 @@
+<app-banner imgFondo="" uuid="a7381999-c69e-45c3-9d4f-f36a10b1cc3e"></app-banner>
+<div class="container">
+    <div class="row">
+        <div class="item col-md-4" *ngFor="let data of Info">
+            <h3 class="title">{{data.title}}</h3>  
+            <div class="info-content" *ngFor="let items of data.below">
+                <ng-container *ngIf="items.external then externo else interno">
+                </ng-container>
+                <ng-template #externo>
+                    <a [href]="items.uri">{{ items.title }}</a>
+                </ng-template>
+                <ng-template #interno>
+                    <a [routerLink]="items.uri">{{ items.title }}</a>
+                </ng-template>
+            </div>          
+        </div>
+    </div>
+</div>

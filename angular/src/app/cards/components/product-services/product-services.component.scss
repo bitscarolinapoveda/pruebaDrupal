@@ -1,0 +1,463 @@
+@import './src/assets/scss/mixin.scss';
+
+#title-gallery {
+
+    .title {
+        background: rgb(247, 249, 249);
+        height: 160px;
+        padding-top: 11%;
+
+        @include breakpoint (tablet) {
+            padding-top: 7%;
+        }
+
+        @include breakpoint(desktop) {
+            height: 171px;
+            padding-top: 3.5%;
+        }
+
+        .info-title {
+            width: 97%;
+            padding-left: 8%;
+            padding-right: 4%;
+            margin-bottom: 0%;
+            text-align: center;
+            text-transform: uppercase;
+            color: #002b49;
+            font-size: 40px;
+
+            @include breakpoint (desktop) {
+                width: 100%;
+                padding-left: 0%;
+                padding-right: 0%;
+            }
+        }
+    }
+}
+
+#gallery-images {
+    height: 1116px;
+    overflow: hidden;
+
+    @include breakpoint (tablet) {
+        height: auto;
+    }
+
+    @include breakpoint(desktop) {
+        height: auto;
+    }
+
+    .block-title {
+        height: 142px;
+        width: 100%;
+        background: rgb(247, 249, 249);
+
+        @include breakpoint(desktop) {
+            height: 185px;
+        }
+
+        h2 {
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: 200;
+            font-size: 40px;
+            margin: 0%;
+            z-index: 100;
+            color: #002b49;
+            padding: 0%;
+            padding-top: 11%;
+            padding-top: 81px;
+            padding-bottom: 61px;
+
+            @include breakpoint(desktop) {
+                margin: initial;
+                padding-top: 81px;
+            }
+        }
+    }
+
+    .container {
+        width: 100%;
+        position: relative;
+        height: 690px;
+        padding-left: 0%;
+        padding-left: 0%;
+
+        @include breakpoint(desktop) {
+            height: 895px;
+            padding: 0%;
+        }
+    }
+
+    .tz-gallery {
+        height: auto;
+
+        .row {
+            width: 100%;
+            height: 50%;
+            margin: 0%;
+
+            .col-md-4 {
+                height: 372px;
+                padding: 0%;
+
+                @include breakpoint(desktop) {
+                    height: 453px;
+                }
+            }
+        }
+    }
+
+    .tz-gallery .thumbnail:hover {
+        transform: translateY(-10px) scale(1.02);
+    }
+
+    .tz-gallery .caption {
+        padding: 26px 30px;
+        text-align: center;
+    }
+
+    .tz-gallery .caption h3 {
+        font-size: 14px;
+        font-weight: bold;
+        margin-top: 0;
+    }
+
+    .tz-gallery .caption p {
+        font-size: 12px;
+        color: #7b7d7d;
+        margin: 0;
+    }
+
+    .baguetteBox-button {
+        background-color: transparent
+    }
+
+    .tz-gallery .thumbnai {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        border: none;
+        overflow: hidden;
+        position: relative;
+        background-color: transparent;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.06);
+
+        .lightbox {
+            height: 100%;
+            width: 100%;
+        }
+
+        .background {
+            height: 100%;
+            display: flex;
+
+            @include breakpoint (desktop) {
+                background: rgba(0, 88, 146, 0.3);
+            }
+
+            .images {
+                width: 100%;
+                height: 100%;
+                filter: brightness(85%);
+                width: 100%;
+                height: 100%;
+                z-index: -1;
+                object-fit: cover;
+            }
+        }
+
+        .box-info {
+            height: 100%;
+            width: 100%;
+            background-color: rgba(0, 43, 73, 0.62);
+            position: absolute;
+            bottom: 0%;
+            padding-right: 14%;
+            padding-left: 14%;
+
+            @include breakpoint (desktop) {
+                transition: all ease 0.89s;
+                visibility: hidden;
+                top: 100%;
+            }
+
+            .box-botton {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                top: 77%;
+
+                @include breakpoint (desktop) {
+                    top: 81%;
+                }
+
+                .botton_products {
+                    display: flex;
+                    border: none;
+                    padding-top: 2.5%;
+                    padding-bottom: 2.5%;
+                    text-transform: uppercase;
+                    text-align: center;
+                    color: #8ECE17;
+                    text-decoration: none;
+                    visibility: hidden;
+                    font-family: 'Open Sans';
+                    justify-content: center;
+
+                    @include breakpoint (tablet) {
+                        left: 0%;
+                        width: 100%;
+                        padding-left: 19%;
+                        margin-left: auto;
+                        margin-right: auto;
+                        justify-content: center;
+                    }
+
+                    &::after {
+                        content: '';
+                        position: relative;
+                        right: 9%;
+                        width: 100%;
+                        top: 0px;
+                        margin-right: auto;
+                        margin-left: auto;
+                        padding-left: 27%;
+                        padding-right: 27%;
+                        padding-top: 29%;
+                        background-image: url('/assets/icon/mas.svg');
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        background-size: 35px;
+                        visibility: visible;
+
+                        @include breakpoint (tablet) {
+                            padding-left: 20%;
+                            padding-right: 20%;
+                            padding-top: 8%;
+                            right: 31%;
+                        }
+                    }
+
+                    @include breakpoint(desktop) {
+                        display: block;
+                        width: 55%;
+                        padding-left: 0%;
+                        padding-right: 0%;
+                        padding-top: 3.5%;
+                        padding-bottom: 3.5%;
+                        border: solid 1px#8ECE17;
+                        border-radius: 3%;
+                        color: #8ECE17;
+                        font-size: 20px;
+                        visibility: visible;
+
+                        &::after {
+                            content: '';
+                            visibility: hidden;
+                            padding-right: initial;
+                            padding-left: initial;
+                        }
+                    }
+                }
+            }
+        }
+
+        .box-title {
+            position: relative;
+            bottom: 92%;
+            padding-left: 9%;
+            padding-right: 9%;
+            text-align: center;
+            z-index: 10;
+
+            @include breakpoint(desktop) {
+                clear: both;
+                bottom: 62.5%;
+                padding-left: 25%;
+                padding-right: 25%;
+                transition: all ease 0.8s;
+            }
+
+            .titlepr {
+                color: #ffffff;
+                position: relative;
+                top: 56%;
+                line-height: 46px;
+                font-weight: 300;
+                height: auto;
+                font-size: 31px;
+                font-family: 'Open Sans Codensed';
+
+                @include breakpoint(desktop) {
+                    font-size: 36px;
+                }
+            }
+
+            .titlepr:after {
+                content: '';
+                position: relative;
+                display: block;
+                width: 100%;
+                height: 1.2px;
+                left: 0%;
+                bottom: -14px;
+                transition: all .3s ease-in-out;
+                transform: scaleX(0.3);
+                background: #8ECE17;
+
+                @include breakpoint (desktop) {
+                    top: 134%;
+                }
+            }
+
+            .box-text {
+                position: relative;
+                padding-top: 10%;
+                padding-left: 4%;
+                padding-right: 5%;
+                max-height: 250px;
+                overflow: hidden;
+
+                @include breakpoint(phone) {
+                    max-height: 185px;
+                }
+
+                @include breakpoint(tablet) {
+                    max-height: 208px;
+                }
+
+                @include breakpoint(desktop) {
+                    top: 365px;
+                    transition: all ease 1s;
+                    width: 140%;
+                    right: 20%;
+                    padding: 10% 0%;
+                }
+
+                .text {
+                    display: block;
+                    text-align: center;
+                    height: auto;
+                    color: #ffffff;
+                    font-size: 15px;
+                    font-family: 'Open Sans light';
+
+                    @include breakpoint(desktop) {
+                        font-size: 18px;
+                        top: 26%;
+                        height: auto;
+                        line-height: 1.4;
+                    }
+                }
+            }
+        }
+    }
+
+    @include breakpoint (desktop) {
+        .tz-gallery .thumbnai:hover {
+            .box-info {
+                transform: translateY(-100%);
+                background: rgba(0, 43, 73, 0.62);
+                visibility: initial;
+            }
+
+            .box-title {
+                bottom: 86%;
+                z-index: 100;
+
+                @include breakpoint (desktop) {
+                    bottom: 93%;
+                }
+
+                .box-text {
+                    top: 14px;
+                    transform: translateY(-6%);
+                }
+
+                .titlepr:after {
+                    transform: scaleX(0.8);
+                    -webkit-transform: scaleX(0.8);
+                }
+            }
+        }
+    }
+}
+
+#bottons-services {
+    .totalbottons {
+        position: relative;
+        top: 50%;
+        width: 100%;
+        background: rgb(247, 249, 249);
+        height: 141px;
+
+        @include breakpoint(desktop) {
+            top: initial;
+        }
+
+        .bottons {
+            display: flex;
+            padding-top: 10%;
+            width: 91%;
+            justify-content: center;
+
+            @include breakpoint (tablet) {
+                padding-bottom: 0%;
+                padding-top: 6%;
+            }
+
+            @include breakpoint(desktop) {
+                padding-top: 40px;
+                padding-bottom: initial;
+            }
+
+            .bottonleft,
+            .bottonrigth {
+                display: flex;
+                width: 27%;
+                text-align: center;
+                border: solid 1px rgba(142, 206, 23, 0.7);
+                padding: 2% 1.5%;
+                position: relative;
+                text-decoration: none;
+                color: #ffffff;
+                background: rgba(142, 206, 23, 0.7);
+                font-size: 14px;
+                font-family: 'Open Sans';
+                text-transform: uppercase;
+                justify-content: center;
+                align-items: center;
+
+                @include mediaquery(350px){
+                    width: 41%;
+                }
+                @include breakpoint (tablet) {
+                    width: 14%;
+                    padding-top: 1%;
+                    padding-bottom: 1%;
+                }
+
+                @include breakpoint(desktop) {
+                    font-size: 18px;
+                    width: 16%;
+                    padding: 1%;
+                }
+            }
+
+            .bottonrigth {
+                left: 8%;
+            }
+
+            .bottonleft:hover {
+                border: solid 1px#8ECE17;
+                background: #8ECE17;
+            }
+
+            .bottonrigth:hover {
+                border: solid 1px#8ECE17;
+                background: #8ECE17;
+            }
+        }
+    }
+}

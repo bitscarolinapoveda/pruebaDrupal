@@ -1,0 +1,72 @@
+<ng-container *ngIf="visible" >
+    <section id="footer-block-newsletter">
+    <div class="newsletter-info">
+      <h6 *ngIf="footerData.title">{{ footerData.title | uppercase }}</h6>
+      <p [innerHTML]="footerData.subtitle"></p>
+      <button data-toggle="modal" data-target="#newsletterModal">
+        {{ footerData.button}}
+        <i class="fas fa-paper-plane"></i>
+      </button>
+      <!-- Modal -->
+      <div class="modal fade" id="newsletterModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">{{ titleNewsletter }}</h5>
+              <p class="description-modal">{{ descriptionNewsletter }}</p>
+              <button type="button" class="close button-modal" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form action="" id="footernewsletter-form">
+                <app-message [dataMessage]="dataMessage"></app-message>
+                <div class="col-md-12 item">
+                  <label class="label-modal" for="exampleInputNombre-nw">{{ nameInput }}*</label>
+                  <input class="input-modal" ngModel type="text" id="nombree" placeholder="{{ nameInputPlaceholder }}"
+                    name="nombre" [(ngModel)]="name_value">
+                  <div *ngIf="false" class="alert alert-danger" role="alert">
+                    Campo obligatorio o invalido
+                  </div>
+                </div>
+                <div class="col-md-12 item">
+                  <label class="label-modal" for="exampleInputNombr-nw">{{ lastNameInput }}</label>
+                  <input class="input-modal" type="text" id="apellido" placeholder="{{ lastNameInputPlaceholder }}"
+                    name="apellido" [(ngModel)]="last_name_value">
+                  <div *ngIf="false" class="alert alert-danger" role="alert">
+                    Campo obligatorio o invalido
+                  </div>
+                </div>
+                <div class="col-md-12 item">
+                  <label class="label-modal" for="exampleInputEmail1-nw">{{ emailInput }}*</label>
+                  <input class="input-modal" type="email" id="exampleInputEmail1" aria-describedby="emailHelp"
+                    placeholder="{{ emailInputPlaceholder }}" name="correo_electronico" pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
+                    [(ngModel)]="email_value">
+                  <div *ngIf="false" class="alert alert-danger" role="alert">
+                    Campo obligatorio o invalido
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <div class="form-group" class="terminos_grupo">
+                <input class="check-modal-terms" type="checkbox" checked="checked" id="terms-of-service" name="terms_of_service"
+                  value="false" required>
+                <label class="label-modal-terms" for="terms-of-service-nw">He leído y acepto los <a class="link-modal-terms"
+                    role="button" href="{{ linkTerms }}">{{ labelTerms }}</a></label>
+                <a data-trigger="focus" role="button" data-toggle="popover" data-placement="top" href="#">
+                  <i class="fas fa-info-circle icon-tooltip"></i>
+                </a>
+              </div>
+              <button type="button" class="save-modal-button" (click)="clickOnSubmit()">{{ buttonSendNewsletter }}</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div id='popover-title'>{{titleTermsTooltip}}</div>
+  <div id='popover-content' [innerHTML]='bodyTermsTooltip'></div>
+  
+</ng-container>

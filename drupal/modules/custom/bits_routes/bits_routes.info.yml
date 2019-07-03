@@ -1,0 +1,5 @@
+name: 'Bits Routes'
+type: 'module'
+description: 'Modulo manejador de URLS'
+core: '8.x'
+package: 'Custom'

@@ -1,0 +1,10 @@
+services:
+  adf_content_types.default:
+    class: Drupal\adf_content_types\DefaultService
+    arguments: []
+  content:
+    class: Drupal\adf_content_types\ContentTypesService
+    arguments: []
+  adf_content_types.basic_page:
+    class: Drupal\adf_content_types\Services\BasicPageContentService
+    arguments: ['@entity.repository']

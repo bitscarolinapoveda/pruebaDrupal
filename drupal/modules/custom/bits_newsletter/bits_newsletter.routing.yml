@@ -1,0 +1,11 @@
+
+# Newsletter entity menu items definition
+
+bits_newsletter.menu:
+  path: '/admin/structure/bits_newsletter'
+  defaults:
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+    _title: 'Mysite'
+  requirements:
+    _permission: 'access administration pages'
+

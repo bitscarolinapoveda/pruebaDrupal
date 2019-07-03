@@ -1,0 +1,77 @@
+@import './src/assets/scss/mixin.scss';
+
+.content {
+
+    width: 90%;
+    margin-top: 20px;
+
+    ul {
+        @include breakpoint (phone) {
+            padding: 0;
+        }
+    }
+
+    .images-content {
+        .images {
+            margin-left: 0;
+            margin-right: 0;
+
+            @include breakpoint(desktop) {
+                margin-left: 9%;
+            }
+
+            li {
+                list-style: none;
+                margin-top: 17px;
+
+                @include breakpoint (phone) {
+                    margin-bottom: 35px;
+                }
+
+                img {
+                    float: left;
+                    margin-top: 20px;
+                    @include breakpoint (desktop) {
+                        position: relative;
+                    }
+
+                    @include breakpoint (phone) {
+                        width: 50%;
+                        position: relative;
+                    }
+                }
+
+                label {
+                    font-family: 'Open Sans light';
+                    color: #002b49;
+                    font-weight: 500;
+                    padding-left: 0 !important;
+                    padding-right: 0 !important;
+                    text-align: left;
+
+                    span.plus {
+                        color: #a6cf24;
+                        font-size: 40px;
+                    }
+
+                    span {
+                        font-size: 30px;
+                    }
+
+                    p {
+                        font-weight: 300;
+                    }
+
+                    @include breakpoint (desktop) {
+                        position: absolute;
+                    }
+
+                    @include breakpoint (phone) {
+                        position: absolute;
+                        width: 50%;
+                    }
+                }
+            }
+        }
+    }
+}

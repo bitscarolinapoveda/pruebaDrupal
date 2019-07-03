@@ -1,0 +1,22 @@
+# Newsletter entity routing definition
+newsletter_entity.settings_tab:
+  route_name: newsletter_entity.settings
+  title: 'Settings'
+  base_route: newsletter_entity.settings
+
+entity.newsletter_entity.canonical:
+  route_name: entity.newsletter_entity.canonical
+  base_route: entity.newsletter_entity.canonical
+  title: 'View'
+
+entity.newsletter_entity.edit_form:
+  route_name: entity.newsletter_entity.edit_form
+  base_route: entity.newsletter_entity.canonical
+  title: 'Edit'
+
+entity.newsletter_entity.delete_form:
+  route_name:  entity.newsletter_entity.delete_form
+  base_route:  entity.newsletter_entity.canonical
+  title: Delete
+  weight: 10
+

@@ -1,0 +1,29 @@
+<div *ngIf="visible">  
+  <div [id]="datosMenu.id"></div>
+  <app-separator [iconCustom]="'icon-people'"></app-separator>
+  <section id="principal">
+    <h2 class="title-principal">{{ title }}</h2>
+    <p class="descrip-principal" [innerHTML]="subtitle"></p>
+  </section>
+  <div class="contenedor" >
+    <ngx-carousel [inputs]="carocarouselTile" (carouselLoad)="carouselTileLoad($event)" *ngIf="CarouselControlArray">
+      <ngx-tile NgxCarouselItem *ngFor="let main of CarouselControlArray; let i = index">
+        <a href="" class="url-link">
+          <div class="container-img">
+             
+            <img class="d-block img-fluid img-float mx-auto" [src]="main.field_imagen?.url" [alt]="main.field_imagen?.alt" lazyload/>
+            
+          </div>
+          <div class="info">
+            <h4 class="name-cargo">{{main?.field_cargo}}</h4>
+            <h3 class="main-title">{{main?.title}}</h3>
+            <h5 class="correo">{{main?.field_correo_electronico}}</h5>
+            <a class="in"  href="{{main?.field_linkedin}}" *ngIf="main?.field_linkedin !== ''">in</a>
+          </div>
+        </a>
+      </ngx-tile>
+      <button NgxCarouselPrev class='leftRs'>&lt;</button>
+      <button NgxCarouselNext class='rightRs'>&gt;</button>
+    </ngx-carousel>
+  </div>
+</div>

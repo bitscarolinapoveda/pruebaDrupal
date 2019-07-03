@@ -1,0 +1,148 @@
+@import './src/assets/scss/mixin.scss';
+
+@font-face {
+    font-family: 'Open Sans light';
+    font-style: light;
+    font-weight: 300;
+    src: url('./assets/fonts/Open-Sans/OpenSans-Light.ttf');
+}
+
+@font-face {
+    font-family: 'Open Sans bold';
+    font-style: bold;
+    font-weight: 700;
+    src: url('./assets/fonts/Open-Sans/OpenSans-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    font-style: regular;
+    font-weight: 400;
+    src: url('./assets/fonts/Open-Sans/OpenSans-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Open Sans Codensed';
+    font-style: regular;
+    font-weight: 400;
+    src: url('./assets/fonts/Open-Sans-Codensed/OpenSansCondensed-Light.ttf');
+}
+
+@font-face {
+    font-family: 'Open Sans Codensed Light';
+    font-style: light;
+    font-weight: 100;
+    src: url('./assets/fonts/Open-Sans-Codensed/OpenSansCondensed-Light.ttf');
+}
+
+body {
+    overflow-x: hidden !important;
+    h1,
+    h2 {
+        font-family: 'Open Sans light';
+    }
+}
+
+.hide {
+    display: none;
+}
+
+.hover-menu-dark-layout {
+    width: 100%;
+    height: 3000px;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    z-index: 1;
+}
+
+.popover {
+    max-width: 800px !important;
+    font-weight: 600 !important;
+
+    .popover-body {
+        font-family: 'Open Sans light' !important;
+        font-size: 14px !important;
+        background-color: white;
+
+        @include breakpoint (phone) {
+            overflow-y: scroll;
+        }
+
+        p,
+        h3,
+        h4 {
+            font-size: 14px !important;
+            text-align: justify;
+            margin-bottom: 0;
+        }
+    }
+
+    .popover-header {
+        background: #426177 !important;
+        color: #ffffff !important;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+}
+
+#principal {
+    color: #002b49;
+    text-align: center;
+    margin-top: 40px;
+
+    @include breakpoint (phone) {
+        margin-top: 20px;
+        margin-bottom: 20px !important;
+    }
+
+    @include breakpoint (tablet) {
+        margin-top: 20px;
+        margin-bottom: 20px !important;
+    }
+
+    .title-principal {
+        font-size: 40px;
+        text-transform: uppercase;
+
+        @include breakpoint (phone) {
+            font-size: 30px;
+        }
+    }
+
+    .descrip-principal {
+        font-size: 20px;
+        font-family: 'Open Sans Codensed';
+    }
+}
+
+.captcha :first-child {
+    margin: auto;
+    display: block;
+    margin-bottom: 10px !important;
+}
+
+.carousel-inner {
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+}
+
+.text-align-justify {
+    text-align: justify;
+}
+.text-align-right {
+    text-align: right;
+}
+.text-align-center {
+    text-align: center;
+}
+
+.centred{
+    #footer-block-contact{
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+
+@import './src/assets/scss/keyframe.scss';

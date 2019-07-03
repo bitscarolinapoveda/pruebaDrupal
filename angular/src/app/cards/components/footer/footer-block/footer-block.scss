@@ -1,0 +1,132 @@
+@import '../../../../../assets/scss/mixin.scss';
+
+#footer-block-location {
+    margin: 20px 0 20px 31%;
+    padding: 0 0 0 30px;
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+    height: 100px;
+ 
+
+    .row-block {
+        margin: 0;
+
+        .col-block {
+            padding: 0;
+
+            .footer-block-location {
+
+                .location-row {
+                    margin: 0;
+
+                    .info-location {
+                        padding: 0;
+
+                        .title-location {
+                            color: white;
+                            font-family: 'Open Sans';
+                            font-size: 12px;
+                        }
+
+                        .subtitle-location {
+                            color: rgba($color: white, $alpha: 0.7);
+                            font-family: 'Open Sans Light';
+                            font-size: 11px;
+
+                            .location-li.address,
+                            .location-li.telephone,
+                            .location-li.see-location {
+                                list-style: none;
+                                display: block;
+                                margin: 8px 0;
+
+                            }
+
+                            .location-li.see-location {
+                                margin: 9px 0;
+
+                                .link-location {
+                                    font-family: 'Open Sans Light';
+                                    font-size: 12px;
+                                    color: #a6cf24;
+
+                                    &:hover {
+                                        color: #83a024;
+                                        text-decoration: none;
+
+                                        .location-green {
+                                            background-image: url('/assets/icon/hover-location-icon.svg');
+                                            background-position: center;
+                                            background-repeat: no-repeat;
+                                        }
+                                    }
+
+                                    .location-green {
+                                        background-image: url('/assets/icon/placeholders-green.svg');
+                                        display: inline-block;
+                                        background-position: center;
+                                        background-repeat: no-repeat;
+                                        width: 16px;
+                                        height: 16px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                @include mediaquery(350px){
+                    margin-right: 0em;
+                }
+            }
+        }
+
+        .centred {
+            .footer-block-location {
+                display: flex;
+                justify-content: center;
+                margin-right: 2.4em;
+                margin-left: 0;
+                @include mediaquery(350px){
+                    margin-right: 0em;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 769px) {
+    #footer-block-location {
+        border-right: 0;
+        border-left: 0;
+        margin: 70px 0 20px 0;
+        padding: 0;
+
+        .row-block {
+            .col-block {
+                .footer-block-location {
+                    &.site {
+                        display: none;
+                    }
+
+                    .location-row {
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                    }
+
+                    .info-location {
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 769px) {
+    @media only screen and (max-width: 1025px) {
+        #footer-block-location {
+            margin: 20px 0 20px 13%;
+        }
+    }
+}

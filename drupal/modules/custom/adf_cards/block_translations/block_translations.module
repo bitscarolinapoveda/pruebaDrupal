@@ -1,0 +1,27 @@
+<?php
+
+/**
+ * @file
+ * Contains block_translations.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\language\Config\LanguageConfigOverride;
+use Drupal\Core\Language\LanguageInterface;
+use Drupal\language\ConfigurableLanguageManagerInterface;
+
+/**
+ * Implements hook_help().
+ */
+function block_translations_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the block_translations module.
+    case 'help.page.block_translations':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Module block_translations') . '</p>';
+      return $output;
+
+    default:
+  }
+}

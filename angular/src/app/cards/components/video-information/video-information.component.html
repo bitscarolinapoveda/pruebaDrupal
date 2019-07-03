@@ -1,0 +1,27 @@
+<div *ngIf="visible">
+    <div [id]="datosMenu.id"></div>
+    <app-separator [iconCustom]="'icon-engranaje'"></app-separator>
+    <div class="row bg-light">
+        <div class="col-md-6 p-0">
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" [src]="videoURLSanitizer" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="col-md-6 my-5">
+            <h2>{{ titleSection | uppercase}}</h2>
+            <hr class="green">
+            <p [innerHTML]="descriptionSection"></p>
+            <br>
+            <ng-container *ngIf="linkExternal then externo else interno">
+            </ng-container>
+            <ng-template #externo>
+                <a [href]="link" class="green"><i class="fa fa-link" aria-hidden="true"></i>
+                    {{link}}</a>
+            </ng-template>
+            <ng-template #interno>
+                <a [routerLink]="link" class="green"><i class="fa fa-link"
+                        aria-hidden="true"></i> {{link}}</a>
+            </ng-template>
+        </div>
+    </div>
+</div>
