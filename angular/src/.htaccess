@@ -1,3 +1,5 @@
+RewriteCond %{HTTP_HOST} ^bitsamericas.com$ [NC]
+RewriteRule (.*) http://www.bitsamericas.com/$1 [R=301,L]
 Redirect 301 /desarrollo-de-software-la-medida-sitios-web /nosotros
 Redirect 301 /software-medico-con-historia-clinica-electronica /productos/software-medico-con-historia-clinica-electronica
 Redirect 301 /desarrollo-web-en-drupal /servicios/desarrollo-web-en-drupal
