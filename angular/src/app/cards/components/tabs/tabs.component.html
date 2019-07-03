@@ -19,7 +19,7 @@
 			<app-message [dataMessage]="dataMessage"></app-message>
 			<ng-template #valid_required>
 				<div class="alert alert-danger" role="alert"
-					*ngIf="this.complement[8]?.data['alert_error'] !== '' && this.complement[8] !==  undefined">
+					*ngIf="this.complement[8]?.data['alert_required'] !== '' && this.complement[8] !==  undefined">
 					{{this.complement[8]?.data['alert_required']}}
 				</div>
 			</ng-template>

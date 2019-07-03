@@ -4,17 +4,17 @@
 			name="formulario_contacto">
 			<app-message [dataMessage]="dataMessage"></app-message>
 			<ng-template #valid_required>
-					<div class="alert alert-danger" role="alert"
-						*ngIf="this.complement[8]?.data['alert_error'] !== '' && this.complement[8] !==  undefined">
-						{{this.complement[8]?.data['alert_error']}}
-					</div>
-				</ng-template>
-				<ng-template #error>
-					<div class="alert alert-danger" role="alert"
-						*ngIf="this.complement[0]?.data['alert_error'] !== '' && this.complement[0] !==  undefined">
-						{{this.complement[0]?.data['alert_required']}}
-					</div>
-				</ng-template>
+				<div class="alert alert-danger" role="alert"
+					*ngIf="this.complement[8]?.data['alert_required'] !== '' && this.complement[8] !==  undefined">
+					{{this.complement[8]?.data['alert_required']}}
+				</div>
+			</ng-template>
+			<ng-template #error>
+				<div class="alert alert-danger" role="alert"
+					*ngIf="this.complement[0]?.data['alert_error'] !== '' && this.complement[0] !==  undefined">
+					{{this.complement[0]?.data['alert_error']}}
+				</div>
+			</ng-template>
 			<div class="col-md-12 form-group">
 				<!-- elementoForm: array de campos que conforman el formulario-->
 				<ng-container *ngFor="let item of elementoForm">
@@ -87,7 +87,7 @@
 								</ng-select>
 								<input type="text" autocomplete="off" class="form-control ocultar"
 									id="{{elementLayout['#webform_key']}}" name="{{elementLayout['#webform_key']}}"
-									[ngModel]="pais">									
+									[ngModel]="pais">
 								<ng-container
 									*ngIf="(elementLayout['#required'] ==  true && pais_required == true) then valid_required">
 								</ng-container>
@@ -97,9 +97,8 @@
 							<div *ngIf="elementLayout['#type'] == 'managed_file'" class="pos-flex">
 								<label for="{{elementLayout['#webform_key']}}">{{elementLayout["#title"]}}
 									<span *ngIf="elementLayout['#required'] ==  true">*</span></label>
-								<label for="hojav" class="hoja-v"
-									(click)="validFile()">{{hojaWU}}
-									</label>
+								<label for="hojav" class="hoja-v" (click)="validFile()">{{hojaWU}}
+								</label>
 								<input type="file" class="form-control hoja-v" id="hojav"
 									placeholder="{{elementLayout['#placeholder']}}" name="hojav"
 									(change)="onFileChange($event)" #hojavWS>
@@ -184,7 +183,7 @@
 							<label for="{{item['#webform_key']}}">{{item["#title"]}}
 								<span *ngIf="item['#required'] ==  true">*</span></label>
 							<label for="hojav" class="hoja-v" (click)="validFile()">{{hojaWU}}
-								</label>
+							</label>
 							<input type="file" class="form-control hoja-v" id="hojav"
 								placeholder="{{item['#placeholder']}}" name="hojav" (change)="onFileChange($event)"
 								#hojavWS>
