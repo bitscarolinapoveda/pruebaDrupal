@@ -421,5 +421,5 @@ function replaceFilename($inputfilename) {
   $separatorfile = ['-', '_'];
   $inputfilename = str_replace($separatorfile, ' ', $inputfilename);
 
-  return $inputfilename;
-}
+  return $inputfilename
+
